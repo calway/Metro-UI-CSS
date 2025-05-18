@@ -23,6 +23,9 @@
     --navview-scrollbar-width: 6px;
     --navview-scrollbar-thumb-color: #cccccc;
     --navview-scrollbar-background-color: #ececec;
+    --navview-icon-color: #191919;
+    --navview-icon-color-hover: #191919;
+    --navview-icon-color-active: #191919;
 }
 
 .dark-side {
@@ -43,6 +46,9 @@
     --navview-item-header-border-color: #5d5e60;
     --navview-scrollbar-thumb-color: #5d5e60;
     --navview-scrollbar-background-color: #2b2d30;
+    --navview-icon-color: #dfe1e5;
+    --navview-icon-color-hover: #dfe1e5;
+    --navview-icon-color-active: #dfe1e5;
 }
 
 .navview {
@@ -217,6 +223,11 @@
         height: 16px;
         font-size: 16px;
         text-align: center;
+        color: var(--navview-icon-color);
+        
+        &.icon-replacer {
+            font-size: 14px;
+        }
     }
 
     .badges {

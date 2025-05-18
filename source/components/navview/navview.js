@@ -120,7 +120,12 @@
                     const icon = a.children(".icon");
                     const caption = a.children(".caption");
                     if (!icon.length) {
-                        a.prepend($("<span>").addClass("icon").html(caption.text()[0]));
+                        const text = (caption.text() || "A B").split(" ");
+                        a.prepend(
+                            $("<span>")
+                                .addClass("icon icon-replacer")
+                                .html(`${text[0][0]}${text[1] ? text[1][0] : ""}`),
+                        );
                     }
                 });
             }
