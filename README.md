@@ -1,30 +1,18 @@
 <div align="center">
   <h1 align="center">Metro UI</h1>
 
-<p align="center">
-    <a href="https://v5.metroui.org.ua/"><strong>Explore Metro UI Docs</strong></a>
-</p>
 
     Sleek, intuitive, and powerful front-end framework for faster and easier web development.
     Build responsive, mobile-first projects on the web 
     with the first front-end component library in Metro Style.
-</div>
 
-![img.png](img.png)
+<p align="center">
+    <a href="https://v5.metroui.org.ua/"><strong>Explore Metro UI Docs</strong></a>
+</p>
+
+</div>
 
 ---
-<div align="center">
-
-If you are using Metro UI commercially, there is a social (but no legal) expectation that you help fund its maintenance.
-
-### PayPal - serhii@pimenov.com.ua
-
-<a href="https://www.patreon.com/metroui">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" height="38">
-</a>
-</div>
-
-----
 
 <div align="center">
 
@@ -71,7 +59,7 @@ All contributions are welcome. Learn more about how you can contribute to this p
  
 ### Docs & Demo
 
-Please click [Documentation](https://docs-new.metroui.org.ua) and [Demo](https://panda.metroui.org.ua).   
+Please click [Documentation](https://v5.metroui.org.ua) and [Demo](https://panda.metroui.org.ua).   
 
 ### Releases
 
