@@ -24604,7 +24604,6 @@ dl,
 ul,
 ol {
   margin: 1rem;
-  list-style-position: inside;
 }
 dl dl,
 ul dl,
@@ -24625,23 +24624,11 @@ dir {
   display: block;
   list-style-type: disc;
 }
-ol {
-  list-style-type: decimal;
-}
 ul ul {
   list-style: circle;
 }
 ul ul ul {
   list-style: square;
-}
-ol {
-  list-style-type: upper-roman;
-}
-ol ol {
-  list-style-type: decimal;
-}
-ol ol ol {
-  list-style-type: lower-alpha;
 }
 dl dt,
 dl dd {

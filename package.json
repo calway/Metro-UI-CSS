@@ -40,13 +40,15 @@
         "check": "npx @biomejs/biome check --write ./source",
         "commit": "node -e \"const mssg = process.argv[1]; require('child_process').execSync('npm run build && git add . && git commit -m \\\"' + mssg + '\\\"', { stdio:[0, 1, 2] })\""
     },
-    "browserslist": ["last 2 versions"],
+    "browserslist": [
+        "last 2 versions"
+    ],
     "devDependencies": {
         "@biomejs/biome": "1.9.4",
-        "@olton/latte": "^0.16.2",
         "@olton/esbuild-plugin-autoprefixer": "^0.2.0",
         "@olton/esbuild-plugin-progress": "^0.3.0",
         "@olton/esbuild-plugin-unlink": "^0.2.0",
+        "@olton/latte": "^0.16.2",
         "chalk": "^5.4.1",
         "cross-env": "^7.0.3",
         "esbuild": "^0.25.4",

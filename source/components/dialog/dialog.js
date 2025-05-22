@@ -109,7 +109,7 @@
                 if (o.defaultActions === true && element.find(".dialog-actions > *").length === 0) {
                     for (const b of o.defaultActionButtons.toArray(",")) {
                         button = $("<button>")
-                            .addClass(b !== "help" ? ".js-dialog-close" : "")
+                            .addClass(b !== "help" ? "js-dialog-close" : "")
                             .addClass(o.clsDefaultAction)
                             .html(strings[`label_${b}`]);
                         button.appendTo(buttons);

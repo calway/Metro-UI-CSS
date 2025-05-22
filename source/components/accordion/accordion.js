@@ -1,4 +1,4 @@
-((Metro, $) => {
+ ((Metro, $) => {
     // biome-ignore lint/suspicious/noRedundantUseStrict: <explanation>
     "use strict";
     let AccordionDefaultConfig = {
