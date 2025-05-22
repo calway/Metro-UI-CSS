@@ -4,10 +4,8 @@ The Accordion component provides a way to organize content into collapsible sect
 
 ## Usage
 
-### Basic Usage
-
 ```html
-<div data-role="accordion">
+<div class="accordion" data-role="accordion">
     <div class="frame">
         <div class="heading">Section 1</div>
         <div class="content">Content for section 1</div>
@@ -23,53 +21,48 @@ The Accordion component provides a way to organize content into collapsible sect
 </div>
 ```
 
-### Programmatic Creation
+## Configuration Options
 
-```javascript
-// Initialize accordion on an existing element
-Metro.makePlugin("#myAccordion", "accordion");
+The Accordion component can be configured with the following options:
 
-// Access the accordion object
-const accordion = $("#myAccordion").data("accordion");
-```
-
-## Plugin Parameters
-
-| Parameter | Type | Default | Description |
-| --------- | ---- | ------- | ----------- |
-| `accordionDeferred` | number | 0 | Deferred initialization time in milliseconds |
-| `showMarker` | boolean | true | Show/hide marker (arrow) in the heading |
-| `material` | boolean | false | Use material design style |
-| `duration` | number | 100 | Animation duration for expanding/collapsing |
-| `oneFrame` | boolean | true | Allow only one frame to be open at a time |
-| `showActive` | boolean | true | Show active frames on initialization |
-| `clsFrame` | string | "" | Additional CSS class for frames |
-| `clsHeading` | string | "" | Additional CSS class for headings |
-| `clsContent` | string | "" | Additional CSS class for content |
-| `clsAccordion` | string | "" | Additional CSS class for the accordion container |
-| `clsActiveFrame` | string | "" | Additional CSS class for active frames |
-| `clsActiveFrameHeading` | string | "" | Additional CSS class for active frame headings |
-| `clsActiveFrameContent` | string | "" | Additional CSS class for active frame content |
+| Option | Type | Default | Description |
+| ------ | ---- |---------| ----------- |
+| accordionDeferred | number | 0       | Deferred initialization time in milliseconds |
+| showMarker | boolean | true    | Show/hide marker (arrow) in the heading |
+| material | boolean | false   | Use material design style |
+| duration | number | 100     | Animation duration for expanding/collapsing |
+| oneFrame | boolean | true    | Allow only one frame to be open at a time |
+| showActive | boolean | true    | Show active frames on initialization |
+| clsFrame | string | ""      | Additional CSS class for frames |
+| clsHeading | string | ""      | Additional CSS class for headings |
+| clsContent | string | ""      | Additional CSS class for content |
+| clsAccordion | string | ""      | Additional CSS class for the accordion container |
+| clsActiveFrame | string | ""      | Additional CSS class for active frames |
+| clsActiveFrameHeading | string | ""      | Additional CSS class for active frame headings |
+| clsActiveFrameContent | string | ""      | Additional CSS class for active frame content |
 
 ## Events
 
+The Accordion component provides the following events:
+
 | Event | Description |
 | ----- | ----------- |
-| `onFrameOpen` | Triggered when a frame is opened |
-| `onFrameBeforeOpen` | Triggered before a frame is opened (return false to cancel) |
-| `onFrameClose` | Triggered when a frame is closed |
-| `onFrameBeforeClose` | Triggered before a frame is closed (return false to cancel) |
-| `onAccordionCreate` | Triggered when the accordion is created |
+| onFrameOpen | Triggered when a frame is opened |
+| onFrameBeforeOpen | Triggered before a frame is opened (return false to cancel) |
+| onFrameClose | Triggered when a frame is closed |
+| onFrameBeforeClose | Triggered before a frame is closed (return false to cancel) |
+| onAccordionCreate | Triggered when the accordion is created |
 
 ## API Methods
+
+The Accordion component provides the following API methods:
 
 ### open(index)
 
 Opens the frame at the specified index.
 
 ```javascript
-// Opens the third frame (index 2)
-Metro.getPlugin('#myAccordion', 'accordion').open(2);
+Metro.getPlugin('#myAccordion', 'accordion').open(2); // Opens the third frame
 ```
 
 ### close(index)
@@ -77,8 +70,7 @@ Metro.getPlugin('#myAccordion', 'accordion').open(2);
 Closes the frame at the specified index.
 
 ```javascript
-// Closes the first frame (index 0)
-Metro.getPlugin('#myAccordion', 'accordion').close(0);
+Metro.getPlugin('#myAccordion', 'accordion').close(0); // Closes the first frame
 ```
 
 ### toggle(index)
@@ -86,8 +78,7 @@ Metro.getPlugin('#myAccordion', 'accordion').close(0);
 Toggles the state of the frame at the specified index.
 
 ```javascript
-// Toggles the second frame (index 1)
-Metro.getPlugin('#myAccordion', 'accordion').toggle(1);
+Metro.getPlugin('#myAccordion', 'accordion').toggle(1); // Toggles the second frame
 ```
 
 ### getActive()
@@ -101,10 +92,12 @@ console.log(activeFrames); // e.g., [0, 2] if first and third frames are open
 
 ## Styling with CSS Variables
 
+The Accordion component can be styled using the following CSS variables:
+
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| `--accordion-heading-background` | #f8f8f8 | #2b2d30 | Background color of the accordion headings |
-| `--accordion-heading-color` | #191919 | #dfe1e5 | Text color of the accordion headings |
+| --accordion-heading-background | #f8f8f8 | #2b2d30 | Background color of the accordion headings |
+| --accordion-heading-color | #191919 | #dfe1e5 | Text color of the accordion headings |
 
 ### Example of Custom Styling
 
