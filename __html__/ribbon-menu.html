@@ -22,7 +22,11 @@
 
 <div class="container">
     <h1>Ribbon menu test page</h1>
-
+    <div>
+        <button onclick="$('#ribbon-menu').data('ribbonmenu').open('#main-section')">Main</button>
+        <button onclick="$('#ribbon-menu').data('ribbonmenu').open('#buttons-section')">Buttons</button>
+        <button onclick="$('#ribbon-menu').data('ribbonmenu').open('#inputs-section')">Inputs</button>
+    </div>
     <div class="example">
         <div class="window">
             <div class="window-caption">
@@ -35,12 +39,12 @@
                 </div>
             </div>
             <div class="window-menu">
-                <nav data-role="ribbonmenu">
+                <nav id="ribbon-menu" data-role="ribbon-menu">
                     <ul class="tabs-holder">
                         <li class="static"><a href="#">File</a></li>
-                        <li class="active"><a href="#section_main">Main</a></li>
-                        <li><a href="#section_buttons">Buttons</a></li>
-                        <li><a href="#section_inputs">Inputs</a></li>
+                        <li class="active" id="main-section"><a href="#section_main">Main</a></li>
+                        <li id="buttons-section"><a href="#section_buttons">Buttons</a></li>
+                        <li id="inputs-section"><a href="#section_inputs">Inputs</a></li>
                     </ul>
 
                     <div class="content-holder">

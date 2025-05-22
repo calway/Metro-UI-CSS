@@ -1,6 +1,5 @@
 <div align="center">
-  <h1 align="center">Metro UI</h1>
-
+  <h1 align="center">Metro UI</h1>  
 
     Sleek, intuitive, and powerful front-end framework for faster and easier web development.
     Build responsive, mobile-first projects on the web 
@@ -40,11 +39,15 @@
 > **SUPPORT PACK** includes an **Extra time for priority support** by email and other options.
 ---
 
+<div align="center">
+
 ### Community
 
 Welcome to Metro UI Discord Server!
 
 [![Join the chat at https://discord.gg/QYszPjRP](https://img.shields.io/badge/community-on%20discord-brightgreen.svg?style=flat)](https://discord.gg/cxrhV7pGG8)
+
+</div>
 
 ---
 

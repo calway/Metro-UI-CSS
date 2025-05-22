@@ -1,5 +1,3 @@
-/** @format */
-
 import "./datetime/index.js";
 import "./string/index.js";
 import "./dom/index.js";

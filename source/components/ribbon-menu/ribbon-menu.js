@@ -140,7 +140,7 @@
         destroy: function () {
             const element = this.element;
             element.off(Metro.events.click, ".tabs-holder li a");
-            return element;
+            element.remove();
         },
     });
 })(Metro, Dom);
