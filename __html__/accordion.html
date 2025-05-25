@@ -23,14 +23,18 @@
 </div>
     <div class="container mt-10">
         <h3>Role</h3>
+        <div>
+            <button onclick="$('#a1').data('accordion').close(0)">Close Frame</button>
+            <button onclick="$('#a1').data('accordion').toggle(0)">Toggle Frame</button>
+        </div>
         <div data-role="accordion" id="a1" data-save-state="true">
-            <div class="frame">
-                <div class="heading">Header 1</div>
+            <div class="frame active">
+                <div class="heading" >Header 1</div>
                 <div class="content">
                     <div class="p-2">Cur luba manducare? Pol, a bene ionicis tormento. Warm, sichuan-style pudding is best garnished with aged BBQ sauce.</div>
                 </div>
             </div>
-            <div class="frame active">
+            <div class="frame">
                 <div class="heading">Header 2</div>
                 <div class="content">
                     <div class="p-2">Wildly open a starship. Belay, ye small wench- set sails for hunger! Springy, juicy pudding is best blended with whole ice water.</div>
