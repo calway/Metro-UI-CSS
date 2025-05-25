@@ -63,3 +63,5 @@ ftpauth.json
 
 .easytest/
 coverage/
+
+*.nupkg
