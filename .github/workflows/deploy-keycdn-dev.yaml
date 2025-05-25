@@ -1,4 +1,4 @@
-name: Deploy to KeyCDN
+name: Deploy to KeyCDN (Dev)
 on:
   push:
     branches:
