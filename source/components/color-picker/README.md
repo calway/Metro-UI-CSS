@@ -1,14 +1,42 @@
-# Color Picker Component
+# Color Picker
 
 The Color Picker component provides an interactive interface for selecting colors. It integrates with the Color Selector component to offer a comprehensive color selection experience with various formats and options.
 
+## Dependencies
+
+The Color Picker component depends on the following components:
+- Input
+- Radio
+- Button
+- Color Selector
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <input type="text" data-role="color-picker">
 ```
 
-## Parameters
+### Additional Configurations
+
+```html
+<input type="text" 
+       data-role="color-picker"
+       data-show-values="hex, rgb, hsl, hsv, rgba, hsla, cmyk"
+       data-return-value-type="rgba"
+       data-clear-button="true"
+       data-label="Select color:">
+```
+
+### Setting Value Programmatically
+
+```html
+<button class="button" onclick="Metro.getPlugin('#cp', 'color-picker').val('#ff00ff');">Set value</button>
+<input type="text" id="cp" data-role="color-picker">
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -25,19 +53,11 @@ The Color Picker component provides an interactive interface for selecting color
 | resultType | String | "hex" | Format of the color result (hex, rgb, rgba, hsl, hsla) |
 | inputThreshold | Number | 500 | Threshold for input in milliseconds |
 
-## Events
+## API Methods
 
-| Event | Description |
-| --- | --- |
-| onColorSelected | Triggered when a color is selected |
-| onColorPickerCreate | Triggered when the color picker is created |
++ val(value) - Get or set the color value.
 
-## Methods
-
-### val(value)
-
-Get or set the color value.
-
+#### Example of Method Usage
 ```javascript
 // Get current color value
 const color = Metro.getPlugin('#my-color-picker', 'color-picker').val();
@@ -46,31 +66,33 @@ const color = Metro.getPlugin('#my-color-picker', 'color-picker').val();
 Metro.getPlugin('#my-color-picker', 'color-picker').val('#FF0000');
 ```
 
-### destroy()
++ destroy() - Destroy the color picker component and remove it from the DOM.
 
-Destroy the color picker component and remove it from the DOM.
-
+#### Example of Method Usage
 ```javascript
 Metro.getPlugin('#my-color-picker', 'color-picker').destroy();
 ```
 
-## CSS Variables
+## Events
 
-The Color Picker component can be styled using the following CSS variables:
-
-| Variable | Description |
+| Event | Description |
 | --- | --- |
-| --input-box-shadow | Shadow for the focused state |
-| --input-color | Text color for buttons |
-| --input-border-color | Border color for buttons |
-| --input-font-size | Font size for buttons |
-| --input-disabled-color | Text color for disabled state |
-| --border-color | Border color for the color example box |
-| --d-menu-shadow-color | Shadow color for the dropdown |
+| onColorSelected | Triggered when a color is selected |
+| onColorPickerCreate | Triggered when the color picker is created |
 
-## Customizing with CSS
+## Styling with CSS Variables
 
-You can customize the appearance of the Color Picker component by overriding the CSS variables:
+| Variable | Default (Light) | Dark Mode | Description |
+| --- | --- | --- | --- |
+| --input-box-shadow | rgba(0, 123, 255, 0.25) | - | Shadow for the focused state |
+| --input-color | #333 | - | Text color for buttons |
+| --input-border-color | #ccc | - | Border color for buttons |
+| --input-font-size | 14px | - | Font size for buttons |
+| --input-disabled-color | #888 | - | Text color for disabled state |
+| --border-color | #ddd | - | Border color for the color example box |
+| --d-menu-shadow-color | rgba(0, 0, 0, 0.2) | - | Shadow color for the dropdown |
+
+### Example of Custom Styling
 
 ```css
 :root {
@@ -84,12 +106,15 @@ You can customize the appearance of the Color Picker component by overriding the
 }
 ```
 
-## Dependencies
+## Available CSS Classes
 
-The Color Picker component depends on the following components:
-- Input
-- Radio
-- Button
-- Color Selector
+### Base Classes
+- `.color-picker` - Main container class
+- `.color-example-box` - Box displaying the selected color
+- `.color-selector-box` - Container for the color selector dropdown
+- `.buttons` - Container for the picker and clear buttons
 
-Make sure these components are included in your project.
+### Modifiers
+- `.focused` - Applied when the color picker is focused
+- `.disabled` - Applied when the color picker is disabled
+- `.open` - Applied when the color selector dropdown is open

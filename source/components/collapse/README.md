@@ -9,7 +9,7 @@ The Collapse component provides a way to toggle the visibility of content with s
 ```html
 <!-- Basic collapse structure -->
 <div class="collapse-toggle">Toggle Content</div>
-<div class="collapse">
+<div data-role="collapse">
     <p>This content can be collapsed or expanded.</p>
 </div>
 ```
@@ -34,19 +34,24 @@ The Collapse component provides a way to toggle the visibility of content with s
 </div>
 ```
 
-## Plugin Options
+## Plugin Parameters
 
 The Collapse component can be configured with the following options:
 
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| `collapseDeferred` | 0 | Delay in milliseconds before the collapse action starts |
-| `collapsed` | false | Whether the element should be initially collapsed |
-| `toggleElement` | false | Selector for a custom toggle element (if not using the default adjacent toggle) |
-| `duration` | 100 | Duration of the collapse/expand animation in milliseconds |
-| `onExpand` | Metro.noop | Callback function triggered when the element is expanded |
-| `onCollapse` | Metro.noop | Callback function triggered when the element is collapsed |
-| `onCollapseCreate` | Metro.noop | Callback function triggered when the collapse component is created |
+| Parameter | Type | Default | Description |
+| ------ | ------- | ------- | ----------- |
+| `collapseDeferred` | number | 0 | Delay in milliseconds before the collapse action starts |
+| `collapsed` | boolean | false | Whether the element should be initially collapsed |
+| `toggleElement` | string/boolean | false | Selector for a custom toggle element (if not using the default adjacent toggle) |
+| `duration` | number | 100 | Duration of the collapse/expand animation in milliseconds |
+
+### Event Callbacks
+
+| Callback | Description |
+| -------- | ----------- |
+| `onExpand` | Triggered when the element is expanded |
+| `onCollapse` | Triggered when the element is collapsed |
+| `onCollapseCreate` | Triggered when the collapse component is created |
 
 ### Example of Configuration
 
@@ -57,69 +62,77 @@ Metro.collapseSetup({
     collapsed: true
 });
 
-// Individual element setup
-$("#myCollapse").data("collapse").options.duration = 500;
+// Individual element setup via JavaScript
+const collapseElement = Metro.makePlugin("#myCollapse", "collapse", {
+    duration: 500,
+    collapsed: true
+});
 ```
 
 ## API Methods
 
 The Collapse component provides the following API methods:
 
-| Method | Description |
-| ------ | ----------- |
-| `collapse(immediate)` | Collapses the element. If `immediate` is true, collapses without animation |
-| `expand(immediate)` | Expands the element. If `immediate` is true, expands without animation |
-| `close(immediate)` | Alias for `collapse()` |
-| `open(immediate)` | Alias for `expand()` |
-| `isCollapsed()` | Returns true if the element is currently collapsed |
-| `toggleState()` | Toggles between collapsed and expanded states |
+### collapse(immediate)
 
-### Example of API Usage
+Collapses the element. If `immediate` is true, collapses without animation.
 
 ```javascript
-// Get the collapse component instance
-const collapseElement = $("#myCollapse");
-const collapse = collapseElement.data("collapse");
+// Get the collapse component
+const collapse = Metro.getPlugin('#myCollapse', 'collapse');
 
-// Use API methods
-collapse.collapse(); // Collapse with animation
-collapse.expand(true); // Expand immediately without animation
+// Collapse with animation
+collapse.collapse();
 
-// Check state
+// Collapse immediately without animation
+collapse.collapse(true);
+```
+
+### expand(immediate)
+
+Expands the element. If `immediate` is true, expands without animation.
+
+```javascript
+// Expand with animation
+collapse.expand();
+
+// Expand immediately without animation
+collapse.expand(true);
+```
+
+### close(immediate)
+
+Alias for `collapse()`.
+
+### open(immediate)
+
+Alias for `expand()`.
+
+### isCollapsed()
+
+Returns true if the element is currently collapsed.
+
+```javascript
+// Check if element is collapsed
 if (collapse.isCollapsed()) {
     console.log("Element is collapsed");
 }
+```
 
-// Toggle state
+### toggleState()
+
+Toggles between collapsed and expanded states.
+
+```javascript
+// Toggle collapse state
 collapse.toggleState();
 ```
 
-## Styling with CSS Variables
+## Styling
 
-The Collapse component can be styled using the following CSS variables:
+The Collapse component uses CSS transitions for its animations. The collapse effect is achieved by manipulating the `max-height` property with a transition duration of 0.3 seconds.
 
-| Variable | Default (Light) | Dark Mode | Description |
-| -------- | --------------- | --------- | ----------- |
-| `--collapse-toggle-active-color` | inherit | inherit | Color of the toggle element when active |
-| `--collapse-border-color` | #e4e4e4 | #3f3f3f | Border color of the collapse element |
-| `--collapse-background` | transparent | transparent | Background color of the collapse element |
-
-### Example of Custom Styling
-
-```css
-/* Custom styling for a specific collapse element */
-#myCustomCollapse {
-    --collapse-border-color: #2196F3;
-    --collapse-background: #e3f2fd;
-}
-
-/* Custom styling for the toggle element */
-#myCustomCollapse + .collapse-toggle {
-    --collapse-toggle-active-color: #2196F3;
-}
-```
-
-## Available CSS Classes
+### Available CSS Classes
 
 - `.collapse` - The main class for the collapsible content
 - `.collapse-toggle` - Class for the toggle element

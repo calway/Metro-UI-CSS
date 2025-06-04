@@ -1,51 +1,84 @@
 # Chat Component
 
-The Chat component provides a versatile and interactive chat interface for web applications. It supports message exchange, customizable avatars, timestamps, and various styling options.
+The Chat component provides a flexible and interactive messaging interface for applications. It supports both incoming and outgoing messages with avatars, sender names, timestamps, and a message input area with a send button.
+
+## Usage
+
+### Basic Usage
+
+```html
+<div data-role="chat"></div>
+```
+
+### With Configuration Options
+
+```html
+<div data-role="chat" 
+     data-name="John Smith"
+     data-avatar="<span>👨</span>"
+     data-welcome="Welcome to our chat! How can I help you today?"
+     data-welcome-avatar="<span>🤖</span>"
+     data-title="Customer Support"
+     data-width="100%"
+     data-height="400px">
+</div>
+```
+
+### Programmatic Initialization
+
+```javascript
+const chat = Metro.makePlugin("#myChatElement", "chat", {
+    name: "John Smith",
+    avatar: "<span>👨</span>",
+    welcome: "Welcome to our chat! How can I help you today?",
+    welcomeAvatar: "<span>🤖</span>",
+    title: "Customer Support",
+    width: "100%",
+    height: "400px"
+});
+```
 
 ## Plugin Parameters
 
-The Chat component accepts the following configuration options:
-
 | Parameter | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| chatDeferred | number | 0 | Delay before initializing the chat component |
-| inputTimeFormat | string | null | Format for parsing input time strings |
-| timeFormat | string | "D MMM hh:mm A" | Format for displaying message timestamps |
-| name | string | "John Doe" | Default name for outgoing messages |
-| avatar | string | "<span>👦</span>" | HTML content for the default avatar |
-| welcome | string | null | Welcome message text (displayed when chat loads) |
-| welcomeAvatar | string | "<span>👽</span>" | HTML content for the welcome message avatar |
-| title | string | null | Chat window title |
-| width | string | "100%" | Width of the chat component |
-| height | string | "auto" | Height of the chat component |
-| messages | object | null | Initial messages to display in the chat |
-| sendButtonTitle | string | "" | Text for the send button |
-| sendButtonIcon | string | "" | Icon for the send button |
-| readonly | boolean | false | Whether the chat is in read-only mode |
-| clsChat | string | "" | Additional CSS class for the chat container |
-| clsName | string | "" | Additional CSS class for sender names |
-| clsTime | string | "" | Additional CSS class for message timestamps |
-| clsInput | string | "" | Additional CSS class for the input field |
-| clsSendButton | string | "" | Additional CSS class for the send button |
-| clsMessageLeft | string | "default" | Style class for left-aligned messages |
-| clsMessageRight | string | "default" | Style class for right-aligned messages |
-
-## Event Callbacks
-
-| Callback | Description |
-| -------- | ----------- |
-| onMessage | Triggered when a message is added to the chat |
-| onSend | Triggered when a message is sent |
-| onSendButtonClick | Triggered when the send button is clicked |
-| onChatCreate | Triggered when the chat component is created |
+| `chatDeferred` | number | 0 | Deferred initialization time in milliseconds |
+| `inputTimeFormat` | string | null | Format for parsing input time strings |
+| `timeFormat` | string | "D MMM hh:mm A" | Format for displaying message timestamps |
+| `name` | string | "John Doe" | Default name for outgoing messages |
+| `avatar` | string | "<span>👦</span>" | HTML for the avatar of outgoing messages |
+| `welcome` | string | null | Welcome message text (displayed when chat initializes) |
+| `welcomeAvatar` | string | "<span>👽</span>" | HTML for the avatar of the welcome message |
+| `title` | string | null | Title for the chat component |
+| `width` | string | "100%" | Width of the chat component |
+| `height` | string | "auto" | Height of the chat component |
+| `messages` | object | null | Initial messages to display |
+| `sendButtonTitle` | string | "" | Text for the send button |
+| `sendButtonIcon` | string | "" | Icon HTML for the send button |
+| `readonly` | boolean | false | Whether the chat is in read-only mode |
+| `clsChat` | string | "" | Additional CSS class for the chat container |
+| `clsName` | string | "" | Additional CSS class for the sender name |
+| `clsTime` | string | "" | Additional CSS class for the message time |
+| `clsInput` | string | "" | Additional CSS class for the input field |
+| `clsSendButton` | string | "" | Additional CSS class for the send button |
+| `clsMessageLeft` | string | "default" | CSS class for left-aligned messages |
+| `clsMessageRight` | string | "default" | CSS class for right-aligned messages |
 
 ## API Methods
 
-The Chat component provides the following methods:
+To access the Chat API methods, use:
 
-### add(msg)
+```javascript
+const chat = Metro.getPlugin("#myChatElement", "chat");
+```
 
-Adds a single message to the chat.
++ `add(msg)` - Adds a message to the chat. The message object should contain:
+  - `text` - Message text
+  - `time` - Message timestamp
+  - `position` - "left" or "right"
+  - `name` - Sender name
+  - `avatar` - Sender avatar HTML
+  - `id` (optional) - Unique message ID
 
 ```javascript
 chat.add({
@@ -58,9 +91,7 @@ chat.add({
 });
 ```
 
-### addMessages(messages)
-
-Adds multiple messages to the chat.
++ `addMessages(messages)` - Adds multiple messages to the chat.
 
 ```javascript
 chat.addMessages([
@@ -81,119 +112,46 @@ chat.addMessages([
 ]);
 ```
 
-### delMessage(id)
++ `delMessage(id)` - Deletes a message by ID.
 
-Deletes a message by its ID.
++ `updMessage(msg)` - Updates a message. The message object should contain:
+  - `id` - Message ID to update
+  - `text` - New message text
+  - `time` - New message timestamp
 
-```javascript
-chat.delMessage("msg-1");
-```
++ `clear()` - Clears all messages from the chat.
 
-### updMessage(msg)
++ `toggleReadonly(readonly)` - Toggles the read-only state of the chat.
 
-Updates an existing message.
+## Events
 
-```javascript
-chat.updMessage({
-    id: "msg-1",
-    text: "Updated message text",
-    time: new Date()
-});
-```
-
-### clear()
-
-Clears all messages from the chat.
-
-```javascript
-chat.clear();
-```
-
-### toggleReadonly(readonly)
-
-Toggles the read-only state of the chat.
-
-```javascript
-// Set to read-only
-chat.toggleReadonly(true);
-
-// Set to editable
-chat.toggleReadonly(false);
-
-// Toggle current state
-chat.toggleReadonly();
-```
-
-## Usage Examples
-
-### Basic Chat
-
-```html
-<div id="myChat"></div>
-
-<script>
-    const chat = Metro.getPlugin('#myChat', 'chat', {
-        title: "My Chat",
-        name: "User",
-        avatar: "<span>👤</span>",
-        welcome: "Welcome to the chat!",
-        onSend: function(data) {
-            console.log("Message sent:", data.msg);
-        }
-    });
-</script>
-```
-
-### Pre-populated Chat
-
-```html
-<div id="chatWithMessages"></div>
-
-<script>
-    const chat = Metro.getPlugin('#chatWithMessages', 'chat', {
-        title: "Chat History",
-        messages: [
-            {
-                name: "System",
-                avatar: "<span>🤖</span>",
-                text: "Chat started",
-                position: "left",
-                time: "2023-01-01 10:00:00"
-            },
-            {
-                name: "User",
-                avatar: "<span>👤</span>",
-                text: "Hello there!",
-                position: "right",
-                time: "2023-01-01 10:01:00"
-            }
-        ]
-    });
-</script>
-```
+| Event | Description |
+| ----- | ----------- |
+| `onMessage` | Triggered when a message is added to the chat |
+| `onSend` | Triggered when a message is sent |
+| `onSendButtonClick` | Triggered when the send button is clicked |
+| `onChatCreate` | Triggered when the chat component is created |
 
 ## Styling with CSS Variables
 
-The Chat component can be styled using the following CSS variables:
-
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| --chat-border-color | var(--border-color) | var(--border-color) | Border color of the chat container and messages |
-| --chat-background | #ffffff | #343637 | Background color of the chat container |
-| --chat-color | #191919 | #dbdfe7 | Text color in the chat container |
-| --chat-message-background | #f5f5f5 | #4a4d51 | Background color of chat messages |
-| --chat-message-color | #191919 | #dbdfe7 | Text color of chat messages |
+| `--chat-border-color` | var(--border-color) | var(--border-color) | Border color for the chat component |
+| `--chat-background` | #ffffff | #343637 | Background color for the chat component |
+| `--chat-color` | #191919 | #dbdfe7 | Text color for the chat component |
+| `--chat-message-background` | #f5f5f5 | #4a4d51 | Background color for chat messages |
+| `--chat-message-color` | #191919 | #dbdfe7 | Text color for chat messages |
 
 ### Example of Custom Styling
 
 ```css
-/* Custom styling for a specific chat */
-#myChat {
-    --chat-background: #e8f5e9;
-    --chat-color: #1b5e20;
-    --chat-message-background: #c8e6c9;
-    --chat-message-color: #2e7d32;
-    --chat-border-color: #81c784;
+/* Custom styling for chat */
+.custom-chat {
+    --chat-border-color: #2196F3;
+    --chat-background: #E3F2FD;
+    --chat-color: #0D47A1;
+    --chat-message-background: #BBDEFB;
+    --chat-message-color: #0D47A1;
 }
 ```
 
@@ -201,32 +159,27 @@ The Chat component can be styled using the following CSS variables:
 
 ### Base Classes
 - `.chat` - Main container class
-
-### Message Position Classes
-- `.left` - Left-aligned message (typically for received messages)
-- `.right` - Right-aligned message (typically for sent messages)
-
-### Structure Classes
-- `.title` - Chat title section
-- `.messages` - Container for all messages
-- `.message` - Individual message container
-- `.message-item` - Wrapper for avatar and text
-- `.message-avatar` - Message sender's avatar
-- `.message-text` - Message text container
-- `.message-text-inner` - Inner container for message text
-- `.message-sender` - Message sender's name
-- `.message-time` - Message timestamp
+- `.title` - Chat title
+- `.messages` - Messages container
 - `.message-input` - Input area container
 - `.chat-input` - Text input field
 
-### State Classes
-- `.disabled` - Applied to input area when chat is in read-only mode
+### Message Classes
+- `.message` - Message container
+- `.message.left` - Left-aligned message (incoming)
+- `.message.right` - Right-aligned message (outgoing)
+- `.message-item` - Message item container
+- `.message-avatar` - Message avatar
+- `.message-text` - Message text container
+- `.message-text-inner` - Message text content
+- `.message-sender` - Message sender name
+- `.message-time` - Message timestamp
+- `.--next` - Modifier for consecutive messages from the same side
 
 ## Best Practices
 
-1. Always provide meaningful avatars to help users identify message senders
-2. Use consistent positioning (left for received messages, right for sent messages)
-3. Consider using the welcome message to provide instructions or context
-4. Implement proper error handling for message sending and receiving
-5. Use appropriate timeFormat based on your application's requirements
-6. Consider accessibility when designing chat interfaces
+1. Use appropriate avatars to distinguish between different users
+2. Keep message texts concise for better readability
+3. Use the welcome message to provide initial instructions or greeting
+4. Consider using custom styling to match your application's theme
+5. Use the readonly mode for displaying chat history without allowing new messages

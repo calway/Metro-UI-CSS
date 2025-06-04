@@ -2,6 +2,11 @@
 
 The Cookie component provides a simple and efficient way to manage browser cookies. It offers methods for setting, getting, and deleting cookies with various configuration options.
 
+## Dependencies
+
+- Metro UI Core
+- DOM Library
+
 ## Usage
 
 ### Basic Usage
@@ -55,61 +60,66 @@ Metro.cookieSetup({
 // After this, all cookies will use these defaults unless overridden
 ```
 
-## API Reference
+## Plugin Parameters
 
-### Metro.cookieSetup(options)
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `path` | String | "/" | The path where the cookie is valid |
+| `expires` | String | null | Expiration date in UTC string format |
+| `maxAge` | Number | null | Maximum age of the cookie in seconds |
+| `domain` | String | null | Domain where the cookie is valid |
+| `secure` | Boolean | false | If true, cookie is only sent over HTTPS |
+| `samesite` | String | null | CSRF protection setting ("Strict", "Lax", or "None") |
 
-Configures default settings for all cookies.
+## API Methods
 
-**Parameters:**
-- `options` (Object): Configuration options
-  - `path` (String): The path where the cookie is valid (default: "/")
-  - `expires` (String): Expiration date in UTC string format (default: null)
-  - `maxAge` (Number): Maximum age of the cookie in seconds (default: null)
-  - `domain` (String): Domain where the cookie is valid (default: null)
-  - `secure` (Boolean): If true, cookie is only sent over HTTPS (default: false)
-  - `samesite` (String): CSRF protection setting ("Strict", "Lax", or "None") (default: null)
++ **cookieSetup(options)** - Configures default settings for all cookies.
 
-### Metro.cookie.getCookies()
+#### Example of Method Usage
+```javascript
+Metro.cookieSetup({
+    path: "/app",
+    secure: true,
+    samesite: "Lax"
+});
+```
 
-Returns all cookies as an object with cookie names as keys and their values as values.
++ **getCookies()** - Returns all cookies as an object with cookie names as keys and their values as values.
 
-**Returns:**
-- (Object): All cookies
+#### Example of Method Usage
+```javascript
+const allCookies = Metro.cookie.getCookies();
+console.log(allCookies);
+```
 
-### Metro.cookie.getCookie(name)
++ **getCookie(name)** - Gets the value of a specific cookie.
 
-Gets the value of a specific cookie.
+#### Example of Method Usage
+```javascript
+const preference = Metro.cookie.getCookie("user-preference");
+```
 
-**Parameters:**
-- `name` (String): The name of the cookie to retrieve
++ **setCookie(name, value, options)** - Sets a cookie with the specified name, value, and options.
 
-**Returns:**
-- (String|null): The cookie value, or null if the cookie doesn't exist
+#### Example of Method Usage
+```javascript
+// With simple expiration time in milliseconds
+Metro.cookie.setCookie("session-token", "abc123", 3600000);
 
-### Metro.cookie.setCookie(name, value, options)
+// With detailed options
+Metro.cookie.setCookie("user-id", "12345", {
+    path: "/dashboard",
+    secure: true,
+    maxAge: 86400
+});
+```
 
-Sets a cookie with the specified name, value, and options.
++ **delCookie(name)** - Deletes a cookie with the specified name.
 
-**Parameters:**
-- `name` (String): The name of the cookie
-- `value` (String): The value to store in the cookie
-- `options` (Object|Number): 
-  - If a number, it's treated as expiration time in milliseconds
-  - If an object, it can contain the following properties:
-    - `path` (String): The path where the cookie is valid
-    - `expires` (String): Expiration date in UTC string format
-    - `maxAge` (Number): Maximum age of the cookie in seconds
-    - `domain` (String): Domain where the cookie is valid
-    - `secure` (Boolean): If true, cookie is only sent over HTTPS
-    - `samesite` (String): CSRF protection setting ("Strict", "Lax", or "None")
-
-### Metro.cookie.delCookie(name)
-
-Deletes a cookie with the specified name.
-
-**Parameters:**
-- `name` (String): The name of the cookie to delete
+#### Example of Method Usage
+```javascript
+Metro.cookie.delCookie("user-preference");
+```
 
 ## Examples
 

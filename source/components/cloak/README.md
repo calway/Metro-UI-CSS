@@ -1,4 +1,4 @@
-# Cloak Component
+# Cloak
 
 The Cloak component provides a simple way to hide elements initially and then reveal them with a smooth fade-in animation. This is particularly useful for preventing the flash of unstyled content (FOUC) during page load or for elements that should only be shown after certain conditions are met.
 
@@ -6,7 +6,7 @@ The Cloak component provides a simple way to hide elements initially and then re
 
 ### Basic Usage
 
-Add the `cloak` or `m4-cloak` class to elements that should be initially hidden:
+Add the `cloak` class to elements that should be initially hidden:
 
 ```html
 <div class="cloak">
@@ -47,7 +47,7 @@ document.querySelector('.some-element').classList.add('add-cloak');
 - Simple implementation with just CSS classes
 - Compatible with any HTML element
 
-## Available Classes
+## Available CSS Classes
 
 | Class | Description |
 | ----- | ----------- |
@@ -99,3 +99,33 @@ Use with JavaScript to enhance the user experience:
 
 - Fade-in animation duration: 1 second (linear)
 - Fade-out animation duration: 1 second (linear)
+
+## CSS Implementation
+
+The cloak component is implemented using CSS animations:
+
+```css
+.cloak, .m4-cloak {
+    opacity: 0!important;
+}
+
+.remove-cloak {
+    animation: kf-fadeIn 1s linear forwards
+}
+
+.add-cloak {
+    animation: kf-fadeOut 1s linear forwards
+}
+
+@keyframes kf-fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes kf-fadeOut {
+    100% {
+        opacity: 0;
+    }
+}
+```

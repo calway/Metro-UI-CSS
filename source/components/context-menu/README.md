@@ -1,109 +1,135 @@
-# Context Menu Component
+# Context Menu
 
-The Context Menu component provides a customizable right-click menu for any element on your page. It allows you to define menu items with various options including text, icons, links, and nested submenus.
+The Context Menu component provides a customizable right-click menu for elements on your page. It allows you to create hierarchical menus with icons, links, and custom actions.
+
+## Dependencies
+
+The Context Menu component depends on the following components:
+- D-Menu
+- Dropdown (for sub-menus)
 
 ## Usage
 
 ### Basic Usage
 
-```javascript
-// Create a context menu for the entire document
+```html
+<script>
 Metro.contextMenu([
-    { text: "Cut", icon: "<span class='mif-scissors'></span>", onclick: function() { console.log("Cut action"); } },
-    { text: "Copy", icon: "<span class='mif-copy'></span>", onclick: function() { console.log("Copy action"); } },
-    { text: "Paste", icon: "<span class='mif-paste'></span>", onclick: function() { console.log("Paste action"); } },
-    { type: "divider" },
-    { text: "Delete", icon: "<span class='mif-bin'></span>", onclick: function() { console.log("Delete action"); } }
-]);
-
-// Create a context menu for a specific element
-const element = document.getElementById("my-element");
-Metro.contextMenu([
-    { text: "Edit", onclick: function() { console.log("Edit action"); } },
-    { text: "Delete", onclick: function() { console.log("Delete action"); } }
-], element);
-```
-
-### Menu Items with Submenu
-
-```javascript
-Metro.contextMenu([
-    { 
-        text: "File", 
-        items: [
-            { text: "New", icon: "<span class='mif-file-empty'></span>" },
-            { text: "Open", icon: "<span class='mif-folder-open'></span>" },
-            { text: "Save", icon: "<span class='mif-floppy-disk'></span>" }
-        ]
+    {
+        text: "Home",
+        href: "index.html",
+        icon: "<span class='mif-home'>"
     },
-    { 
-        text: "Edit", 
-        items: [
-            { text: "Cut", icon: "<span class='mif-scissors'></span>" },
-            { text: "Copy", icon: "<span class='mif-copy'></span>" },
-            { text: "Paste", icon: "<span class='mif-paste'></span>" }
-        ]
+    {
+        text: "About",
+        href: "about.html",
+        icon: "<span class='mif-person'>"
+    },
+    {
+        type: "divider"
+    },
+    {
+        text: "Click",
+        onclick: "alert('Click!')"
     }
-], element);
+]);
+</script>
 ```
 
-### Disabled Items and Custom Attributes
+### Additional Configurations
 
-```javascript
+#### Context Menu for Specific Element
+
+```html
+<div id="myElement">Right-click on me</div>
+
+<script>
 Metro.contextMenu([
-    { text: "Enabled option", onclick: function() { console.log("Clicked"); } },
-    { text: "Disabled option", disabled: true },
-    { 
-        text: "Custom attributes", 
-        attributes: {
-            "data-role": "custom-item",
-            "data-custom": "value"
-        }
+    {
+        text: "Element Menu",
+        href: "index.html",
+        icon: "<span class='mif-home'>"
     }
-], element);
+], document.getElementById("myElement"));
+</script>
+```
+
+#### Sub-Menus
+
+```html
+<script>
+Metro.contextMenu([
+    {
+        text: "Menu",
+        icon: "<span class='mif-menu'>",
+        items: [
+            {
+                text: "Sub-Item 1",
+                onclick: "alert('Sub-Item 1')"
+            },
+            {
+                text: "Sub-Item 2",
+                onclick: "alert('Sub-Item 2')"
+            }
+        ]
+    }
+]);
+</script>
 ```
 
 ## Plugin Parameters
 
-The Context Menu component accepts the following parameters:
+The `Metro.contextMenu()` function accepts the following parameters:
 
 | Parameter | Type | Default | Description |
-| --------- | ---- | ------- | ----------- |
+| --- | --- | --- | --- |
 | items | Array | [] | Array of menu item objects |
 | element | DOM Element | document | The element to attach the context menu to |
 
-## Menu Item Properties
-
-Each menu item can have the following properties:
+### Menu Item Properties
 
 | Property | Type | Description |
-| -------- | ---- | ----------- |
-| text | String | The text content of the menu item |
-| icon | String | HTML for an icon to display before the text |
-| href | String | URL for the menu item (defaults to "#") |
-| onclick | Function | Click event handler function |
+| --- | --- | --- |
+| text | String | The text to display in the menu item |
+| href | String | Optional URL for the menu item |
+| icon | String | Optional HTML for an icon |
+| onclick | Function/String | Function or string to execute when the item is clicked |
+| items | Array | Optional array of sub-menu items |
+| type | String | Set to "divider" to create a divider line |
+| disabled | Boolean | Set to true to disable the menu item |
 | attributes | Object | Additional HTML attributes to add to the menu item |
-| disabled | Boolean | Whether the item is disabled |
-| items | Array | Array of submenu items |
-| type | String | Set to "divider" to create a separator line |
+
+## API Methods
+
+The Context Menu component doesn't expose specific API methods beyond its initialization function.
+
+## Events
+
+The Context Menu component doesn't have specific events, but you can define custom click handlers for each menu item using the `onclick` property.
 
 ## Styling with CSS Variables
 
-The Context Menu component inherits styling from the d-menu component and can be customized using the following CSS variables:
+The Context Menu component inherits styling from the D-Menu component and uses the following z-index variable:
 
 | Variable | Default (Light) | Dark Mode | Description |
-| -------- | --------------- | --------- | ----------- |
-| `--menu-background` | #ffffff | #1b1e1f | Background color of the menu |
-| `--menu-border-color` | #dadbdc | #3f4245 | Border color of the menu |
-| `--menu-dropdown-shadow` | 0 2px 4px rgba(0,0,0,.2) | 0 2px 4px rgba(0,0,0,.4) | Shadow for dropdown menus |
-| `--menu-item-hover-background` | #f0f0f0 | #2b2d30 | Background color of menu items on hover |
-| `--menu-item-hover-color` | #1d1d1d | #ffffff | Text color of menu items on hover |
-| `--menu-item-color` | #3a3a3a | #e6e6e6 | Default text color of menu items |
+| --- | --- | --- | --- |
+| --zindex-fixed | 1030 | 1030 | Base z-index for fixed elements |
 
-## Additional Information
+The context menu's z-index is set to `var(--zindex-fixed) + 1` to ensure it appears above other fixed elements.
 
-- The context menu is automatically hidden when clicking anywhere on the page
-- The menu appears at the exact position of the right-click
-- The component uses the d-menu component for styling and dropdown functionality
-- Submenus are implemented using the dropdown component
-- The context menu has a z-index of one level higher than fixed elements to ensure it appears above other content
+## Available CSS Classes
+
+### Base Classes
+- `.context-menu` - The main context menu class
+- `.d-menu` - Inherited from the D-Menu component
+
+### Inherited Classes from D-Menu
+- `.divider` - Class for menu dividers
+- `.dropdown-toggle` - Class for items with sub-menus
+
+## Behavior
+
+- The context menu appears at the cursor position when right-clicking on the target element
+- The menu automatically hides when clicking anywhere else on the page
+- Sub-menus are displayed as dropdown menus
+- Menu items can be disabled by setting the `disabled` property to true

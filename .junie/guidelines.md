@@ -221,6 +221,16 @@ const accordion = Metro.getPlugin("#myAccordion", "accordion");
    Brief description of what the component does and its main features.
    ```
 
+#### **Dependencies**
+   Залежності, які потрібні для коректної роботи компонента, можна визначити в файлі index.js компонента через додаткові імпорти.
+   ```markdown
+   ## Dependencies
+   
+   List any dependencies required for the component to function properly.
+   - Dependency 1
+   - Dependency 2
+   ```
+
 #### **Usage Examples**
    ```markdown
    ## Usage
@@ -252,8 +262,8 @@ const accordion = Metro.getPlugin("#myAccordion", "accordion");
    ## API Methods
 
    + Method1(arg) - Description of what the method does.
-   + Method2(arg, arg) - Description of what the method does.
    
+   #### Example of Method Usage
    ```javascript
    const comp = Metro.getPlugin('#element', 'component-name');
    comp.methodName();
