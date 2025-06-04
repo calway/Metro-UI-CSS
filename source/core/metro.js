@@ -40,7 +40,7 @@ import { Props } from "./props.js";
         defaults: {},
 
         info: () => {
-            if (typeof globalThis.METRO_SHOW_INFO !== "undefined") {
+            if (globalThis.METRO_SHOW_INFO) {
                 Metro.welcome();
             }
         },

@@ -30,7 +30,7 @@ The Accordion component provides a way to organize content into collapsible sect
 Metro.makePlugin("#myAccordion", "accordion");
 
 // Access the accordion object
-const accordion = $("#myAccordion").data("accordion");
+const accordion = Metro.getPlugin("#myAccordion", "accordion");
 ```
 
 ## Plugin Parameters
@@ -63,40 +63,16 @@ const accordion = $("#myAccordion").data("accordion");
 
 ## API Methods
 
-### open(index)
-
-Opens the frame at the specified index.
++ `open(index)` - Opens the frame at the specified index.
++ `close(index)` - Closes the frame at the specified index.
++ `toggle(index)` - Toggles the state of the frame at the specified index.
++ `getActive()` - Returns an array of indices of currently active (open) frames.
++ `destroy()` - Destroys the accordion component and removes all event listeners.
 
 ```javascript
 // Opens the third frame (index 2)
-Metro.getPlugin('#myAccordion', 'accordion').open(2);
-```
-
-### close(index)
-
-Closes the frame at the specified index.
-
-```javascript
-// Closes the first frame (index 0)
-Metro.getPlugin('#myAccordion', 'accordion').close(0);
-```
-
-### toggle(index)
-
-Toggles the state of the frame at the specified index.
-
-```javascript
-// Toggles the second frame (index 1)
-Metro.getPlugin('#myAccordion', 'accordion').toggle(1);
-```
-
-### getActive()
-
-Returns an array of indices of currently active (open) frames.
-
-```javascript
-const activeFrames = Metro.getPlugin('#myAccordion', 'accordion').getActive();
-console.log(activeFrames); // e.g., [0, 2] if first and third frames are open
+const accordion = Metro.getPlugin('#myAccordion', 'accordion')
+accordion.open(2);
 ```
 
 ## Styling with CSS Variables

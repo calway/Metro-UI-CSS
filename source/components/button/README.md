@@ -6,9 +6,12 @@ The Button component provides a versatile and customizable way to create buttons
 
 ### Basic Buttons
 
+To create a button, you must add class `button` to an element.
+Elements `BUTTON`, `INPUT[TYPE=button]`, `INPUT[TYPE=submit]`, and `INPUT[TYPE=reset]` styled by default and don't require a class `button`.
+
 ```html
 <!-- Standard button -->
-<button class="button">Standard Button</button>
+<button>Standard Button</button>
 
 <!-- Link styled as button -->
 <a href="#" class="button">Link Button</a>
@@ -21,28 +24,42 @@ The Button component provides a versatile and customizable way to create buttons
 
 ### Button Variants
 
++ `default` - Standard button with default styling
++ `flat-button` - Button with flat appearance
++ `outline` - Button with transparent background and colored border
++ `link` - Button that looks like a link
+
 ```html
 <!-- Flat button -->
 <button class="flat-button">Flat Button</button>
 
 <!-- Outline button -->
-<button class="button outline">Outline Button</button>
+<button class="outline">Outline Button</button>
 
 <!-- Link style button -->
-<button class="button link">Link Button</button>
+<button class="link">Link Button</button>
 ```
 
 ### Button Sizes
 
++ `mini` - Very small button (height: 20px)
++ `small` - Small button (height: 26px)
++ `medium` - Medium button (height: 30px)
++ `default` - Default size button (height: 36px)
++ `large` - Large button (height: 54px)
+
 ```html
 <!-- Mini button -->
-<button class="button mini">Mini</button>
+<button class="mini">Mini</button>
 
 <!-- Small button -->
-<button class="button small">Small</button>
+<button class="small">Small</button>
+
+<!-- Medium button -->
+<button class="medium">Medium</button>
 
 <!-- Default size button -->
-<button class="button">Default</button>
+<button>Default</button>
 
 <!-- Large button -->
 <button class="button large">Large</button>
@@ -73,8 +90,8 @@ The Button component provides a versatile and customizable way to create buttons
 
 <!-- Loading button -->
 <button class="button loading">
-    <span class="load-marker mif-spinner"></span>
-    <span class="load-caption">Loading</span>
+    <span class="loader"><span class="mif-spinner"></span></span>
+    <span class="caption">Loading</span>
 </button>
 ```
 
@@ -90,18 +107,30 @@ The Button component provides a versatile and customizable way to create buttons
 
 ### Color Variants
 
-```html
-<!-- Colored buttons -->
-<button class="button button-primary">Primary</button>
-<button class="button button-secondary">Secondary</button>
-<button class="button button-success">Success</button>
-<button class="button button-warning">Warning</button>
-<button class="button button-alert">Alert</button>
-<button class="button button-info">Info</button>
+#### Accent Buttons
+To create buttons with specific color accents, you can use the following classes:
++ `primary` - Blue accent
++ `secondary` - Gray accent
++ `success` - Green accent
++ `warning` - Yellow accent
++ `alert` - Red accent
++ `info` - Light blue accent
 
-<!-- Soft colored buttons -->
-<button class="button button-soft-primary">Soft Primary</button>
-<button class="button button-soft-secondary">Soft Secondary</button>
+```html
+<button class="button primary">Primary</button>
+<button class="button secondary">Secondary</button>
+<button class="button success">Success</button>
+<button class="button warning">Warning</button>
+<button class="button alert">Alert</button>
+<button class="button info">Info</button>
+```
+
+#### Colored Buttons
+You can also create buttons with specific colors using the `button-soft-{color}` and `button-{color}` classes.
+
+```html
+<button class="button button-red">Soft Primary</button>
+<button class="button button-soft-red">Soft Primary</button>
 ```
 
 ## Styling with CSS Variables
@@ -141,6 +170,7 @@ The Button component can be styled using the following CSS variables:
 ### Size Modifiers
 - `.mini` - Very small button
 - `.small` - Small button
+- `.medium` - Medium-sized button
 - `.large` - Large button
 - `.mini-{breakpoint}`, `.small-{breakpoint}`, `.large-{breakpoint}` - Responsive size variants
 
@@ -161,7 +191,7 @@ The Button component can be styled using the following CSS variables:
 - `.loading` - Button in loading state
 
 ### Color Classes
-- `.button-{color}` - Button with specified color (e.g., `.button-primary`, `.button-success`)
+- Color classes can be applied directly (e.g., `.primary`, `.success`)
 - `.button-soft-{color}` - Button with soft color variant
 
 ## Accessibility

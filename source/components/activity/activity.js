@@ -116,7 +116,7 @@
         changeAttribute: (attributeName) => {},
 
         destroy: function () {
-            return this.element;
+            this.element.remove()
         },
     });
 

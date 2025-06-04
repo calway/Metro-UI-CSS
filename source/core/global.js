@@ -31,7 +31,7 @@
     globalThis.METRO_JQUERY = meta_jquery ? JSON.parse(meta_jquery) : true;
     globalThis.useJQuery = globalThis.jquery_present && globalThis.METRO_JQUERY;
 
-    globalThis.METRO_SHOW_INFO = meta_info ? JSON.parse(meta_info) : true;
+    globalThis.METRO_SHOW_INFO = meta_info ? JSON.parse(meta_info) : false;
     globalThis.METRO_DEBUG = meta_debug ? JSON.parse(meta_debug) : false;
 
     globalThis.METRO_CLOAK_REMOVE = meta_cloak ? `${meta_cloak}`.toLowerCase() : "fade";

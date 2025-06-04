@@ -8,15 +8,24 @@ Bulls is a component that displays different types of status indicators as SVG i
 <div data-role="bull" data-type="success" data-size="24"></div>
 ```
 
-## Parameters
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | type | string | "success" | Type of bull icon. Possible values: "success", "fail", "pending", "warning", "bulb", "default" |
 | size | number | 16 | Size of the bull icon in pixels |
 | onBullCreate | function | Metro.noop | Callback function triggered when the bull is created |
+| onBullChange | function | Metro.noop | Callback function triggered when the bull type is changed |
 
 ## API Methods
+
+### setType(type)
+Changes the type of the bull component.
+
+```javascript
+var bull = Metro.getPlugin('#myBull', 'bull');
+bull.setType('warning');
+```
 
 ### changeAttribute(attr, value)
 Changes the attribute of the bull component.
@@ -82,6 +91,7 @@ Metro.bullSetup({
 | Event | Description |
 | --- | --- |
 | bull-create | Triggered when the bull component is created |
+| bull-change | Triggered when the bull type is changed |
 
 ## Styling
 

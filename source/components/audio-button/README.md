@@ -1,68 +1,66 @@
-# Audio Button Component
+# Audio Button
 
 The Audio Button component allows you to create buttons that play audio when clicked. It provides a simple way to add sound effects to your user interface elements.
 
 ## Usage
 
+### Basic Usage
+
 ```html
-<button class="button" data-role="audio-button" data-audio-src="path/to/sound.mp3">
+<button data-role="audio-button" data-audio-src="path/to/sound.mp3">
     Click to play sound
 </button>
 ```
 
-## Parameters
+### Additional Configurations
+
+```html
+<!-- Audio button with custom volume -->
+<button data-role="audio-button" 
+        data-audio-src="sounds/success.mp3" 
+        data-audio-volume="0.8">
+    Success
+</button>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| audioVolume | number | 0.5 | Volume level for the audio (0.0 to 1.0) |
-| audioSrc | string | "" | Path to the audio file |
+| `audioVolume` | number | 0.5 | Volume level for the audio (0.0 to 1.0) |
+| `audioSrc` | string | "" | Path to the audio file |
+| `onAudioStart` | function | Metro.noop | Triggered when audio starts playing |
+| `onAudioEnd` | function | Metro.noop | Triggered when audio finishes playing |
+| `onAudioButtonCreate` | function | Metro.noop | Triggered when audio button is created |
 
-## Methods
+## API Methods
 
-### play(callback)
-Plays the audio.
++ `play(callback)` - Plays the audio. The callback function receives the audio element as a parameter.
++ `stop(callback)` - Stops the audio and resets it to the beginning. The callback function receives the audio element as a parameter.
++ `destroy()` - Destroys the audio button component.
 
 ```javascript
-var audioButton = Metro.getPlugin('#my-audio-button', 'audio-button');
+const audioButton = Metro.getPlugin('#my-audio-button', 'audio-button');
 audioButton.play(function(audio){
     console.log("Audio started playing");
 });
-```
-
-### stop(callback)
-Stops the audio and resets it to the beginning.
-
-```javascript
-var audioButton = Metro.getPlugin('#my-audio-button', 'audio-button');
-audioButton.stop(function(audio){
-    console.log("Audio stopped");
-});
-```
-
-### destroy()
-Destroys the audio button component.
-
-```javascript
-var audioButton = Metro.getPlugin('#my-audio-button', 'audio-button');
-audioButton.destroy();
 ```
 
 ## Events
 
 | Event | Description |
 | --- | --- |
-| onAudioStart | Triggered when audio starts playing |
-| onAudioEnd | Triggered when audio finishes playing |
-| onAudioButtonCreate | Triggered when audio button is created |
+| `onAudioStart` | Triggered when audio starts playing |
+| `onAudioEnd` | Triggered when audio finishes playing |
+| `onAudioButtonCreate` | Triggered when audio button is created |
 
-## Attributes
+## Styling with CSS Variables
 
-You can change the audio source and volume using data attributes:
+The Audio Button component doesn't have specific CSS variables as it uses the standard button styling.
 
-| Attribute | Description |
-| --- | --- |
-| data-audio-src | Path to the audio file |
-| data-audio-volume | Volume level for the audio (0.0 to 1.0) |
+## Available CSS Classes
+
+The Audio Button component doesn't add any specific CSS classes beyond the standard button classes.
 
 ## Metro.playSound Utility
 

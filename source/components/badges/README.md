@@ -1,13 +1,19 @@
-# Badges Component
+# Badges
 
 The Badges component provides a simple way to add small, customizable badges to your UI elements. Badges can be used to display counts, status indicators, or labels.
 
 ## Usage
 
+### Basic Usage
+
 ```html
 <!-- Basic usage -->
 <span class="badge">New</span>
+```
 
+### Additional Configurations
+
+```html
 <!-- Badge in corner position -->
 <div style="position: relative; width: 100px; height: 100px; background-color: #f0f0f0;">
     <span class="badge corner">8</span>
@@ -19,19 +25,7 @@ The Badges component provides a simple way to add small, customizable badges to 
 </div>
 ```
 
-## Classes
-
-The Badges component provides the following classes:
-
-| Class | Description |
-| ----- | ----------- |
-| `.badge` | The main class for creating a badge |
-| `.badge.corner` | Positions the badge in the top-right corner of a relative-positioned parent |
-| `.badge.corner-outside` | Positions the badge outside the parent element in the top-right corner |
-
-## Styling with CSS Variables
-
-The Badges component can be styled using the following CSS variables:
+## CSS Variables
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
@@ -49,6 +43,15 @@ The Badges component can be styled using the following CSS variables:
     --badge-border-radius: 12px;
 }
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.badge` - The main class for creating a badge
+
+### Modifiers
+- `.corner` - Positions the badge in the top-right corner of a relative-positioned parent
+- `.corner-outside` - Positions the badge outside the parent element in the top-right corner
 
 ## Additional Information
 

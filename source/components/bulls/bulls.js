@@ -6,6 +6,7 @@
         type: "success", // success, fail, pending
         size: 16,
         onBullCreate: Metro.noop,
+        onBullChange: Metro.noop,
     };
 
     Metro.bullSetup = (options) => {
@@ -56,6 +57,19 @@
             element.clear().html(bull);
         },
 
+        setType: function (type = "default") {
+            const element = this.element;
+            const o = this.options;
+
+            if (type === o.type) {
+                return;
+            }
+
+            o.type = type.toLowerCase();
+            this._createStructure();
+            this._fireEvent("bull-change");
+        },
+        
         changeAttribute: function (attr, value) {
             if (attr === "data-type") {
                 this._createStructure();

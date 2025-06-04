@@ -6,6 +6,8 @@ The Adblock Detection component provides functionality to detect if a user has a
 
 The Adblock Detection component is automatically initialized when the Metro UI framework is loaded. No additional markup is required.
 
+### Basic Usage
+
 ```javascript
 // Listen for adblock detection events
 $(window).on("adblock-alert", function() {
@@ -14,30 +16,49 @@ $(window).on("adblock-alert", function() {
 });
 ```
 
-## Configuration Options
+### Configuration
 
-The Adblock Detection component can be configured with the following options:
+```javascript
+// Configure adblock detection globally
+Metro.adblockSetup({
+    checkInterval: 2000,
+    fireOnce: true,
+    localhost: false
+});
+```
 
-| Option | Type | Default | Description |
-| ------ | ---- | ------- | ----------- |
-| adblockDeferred | number | 0 | Deferred initialization time in milliseconds |
-| checkInterval | number | 1000 | Interval in milliseconds to check for ad blockers |
-| fireOnce | boolean/number | true | Whether to fire the alert event only once (true), or a specific number of times |
-| checkStop | number | 10 | Number of checks before stopping even if no ad blocker is detected |
-| localhost | boolean | false | Whether to check for ad blockers on localhost |
-| onAlert | function | Metro.noop | Callback function triggered when an ad blocker is detected |
-| onFishingStart | function | Metro.noop | Callback function triggered when the detection starts |
-| onFishingDone | function | Metro.noop | Callback function triggered when the detection is done |
+## Plugin Parameters
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `adblockDeferred` | number | 0 | Deferred initialization time in milliseconds |
+| `checkInterval` | number | 1000 | Interval in milliseconds to check for ad blockers |
+| `fireOnce` | boolean/number | true | Whether to fire the alert event only once (true), or a specific number of times |
+| `checkStop` | number | 10 | Number of checks before stopping even if no ad blocker is detected |
+| `localhost` | boolean | false | Whether to check for ad blockers on localhost |
+| `onAlert` | function | Metro.noop | Callback function triggered when an ad blocker is detected |
+| `onFishingStart` | function | Metro.noop | Callback function triggered when the detection starts |
+| `onFishingDone` | function | Metro.noop | Callback function triggered when the detection is done |
 
 ## Events
 
-The Adblock Detection component fires the following events:
-
 | Event | Description |
 | ----- | ----------- |
-| adblock-alert | Fired when an ad blocker is detected |
-| fishing-start | Fired when the detection process starts |
-| fishing-done | Fired when the detection process is complete |
+| `adblock-alert` | Fired when an ad blocker is detected |
+| `fishing-start` | Fired when the detection process starts |
+| `fishing-done` | Fired when the detection process is complete |
+
+## API Methods
+
+The Adblock component provides the following methods through the `Metro.Adblock` object:
+
++ `bite()` - Initiates the adblock detection process by creating a hidden element with ad-related classes.
++ `fishing()` - Starts checking for ad blockers by monitoring the visibility of the created element.
+
+```javascript
+// Manually start the adblock detection
+Metro.Adblock.bite();
+```
 
 ## How It Works
 

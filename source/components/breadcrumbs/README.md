@@ -4,6 +4,8 @@ The Breadcrumbs component provides a simple way to show the current page locatio
 
 ## Usage
 
+### Basic Usage
+
 ```html
 <!-- Default style -->
 <ul class="breadcrumbs default">
@@ -12,26 +14,40 @@ The Breadcrumbs component provides a simple way to show the current page locatio
     <li><a href="#">Data</a></li>
     <li class="active"><a href="#">Bootstrap</a></li>
 </ul>
+```
 
-<!-- Arrow style -->
+### Additional Configurations
+
+```html
+<!-- Arrow style with counters -->
 <ul class="breadcrumbs arrow">
     <li><a href="#"><span class="icon mif-home"></span></a></li>
     <li><a href="#">Library</a></li>
     <li><a href="#">Data</a></li>
     <li class="active"><a href="#">Bootstrap</a></li>
 </ul>
+
+<!-- Custom styled breadcrumbs -->
+<ul class="breadcrumbs default" style="--breadcrumbs-background: #f0f0f0; --breadcrumbs-color: #333333;">
+    <li><a href="#"><span class="icon mif-home"></span>Home</a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active"><a href="#">Data</a></li>
+</ul>
 ```
 
-## Classes
+## Available CSS Classes
 
-The Breadcrumbs component provides the following classes:
+### Base Classes
+- `.breadcrumbs` - The main container class for breadcrumbs
+- `.breadcrumbs.default` - Creates breadcrumbs with a simple "›" separator
+- `.breadcrumbs.arrow` - Creates arrow-shaped breadcrumbs with automatic counters
 
-| Class | Description |
-| ----- | ----------- |
-| `.breadcrumbs` | The main class for creating breadcrumbs |
-| `.breadcrumbs.default` | Creates breadcrumbs with a simple "›" separator |
-| `.breadcrumbs.arrow` | Creates arrow-shaped breadcrumbs with counters |
-| `.active` | Marks the current/active item in the breadcrumb trail |
+### Modifier Classes
+- `.active` - Marks the current/active item in the breadcrumb trail
+
+### Element Classes
+- `.icon` - For including icons within breadcrumb items
+- `.caption` - For styling text within breadcrumb items (optional)
 
 ## Styling with CSS Variables
 
@@ -81,6 +97,24 @@ The arrow style breadcrumbs can be customized using the following CSS variables:
 }
 ```
 
+## HTML Structure
+
+The breadcrumbs component uses a simple unordered list structure:
+
+```html
+<ul class="breadcrumbs [style]">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+    <li class="active"><a href="#">Current Item</a></li>
+</ul>
+```
+
+Where:
+- `[style]` is either `default` or `arrow`
+- Each item is a list item with an anchor tag
+- The current/active item should have the class `active`
+- Icons can be included using `<span class="icon [icon-class]"></span>`
+
 ## Additional Information
 
 The Breadcrumbs component:
@@ -90,3 +124,4 @@ The Breadcrumbs component:
 - Provides two distinct visual styles (default and arrow)
 - Uses flexbox for proper alignment
 - The last item in the breadcrumb trail is automatically styled differently (bold in default style)
+- Arrow style includes automatic counters for each item
