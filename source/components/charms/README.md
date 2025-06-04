@@ -16,6 +16,11 @@ The Charms component provides a panel that can be positioned on any side of the 
 <div data-role="charms" data-position="left">
     <!-- Content goes here -->
 </div>
+
+<!-- Charms panel with custom opacity -->
+<div data-role="charms" data-opacity="0.8">
+    <!-- Content goes here -->
+</div>
 ```
 
 ### Controlling Charms
@@ -117,21 +122,20 @@ These methods can be called directly from the Metro.charms object:
 
 ## Styling with CSS Variables
 
-The Charms component can be styled using the following CSS variables:
+The Charms component uses the following LESS variables for styling:
 
-| Variable | Default | Description |
-| -------- | ------- | ----------- |
-| @zindex-charms | (defined in vars) | Z-index of the charms component |
-| @dark | (defined in vars) | Default background color |
-| @white | (defined in vars) | Default text color |
-| @transition-transform | (defined in vars) | Transition effect for opening/closing |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| @zindex-charms | 1090 | - | Z-index of the charms component |
+| @dark | #1d1d1d | - | Default background color |
+| @white | #ffffff | - | Default text color |
+| @transition-transform | .3s ease | - | Transition effect for opening/closing |
 
 ### Example of Custom Styling
 
 ```css
 /* Custom styling for a specific charms panel */
 #my-charms {
-    --zindex-charms: 1050;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
 }
@@ -140,18 +144,26 @@ The Charms component can be styled using the following CSS variables:
 ## Available CSS Classes
 
 ### Base Classes
-- `.charms` - Main container class
+- `.charms` - Main container class (automatically added)
 - `.charm-tile` - Tile element within charms
 - `.charm-notify` - Notification element within charms
 
 ### Position Modifiers
-- `.top-side` - Positions charms at the top
-- `.bottom-side` - Positions charms at the bottom
-- `.left-side` - Positions charms at the left
-- `.right-side` - Positions charms at the right
+- `.top-side` - Positions charms at the top (automatically added based on position)
+- `.bottom-side` - Positions charms at the bottom (automatically added based on position)
+- `.left-side` - Positions charms at the left (automatically added based on position)
+- `.right-side` - Positions charms at the right (automatically added based on position)
 
 ### State Classes
 - `.open` - Applied when charms is open
+
+### Element Classes
+- `.charm-tile .icon` - Icon within a charm tile
+- `.charm-tile .caption` - Caption text within a charm tile
+- `.charm-notify .icon` - Icon within a charm notification
+- `.charm-notify .title` - Title within a charm notification
+- `.charm-notify .content` - Content within a charm notification
+- `.charm-notify .secondary` - Secondary text within a charm notification
 
 ## Best Practices
 

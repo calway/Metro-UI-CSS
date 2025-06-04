@@ -49,41 +49,41 @@ The Carousel component provides a versatile and customizable slideshow for cycli
 
 The Carousel component accepts the following configuration options:
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| `autoStart` | `false` | Whether to automatically start the carousel |
-| `width` | `"100%"` | Width of the carousel |
-| `height` | `"16/9"` | Height of the carousel (can be aspect ratio like "16/9", "4/3", "21/9" or a fixed pixel value) |
-| `effect` | `"slide"` | Transition effect between slides. Options: "slide", "slide-v", "fade", "switch", "zoom", "swirl" |
-| `effectFunc` | `"linear"` | Easing function for the transition effect |
-| `direction` | `"left"` | Direction of the carousel movement. Options: "left", "right" |
-| `duration` | `300` | Duration of the transition effect in milliseconds |
-| `period` | `5000` | Time between slide transitions in milliseconds |
-| `stopOnMouse` | `true` | Whether to pause the carousel when the mouse hovers over it |
-| `controls` | `true` | Whether to show the next/previous controls |
-| `controlsOnMouse` | `false` | Whether to show controls only when the mouse hovers over the carousel |
-| `controlsOutside` | `false` | Whether to position controls outside the carousel |
-| `controlPrev` | `"&larr;"` | HTML content for the previous control |
-| `controlNext` | `"&rarr;"` | HTML content for the next control |
-| `bullets` | `true` | Whether to show the bullet navigation |
-| `bulletsStyle` | `"square"` | Style of the bullets. Options: "square", "circle", "rect", "diamond" |
-| `bulletsSize` | `"default"` | Size of the bullets. Options: "default", "mini", "small", "large" |
-| `bulletsPosition` | `"default"` | Position of the bullets. Options: "default", "left", "right" |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `autoStart` | boolean | `false` | Whether to automatically start the carousel |
+| `width` | string | `"100%"` | Width of the carousel |
+| `height` | string | `"16/9"` | Height of the carousel (can be aspect ratio like "16/9", "4/3", "21/9" or a fixed pixel value) |
+| `effect` | string | `"slide"` | Transition effect between slides. Options: "slide", "slide-v", "fade", "switch", "zoom", "swirl" |
+| `effectFunc` | string | `"linear"` | Easing function for the transition effect |
+| `direction` | string | `"left"` | Direction of the carousel movement. Options: "left", "right" |
+| `duration` | number | `300` | Duration of the transition effect in milliseconds |
+| `period` | number | `5000` | Time between slide transitions in milliseconds |
+| `stopOnMouse` | boolean | `true` | Whether to pause the carousel when the mouse hovers over it |
+| `controls` | boolean | `true` | Whether to show the next/previous controls |
+| `controlsOnMouse` | boolean | `false` | Whether to show controls only when the mouse hovers over the carousel |
+| `controlsOutside` | boolean | `false` | Whether to position controls outside the carousel |
+| `controlPrev` | string | `"&larr;"` | HTML content for the previous control |
+| `controlNext` | string | `"&rarr;"` | HTML content for the next control |
+| `bullets` | boolean | `true` | Whether to show the bullet navigation |
+| `bulletsStyle` | string | `"square"` | Style of the bullets. Options: "square", "circle", "rect", "diamond" |
+| `bulletsSize` | string | `"default"` | Size of the bullets. Options: "default", "mini", "small", "large" |
+| `bulletsPosition` | string | `"default"` | Position of the bullets. Options: "default", "left", "right" |
 
 ### CSS Class Parameters
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| `clsCarousel` | `""` | Additional CSS class for the carousel element |
-| `clsSlides` | `""` | Additional CSS class for the slides container |
-| `clsSlide` | `""` | Additional CSS class for each slide |
-| `clsControls` | `""` | Additional CSS class for the controls |
-| `clsControlNext` | `""` | Additional CSS class for the next control |
-| `clsControlPrev` | `""` | Additional CSS class for the previous control |
-| `clsBullets` | `""` | Additional CSS class for the bullets container |
-| `clsBullet` | `""` | Additional CSS class for each bullet |
-| `clsBulletOn` | `""` | Additional CSS class for the active bullet |
-| `clsThumbOn` | `""` | Additional CSS class for the active thumbnail |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `clsCarousel` | string | `""` | Additional CSS class for the carousel element |
+| `clsSlides` | string | `""` | Additional CSS class for the slides container |
+| `clsSlide` | string | `""` | Additional CSS class for each slide |
+| `clsControls` | string | `""` | Additional CSS class for the controls |
+| `clsControlNext` | string | `""` | Additional CSS class for the next control |
+| `clsControlPrev` | string | `""` | Additional CSS class for the previous control |
+| `clsBullets` | string | `""` | Additional CSS class for the bullets container |
+| `clsBullet` | string | `""` | Additional CSS class for each bullet |
+| `clsBulletOn` | string | `""` | Additional CSS class for the active bullet |
+| `clsThumbOn` | string | `""` | Additional CSS class for the active thumbnail |
 
 ### Event Callbacks
 
@@ -107,14 +107,12 @@ The Carousel component accepts the following configuration options:
 
 The Carousel component provides the following API methods:
 
-| Method | Description |
-| ------ | ----------- |
-| `toSlide(index)` | Navigate to a specific slide by index |
-| `next()` | Navigate to the next slide |
-| `prev()` | Navigate to the previous slide |
-| `stop()` | Stop the carousel |
-| `play()` | Start the carousel |
-| `setEffect(effect)` | Change the transition effect |
++ `toSlide(index)` - Navigate to a specific slide by index
++ `next()` - Navigate to the next slide
++ `prev()` - Navigate to the previous slide
++ `stop()` - Stop the carousel
++ `play()` - Start the carousel
++ `setEffect(effect)` - Change the transition effect
 
 ### Example of API Usage
 

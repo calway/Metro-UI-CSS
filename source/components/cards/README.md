@@ -75,15 +75,15 @@ The Cards component can be styled using the following CSS variables:
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| --card-header-background | #fbfbfb | #282c35 | Background color of the card header |
-| --card-header-color | #191919 | #fbfbfb | Text color of the card header |
-| --card-footer-background | #fbfbfb | #282c35 | Background color of the card footer |
-| --card-footer-color | #191919 | #fbfbfb | Text color of the card footer |
-| --card-background | #ffffff | #2b2d30 | Background color of the card content |
-| --card-color | #191919 | #dbdfe7 | Text color of the card content |
-| --card-avatar-border-color | #ffffff | #414245 | Border color for avatars in image headers |
-| --card-border-radius | 6px | 6px | Border radius of the card |
-| --card-button-border-color | var(--border-color) | var(--border-color) | Border color for buttons in the card header |
+| `--card-header-background` | `#fbfbfb` | `#282c35` | Background color of the card header |
+| `--card-header-color` | `#191919` | `#fbfbfb` | Text color of the card header |
+| `--card-footer-background` | `#fbfbfb` | `#282c35` | Background color of the card footer |
+| `--card-footer-color` | `#191919` | `#fbfbfb` | Text color of the card footer |
+| `--card-background` | `#ffffff` | `#2b2d30` | Background color of the card content |
+| `--card-color` | `#191919` | `#dbdfe7` | Text color of the card content |
+| `--card-avatar-border-color` | `#ffffff` | `#414245` | Border color for avatars in image headers |
+| `--card-border-radius` | `6px` | `6px` | Border radius of the card |
+| `--card-button-border-color` | `var(--border-color)` | `var(--border-color)` | Border color for buttons in the card header |
 
 ### Example of Custom Styling
 
@@ -97,6 +97,24 @@ The Cards component can be styled using the following CSS variables:
     --card-border-radius: 12px;
 }
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.card` - The main container for the card component
+- `.card-header` - The header section of the card (optional)
+- `.card-content` - The main content area of the card
+- `.card-footer` - The footer section of the card (optional)
+
+### Header Elements
+- `.avatar` - Container for user avatar image in the header
+- `.name` - Element for displaying user name or title
+- `.date` - Element for displaying date or subtitle information
+- `.buttons` - Container for header action buttons
+
+### Special Card Types
+- `.flex-card` - Creates a card that can expand to fill available space
+- `.image-header` - Creates a card with a background image in the header
 
 ## Structure
 
@@ -139,3 +157,12 @@ Add the `.image-header` class to create a card with a background image in the he
 - Multiple cards are automatically spaced with a 1rem margin between them
 - Card headers and footers have padding of 0.5rem 1rem
 - Card content has padding of 1rem
+
+## Best Practices
+
+1. Use appropriate content hierarchy within cards
+2. Keep card content concise and focused
+3. Use consistent card styles throughout your application
+4. Consider using flex-card for cards that need to fill available space
+5. Ensure sufficient contrast between text and background colors
+6. Use image headers sparingly and ensure images are optimized for web

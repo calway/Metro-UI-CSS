@@ -70,19 +70,19 @@ The Button Group component provides a way to group related buttons together, cre
 </div>
 ```
 
-## Configuration Options
+## Plugin Parameters
 
 The Button Group component can be configured with the following options:
 
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| buttongroupDeferred | 0 | Delay in milliseconds before initialization |
-| targets | "button" | Selector for elements that should behave as buttons in the group |
-| clsActive | "" | Additional CSS class to apply to active buttons |
-| requiredButton | false | Whether at least one button must be active |
-| mode | Metro.groupMode.ONE | Selection mode: ONE (single selection) or MULTI (multiple selection) |
-| onButtonClick | Metro.noop | Event handler triggered when a button is clicked |
-| onButtonGroupCreate | Metro.noop | Event handler triggered when the button group is created |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| buttongroupDeferred | number | 0 | Delay in milliseconds before initialization |
+| targets | string | "button" | Selector for elements that should behave as buttons in the group |
+| clsActive | string | "" | Additional CSS class to apply to active buttons |
+| requiredButton | boolean | false | Whether at least one button must be active |
+| mode | string | Metro.groupMode.ONE | Selection mode: ONE (single selection) or MULTI (multiple selection) |
+| onButtonClick | function | Metro.noop | Event handler triggered when a button is clicked |
+| onButtonGroupCreate | function | Metro.noop | Event handler triggered when the button group is created |
 
 ### Global Configuration
 
@@ -95,9 +95,16 @@ Metro.buttonGroupSetup({
 });
 ```
 
-## Events
+## API Methods
 
-The Button Group component provides the following events:
++ destroy() - Removes the component and its event handlers.
+
+```javascript
+const buttonGroup = Metro.getPlugin('#myButtonGroup', 'button-group');
+buttonGroup.destroy();
+```
+
+## Events
 
 | Event | Description |
 | ----- | ----------- |
