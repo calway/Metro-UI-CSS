@@ -72592,7 +72592,7 @@ html.metro-touch-device .streamer .stream.focused .stream-icon {
 .switch > input::before {
   content: "";
   position: absolute;
-  top: 2px;
+  top: 0;
   left: 0;
   width: 16px;
   height: 16px;

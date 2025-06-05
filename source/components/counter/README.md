@@ -1,23 +1,36 @@
-# Counter Component
+# Counter
 
-The Counter component provides an animated numerical counter that can count up or down to a specified value. It's useful for displaying statistics, achievements, or any numerical data in an engaging way.
+A component that displays an animated numerical counter that counts up to a specified value. It's useful for displaying statistics, achievements, or any numerical data in an engaging way.
+
+## Dependencies
+
+- Metro UI Core
+- Dom
 
 ## Usage
 
-### Basic Counter
+### Basic Usage
 
 ```html
 <!-- Basic counter that counts from 0 to 100 -->
 <div data-role="counter" data-value="100">0</div>
+```
 
+### With Custom Starting Value
+
+```html
 <!-- Counter with custom starting value -->
 <div data-role="counter" data-value="100" data-from="50">50</div>
+```
 
+### With Prefix and Suffix
+
+```html
 <!-- Counter with prefix and suffix -->
 <div data-role="counter" data-value="100" data-prefix="$" data-suffix="+">0</div>
 ```
 
-### Counter with Custom Duration
+### With Custom Duration
 
 ```html
 <!-- Counter with 5 second animation duration -->
@@ -33,24 +46,49 @@ The Counter component provides an animated numerical counter that can count up o
 
 ## Plugin Parameters
 
-The Counter component accepts the following configuration options:
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `startOnViewport` | boolean | false | When `true`, the counter starts when it enters the viewport |
+| `counterDeferred` | number | 0 | Delay in milliseconds before the counter starts |
+| `duration` | number | 2000 | Duration of the counting animation in milliseconds |
+| `value` | number | 0 | The target value to count to |
+| `from` | number | 0 | The starting value to count from |
+| `timeout` | number | 0 | Additional timeout before starting the animation |
+| `delimiter` | string | "," | Character used as the thousands separator |
+| `prefix` | string | "" | Text to display before the number |
+| `suffix` | string | "" | Text to display after the number |
+| `size` | number | 16 | Font size in pixels |
+| `onStart` | function | Metro.noop | Callback function when counter animation starts |
+| `onStop` | function | Metro.noop | Callback function when counter animation completes |
+| `onTick` | function | Metro.noop | Callback function on each frame of the animation with the current value |
+| `onCounterCreate` | function | Metro.noop | Callback function when counter is created |
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| `startOnViewport` | `false` | When `true`, the counter starts when it enters the viewport |
-| `counterDeferred` | `0` | Delay in milliseconds before the counter starts |
-| `duration` | `2000` | Duration of the counting animation in milliseconds |
-| `value` | `0` | The target value to count to |
-| `from` | `0` | The starting value to count from |
-| `timeout` | `0` | Additional timeout before starting the animation |
-| `delimiter` | `,` | Character used as the thousands separator |
-| `prefix` | `""` | Text to display before the number |
-| `suffix` | `""` | Text to display after the number |
-| `size` | `16` | Font size in pixels |
+## API Methods
+
++ `start(val, from)` - Starts the counter animation. Optional parameters: `val` (target value), `from` (starting value).
++ `reset()` - Resets the counter to its initial state.
++ `changeAttribute(attr, val)` - Changes the specified attribute with the given value.
++ `destroy()` - Removes the counter element from the DOM.
+
+### Example of Method Usage
+
+```javascript
+const counter = Metro.getPlugin('#myCounter', 'counter');
+
+// Start counting to the value specified in the options
+counter.start();
+
+// Start counting to a specific value
+counter.start(200);
+
+// Start counting from a specific value to a target value
+counter.start(200, 50);
+
+// Reset the counter
+counter.reset();
+```
 
 ## Events
-
-The Counter component provides the following callback events:
 
 | Event | Description |
 | ----- | ----------- |
@@ -59,32 +97,24 @@ The Counter component provides the following callback events:
 | `onTick` | Triggered on each frame of the animation with the current value |
 | `onCounterCreate` | Triggered when the counter is created |
 
-## API Methods
+## Styling with CSS Variables
 
-The Counter component provides the following methods:
+The Counter component primarily uses the `size` parameter to control the font size. You can also style the counter using standard CSS properties.
 
-### start(val, from)
+### Example of Custom Styling
 
-Starts the counter animation.
-
-```javascript
-// Start counting to the value specified in the options
-Metro.getPlugin('#myCounter', 'counter').start();
-
-// Start counting to a specific value
-Metro.getPlugin('#myCounter', 'counter').start(200);
-
-// Start counting from a specific value to a target value
-Metro.getPlugin('#myCounter', 'counter').start(200, 50);
+```css
+/* Custom styling for a counter */
+#myCounter {
+    font-weight: bold;
+    color: #0078D7;
+    font-family: 'Segoe UI', sans-serif;
+}
 ```
 
-### reset()
+## Available CSS Classes
 
-Resets the counter to its initial state.
-
-```javascript
-Metro.getPlugin('#myCounter', 'counter').reset();
-```
+The Counter component doesn't add specific CSS classes to the element. It directly manipulates the font size of the element based on the `size` parameter.
 
 ## Global Configuration
 
@@ -98,20 +128,7 @@ Metro.counterSetup({
 });
 ```
 
-## Styling with CSS Variables
-
-The Counter component uses the `size` parameter to control the font size. You can also style the counter using standard CSS properties:
-
-```css
-/* Custom styling for a counter */
-#myCounter {
-    font-weight: bold;
-    color: #0078D7;
-    font-family: 'Segoe UI', sans-serif;
-}
-```
-
-## Example with All Options
+## Complete Example
 
 ```html
 <div id="statsCounter"

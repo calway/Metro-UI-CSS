@@ -1,182 +1,159 @@
-# Countdown Component
+# Countdown
 
-The Countdown component is a flexible timer that counts down to a specific date or time duration. It displays days, hours, minutes, and seconds with various animation options.
+A component that displays a countdown timer with days, hours, minutes, and seconds. The countdown can be set to a specific date or a duration in days, hours, minutes, and seconds.
+
+## Dependencies
+
+- Metro UI Core
+- Dom
 
 ## Usage
 
+### Basic Usage
+
 ```html
-<div data-role="countdown" 
-     data-date="2023-12-31" 
-     data-animate="slide">
-</div>
+<div data-role="countdown"></div>
 ```
 
-## Configuration Options
+### With Animation
 
-| Option | Type | Default | Description |
-| ------ | ---- | ------- | ----------- |
-| `countdownDeferred` | number | 0 | Delay before countdown starts (in milliseconds) |
-| `stopOnBlur` | boolean | true | Whether to stop the countdown when the window loses focus |
-| `animate` | string | "none" | Animation type for digit changes. Options: "none", "slide", "fade", "zoom" |
-| `ease` | string | "linear" | Easing function for animations |
-| `duration` | number | 600 | Duration of animations in milliseconds |
-| `inputFormat` | string | null | Format for parsing the date string (if provided) |
-| `days` | number | 0 | Number of days to count down |
-| `hours` | number | 0 | Number of hours to count down |
-| `minutes` | number | 0 | Number of minutes to count down |
-| `seconds` | number | 0 | Number of seconds to count down |
-| `date` | string | null | Target date to count down to (overrides days, hours, minutes, seconds) |
-| `start` | boolean | true | Whether to start the countdown automatically |
-| `fontSize` | number | 24 | Font size for the countdown digits |
-| `clsCountdown` | string | "" | Additional CSS class for the countdown container |
-| `clsPart` | string | "" | Additional CSS class for each part (days, hours, minutes, seconds) |
-| `clsZero` | string | "" | Additional CSS class for parts that reach zero |
-| `clsAlarm` | string | "" | Additional CSS class applied when countdown reaches zero |
-| `clsDays` | string | "" | Additional CSS class for the days part |
-| `clsHours` | string | "" | Additional CSS class for the hours part |
-| `clsMinutes` | string | "" | Additional CSS class for the minutes part |
-| `clsSeconds` | string | "" | Additional CSS class for the seconds part |
+```html
+<div data-role="countdown" data-animate="slide"></div>
+```
+
+### With Custom Font Size
+
+```html
+<div data-role="countdown" data-font-size="96"></div>
+```
+
+### With Specific Date
+
+```html
+<div data-role="countdown" data-date="2025/05/15"></div>
+```
+
+### With Duration
+
+```html
+<div data-role="countdown" data-days="2" data-hours="12" data-minutes="30" data-seconds="15"></div>
+```
+
+## Plugin Parameters
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `countdownDeferred` | number | 0 | Deferred start of countdown in milliseconds |
+| `stopOnBlur` | boolean | true | Stop countdown when window loses focus |
+| `animate` | string | "none" | Animation type: "none", "slide", "fade", "zoom" |
+| `ease` | string | "linear" | Animation easing function |
+| `duration` | number | 600 | Animation duration in milliseconds |
+| `inputFormat` | string | null | Format for parsing the date string |
+| `days` | number | 0 | Number of days for countdown |
+| `hours` | number | 0 | Number of hours for countdown |
+| `minutes` | number | 0 | Number of minutes for countdown |
+| `seconds` | number | 0 | Number of seconds for countdown |
+| `date` | string | null | Target date for countdown (e.g., "2025/05/15") |
+| `start` | boolean | true | Start countdown automatically |
+| `fontSize` | number | 24 | Font size in pixels |
+| `clsCountdown` | string | "" | Additional CSS class for countdown element |
+| `clsPart` | string | "" | Additional CSS class for part elements |
+| `clsZero` | string | "" | Additional CSS class for zero value |
+| `clsAlarm` | string | "" | Additional CSS class for alarm state |
+| `clsDays` | string | "" | Additional CSS class for days part |
+| `clsHours` | string | "" | Additional CSS class for hours part |
+| `clsMinutes` | string | "" | Additional CSS class for minutes part |
+| `clsSeconds` | string | "" | Additional CSS class for seconds part |
+| `onAlarm` | function | Metro.noop | Callback function when countdown reaches zero |
+| `onTick` | function | Metro.noop | Callback function on each tick |
+| `onZero` | function | Metro.noop | Callback function when a part reaches zero |
+| `onBlink` | function | Metro.noop | Callback function on blink |
+| `onCountdownCreate` | function | Metro.noop | Callback function when countdown is created |
+
+## API Methods
+
++ `start()` - Start the countdown.
++ `stop()` - Stop the countdown and reset values to zero.
++ `pause()` - Pause the countdown.
++ `resume()` - Resume the countdown after pause.
++ `reset()` - Reset the countdown with the same parameters.
++ `resetWith(val)` - Reset the countdown with new parameters. `val` can be a date string or an object with days, hours, minutes, seconds.
++ `togglePlay()` - Toggle between play and pause states.
++ `isPaused()` - Check if the countdown is paused.
++ `getBreakpoint(asDate)` - Get the target time. If `asDate` is true, returns a Date object.
++ `getLeft()` - Get the remaining time in days, hours, minutes, and seconds.
++ `blink()` - Trigger the blink effect.
++ `tick()` - Manually trigger a tick.
+
+### Example of Method Usage
+
+```javascript
+const countdown = Metro.getPlugin('#myCountdown', 'countdown');
+
+// Reset with a specific date
+countdown.resetWith("2025/05/15");
+
+// Reset with duration
+countdown.resetWith({
+    days: 2,
+    hours: 12,
+    minutes: 30,
+    seconds: 15
+});
+
+// Pause the countdown
+countdown.pause();
+
+// Resume the countdown
+countdown.resume();
+```
 
 ## Events
 
 | Event | Description |
 | ----- | ----------- |
-| `onAlarm` | Triggered when the countdown reaches zero |
-| `onTick` | Triggered on each countdown tick (every second) |
-| `onZero` | Triggered when a specific part (days, hours, minutes, seconds) reaches zero |
-| `onBlink` | Triggered when the countdown blinks |
-| `onCountdownCreate` | Triggered when the countdown is created |
-
-## API Methods
-
-### start()
-Starts or resumes the countdown.
-
-```javascript
-var countdown = Metro.getPlugin('#myCountdown', 'countdown');
-countdown.start();
-```
-
-### stop()
-Stops the countdown and resets all values to zero.
-
-```javascript
-countdown.stop();
-```
-
-### pause()
-Pauses the countdown without resetting values.
-
-```javascript
-countdown.pause();
-```
-
-### resume()
-Resumes a paused countdown.
-
-```javascript
-countdown.resume();
-```
-
-### reset()
-Resets the countdown to its initial state and starts it again.
-
-```javascript
-countdown.reset();
-```
-
-### resetWith(value)
-Resets the countdown with new parameters.
-
-```javascript
-// Reset with a new date
-countdown.resetWith("2024-12-31");
-
-// Reset with new duration values
-countdown.resetWith({
-    days: 10,
-    hours: 5,
-    minutes: 30,
-    seconds: 0
-});
-```
-
-### togglePlay()
-Toggles between play and pause states.
-
-```javascript
-countdown.togglePlay();
-```
-
-### isPaused()
-Checks if the countdown is currently paused.
-
-```javascript
-var isPaused = countdown.isPaused();
-```
-
-### getBreakpoint(asDate)
-Gets the target time as timestamp or Date object.
-
-```javascript
-// Get as timestamp
-var timestamp = countdown.getBreakpoint();
-
-// Get as Date object
-var date = countdown.getBreakpoint(true);
-```
-
-### getLeft()
-Gets the remaining time in different units.
-
-```javascript
-var timeLeft = countdown.getLeft();
-console.log(timeLeft.days, timeLeft.hours, timeLeft.minutes, timeLeft.seconds);
-```
-
-### blink()
-Toggles the blink class on the countdown element.
-
-```javascript
-countdown.blink();
-```
+| `onAlarm` | Triggered when countdown reaches zero |
+| `onTick` | Triggered on each tick (every second) |
+| `onZero` | Triggered when a part (days, hours, minutes, seconds) reaches zero |
+| `onBlink` | Triggered on blink effect |
+| `onCountdownCreate` | Triggered when countdown is created |
 
 ## Styling with CSS Variables
 
-The Countdown component uses CSS variables for styling:
-
-| CSS Variable | Description |
-| ------------ | ----------- |
+| Variable | Description |
+| -------- | ----------- |
 | `--border-color` | Color for borders and dividers between parts |
 
-### Example of custom styling
+### Example of Custom Styling
 
 ```css
-.my-countdown {
+#myCountdown {
     --border-color: #ff5722;
-    font-size: 32px;
-    color: #0066cc;
+    font-size: 48px;
 }
 ```
 
-```html
-<div data-role="countdown" 
-     data-date="2023-12-31" 
-     class="my-countdown">
-</div>
-```
+## Available CSS Classes
 
-## Animation Types
+### Base Classes
+- `.countdown` - Main container class
+- `.part` - Container for each part of the countdown
+- `.digit` - Container for each digit
+- `.digit-placeholder` - Placeholder for the digit
+- `.digit-value` - Actual value of the digit
 
-The Countdown component supports several animation types for digit changes:
+### Part Classes
+- `.days` - Class for days part
+- `.hours` - Class for hours part
+- `.minutes` - Class for minutes part
+- `.seconds` - Class for seconds part
 
-- **none**: No animation, digits change instantly
-- **slide**: Digits slide up/down during changes
-- **fade**: Digits fade in/out during changes
-- **zoom**: Digits zoom in/out during changes
+### Animation Classes
+- `.blink` - Class for blinking effect
+- `.animate-slide` - Class for slide animation
+- `.animate-fade` - Class for fade animation
+- `.animate-zoom` - Class for zoom animation
 
-Set the animation type using the `data-animate` attribute:
-
-```html
-<div data-role="countdown" data-animate="slide" data-date="2023-12-31"></div>
-```
+### Modifier Classes
+- `.no-divider` - Removes the divider before a part
+- `.d-none` - Hides a part

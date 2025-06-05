@@ -2,7 +2,13 @@
 
 The Directive component creates styled directive boxes for displaying notes, warnings, tips, and other informational content in your application.
 
+## Dependencies
+
+None
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <div data-role="directive" 
@@ -14,7 +20,32 @@ The Directive component creates styled directive boxes for displaying notes, war
 </div>
 ```
 
-## Parameters
+### Additional Configurations
+
+```html
+<!-- Warning directive with custom title -->
+<div data-role="directive" 
+     data-directive="warning" 
+     data-title="Attention!">
+    This is a warning directive with a custom title.
+</div>
+
+<!-- Info directive with style 2 -->
+<div data-role="directive" 
+     data-directive="info" 
+     data-style="2">
+    This is an info directive with style 2.
+</div>
+
+<!-- Success directive without icon -->
+<div data-role="directive" 
+     data-directive="success" 
+     data-show-icon="false">
+    This is a success directive without an icon.
+</div>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -26,10 +57,9 @@ The Directive component creates styled directive boxes for displaying notes, war
 
 ## API Methods
 
-### Metro.directiveSetup(options)
++ Metro.directiveSetup(options) - Configure global defaults for all directive components.
 
-Configure global defaults for all directive components.
-
+#### Example of Method Usage
 ```javascript
 Metro.directiveSetup({
     directive: "info",
@@ -38,72 +68,45 @@ Metro.directiveSetup({
 });
 ```
 
-### element.destroy()
++ destroy() - Remove the directive component.
 
-Remove the directive component.
-
+#### Example of Method Usage
 ```javascript
-const directive = $('#myDirective').data('directive');
+const directive = Metro.getPlugin('#myDirective', 'directive');
 directive.destroy();
 ```
 
-## Styles
+## Events
 
-The Directive component supports three different styles:
+| Event | Description |
+| ----- | ----------- |
+| onDirectiveCreate | Fired when the directive component is created |
 
-1. **Style 1** (default): Icon positioned on the right
-2. **Style 2**: Icon positioned on the left with a thicker left border
-3. **Style 3**: Icon positioned on the left with padding
+## Styling with CSS Variables
 
-## Directive Types
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| --directive-background | #f9f9f9 | Varies by type | Background color |
+| --directive-color | #191919 | #ffffff | Text color |
+| --directive-border-color | #3c3c3c1a | Varies by type | Border color |
+| --directive-title-color | #3c3c3c | Varies by type | Title color |
+| --directive-border-radius | 10px | Same | Border radius |
+| --directive-code-background | #f5f5f5 | Same | Code background color |
+| --directive-icon-background | #f5f5f5 | Same | Icon background color |
+| --directive-icon-color | #7a7a7a | Varies by type | Icon color |
+| --directive-icon-size | 3rem | Same | Icon size |
 
-The component supports various directive types, each with its own styling:
-
-- **note**: Default style
-- **info**: Blue styling for informational content
-- **tip/success**: Green styling for tips and success messages
-- **warning**: Yellow styling for warnings
-- **caution/alert/error**: Red styling for errors and important cautions
-- **important**: Orange styling for important information
-- **bug**: Styling for bug notes
-- **air**: Light styling for less important notes
-- And more...
-
-## CSS Variables
-
-You can customize the appearance of the directive component using CSS variables:
+### Example of Custom Styling
 
 ```css
-:root {
-    --directive-background: #f9f9f9;      /* Background color */
-    --directive-color: #191919;           /* Text color */
-    --directive-border-color: #3c3c3c1a;  /* Border color */
-    --directive-title-color: #3c3c3c;     /* Title color */
-    --directive-border-radius: 10px;      /* Border radius */
-    --directive-code-background: #f5f5f5; /* Code background color */
-    --directive-icon-background: #f5f5f5; /* Icon background color */
-    --directive-icon-color: #7a7a7a;      /* Icon color */
-    --directive-icon-size: 3rem;          /* Icon size */
-}
-```
-
-### Customizing Specific Directive Types
-
-You can also customize specific directive types by targeting their classes:
-
-```css
+/* Custom styling for info directives */
 .directive.directive-info {
     --directive-background: #e6f7ff;
     --directive-border-color: #91d5ff;
     --directive-title-color: #1890ff;
 }
-```
 
-### Dark Mode Support
-
-The component includes dark mode support with the `.dark-side` class:
-
-```css
+/* Dark mode styling */
 .dark-side .directive-note {
     --directive-background: #292e37!important;
     --directive-border-color: #5454547a!important;
@@ -111,36 +114,23 @@ The component includes dark mode support with the `.dark-side` class:
 }
 ```
 
-## Examples
+## Available CSS Classes
 
-### Basic Note
+### Base Classes
+- `.directive` - Main container class
+- `.directive-title` - Title element class
+- `.directive-style-1` - Default style (icon on right)
+- `.directive-style-2` - Alternative style with icon on left and thicker border
+- `.directive-style-3` - Alternative style with icon on left and padding
 
-```html
-<div data-role="directive">
-    This is a default note directive.
-</div>
-```
-
-### Warning with Custom Title
-
-```html
-<div data-role="directive" data-directive="warning" data-title="Attention!">
-    This is a warning directive with a custom title.
-</div>
-```
-
-### Info Directive with Style 2
-
-```html
-<div data-role="directive" data-directive="info" data-style="2">
-    This is an info directive with style 2.
-</div>
-```
-
-### Success Directive without Icon
-
-```html
-<div data-role="directive" data-directive="success" data-show-icon="false">
-    This is a success directive without an icon.
-</div>
-```
+### Modifiers
+- `.directive-note` - Default note style
+- `.directive-info` - Blue styling for informational content
+- `.directive-tip`, `.directive-success` - Green styling for tips and success messages
+- `.directive-warning` - Yellow styling for warnings
+- `.directive-caution`, `.directive-alert`, `.directive-error` - Red styling for errors and important cautions
+- `.directive-important` - Orange styling for important information
+- `.directive-bug` - Styling for bug notes
+- `.directive-air` - Light styling for less important notes
+- `.directive-shit` - Brown styling for negative notes
+- `.directive-fuck` - Neutral styling with specific icon

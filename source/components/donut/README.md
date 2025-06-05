@@ -1,161 +1,146 @@
-# Donut Component
+# Donut
 
-The Donut component is a circular progress indicator that displays a percentage or value in a donut-shaped chart. It's useful for visualizing progress, completion rates, or any numerical data in a compact and visually appealing way.
+Donut is a circular progress indicator component that displays a value as a filled arc. It can be used to show progress, percentages, or any other numerical value in a visually appealing way.
+
+## Dependencies
+
+This component has no additional dependencies beyond the core Metro UI library.
 
 ## Usage
 
-### Basic Donut
+### Basic Usage
 
 ```html
-<!-- Basic donut with default settings -->
-<div data-role="donut"></div>
-
-<!-- Donut with custom value -->
-<div data-role="donut" data-value="75"></div>
-
-<!-- Donut with custom colors -->
-<div data-role="donut" data-value="50" data-fill="#1ba1e2" data-stroke="#e3e3e3"></div>
+<div data-role="donut" data-value="35"></div>
 ```
 
-### Customizing Size and Appearance
+### Additional Configurations
 
 ```html
-<!-- Larger donut -->
-<div data-role="donut" data-size="200" data-value="65"></div>
+<!-- With custom colors -->
+<div data-role="donut" data-value="35" data-stroke="#f5f5f5" data-fill="#9C27B0"></div>
 
-<!-- Custom hole size (smaller hole) -->
-<div data-role="donut" data-hole="0.5" data-value="40"></div>
+<!-- With no hole (solid circle) -->
+<div data-role="donut" data-value="35" data-hole="0"></div>
 
-<!-- Hide percentage text -->
-<div data-role="donut" data-show-text="false" data-value="80"></div>
+<!-- With animation -->
+<div data-role="donut" data-value="35" data-animate="500"></div>
 
-<!-- Show actual value instead of percentage -->
-<div data-role="donut" data-show-value="true" data-value="42" data-total="100"></div>
+<!-- Showing actual value instead of percentage -->
+<div data-role="donut" data-value="35" data-show-value="true"></div>
 
-<!-- Custom value cap (unit) -->
-<div data-role="donut" data-value="75" data-cap="°C"></div>
-```
+<!-- With custom background and text color -->
+<div data-role="donut" data-value="35" data-background="#4fc3f7" data-color="#FFFFFF"></div>
 
-### Animated Donut
+<!-- With custom font size -->
+<div data-role="donut" data-value="35" data-font-size="32"></div>
 
-```html
-<!-- Animated donut (animation duration in milliseconds) -->
-<div data-role="donut" data-value="60" data-animate="1000"></div>
-```
-
-### Color Variants
-
-```html
-<!-- Using predefined color classes -->
-<div data-role="donut" class="donut-primary" data-value="75"></div>
-<div data-role="donut" class="donut-success" data-value="85"></div>
-<div data-role="donut" class="donut-alert" data-value="25"></div>
-<div data-role="donut" class="donut-warning" data-value="65"></div>
-<div data-role="donut" class="donut-info" data-value="50"></div>
-
-<!-- Using standard color classes -->
-<div data-role="donut" class="donut-red" data-value="30"></div>
-<div data-role="donut" class="donut-green" data-value="70"></div>
-<div data-role="donut" class="donut-blue" data-value="45"></div>
-<div data-role="donut" class="donut-yellow" data-value="90"></div>
+<!-- With custom cap (suffix) -->
+<div data-role="donut" data-value="35" data-cap="°C"></div>
 ```
 
 ## Plugin Parameters
 
-The Donut component accepts the following configuration parameters:
-
 | Parameter | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| `size` | number | 100 | The size of the donut in pixels (width and height) |
-| `hole` | number | 0.8 | The size of the hole as a ratio (0-1) of the donut's radius |
-| `value` | number | 0 | The current value to display |
-| `background` | string | "transparent" | Background color of the donut |
-| `color` | string | "" | Text color (defaults to fill color if not specified) |
+| `size` | number | 100 | Size of the donut in pixels |
+| `hole` | number | 0.8 | Size of the hole (0 to 1, where 0.8 means 80% of the radius) |
+| `value` | number | 0 | Initial value |
+| `background` | string | "transparent" | Background color of the element |
+| `color` | string | "" | Text color (defaults to fill color if empty) |
 | `stroke` | string | "#d1d8e7" | Color of the background circle |
 | `fill` | string | "#49649f" | Color of the value circle |
-| `fontSize` | number | 0 | Font size for the text (0 means auto-calculated) |
-| `total` | number | 100 | The total value (maximum) |
-| `cap` | string | "%" | The unit or symbol to display after the value |
-| `showText` | boolean | true | Whether to show the text in the center |
+| `fontSize` | number | 0 | Font size (0 means auto-calculated) |
+| `total` | number | 100 | Total value (for percentage calculation) |
+| `cap` | string | "%" | Suffix for the displayed value |
+| `showText` | boolean | true | Whether to show text |
 | `showValue` | boolean | false | Whether to show the actual value instead of percentage |
-| `animate` | number | 0 | Animation duration in milliseconds (0 means no animation) |
+| `animate` | number | 0 | Animation duration in milliseconds |
 
 ## API Methods
 
-The Donut component provides the following API methods:
++ `val(value)` - Gets the current value when called without arguments, or sets a new value when called with a value argument.
 
-### val(value)
-
-Gets or sets the current value of the donut.
-
+#### Example of Method Usage
 ```javascript
+const donut = Metro.getPlugin('#myDonut', 'donut');
 // Get current value
-var currentValue = $("#myDonut").data("donut").val();
-
+const currentValue = donut.val();
 // Set new value
-$("#myDonut").data("donut").val(75);
+donut.val(75);
 ```
 
-### setColor(colorObject)
++ `setColor(options)` - Sets colors for the donut. The options object can contain any of these properties: background, fill, stroke, color.
 
-Updates the colors of the donut.
-
+#### Example of Method Usage
 ```javascript
-// Change colors
-$("#myDonut").data("donut").setColor({
-    background: "#ffffff",
-    fill: "#3498db",
-    stroke: "#e3e3e3",
-    color: "#333333"
+const donut = Metro.getPlugin('#myDonut', 'donut');
+donut.setColor({
+    stroke: "#000000",
+    fill: "#FF0000",
+    color: "#FFFFFF",
+    background: "#333333"
 });
 ```
 
-### changeValue()
+## Events
 
-Updates the donut value based on the data-value attribute.
-
-```javascript
-// Update the data-value attribute
-$("#myDonut").attr("data-value", 80);
-
-// Apply the new value
-$("#myDonut").data("donut").changeValue();
-```
+| Event | Description |
+| ----- | ----------- |
+| `onDonutCreate` | Triggered when the donut is created |
+| `onChange` | Triggered when the donut value changes |
+| `onDrawValue` | Callback for custom formatting of the displayed value |
 
 ## Styling with CSS Variables
 
-The Donut component uses SVG for rendering and can be styled using CSS classes. The component doesn't directly use CSS variables, but you can customize its appearance using the plugin parameters or by applying color classes.
+The donut component doesn't use CSS variables directly, but it can be styled using the parameters described above.
 
 ## Available CSS Classes
 
+### Base Classes
+- `.donut` - The main container class for the donut component
+
 ### Color Classes
+- `.donut-{color}` - Color variants where {color} can be any of the Metro UI color names (e.g., `.donut-red`, `.donut-blue`, etc.)
 
-#### Standard Colors
-Apply these classes to use predefined color schemes:
+#### Example of Custom Styling
 
-- `.donut-lime`, `.donut-green`, `.donut-emerald`, `.donut-blue`, `.donut-teal`, `.donut-cyan`
-- `.donut-cobalt`, `.donut-indigo`, `.donut-violet`, `.donut-pink`, `.donut-magenta`
-- `.donut-crimson`, `.donut-red`, `.donut-orange`, `.donut-amber`, `.donut-yellow`
-- `.donut-brown`, `.donut-olive`, `.donut-steel`, `.donut-mauve`, `.donut-taupe`
-- `.donut-khaki`, `.donut-charcoal`, `.donut-bronze`, `.donut-windstorm`
-- `.donut-nude`, `.donut-terracotta`, `.donut-coral`, `.donut-army`, `.donut-seashell`, `.donut-sand`
+```html
+<!-- Using a predefined color class -->
+<div data-role="donut" data-value="35" class="donut-red"></div>
 
-#### Accent Colors
-Apply these classes to use accent color schemes:
+<!-- Using custom colors via data attributes -->
+<div data-role="donut" data-value="35" data-stroke="#f5f5f5" data-fill="#9C27B0" data-color="#FFFFFF"></div>
+```
 
-- `.donut-primary` - Primary brand color
-- `.donut-secondary` - Secondary brand color
-- `.donut-success` - Success indicator color
-- `.donut-alert` - Alert/error indicator color
-- `.donut-warning` - Warning indicator color
-- `.donut-info` - Information indicator color
-- `.donut-dark` - Dark theme color
-- `.donut-light` - Light theme color
+## JavaScript Example
 
-## Best Practices
+```javascript
+// Initialize a donut programmatically
+Metro.makePlugin('#myElement', 'donut', {
+    value: 75,
+    fill: "#9C27B0",
+    stroke: "#f5f5f5",
+    animate: 500,
+    showValue: true,
+    cap: "°C"
+});
 
-1. Choose an appropriate size for your donut based on where it will be displayed
-2. Use consistent colors throughout your application for similar metrics
-3. Consider using animation for a more engaging user experience
-4. Provide context for the value being displayed (through labels or surrounding content)
-5. For small donuts, consider hiding the text to avoid crowding
+// Get a reference to an existing donut
+const donut = Metro.getPlugin('#myDonut', 'donut');
+
+// Change the value
+donut.val(50);
+
+// Change colors
+donut.setColor({
+    fill: "#FF0000",
+    stroke: "#000000"
+});
+
+// Update value periodically
+setInterval(function() {
+    const randomValue = Math.floor(Math.random() * 100);
+    donut.val(randomValue);
+}, 2000);
+```

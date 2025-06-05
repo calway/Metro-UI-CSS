@@ -1,13 +1,17 @@
-# Double Select Box Component
+# Double Select Box
 
 The Double Select Box component provides a user interface for moving items between two select boxes. It's useful for scenarios where users need to select items from a list and move them to another list, such as assigning permissions, selecting features, or organizing items into categories.
+
+## Dependencies
+
+This component has no additional dependencies beyond the core Metro UI library.
 
 ## Usage
 
 ### Basic Usage
 
 ```html
-<div class="double-select-box">
+<div data-role="double-select-box">
     <select>
         <option value="1">Item 1</option>
         <option value="2">Item 2</option>
@@ -23,22 +27,20 @@ The Double Select Box component provides a user interface for moving items betwe
 ### With Icons and Templates
 
 ```html
-<div class="double-select-box">
+<div data-role="double-select-box">
     <select>
-        <option value="1" data-icon="🍎">Apple</option>
-        <option value="2" data-icon="🍌">Banana</option>
-        <option value="3" data-icon="🍒">Cherry</option>
-        <option value="4" data-template="<b>$1</b>">Bold Text</option>
+        <option value="ie" data-template="<span class='mif-ie'></span> $1">IE</option>
+        <option value="chrome" data-template="<span class='mif-chrome'></span> $1">Chrome</option>
+        <option value="firefox" data-template="<span class='mif-firefox'></span> $1">Firefox</option>
     </select>
     <select>
-        <!-- Initially empty or with pre-selected items -->
+        <option value="safari" data-template="<span class='mif-safari'></span> $1">Safari</option>
+        <option value="opera" data-template="<span class='mif-opera'></span> $1">Opera</option>
     </select>
 </div>
 ```
 
-## Component Parameters
-
-The Double Select Box component can be configured with the following parameters:
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
@@ -73,23 +75,21 @@ const doubleSelectBox = Metro.getPlugin("#myDoubleSelectBox", "double-select-box
 
 ## API Methods
 
-The Double Select Box component provides the following API methods:
++ `destroy()` - Removes the component from the DOM.
 
-| Method | Description |
-| ------ | ----------- |
-| `destroy()` | Removes the component from the DOM |
+#### Example of Method Usage
+```javascript
+const doubleSelectBox = Metro.getPlugin("#myDoubleSelectBox", "double-select-box");
+doubleSelectBox.destroy();
+```
 
 ## Events
-
-The Double Select Box component triggers the following events:
 
 | Event | Description |
 | ----- | ----------- |
 | `onDoubleSelectBoxCreate` | Triggered when the component is created |
 
 ## Styling with CSS Variables
-
-The Double Select Box component can be styled using the following CSS variables:
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
@@ -112,6 +112,14 @@ The Double Select Box component can be styled using the following CSS variables:
 }
 ```
 
+## Available CSS Classes
+
+### Base Classes
+- `.double-select-box` - The main container class for the component (automatically added)
+
+### Additional Classes
+- Classes specified in the component parameters can be used to customize specific elements
+
 ## Additional Information
 
 - Items can be moved between lists by:
@@ -121,3 +129,18 @@ The Double Select Box component can be styled using the following CSS variables:
 - The component automatically creates the necessary UI elements (buttons, lists) based on the provided select elements
 - Items can include icons or custom HTML templates using data attributes
 - The component adapts to both light and dark themes
+
+## JavaScript Example
+
+```javascript
+// Initialize a double select box programmatically
+Metro.makePlugin('#myElement', 'double-select-box', {
+    multiSelect: true,
+    height: '300px',
+    moveRightIcon: '→',
+    moveLeftIcon: '←'
+});
+
+// Get a reference to an existing double select box
+const doubleSelectBox = Metro.getPlugin('#myDoubleSelectBox', 'double-select-box');
+```

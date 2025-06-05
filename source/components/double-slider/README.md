@@ -53,28 +53,40 @@ The Double Slider component provides a range slider with two markers that allow 
 <div id="rangeValue"></div>
 ```
 
-## Configuration Options
+## Plugin Parameters
 
 The Double Slider component supports the following configuration options:
 
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| `min` | 0 | Minimum value of the slider |
-| `max` | 100 | Maximum value of the slider |
-| `accuracy` | 0 | Decimal precision for values (0 = integers only) |
-| `roundValue` | true | Whether to round values according to accuracy |
-| `valueMin` | null | Initial minimum value (defaults to min if not specified) |
-| `valueMax` | null | Initial maximum value (defaults to max if not specified) |
-| `hint` | false | Show hints when dragging markers |
-| `hintAlways` | false | Always show hints, not just when dragging |
-| `hintPositionMin` | "top" | Position of the minimum value hint ("top" or "bottom") |
-| `hintPositionMax` | "top" | Position of the maximum value hint ("top" or "bottom") |
-| `hintMaskMin` | "$1" | Format for minimum value hint ($1 is replaced with the value) |
-| `hintMaskMax` | "$1" | Format for maximum value hint ($1 is replaced with the value) |
-| `showMinMax` | false | Show min and max values below/above the slider |
-| `minMaxPosition` | "bottom" | Position of min/max labels ("top" or "bottom") |
-| `target` | null | Target element to display selected values (selector or DOM element) |
-| `size` | 0 | Width of the slider in pixels (0 = auto/100%) |
+| Parameter | Type | Default | Description |
+| ------ | ------- | ------- | ----------- |
+| `min` | number | 0 | Minimum value of the slider |
+| `max` | number | 100 | Maximum value of the slider |
+| `accuracy` | number | 0 | Decimal precision for values (0 = integers only) |
+| `roundValue` | boolean | true | Whether to round values according to accuracy |
+| `valueMin` | number | null | Initial minimum value (defaults to min if not specified) |
+| `valueMax` | number | null | Initial maximum value (defaults to max if not specified) |
+| `hint` | boolean | false | Show hints when dragging markers |
+| `hintAlways` | boolean | false | Always show hints, not just when dragging |
+| `hintPositionMin` | string | "top" | Position of the minimum value hint ("top" or "bottom") |
+| `hintPositionMax` | string | "top" | Position of the maximum value hint ("top" or "bottom") |
+| `hintMaskMin` | string | "$1" | Format for minimum value hint ($1 is replaced with the value) |
+| `hintMaskMax` | string | "$1" | Format for maximum value hint ($1 is replaced with the value) |
+| `showMinMax` | boolean | false | Show min and max values below/above the slider |
+| `minMaxPosition` | string | "bottom" | Position of min/max labels ("top" or "bottom") |
+| `target` | string | null | Target element to display selected values (selector or DOM element) |
+| `size` | number | 0 | Width of the slider in pixels (0 = auto/100%) |
+| `clsSlider` | string | "" | Custom class for the slider container |
+| `clsBackside` | string | "" | Custom class for the background track |
+| `clsComplete` | string | "" | Custom class for the filled portion |
+| `clsMarker` | string | "" | Custom class for both markers |
+| `clsMarkerMin` | string | "" | Custom class for the minimum marker |
+| `clsMarkerMax` | string | "" | Custom class for the maximum marker |
+| `clsHint` | string | "" | Custom class for both hints |
+| `clsHintMin` | string | "" | Custom class for the minimum hint |
+| `clsHintMax` | string | "" | Custom class for the maximum hint |
+| `clsMinMax` | string | "" | Custom class for the min/max labels container |
+| `clsMin` | string | "" | Custom class for the minimum label |
+| `clsMax` | string | "" | Custom class for the maximum label |
 
 ## Events
 
@@ -101,11 +113,12 @@ Gets or sets the current values of the double slider.
 
 ```javascript
 // Get current values
-const values = $('#mySlider').data('double-slider').val();
+const slider = Metro.getPlugin('#mySlider', 'double-slider');
+const values = slider.val();
 console.log(values); // Returns [minValue, maxValue]
 
 // Set new values
-$('#mySlider').data('double-slider').val(20, 80);
+slider.val(20, 80);
 ```
 
 ### changeValue()
@@ -118,7 +131,8 @@ $('#mySlider').attr('data-value-min', 30);
 $('#mySlider').attr('data-value-max', 70);
 
 // Apply the new values
-$('#mySlider').data('double-slider').changeValue();
+const slider = Metro.getPlugin('#mySlider', 'double-slider');
+slider.changeValue();
 ```
 
 ### disable()
@@ -126,7 +140,8 @@ $('#mySlider').data('double-slider').changeValue();
 Disables the double slider.
 
 ```javascript
-$('#mySlider').data('double-slider').disable();
+const slider = Metro.getPlugin('#mySlider', 'double-slider');
+slider.disable();
 ```
 
 ### enable()
@@ -134,7 +149,8 @@ $('#mySlider').data('double-slider').disable();
 Enables the double slider.
 
 ```javascript
-$('#mySlider').data('double-slider').enable();
+const slider = Metro.getPlugin('#mySlider', 'double-slider');
+slider.enable();
 ```
 
 ### toggleState()
@@ -142,34 +158,32 @@ $('#mySlider').data('double-slider').enable();
 Toggles between enabled and disabled states.
 
 ```javascript
-$('#mySlider').data('double-slider').toggleState();
+const slider = Metro.getPlugin('#mySlider', 'double-slider');
+slider.toggleState();
 ```
 
 ## Styling with CSS Variables
 
 The Double Slider component can be styled using the following CSS variables:
 
-| Variable | Description |
-| -------- | ----------- |
-| `--slider-background` | Background color of the slider track |
-| `--slider-marker-color` | Color of the slider markers |
-| `--slider-marker-size` | Size of the slider markers |
-| `--slider-complete-color` | Color of the selected range between markers |
-| `--slider-height` | Height of the slider track |
-| `--slider-hint-background` | Background color of the hint |
-| `--slider-hint-color` | Text color of the hint |
-| `--slider-disabled-opacity` | Opacity of the slider when disabled |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--slider-thumb-size` | 18px | 18px | Size of the slider markers |
+| `--slider-thumb-color` | var(--color-blue) | var(--color-crimson) | Color of the slider markers |
+| `--slider-bar-color` | #191919 | #191919 | Color of the slider bar |
+| `--slider-back-color` | #d5d5d5 | #4e5055 | Background color of the slider track |
+| `--slider-fill-color` | var(--color-cyan) | #ff145c | Color of the selected range between markers |
+| `--slider-thumb-border-color` | var(--color-light-cyan) | #ffffff | Border color of the slider markers |
 
 ### Example of Custom Styling
 
 ```css
 /* Custom styling for a specific double slider */
 #myCustomDoubleSlider {
-    --slider-background: #e0f7fa;
-    --slider-complete-color: #00acc1;
-    --slider-marker-color: #0097a7;
-    --slider-hint-background: #006064;
-    --slider-hint-color: white;
+    --slider-back-color: #e0f7fa;
+    --slider-fill-color: #00acc1;
+    --slider-thumb-color: #0097a7;
+    --slider-thumb-border-color: #006064;
 }
 ```
 
@@ -188,22 +202,6 @@ The Double Slider component can be styled using the following CSS variables:
 - `.slider-min-max` - Container for min/max labels
 - `.slider-text-min` - The minimum value label
 - `.slider-text-max` - The maximum value label
-
-### Custom Classes
-You can add custom classes to various parts of the slider using these options:
-
-- `clsSlider` - Custom class for the slider container
-- `clsBackside` - Custom class for the background track
-- `clsComplete` - Custom class for the filled portion
-- `clsMarker` - Custom class for both markers
-- `clsMarkerMin` - Custom class for the minimum marker
-- `clsMarkerMax` - Custom class for the maximum marker
-- `clsHint` - Custom class for both hints
-- `clsHintMin` - Custom class for the minimum hint
-- `clsHintMax` - Custom class for the maximum hint
-- `clsMinMax` - Custom class for the min/max labels container
-- `clsMin` - Custom class for the minimum label
-- `clsMax` - Custom class for the maximum label
 
 ## Accessibility
 

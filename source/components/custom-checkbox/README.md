@@ -1,6 +1,11 @@
-# Custom Checkbox Component
+# Custom Checkbox
 
 The Custom Checkbox component provides a highly customizable checkbox that allows you to define custom icons and captions for checked and unchecked states. It's designed to be flexible and easy to style.
+
+## Dependencies
+
+- Metro UI Core
+- Dom
 
 ## Usage
 
@@ -35,38 +40,45 @@ The Custom Checkbox component provides a highly customizable checkbox that allow
        data-caption-position="left">
 ```
 
-## Configuration Options
+### With Custom Icons
 
-The Custom Checkbox component can be configured with the following options:
+```html
+<input type="checkbox" data-role="custom-checkbox" 
+       data-state-on="<span class='mif-star-full fg-orange'>" 
+       data-state-off="<span class='mif-star-empty'>">
+```
 
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| `stateOn` | "☑" | Symbol or HTML for the checked state |
-| `stateOff` | "☐" | Symbol or HTML for the unchecked state |
-| `captionOn` | "" | Text displayed when checkbox is checked |
-| `captionOff` | "" | Text displayed when checkbox is unchecked |
-| `captionPosition` | "right" | Position of the caption ("right" or "left") |
-| `clsCustomCheckbox` | "" | Additional CSS class for the checkbox container |
-| `clsIcon` | "" | Additional CSS class for the icon element |
-| `clsIconOn` | "" | Additional CSS class for the checked state icon |
-| `clsIconOff` | "" | Additional CSS class for the unchecked state icon |
-| `clsCaption` | "" | Additional CSS class for the caption element |
-| `clsCaptionOn` | "" | Additional CSS class for the checked state caption |
-| `clsCaptionOff` | "" | Additional CSS class for the unchecked state caption |
-| `onCustomCheckboxCreate` | Metro.noop | Callback function executed after checkbox creation |
+## Plugin Parameters
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `stateOn` | String | "✓" | Symbol or HTML for the checked state |
+| `stateOff` | String | "✗" | Symbol or HTML for the unchecked state |
+| `captionOn` | String | "" | Text displayed when checkbox is checked |
+| `captionOff` | String | "" | Text displayed when checkbox is unchecked |
+| `captionPosition` | String | "right" | Position of the caption ("right" or "left") |
+| `clsCustomCheckbox` | String | "" | Additional CSS class for the checkbox container |
+| `clsIcon` | String | "" | Additional CSS class for the icon element |
+| `clsIconOn` | String | "" | Additional CSS class for the checked state icon |
+| `clsIconOff` | String | "" | Additional CSS class for the unchecked state icon |
+| `clsCaption` | String | "" | Additional CSS class for the caption element |
+| `clsCaptionOn` | String | "" | Additional CSS class for the checked state caption |
+| `clsCaptionOff` | String | "" | Additional CSS class for the unchecked state caption |
+
+## Events
+
+| Event | Description |
+| ----- | ----------- |
+| `onCustomCheckboxCreate` | Triggered after the custom checkbox is created |
 
 ## API Methods
 
-The Custom Checkbox component provides the following API methods:
++ `disable()` - Disables the checkbox.
++ `enable()` - Enables the checkbox.
++ `toggleState()` - Toggles between enabled and disabled states.
++ `toggle([value])` - Toggles the checked state. If `value` is provided (0 or 1), sets the state accordingly.
 
-| Method | Description |
-| ------ | ----------- |
-| `disable()` | Disables the checkbox |
-| `enable()` | Enables the checkbox |
-| `toggleState()` | Toggles between enabled and disabled states |
-| `toggle([value])` | Toggles the checked state. If `value` is provided (0 or 1), sets the state accordingly |
-
-### Examples
+### Example of Method Usage
 
 ```javascript
 // Get the component instance
@@ -90,8 +102,6 @@ checkbox.toggle(0);
 
 ## Styling with CSS Variables
 
-The Custom Checkbox component can be styled using the following CSS variables:
-
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
 | `--custom-checkbox-size` | 36px | 36px | Size of the checkbox |
@@ -113,6 +123,23 @@ The Custom Checkbox component can be styled using the following CSS variables:
     --custom-checkbox-caption-color: #0D47A1;
 }
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.custom-checkbox` - Main container class for the custom checkbox
+- `.icon` - Container for the checkbox icon
+- `.caption` - Container for the checkbox caption
+
+### Modifiers
+- `.caption-left` - Positions the caption to the left of the checkbox
+- `.disabled` - Applied when the checkbox is disabled
+
+### State Classes
+- `.state-on` - Element shown when checkbox is checked
+- `.state-off` - Element shown when checkbox is unchecked
+- `.caption-state-on` - Caption element shown when checkbox is checked
+- `.caption-state-off` - Caption element shown when checkbox is unchecked
 
 ## Global Configuration
 

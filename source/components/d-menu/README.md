@@ -2,12 +2,21 @@
 
 The D-Menu component provides a versatile dropdown menu system for displaying contextual options, navigation items, and hierarchical menus. It supports icons, captions, hotkeys, and nested submenus.
 
+## Dependencies
+
+- Metro UI Core
+- Dom
+- Dropdown component (for dropdown functionality)
+
 ## Usage
+
+By default, D-Menu has an **absolute** position and is used for dropdown menus. 
+It can be used as a standalone menu or as a dropdown menu with the `data-role="dropdown"` attribute.
 
 ### Basic Menu
 
 ```html
-<ul class="d-menu pos-relative">
+<ul class="d-menu">
     <li><a href="#">Menu Item 1</a></li>
     <li><a href="#">Menu Item 2</a></li>
     <li><a href="#">Menu Item 3</a></li>
@@ -17,7 +26,7 @@ The D-Menu component provides a versatile dropdown menu system for displaying co
 ### Menu with Icons, Captions, and Hotkeys
 
 ```html
-<ul class="d-menu pos-relative">
+<ul class="d-menu">
     <li><a href="#">
         <span class="icon mif-home"></span>
         <span class="caption">Home</span>
@@ -33,7 +42,7 @@ The D-Menu component provides a versatile dropdown menu system for displaying co
 ### Disabled Menu Items
 
 ```html
-<ul class="d-menu pos-relative">
+<ul class="d-menu>
     <li><a href="#">Enabled Item</a></li>
     <li class="disabled"><a href="#">Disabled Item</a></li>
 </ul>
@@ -42,7 +51,7 @@ The D-Menu component provides a versatile dropdown menu system for displaying co
 ### Menu with Dividers
 
 ```html
-<ul class="d-menu pos-relative">
+<ul class="d-menu">
     <li><a href="#">Item 1</a></li>
     <li><a href="#">Item 2</a></li>
     <li class="divider"></li>
@@ -53,7 +62,7 @@ The D-Menu component provides a versatile dropdown menu system for displaying co
 ### Dropdown Submenu
 
 ```html
-<ul class="d-menu pos-relative">
+<ul class="d-menu">
     <li><a href="#">Item 1</a></li>
     <li>
         <a href="#" class="dropdown-toggle">Submenu</a>
@@ -88,15 +97,15 @@ The D-Menu component provides a versatile dropdown menu system for displaying co
 
 When using the d-menu with dropdown functionality (`data-role="dropdown"`), the following parameters are available:
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| dropFilter | null | Filter for dropdown elements |
-| toggleElement | null | Element that toggles the dropdown |
-| align | "left" | Alignment of the dropdown menu |
-| noClose | false | If true, prevents the dropdown from closing when clicking outside |
-| duration | 50 | Animation duration in milliseconds |
-| openMode | "auto" | Opening mode: "auto", "up" |
-| height | "auto" | Height of the dropdown menu |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `dropFilter` | String | null | Filter for dropdown elements |
+| `toggleElement` | String | null | Element that toggles the dropdown |
+| `align` | String | "left" | Alignment of the dropdown menu |
+| `noClose` | Boolean | false | If true, prevents the dropdown from closing when clicking outside |
+| `duration` | Number | 50 | Animation duration in milliseconds |
+| `openMode` | String | "auto" | Opening mode: "auto", "up" |
+| `height` | String | "auto" | Height of the dropdown menu |
 
 ### Example with Parameters
 
@@ -110,11 +119,9 @@ When using the d-menu with dropdown functionality (`data-role="dropdown"`), the 
 
 When using the d-menu with dropdown functionality, the following methods are available:
 
-| Method | Description |
-| ------ | ----------- |
-| open(immediate, element) | Opens the dropdown menu |
-| close(immediate, element) | Closes the dropdown menu |
-| toggle() | Toggles the dropdown menu state |
++ `open(immediate, element)` - Opens the dropdown menu. If `immediate` is true, opens without animation.
++ `close(immediate, element)` - Closes the dropdown menu. If `immediate` is true, closes without animation.
++ `toggle()` - Toggles the dropdown menu state.
 
 ### Example of API Usage
 
@@ -132,23 +139,31 @@ menu.close();
 menu.toggle();
 ```
 
+## Events
+
+| Event | Description |
+| ----- | ----------- |
+| `onDrop` | Triggered when the dropdown menu is opened |
+| `onUp` | Triggered when the dropdown menu is closed |
+| `onDropdownCreate` | Triggered after the dropdown is created |
+
 ## Styling with CSS Variables
 
 The D-Menu component can be styled using the following CSS variables:
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| --d-menu-border-color | #e9e9e9 | #404959 | Border color of the menu |
-| --d-menu-divider-color | #e9e9e9 | #404959 | Color of the divider line |
-| --d-menu-background | #ffffff | #2b2d30 | Background color of the menu |
-| --d-menu-color | #191919 | #ffffff | Text color of the menu |
-| --d-menu-item-color | #191919 | #dbdfe7 | Text color of menu items |
-| --d-menu-item-color-disabled | #ccc | #a8a8a8 | Text color of disabled menu items |
-| --d-menu-item-color-hover | #000000 | #ffffff | Text color of menu items on hover |
-| --d-menu-item-background-hover | #e8e8e8 | #1e1f22 | Background color of menu items on hover |
-| --d-menu-dropdown-toogle-color | #191919 | #ffffff | Color of the dropdown toggle icon |
-| --d-menu-shadow-color | #e1e1e1 | #191919 | Shadow color of the menu |
-| --d-menu-border-radius | 4px | 4px | Border radius of the menu |
+| `--d-menu-border-color` | #e9e9e9 | #404959 | Border color of the menu |
+| `--d-menu-divider-color` | #e9e9e9 | #404959 | Color of the divider line |
+| `--d-menu-background` | #ffffff | #2b2d30 | Background color of the menu |
+| `--d-menu-color` | #191919 | #ffffff | Text color of the menu |
+| `--d-menu-item-color` | #191919 | #dbdfe7 | Text color of menu items |
+| `--d-menu-item-color-disabled` | #ccc | #a8a8a8 | Text color of disabled menu items |
+| `--d-menu-item-color-hover` | #000000 | #ffffff | Text color of menu items on hover |
+| `--d-menu-item-background-hover` | #e8e8e8 | #1e1f22 | Background color of menu items on hover |
+| `--d-menu-dropdown-toogle-color` | #191919 | #ffffff | Color of the dropdown toggle icon |
+| `--d-menu-shadow-color` | #e1e1e1 | #191919 | Shadow color of the menu |
+| `--d-menu-border-radius` | 4px | 4px | Border radius of the menu |
 
 ### Example of Custom Styling
 
@@ -183,6 +198,18 @@ The D-Menu component can be styled using the following CSS variables:
 - `.hotkey` - Container for keyboard shortcut text
 - `.icon` - Container for menu item icon
 - `.dropdown-toggle` - Indicates that the item has a submenu
+
+## Global Configuration
+
+You can set global defaults for all dropdown menus using:
+
+```javascript
+Metro.dropdownSetup({
+    align: "right",
+    noClose: true,
+    duration: 100
+});
+```
 
 ## Accessibility
 
