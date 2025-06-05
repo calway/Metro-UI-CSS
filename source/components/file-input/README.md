@@ -2,13 +2,63 @@
 
 The File Input component provides a customizable interface for file selection in web applications. It offers three different modes: standard input, button, and drop zone, allowing for flexible integration into various UI designs.
 
+## Dependencies
+
+- Input Common component
+- Button component
+
 ## Usage
 
+### Basic Usage
+
 ```html
+<!-- Standard input mode -->
 <input type="file" data-role="file-input">
+
+<!-- Button mode -->
+<input type="file" data-role="file-input" data-mode="button">
+
+<!-- Drop zone mode -->
+<input type="file" data-role="file-input" data-mode="drop-zone">
 ```
 
-## Parameters
+### With Custom Labels
+
+```html
+<!-- With custom label -->
+<input type="file" data-role="file-input" data-label="Upload Document">
+
+<!-- With custom button title -->
+<input type="file" data-role="file-input" data-button-title="Browse Files">
+
+<!-- With custom drop zone title -->
+<input type="file" data-role="file-input" data-mode="drop-zone" data-drop-title="Drop your files here">
+```
+
+### Multiple File Selection
+
+```html
+<!-- Multiple file selection -->
+<input type="file" multiple data-role="file-input">
+
+<!-- Multiple file selection with custom selected files text -->
+<input type="file" multiple data-role="file-input" data-files-selected-title="{n} files ready to upload">
+```
+
+### With Additional Styling
+
+```html
+<!-- Small input variant -->
+<input type="file" data-role="file-input" class="input-small">
+
+<!-- With RTL support -->
+<input type="file" data-role="file-input" dir="rtl">
+
+<!-- With custom CSS classes -->
+<input type="file" data-role="file-input" data-cls-component="custom-file" data-cls-button="custom-button">
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -31,45 +81,17 @@ The File Input component provides a customizable interface for file selection in
 
 ## API Methods
 
-### clear()
-Clears the selected files.
++ `clear()` - Clears the selected files.
++ `disable()` - Disables the component.
++ `enable()` - Enables the component.
++ `toggleState()` - Toggles between enabled and disabled states.
++ `toggleDir()` - Toggles RTL direction.
 
 ```javascript
-var fileInput = $(selector).data('file');
+const fileInput = Metro.getPlugin("#myFileInput", "file");
 fileInput.clear();
 ```
 
-### disable()
-Disables the component.
-
-```javascript
-var fileInput = $(selector).data('file');
-fileInput.disable();
-```
-
-### enable()
-Enables the component.
-
-```javascript
-var fileInput = $(selector).data('file');
-fileInput.enable();
-```
-
-### toggleState()
-Toggles between enabled and disabled states.
-
-```javascript
-var fileInput = $(selector).data('file');
-fileInput.toggleState();
-```
-
-### toggleDir()
-Toggles RTL direction.
-
-```javascript
-var fileInput = $(selector).data('file');
-fileInput.toggleDir();
-```
 
 ## Events
 
@@ -78,92 +100,76 @@ fileInput.toggleDir();
 | onSelect | Triggered when files are selected |
 | onFileCreate | Triggered when the component is created |
 
-## CSS Variables
-
-The File Input component can be customized using the following CSS variables:
+## Styling with CSS Variables
 
 ### Light Theme Variables
 
-```css
-:root {
-    --file-height: 36px;
-    --file-button-background: #ebebeb;
-    --file-button-background-hover: #dadada;
-    --file-button-color: #191919;
-    
-    --file-drop-zone-border-size: 4px;
-    --file-drop-zone-border-type: dashed;
-    --file-drop-zone-border-color: #858585;
-    --file-drop-zone-background: #f5f5f5;
-    --file-drop-zone-color: #191919;
-    --file-drop-zone-hover-color: darken(#3A3A3A, 20%);
-    --file-drop-zone-drop-color: #94ff6a;
-}
-```
+| Variable | Default (Light) | Description |
+| --- | --- | --- |
+| `--file-height` | 36px | Height of the file input component |
+| `--file-button-background` | #ebebeb | Background color of the button |
+| `--file-button-background-hover` | #dadada | Background color of the button on hover |
+| `--file-button-color` | #191919 | Text color of the button |
+| `--file-drop-zone-border-size` | 4px | Border size of the drop zone |
+| `--file-drop-zone-border-type` | dashed | Border type of the drop zone |
+| `--file-drop-zone-border-color` | #858585 | Border color of the drop zone |
+| `--file-drop-zone-background` | #f5f5f5 | Background color of the drop zone |
+| `--file-drop-zone-color` | #191919 | Text color of the drop zone |
+| `--file-drop-zone-hover-color` | darken(#3A3A3A, 20%) | Border color of the drop zone on hover |
+| `--file-drop-zone-drop-color` | #94ff6a | Border color of the drop zone when files are being dropped |
 
 ### Dark Theme Variables
 
-```css
-.dark-side {
-    --file-button-background: #3a3b40;
-    --file-button-background-hover: #484850;
-    --file-button-color: #f3fcff;
+| Variable | Default (Dark) | Description |
+| --- | --- | --- |
+| `--file-button-background` | #3a3b40 | Background color of the button |
+| `--file-button-background-hover` | #484850 | Background color of the button on hover |
+| `--file-button-color` | #f3fcff | Text color of the button |
+| `--file-drop-zone-border-size` | 4px | Border size of the drop zone |
+| `--file-drop-zone-border-type` | dashed | Border type of the drop zone |
+| `--file-drop-zone-border-color` | #858585 | Border color of the drop zone |
+| `--file-drop-zone-background` | #2b2d30 | Background color of the drop zone |
+| `--file-drop-zone-color` | #dbdfe7 | Text color of the drop zone |
+| `--file-drop-zone-hover-color` | #dbdfe7 | Border color of the drop zone on hover |
+| `--file-drop-zone-drop-color` | #94ff6a | Border color of the drop zone when files are being dropped |
 
-    --file-drop-zone-border-size: 4px;
-    --file-drop-zone-border-type: dashed;
-    --file-drop-zone-border-color: #858585;
-    --file-drop-zone-background: #2b2d30;
-    --file-drop-zone-color: #dbdfe7;
-    --file-drop-zone-hover-color: #dbdfe7;
-    --file-drop-zone-drop-color: #94ff6a;
+### Example of Custom Styling
+
+```css
+/* Custom styling for file input */
+.custom-file-input {
+    --file-button-background: #2196F3;
+    --file-button-background-hover: #1976D2;
+    --file-button-color: white;
+    --file-drop-zone-border-color: #2196F3;
+    --file-drop-zone-background: #E3F2FD;
 }
 ```
 
-## Styling
+## Available CSS Classes
 
-### Standard Input Mode
-The standard input mode displays a text field with a button for file selection.
+### Base Classes
+- `.file` - Applied to the component in standard input mode
+- `.file-button` - Applied to the component in button mode
+- `.drop-zone` - Applied to the component in drop zone mode
 
-### Button Mode
-The button mode displays only a button for file selection.
+### State Classes
+- `.disabled` - Applied when the component is disabled
+- `.focused` - Applied when the component has focus
+- `.drop-on` - Applied to the drop zone when files are being dragged over it
 
-### Drop Zone Mode
-The drop zone mode displays a designated area where users can drag and drop files.
+### Modifier Classes
+- `.rtl` - Applied for right-to-left text direction
+- `.input-small` - Applied for a smaller version of the file input
 
-### RTL Support
-The component supports right-to-left text direction. Add the `dir="rtl"` attribute to enable RTL mode.
+## Best Practices
 
-### Small Input Variant
-Add the `input-small` class to create a smaller version of the file input.
-
-## Examples
-
-### Standard Input Mode
-```html
-<input type="file" data-role="file-input">
-```
-
-### Button Mode
-```html
-<input type="file" data-role="file-input" data-mode="button">
-```
-
-### Drop Zone Mode
-```html
-<input type="file" data-role="file-input" data-mode="drop-zone">
-```
-
-### With Custom Label
-```html
-<input type="file" data-role="file-input" data-label="Upload Document">
-```
-
-### Multiple File Selection
-```html
-<input type="file" multiple data-role="file-input">
-```
-
-### With Custom Button Text
-```html
-<input type="file" data-role="file-input" data-button-title="Browse Files">
-```
+1. Use clear and descriptive labels to indicate what type of files should be uploaded
+2. Provide feedback to users when files are selected
+3. Use the appropriate mode based on your UI requirements:
+   - Standard input mode for forms
+   - Button mode for cleaner interfaces
+   - Drop zone mode for bulk file uploads
+4. Consider using multiple file selection for user convenience when appropriate
+5. Implement proper validation for file types and sizes
+6. Ensure the component is accessible and can be navigated via keyboard

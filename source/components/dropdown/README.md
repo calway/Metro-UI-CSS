@@ -1,10 +1,15 @@
-# Dropdown Component
+# Dropdown
 
 The Dropdown component provides a flexible way to create dropdown menus and lists that can be toggled to show or hide content. It supports various positioning options and can be customized through configuration options and CSS variables.
 
+## Dependencies
+
+- Metro UI Core
+- DOM Library
+
 ## Usage
 
-### Basic Dropdown
+### Basic Usage
 
 ```html
 <!-- Basic dropdown -->
@@ -27,7 +32,9 @@ The Dropdown component provides a flexible way to create dropdown menus and list
 </button>
 ```
 
-### Dropdown Positioning
+### Additional Configurations
+
+#### Dropdown Positioning
 
 ```html
 <!-- Dropdown that opens upward -->
@@ -47,7 +54,7 @@ The Dropdown component provides a flexible way to create dropdown menus and list
 </div>
 ```
 
-### Dropdown with No Auto-Close
+#### Dropdown with No Auto-Close
 
 ```html
 <!-- Dropdown that stays open when clicking outside -->
@@ -59,12 +66,10 @@ The Dropdown component provides a flexible way to create dropdown menus and list
 </div>
 ```
 
-## Configuration Options
+## Plugin Parameters
 
-The Dropdown component can be configured with the following options:
-
-| Option | Type | Default | Description |
-| ------ | ---- | ------- | ----------- |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
 | `dropdownDeferred` | Number | 0 | Delay in milliseconds before the dropdown appears |
 | `dropFilter` | String | null | CSS selector to filter which dropdowns should be closed when another is opened |
 | `toggleElement` | String | null | CSS selector for the toggle element (if not automatically detected) |
@@ -86,8 +91,8 @@ Metro.dropdownSetup({
     openMode: "up"
 });
 
-// Component-specific configuration
-$(".my-dropdown").dropdown({
+// Component-specific configuration using Metro.makePlugin
+const dropdown = Metro.makePlugin("#myDropdown", "dropdown", {
     align: "right",
     height: "300px",
     onDrop: function() {
@@ -98,19 +103,15 @@ $(".my-dropdown").dropdown({
 
 ## API Methods
 
-The Dropdown component provides the following API methods:
++ open(immediate, el) - Opens the dropdown. If `immediate` is true, opens without animation. `el` is optional element to open.
++ close(immediate, el) - Closes the dropdown. If `immediate` is true, closes without animation. `el` is optional element to close.
++ toggle() - Toggles the dropdown between open and closed states.
 
-| Method | Parameters | Description |
-| ------ | ---------- | ----------- |
-| `open` | (immediate, el) | Opens the dropdown. If `immediate` is true, opens without animation. `el` is optional element to open. |
-| `close` | (immediate, el) | Closes the dropdown. If `immediate` is true, closes without animation. `el` is optional element to close. |
-| `toggle` | () | Toggles the dropdown between open and closed states. |
-
-### Example of API Usage
+### Example of Method Usage
 
 ```javascript
 // Get the dropdown component instance
-const dropdown = Metro.getPlugin($("#myDropdown"), "dropdown");
+const dropdown = Metro.getPlugin("#myDropdown", "dropdown");
 
 // Open the dropdown
 dropdown.open();
@@ -124,8 +125,6 @@ dropdown.toggle();
 
 ## Events
 
-The Dropdown component provides the following callback events:
-
 | Event | Description |
 | ----- | ----------- |
 | `onDrop` | Triggered when the dropdown is opened |
@@ -134,11 +133,9 @@ The Dropdown component provides the following callback events:
 
 ## Styling with CSS Variables
 
-The Dropdown component can be styled using the following CSS variables:
-
-| Variable | Description |
-| -------- | ----------- |
-| `--drop-menu-toggle-color` | Color of the dropdown toggle icon |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--drop-menu-toggle-color` | #191919 | #ffffff | Color of the dropdown toggle icon |
 
 ### Example of Custom Styling
 
@@ -150,6 +147,10 @@ The Dropdown component can be styled using the following CSS variables:
 ```
 
 ## Available CSS Classes
+
+### Base Classes
+- `.dropdown` - The main class for the dropdown component
+- `.dropdown-toggle` - The class for the toggle element
 
 ### Positioning Classes
 - `.drop-left` - Positions the dropdown to the left of the toggle
@@ -164,11 +165,3 @@ The Dropdown component can be styled using the following CSS variables:
 ### State Classes
 - `.keep-open` - Prevents the dropdown from closing when clicking outside
 - `.active-toggle` - Applied to the toggle element when the dropdown is open
-
-## Best Practices
-
-1. Use clear and descriptive labels for dropdown toggles
-2. Keep dropdown menus concise and organized
-3. Consider using icons alongside text for better visual recognition
-4. Use appropriate positioning based on the location of the dropdown in the UI
-5. Ensure dropdown content is accessible and navigable via keyboard

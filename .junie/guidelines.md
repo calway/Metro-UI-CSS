@@ -262,6 +262,7 @@ const accordion = Metro.getPlugin("#myAccordion", "accordion");
    ## API Methods
 
    + Method1(arg) - Description of what the method does.
+   + Method2(arg) - Description of what the method does.
    
    #### Example of Method Usage
    ```javascript

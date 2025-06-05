@@ -2,7 +2,13 @@
 
 The Export component provides utilities for exporting data from tables and arrays to CSV format and downloading the results.
 
+## Dependencies
+
+None
+
 ## Usage
+
+### Basic Usage
 
 ```javascript
 // Initialize with default options
@@ -15,22 +21,21 @@ exporter.tableToCSV('#myTable', 'exported-table.csv');
 exporter.arrayToCsv(myArray, 'exported-array.csv');
 ```
 
-## Options
+## Plugin Parameters
 
 The Export component accepts the following configuration options:
 
-| Option | Type | Default | Description |
-| ------ | ---- | ------- | ----------- |
-| csvDelimiter | String | `"\t"` | The delimiter character used to separate values in the CSV output |
-| csvNewLine | String | `"\r\n"` | The character(s) used for line breaks in the CSV output |
-| includeHeader | Boolean | `true` | Whether to include the table header in the CSV output when exporting tables |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `csvDelimiter` | String | `"\t"` | The delimiter character used to separate values in the CSV output |
+| `csvNewLine` | String | `"\r\n"` | The character(s) used for line breaks in the CSV output |
+| `includeHeader` | Boolean | `true` | Whether to include the table header in the CSV output when exporting tables |
 
 ## API Methods
 
-### setup(options)
++ setup(options) - Sets up the component with custom options.
 
-Sets up the component with custom options.
-
+#### Example of Method Usage
 ```javascript
 Metro.export.setup({
     csvDelimiter: ',',
@@ -39,9 +44,7 @@ Metro.export.setup({
 });
 ```
 
-### tableToCSV(table, filename, options)
-
-Converts an HTML table to CSV format and optionally downloads it.
++ tableToCSV(table, filename, options) - Converts an HTML table to CSV format and optionally downloads it.
 
 **Parameters:**
 - `table` - The table element or selector
@@ -52,6 +55,7 @@ Converts an HTML table to CSV format and optionally downloads it.
 - If `filename` is provided: `true` after download is initiated
 - If `filename` is not provided: The CSV data as a string
 
+#### Example of Method Usage
 ```javascript
 // Export and download
 Metro.export.tableToCSV('#dataTable', 'exported-data.csv');
@@ -60,9 +64,7 @@ Metro.export.tableToCSV('#dataTable', 'exported-data.csv');
 const csvData = Metro.export.tableToCSV('#dataTable');
 ```
 
-### arrayToCsv(array, filename, options)
-
-Converts a JavaScript array to CSV format and optionally downloads it.
++ arrayToCsv(array, filename, options) - Converts a JavaScript array to CSV format and optionally downloads it.
 
 **Parameters:**
 - `array` - The array to convert to CSV
@@ -73,6 +75,7 @@ Converts a JavaScript array to CSV format and optionally downloads it.
 - If `filename` is provided: `true` after download is initiated
 - If `filename` is not provided: The CSV data as a string
 
+#### Example of Method Usage
 ```javascript
 const myArray = [
     ['Name', 'Age', 'City'],
@@ -87,9 +90,7 @@ Metro.export.arrayToCsv(myArray, 'people-data.csv');
 const csvData = Metro.export.arrayToCsv(myArray);
 ```
 
-### base64(data)
-
-Converts data to base64 encoding.
++ base64(data) - Converts data to base64 encoding.
 
 **Parameters:**
 - `data` - The data to convert to base64
@@ -97,13 +98,12 @@ Converts data to base64 encoding.
 **Returns:**
 - The base64 encoded string
 
+#### Example of Method Usage
 ```javascript
 const encodedData = Metro.export.base64('Hello, world!');
 ```
 
-### b64toBlob(b64Data, contentType, sliceSize)
-
-Converts base64 data to a Blob object.
++ b64toBlob(b64Data, contentType, sliceSize) - Converts base64 data to a Blob object.
 
 **Parameters:**
 - `b64Data` - The base64 data to convert
@@ -113,13 +113,12 @@ Converts base64 data to a Blob object.
 **Returns:**
 - A Blob object containing the data
 
+#### Example of Method Usage
 ```javascript
 const blob = Metro.export.b64toBlob(base64Data, 'text/csv');
 ```
 
-### createDownload(data, contentType, filename)
-
-Creates a download for the provided data.
++ createDownload(data, contentType, filename) - Creates a download for the provided data.
 
 **Parameters:**
 - `data` - The base64 encoded data to download
@@ -129,13 +128,14 @@ Creates a download for the provided data.
 **Returns:**
 - `true` after download is initiated
 
+#### Example of Method Usage
 ```javascript
 Metro.export.createDownload(base64Data, 'application/csv', 'export.csv');
 ```
 
 ## Styling
 
-The Export component is a utility component that doesn't have a visual representation, so there are no CSS variables available for styling.
+The Export component is a utility component that doesn't have a visual representation, so there are no CSS variables or CSS classes available for styling.
 
 ## Examples
 
@@ -166,3 +166,15 @@ Metro.export.arrayToCsv(data, 'contacts.csv', {
     csvNewLine: '\n'
 });
 ```
+
+## Best Practices
+
+1. **Data Formatting**: Ensure your data is properly formatted before exporting, especially when working with arrays.
+
+2. **Headers**: When exporting tables, consider whether you want to include headers based on your use case.
+
+3. **Delimiters**: Choose appropriate delimiters based on your data. If your data contains tabs, consider using commas or another character as the delimiter.
+
+4. **File Extensions**: Always use the appropriate file extension (.csv) when naming your exported files.
+
+5. **Character Encoding**: The component automatically handles UTF-8 encoding for proper display of special characters.

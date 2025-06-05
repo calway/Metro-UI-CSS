@@ -2,78 +2,88 @@
 
 The Dropdown Button component combines the functionality of the Button and Dropdown components to create a button that toggles a dropdown menu. It provides a convenient way to create dropdown menus triggered by button clicks.
 
+## Dependencies
+
+- Metro UI Core
+- Button Component
+- Dropdown Component
+
 ## Usage
 
 ### Basic Dropdown Button
 
 ```html
 <!-- Basic dropdown button -->
-<button class="button dropdown-button dropdown-toggle">
-    Options
-    <div class="dropdown" data-role="dropdown">
-        <ul>
-            <li><a href="#">Option 1</a></li>
-            <li><a href="#">Option 2</a></li>
-            <li><a href="#">Option 3</a></li>
-        </ul>
-    </div>
-</button>
+<div class="dropdown-button">
+    <button class="button dropdown-toggle">
+        Options
+    </button>
+    <ul data-role="dropdown" class="d-menu">
+        <li><a href="#">Option 1</a></li>
+        <li><a href="#">Option 2</a></li>
+        <li><a href="#">Option 3</a></li>
+    </ul>
+</div>
 
 <!-- With different button styles -->
-<button class="button outline dropdown-button dropdown-toggle">
-    Outline Button
-    <div class="dropdown" data-role="dropdown">
-        <ul>
-            <li><a href="#">Option 1</a></li>
-            <li><a href="#">Option 2</a></li>
-        </ul>
-    </div>
-</button>
+<div class="dropdown-button">
+    <button class="button outline dropdown-toggle">
+        Outline Button
+    </button>
+    <ul data-role="dropdown" class="d-menu">
+        <li><a href="#">Option 1</a></li>
+        <li><a href="#">Option 2</a></li>
+    </ul>
+</div>
 ```
 
 ### Dropdown Button Positioning
 
 ```html
 <!-- Dropdown that opens upward -->
-<button class="button dropdown-button dropdown-toggle">
-    Options
-    <div class="dropdown drop-up" data-role="dropdown">
-        <div>Content appears above the button</div>
-    </div>
-</button>
+<div class="dropdown-button">
+    <button class="button dropdown-toggle">
+        Options
+    </button>
+    <ul data-role="dropdown" class="d-menu drop-up">
+        <li><a href="#">Content appears above the button</a></li>
+    </ul>
+</div>
 
 <!-- Dropdown aligned to the right -->
-<button class="button dropdown-button dropdown-toggle">
-    Options
-    <div class="dropdown drop-down-right" data-role="dropdown">
-        <div>Content aligned to the right</div>
-    </div>
-</button>
+<div class="dropdown-button">
+    <button class="button dropdown-toggle">
+        Options
+    </button>
+    <ul data-role="dropdown" class="d-menu drop-down-right" >
+        <li><a href="#">Content aligned to the right</a></li>
+    </ul>
+</div>
 ```
 
 ### Colored Dropdown Buttons
 
 ```html
 <!-- Colored dropdown buttons -->
-<button class="button button-primary dropdown-button dropdown-toggle">
-    Primary
-    <div class="dropdown" data-role="dropdown">
-        <ul>
-            <li><a href="#">Option 1</a></li>
-            <li><a href="#">Option 2</a></li>
-        </ul>
-    </div>
-</button>
+<div class="dropdown-button">
+    <button class="button button-primary dropdown-toggle">
+        Primary
+    </button>
+    <ul data-role="dropdown" class="d-menu">
+        <li><a href="#">Option 1</a></li>
+        <li><a href="#">Option 2</a></li>
+    </ul>
+</div>
 
-<button class="button button-success dropdown-button dropdown-toggle">
-    Success
-    <div class="dropdown" data-role="dropdown">
-        <ul>
-            <li><a href="#">Option 1</a></li>
-            <li><a href="#">Option 2</a></li>
-        </ul>
-    </div>
-</button>
+<div class="dropdown-button">
+    <button class="button button-success dropdown-toggle">
+        Success
+    </button>
+    <ul data-role="dropdown" class="d-menu">
+        <li><a href="#">Option 1</a></li>
+        <li><a href="#">Option 2</a></li>
+    </ul>
+</div>
 ```
 
 ## Configuration Options
@@ -104,7 +114,7 @@ Metro.dropdownSetup({
 });
 
 // Component-specific configuration
-$(".my-dropdown-button .dropdown").dropdown({
+const dropdown = Metro.makePlugin("#myDropdownButton ul", "dropdown", {
     align: "right",
     height: "300px",
     onDrop: function() {
@@ -117,17 +127,15 @@ $(".my-dropdown-button .dropdown").dropdown({
 
 The Dropdown Button component provides the following API methods (inherited from the Dropdown component):
 
-| Method | Parameters | Description |
-| ------ | ---------- | ----------- |
-| `open` | (immediate, el) | Opens the dropdown. If `immediate` is true, opens without animation. `el` is optional element to open. |
-| `close` | (immediate, el) | Closes the dropdown. If `immediate` is true, closes without animation. `el` is optional element to close. |
-| `toggle` | () | Toggles the dropdown between open and closed states. |
++ open(immediate, el) - Opens the dropdown. If `immediate` is true, opens without animation. `el` is optional element to open.
++ close(immediate, el) - Closes the dropdown. If `immediate` is true, closes without animation. `el` is optional element to close.
++ toggle() - Toggles the dropdown between open and closed states.
 
 ### Example of API Usage
 
 ```javascript
 // Get the dropdown component instance
-const dropdown = Metro.getPlugin($("#myDropdownButton .dropdown"), "dropdown");
+const dropdown = Metro.getPlugin("#myDropdownButton ul", "dropdown");
 
 // Open the dropdown
 dropdown.open();

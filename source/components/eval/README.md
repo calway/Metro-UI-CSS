@@ -2,6 +2,10 @@
 
 The Eval component provides a powerful way to evaluate JavaScript expressions within HTML content. It allows you to embed dynamic expressions in your markup that will be evaluated at runtime.
 
+## Dependencies
+
+None
+
 ## Usage
 
 ### Basic Usage
@@ -15,6 +19,28 @@ The Eval component provides a powerful way to evaluate JavaScript expressions wi
 <!-- Using with variables from context -->
 <div data-role="eval" data-eval-context="myContext">
   Hello, {{name}}! Today is {{new Date().toLocaleDateString()}}.
+</div>
+```
+
+### Examples from HTML
+
+```html
+<!-- Display the current year -->
+<div data-role="eval">{{ new Date().getFullYear() }}</div>
+
+<!-- Evaluate a mathematical expression -->
+<div data-role="eval">{{ 2 + 2 * 5 }}</div>
+
+<!-- Use conditional expressions -->
+<div data-role="eval">{{ new Date().getHours() < 12 ? 'Good morning' : 'Good day' }}</div>
+
+<!-- Enable error logging -->
+<div data-role="eval" data-log-errors="true">{{ someNonExistentVariable }}</div>
+
+<!-- Process child nodes -->
+<div data-role="eval" data-process-child="true">
+    <div>Today is {{ new Date().toLocaleDateString() }}</div>
+    <div>Time is {{ new Date().toLocaleTimeString() }}</div>
 </div>
 ```
 
@@ -54,42 +80,39 @@ Metro.evalSetup({
 
 The Eval component accepts the following configuration options:
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| enabled | `true` | Enables or disables the evaluation of expressions |
-| logErrors | `false` | When true, logs evaluation errors to the console |
-| delimiterStart | `{{` | The starting delimiter for expressions |
-| delimiterEnd | `}}` | The ending delimiter for expressions |
-| context | `null` | The execution context for variables in expressions |
-| processChild | `true` | When true, processes all child elements recursively |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `enabled` | Boolean | `true` | Enables or disables the evaluation of expressions |
+| `logErrors` | Boolean | `false` | When true, logs evaluation errors to the console |
+| `delimiterStart` | String | `{{` | The starting delimiter for expressions |
+| `delimiterEnd` | String | `}}` | The ending delimiter for expressions |
+| `context` | Object | `null` | The execution context for variables in expressions |
+| `processChild` | Boolean | `true` | When true, processes all child elements recursively |
 
 ## API Methods
 
-### eval(str)
++ eval(str) - Evaluates expressions within a string using the configured delimiters.
 
-Evaluates expressions within a string using the configured delimiters.
-
+#### Example of Method Usage
 ```javascript
-const evalComponent = $(".my-eval-element").data("eval");
+const evalComponent = Metro.getPlugin("#myEvalElement", "eval");
 const result = evalComponent.eval("The answer is {{40 + 2}}");
 console.log(result); // "The answer is 42"
 ```
 
-### reset()
++ reset() - Resets the element to its original content before evaluation.
 
-Resets the element to its original content before evaluation.
-
+#### Example of Method Usage
 ```javascript
-const evalComponent = $(".my-eval-element").data("eval");
+const evalComponent = Metro.getPlugin("#myEvalElement", "eval");
 evalComponent.reset();
 ```
 
-### destroy()
++ destroy() - Destroys the component instance and restores the original content.
 
-Destroys the component instance and restores the original content.
-
+#### Example of Method Usage
 ```javascript
-const evalComponent = $(".my-eval-element").data("eval");
+const evalComponent = Metro.getPlugin("#myEvalElement", "eval");
 evalComponent.destroy();
 ```
 

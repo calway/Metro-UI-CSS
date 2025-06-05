@@ -4,7 +4,8 @@ The Drop Menu component provides a flexible and interactive dropdown menu system
 
 ## Dependencies
 
-No additional dependencies required.
+- Metro UI Core
+- DOM Library
 
 ## Usage
 
@@ -28,7 +29,7 @@ No additional dependencies required.
 
 ```html
 <button class="button menu-toggle">Menu</button>
-<ul data-role-dropmenu>
+<ul data-role="dropmenu">
     <li><a href="#">Item 1</a></li>
     <li>
         <a href="#" class="menu-toggle">Submenu</a>
@@ -45,7 +46,7 @@ No additional dependencies required.
 
 ```html
 <button class="button menu-toggle">Menu</button>
-<ul data-role-dropmenu data-align="right">
+<ul data-role="dropmenu" data-align="right">
     <li><a href="#">Item 1</a></li>
     <li><a href="#">Item 2</a></li>
     <li><a href="#">Item 3</a></li>
@@ -56,7 +57,7 @@ No additional dependencies required.
 
 ```html
 <button class="button menu-toggle">Menu</button>
-<ul data-role-dropmenu data-height="200">
+<ul data-role="dropmenu" data-height="200">
     <li><a href="#">Item 1</a></li>
     <li><a href="#">Item 2</a></li>
     <li><a href="#">Item 3</a></li>
@@ -79,7 +80,7 @@ The Drop Menu component accepts the following configuration options:
 ### Setting Parameters via Data Attributes
 
 ```html
-<ul data-role-dropmenu 
+<ul data-role="dropmenu" 
     data-height="300"
     data-align="right">
     <!-- Menu items -->
@@ -193,7 +194,7 @@ The component supports unlimited nesting of menus. Each submenu:
 Add the class `keep-open`, `stay-open`, or `ignore-document-click` to prevent a menu from closing when clicking elsewhere on the document:
 
 ```html
-<ul data-role-dropmenu class="keep-open">
+<ul data-role="dropmenu" class="keep-open">
     <!-- This menu will stay open until explicitly closed -->
 </ul>
 ```
