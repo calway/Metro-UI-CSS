@@ -2,13 +2,9 @@
 
 The Drop Menu component provides a flexible and interactive dropdown menu system that can be attached to any element. It supports nested menus, positioning options, and customizable styling.
 
-## Dependencies
-
-No additional dependencies required.
-
 ## Usage
 
-### Basic Usage
+### Basic Drop Menu
 
 ```html
 <!-- Basic drop menu -->
@@ -22,9 +18,7 @@ No additional dependencies required.
 </ul>
 ```
 
-### Additional Configurations
-
-#### Nested Drop Menu
+### Nested Drop Menu
 
 ```html
 <button class="button menu-toggle">Menu</button>
@@ -41,7 +35,7 @@ No additional dependencies required.
 </ul>
 ```
 
-#### Right-Aligned Drop Menu
+### Right-Aligned Drop Menu
 
 ```html
 <button class="button menu-toggle">Menu</button>
@@ -52,7 +46,7 @@ No additional dependencies required.
 </ul>
 ```
 
-#### Fixed Height Drop Menu
+### Fixed Height Drop Menu
 
 ```html
 <button class="button menu-toggle">Menu</button>
@@ -72,9 +66,9 @@ The Drop Menu component accepts the following configuration options:
 
 | Parameter | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| `height` | string/number | "auto" | Maximum height of the menu. Can be "auto" or a specific pixel value |
-| `align` | string | "left" | Horizontal alignment of the menu. Can be "left" or "right" |
-| `onMenuCreate` | function | Metro.noop | Callback function that fires when the menu is created |
+| height | string/number | "auto" | Maximum height of the menu. Can be "auto" or a specific pixel value |
+| align | string | "left" | Horizontal alignment of the menu. Can be "left" or "right" |
+| onMenuCreate | function | Metro.noop | Callback function that fires when the menu is created |
 
 ### Setting Parameters via Data Attributes
 
@@ -109,9 +103,9 @@ The Drop Menu component provides the following API methods:
 
 | Method | Description |
 | ------ | ----------- |
-| `open()` | Opens the drop menu |
-| `close()` | Closes the drop menu |
-| `destroy()` | Removes the drop menu component |
+| open() | Opens the drop menu |
+| close() | Closes the drop menu |
+| destroy() | Removes the drop menu component |
 
 ### Example of API Usage
 
@@ -129,19 +123,14 @@ dropMenu.close();
 dropMenu.destroy();
 ```
 
-## Events
-
-| Event | Description |
-| ----- | ----------- |
-| `onMenuCreate` | Fires when the menu is created |
-
 ## Styling with CSS Variables
 
 The Drop Menu component can be styled using the following CSS variables:
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| `--drop-menu-toggle-color` | #191919 | #efefef | Color of the toggle icon |
+| --drop-menu-toggle-color | #191919 | #efefef | Color of the toggle icon |
+| --zindex-fixed | - | - | Base z-index for the drop menu (component adds level to this value) |
 
 ### Example of Custom Styling
 
@@ -165,11 +154,6 @@ The Drop Menu component can be styled using the following CSS variables:
 
 ### State Classes
 - `.active-toggle` - Applied to the toggle when the menu is open
-
-### Special Feature Classes
-- `.keep-open` - Prevents the menu from closing when clicking elsewhere
-- `.stay-open` - Alternative class that prevents the menu from closing
-- `.ignore-document-click` - Another alternative class with the same functionality
 
 ## Special Features
 

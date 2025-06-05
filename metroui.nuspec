@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>metroui</id>
-    <version>5.1.5</version>
+    <version>5.1.6</version>
     <title>Metro UI Components Library</title>
     <authors>Serhii Pimenov</authors>
     <owners>serhii_pimenov</owners>
@@ -15,9 +15,9 @@
     <copyright>Copyright 2012-2025, Serhii Pimenov</copyright>
     <tags>Metro UI CSS Framework LESS CSS JS HTML</tags>
     <releaseNotes>
-        5.1.5
+        5.1.6
 
-        + Fixed chekbox bug in `table` component
+        + Fixed knob position developing the `switch` component
         + Updated docs for a lot of components
     </releaseNotes>
     <repository type="git" url="https://github.com/olton/metroui" branch="master"/>

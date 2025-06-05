@@ -1,4 +1,4 @@
-### 5.1.6
-+ [x] Fixed knob position in the witch component
+### 5.1.7
+
 + [x] Updated docs for a lot of components
 

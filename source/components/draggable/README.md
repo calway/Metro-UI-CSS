@@ -2,6 +2,11 @@
 
 The Draggable component allows you to make any element draggable within a specified area. It provides a simple way to implement drag-and-drop functionality with customizable options for boundaries, drag handles, and event callbacks.
 
+## Dependencies
+
+- Metro UI Core
+- DOM module
+
 ## Usage
 
 ### Basic Usage
@@ -11,11 +16,26 @@ The Draggable component allows you to make any element draggable within a specif
 <div data-role="draggable">
     This element can be dragged
 </div>
+```
 
+### With Custom Handle
+
+```html
 <!-- Make an element draggable with a specific handle -->
 <div data-role="draggable" data-drag-element=".handle">
     <div class="handle">Drag here</div>
     <div>Content of the draggable element</div>
+</div>
+```
+
+### Without Boundary Restriction
+
+```html
+<!-- Allow dragging beyond container boundaries -->
+<div class="container">
+    <div data-role="draggable" data-boundary-restriction="false">
+        This element can be dragged outside its container
+    </div>
 </div>
 ```
 
@@ -37,8 +57,6 @@ Metro.makePlugin(element, "draggable", {
 
 ## Plugin Parameters
 
-The Draggable component accepts the following configuration options:
-
 | Parameter | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
 | `dragContext` | Object | `null` | Context object passed to event callbacks |
@@ -55,14 +73,12 @@ The Draggable component accepts the following configuration options:
 
 ## API Methods
 
-The Draggable component provides the following API methods:
-
 ### on()
 
 Enables dragging functionality for the element.
 
 ```javascript
-var draggable = Metro.getPlugin(element, "draggable");
+const draggable = Metro.getPlugin(element, "draggable");
 draggable.on();
 ```
 
@@ -71,7 +87,7 @@ draggable.on();
 Disables dragging functionality for the element.
 
 ```javascript
-var draggable = Metro.getPlugin(element, "draggable");
+const draggable = Metro.getPlugin(element, "draggable");
 draggable.off();
 ```
 
@@ -80,13 +96,28 @@ draggable.off();
 Removes the draggable functionality and event listeners from the element.
 
 ```javascript
-var draggable = Metro.getPlugin(element, "draggable");
+const draggable = Metro.getPlugin(element, "draggable");
 draggable.destroy();
 ```
 
-## Styling with CSS
+## Events
 
-The Draggable component applies the `.draggable` class to elements while they are being dragged. You can customize the appearance of dragged elements by targeting this class in your CSS.
+| Event | Description |
+| ----- | ----------- |
+| `onCanDrag` | Triggered to determine if dragging is allowed. Should return true to allow dragging |
+| `onDragStart` | Triggered when dragging starts |
+| `onDragStop` | Triggered when dragging stops |
+| `onDragMove` | Triggered during dragging movement |
+| `onDraggableCreate` | Triggered when the draggable component is created |
+
+## Styling with CSS Variables
+
+The Draggable component doesn't use CSS variables for styling. It applies a class to elements while they are being dragged.
+
+## Available CSS Classes
+
+### Base Classes
+- `.draggable` - Applied to elements while they are being dragged. Adds a shadow effect.
 
 ### Default Styling
 
@@ -105,24 +136,6 @@ The Draggable component applies the `.draggable` class to elements while they ar
     opacity: 0.8;
     transform: rotate(2deg);
 }
-```
-
-## Event Handling
-
-The Draggable component provides several events that you can use to respond to drag operations:
-
-```javascript
-Metro.makePlugin(element, "draggable", {
-    onDragStart: function(event) {
-        console.log("Drag started at position:", event.position);
-    },
-    onDragMove: function(event) {
-        console.log("Current position:", event.position);
-    },
-    onDragStop: function(event) {
-        console.log("Drag stopped at position:", event.position);
-    }
-});
 ```
 
 ## Best Practices
