@@ -237,7 +237,7 @@
             const buttons = $("<div>").addClass("button-group");
             let drop_container;
             let drop_container_input;
-            const checkboxID = Metro.utils.elementId("select-focus-trigger");
+            const checkboxID = Hooks.useId("select-focus-trigger");
             const checkbox = $("<input type='checkbox'>").addClass("select-focus-trigger").attr("id", checkboxID);
 
             this.placeholder = $("<span>").addClass("placeholder").html(o.placeholder);

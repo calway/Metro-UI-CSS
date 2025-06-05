@@ -32,7 +32,7 @@
         init: function (options, elem) {
             this._super(elem, options, ImageMagnifierDefaultConfig, {
                 zoomElement: null,
-                id: Metro.utils.elementId("image-magnifier"),
+                id: null,
             });
 
             return this;
@@ -41,6 +41,8 @@
         _create: function () {
             const element = this.element;
 
+            this.id = Hooks.useId(this.elem);
+            
             this._createStructure();
             this._createEvents();
 
@@ -62,7 +64,7 @@
             }
 
             if (!Metro.utils.isValue(element.attr("id"))) {
-                element.attr("id", Metro.utils.elementId("image-magnifier"));
+                element.attr("id", this.id);
             }
 
             element

@@ -35,7 +35,7 @@
                 },
                 dragArea: null,
                 dragElement: null,
-                id: Metro.utils.elementId("draggable"),
+                id: null,
             });
 
             return this;
@@ -83,7 +83,7 @@
             });
 
             if (!element.attr("id")) {
-                element.attr("id", Metro.utils.elementId("draggable"));
+                element.attr("id", Hooks.useId(this.elem));
             }
         },
 

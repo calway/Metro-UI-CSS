@@ -54,7 +54,7 @@
                     minutes: null,
                     seconds: null,
                 },
-                id: Metro.utils.elementId("time-picker"),
+                id: null,
             });
 
             return this;
@@ -64,6 +64,8 @@
             const element = this.element;
             const o = this.options;
             let i;
+            
+            this.id = element.attr("id") || Hooks.useId(this.elem);
 
             if (o.distance < 1) {
                 o.distance = 1;

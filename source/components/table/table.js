@@ -17,6 +17,7 @@ const TABLE_COL_OPTIONS = {
     template: undefined,
     type: "data",
 };
+
 ((Metro, $) => {
     // biome-ignore lint/suspicious/noRedundantUseStrict: <explanation>
     "use strict";
@@ -195,7 +196,7 @@ const TABLE_COL_OPTIONS = {
                 viewDefault: {},
                 input_interval: null,
                 searchFields: [],
-                id: Metro.utils.elementId("table"),
+                id: null,
                 sort: {
                     dir: "asc",
                     colIndex: 0,
@@ -215,7 +216,7 @@ const TABLE_COL_OPTIONS = {
         _create: function () {
             const element = this.element;
             const o = this.options;
-            const id = Metro.utils.elementId("table");
+            const id = Hooks.useId(this.elem);
             let table_container;
 
             if (!element.id()) {
@@ -417,7 +418,7 @@ const TABLE_COL_OPTIONS = {
             const o = this.options;
             const id = element.attr("id");
 
-            Metro.storage.delItem(o.checkStoreKey.replace("$1", id));
+            //Metro.storage.delItem(o.checkStoreKey.replace("$1", id));
 
             this._service();
             this._createStructure();
@@ -723,7 +724,7 @@ const TABLE_COL_OPTIONS = {
 
             head.clear().addClass(o.clsHead);
 
-            if (o.caption) {
+            if (o.caption && head.prev("caption").length === 0) {
                 $("<caption>").html(o.caption).insertBefore(head);
             }
 
@@ -1190,7 +1191,7 @@ const TABLE_COL_OPTIONS = {
                 });
             });
 
-            element.on(Metro.events.click, ".table-service-check input", function () {
+            element.on(Metro.events.click, ".table-service-check", function () {
                 const check = $(this);
                 const status = check.is(":checked");
                 const val = `${check.val()}`;
@@ -1198,7 +1199,7 @@ const TABLE_COL_OPTIONS = {
                 const storage = Metro.storage;
                 let data = storage.getItem(store_key);
                 const is_radio = check.attr("type") === "radio";
-
+                
                 if (is_radio) {
                     data = [];
                 }
@@ -1228,7 +1229,7 @@ const TABLE_COL_OPTIONS = {
                 });
             });
 
-            element.on(Metro.events.click, ".table-service-check-all input", function () {
+            element.on(Metro.events.click, ".table-service-check-all", function () {
                 const checked = $(this).is(":checked");
                 const store_key = o.checkStoreKey.replace("$1", id);
                 const storage = Metro.storage;
@@ -1316,7 +1317,7 @@ const TABLE_COL_OPTIONS = {
                         }
                     }
                 } else {
-                    that.currentPage = link.data("page");
+                    that.currentPage = +link.data("page");
                 }
 
                 that._draw();
@@ -1662,8 +1663,9 @@ const TABLE_COL_OPTIONS = {
             let cells;
             let tds;
             let is_even_row;
-            const start = Number.parseInt(o.rows) === -1 ? 0 : o.rows * (this.currentPage - 1);
-            const stop = Number.parseInt(o.rows) === -1 ? this.items.length - 1 : start + o.rows - 1;
+            const rows = Number.parseInt(o.rows)
+            const start = rows === -1 ? 0 : rows * (+this.currentPage - 1);
+            const stop = rows === -1 ? this.items.length - 1 : +start + rows - 1;
             let items;
             let checkedItems = [];
             const stored_keys = Metro.storage.getItem(o.checkStoreKey.replace("$1", element.attr("id")));
@@ -2577,7 +2579,7 @@ const TABLE_COL_OPTIONS = {
 
             this._removeInspectorEvents();
 
-            return element;
+            element.remove();
         },
     });
 })(Metro, Dom);

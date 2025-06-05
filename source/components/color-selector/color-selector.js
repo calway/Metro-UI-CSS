@@ -46,7 +46,7 @@
         init: function (options, elem) {
             this._super(elem, options, ColorSelectorDefaultConfig, {
                 // define instance vars here
-                id: Metro.utils.elementId("color-selector"),
+                id: null,
                 defaultSwatches: [],
                 showValues: [],
                 userColors: [],
@@ -70,6 +70,8 @@
 
         _create: function () {
             const o = this.options;
+            
+            this.id = Hooks.useId(this.element)
 
             if (Metro.utils.isValue(o.defaultSwatches))
                 this.defaultSwatches = o.defaultSwatches.toArray(",").map((el) => el.toUpperCase());

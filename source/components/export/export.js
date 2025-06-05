@@ -95,7 +95,7 @@
             const blob = this.b64toBlob(data, contentType);
             const url = globalThis.URL.createObjectURL(blob);
             anchor.href = url;
-            anchor.download = filename || Metro.utils.elementId("download");
+            anchor.download = filename || Hooks.useId(anchor);
             anchor.click();
             globalThis.URL.revokeObjectURL(url);
             document.body.removeChild(anchor);

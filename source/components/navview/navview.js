@@ -88,12 +88,11 @@
             let menu;
 
             element.addClass("navview");
+            
             if (element.attr("id") === undefined) {
-                this.id = Metro.utils.elementId("navview");
-                element.attr("id", this.id);
-            } else {
-                this.id = element.attr("id");
-            }
+                element.attr("id", Hooks.useId(this.elem));
+            }            
+            this.id = element.attr("id")
 
             if (o.initialView !== "compact" && Metro.utils.mediaExist(o.expandPoint)) {
                 element.addClass("expanded");

@@ -30,13 +30,14 @@
                     width: 0,
                     height: 0,
                 },
-                id: Metro.utils.elementId("hint"),
+                id: null,
             });
 
             return this;
         },
 
         _create: function () {
+            this.id = Hooks.useId(this.element);
             this._createEvents();
             this._fireEvent("hint-create", {
                 element: this.element,

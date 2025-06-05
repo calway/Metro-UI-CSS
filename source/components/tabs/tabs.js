@@ -36,7 +36,7 @@
         init: function (options, elem) {
             this._super(elem, options, TabsDefaultConfig, {
                 _targets: [],
-                id: Metro.utils.elementId("tabs"),
+                id: null,
             });
 
             return this;
@@ -46,6 +46,8 @@
             const element = this.element;
             const tab = element.find(".active")[0];
 
+            this.id = element.attr("id") || Hooks.useId(this.elem);
+            
             this._createStructure();
             this._createEvents();
 

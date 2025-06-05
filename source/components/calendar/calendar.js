@@ -129,7 +129,7 @@
                 max: null,
                 minYear: null,
                 maxYear: null,
-                id: Metro.utils.elementId("calendar"),
+                id: null,
                 time: [time.hour(), time.minute()],
                 content: "days",
                 yearDistance: 11,
@@ -143,6 +143,8 @@
             const element = this.element;
             const o = this.options;
 
+            this.id = Hooks.useId(this.elem);
+            
             this.content = o.startContent;
             this.minYear = this.current.year - this.options.yearsBefore;
             this.maxYear = this.current.year + this.options.yearsAfter;

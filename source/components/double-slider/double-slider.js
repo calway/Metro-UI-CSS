@@ -59,7 +59,7 @@
                 valueMin: null,
                 valueMax: null,
                 keyInterval: false,
-                id: Metro.utils.elementId("slider"),
+                id: null,
             });
 
             return this;
@@ -69,6 +69,8 @@
             const element = this.element;
             const o = this.options;
 
+            this.id = Hooks.useId(this.elem);
+            
             this.valueMin = Metro.utils.isValue(o.valueMin) ? +o.valueMin : +o.min;
             this.valueMax = Metro.utils.isValue(o.valueMax) ? +o.valueMax : +o.max;
 

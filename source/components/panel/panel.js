@@ -111,7 +111,7 @@
             const element = this.element;
             const o = this.options;
             const panel = $("<div>").addClass("panel").addClass(o.clsPanel);
-            const id = o.id ? o.id : Metro.utils.elementId("panel");
+            const id = o.id ? o.id : Hooks.useId(this.elem);
             const original_classes = element[0].className;
             let title;
 

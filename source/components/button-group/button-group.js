@@ -23,7 +23,7 @@
         init: function (options, elem) {
             this._super(elem, options, ButtonGroupDefaultConfig, {
                 active: null,
-                id: Metro.utils.elementId("button-group"),
+                id: null,
             });
 
             return this;
@@ -32,6 +32,8 @@
         _create: function () {
             const element = this.element;
 
+            this.id = Hooks.useId(this.elem)
+            
             this._createGroup();
             this._createEvents();
 

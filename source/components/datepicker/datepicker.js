@@ -109,7 +109,7 @@
             let dateWrapper;
             let selectBlock;
 
-            const id = Metro.utils.elementId("datepicker");
+            const id = Hooks.useId(this.elem);
 
             picker = $("<div>").addClass(`wheel-picker date-picker ${element[0].className}`).addClass(o.clsPicker);
 

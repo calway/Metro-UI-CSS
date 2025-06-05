@@ -31,7 +31,7 @@
     Metro.Component("drag-items", {
         init: function (options, elem) {
             this._super(elem, options, DragItemsDefaultConfig, {
-                id: Metro.utils.elementId("dragItems"),
+                id: null,
                 canDrag: false,
             });
 
@@ -41,6 +41,8 @@
         _create: function () {
             const element = this.element;
 
+            this.id = Hooks.useId(this.elem);
+            
             this._createStructure();
             this._createEvents();
 
@@ -53,6 +55,10 @@
             const element = this.element;
             const o = this.options;
 
+            if (!element.id()) {
+                element.id(this.id)
+            }
+            
             element.addClass("drag-items-target");
 
             if (o.drawDragMarker === true) {

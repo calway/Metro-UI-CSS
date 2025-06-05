@@ -84,7 +84,7 @@
     Metro.Component("cube", {
         init: function (options, elem) {
             this._super(elem, options, CubeDefaultConfig, {
-                id: Metro.utils.elementId("cube"),
+                id: null,
                 rules: null,
                 interval: false,
                 ruleInterval: false,
@@ -135,13 +135,12 @@
             const element = this.element;
             const o = this.options;
             const sides = ["left", "right", "top"];
-            const id = Metro.utils.elementId("cube");
             const cells_count = o.cells ** 2;
 
             element.addClass("cube").addClass(o.clsCube);
 
             if (!element.attr("id")) {
-                element.attr("id", id);
+                element.attr("id", Hooks.useId(this.elem));
             }
 
             this.id = element.attr("id");

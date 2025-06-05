@@ -39,7 +39,7 @@
             this._super(elem, options, SplitterDefaultConfig, {
                 storage: Metro.utils.isValue(Storage) ? Storage : null,
                 storageKey: "SPLITTER:",
-                id: Metro.utils.elementId("splitter"),
+                id: null,
             });
 
             return this;
@@ -48,6 +48,8 @@
         _create: function () {
             const element = this.element;
 
+            this.id = Hooks.useId(this.elem);
+            
             this._createStructure();
             this._createEvents();
 

@@ -36,13 +36,14 @@
                     width: 0,
                     height: 0,
                 },
-                id: Metro.utils.elementId("popover"),
+                id: null,
             });
 
             return this;
         },
 
         _create: function () {
+            this.id = Hooks.useId(this.elem);
             this._createEvents();
             this._fireEvent("popover-create", {
                 element: this.element,
@@ -140,7 +141,7 @@
             const o = this.options;
             let popover;
             let neb_pos;
-            const id = Metro.utils.elementId("popover");
+            const id = this.id;
             let closeButton;
 
             if (this.popovered) {

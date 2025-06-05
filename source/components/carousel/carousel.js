@@ -71,7 +71,7 @@
                 dir: "left",
                 interval: false,
                 isAnimate: false,
-                id: Metro.utils.elementId("carousel"),
+                id: null,
             });
 
             return this;
@@ -83,6 +83,7 @@
             const slides = element.find(".slide");
             let slides_container = element.find(".slides");
 
+            this.id = Hooks.useId(this.elem);
             this.dir = this.options.direction;
 
             element.addClass("carousel").addClass(o.clsCarousel);

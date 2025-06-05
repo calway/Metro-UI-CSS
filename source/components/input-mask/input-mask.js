@@ -30,12 +30,14 @@
                 placeholder: "",
                 length: 0,
                 thresholdTimer: null,
-                id: Metro.utils.elementId("input-mask"),
+                id: null,
             });
             return this;
         },
 
         _create: function () {
+            this.id = Hooks.useId(this.elem);
+            
             this._createStructure();
             this._createEvents();
 

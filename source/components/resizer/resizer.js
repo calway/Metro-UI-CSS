@@ -25,7 +25,7 @@
             this._super(elem, options, ResizerDefaultConfig, {
                 size: { width: 0, height: 0 },
                 media: globalThis.METRO_MEDIA,
-                id: Metro.utils.elementId("resizer"),
+                id: null,
             });
 
             return this;
@@ -34,6 +34,8 @@
         _create: function () {
             const element = this.element;
 
+            this.id = Hooks.useId(this.elem);
+            
             this.size = {
                 width: element.width(),
                 height: element.height(),

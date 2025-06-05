@@ -29,13 +29,15 @@
         init: function (options, elem) {
             this._super(elem, options, ResizableDefaultConfig, {
                 resizer: null,
-                id: Metro.utils.elementId("resizable"),
+                id: null,
             });
 
             return this;
         },
 
         _create: function () {
+            this.id = Hooks.useId(this.elem);
+            
             this._createStructure();
             this._createEvents();
 

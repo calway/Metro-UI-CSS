@@ -71,7 +71,7 @@
             element.addClass("streamer");
 
             if (element.attr("id") === undefined) {
-                element.attr("id", Metro.utils.elementId("streamer"));
+                element.attr("id", Hooks.useId(this.elem));
             }
 
             if (o.source === null && o.data === null) {

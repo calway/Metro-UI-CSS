@@ -32,7 +32,7 @@
         _create: function () {
             const element = this.element;
 
-            this.id = Hooks.useId(element);
+            this.id = Hooks.useId(this.elem);
 
             this._createStructure();
             this._createEvents();

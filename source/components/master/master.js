@@ -43,7 +43,7 @@
                 pages: [],
                 currentIndex: 0,
                 isAnimate: false,
-                id: Metro.utils.elementId("master"),
+                id: null,
             });
 
             return this;
@@ -53,6 +53,8 @@
             const element = this.element;
             const o = this.options;
 
+            this.id = Hooks.useId(this.elem);
+            
             element.addClass("master").addClass(o.clsMaster);
             element.css({
                 backgroundImage: `url(${o.backgroundImage})`,

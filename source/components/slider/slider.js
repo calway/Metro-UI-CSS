@@ -62,7 +62,7 @@
                 pixel: 0,
                 buffer: 0,
                 keyInterval: false,
-                id: Metro.utils.elementId("slider"),
+                id: null,
             });
 
             return this;
@@ -72,6 +72,8 @@
             const element = this.element;
             const o = this.options;
 
+            this.id = element.attr("id") || Hooks.useId(this.elem);
+            
             this._createSlider();
             this._createEvents();
             this.buff(o.buffer);

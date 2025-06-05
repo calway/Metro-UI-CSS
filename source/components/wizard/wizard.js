@@ -48,7 +48,7 @@
     Metro.Component("wizard", {
         init: function (options, elem) {
             this._super(elem, options, WizardDefaultConfig, {
-                id: Metro.utils.elementId("wizard"),
+                id: null,
             });
 
             return this;
@@ -57,6 +57,8 @@
         _create: function () {
             const element = this.element;
 
+            this.id = Hooks.useId(this.elem);
+            
             this._createWizard();
             this._createEvents();
 

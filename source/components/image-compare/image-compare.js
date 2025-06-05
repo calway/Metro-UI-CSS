@@ -21,7 +21,7 @@
     Metro.Component("image-compare", {
         init: function (options, elem) {
             this._super(elem, options, ImageCompareDefaultConfig, {
-                id: Metro.utils.elementId("image-compare"),
+                id: null,
             });
 
             return this;
@@ -30,6 +30,8 @@
         _create: function () {
             const element = this.element;
 
+            this.id = Hooks.useId(this.elem);
+            
             this._createStructure();
             this._createEvents();
 
@@ -45,7 +47,7 @@
             let element_height;
 
             if (!Metro.utils.isValue(element.attr("id"))) {
-                element.attr("id", Metro.utils.elementId("image-compare"));
+                element.attr("id", this.id);
             }
 
             element.addClass("image-compare").css({

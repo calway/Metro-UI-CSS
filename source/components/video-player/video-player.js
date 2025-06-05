@@ -71,7 +71,7 @@
                 muted: false,
                 fullScreenInterval: false,
                 isPlaying: false,
-                id: Metro.utils.elementId("video-player"),
+                id: null,
             });
 
             return this;
@@ -81,6 +81,8 @@
             const element = this.element;
             const o = this.options;
 
+            this.id = element.attr("id") || Hooks.useId(this.elem)
+            
             if (Metro.fullScreenEnabled === false) {
                 o.fullScreenMode = Metro.fullScreenMode.WINDOW;
             }

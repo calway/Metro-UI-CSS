@@ -344,7 +344,7 @@
                 Metro.utils.exec(action, [button], this);
             });
 
-            win.attr("id", o.id === undefined ? Metro.utils.elementId("window") : o.id);
+            win.attr("id", o.id === undefined ? Hooks.useId(win[0]) : o.id);
 
             win.on(Metro.events.startAll, ".window-caption", (e) => {
                 this._fireEvent("caption-click", {

@@ -34,7 +34,7 @@
         init: function (options, elem) {
             this._super(elem, options, InfoBoxDefaultConfig, {
                 overlay: null,
-                id: Metro.utils.elementId("info-box"),
+                id: null,
             });
 
             return this;
@@ -43,6 +43,8 @@
         _create: function () {
             const element = this.element;
 
+            this.id = Hooks.useId(this.elem);
+            
             this._createStructure();
             this._createEvents();
 

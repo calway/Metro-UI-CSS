@@ -56,7 +56,7 @@
                 value_date: null,
                 calendar: null,
                 overlay: null,
-                id: Metro.utils.elementId("calendar-picker"),
+                id: null,
                 time: [time.hour(), time.minute()],
             });
 
@@ -64,6 +64,8 @@
         },
 
         _create: function () {
+            this.id = Hooks.useId(this.element);
+            
             this._createStructure();
             this._createEvents();
 

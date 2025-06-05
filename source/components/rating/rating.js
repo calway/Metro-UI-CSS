@@ -84,7 +84,6 @@
             const element = this.element;
             const o = this.options;
 
-            const id = Metro.utils.elementId("rating");
             let i;
             let stars;
             let li;
@@ -92,6 +91,7 @@
             const value = o.static ? Math.floor(this.originValue) : this.value;
 
             const rating = element.wrap("<div>").addClass(`rating ${element[0].className}`).addClass(o.clsRating);
+            const id = Hooks.useId(rating[0])
 
             element.val(this.value);
 

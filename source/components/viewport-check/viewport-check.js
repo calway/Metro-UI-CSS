@@ -22,12 +22,13 @@
             this._super(elem, options, ViewportCheckDefaultConfig, {
                 // define instance vars here
                 inViewport: false,
-                id: Metro.utils.elementId("viewport-check"),
+                id: null,
             });
             return this;
         },
 
         _create: function () {
+            this.id = this.element.attr("id") || Hooks.useId(this.elem);
             this.inViewport = Metro.utils.inViewport(this.elem);
 
             this._createEvents();

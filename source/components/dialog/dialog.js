@@ -68,7 +68,7 @@
             this._super(elem, options, DialogDefaultConfig, {
                 interval: null,
                 overlay: null,
-                id: Metro.utils.elementId("dialog"),
+                id: null,
             });
 
             return this;
@@ -85,6 +85,8 @@
             const body = $("body");
             let overlay;
 
+            this.id = Hooks.useId(this.elem);
+            
             element.addClass("dialog");
 
             if (o.title !== "") {

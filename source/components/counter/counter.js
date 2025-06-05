@@ -33,13 +33,14 @@
                 numbers: [],
                 html: $(elem).html(),
                 started: false,
-                id: Metro.utils.elementId("counter"),
+                id: null,
             });
 
             return this;
         },
 
         _create: function () {
+            this.id = Hooks.useId(this.element);
             this._createStruct();
             this._createEvents();
             this._fireEvent("counter-create");

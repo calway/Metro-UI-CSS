@@ -57,7 +57,7 @@
                     s: 0,
                 },
                 inactiveTab: false,
-                id: Metro.utils.elementId("countdown"),
+                id: null,
                 duration: 600,
             });
 
@@ -67,6 +67,7 @@
         _create: function () {
             const o = this.options;
 
+            this.id = Hooks.useId(this.element)
             this.duration = +o.duration <= 0 || +o.duration >= 1000 ? 1000 : +o.duration;
 
             this._build();
@@ -109,7 +110,7 @@
             const strings = this.strings;
 
             if (!element.attr("id")) {
-                element.attr("id", Metro.utils.elementId("countdown"));
+                element.attr("id", this.id);
             }
 
             element.addClass("countdown").addClass(`animate-${o.animate}`).addClass(o.clsCountdown);
