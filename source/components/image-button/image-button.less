@@ -2,6 +2,7 @@
 @import (once) "../../include/mixins";
 
 :root {
+    --image-button-font-size: 14px;
     --image-button-border-radius: 4px;
     --image-button-background: @light-gray;
     --image-button-color: var(--default-color);
@@ -21,8 +22,9 @@
 }
 
 .image-button {
+    --control-height: var(--control-height-normal);
     display: inline-flex;
-    transition: @transition-base;
+    transition: @transition-short;
     background: var(--image-button-background);
     color: var(--image-button-color);
     cursor: pointer;
@@ -32,10 +34,10 @@
     border: 1px solid transparent;
     outline: none;
     position: relative;
-    font-size: 14px;
+    font-size: var(--image-button-font-size);
     padding: 0 .5rem 0 0;
     align-items: center;
-    height: 36px;
+    height: var(--control-height);
     font-weight: 400;
     border-radius: var(--image-button-border-radius);
     overflow: hidden;
@@ -48,19 +50,15 @@
         }
     }
 
-    &:active, &.focus, &:focus {
-        .focus-show(@light-gray);
-    }
-
     .icon, .caption {
         transition: @transition-base;
     }
 
     .icon {
-        width: 34px;
-        height: 34px;
-        line-height: 34px;
-        font-size: 1rem;
+        width: var(--control-height);
+        height: var(--control-height);
+        line-height: var(--control-height);
+        font-size: inherit;
         background: var(--image-button-icon-background);
         color: var(--image-button-icon-color);
         order: 1;
@@ -99,7 +97,6 @@
     &:active {
         box-shadow: none;
         outline: 0;
-        .focus-show(@gray);
     }
 
     &.disabled, &:disabled {
@@ -132,3 +129,22 @@ each(@accentColors, {
         }
     }
 })
+
+.image-button {
+    &.mini {
+        --control-height: var(--control-height-mini);
+        --image-button-font-size: 10px;
+    }
+    &.small {
+        --control-height: var(--control-height-small);
+        --image-button-font-size: 12px;
+    }
+    &.medium {
+        --control-height: var(--control-height-medium);
+        --image-button-font-size: 14px;
+    }
+    &.large {
+        --control-height: var(--control-height-large);
+        --image-button-font-size: 24px;
+    }
+}

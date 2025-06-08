@@ -30,34 +30,34 @@
         <h1>Button test page</h1>
 
         <div class="example">
-            <button class="button primary">Primary</button>
-            <button class="button secondary">Secondary</button>
-            <button class="button tertiary">Tertiary</button>
-            <button class="button success">Success</button>
-            <button class="button alert">Alert</button>
-            <button class="button warning">Warning</button>
-            <button class="button info">Info</button>
-            <button class="button dark">Dark</button>
-            <button class="button yellow">Yellow</button>
+            <button class="primary">Primary</button>
+            <button class="secondary">Secondary</button>
+            <button class="tertiary">Tertiary</button>
+            <button class="success">Success</button>
+            <button class="alert">Alert</button>
+            <button class="warning">Warning</button>
+            <button class="info">Info</button>
+            <button class="dark">Dark</button>
+            <button class="yellow">Yellow</button>
         </div>
 
         <div class="example">
-            <button class="button primary outline">Primary</button>
-            <button class="button secondary outline">Secondary</button>
-            <button class="button tertiary outline">Tertiary</button>
-            <button class="button success outline">Success</button>
-            <button class="button alert outline">Alert</button>
-            <button class="button warning outline">Warning</button>
-            <button class="button info outline">Info</button>
-            <button class="button dark outline">Dark</button>
-            <button class="button yellow outline">Yellow</button>
+            <button class="primary outline">Primary</button>
+            <button class="secondary outline">Secondary</button>
+            <button class="tertiary outline">Tertiary</button>
+            <button class="success outline">Success</button>
+            <button class="alert outline">Alert</button>
+            <button class="warning outline">Warning</button>
+            <button class="info outline">Info</button>
+            <button class="dark outline">Dark</button>
+            <button class="yellow outline">Yellow</button>
         </div>
 
         <div class="example">
             <button class="button"><span class="mif-checkmark"></span><span>Font</span></button>
-            <button id="MACHINE" class="button success cycle mini outline mr-1" data-machine="mrdo"><span class="icon mif-gamepad"></span></button>
+            <button class="button success cycle outline"><span class="icon mif-gamepad"></span></button>
             <button class="button" onclick="$(this).toggleClass('loading')">
-                <span class="loader"><span class="mif-spinner3"></span></span>
+                <span class="loader"><span class="mif-spinner3 ani-spin"></span></span>
                 <span class="caption">Load Data</span>
             </button>
         </div>
@@ -110,34 +110,30 @@
         </div>
 
         <div class="example">
-            <button class="button small">Button</button>
-            <span class="button small">Span</span>
-            <a class="button small">Anchor</a>
-            <button class="button small outline">Outline</button>
-            <button class="button small hovered">Hovered</button>
-            <button class="button small shadow">Shadowed</button>
-        </div>
-
-        <div class="example">
-            <button class="button shift">Button</button>
-            <span class="button">Span</span>
-            <a class="button">Anchor</a>
+            <button class="button shift">Shift</button>
             <button class="button outline">Outline</button>
             <button class="button hovered">Hovered</button>
-            <button class="button shadow alert">Shadowed</button>
+            <button class="button animated-border">Shadowed</button>
+            <button class="button rainbow-border">Shadowed</button>
+            <button class="button shadow">Shadowed</button>
         </div>
 
         <div class="example">
-            <button class="button large">Button</button>
-            <span class="button large">Span</span>
-            <a class="button large">Anchor</a>
-            <button class="button large outline">Outline</button>
-            <button class="button large hovered">Hovered</button>
-            <button class="button large shadow">Shadowed</button>
-        </div>
-
-        <div class="example">
-            <button class="command-button shadowed">
+            <button class="command-button">
+                <span class="mif-share icon"></span>
+                <span class="caption">
+                    Yes, share and connect
+                    <small>Use this option for home or work</small>
+                </span>
+            </button>
+            <button class="command-button shift">
+                <span class="mif-share icon"></span>
+                <span class="caption">
+                    Yes, share and connect
+                    <small>Use this option for home or work</small>
+                </span>
+            </button>
+            <button class="command-button shadow">
                 <span class="mif-share icon"></span>
                 <span class="caption">
                     Yes, share and connect
@@ -151,12 +147,77 @@
                 <span class="mif-share icon"></span>
                 <span class="caption">Share it</span>
             </button>
-            <button class="image-button shadowed">
+            <button class="image-button shift">
+                <span class="mif-share icon"></span>
+                <span class="caption">Share it</span>
+            </button>
+            <button class="image-button shadow">
                 <span class="mif-share icon"></span>
                 <span class="caption">Share it</span>
             </button>
         </div>
 
+        <div class="example">
+            <button class="image-button mini">
+                <span class="mif-share icon"></span>
+                <span class="caption">Share it</span>
+            </button>
+            <button class="image-button small">
+                <span class="mif-share icon"></span>
+                <span class="caption">Share it</span>
+            </button>
+            <button class="image-button medium">
+                <span class="mif-share icon"></span>
+                <span class="caption">Share it</span>
+            </button>
+            <button class="image-button">
+                <span class="mif-share icon"></span>
+                <span class="caption">Share it</span>
+            </button>
+            <button class="image-button large">
+                <span class="mif-share icon"></span>
+                <span class="caption">Share it</span>
+            </button>
+        </div>
+
+        <div class="example">
+            <button class="info-button">
+                <span class="title mif-share icon"></span>
+                <span class="value">Share it</span>
+            </button>
+            <button class="info-button shift">
+                <span class="title mif-share icon"></span>
+                <span class="value">Share it</span>
+            </button>
+            <button class="info-button shadow">
+                <span class="title mif-share icon"></span>
+                <span class="value">Share it</span>
+            </button>
+        </div>
+
+        <div class="example">
+            <button class="info-button mini">
+                <span class="title mif-share icon"></span>
+                <span class="value">Share it</span>
+            </button>
+            <button class="info-button small">
+                <span class="title mif-share icon"></span>
+                <span class="value">Share it</span>
+            </button>
+            <button class="info-button medium">
+                <span class="title mif-share icon"></span>
+                <span class="value">Share it</span>
+            </button>
+            <button class="info-button">
+                <span class="title mif-share icon"></span>
+                <span class="value">Share it</span>
+            </button>
+            <button class="info-button large">
+                <span class="title mif-share icon"></span>
+                <span class="value">Share it</span>
+            </button>
+        </div>
+        
         <div class="example">
             <button class="shortcut">
                 <span class="caption">Rocket</span>
@@ -203,6 +264,22 @@
             <button class="button">Default <span class="badge">10</span></button>
             <button class="button">corner <span class="badge corner info">10</span></button>
             <button class="button">corner outside <span class="badge corner-outside alert">10</span></button>
+        </div>
+        
+        <div class="example">
+            <button class="mini">Button</button>
+            <button class="small">Button</button>
+            <button class="medium">Button</button>
+            <button class="">Button</button>
+            <button class="large">Button</button>
+        </div>
+
+        <div class="example">
+            <button class="pill-button mini">Button</button>
+            <button class="pill-button small">Button</button>
+            <button class="pill-button medium">Button</button>
+            <button class="pill-button ">Button</button>
+            <button class="pill-button large">Button</button>
         </div>
 
     </div>

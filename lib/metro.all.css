@@ -113,6 +113,11 @@ article > * + * {
   --layout-xl: 1200px;
   --layout-xxl: 1400px;
   --layout-xxxl: 2000px;
+  --control-height-normal: 36px;
+  --control-height-mini: 20px;
+  --control-height-small: 26px;
+  --control-height-medium: 30px;
+  --control-height-large: 54px;
   --default-background: #fff;
   --default-color: #191919;
   --default-color-hover: #000000;
@@ -48230,8 +48235,6 @@ button.light.outline,
 /* source/components/button/button.less */
 :root {
   --button-border-radius: 4px;
-  --button-pill-radius: 36px;
-  --button-size: 36px;
   --button-font-size: 14px;
   --button-background: #ebebeb;
   --button-background-hover: #dadada;
@@ -48252,6 +48255,8 @@ input[type=submit],
 input[type=reset],
 .button,
 .flat-button {
+  --control-height: var(--control-height-normal);
+  --pill-button-radius: calc(var(--control-height) / 2);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -48262,7 +48267,7 @@ input[type=reset],
   user-select: none;
   padding: 0 var(--button-font-size);
   font-size: var(--button-font-size);
-  height: var(--button-size);
+  height: var(--control-height);
   background-color: var(--button-background);
   color: var(--button-color);
   border: 1px solid var(--button-border-color);
@@ -48322,7 +48327,7 @@ input[type=submit].pill-button,
 input[type=reset].pill-button,
 .button.pill-button,
 .flat-button.pill-button {
-  border-radius: var(--button-size);
+  border-radius: var(--pill-button-radius);
 }
 button:active,
 input[type=button]:active,
@@ -48402,8 +48407,7 @@ input[type=submit].mini,
 input[type=reset].mini,
 .button.mini,
 .flat-button.mini {
-  --button-pill-radius: 10px;
-  --button-size: 20px;
+  --control-height: var(--control-height-mini);
   --button-font-size: 10px;
 }
 button.small,
@@ -48412,8 +48416,7 @@ input[type=submit].small,
 input[type=reset].small,
 .button.small,
 .flat-button.small {
-  --button-pill-radius: 13px;
-  --button-size: 26px;
+  --control-height: var(--control-height-small);
   --button-font-size: 12px;
 }
 button.medium,
@@ -48422,8 +48425,7 @@ input[type=submit].medium,
 input[type=reset].medium,
 .button.medium,
 .flat-button.medium {
-  --button-pill-radius: 15px;
-  --button-size: 30px;
+  --control-height: var(--control-height-medium);
   --button-font-size: 14px;
 }
 button.large,
@@ -48432,8 +48434,7 @@ input[type=submit].large,
 input[type=reset].large,
 .button.large,
 .flat-button.large {
-  --button-pill-radius: 27px;
-  --button-size: 54px;
+  --control-height: var(--control-height-large);
   --button-font-size: 18px;
 }
 button.square,
@@ -62159,6 +62160,7 @@ label:has(input) {
 
 /* source/components/image-button/image-button.less */
 :root {
+  --image-button-font-size: 14px;
   --image-button-border-radius: 4px;
   --image-button-background: #f4f4f4;
   --image-button-color: var(--default-color);
@@ -62176,8 +62178,9 @@ label:has(input) {
   --image-button-icon-color-hover: #ffffff;
 }
 .image-button {
+  --control-height: var(--control-height-normal);
   display: inline-flex;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.15s ease-in-out;
   background: var(--image-button-background);
   color: var(--image-button-color);
   cursor: pointer;
@@ -62187,10 +62190,10 @@ label:has(input) {
   border: 1px solid transparent;
   outline: none;
   position: relative;
-  font-size: 14px;
+  font-size: var(--image-button-font-size);
   padding: 0 0.5rem 0 0;
   align-items: center;
-  height: 36px;
+  height: var(--control-height);
   font-weight: 400;
   border-radius: var(--image-button-border-radius);
   overflow: hidden;
@@ -62200,20 +62203,15 @@ label:has(input) {
   background: var(--image-button-icon-background-hover);
   color: var(--image-button-icon-color-hover);
 }
-.image-button:active,
-.image-button.focus,
-.image-button:focus {
-  box-shadow: 0 0 0 3px rgba(244, 244, 244, 0.45);
-}
 .image-button .icon,
 .image-button .caption {
   transition: all 0.3s ease-in-out;
 }
 .image-button .icon {
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  font-size: 1rem;
+  width: var(--control-height);
+  height: var(--control-height);
+  line-height: var(--control-height);
+  font-size: inherit;
   background: var(--image-button-icon-background);
   color: var(--image-button-icon-color);
   order: 1;
@@ -62249,7 +62247,6 @@ label:has(input) {
 .image-button:active {
   box-shadow: none;
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(204, 204, 204, 0.45);
 }
 .image-button.disabled,
 .image-button:disabled {
@@ -62349,6 +62346,22 @@ label:has(input) {
 }
 .image-button.light:hover .icon {
   background: #ebebeb !important;
+}
+.image-button.mini {
+  --control-height: var(--control-height-mini);
+  --image-button-font-size: 10px;
+}
+.image-button.small {
+  --control-height: var(--control-height-small);
+  --image-button-font-size: 12px;
+}
+.image-button.medium {
+  --control-height: var(--control-height-medium);
+  --image-button-font-size: 14px;
+}
+.image-button.large {
+  --control-height: var(--control-height-large);
+  --image-button-font-size: 24px;
 }
 
 /* source/components/image-compare/image-compare.less */
@@ -62604,6 +62617,7 @@ label:has(input) {
 
 /* source/components/info-button/info-button.less */
 :root {
+  --info-button-font-size: 14px;
   --info-button-border-radius: 4px;
   --info-button-border-color: var(--border-color);
   --info-button-background: #F8F8F8;
@@ -62622,6 +62636,7 @@ label:has(input) {
   --info-button-color-hover: #bfbfbf;
 }
 .info-button {
+  --control-height: var(--control-height-normal);
   border: 1px solid var(--border-color);
   border-radius: var(--info-button-border-radius);
   background: var(--info-button-background);
@@ -62631,30 +62646,28 @@ label:has(input) {
   display: inline-flex;
   align-items: center;
   width: auto;
-  height: 36px;
+  height: var(--control-height);
+  font-size: var(--info-button-font-size);
   text-decoration: none;
   line-height: 1;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.15s ease-in-out;
   padding: 0;
   cursor: pointer;
   gap: 0;
 }
 .info-button .title,
 .info-button .value {
-  font-size: 14px;
+  font-size: inherit;
   font-weight: 400;
   text-decoration: none;
   height: 100%;
   line-height: 1;
   display: flex;
   align-items: center;
-  padding: 0 0.75rem;
+  padding: 0 0.625rem;
   margin: 0;
   color: inherit;
-  transition: all 0.3s ease-in-out;
-}
-.info-button .icon {
-  margin: 0 0.5rem 0 0;
+  transition: 0.3s;
 }
 .info-button .value {
   background: var(--info-button-background-secondary);
@@ -62662,9 +62675,17 @@ label:has(input) {
   font-size: 11px;
   font-weight: 600;
 }
-.info-button:hover .title {
-  background: var(--info-button-background-hover);
-  color: var(--info-button-color-hover);
+@media (hover: hover) {
+  .info-button:hover {
+    background: var(--info-button-background-hover);
+    color: var(--info-button-color-hover);
+  }
+}
+@media (hover: none) {
+  .info-button:active {
+    background: var(--info-button-background-hover);
+    color: var(--info-button-color-hover);
+  }
 }
 .info-button.primary .title {
   background: #f75553;
@@ -62728,6 +62749,22 @@ label:has(input) {
 }
 .info-button.light:hover .title {
   background: #ebebeb !important;
+}
+.info-button.mini {
+  --control-height: var(--control-height-mini);
+  --info-button-font-size: 10px;
+}
+.info-button.small {
+  --control-height: var(--control-height-small);
+  --info-button-font-size: 12px;
+}
+.info-button.medium {
+  --control-height: var(--control-height-medium);
+  --info-button-font-size: 14px;
+}
+.info-button.large {
+  --control-height: var(--control-height-large);
+  --info-button-font-size: 24px;
 }
 
 /* source/components/info-panel/info-panel.less */

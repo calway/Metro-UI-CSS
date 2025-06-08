@@ -3,8 +3,6 @@
 
 :root {
     --button-border-radius: 4px;
-    --button-pill-radius: 36px;
-    --button-size: 36px;
     --button-font-size: 14px;
 
     --button-background: #ebebeb;
@@ -28,6 +26,8 @@ input[type="submit"],
 input[type="reset"],
 .button, 
 .flat-button {
+    --control-height: var(--control-height-normal);
+    --pill-button-radius: calc(var(--control-height) / 2);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +38,7 @@ input[type="reset"],
     user-select: none;
     padding: 0 var(--button-font-size);
     font-size: var(--button-font-size);
-    height: var(--button-size);
+    height: var(--control-height);
     background-color: var(--button-background);
     color: var(--button-color);
     border: 1px solid var(--button-border-color);
@@ -70,7 +70,7 @@ input[type="reset"],
     }
 
     &.pill-button {
-        border-radius: var(--button-size);
+        border-radius: var(--pill-button-radius);
     }
 
     &:active, &.focus, &:focus {
@@ -102,23 +102,19 @@ input[type="reset"],
     }
 
     &.mini {
-        --button-pill-radius: 10px;
-        --button-size: 20px;
+        --control-height: var(--control-height-mini);
         --button-font-size: 10px;
     }
     &.small {
-        --button-pill-radius: 13px;
-        --button-size: 26px;
+        --control-height: var(--control-height-small);
         --button-font-size: 12px;
     }
     &.medium {
-        --button-pill-radius: 15px;
-        --button-size: 30px;
+        --control-height: var(--control-height-medium);
         --button-font-size: 14px;
     }
     &.large {
-        --button-pill-radius: 27px;
-        --button-size: 54px;
+        --control-height: var(--control-height-large);
         --button-font-size: 18px;
     }
 
