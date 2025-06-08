@@ -58580,6 +58580,9 @@ aside::after {
     right: 0;
   }
 }
+.d-menu.no-icon a {
+  padding: 4px 10px;
+}
 
 /* source/components/context-menu/context-menu.less */
 .context-menu {
@@ -62664,7 +62667,7 @@ label:has(input) {
   line-height: 1;
   display: flex;
   align-items: center;
-  padding: 0 0.625rem;
+  padding: 0 calc(var(--control-height) / 3 + 0px);
   margin: 0;
   color: inherit;
   transition: 0.3s;
@@ -62672,8 +62675,8 @@ label:has(input) {
 .info-button .value {
   background: var(--info-button-background-secondary);
   color: var(--info-button-color-secondary);
-  font-size: 11px;
-  font-weight: 600;
+  font-size: calc(var(--info-button-font-size) * 0.9);
+  font-weight: 500;
 }
 @media (hover: hover) {
   .info-button:hover {
@@ -71581,6 +71584,7 @@ label:has(input) {
 
 /* source/components/split-button/split-button.less */
 :root {
+  --split-button-font-size: 14px;
   --split-button-border-radius: 4px;
   --split-button-background: #ebebeb;
   --split-button-color: #191919;
@@ -71596,40 +71600,43 @@ label:has(input) {
   --split-button-border-color: #4A4D51;
 }
 .split-button {
+  --control-height: var(--control-height-normal);
   display: inline-flex;
   flex-flow: row nowrap;
   position: relative;
   width: auto;
-  height: 36px;
-  line-height: 1;
+  height: var(--control-height);
   gap: 4px;
 }
-.split-button > *:nth-child(1) {
-  order: 1;
-}
-.split-button > *:nth-child(2) {
-  order: 2;
-}
+.split-button .button,
 .split-button .split {
-  padding: 0 0.75rem;
-  text-align: center;
-  vertical-align: middle;
   background: var(--split-button-background);
   color: var(--split-button-color);
   border: 1px var(--button-border-color) solid;
   border-radius: var(--split-button-border-radius);
   cursor: pointer;
   outline: none;
-  font-size: 14px;
+  font-size: var(--split-button-font-size);
   position: relative;
-  height: 36px;
-  min-width: 36px;
+  height: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.split-button .split.dropdown-toggle {
-  padding: 0 0.75rem !important;
+.split-button .split {
+  aspect-ratio: 1;
+  padding: 0;
+}
+.split-button .split .dropdown-caret {
+  transform: rotate(90deg);
+  fill: var(--split-button-color);
+  transition: all 0.15s ease-in-out;
+}
+.split-button .split.light-toggle .dropdown-caret {
+  fill: #ffffff;
+}
+.split-button .split.active-toggle .dropdown-caret {
+  transform: rotate(-90deg);
 }
 @media (hover: hover) {
   .split-button .split:hover {
@@ -71649,7 +71656,6 @@ label:has(input) {
 }
 .split-button .split:active {
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(204, 204, 204, 0.45);
 }
 .split-button .split.disabled,
 .split-button .split:disabled {
@@ -71664,6 +71670,7 @@ label:has(input) {
   box-shadow: none;
 }
 .split-button [data-role-dropdown],
+.split-button [data-role-dropmenu],
 .split-button .drop-object {
   right: 0;
   top: 100%;
@@ -71679,6 +71686,22 @@ label:has(input) {
 .split-button.no-gap .split {
   border-radius: 0 var(--split-button-border-radius) var(--split-button-border-radius) 0;
   border-left: 1px solid var(--split-button-background-hover);
+}
+.split-button.mini {
+  --control-height: var(--control-height-mini);
+  --split-button-font-size: 10px;
+}
+.split-button.small {
+  --control-height: var(--control-height-small);
+  --split-button-font-size: 12px;
+}
+.split-button.medium {
+  --control-height: var(--control-height-medium);
+  --split-button-font-size: 14px;
+}
+.split-button.large {
+  --control-height: var(--control-height-large);
+  --split-button-font-size: 24px;
 }
 
 /* source/components/splitter/splitter.less */
