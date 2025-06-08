@@ -23,31 +23,35 @@ The Image Placeholder component generates dynamic placeholder images with custom
 ### JavaScript Initialization
 
 ```javascript
-// Initialize with default options
-$(".placeholder-img").imagePlaceholder();
-
-// Initialize with custom options
-$(".placeholder-img").imagePlaceholder({
+// Initialize with Metro.makePlugin
+const placeholder = Metro.makePlugin("#myImage", "image-placeholder", {
     size: "400x300",
     color: "#f5f5f5",
     textColor: "#333333",
     text: "Loading...",
     font: "16px Arial"
 });
+
+// Or using the plugin API
+Metro.getPlugin("#myImage", "image-placeholder").destroy();
 ```
 
-## Configuration Options
+## Plugin Parameters
 
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| `size` | "100x100" | Default size of the placeholder in format "widthxheight" |
-| `width` | null | Width of the placeholder (overrides width from size if set) |
-| `height` | null | Height of the placeholder (overrides height from size if set) |
-| `color` | "#f8f8f8" | Background color of the placeholder |
-| `textColor` | "#292929" | Color of the text displayed on the placeholder |
-| `font` | "12px sans-serif" | Font style for the text |
-| `text` | "" | Custom text to display (if empty, shows dimensions) |
-| `showText` | true | Whether to show text on the placeholder |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `size` | string | "100x100" | Default size of the placeholder in format "widthxheight" |
+| `width` | number/null | null | Width of the placeholder (overrides width from size if set) |
+| `height` | number/null | null | Height of the placeholder (overrides height from size if set) |
+| `color` | string | "#f8f8f8" | Background color of the placeholder |
+| `textColor` | string | "#292929" | Color of the text displayed on the placeholder |
+| `font` | string | "12px sans-serif" | Font style for the text |
+| `text` | string | "" | Custom text to display (if empty, shows dimensions) |
+| `showText` | boolean | true | Whether to show text on the placeholder |
+
+## API Methods
+
++ `destroy()` - Removes the element from the DOM.
 
 ## Events
 

@@ -2,6 +2,10 @@
 
 The Hero component provides a full-width banner section typically used at the top of a webpage to showcase key content or imagery. It's designed to be eye-catching and to establish the visual identity of the page.
 
+## Dependencies
+
+None - this is a CSS-only component.
+
 ## Usage
 
 ### Basic Hero Section
@@ -44,12 +48,10 @@ The Hero component provides a full-width banner section typically used at the to
 
 ## Styling with CSS Variables
 
-The Hero component can be styled using the following CSS variables:
-
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| --hero-background | #ffffff | #1e1f22 | Background color of the hero section |
-| --hero-color | #191919 | #dbdfe7 | Text color of the hero section |
+| `--hero-background` | #ffffff | #1e1f22 | Background color of the hero section |
+| `--hero-color` | #191919 | #dbdfe7 | Text color of the hero section |
 
 ### Example of Custom Styling
 
@@ -60,6 +62,11 @@ The Hero component can be styled using the following CSS variables:
     --hero-color: #ffffff;
 }
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.hero` - The main container class that applies all the hero styling
 
 ## Responsive Behavior
 

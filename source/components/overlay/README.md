@@ -2,6 +2,11 @@
 
 The Overlay component provides styling for creating overlays, backdrops, and splash screens that cover the entire viewport. It's commonly used with dialogs, modals, and loading screens to focus user attention and prevent interaction with underlying content.
 
+## Dependencies
+
+- Metro UI Core
+- CSS Variables
+
 ## Usage
 
 ### Basic Overlay
@@ -87,11 +92,11 @@ The Overlay component can be styled using the following CSS variables:
 ## Available CSS Classes
 
 ### Base Classes
-- `.overlay` - Base class for overlays
-- `.splashscreen` - Full-screen splash screen
+- `.overlay` - Base class for overlays that covers the entire viewport
+- `.splashscreen` - Full-screen splash screen for loading states
 
 ### Modifier Classes
-- `.transparent` - Makes the overlay completely transparent
+- `.transparent` - Makes the overlay completely transparent while still blocking interactions
 - `.global-overlay` - Overlay with higher z-index for global use
 - `.global-dialog` - Dialog that appears above global overlays
 

@@ -2,6 +2,11 @@
 
 The Page Control component provides a tabbed interface for organizing content into separate tabs. It supports tab creation, activation, closing, and renaming, with features like overflow handling, context menus, and reference control.
 
+## Dependencies
+
+- Metro UI Core
+- DOM library
+
 ## Usage
 
 ### Basic Usage
@@ -42,14 +47,14 @@ The Page Control component provides a tabbed interface for organizing content in
 
 ```javascript
 // Create a page control programmatically
-const pageControl = $("<ul>").pageControl({
+const pageControl = Metro.makePlugin("#container", "page-control", {
     tabsPosition: "center",
     appendButton: true,
     defaultNewTabTitle: "New Tab"
-}).appendTo("#container");
+});
 
 // Add tabs
-pageControl.pageControl("addTab", {
+pageControl.addTab({
     caption: "Home",
     icon: "mif-home",
     canClose: false
@@ -76,10 +81,10 @@ The Page Control component accepts the following configuration options:
 | `tabActions` | function | `null` | Function that returns an array of actions for individual tab menus |
 | `refControl` | boolean | `false` | Control visibility of referenced elements based on active tab |
 
-### Event Callbacks
+## Events
 
-| Callback | Description |
-| -------- | ----------- |
+| Event | Description |
+| ----- | ----------- |
 | `onAppendButtonClick` | Triggered when the append button is clicked |
 | `onTabCreate` | Triggered when a tab is created |
 | `onTabActivate` | Triggered when a tab is activated |
@@ -112,7 +117,6 @@ The Page Control component provides the following methods:
 | `setupTab(tab, prop, val)` | tab: element, prop: string, val: any | Updates a tab's property |
 | `renameTab(tab)` | tab: element | Opens a dialog to rename the specified tab |
 | `organizeTabs()` | - | Reorganizes tabs to fit the available space |
-| `destroy()` | - | Removes the component from the DOM |
 
 ### Tab Creation Options
 
@@ -127,6 +131,26 @@ When using the `createTab()` or `addTab()` methods, you can pass the following o
 | `hasMenu` | boolean | Whether the tab has a context menu |
 | `data` | any | Custom data associated with the tab |
 | `ref` | string | Reference to an element controlled by the tab |
+
+### Example of API Usage
+
+```javascript
+// Get the page control instance
+const pageControl = Metro.getPlugin("#myPageControl", "page-control");
+
+// Add a new tab
+const newTab = pageControl.addTab({
+    caption: "New Tab",
+    icon: "mif-file",
+    canClose: true
+});
+
+// Activate a tab
+pageControl.activateTab(newTab);
+
+// Close all inactive tabs
+pageControl.closeInactiveTabs();
+```
 
 ## Styling with CSS Variables
 

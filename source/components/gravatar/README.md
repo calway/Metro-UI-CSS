@@ -2,6 +2,12 @@
 
 The Gravatar component provides an easy way to display Globally Recognized Avatars (Gravatars) in your application. It automatically fetches profile images based on email addresses using the Gravatar service.
 
+## Dependencies
+
+This component requires:
+- Metro UI core
+- Metro.md5 function for email hashing
+
 ## Usage
 
 ### Basic Usage
@@ -16,7 +22,7 @@ The Gravatar component provides an easy way to display Globally Recognized Avata
 </div>
 ```
 
-### Configuration Options
+### Additional Configurations
 
 ```html
 <!-- Gravatar with custom size -->
@@ -26,23 +32,25 @@ The Gravatar component provides an easy way to display Globally Recognized Avata
 <img data-role="gravatar" data-email="user@example.com" data-default="identicon">
 ```
 
-## Component Parameters
+## Plugin Parameters
 
-The Gravatar component accepts the following parameters:
-
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| gravatarDeferred | 0 | Delay in milliseconds before initializing the component |
-| email | "" | The email address to generate the Gravatar for |
-| size | 80 | The size of the Gravatar image in pixels |
-| default | "mp" | The default image to display if no Gravatar is found. Options include: 404, mp, identicon, monsterid, wavatar, retro, robohash, blank |
-| onGravatarCreate | Metro.noop | Callback function triggered when the Gravatar is created |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `gravatarDeferred` | number | 0 | Delay in milliseconds before initializing the component |
+| `email` | string | "" | The email address to generate the Gravatar for |
+| `size` | number | 80 | The size of the Gravatar image in pixels |
+| `default` | string | "mp" | The default image to display if no Gravatar is found. Options include: 404, mp, identicon, monsterid, wavatar, retro, robohash, blank |
+| `onGravatarCreate` | function | Metro.noop | Callback function triggered when the Gravatar is created |
 
 ## API Methods
 
-### getImage(email, size, def, is_object)
++ `getImage(email, size, def, is_object)` - Gets a Gravatar image element for the specified email.
++ `getImageSrc(email, size, def)` - Gets the URL for a Gravatar image based on the email.
++ `get()` - Updates the Gravatar image based on the current component options.
++ `resize(new_size)` - Changes the size of the Gravatar image.
++ `email(new_email)` - Changes the email address for the Gravatar.
 
-Gets a Gravatar image element for the specified email.
+#### Example of Method Usage
 
 ```javascript
 // Get Gravatar image as DOM element
@@ -50,49 +58,31 @@ const gravatarElement = Metro.getPlugin('#myGravatar', 'gravatar').getImage('use
 
 // Get Gravatar image as jQuery object
 const gravatarObject = Metro.getPlugin('#myGravatar', 'gravatar').getImage('user@example.com', 100, 'identicon', true);
-```
 
-### getImageSrc(email, size, def)
-
-Gets the URL for a Gravatar image based on the email.
-
-```javascript
 // Get Gravatar image URL
 const gravatarUrl = Metro.getPlugin('#myGravatar', 'gravatar').getImageSrc('user@example.com', 100, 'identicon');
-```
 
-### get()
-
-Updates the Gravatar image based on the current component options.
-
-```javascript
 // Update the Gravatar image
 Metro.getPlugin('#myGravatar', 'gravatar').get();
-```
 
-### resize(new_size)
-
-Changes the size of the Gravatar image.
-
-```javascript
 // Resize the Gravatar to 120px
 Metro.getPlugin('#myGravatar', 'gravatar').resize(120);
 
 // Resize the Gravatar based on the data-size attribute
 Metro.getPlugin('#myGravatar', 'gravatar').resize();
-```
 
-### email(new_email)
-
-Changes the email address for the Gravatar.
-
-```javascript
 // Change the email address
 Metro.getPlugin('#myGravatar', 'gravatar').email('newemail@example.com');
 
 // Update the email based on the data-email attribute
 Metro.getPlugin('#myGravatar', 'gravatar').email();
 ```
+
+## Events
+
+| Event | Description |
+| ----- | ----------- |
+| `onGravatarCreate` | Triggered when the Gravatar component is created |
 
 ## Global Configuration
 

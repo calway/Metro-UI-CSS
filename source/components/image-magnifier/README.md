@@ -1,4 +1,4 @@
-# Image Magnifier Component
+# Image Magnifier
 
 The Image Magnifier component provides an interactive way to zoom in on parts of an image. It creates a magnifying glass effect that follows the cursor, allowing users to see details of the image at a higher zoom level.
 
@@ -7,7 +7,7 @@ The Image Magnifier component provides an interactive way to zoom in on parts of
 ### Basic Usage
 
 ```html
-<div class="image-magnifier">
+<div data-role="image-magnifier">
     <img src="image.jpg" alt="Image to magnify">
 </div>
 ```
@@ -16,55 +16,61 @@ The Image Magnifier component provides an interactive way to zoom in on parts of
 
 ```javascript
 // Initialize with default options
-Metro.makePlugin(element, "image-magnifier");
+Metro.makePlugin("#element", "image-magnifier");
 
 // Initialize with custom options
-Metro.makePlugin(element, "image-magnifier", {
+Metro.makePlugin("#element", "image-magnifier", {
     lensSize: 150,
     lensType: "circle",
     magnifierZoom: 3,
-    magnifierMode: "glass",
-    onMagnifierMove: function(e) {
-        console.log("Magnifier moved to position:", e.pos);
-    }
+    magnifierMode: "glass"
 });
 ```
 
 ## Plugin Parameters
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| imageMagnifierDeferred | 0 | Delay before initialization (milliseconds) |
-| width | "100%" | Width of the component (CSS value or percentage) |
-| height | "auto" | Height of the component (CSS value, percentage, or aspect ratio like "16/9", "21/9", "4/3") |
-| lensSize | 100 | Size of the magnifier lens in pixels |
-| lensType | "square" | Shape of the lens: "square" or "circle" |
-| magnifierZoom | 2 | Zoom level for the magnified view |
-| magnifierMode | "glass" | Mode of operation: "glass" (magnification in the lens) or "zoom" (magnification in a separate element) |
-| magnifierZoomElement | null | Element to display the zoomed image when in "zoom" mode (if null, a new element is created) |
-| clsMagnifier | "" | Additional CSS class for the magnifier container |
-| clsLens | "" | Additional CSS class for the lens element |
-| clsZoom | "" | Additional CSS class for the zoom element (when in "zoom" mode) |
-| onMagnifierMove | Metro.noop | Callback function triggered when the magnifier is moved |
-| onImageMagnifierCreate | Metro.noop | Callback function triggered when the component is created |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `imageMagnifierDeferred` | number | 0 | Delay before initialization (milliseconds) |
+| `width` | string | "100%" | Width of the component (CSS value or percentage) |
+| `height` | string | "auto" | Height of the component (CSS value, percentage, or aspect ratio like "16/9", "21/9", "4/3") |
+| `lensSize` | number | 100 | Size of the magnifier lens in pixels |
+| `lensType` | string | "square" | Shape of the lens: "square" or "circle" |
+| `magnifierZoom` | number | 2 | Zoom level for the magnified view |
+| `magnifierMode` | string | "glass" | Mode of operation: "glass" (magnification in the lens) or "zoom" (magnification in a separate element) |
+| `magnifierZoomElement` | string/object | null | Element to display the zoomed image when in "zoom" mode (if null, a new element is created) |
+| `clsMagnifier` | string | "" | Additional CSS class for the magnifier container |
+| `clsLens` | string | "" | Additional CSS class for the lens element |
+| `clsZoom` | string | "" | Additional CSS class for the zoom element (when in "zoom" mode) |
+| `onMagnifierMove` | function | Metro.noop | Callback function triggered when the magnifier is moved |
+| `onImageMagnifierCreate` | function | Metro.noop | Callback function triggered when the component is created |
 
 ## API Methods
 
-### changeAttribute(attr, val)
-Changes the specified attribute of the component.
++ `destroy()` - Removes the component and its event handlers.
 
-### destroy()
-Removes the component and its event handlers.
+#### Example of Method Usage
+```javascript
+const magnifier = Metro.getPlugin('#myImage', 'image-magnifier');
+magnifier.destroy();
+```
+
+## Events
+
+| Event | Description |
+| ----- | ----------- |
+| `onMagnifierMove` | Triggered when the magnifier lens is moved over the image |
+| `onImageMagnifierCreate` | Triggered when the component is created |
 
 ## Styling with CSS Variables
 
-The Image Magnifier component uses the following styling:
+The Image Magnifier component uses the following CSS classes for styling:
 
 | Element | Style | Description |
 | ------- | ----- | ----------- |
-| .image-magnifier | position: relative; display: block; cursor: none; | Container for the magnifier |
-| .image-magnifier img | width: 100%; height: auto; | Image to be magnified |
-| .image-magnifier-glass | position: absolute; border: 4px solid rgba(255,255,255,.7); | Magnifier lens |
+| `.image-magnifier` | position: relative; display: block; cursor: none; | Container for the magnifier |
+| `.image-magnifier img` | width: 100%; height: auto; | Image to be magnified |
+| `.image-magnifier-glass` | position: absolute; border: 4px solid rgba(255,255,255,.7); | Magnifier lens |
 
 ### Example of Custom Styling
 
@@ -81,26 +87,11 @@ The Image Magnifier component uses the following styling:
 }
 ```
 
-## Component Structure
+## Available CSS Classes
 
-The component creates the following structure in "glass" mode:
-
-```html
-<div class="image-magnifier">
-    <img src="image.jpg" alt="Image to magnify">
-    <div class="image-magnifier-glass"></div>
-</div>
-```
-
-In "zoom" mode, an additional element is created or used for displaying the zoomed image:
-
-```html
-<div class="image-magnifier">
-    <img src="image.jpg" alt="Image to magnify">
-    <div class="image-magnifier-glass"></div>
-</div>
-<div class="zoom-element"></div> <!-- Created automatically or specified via magnifierZoomElement -->
-```
+### Base Classes
+- `.image-magnifier` - Main container class for the component
+- `.image-magnifier-glass` - Class for the magnifier lens element
 
 ## Modes of Operation
 

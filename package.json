@@ -46,6 +46,7 @@
     ],
     "devDependencies": {
         "@biomejs/biome": "1.9.4",
+        "@biomejs/cli-win32-x64": "^1.9.4",
         "@olton/esbuild-plugin-autoprefixer": "^0.2.0",
         "@olton/esbuild-plugin-progress": "^0.3.0",
         "@olton/esbuild-plugin-unlink": "^0.2.0",

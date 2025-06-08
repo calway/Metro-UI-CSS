@@ -77,12 +77,12 @@ The Icon Box component can be styled using the following CSS variables:
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| --icon-box-border-radius | 6px | 6px | Border radius for the icon box |
-| --icon-box-background | var(--default-background) | var(--default-background) | Background color of the icon box |
-| --icon-box-color | var(--default-color) | rgb(219, 223, 231) | Text color of the icon box |
-| --icon-box-border-color | var(--border-color) | var(--border-color) | Border color of the icon box |
-| --icon-box-icon-background | light-gray | dark-gray | Background color of the icon |
-| --icon-box-icon-color | var(--default-color) | var(--default-color) | Text color of the icon |
+| `--icon-box-border-radius` | 6px | 6px | Border radius for the icon box |
+| `--icon-box-background` | var(--default-background) | var(--default-background) | Background color of the icon box |
+| `--icon-box-color` | var(--default-color) | rgb(219, 223, 231) | Text color of the icon box |
+| `--icon-box-border-color` | var(--border-color) | var(--border-color) | Border color of the icon box |
+| `--icon-box-icon-background` | light-gray | dark-gray | Background color of the icon |
+| `--icon-box-icon-color` | var(--default-color) | var(--default-color) | Text color of the icon |
 
 ### Example of Custom Styling
 

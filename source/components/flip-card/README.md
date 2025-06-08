@@ -2,7 +2,13 @@
 
 The Flip Card component is a purely CSS-based component that creates a card with front and back sides that can be flipped either horizontally or vertically. The flip effect can be triggered on hover or when the card has an "active" class.
 
-## HTML Structure
+## Dependencies
+
+This component has no dependencies other than the core Metro UI CSS variables.
+
+## Usage
+
+### Basic Usage
 
 ```html
 <div class="flip-card">
@@ -15,22 +21,7 @@ The Flip Card component is a purely CSS-based component that creates a card with
 </div>
 ```
 
-## CSS Classes
-
-The Flip Card component uses the following CSS classes:
-
-| Class | Description |
-| ----- | ----------- |
-| `flip-card` | The main container class for the flip card component |
-| `front` | The front side of the card |
-| `back` | The back side of the card |
-| `flip-horizontal` | Makes the card flip horizontally (by default, the card flips vertically) |
-| `effect-on-hover` | Triggers the flip effect when the user hovers over the card |
-| `effect-on-active` | Triggers the flip effect when the card has the `active` class |
-
-## Examples
-
-### Basic Flip Card (Vertical Flip on Hover)
+### Vertical Flip on Hover
 
 ```html
 <div class="flip-card effect-on-hover">
@@ -45,7 +36,7 @@ The Flip Card component uses the following CSS classes:
 </div>
 ```
 
-### Horizontal Flip Card with Active State
+### Horizontal Flip with Active State
 
 ```html
 <div class="flip-card flip-horizontal effect-on-active">
@@ -70,18 +61,26 @@ const flipCard = document.querySelector('.flip-card.effect-on-active');
 flipCard.classList.toggle('active');
 ```
 
-## CSS Variables
+## Plugin Parameters
 
-The Flip Card component uses the following CSS variables:
+This component is CSS-only and does not have JavaScript plugin parameters.
 
-| Variable | Default Value | Description |
-| -------- | ------------- | ----------- |
-| `@defaultAnimationSpeed` | `.3s` | The duration of the flip animation |
-| `@defaultPerspective` | `600px` | The perspective value for the 3D effect |
+## API Methods
 
-## Customization
+This component is CSS-only and does not have JavaScript API methods.
 
-You can customize the Flip Card component by overriding the default CSS variables:
+## Events
+
+This component is CSS-only and does not have JavaScript events.
+
+## Styling with CSS Variables
+
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `@defaultAnimationSpeed` | `.3s` | Same | The duration of the flip animation |
+| `@defaultPerspective` | `600px` | Same | The perspective value for the 3D effect |
+
+### Example of Custom Styling
 
 ```css
 :root {
@@ -90,30 +89,17 @@ You can customize the Flip Card component by overriding the default CSS variable
 }
 ```
 
-Or by adding your own styles:
+## Available CSS Classes
 
-```css
-.flip-card {
-    width: 300px;
-    height: 200px;
-    margin: 20px;
-}
+### Base Classes
+- `.flip-card` - The main container class for the flip card component
+- `.front` - The front side of the card
+- `.back` - The back side of the card
 
-.flip-card .front,
-.flip-card .back {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.flip-card .front {
-    background-color: #f8f9fa;
-}
-
-.flip-card .back {
-    background-color: #e9ecef;
-}
-```
+### Modifiers
+- `.flip-horizontal` - Makes the card flip horizontally (by default, the card flips vertically)
+- `.effect-on-hover` - Triggers the flip effect when the user hovers over the card
+- `.effect-on-active` - Triggers the flip effect when the card has the `active` class
 
 ## Notes
 

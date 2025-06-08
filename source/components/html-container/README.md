@@ -41,22 +41,18 @@ Metro.makePlugin(element, "html-container", {
 });
 ```
 
-## Configuration Options
+## Plugin Parameters
 
-The HTML Container component can be configured with the following options:
-
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| `htmlContainerDeferred` | 0 | Deferred initialization time in milliseconds |
-| `method` | "get" | HTTP method for the request (get, post, etc.) |
-| `htmlSource` | null | URL of the HTML content to load |
-| `requestData` | null | Data to send with the request |
-| `requestOptions` | null | Additional options for the fetch request |
-| `insertMode` | "default" | How to insert the loaded content: "default" (replace inner HTML), "append", "prepend", or "replace" (replace the entire element) |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `htmlContainerDeferred` | number | 0 | Deferred initialization time in milliseconds |
+| `method` | string | "get" | HTTP method for the request (get, post, etc.) |
+| `htmlSource` | string | null | URL of the HTML content to load |
+| `requestData` | object | null | Data to send with the request |
+| `requestOptions` | object | null | Additional options for the fetch request |
+| `insertMode` | string | "default" | How to insert the loaded content: "default" (replace inner HTML), "append", "prepend", or "replace" (replace the entire element) |
 
 ## Events
-
-The HTML Container component provides the following events:
 
 | Event | Description |
 | ----- | ----------- |
@@ -67,15 +63,12 @@ The HTML Container component provides the following events:
 
 ## API Methods
 
-The HTML Container component provides the following methods:
++ `load(source, data, opt)` - Loads HTML content from the specified source.
 
-### load(source, data, opt)
-
-Loads HTML content from the specified source.
-
+#### Example of Method Usage
 ```javascript
 // Get the component instance
-const htmlContainer = Metro.getPlugin(element, "html-container");
+const htmlContainer = Metro.getPlugin('#element', "html-container");
 
 // Load content from a new source
 htmlContainer.load("path/to/new-content.html");

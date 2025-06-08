@@ -2,14 +2,25 @@
 
 The Resizable component allows elements to be resized by the user through a draggable handle. It provides a simple way to make any element resizable with customizable constraints and events.
 
+## Dependencies
+
+- Metro UI Core
+- DOM module
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <!-- Basic resizable element -->
 <div data-role="resizable" style="width: 300px; height: 200px; background-color: #f0f0f0; position: relative;">
     Drag the bottom-right corner to resize this element
 </div>
+```
 
+### Additional Configurations
+
+```html
 <!-- Resizable with constraints -->
 <div data-role="resizable" 
      data-min-width="200" 
@@ -27,59 +38,59 @@ The Resizable component allows elements to be resized by the user through a drag
 </div>
 ```
 
-## Parameters
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| resizableDeferred | number | 0 | Deferred initialization time in milliseconds |
-| canResize | boolean | true | Whether the element can be resized |
-| resizeElement | string | ".resize-element" | Selector for the resize handle element |
-| minWidth | number | 0 | Minimum width of the element (0 for no limit) |
-| minHeight | number | 0 | Minimum height of the element (0 for no limit) |
-| maxWidth | number | 0 | Maximum width of the element (0 for no limit) |
-| maxHeight | number | 0 | Maximum height of the element (0 for no limit) |
-| preserveRatio | boolean | false | Whether to preserve the aspect ratio when resizing |
+| `resizableDeferred` | number | 0 | Deferred initialization time in milliseconds |
+| `canResize` | boolean | true | Whether the element can be resized |
+| `resizeElement` | string | ".resize-element" | Selector for the resize handle element |
+| `minWidth` | number | 0 | Minimum width of the element (0 for no limit) |
+| `minHeight` | number | 0 | Minimum height of the element (0 for no limit) |
+| `maxWidth` | number | 0 | Maximum width of the element (0 for no limit) |
+| `maxHeight` | number | 0 | Maximum height of the element (0 for no limit) |
+| `preserveRatio` | boolean | false | Whether to preserve the aspect ratio when resizing |
 
-## Methods
+## API Methods
 
-### on()
-Enables resizing for the element.
++ `on()` - Enables resizing for the element.
++ `off()` - Disables resizing for the element.
++ `destroy()` - Destroys the resizable component and removes event listeners.
 
-```javascript
-var resizable = Metro.getPlugin('#myElement', 'resizable');
-resizable.on();
-```
-
-### off()
-Disables resizing for the element.
+### Example of Method Usage
 
 ```javascript
-var resizable = Metro.getPlugin('#myElement', 'resizable');
-resizable.off();
-```
-
-### destroy()
-Destroys the resizable component.
-
-```javascript
-var resizable = Metro.getPlugin('#myElement', 'resizable');
-resizable.destroy();
+const resizable = Metro.getPlugin('#myElement', 'resizable');
+resizable.on();  // Enable resizing
+resizable.off(); // Disable resizing
 ```
 
 ## Events
 
 | Event | Description |
 | --- | --- |
-| onResizeStart | Triggered when resizing starts |
-| onResizeStop | Triggered when resizing stops |
-| onResize | Triggered during resizing |
-| onResizableCreate | Triggered when the resizable component is created |
+| `onResizeStart` | Triggered when resizing starts |
+| `onResizeStop` | Triggered when resizing stops |
+| `onResize` | Triggered during resizing |
+| `onResizableCreate` | Triggered when the resizable component is created |
 
-## Styling
+## Styling with CSS Variables
 
-The Resizable component adds a resize handle to the bottom-right corner of the element by default. The handle is styled as a small triangular indicator.
+The Resizable component uses the following CSS variables:
 
-### Default Resize Handle
+| Variable | Default (Light) | Dark Mode | Description |
+| --- | --- | --- | --- |
+| `@green` | Green color | - | Color of the resize handle |
+| `@gray` | Gray color | - | Color of the disabled resize handle |
+
+## Available CSS Classes
+
+### Base Classes
+- `.resizable-element` - Applied to the element that is made resizable
+- `.resize-element` - The default resize handle element
+- `.resize-element-disabled` - Applied to the resize handle when resizing is disabled
+
+### Default Resize Handle Styling
 
 The default resize handle is a small triangle in the bottom-right corner of the element:
 
@@ -138,7 +149,7 @@ You can create a custom resize handle by specifying the `resizeElement` paramete
 }
 ```
 
-## Example
+## Complete Example
 
 ```html
 <div id="resizableBox" data-role="resizable" 
@@ -152,8 +163,8 @@ You can create a custom resize handle by specifying the `resizeElement` paramete
 
 <script>
     Metro.init(function(){
-        var box = Metro.getPlugin('#resizableBox', 'resizable');
-        var sizeInfo = $('#sizeInfo');
+        const box = Metro.getPlugin('#resizableBox', 'resizable');
+        const sizeInfo = $('#sizeInfo');
         
         box.options.onResize = function(e){
             sizeInfo.html('Width: ' + e.size.width + 'px, Height: ' + e.size.height + 'px');

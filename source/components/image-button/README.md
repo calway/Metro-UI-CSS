@@ -2,6 +2,10 @@
 
 The Image Button component provides a button with an icon and caption. It's designed to create visually appealing buttons that combine icons with text, making them more recognizable and user-friendly.
 
+## Dependencies
+
+This component has no JavaScript dependencies as it's a CSS-only component.
+
 ## Usage
 
 ### Basic Image Button
@@ -71,6 +75,15 @@ The Image Button component provides a button with an icon and caption. It's desi
 </a>
 ```
 
+### Shadowed Image Button
+
+```html
+<button class="image-button shadowed">
+    <span class="mif-share icon"></span>
+    <span class="caption">Share it</span>
+</button>
+```
+
 ## Styling with CSS Variables
 
 The Image Button component can be styled using the following CSS variables:
@@ -78,8 +91,8 @@ The Image Button component can be styled using the following CSS variables:
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
 | --image-button-border-radius | 4px | 4px | Border radius of the button |
-| --image-button-background | light-gray | #4a4a4a | Background color of the button |
-| --image-button-color | default-color | default-color | Text color of the button |
+| --image-button-background | #f4f4f4 (light-gray) | #4a4a4a | Background color of the button |
+| --image-button-color | var(--default-color) | var(--default-color) | Text color of the button |
 | --image-button-icon-background | #929fa6 | #2e2e2e | Background color of the icon |
 | --image-button-icon-color | #ffffff | #ffffff | Color of the icon |
 | --image-button-icon-background-hover | #7da0b3 | #373737 | Background color of the icon on hover |
@@ -110,9 +123,10 @@ The Image Button component can be styled using the following CSS variables:
 ### Style Modifiers
 - `.outline` - Creates a button with transparent background and a border
 - `.disabled` - Applies a disabled appearance to the button (use with the `disabled` attribute)
+- `.shadowed` - Adds a shadow effect to the button
 
 ### Color Classes
-- `.primary`, `.secondary`, `.success`, `.warning`, `.alert`, `.info` - Color variants for the button
+- `.primary`, `.secondary`, `.tertiary`, `.success`, `.warning`, `.alert`, `.info`, `.dark`, `.light` - Color variants for the button
 
 ### Structure Elements
 - `.icon` - Container for the icon

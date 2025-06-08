@@ -1,0 +1,60 @@
+@import "../../include/vars"; 
+@import "../../include/mixins";
+
+:root {
+    --rb-group-background: #dadee9;
+    --rb-group-color: #7e7e77;
+    --rb-item-background: #ffffff;
+    --rb-item-color: #191919;
+    --rb-item-hover: hsl(7, 100%, 68%);
+}
+
+.dark-side {
+    --rb-group-background: #545957;
+    --rb-group-color: #bdc5d2;
+    --rb-item-background: #2c2f2e;
+    --rb-item-color: #ffffff;
+    --rb-item-hover: hsl(7, 100%, 68%);
+}
+
+.radio-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    background: var(--rb-group-background);
+    color: var(--rb-group-color);
+    padding: 4px;
+    border-radius: 6px;
+    
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background: transparent;
+        color: inherit;
+        font-size: 0.75rem;
+        border: none;
+        height: 26px;
+        font-weight: 500;
+        
+        @media (hover: hover) {
+            &:hover:not(.active) {
+                color: var(--rb-item-hover);
+            }
+        }
+        
+        @media (hover: none) {
+            &:active:not(.active) {
+                color: var(--rb-item-hover);
+            }
+        }
+        
+        &.active {
+            background: var(--rb-item-background);
+            color: var(--rb-item-color);
+            font-weight: 600;
+        }
+    }
+}

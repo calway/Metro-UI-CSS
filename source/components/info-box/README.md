@@ -2,6 +2,13 @@
 
 The Info Box component provides a versatile modal dialog for displaying information, alerts, warnings, and success messages to users. It supports customizable content, overlay, and automatic closing.
 
+## Dependencies
+
+This component requires:
+- Metro UI core
+- Farbe module for color handling
+- Colors CSS module
+
 ## Usage
 
 ### Basic Usage
@@ -48,23 +55,24 @@ Metro.infobox.create(
 );
 ```
 
-## Configuration Options
+## Plugin Parameters
 
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| `type` | "" | Type of info box (success, info, alert, warning) |
-| `width` | 480 | Width of the info box in pixels |
-| `height` | "auto" | Height of the info box |
-| `overlay` | true | Whether to show an overlay behind the info box |
-| `overlayColor` | "#000000" | Color of the overlay |
-| `overlayAlpha` | 0.5 | Opacity of the overlay (0-1) |
-| `overlayClickClose` | false | Whether clicking the overlay closes the info box |
-| `autoHide` | 0 | Time in milliseconds after which the info box auto-closes (0 = no auto-hide) |
-| `removeOnClose` | false | Whether to remove the info box from the DOM when closed |
-| `closeButton` | true | Whether to show a close button |
-| `clsBox` | "" | Additional CSS class for the info box |
-| `clsBoxContent` | "" | Additional CSS class for the info box content |
-| `clsOverlay` | "" | Additional CSS class for the overlay |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `infoboxDeferred` | number | 0 | Delay in milliseconds before initializing the component |
+| `type` | string | "" | Type of info box (success, info, alert, warning) |
+| `width` | number | 480 | Width of the info box in pixels |
+| `height` | string/number | "auto" | Height of the info box |
+| `overlay` | boolean | true | Whether to show an overlay behind the info box |
+| `overlayColor` | string | "#000000" | Color of the overlay |
+| `overlayAlpha` | number | 0.5 | Opacity of the overlay (0-1) |
+| `overlayClickClose` | boolean | false | Whether clicking the overlay closes the info box |
+| `autoHide` | number | 0 | Time in milliseconds after which the info box auto-closes (0 = no auto-hide) |
+| `removeOnClose` | boolean | false | Whether to remove the info box from the DOM when closed |
+| `closeButton` | boolean | true | Whether to show a close button |
+| `clsBox` | string | "" | Additional CSS class for the info box |
+| `clsBoxContent` | string | "" | Additional CSS class for the info box content |
+| `clsOverlay` | string | "" | Additional CSS class for the overlay |
 
 ## Events
 
@@ -97,6 +105,18 @@ Metro.infobox.create(
 | `Metro.infobox.setType(element, type)` | Sets the type of an info box |
 | `Metro.infobox.isOpen(element)` | Returns whether an info box is open |
 | `Metro.infobox.create(content, type, options, open)` | Creates a new info box with content, type, options, and open state |
+
+## Global Configuration
+
+You can set global defaults for all Info Box components using:
+
+```javascript
+Metro.infoBoxSetup({
+    width: 400,
+    overlayClickClose: true,
+    // other options
+});
+```
 
 ## Styling with CSS Variables
 
@@ -134,6 +154,23 @@ The More Info Box variant can be styled using these additional CSS variables:
     --info-box-border-radius: 10px;
 }
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.info-box` - The main info box container
+- `.info-box-content` - The content container within the info box
+- `.closer` - The close button element
+
+### Type Modifiers
+- `.success` - Success message style
+- `.info` - Information message style
+- `.alert` - Alert message style
+- `.warning` - Warning message style
+
+### Additional Info Box Variants
+- `.info-box2` - A simpler variant with title and value sections
+- `.more-info-box` - A variant with icon and "more" section
 
 ## Example Use Cases
 

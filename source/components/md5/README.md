@@ -2,7 +2,13 @@
 
 The MD5 utility provides a function to generate MD5 hash values from strings. This is useful for creating checksums, simple password hashing (though not recommended for production security), or generating unique identifiers based on content.
 
+## Dependencies
+
+This component has no external dependencies beyond the core Metro UI library.
+
 ## Usage
+
+### Basic Usage
 
 ```javascript
 // Generate an MD5 hash of a string

@@ -1,13 +1,17 @@
-# Image Compare Component
+# Image Compare
 
 The Image Compare component provides an interactive way to compare two images by sliding a divider between them. This is useful for before/after comparisons, showing differences between images, or highlighting changes.
+
+## Dependencies
+
+This component has no additional dependencies beyond the Metro UI core.
 
 ## Usage
 
 ### Basic Usage
 
 ```html
-<div class="image-compare">
+<div class="image-compare" data-role="image-compare">
     <img src="image1.jpg" alt="Before">
     <img src="image2.jpg" alt="After">
 </div>
@@ -17,10 +21,10 @@ The Image Compare component provides an interactive way to compare two images by
 
 ```javascript
 // Initialize with default options
-Metro.makePlugin(element, "image-compare");
+Metro.makePlugin("#myImageCompare", "image-compare");
 
 // Initialize with custom options
-Metro.makePlugin(element, "image-compare", {
+Metro.makePlugin("#myImageCompare", "image-compare", {
     width: "100%",
     height: "16/9",
     onSliderMove: function(e) {
@@ -31,30 +35,38 @@ Metro.makePlugin(element, "image-compare", {
 
 ## Plugin Parameters
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| imageCompareDeferred | 0 | Delay before initialization (milliseconds) |
-| width | "100%" | Width of the component (CSS value or percentage) |
-| height | "auto" | Height of the component (CSS value, percentage, or aspect ratio like "16/9", "21/9", "4/3") |
-| onSliderMove | Metro.noop | Callback function triggered when the slider is moved |
-| onImageCompareCreate | Metro.noop | Callback function triggered when the component is created |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `imageCompareDeferred` | number | 0 | Delay before initialization (milliseconds) |
+| `width` | string | "100%" | Width of the component (CSS value or percentage) |
+| `height` | string | "auto" | Height of the component (CSS value, percentage, or aspect ratio like "16/9", "21/9", "4/3") |
+| `onSliderMove` | function | Metro.noop | Callback function triggered when the slider is moved |
+| `onImageCompareCreate` | function | Metro.noop | Callback function triggered when the component is created |
 
 ## API Methods
 
-### changeAttribute(attr, val)
-Changes the specified attribute of the component.
++ `changeAttribute(attr, val)` - Changes the specified attribute of the component.
++ `destroy()` - Removes the component and its event handlers.
 
-### destroy()
-Removes the component and its event handlers.
+#### Example of Method Usage
+```javascript
+const imageCompare = Metro.getPlugin('#myImageCompare', 'image-compare');
+imageCompare.destroy();
+```
+
+## Events
+
+| Event | Description |
+| ----- | ----------- |
+| `onSliderMove` | Triggered when the slider is moved. The event object contains the x-coordinate and left position of the slider. |
+| `onImageCompareCreate` | Triggered when the component is created. The event object contains a reference to the element. |
 
 ## Styling with CSS Variables
 
-The Image Compare component can be styled using the following CSS variables:
-
-| Variable | Default | Description |
-| -------- | ------- | ----------- |
-| @orange | Orange color | Background color of the slider |
-| @borderRadius | Border radius value | Border radius for the slider |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `@orange` | Orange color | Same | Background color of the slider |
+| `@borderRadius` | Border radius value | Same | Border radius for the slider |
 
 ### Example of Custom Styling
 
@@ -66,7 +78,16 @@ The Image Compare component can be styled using the following CSS variables:
 }
 ```
 
-## Component Structure
+## Available CSS Classes
+
+### Base Classes
+- `.image-compare` - The main container class for the component
+- `.image-container` - Container for the first image
+- `.image-container-overlay` - Container for the second image (overlay)
+- `.image-slider` - The slider element that divides the two images
+- `.image-wrapper` - Wrapper for each image
+
+### Component Structure
 
 The component creates the following structure:
 
@@ -81,12 +102,6 @@ The component creates the following structure:
     <div class="image-slider"></div>
 </div>
 ```
-
-## Accessibility
-
-The Image Compare component includes:
-- Interactive slider for comparing images
-- Visual feedback when interacting with the slider
 
 ## Best Practices
 

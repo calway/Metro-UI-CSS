@@ -2,6 +2,12 @@
 
 The Package Manager component provides a tabbed interface for displaying installation commands for different package managers (npm, pnpm, yarn, bun). It allows users to easily copy the correct installation command for their preferred package manager.
 
+## Dependencies
+
+- Metro UI Core
+- DOM library
+- Hooks (for ID generation)
+
 ## Usage
 
 ### Basic Usage
@@ -24,6 +30,13 @@ The Package Manager component provides a tabbed interface for displaying install
 
 ```javascript
 // Create a package manager component programmatically
+const packageManager = Metro.makePlugin("#element", "package-manager", {
+    package: "metro4",
+    default: "npm",
+    deps: "dev"
+});
+
+// Alternative jQuery-style creation
 const packageManager = $("<div>").packageManager({
     package: "metro4",
     default: "npm",
@@ -42,19 +55,26 @@ The Package Manager component accepts the following configuration options:
 | `deps` | string | `""` | Dependency type: empty for regular dependencies, "dev" for dev dependencies, "peer" for peer dependencies |
 | `package` | string | `""` | Package name to install |
 
-### Event Callbacks
+## Events
 
-| Callback | Description |
-| -------- | ----------- |
+| Event | Description |
+| ----- | ----------- |
 | `onPackageManagerCreate` | Triggered when the component is created |
 
 ## API Methods
 
 The Package Manager component provides the following methods:
 
-| Method | Parameters | Description |
-| ------ | ---------- | ----------- |
-| `destroy()` | - | Removes the component from the DOM |
+| Method | Description |
+| ------ | ----------- |
+| `destroy()` | Removes the component from the DOM |
+
+### Example of Method Usage
+
+```javascript
+const packageManager = Metro.getPlugin("#element", "package-manager");
+packageManager.destroy();
+```
 
 ## Installation Commands
 
@@ -87,14 +107,14 @@ The component automatically formats the correct installation command for each pa
 | yarn | `yarn add -P <package>` |
 | bun | `bun add --peer <package>` |
 
-## Styling
+## Styling with CSS Variables
 
 The Package Manager component uses the following CSS variables for styling:
 
-| Variable | Description |
-| -------- | ----------- |
-| `--code-background` | Background color for code blocks and tabs |
-| `--code-color` | Text color for code blocks and icons |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--code-background` | Inherited from theme | Inherited from theme | Background color for code blocks and tabs |
+| `--code-color` | Inherited from theme | Inherited from theme | Text color for code blocks and icons |
 
 ### Example of Custom Styling
 
@@ -108,6 +128,7 @@ The Package Manager component uses the following CSS variables for styling:
 
 ## Available CSS Classes
 
+### Base Classes
 - `.package-manager` - Base class for the component
 - `.pm-command` - Container for each package manager command
 - `.pm-command code` - Command text

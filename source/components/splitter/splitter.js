@@ -37,7 +37,7 @@
     Metro.Component("splitter", {
         init: function (options, elem) {
             this._super(elem, options, SplitterDefaultConfig, {
-                storage: Metro.utils.isValue(Storage) ? Storage : null,
+                storage: Metro.storage,
                 storageKey: "SPLITTER:",
                 id: null,
             });
@@ -49,7 +49,7 @@
             const element = this.element;
 
             this.id = Hooks.useId(this.elem);
-            
+
             this._createStructure();
             this._createEvents();
 
@@ -130,6 +130,7 @@
                 children_sizes = `${o.splitSizes}`.toArray();
                 let remnant = 100;
                 let i = 0;
+                // Встановлюємо розмір для вказаних блоків
                 for (; i < children_sizes.length; i++) {
                     let s = children_sizes[i];
                     if (!s.includes("%")) {
@@ -142,6 +143,7 @@
                         flexBasis: `calc(${s}% - ${gutters.length * o.gutterSize}px)`,
                     });
                 }
+                // Встановлюємо розмір для решти блоків
                 for (; i < children.length; i++) {
                     $(children[i]).css({
                         flexBasis: `calc(${remnant / (children.length - i)}% - ${gutters.length * o.gutterSize}px)`,
@@ -273,7 +275,7 @@
             const storage = this.storage;
             const itemsSize = [];
             const id = element.attr("id") || this.id;
-
+            console.log(storage);
             if (o.saveState === true && storage !== null) {
                 $.each(element.children(".split-block"), function () {
                     const item = $(this);

@@ -2,6 +2,10 @@
 
 The Grid component provides a flexible, responsive 12-column grid system based on flexbox. It's designed to help you create complex layouts that adapt to different screen sizes.
 
+## Dependencies
+
+None - this is a CSS-only component.
+
 ## Usage
 
 ### Basic Grid Layout
@@ -107,33 +111,50 @@ The Grid component provides a flexible, responsive 12-column grid system based o
 - Fractional width classes (one-fifth, two-fifth, etc.)
 - Container query support for component-level responsiveness
 
-## CSS Variables
+## Plugin Parameters
 
-| Variable | Default | Description |
-| -------- | ------- | ----------- |
-| --grid-gap | 16px | Gap between grid columns |
+This is a CSS-only component and does not have plugin parameters.
 
-## Available Classes
+## API Methods
+
+This is a CSS-only component and does not have API methods.
+
+## Events
+
+This is a CSS-only component and does not have events.
+
+## Styling with CSS Variables
+
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--grid-gap` | 16px | 16px | Gap between grid columns |
+
+### Example of Custom Styling
+
+```css
+/* Custom styling example */
+.my-custom-grid {
+    --grid-gap: 24px;
+}
+```
+
+## Available CSS Classes
 
 ### Grid Container
-
 - `.grid` - The main grid container
 
 ### Row
-
 - `.row` - A row container for columns
 - `.row.gap-{0-12}` - Set custom gap size (gap-0 = 0px, gap-1 = 4px, gap-2 = 8px, etc.)
 - `.row.no-gap` - Remove gaps between columns
 
 ### Columns
-
 - `.cell-{1-12}`, `.col-{1-12}` - Column width (1-12 columns)
 - `.cell`, `.col` - Flexible column (takes available space)
 - `.cell-auto`, `.col-auto` - Auto width column (takes only needed space)
 - `.offset-{1-12}` - Column offset (1-12 columns)
 
 ### Fractional Columns
-
 - `.cell-one-fifth`, `.col-one-fifth` - 20% width
 - `.cell-two-fifth`, `.col-two-fifth` - 40% width
 - `.cell-three-fifth`, `.col-three-fifth` - 60% width
@@ -141,7 +162,6 @@ The Grid component provides a flexible, responsive 12-column grid system based o
 - `.cell-half`, `.col-half` - 50% width
 
 ### Responsive Columns
-
 For each breakpoint (xs, sm, md, lg, xl, xxl), the following classes are available:
 
 - `.cell-{breakpoint}-{1-12}`, `.col-{breakpoint}-{1-12}` - Column width at specific breakpoint
@@ -154,8 +174,7 @@ For each breakpoint (xs, sm, md, lg, xl, xxl), the following classes are availab
 - `.cell-{breakpoint}-three-fifth`, `.col-{breakpoint}-three-fifth` - 60% width at specific breakpoint
 - `.cell-{breakpoint}-four-fifth`, `.col-{breakpoint}-four-fifth` - 80% width at specific breakpoint
 
-## Spacing
-
+### Spacing
 - Default gap between columns is 16px
 - Gap between rows is equal to the column gap
 - Columns have no padding by default

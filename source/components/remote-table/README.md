@@ -2,7 +2,14 @@
 
 The Remote Table component provides a way to fetch and display tabular data from a remote API with built-in pagination, sorting, and searching capabilities. It's designed to handle large datasets efficiently by loading data in chunks and displaying it in a structured table format.
 
+## Dependencies
+
+- Table component (styles)
+- Pagination component
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <div data-role="remote-table" 
@@ -15,7 +22,24 @@ The Remote Table component provides a way to fetch and display tabular data from
 </div>
 ```
 
-## Parameters
+### Additional Configurations
+
+```html
+<div id="userTable" data-role="remote-table" 
+     data-url="api/users" 
+     data-search-url="api/users/search"
+     data-rows="25"
+     data-fields="id,name,email,role,status"
+     data-captions="ID,Name,Email,Role,Status"
+     data-sortable-fields="name,email,role"
+     data-col-size="50px,200px,250px,100px,100px"
+     data-sort="name"
+     data-sort-order="asc"
+     data-cls-table="striped bordered">
+</div>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -44,6 +68,18 @@ The Remote Table component provides a way to fetch and display tabular data from
 | clsTable | string | "" | Additional CSS class for the table |
 | clsPagination | string | "" | Additional CSS class for pagination |
 
+## API Methods
+
++ `_loadData()` - Loads data from the remote API based on current settings.
++ `_createEntries()` - Creates table entries from the loaded data.
++ `destroy()` - Removes the component from the DOM.
+
+#### Example of Method Usage
+```javascript
+const table = Metro.getPlugin('#myTable', 'remote-table');
+// Note: Most methods are internal and not meant to be called directly
+```
+
 ## Events
 
 | Event | Description |
@@ -54,25 +90,19 @@ The Remote Table component provides a way to fetch and display tabular data from
 | onDrawHeadCell | Triggered when a header cell is drawn |
 | onTableCreate | Triggered when the table is created |
 
-## API Response Format
+## Styling with CSS Variables
 
-The component expects the API response to be in the following format:
+The Remote Table component doesn't define specific CSS variables. It inherits styles from the Table component.
 
-```json
-{
-  "total": 100,
-  "data": [
-    { "id": 1, "name": "John Doe", "email": "john@example.com", "phone": "123-456-7890" },
-    { "id": 2, "name": "Jane Smith", "email": "jane@example.com", "phone": "098-765-4321" },
-    ...
-  ]
-}
-```
+## Available CSS Classes
 
-The property names can be customized using the `totalKey` and `dataKey` parameters.
+### Base Classes
+- `.remote-table` - The main container class for the component
+- `.table-entry` - Container for the table and search controls
+- `.search-block` - Container for search input and rows count selector
+- `.table-pagination` - Container for pagination controls
 
-## Structure
-
+### Structure
 The Remote Table component has the following structure:
 
 ```html
@@ -114,6 +144,23 @@ The Remote Table component has the following structure:
 </div>
 ```
 
+## API Response Format
+
+The component expects the API response to be in the following format:
+
+```json
+{
+  "total": 100,
+  "data": [
+    { "id": 1, "name": "John Doe", "email": "john@example.com", "phone": "123-456-7890" },
+    { "id": 2, "name": "Jane Smith", "email": "jane@example.com", "phone": "098-765-4321" },
+    ...
+  ]
+}
+```
+
+The property names can be customized using the `totalKey` and `dataKey` parameters.
+
 ## Customizing Cell Rendering
 
 You can customize how cells are rendered using the `onDrawCell` event:
@@ -154,40 +201,6 @@ Metro.init(function(){
         }
     };
 });
-```
-
-## Example
-
-```html
-<div id="userTable" data-role="remote-table" 
-     data-url="api/users" 
-     data-search-url="api/users/search"
-     data-rows="25"
-     data-fields="id,name,email,role,status"
-     data-captions="ID,Name,Email,Role,Status"
-     data-sortable-fields="name,email,role"
-     data-col-size="50px,200px,250px,100px,100px"
-     data-sort="name"
-     data-sort-order="asc"
-     data-cls-table="striped bordered">
-</div>
-
-<script>
-    Metro.init(function(){
-        var table = Metro.getPlugin('#userTable', 'remote-table');
-        
-        // Customize cell rendering
-        table.options.onDrawCell = function(cell, value, field, item, index) {
-            if (field === 'status') {
-                if (value === 'active') {
-                    $(cell).addClass('bg-green fg-white').html('<span class="mif-checkmark"></span> Active');
-                } else {
-                    $(cell).addClass('bg-red fg-white').html('<span class="mif-cross"></span> Inactive');
-                }
-            }
-        };
-    });
-</script>
 ```
 
 ## Custom Styling Example

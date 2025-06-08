@@ -1,6 +1,10 @@
 # Info Panel Component
 
-The Info Panel component provides a simple, structured container for displaying information with a header, content, and footer sections. It's a CSS-only component designed for presenting content in a clean, organized format.
+The Info Panel component provides a simple, structured container for displaying information with header, content, and footer sections. It's a CSS-only component designed for presenting content in a clean, organized format.
+
+## Dependencies
+
+This component has no external dependencies beyond the Metro UI core CSS.
 
 ## Usage
 
@@ -57,9 +61,9 @@ The Info Panel component provides a simple, structured container for displaying 
 | `.info-panel-content` | Content section of the info panel |
 | `.info-panel-footer` | Footer section of the info panel |
 
-## Styling
+## Styling with CSS Variables
 
-The Info Panel component uses the following default styles:
+The Info Panel component doesn't use CSS variables for styling. Instead, it uses the following default styles:
 
 - Background color: White
 - Text color: Dark
@@ -83,6 +87,29 @@ The Info Panel component uses the following default styles:
 
 - Padding: 40px
 
+### Example of Custom Styling
+
+```css
+/* Custom styling example */
+.custom-info-panel {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-info-panel .info-panel-header {
+    background-color: #e0e0e0;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-info-panel .info-panel-footer {
+    background-color: #e0e0e0;
+    border-top: 1px solid #ddd;
+}
+```
+
 ## Example Use Cases
 
 ### Information Display
@@ -94,7 +121,7 @@ The Info Panel component uses the following default styles:
     </div>
     <div class="info-panel-content">
         <p><strong>Version:</strong> 5.1.0</p>
-        <p><strong>Last Updated:</strong> May 2, 2025</p>
+        <p><strong>Last Updated:</strong> May 2, 2023</p>
         <p><strong>Status:</strong> Active</p>
     </div>
 </div>

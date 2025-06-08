@@ -2,9 +2,13 @@
 
 The Image Box component provides a simple way to display images with various background properties. It automatically detects whether an image is portrait or landscape and applies appropriate classes.
 
+## Dependencies
+
+This component has no additional dependencies beyond the core Metro UI library.
+
 ## Usage
 
-### Basic Image Box
+### Basic Usage
 
 ```html
 <div data-role="image-box" data-image="path/to/image.jpg"></div>
@@ -38,21 +42,22 @@ Metro.makePlugin("#myImageBox", "image-box", {
 
 ## Plugin Parameters
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| image | null | The URL of the image to display |
-| size | "cover" | Background size property (cover, contain, auto, or specific dimensions) |
-| repeat | false | Whether to repeat the background image |
-| color | "transparent" | Background color behind the image |
-| attachment | "scroll" | Background attachment property (scroll, fixed, local) |
-| origin | "border" | Background origin property (border-box, padding-box, content-box) |
-| onImageBoxCreate | Metro.noop | Callback function triggered after the image box is created |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `image` | String | null | The URL of the image to display |
+| `size` | String | "cover" | Background size property (cover, contain, auto, or specific dimensions) |
+| `repeat` | Boolean | false | Whether to repeat the background image |
+| `color` | String | "transparent" | Background color behind the image |
+| `attachment` | String | "scroll" | Background attachment property (scroll, fixed, local) |
+| `origin` | String | "border" | Background origin property (border-box, padding-box, content-box) |
+| `onImageBoxCreate` | Function | Metro.noop | Callback function triggered after the image box is created |
 
 ## API Methods
 
-### changeAttribute(attr, newValue)
++ `changeAttribute(attr, newValue)` - Changes an attribute of the image box and redraws the image.
++ `destroy()` - Destroys the component and returns the element.
 
-Changes an attribute of the image box and redraws the image.
+#### Example of Method Usage
 
 ```javascript
 // Get the component instance
@@ -63,22 +68,23 @@ imageBox.changeAttribute("data-image", "path/to/new-image.jpg");
 
 // Change the size
 imageBox.changeAttribute("data-size", "contain");
-```
 
-### destroy()
-
-Destroys the component and returns the element.
-
-```javascript
-const imageBox = Metro.getPlugin("#myImageBox", "image-box");
+// Destroy the component
 imageBox.destroy();
 ```
 
-## CSS Classes
+## Events
 
-The component automatically applies the following CSS classes:
+| Event | Description |
+| ----- | ----------- |
+| `onImageBoxCreate` | Triggered after the image box component is created |
 
+## Available CSS Classes
+
+### Base Classes
 - `.image-box` - Base class for all image boxes
+
+### Modifiers
 - `.image-box__portrait` - Added when the image is taller than it is wide
 - `.image-box__landscape` - Added when the image is wider than it is tall
 

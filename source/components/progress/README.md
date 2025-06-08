@@ -1,6 +1,11 @@
 # Progress Component
 
-The Progress component provides a visual indicator of an operation's progress. It supports various styles including standard progress bars, buffer indicators, loading animations, and segmented progress.
+The Progress component provides a visual indicator of an operation's progress. It supports various styles, types, and customization options to fit different UI requirements.
+
+## Dependencies
+
+- Metro UI Core
+- DOM library
 
 ## Usage
 
@@ -56,102 +61,134 @@ The Progress component provides a visual indicator of an operation's progress. I
 
 | Parameter | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| `showValue` | boolean | false | Show the progress value percentage |
-| `showLabel` | boolean | false | Show the progress label |
-| `label` | string | "Progress:" | Text for the progress label |
-| `value` | number | 0 | Initial progress value (0-100) |
-| `buffer` | number | 0 | Buffer value for buffer type progress (0-100) |
-| `type` | string | "bar" | Progress type: "bar", "buffer", "load", "line", or "segment" |
-| `small` | boolean | false | Use smaller height for the progress bar |
-| `segmentSize` | number | 10 | Size of segments for segment type progress |
-| `clsProgress` | string | "" | Additional CSS class for the progress component |
-| `clsBack` | string | "" | Additional CSS class for the progress background |
-| `clsBar` | string | "" | Additional CSS class for the progress bar |
-| `clsBuffer` | string | "" | Additional CSS class for the buffer element |
-| `clsValue` | string | "" | Additional CSS class for the value display |
-| `clsLabel` | string | "" | Additional CSS class for the label |
-| `clsData` | string | "" | Additional CSS class for the data container |
-
-## API Methods
-
-### Get/Set Progress Value
-
-```javascript
-// Get current value
-var value = $('#my-progress').data('progress').val();
-
-// Set value
-$('#my-progress').data('progress').val(75);
-```
-
-### Get/Set Buffer Value
-
-```javascript
-// Get buffer value
-var buffer = $('#my-progress').data('progress').buff();
-
-// Set buffer value
-$('#my-progress').data('progress').buff(50);
-```
+| `progressDeferred` | number | `0` | Delay before progress animation starts |
+| `showValue` | boolean | `false` | Whether to show the progress value |
+| `showLabel` | boolean | `false` | Whether to show the progress label |
+| `label` | string | `"Progress:"` | Text for the progress label |
+| `value` | number | `0` | Initial progress value (0-100) |
+| `buffer` | number | `0` | Initial buffer value (0-100) for buffer type |
+| `type` | string | `"bar"` | Progress type: "bar", "buffer", "load", "line", or "segment" |
+| `small` | boolean | `false` | Whether to use the small variant |
+| `segmentSize` | number | `10` | Size of segments for segment type |
+| `clsProgress` | string | `""` | Additional CSS class for the progress component |
+| `clsBack` | string | `""` | Additional CSS class for the background |
+| `clsBar` | string | `""` | Additional CSS class for the progress bar |
+| `clsBuffer` | string | `""` | Additional CSS class for the buffer bar |
+| `clsValue` | string | `""` | Additional CSS class for the value display |
+| `clsLabel` | string | `""` | Additional CSS class for the label |
+| `clsData` | string | `""` | Additional CSS class for the data container |
 
 ## Events
 
 | Event | Description |
 | ----- | ----------- |
-| `onValueChange` | Triggered when progress value changes |
-| `onBufferChange` | Triggered when buffer value changes |
-| `onComplete` | Triggered when progress reaches 100% |
-| `onBuffered` | Triggered when buffer reaches 100% |
-| `onProgressCreate` | Triggered when progress component is created |
+| `onValueChange` | Triggered when the progress value changes |
+| `onBufferChange` | Triggered when the buffer value changes |
+| `onComplete` | Triggered when the progress value reaches 100% |
+| `onBuffered` | Triggered when the buffer value reaches 100% |
+| `onProgressCreate` | Triggered when the progress component is created |
+
+## API Methods
+
+The Progress component provides the following methods:
+
++ `val(v)` - Get or set the progress value. If `v` is provided, sets the progress value (0-100). If not, returns the current value.
++ `buff(v)` - Get or set the buffer value. If `v` is provided, sets the buffer value (0-100). If not, returns the current buffer value.
++ `changeValue()` - Update the progress value from the `data-value` attribute.
++ `changeBuffer()` - Update the buffer value from the `data-buffer` attribute.
+
+### Example of Method Usage
+
+```javascript
+// Get the progress component
+const progress = Metro.getPlugin('#myProgress', 'progress');
+
+// Set progress value to 75%
+progress.val(75);
+
+// Get current progress value
+const currentValue = progress.val();
+
+// Set buffer value to 90%
+progress.buff(90);
+```
 
 ## Styling with CSS Variables
 
-The Progress component can be styled using the following CSS variables:
-
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| `--progress-bar-height` | 12px | 12px | Height of the progress bar |
-| `--progress-bar-radius` | 8px | 8px | Border radius of the progress bar |
-| `--progress-bar-back-color` | #eeeeee | #363942 | Background color of the progress bar |
-| `--progress-bar-color` | #60A917 | #60A917 | Color of the progress bar |
-| `--progress-bar-buffer-color` | #CE352C | #CE352C | Color of the buffer element |
-| `--progress-bar-line-color` | #b3d4fc | #b3d4fc | Color of the line type progress |
-| `--progress-bar-line-back-color` | #004D6F | #004D6F | Background color of the line type progress |
-| `--progress-bar-load-color` | radial-gradient(...) | radial-gradient(...) | Color of the load animation |
-| `--progress-bar-value-color` | #191919 | #ffffff | Color of the value text |
+| `--progress-bar-height` | `12px` | `12px` | Height of the progress bar (6px for small variant) |
+| `--progress-bar-radius` | `8px` | `8px` | Border radius of the progress bar (4px for small variant) |
+| `--progress-bar-back-color` | `#eeeeee` | `#363942` | Background color of the progress bar |
+| `--progress-bar-color` | `#60A917` | `#60A917` | Color of the progress bar |
+| `--progress-bar-buffer-color` | `#CE352C` | `#CE352C` | Color of the buffer indicator |
+| `--progress-bar-line-color` | `#b3d4fc` | `#b3d4fc` | Color of the line animation |
+| `--progress-bar-line-back-color` | `#004D6F` | `#004D6F` | Background color of the line animation |
+| `--progress-bar-load-color` | radial gradient | radial gradient | Color of the loading animation |
+| `--progress-bar-value-color` | `#191919` | `#ffffff` | Color of the value text |
 
 ### Example of Custom Styling
 
 ```css
-/* Custom styling for a specific progress bar */
-#my-custom-progress {
+/* Custom styling for progress bar */
+#custom-progress {
     --progress-bar-height: 16px;
     --progress-bar-radius: 10px;
-    --progress-bar-color: #9C27B0;
-    --progress-bar-back-color: #E1BEE7;
-    --progress-bar-buffer-color: #7B1FA2;
+    --progress-bar-color: #2196f3;
+    --progress-bar-back-color: #e3f2fd;
+    --progress-bar-buffer-color: #ff9800;
 }
 ```
 
 ## Available CSS Classes
 
 ### Base Classes
-- `.progress-component` - Container for the progress component
-- `.progress` - The progress bar element
+- `.progress-component` - Main container for the progress component
+- `.progress` - Progress bar container
+- `.progress-data` - Container for label and value
+- `.progress-label` - Label text
+- `.progress-value` - Value text
+- `.small` - Small variant of the progress bar
 
-### Size Modifiers
-- `.small` - Smaller height progress bar
+### Progress Type Classes
+- `.with-load` - Applied to load type progress
+- `.line` - Applied to line type progress
+- `.segments` - Applied to segment type progress
 
-### Type Classes
-- `.with-load` - For load type progress
-- `.line` - For line type progress
-- `.segments` - For segmented progress
+### Element Classes
+- `.bar` - Main progress bar
+- `.buffer` - Buffer indicator
+- `.load` - Loading animation
+- `.segment` - Individual segment in segmented progress
 
 ### Color Classes
-- `.progress-primary` - Primary colored progress
-- `.progress-secondary` - Secondary colored progress
-- `.progress-success` - Success colored progress
-- `.progress-warning` - Warning colored progress
-- `.progress-alert` - Alert colored progress
-- `.progress-info` - Info colored progress
-- `.bar-primary`, `.bar-success`, etc. - Color variants for just the bar element
+- `.progress-[color]` - Sets both progress bar color and background color
+- `.bar-[color]` - Sets only the progress bar color
+
+Available colors include: primary, secondary, success, alert, warning, yellow, orange, red, pink, purple, violet, blue, cyan, green, lime, teal, brown, gray, dark.
+
+## Best Practices
+
+1. Choose the appropriate progress type for your use case:
+   - Use "bar" for simple progress indication
+   - Use "buffer" when showing both progress and buffering (like in media players)
+   - Use "load" or "line" for indeterminate operations
+   - Use "segment" for step-based processes
+
+2. Consider using the small variant for less prominent UI elements
+
+3. Add labels and values for important progress indicators to provide context
+
+4. Use color classes to match your application's color scheme and to indicate different types of operations
+
+5. For accessibility, ensure sufficient contrast between the progress bar and its background
+
+6. Update progress values programmatically for dynamic operations:
+   ```javascript
+   const progress = Metro.getPlugin('#downloadProgress', 'progress');
+   
+   // Update progress as download progresses
+   function updateDownloadProgress(percent) {
+       progress.val(percent);
+   }
+   ```

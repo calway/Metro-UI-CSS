@@ -2,7 +2,14 @@
 
 The Popover component provides a way to display additional information or content when a user interacts with an element. It can be triggered by hover, click, or focus events and can be positioned around the target element.
 
+## Dependencies
+
+- Metro UI Core
+- DOM library
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <!-- Basic popover triggered by hover -->
@@ -38,7 +45,35 @@ The Popover component provides a way to display additional information or conten
 </button>
 ```
 
-## Parameters
+### Rich Content
+
+Popovers can contain rich HTML content, not just text:
+
+```html
+<button data-role="popover"
+        data-popover-hide="0"
+        data-popover-text="<iframe width='560' height='315' src='https://www.youtube.com/embed/MkNeIUgNPQ8' frameborder='0' allowfullscreen></iframe>">
+    Video Popover
+</button>
+```
+
+### JavaScript Initialization
+
+You can also initialize popovers using JavaScript:
+
+```javascript
+// Initialize with default options
+Metro.makePlugin("#myElement", "popover");
+
+// Initialize with custom options
+Metro.makePlugin("#myElement", "popover", {
+    popoverText: "This is a programmatically created popover",
+    popoverPosition: "bottom",
+    popoverTrigger: "click"
+});
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -54,37 +89,29 @@ The Popover component provides a way to display additional information or conten
 | clsPopover | string | "" | Additional CSS class for the popover |
 | clsPopoverContent | string | "" | Additional CSS class for the popover content |
 
-## Methods
+## API Methods
 
-### show()
-Shows the popover.
++ `show()` - Shows the popover.
++ `hide()` - Hides the popover.
++ `setPosition()` - Sets the position of the popover based on the current position of the target element.
++ `destroy()` - Destroys the popover component and removes event listeners.
+
+### Example of Method Usage
 
 ```javascript
-var popover = Metro.getPlugin('#myPopover', 'popover');
+// Get the popover instance
+const popover = Metro.getPlugin('#myPopover', 'popover');
+
+// Show the popover
 popover.show();
-```
 
-### hide()
-Hides the popover.
-
-```javascript
-var popover = Metro.getPlugin('#myPopover', 'popover');
+// Hide the popover
 popover.hide();
-```
 
-### setPosition()
-Sets the position of the popover based on the current position of the target element.
-
-```javascript
-var popover = Metro.getPlugin('#myPopover', 'popover');
+// Update position (useful after window resize or element movement)
 popover.setPosition();
-```
 
-### destroy()
-Destroys the popover component.
-
-```javascript
-var popover = Metro.getPlugin('#myPopover', 'popover');
+// Destroy the popover
 popover.destroy();
 ```
 
@@ -96,20 +123,34 @@ popover.destroy();
 | onPopoverHide | Triggered when the popover is hidden |
 | onPopoverCreate | Triggered when the popover is created |
 
-## CSS Variables
+### Example of Event Usage
+
+```javascript
+Metro.makePlugin("#myElement", "popover", {
+    onPopoverShow: function(e) {
+        console.log("Popover shown:", e.detail.popover);
+    },
+    onPopoverHide: function(e) {
+        console.log("Popover hidden");
+    }
+});
+```
+
+## Styling with CSS Variables
 
 The Popover component can be styled using the following CSS variables:
 
-| Variable | Default (Light) | Default (Dark) | Description |
+| Variable | Default (Light) | Dark Mode | Description |
 | --- | --- | --- | --- |
-| --popover-border-radius | 6px | 6px | Border radius of the popover |
-| --popover-background | #ffffff | #1e1f22 | Background color of the popover |
-| --popover-color | #191919 | #dbdfe7 | Text color of the popover |
-| --popover-border-color | #e8e8e8 | #4a4d51 | Border color of the popover |
+| `--popover-border-radius` | 6px | 6px | Border radius of the popover |
+| `--popover-background` | #ffffff | #1e1f22 | Background color of the popover |
+| `--popover-color` | #191919 | #dbdfe7 | Text color of the popover |
+| `--popover-border-color` | #e8e8e8 | #4a4d51 | Border color of the popover |
 
-## Custom Styling Example
+### Example of Custom Styling
 
 ```css
+/* Custom styling for popovers */
 .custom-popover {
     --popover-background: #3498db;
     --popover-color: #ffffff;
@@ -125,6 +166,20 @@ The Popover component can be styled using the following CSS variables:
     Custom styled popover
 </button>
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.popover` - Main container for the popover
+- `.popover-content` - Container for the popover content
+- `.popover-close-button` - Close button that appears when popoverHide is set to 0
+
+### Position Classes
+These classes are added automatically based on the popoverPosition parameter:
+- `.top` - Added when the popover is positioned above the element
+- `.bottom` - Added when the popover is positioned below the element
+- `.left` - Added when the popover is positioned to the left of the element
+- `.right` - Added when the popover is positioned to the right of the element
 
 ## Accessibility
 
@@ -142,3 +197,5 @@ When using popovers, consider the following accessibility best practices:
 3. Position popovers to avoid obscuring important page elements
 4. Set appropriate timeout values based on the amount of content
 5. Consider using the close button for popovers with longer content
+6. For mobile devices, prefer click triggers over hover triggers
+7. Test popovers at different screen sizes to ensure they remain visible and usable

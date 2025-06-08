@@ -2,7 +2,13 @@
 
 The Marquee component provides a modern implementation of scrolling text or content, similar to the classic HTML marquee element but with more features and control options. It supports multiple directions, easing functions, and animation modes.
 
+## Dependencies
+
+- @olton/farbe - Color utility library
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <div data-role="marquee">
@@ -12,89 +18,99 @@ The Marquee component provides a modern implementation of scrolling text or cont
 </div>
 ```
 
-## Parameters
+### Additional Configurations
+
+```html
+<div data-role="marquee"
+     data-duration="4000"
+     data-direction="left"
+     data-height="100"
+     data-mode="accent"
+     data-ease="easeOutBounce easeInElastic">
+    <div>Hi Guys!</div>
+    <div>This is a demo of Marquee component</div>
+    <div>Marquee support different directions</div>
+    <div>You can define colors for marquee</div>
+    <div>Use <code>accent</code> mode to accenting</div>
+</div>
+```
+
+### Using JavaScript Array for Items
+
+```html
+<div id="my-marquee" data-role="marquee"></div>
+
+<script>
+    var items = [
+        'Item 1',
+        'Item 2',
+        'Item 3'
+    ];
+    
+    $(function(){
+        var marquee = Metro.getPlugin('#my-marquee', 'marquee');
+        marquee.setItems(items);
+    });
+</script>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
-| items | array | null | Items to display in the marquee (alternative to HTML content) |
-| loop | boolean | true | Whether to loop the marquee animation |
-| height | string | "auto" | Height of the marquee container |
-| width | string | "100%" | Width of the marquee container |
-| duration | number | 10000 | Duration of the animation in milliseconds |
-| direction | string | "left" | Direction of the marquee ("left", "right", "up", "down") |
-| ease | string | "linear" | Easing function for the animation |
-| mode | string | "default" | Mode of the marquee ("default" or "accent") |
-| accentPause | number | 2000 | Pause time for accent mode in milliseconds |
-| firstPause | number | 1000 | Pause time before the first item in milliseconds |
-| stopOnHover | boolean | true | Whether to stop the marquee on hover |
-| clsMarquee | string | "" | Additional CSS class for the marquee container |
-| clsMarqueeItem | string | "" | Additional CSS class for marquee items |
+| --------- | ---- | ------- | ----------- |
+| `items` | array | null | Items to display in the marquee (alternative to HTML content) |
+| `loop` | boolean | true | Whether to loop the marquee animation |
+| `height` | string | "auto" | Height of the marquee container |
+| `width` | string | "100%" | Width of the marquee container |
+| `duration` | number | 10000 | Duration of the animation in milliseconds |
+| `direction` | string | "left" | Direction of the marquee ("left", "right", "up", "down") |
+| `ease` | string | "linear" | Easing function for the animation |
+| `mode` | string | "default" | Mode of the marquee ("default" or "accent") |
+| `accentPause` | number | 2000 | Pause time for accent mode in milliseconds |
+| `firstPause` | number | 1000 | Pause time before the first item in milliseconds |
+| `stopOnHover` | boolean | true | Whether to stop the marquee on hover |
+| `splitBy` | string | "\n" | Character to split text content by when using plain text |
+| `clsMarquee` | string | "" | Additional CSS class for the marquee container |
+| `clsMarqueeItem` | string | "" | Additional CSS class for marquee items |
 
-## Methods
+## API Methods
 
-### setItems(items, replace)
-Sets the items for the marquee.
++ `setItems(items, replace)` - Sets the items for the marquee. If `replace` is true (default), replaces all existing items.
++ `setItem(index, value)` - Sets a specific item at the given index.
++ `addItem(item, index)` - Adds an item to the marquee. If index is provided, inserts at that position, otherwise appends to the end.
++ `start()` - Starts the marquee animation.
++ `stop()` - Stops the marquee animation.
++ `destroy()` - Destroys the marquee component.
 
-```javascript
-var marquee = Metro.getPlugin('#my-marquee', 'marquee');
-marquee.setItems(['Item 1', 'Item 2', 'Item 3'], true);
-```
-
-### setItem(index, value)
-Sets a specific item at the given index.
-
-```javascript
-var marquee = Metro.getPlugin('#my-marquee', 'marquee');
-marquee.setItem(0, 'New Item 1');
-```
-
-### addItem(item, index)
-Adds an item to the marquee. If index is provided, inserts at that position, otherwise appends to the end.
+### Example of Method Usage
 
 ```javascript
-var marquee = Metro.getPlugin('#my-marquee', 'marquee');
-// Add to the end
-marquee.addItem('New Item');
-// Insert at position 1
-marquee.addItem('New Item', 1);
-```
+const marquee = Metro.getPlugin('#my-marquee', 'marquee');
 
-### start()
-Starts the marquee animation.
+// Set new items
+marquee.setItems(['New Item 1', 'New Item 2'], true);
 
-```javascript
-var marquee = Metro.getPlugin('#my-marquee', 'marquee');
-marquee.start();
-```
+// Update a specific item
+marquee.setItem(0, 'Updated Item');
 
-### stop()
-Stops the marquee animation.
+// Add a new item
+marquee.addItem('Additional Item');
 
-```javascript
-var marquee = Metro.getPlugin('#my-marquee', 'marquee');
+// Stop and start the animation
 marquee.stop();
-```
-
-### destroy()
-Destroys the marquee component.
-
-```javascript
-var marquee = Metro.getPlugin('#my-marquee', 'marquee');
-marquee.destroy();
+marquee.start();
 ```
 
 ## Events
 
 | Event | Description |
-| --- | --- |
-| onMarqueeItem | Triggered when a marquee item is shown |
-| onMarqueeItemComplete | Triggered when a marquee item animation is complete |
-| onMarqueeComplete | Triggered when the marquee animation is complete |
-| onMarqueeCreate | Triggered when the marquee is created |
+| ----- | ----------- |
+| `onMarqueeItem` | Triggered when a marquee item is shown |
+| `onMarqueeItemComplete` | Triggered when a marquee item animation is complete |
+| `onMarqueeComplete` | Triggered when the marquee animation is complete |
+| `onMarqueeCreate` | Triggered when the marquee is created |
 
-## Styling
-
-The Marquee component uses the following CSS classes for styling:
+## Styling with CSS Classes
 
 ### Base Classes
 - `.marquee` - Base class for the component
@@ -102,56 +118,21 @@ The Marquee component uses the following CSS classes for styling:
 - `.moveLeftRight` - Class for items moving left or right
 - `.moveUpDown` - Class for items moving up or down
 
-## Examples
+### Example of Custom Styling
 
-### Basic Marquee
-```html
-<div data-role="marquee">
-    This is a scrolling text
-    This is another line
-    And one more line
-</div>
-```
+```css
+/* Custom styling example */
+.my-custom-marquee {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    height: 100px;
+}
 
-### Marquee with Custom Direction and Duration
-```html
-<div data-role="marquee" data-direction="right" data-duration="5000">
-    This text will scroll from left to right
-    At a faster speed than default
-</div>
-```
-
-### Marquee with Accent Mode
-```html
-<div data-role="marquee" data-mode="accent" data-accent-pause="1000">
-    This text will pause in the middle
-    Before continuing to scroll
-</div>
-```
-
-### Marquee with Custom Items via JavaScript
-```html
-<div id="my-marquee" data-role="marquee"></div>
-
-<script>
-    $(function(){
-        var marquee = Metro.getPlugin('#my-marquee', 'marquee');
-        marquee.setItems([
-            'Item 1',
-            'Item 2',
-            'Item 3'
-        ]);
-    });
-</script>
-```
-
-### Marquee with Item-Specific Settings
-```html
-<div data-role="marquee">
-    <div data-direction="left" data-duration="5000">This item scrolls left</div>
-    <div data-direction="right" data-duration="7000">This item scrolls right</div>
-    <div data-direction="up" data-duration="3000">This item scrolls up</div>
-</div>
+.my-custom-marquee .marquee__item {
+    font-weight: bold;
+    color: #0366d6;
+}
 ```
 
 ## Best Practices

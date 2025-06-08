@@ -2,6 +2,12 @@
 
 The Input component provides a versatile and customizable text input field with various features including autocomplete, history, custom buttons, and more. It enhances the standard HTML input element with additional functionality and styling options.
 
+## Dependencies
+
+This component requires:
+- Metro UI core
+- Input-common module
+
 ## Usage
 
 ### Basic Usage
@@ -76,7 +82,7 @@ The Input component provides a versatile and customizable text input field with 
        data-history-preset="previous search 1|previous search 2|previous search 3">
 ```
 
-## Configuration Options
+## Plugin Parameters
 
 | Option | Default | Description |
 | ------ | ------- | ----------- |
@@ -107,6 +113,7 @@ The Input component provides a versatile and customizable text input field with 
 | `revealButtonIcon` | "👀" | Icon for reveal button |
 | `searchButtonIcon` | "🔍" | Icon for search button |
 | `randomButtonIcon` | "🎲" | Icon for random button |
+| `customButtons` | [] | Array of custom button configurations |
 | `searchButtonClick` | "submit" | Action for search button ("submit" or custom) |
 | `randomSymbols` | "0123..." | Symbols to use for random value generation |
 | `randomLength` | 12 | Length of generated random value |
@@ -151,6 +158,8 @@ The Input component provides a versatile and customizable text input field with 
 | `toggleState()` | Toggles the disabled state |
 | `setAutocompleteList(list)` | Sets the autocomplete list |
 | `val(value, splitter)` | Gets or sets the input value |
+| `prependOptionsVal(value)` | Gets or sets the prepend options value |
+| `appendOptionsVal(value)` | Gets or sets the append options value |
 
 ## Styling with CSS Variables
 
@@ -177,6 +186,31 @@ The Input component can be styled using the following CSS variables:
     --input-autocomplete-selected-color: #ff5722;
 }
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.input` - Main component class (automatically added)
+- `.focused` - Applied when input is focused
+- `.disabled` - Applied when input is disabled
+- `.pill-input` - Creates a pill-shaped input
+
+### Structure Classes
+- `.prepend` - Container for prepended content
+- `.append` - Container for appended content
+- `.prepend-options` - Container for prepend dropdown options
+- `.append-options` - Container for append dropdown options
+- `.button-group` - Container for input buttons
+- `.autocomplete-list` - Container for autocomplete dropdown
+- `.badge` - Style for badge element
+- `.label-for-input` - Style for input label
+
+### Button Classes
+- `.input-clear-button` - Clear button
+- `.input-reveal-button` - Reveal button for password inputs
+- `.input-search-button` - Search button
+- `.input-random-button` - Random button
+- `.input-custom-button` - Custom buttons
 
 ## Example Use Cases
 

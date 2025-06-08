@@ -96,6 +96,7 @@ import "./panel/index.js";
 import "./popover/index.js";
 import "./progress/index.js";
 import "./radio/index.js";
+import "./radio-buttons/index.js";
 import "./rating/index.js";
 import "./remark/index.js";
 import "./remote-dataset/index.js";

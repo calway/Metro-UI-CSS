@@ -2,7 +2,13 @@
 
 The Horizontal Menu (h-menu) component provides a horizontal navigation menu with support for dropdown items and mega menus.
 
+## Dependencies
+
+None - this is a CSS-only component. However, to enable dropdown functionality, you'll need to use it with Metro UI's dropdown component.
+
 ## Usage
+
+### Basic Menu
 
 ```html
 <ul class="h-menu">
@@ -26,40 +32,16 @@ The Horizontal Menu (h-menu) component provides a horizontal navigation menu wit
 </ul>
 ```
 
-## Features
-
-### Basic Menu Items
-
-Basic menu items consist of a list item with a link:
-
-```html
-<li>
-    <a href="#">Menu Item</a>
-</li>
-```
-
-### Dropdown Menus
-
-Create dropdown menus by adding the `dropdown-toggle` class to the link and including a nested `d-menu` list:
-
-```html
-<li>
-    <a href="#" class="dropdown-toggle">Dropdown</a>
-    <ul class="d-menu">
-        <li><a href="#">Option 1</a></li>
-        <li><a href="#">Option 2</a></li>
-        <li><a href="#">Option 3</a></li>
-    </ul>
-</li>
-```
-
 ### No Hover Effect
 
 Disable the hover effect by adding the `no-hover` class to the menu:
 
 ```html
 <ul class="h-menu no-hover">
-    <!-- Menu items -->
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
 </ul>
 ```
 
@@ -69,7 +51,10 @@ Create a larger menu by adding the `large` class:
 
 ```html
 <ul class="h-menu large">
-    <!-- Menu items -->
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
 </ul>
 ```
 
@@ -119,28 +104,7 @@ Create a mega menu by adding the `mega` class to the menu and including a `mega-
 </ul>
 ```
 
-## Styling
-
-The Horizontal Menu component uses the following default styling:
-
-- Background color: White
-- Text color: Dark
-- Hover background color: Light gray
-
-Unlike some other components, the h-menu component uses LESS variables internally rather than CSS custom properties. To customize the appearance, you can use standard CSS:
-
-```css
-.custom-h-menu {
-    background-color: #3b5998;
-    color: white;
-}
-
-.custom-h-menu > li:hover {
-    background-color: #4c70ba;
-}
-```
-
-## Example
+### Custom Styled Menu
 
 ```html
 <style>
@@ -185,7 +149,67 @@ Unlike some other components, the h-menu component uses LESS variables internall
 </ul>
 ```
 
-This example creates a horizontal menu with a Facebook-inspired color scheme.
+## Plugin Parameters
+
+This is a CSS-only component and does not have plugin parameters.
+
+## API Methods
+
+This is a CSS-only component and does not have API methods.
+
+## Events
+
+This is a CSS-only component and does not have events.
+
+## Styling with CSS Variables
+
+The h-menu component uses LESS variables internally rather than CSS custom properties. The styling is based on the following LESS variables:
+
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `@white` | #ffffff | - | Background color of the menu |
+| `@dark` | #191919 | - | Text color of the menu |
+| `@hoverBackground` | #f0f0f0 | - | Background color on hover |
+| `@zindex-dropdown` | 1000 | - | Z-index for dropdown menus |
+
+### Example of Custom Styling
+
+Since the component doesn't use CSS variables directly, you can customize it using standard CSS:
+
+```css
+.custom-h-menu {
+    background-color: #3b5998;
+    color: white;
+}
+
+.custom-h-menu > li:hover {
+    background-color: #4c70ba;
+}
+
+.custom-h-menu .d-menu {
+    background-color: #3b5998;
+    color: white;
+    border-color: #2d4373;
+}
+
+.custom-h-menu .d-menu li:hover {
+    background-color: #4c70ba;
+}
+```
+
+## Available CSS Classes
+
+### Base Classes
+- `.h-menu` - The main horizontal menu container
+
+### Modifiers
+- `.no-hover` - Disables the hover effect on menu items
+- `.large` - Creates a larger menu with bigger font size and padding
+- `.mega` - Enables mega menu functionality
+
+### Structure Classes
+- `.mega-container` - Container for mega menu content (used with `.h-menu.mega`)
+- `.dropdown-toggle` - Applied to links that have dropdown menus
 
 ## JavaScript Integration
 
@@ -197,3 +221,5 @@ While the h-menu component itself doesn't include JavaScript functionality, you'
     Metro.makePlugin(document.querySelectorAll('.h-menu .dropdown-toggle'), 'dropdown');
 </script>
 ```
+
+This initializes the dropdown functionality for all dropdown toggles within the h-menu.

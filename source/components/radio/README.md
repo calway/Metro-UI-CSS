@@ -2,9 +2,21 @@
 
 The Radio component provides an enhanced replacement for the standard HTML radio input element with additional styling and functionality.
 
+## Dependencies
+
+- Metro UI Core
+- DOM library
+
 ## Usage
 
 ### Basic Usage
+
+You can use the radio button without an additional role:
+```html
+<input type="radio" name="group1" value="option1">
+```
+
+To use with additional features, add the `data-role="radio"` attribute:
 
 ```html
 <!-- Basic radio button -->
@@ -47,19 +59,19 @@ The Radio component provides an enhanced replacement for the standard HTML radio
 <input type="radio" class="radio-info" data-role="radio" name="colors" value="5" data-caption="Info">
 ```
 
-## Configuration Options
+## Plugin Parameters
 
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| radioDeferred | 0 | Deferred initialization time in milliseconds |
-| prepend | "" | Content to prepend to the radio button |
-| append | "" | Content to append to the radio button |
-| caption | "" | Caption text for the radio button |
-| clsRadio | "" | Additional CSS class for the radio container |
-| clsCaption | "" | Additional CSS class for the caption |
-| clsPrepend | "" | Additional CSS class for the prepend content |
-| clsAppend | "" | Additional CSS class for the append content |
-| onRadioCreate | Metro.noop | Callback function triggered when the component is created |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `radioDeferred` | number | 0 | Deferred initialization time in milliseconds |
+| `prepend` | string | "" | Content to prepend to the radio button |
+| `append` | string | "" | Content to append to the radio button |
+| `caption` | string | "" | Caption text for the radio button |
+| `clsRadio` | string | "" | Additional CSS class for the radio container |
+| `clsCaption` | string | "" | Additional CSS class for the caption |
+| `clsPrepend` | string | "" | Additional CSS class for the prepend content |
+| `clsAppend` | string | "" | Additional CSS class for the append content |
+| `onRadioCreate` | function | Metro.noop | Callback function triggered when the component is created |
 
 ## JavaScript Usage
 
@@ -132,17 +144,23 @@ const radio = Metro.getPlugin('#myRadio', 'radio');
 radio.destroy();
 ```
 
+## Events
+
+| Event | Description |
+| ----- | ----------- |
+| `onRadioCreate` | Triggered when the radio component is created |
+
 ## Styling with CSS Variables
 
 The Radio component can be styled using the following CSS variables:
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| --radio-height | 36px | 36px | Height of the radio component |
-| --radio-color | #575757 | #a6a8a7 | Color of the radio button |
-| --radio-color-disabled | #c3c3c3 | #505050 | Color of the disabled radio button |
-| --radio-background-disabled | #efefef | #323030 | Background color of the disabled radio button |
-| --radio-focus-color | #e8e8e8 | #191919 | Focus outline color |
+| `--radio-height` | 36px | 36px | Height of the radio component |
+| `--radio-color` | #575757 | #a6a8a7 | Color of the radio button |
+| `--radio-color-disabled` | #c3c3c3 | #505050 | Color of the disabled radio button |
+| `--radio-background-disabled` | #efefef | #323030 | Background color of the disabled radio button |
+| `--radio-focus-color` | #e8e8e8 | #191919 | Focus outline color |
 
 ### Example of Custom Styling
 
@@ -159,6 +177,16 @@ The Radio component can be styled using the following CSS variables:
     --radio-color: #009688;
 }
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.radio` - Main container class for the radio component
+- `.caption-prepend` - Class for content prepended to the radio button
+- `.caption-append` - Class for content appended to the radio button
+
+### Modifiers
+- `.radio-[color]` - Color variants for the radio button (primary, secondary, success, warning, alert, info, etc.)
 
 ## Accessibility
 

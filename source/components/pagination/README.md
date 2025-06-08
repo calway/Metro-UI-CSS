@@ -2,6 +2,11 @@
 
 The Pagination component provides a flexible and customizable way to create pagination controls for navigating through multi-page content. It automatically generates page numbers, previous/next buttons, and handles active states.
 
+## Dependencies
+
+- Metro UI Core
+- DOM library
+
 ## Usage
 
 ### Basic Usage
@@ -46,7 +51,7 @@ Metro.pagination({
 });
 ```
 
-## Configuration Options
+## Plugin Parameters
 
 The Pagination component accepts the following configuration options:
 
@@ -62,6 +67,43 @@ The Pagination component accepts the following configuration options:
 | `distance` | number | `5` | Number of pages to show before/after current page |
 | `islandSize` | number | `3` | Number of pages to show around current page when in middle |
 | `shortTrack` | number | `10` | Threshold for showing all pages without ellipsis |
+| `lang` | string | `undefined` | Language for localization (defaults to container's lang attribute or "en") |
+
+## API Methods
+
+The Pagination component provides the following method:
+
++ `Metro.pagination(options)` - Creates and returns a pagination element with the specified options.
+
+## Event Handling
+
+To handle pagination clicks, you can attach a click event handler to the pagination items:
+
+```javascript
+// Create pagination
+const pagination = Metro.pagination({
+    length: 100,
+    rows: 10,
+    current: 1,
+    target: "#pagination-container"
+});
+
+// Handle pagination clicks
+$("#pagination-container").on("click", ".page-item", function() {
+    const page = $(this).find(".page-link").data("page");
+    
+    if (page === "prev") {
+        // Handle previous page
+        loadPage(currentPage - 1);
+    } else if (page === "next") {
+        // Handle next page
+        loadPage(currentPage + 1);
+    } else if (page !== null) {
+        // Handle specific page
+        loadPage(page);
+    }
+});
+```
 
 ## Styling with CSS Variables
 
@@ -123,6 +165,7 @@ The pagination component supports all Metro UI color variants:
 - `.pagination.info` - Info color variant
 - `.pagination.light` - Light color variant
 - `.pagination.dark` - Dark color variant
+- And many other color variants defined in Metro UI
 
 ## Pagination Structure
 
@@ -160,36 +203,6 @@ The pagination component generates the following structure:
         <a class="page-link" data-page="next">Next</a>
     </li>
 </ul>
-```
-
-## Event Handling
-
-To handle pagination clicks, you can attach a click event handler to the pagination items:
-
-```javascript
-// Create pagination
-const pagination = Metro.pagination({
-    length: 100,
-    rows: 10,
-    current: 1,
-    target: "#pagination-container"
-});
-
-// Handle pagination clicks
-$("#pagination-container").on("click", ".page-item", function() {
-    const page = $(this).find(".page-link").data("page");
-    
-    if (page === "prev") {
-        // Handle previous page
-        loadPage(currentPage - 1);
-    } else if (page === "next") {
-        // Handle next page
-        loadPage(currentPage + 1);
-    } else if (page !== null) {
-        // Handle specific page
-        loadPage(page);
-    }
-});
 ```
 
 ## Best Practices

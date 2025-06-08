@@ -1,68 +1,76 @@
 # Input Common Component
 
-The Input Common component provides base styling and behavior for various input elements in Metro UI. It serves as a foundation for other input-related components and ensures consistent styling across different input types.
+The Input Common component provides base styling and functionality for all input-related components in Metro UI. It establishes consistent appearance and behavior for various input types including text inputs, textareas, selects, and custom input components.
+
+## Dependencies
+
+This component requires:
+- Metro UI core
+- LESS variables and mixins
 
 ## Usage
 
-The Input Common component applies styling to standard HTML input elements and Metro UI input components:
+The Input Common component is not used directly but is imported by other input-related components. It provides base styling for standard HTML inputs as well as Metro UI custom input components.
+
+### Basic HTML Inputs
 
 ```html
-<!-- Standard HTML inputs -->
-<input type="text" class="metro-input" placeholder="Text input">
-<input type="password" class="metro-input" placeholder="Password input">
-<input type="email" class="metro-input" placeholder="Email input">
-<textarea class="metro-input" placeholder="Textarea"></textarea>
+<!-- Standard HTML inputs automatically receive styling -->
+<input type="text" placeholder="Text input">
+<input type="password" placeholder="Password input">
+<input type="email" placeholder="Email input">
+<textarea placeholder="Textarea"></textarea>
+<select>
+    <option>Select option</option>
+</select>
+```
 
-<!-- Input states -->
-<input type="text" class="metro-input required" placeholder="Required input">
-<input type="text" class="metro-input invalid" placeholder="Invalid input">
-<input type="text" class="metro-input valid" placeholder="Valid input">
-<input type="text" class="metro-input" disabled placeholder="Disabled input">
+### Metro UI Input Components
 
-<!-- With prepend/append elements -->
-<div class="input">
-    <div class="prepend">@</div>
-    <input type="text" placeholder="Username">
-</div>
-
-<div class="input">
-    <input type="text" placeholder="Search">
-    <div class="append"><span class="mif-search"></span></div>
-</div>
+```html
+<!-- Metro UI components that use input-common styling -->
+<input type="text" data-role="input" placeholder="Metro UI Input">
+<textarea data-role="textarea" placeholder="Metro UI Textarea"></textarea>
+<select data-role="select">
+    <option>Metro UI Select</option>
+</select>
+<div data-role="spinner"></div>
+<div data-role="tag-input"></div>
+<div data-role="file-input"></div>
 ```
 
 ## Styling with CSS Variables
 
-The Input Common component can be styled using the following CSS variables:
+The Input Common component defines CSS variables for consistent styling across all input types:
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| `--input-background` | #ffffff | #2b2d30 | Background color of input elements |
-| `--input-background-disabled` | #f7f8fa | #2b2d30 | Background color of disabled input elements |
-| `--input-color` | #161316 | #dfe1e5 | Text color of input elements |
-| `--input-color-disabled` | #c9ccd6 | #333437 | Text color of disabled input elements |
-| `--input-border-color` | #c9ccd6 | #4e5157 | Border color of input elements |
-| `--input-border-color-hover` | #adb0b8 | #71757e | Border color of input elements on hover |
+| `--input-background` | #ffffff | #2b2d30 | Background color of inputs |
+| `--input-background-disabled` | #f7f8fa | #2b2d30 | Background color of disabled inputs |
+| `--input-color-disabled` | #c9ccd6 | #333437 | Text color of disabled inputs |
+| `--input-border-color` | #c9ccd6 | #4e5157 | Border color of inputs |
+| `--input-border-color-hover` | #adb0b8 | #71757e | Border color of inputs on hover |
+| `--input-color` | #161316 | #dfe1e5 | Text color of inputs |
 | `--input-box-shadow` | rgba(201, 204, 214, 0.42) | rgba(78, 81, 87, 0.43) | Box shadow color for focused inputs |
-| `--input-prepend-background` | #f8f8f8 | #4e5157 | Background color of prepend elements |
-| `--input-prepend-color` | #191919 | #bac1cf | Text color of prepend elements |
-| `--input-append-background` | #f8f8f8 | #4e5157 | Background color of append elements |
-| `--input-append-color` | #191919 | #bac1cf | Text color of append elements |
-| `--input-required-color` | #468cff | #468cff | Color for required input indicators |
-| `--input-invalid-color` | #ad2a14 | #ad2a14 | Color for invalid input indicators |
-| `--input-valid-color` | #4cad14 | #4cad14 | Color for valid input indicators |
-| `--input-border-radius` | 6px | 6px | Border radius of input elements |
-| `--input-font-size` | 14px | 14px | Font size of input text |
+| `--input-prepend-background` | #f8f8f8 | #4e5157 | Background color of prepended elements |
+| `--input-prepend-color` | #191919 | #bac1cf | Text color of prepended elements |
+| `--input-append-background` | #f8f8f8 | #4e5157 | Background color of appended elements |
+| `--input-append-color` | #191919 | #bac1cf | Text color of appended elements |
+| `--input-required-color` | #468cff | #468cff | Color for required inputs |
+| `--input-invalid-color` | #ad2a14 | #ad2a14 | Color for invalid inputs |
+| `--input-valid-color` | #4cad14 | #4cad14 | Color for valid inputs |
+| `--input-border-radius` | 6px | 6px | Border radius of inputs |
+| `--input-font-size` | 14px | 14px | Font size of inputs (used in some components) |
 
 ### Example of Custom Styling
 
 ```css
-/* Custom styling for inputs in a specific form */
-.custom-form .metro-input {
-    --input-background: #f0f8ff;
-    --input-border-color: #4a90e2;
-    --input-border-color-hover: #2a6fc2;
-    --input-color: #2c3e50;
+/* Custom styling for all inputs in a specific container */
+.custom-form {
+    --input-background: #f0f7ff;
+    --input-border-color: #90caf9;
+    --input-border-color-hover: #42a5f5;
+    --input-color: #0d47a1;
     --input-border-radius: 8px;
 }
 ```
@@ -70,36 +78,65 @@ The Input Common component can be styled using the following CSS variables:
 ## Available CSS Classes
 
 ### Base Classes
-- `.metro-input` - Base class for styled inputs
-- `.input` - Container class for inputs with prepend/append elements
+- Applied to various input elements (`input`, `textarea`, `select`, etc.) and Metro UI input components:
+  - `.metro-input` - Base class for Metro UI inputs
+  - `.input` - Base class for custom input components
+  - `.textarea` - Base class for textarea components
+  - `.select` - Base class for select components
+  - `.file` - Base class for file input components
+  - `.tag-input` - Base class for tag input components
+  - `.spinner` - Base class for spinner components
+  - `.color-picker` - Base class for color picker components
 
 ### State Classes
-- `.required` - Indicates a required input field
-- `.invalid` - Indicates an invalid input field
-- `.valid` - Indicates a valid input field
-- `.disabled` - Visually disables an input field
-- `.focused` - Applies focused styling to an input field
+- `.focused` - Applied when input is focused
+- `.disabled` - Applied when input is disabled
+- `.required` - Applied to required inputs
+- `.invalid` - Applied to invalid inputs
+- `.valid` - Applied to valid inputs
+- `.hide-cursor` - Hides the cursor in the input
+- `.rtl` - Right-to-left text direction
 
-### Helper Classes
-- `.prepend` - Element to prepend before an input
-- `.append` - Element to append after an input
-- `.invalid_feedback` - Container for invalid input feedback messages
-- `.custom-validation` - Enables custom validation styling
-- `.label-for-input` - Styling for input labels
-- `.rtl` - Right-to-left text direction for inputs
+### Structure Classes
+- `.prepend` - Container for prepended content
+- `.append` - Container for appended content
+- `.input-clear-button` - Clear button
+- `.input-reveal-button` - Reveal button for password inputs
+- `.hidden-input` - Visually hidden input
+- `.invalid_feedback` - Container for validation error messages
+- `.label-for-input` - Style for input label
 
-## Accessibility
+## Validation
 
-The Input Common component includes proper styling for various input states to improve accessibility:
-- Focus states are clearly indicated with box shadows
-- Required, valid, and invalid states have distinct visual indicators
-- Disabled states have appropriate styling and pointer-events disabled
-- Labels can be properly associated with inputs
+The Input Common component provides styling for validation states:
+
+```html
+<!-- Required input -->
+<input type="text" data-role="input" class="required" placeholder="Required field">
+
+<!-- Valid input -->
+<input type="text" data-role="input" class="valid" placeholder="Valid input">
+
+<!-- Invalid input -->
+<input type="text" data-role="input" class="invalid" placeholder="Invalid input">
+
+<!-- Input with validation feedback -->
+<div>
+    <input type="text" data-role="input" class="invalid" placeholder="Invalid input">
+    <span class="invalid_feedback">Please enter a valid value</span>
+</div>
+
+<!-- Custom validation using HTML5 validation -->
+<form class="custom-validation">
+    <input type="email" required placeholder="Email (required)">
+    <span class="invalid_feedback">Please enter a valid email address</span>
+</form>
+```
 
 ## Best Practices
 
-1. Always provide labels for input fields to improve accessibility
-2. Use appropriate input types for different data (email, password, etc.)
-3. Provide clear validation feedback for invalid inputs
-4. Use the required, valid, and invalid classes consistently to indicate input state
-5. Consider using prepend/append elements to provide additional context for inputs
+1. Use appropriate input types (text, password, email, etc.) for better mobile keyboard support
+2. Provide clear labels for inputs to improve accessibility
+3. Use validation classes consistently to provide clear feedback to users
+4. Consider using the RTL class for right-to-left languages
+5. Use the custom-validation class on forms to enable HTML5 validation styling

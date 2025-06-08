@@ -2,7 +2,17 @@
 
 The List component provides a powerful way to display and manage lists of data with features like sorting, filtering, pagination, and search. It can work with both HTML content and JSON data sources.
 
+## Dependencies
+
+This component requires:
+- Metro UI core
+- DOM module
+- Hooks module (for debounced search)
+- Pagination component (for pagination functionality)
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <ul data-role="list">
@@ -12,7 +22,69 @@ The List component provides a powerful way to display and manage lists of data w
 </ul>
 ```
 
-## Parameters
+### List with Pagination and Search
+
+```html
+<ul data-role="list" data-show-pagination="true" data-show-search="true" data-items="10">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <!-- More items -->
+</ul>
+```
+
+### List with JSON Data Source
+
+```html
+<ul data-role="list" data-source="data.json" data-show-activity="true"></ul>
+```
+
+### List with Sorting and Filtering
+
+```html
+<ul data-role="list" 
+    data-sort-class="sort-name" 
+    data-sort-dir="asc"
+    data-filter-class="filter-category">
+    <li>
+        <span class="sort-name">Charlie</span>
+        <span class="filter-category">Category A</span>
+    </li>
+    <li>
+        <span class="sort-name">Alpha</span>
+        <span class="filter-category">Category B</span>
+    </li>
+    <li>
+        <span class="sort-name">Bravo</span>
+        <span class="filter-category">Category A</span>
+    </li>
+</ul>
+```
+
+### List with Custom Template
+
+```html
+<script>
+    var listData = {
+        "template": "<div class='item'><%name%>: <%value%></div>",
+        "data": [
+            {"name": "Item 1", "value": 100},
+            {"name": "Item 2", "value": 200},
+            {"name": "Item 3", "value": 300}
+        ]
+    };
+</script>
+
+<ul data-role="list" id="my-list"></ul>
+
+<script>
+    $(function(){
+        var list = Metro.getPlugin('#my-list', 'list');
+        list.setData(listData);
+    });
+</script>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -67,7 +139,7 @@ The List component provides a powerful way to display and manage lists of data w
 | clsPagination | string | "" | Additional CSS class for pagination |
 | clsTemplateTag | string | "" | Additional CSS class for template tags |
 
-## Methods
+## API Methods
 
 ### deleteItem(value)
 Deletes items matching the value or function.
@@ -203,6 +275,22 @@ var list = Metro.getPlugin('#my-list', 'list');
 var filters = list.getFilters();
 ```
 
+### getFilterIndex()
+Gets the index of the main filter.
+
+```javascript
+var list = Metro.getPlugin('#my-list', 'list');
+var filterIndex = list.getFilterIndex();
+```
+
+### getFiltersIndexes()
+Gets the indexes of all filters.
+
+```javascript
+var list = Metro.getPlugin('#my-list', 'list');
+var filterIndexes = list.getFiltersIndexes();
+```
+
 ### destroy()
 Destroys the component.
 
@@ -229,62 +317,33 @@ list.destroy();
 | onFilterItemDeclined | Triggered when an item is filtered out |
 | onListCreate | Triggered when the list is created |
 
-## Examples
+## Styling with CSS Classes
 
-### Basic List
-```html
-<ul data-role="list">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-</ul>
-```
+The List component uses the following CSS classes for its structure:
 
-### List with Pagination and Search
-```html
-<ul data-role="list" data-show-pagination="true" data-show-search="true" data-items="10">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <!-- More items -->
-</ul>
-```
+### Base Classes
+- `.list-component` - Main container for the list component
+- `.list-top` - Container for the top section (search and items count)
+- `.list-search-block` - Container for the search input
+- `.list-rows-block` - Container for the items count selector
+- `.list-bottom` - Container for the bottom section (info and pagination)
+- `.list-info` - Container for list information
+- `.list-pagination` - Container for pagination controls
+- `.list-progress` - Container for the activity indicator
 
-### List with JSON Data Source
-```html
-<ul data-role="list" data-source="data.json" data-show-activity="true"></ul>
-```
-
-### List with Custom Template
-```html
-<script>
-    var listData = {
-        "template": "<div class='item'><%name%>: <%value%></div>",
-        "data": [
-            {"name": "Item 1", "value": 100},
-            {"name": "Item 2", "value": 200},
-            {"name": "Item 3", "value": 300}
-        ]
-    };
-</script>
-
-<ul data-role="list" id="my-list"></ul>
-
-<script>
-    $(function(){
-        var list = Metro.getPlugin('#my-list', 'list');
-        list.setData(listData);
-    });
-</script>
-```
-
-### List with Sorting
-```html
-<ul data-role="list" data-sort-class="sort-name" data-sort-dir="asc">
-    <li><span class="sort-name">Charlie</span></li>
-    <li><span class="sort-name">Alpha</span></li>
-    <li><span class="sort-name">Bravo</span></li>
-</ul>
-```
+### Custom Classes
+You can add custom classes to various parts of the list component using the following options:
+- `clsComponent` - Additional class for the component container
+- `clsList` - Additional class for the list element
+- `clsListItem` - Additional class for list items
+- `clsListTop` - Additional class for the top section
+- `clsItemsCount` - Additional class for the items count block
+- `clsSearch` - Additional class for the search block
+- `clsListBottom` - Additional class for the bottom section
+- `clsListInfo` - Additional class for the info block
+- `clsListPagination` - Additional class for the pagination block
+- `clsPagination` - Additional class for the pagination component
+- `clsTemplateTag` - Additional class for template tags
 
 ## Best Practices
 
@@ -293,3 +352,6 @@ list.destroy();
 3. When loading data from a remote source, show the activity indicator with `data-show-activity="true"`
 4. Use templates for consistent rendering of complex list items
 5. Consider using custom filters for advanced filtering requirements
+6. Use the `data-format` attribute on elements to specify how values should be formatted (e.g., "money", "date", "number")
+7. For better performance with large lists, set a reasonable number of items per page
+8. Use custom wrappers to place search, pagination, or info sections in different parts of your page

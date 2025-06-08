@@ -1,37 +1,74 @@
 # Lightbox Component
 
-The Lightbox component provides an elegant way to display images in a fullscreen overlay. It includes navigation controls for browsing through multiple images and supports image captions.
+The Lightbox component provides an elegant way to display images in a fullscreen overlay. It includes navigation controls for browsing through multiple images, with support for image titles and responsive sizing to ensure optimal viewing on any device.
+
+## Dependencies
+
+This component requires:
+- Metro UI core
+- DOM library
 
 ## Usage
 
+### Basic Usage
+
 ```html
 <div data-role="lightbox">
-    <img src="image1.jpg" alt="Image 1">
-    <img src="image2.jpg" alt="Image 2">
-    <img src="image3.jpg" alt="Image 3">
+    <img src="image1-thumb.jpg" data-original="image1-full.jpg" alt="Image Title 1">
+    <img src="image2-thumb.jpg" data-original="image2-full.jpg" alt="Image Title 2">
+    <img src="image3-thumb.jpg" data-original="image3-full.jpg" alt="Image Title 3">
 </div>
 ```
 
-## Parameters
+### Custom Controls
+
+```html
+<div data-role="lightbox" 
+     data-icon-close="✖" 
+     data-icon-prev="◀" 
+     data-icon-next="▶"
+     data-cls-close="bg-red fg-white"
+     data-cls-prev="bg-blue fg-white"
+     data-cls-next="bg-blue fg-white">
+    <img src="image1-thumb.jpg" data-original="image1-full.jpg" alt="Image Title 1">
+    <img src="image2-thumb.jpg" data-original="image2-full.jpg" alt="Image Title 2">
+</div>
+```
+
+### Programmatic Initialization
+
+```javascript
+Metro.makePlugin('#my-gallery', 'lightbox', {
+    loop: true,
+    iconClose: '✖',
+    iconPrev: '◀',
+    iconNext: '▶'
+});
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
-| loop | boolean | true | If true, allows looping through images when reaching the end |
-| source | string | "img" | Selector for elements that should trigger the lightbox |
-| iconClose | string | "❌" | Icon for the close button |
-| iconPrev | string | "🡐" | Icon for the previous button |
-| iconNext | string | "🡒" | Icon for the next button |
-| clsNext | string | "" | Additional CSS class for the next button |
-| clsPrev | string | "" | Additional CSS class for the previous button |
-| clsClose | string | "" | Additional CSS class for the close button |
-| clsImage | string | "" | Additional CSS class for the image |
-| clsImageContainer | string | "" | Additional CSS class for the image container |
-| clsImageWrapper | string | "" | Additional CSS class for the image wrapper |
-| clsLightbox | string | "" | Additional CSS class for the lightbox |
+| --------- | ---- | ------- | ----------- |
+| `loop` | boolean | `true` | Whether to loop back to the first image after reaching the last one |
+| `source` | string | `"img"` | Selector for items to include in the lightbox |
+| `iconClose` | string | `"❌"` | HTML content for the close button |
+| `iconPrev` | string | `"🡐"` | HTML content for the previous button |
+| `iconNext` | string | `"🡒"` | HTML content for the next button |
+| `clsNext` | string | `""` | Additional CSS class for the next button |
+| `clsPrev` | string | `""` | Additional CSS class for the previous button |
+| `clsClose` | string | `""` | Additional CSS class for the close button |
+| `clsImage` | string | `""` | Additional CSS class for the image |
+| `clsImageContainer` | string | `""` | Additional CSS class for the image container |
+| `clsImageWrapper` | string | `""` | Additional CSS class for the image wrapper |
+| `clsLightbox` | string | `""` | Additional CSS class for the lightbox container |
+| `onDrawImage` | function | `Metro.noop` | Callback function triggered when an image is drawn in the lightbox |
+| `onLightboxCreate` | function | `Metro.noop` | Callback function triggered when the lightbox is created |
 
-## Methods
+## API Methods
 
 ### open(element)
+
 Opens the lightbox with the specified element.
 
 ```javascript
@@ -40,6 +77,7 @@ lightbox.open(document.querySelector('#my-lightbox img:first-child'));
 ```
 
 ### close()
+
 Closes the lightbox.
 
 ```javascript
@@ -48,7 +86,8 @@ lightbox.close();
 ```
 
 ### next()
-Navigates to the next image.
+
+Shows the next image in the lightbox.
 
 ```javascript
 var lightbox = Metro.getPlugin('#my-lightbox', 'lightbox');
@@ -56,7 +95,8 @@ lightbox.next();
 ```
 
 ### prev()
-Navigates to the previous image.
+
+Shows the previous image in the lightbox.
 
 ```javascript
 var lightbox = Metro.getPlugin('#my-lightbox', 'lightbox');
@@ -64,6 +104,7 @@ lightbox.prev();
 ```
 
 ### destroy()
+
 Destroys the lightbox component.
 
 ```javascript
@@ -74,11 +115,11 @@ lightbox.destroy();
 ## Events
 
 | Event | Description |
-| --- | --- |
-| onDrawImage | Triggered when an image is drawn in the lightbox |
-| onLightboxCreate | Triggered when the lightbox is created |
+| ----- | ----------- |
+| `onDrawImage` | Triggered when an image is drawn in the lightbox |
+| `onLightboxCreate` | Triggered when the lightbox is created |
 
-## Styling
+## Styling with CSS
 
 The Lightbox component uses the following CSS classes for styling:
 
@@ -98,44 +139,41 @@ The Lightbox component uses the following CSS classes for styling:
 ## Examples
 
 ### Basic Lightbox
+
 ```html
 <div data-role="lightbox">
-    <img src="image1.jpg" alt="Image 1">
-    <img src="image2.jpg" alt="Image 2">
+    <img src="image1-thumb.jpg" data-original="image1-full.jpg" alt="Image Title 1">
+    <img src="image2-thumb.jpg" data-original="image2-full.jpg" alt="Image Title 2">
+    <img src="image3-thumb.jpg" data-original="image3-full.jpg" alt="Image Title 3">
 </div>
 ```
 
-### Custom Icons
+### Lightbox with Custom Icons
+
 ```html
 <div data-role="lightbox" data-icon-close="✖" data-icon-prev="◀" data-icon-next="▶">
-    <img src="image1.jpg" alt="Image 1">
-    <img src="image2.jpg" alt="Image 2">
+    <img src="image1-thumb.jpg" data-original="image1-full.jpg" alt="Image Title 1">
+    <img src="image2-thumb.jpg" data-original="image2-full.jpg" alt="Image Title 2">
 </div>
 ```
 
-### Lightbox with Custom Source Selector
-```html
-<div data-role="lightbox" data-source=".lightbox-item">
-    <div class="lightbox-item" data-original="image1-large.jpg">
-        <img src="image1-thumb.jpg" alt="Image 1">
-    </div>
-    <div class="lightbox-item" data-original="image2-large.jpg">
-        <img src="image2-thumb.jpg" alt="Image 2">
-    </div>
-</div>
-```
+### Lightbox with Custom Styling
 
-### Lightbox with Titles
 ```html
-<div data-role="lightbox">
-    <img src="image1.jpg" alt="Beautiful sunset" data-title="Beautiful sunset">
-    <img src="image2.jpg" alt="Mountain landscape" data-title="Mountain landscape">
+<div data-role="lightbox" 
+     data-cls-close="bg-red fg-white" 
+     data-cls-prev="bg-blue fg-white" 
+     data-cls-next="bg-blue fg-white"
+     data-cls-lightbox="custom-lightbox">
+    <img src="image1-thumb.jpg" data-original="image1-full.jpg" alt="Image Title 1">
+    <img src="image2-thumb.jpg" data-original="image2-full.jpg" alt="Image Title 2">
 </div>
 ```
 
 ## Best Practices
 
-1. Use the `alt` attribute or `data-title` attribute to provide captions for images
-2. Optimize images for web to ensure fast loading in the lightbox
-3. Consider using thumbnails with `data-original` pointing to the full-size image for better performance
-4. Ensure images have appropriate dimensions to display well in the lightbox
+1. Always provide `alt` attributes for images to serve as titles in the lightbox
+2. Use `data-original` to specify high-resolution images for the lightbox view
+3. For better performance with many images, consider using thumbnails for the gallery view
+4. Use custom icons and styling to match your application's design language
+5. Consider accessibility by ensuring navigation controls are clearly visible

@@ -2,7 +2,14 @@
 
 The Panel component provides a flexible container with optional title, collapsible functionality, and draggable capabilities. It's useful for organizing content into distinct sections with a consistent visual style.
 
+## Dependencies
+
+- Metro UI Core
+- DOM library
+
 ## Usage
+
+### Basic Panel
 
 ```html
 <div data-role="panel">
@@ -65,7 +72,20 @@ The Panel component provides a flexible container with optional title, collapsib
 </div>
 ```
 
-## Parameters
+### Programmatic Control
+
+```javascript
+// Get panel plugin instance
+const panel = Metro.getPlugin('#myPanel', 'panel');
+
+// Open/expand the panel
+panel.open();
+
+// Close/collapse the panel
+panel.close();
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -88,13 +108,24 @@ The Panel component provides a flexible container with optional title, collapsib
 | clsCollapseToggle | string | "" | Additional CSS class for the collapse toggle |
 | clsCustomButton | string | "" | Additional CSS class for custom buttons |
 
-## Methods
+## API Methods
 
-### customButtons(buttons)
-Adds custom buttons to the panel title.
+| Method | Description |
+| --- | --- |
+| `customButtons(buttons)` | Adds custom buttons to the panel title |
+| `collapse()` | Collapses the panel |
+| `expand()` | Expands the panel |
+| `open()` | Alias for expand() |
+| `close()` | Alias for collapse() |
+| `destroy()` | Destroys the panel component |
+
+### Example of Method Usage
 
 ```javascript
-var panel = Metro.getPlugin('#myPanel', 'panel');
+// Get panel plugin instance
+const panel = Metro.getPlugin('#myPanel', 'panel');
+
+// Add custom buttons
 panel.customButtons([
     {
         html: "<span class='mif-cog'></span>",
@@ -104,46 +135,12 @@ panel.customButtons([
         }
     }
 ]);
-```
 
-### collapse()
-Collapses the panel.
-
-```javascript
-var panel = Metro.getPlugin('#myPanel', 'panel');
+// Collapse the panel
 panel.collapse();
-```
 
-### expand()
-Expands the panel.
-
-```javascript
-var panel = Metro.getPlugin('#myPanel', 'panel');
+// Expand the panel
 panel.expand();
-```
-
-### open()
-Alias for expand().
-
-```javascript
-var panel = Metro.getPlugin('#myPanel', 'panel');
-panel.open();
-```
-
-### close()
-Alias for collapse().
-
-```javascript
-var panel = Metro.getPlugin('#myPanel', 'panel');
-panel.close();
-```
-
-### destroy()
-Destroys the panel component.
-
-```javascript
-var panel = Metro.getPlugin('#myPanel', 'panel');
-panel.destroy();
 ```
 
 ## Events
@@ -157,11 +154,9 @@ panel.destroy();
 | onDragMove | Triggered when panel is being dragged |
 | onPanelCreate | Triggered when panel is created |
 
-## CSS Variables
+## Styling with CSS Variables
 
-The Panel component can be styled using the following CSS variables:
-
-| Variable | Default (Light) | Default (Dark) | Description |
+| Variable | Default (Light) | Dark Mode | Description |
 | --- | --- | --- | --- |
 | --panel-header-background | #fbfbfb | #282c35 | Background color of the panel header |
 | --panel-header-color | #191919 | #fbfbfb | Text color of the panel header |
@@ -173,9 +168,10 @@ The Panel component can be styled using the following CSS variables:
 | --panel-border-radius | 6px | 6px | Border radius of the panel |
 | --panel-dropdown-toogle-color | #191919 | #ffffff | Color of the dropdown toggle in the panel header |
 
-## Custom Styling Example
+### Example of Custom Styling
 
 ```css
+/* Custom styling for panels */
 .custom-panel {
     --panel-header-background: #3498db;
     --panel-header-color: #ffffff;
@@ -193,3 +189,26 @@ The Panel component can be styled using the following CSS variables:
     </div>
 </div>
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.panel` - Main container for the panel (automatically added)
+- `.panel-title` - Title section of the panel
+- `.panel-content` - Content section of the panel
+
+### Title Elements
+- `.icon` - Icon in the panel title
+- `.caption` - Text caption in the panel title
+- `.dropdown-toggle` - Toggle for collapsible functionality
+- `.custom-buttons` - Container for custom buttons
+- `.btn-custom` - Custom button in the title
+
+## Best Practices
+
+1. Use panels to group related content and provide a clear visual hierarchy
+2. Add titles to panels to clearly indicate their purpose
+3. Use collapsible panels for content that doesn't need to be visible all the time
+4. Consider making panels draggable in dashboard-like interfaces where users might want to rearrange content
+5. Use custom buttons sparingly and with clear icons to avoid cluttering the panel title
+6. Apply consistent styling to panels throughout your application for a cohesive look and feel

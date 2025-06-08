@@ -2,9 +2,13 @@
 
 The Hamburger component provides an animated hamburger menu button that can transform into different icons when activated. It's commonly used for toggling navigation menus, especially on mobile devices.
 
+## Dependencies
+
+This component has no JavaScript dependencies as it's a CSS-only component.
+
 ## Usage
 
-### Basic Hamburger Button
+### Basic Usage
 
 ```html
 <button class="hamburger">
@@ -92,12 +96,10 @@ Transforms into a right-pointing arrow:
 
 ## Styling with CSS Variables
 
-The Hamburger component can be styled using the following CSS variables:
-
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| --hamburger-background | transparent | transparent | Background color of the hamburger button |
-| --hamburger-color | #191919 | #ffffff | Color of the hamburger lines |
+| `--hamburger-background` | transparent | transparent | Background color of the hamburger button |
+| `--hamburger-color` | #191919 | #ffffff | Color of the hamburger lines |
 
 ### Example of Custom Styling
 
@@ -109,16 +111,17 @@ The Hamburger component can be styled using the following CSS variables:
 }
 ```
 
-## Class Reference
+## Available CSS Classes
 
-| Class | Description |
-| ----- | ----------- |
-| `.hamburger`, `.nav-button` | Base class for the hamburger button |
-| `.menu-down`, `.chevron-down` | Transforms into a right-pointing chevron when active |
-| `.menu-up`, `.chevron-up` | Transforms into a left-pointing chevron when active |
-| `.arrow-left` | Transforms into a left-pointing arrow when active |
-| `.arrow-right` | Transforms into a right-pointing arrow when active |
-| `.active` | Applied to show the transformed state |
+### Base Classes
+- `.hamburger`, `.nav-button` - Base classes for the hamburger button
+
+### Modifiers
+- `.menu-down`, `.chevron-down` - Transforms into a right-pointing chevron when active
+- `.menu-up`, `.chevron-up` - Transforms into a left-pointing chevron when active
+- `.arrow-left` - Transforms into a left-pointing arrow when active
+- `.arrow-right` - Transforms into a right-pointing arrow when active
+- `.active` - Applied to show the transformed state
 
 ## Dimensions
 

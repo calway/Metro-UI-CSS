@@ -1,10 +1,24 @@
 # Media Player Component
 
-The Media Player component provides styling for HTML5 video and audio elements with custom controls. It offers a consistent and attractive interface for media playback across different browsers.
+This is an auxiliary component. The Media Player component provides styling for HTML5 video and audio elements with custom controls. It offers a consistent and attractive interface for media playback across different browsers.
+
+## Dependencies
+
+This component requires the following dependencies:
+- Metro UI CSS base styles
+- Metro UI icons for control buttons
 
 ## Usage
 
-### Video Player
+### Basic Usage
+
+```html
+<div class="media-player">
+    <video src="video.mp4" controls></video>
+</div>
+```
+
+### Video Player with Custom Controls
 
 ```html
 <div class="media-player">
@@ -53,69 +67,16 @@ The Media Player component provides styling for HTML5 video and audio elements w
 </div>
 ```
 
-## Styling
-
-The Media Player component uses the following CSS classes for styling:
-
-### Base Classes
-- `.media-player` - Base class for the media player container
-- `.audio-player` - Additional class for audio players
-
-### Elements
-- `.logo` - Container for a logo overlay
-- `.preloader` - Loading indicator (add `.show` class to display)
-- `.controls` - Container for player controls
-- `.stream` - Progress bar container
-- `.load-audio` - Audio loading progress indicator
-- `.info-box` - Display for time information
-- `.volume` - Volume control container
-
-### Control Buttons
-- `.loop` - Loop button
-- `.play` - Play/pause button
-- `.stop` - Stop button
-- `.mute` - Mute button
-- `.full` - Fullscreen button
-
-### Modifiers
-- `.outside` - Places controls outside the media container
-- `.light` - Light theme variant
-- `.full-screen` - Applied when in fullscreen mode
-
-## Examples
-
-### Basic Video Player
-```html
-<div class="media-player">
-    <video src="video.mp4" controls></video>
-</div>
-```
-
-### Video Player with Logo
-```html
-<div class="media-player">
-    <video src="video.mp4" controls></video>
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-    </div>
-</div>
-```
-
 ### Light Theme Video Player
+
 ```html
 <div class="media-player light">
     <video src="video.mp4" controls></video>
 </div>
 ```
 
-### Audio Player
-```html
-<div class="media-player audio-player">
-    <audio src="audio.mp3" controls></audio>
-</div>
-```
-
 ### Player with External Controls
+
 ```html
 <div class="media-player">
     <video src="video.mp4"></video>
@@ -129,9 +90,13 @@ The Media Player component uses the following CSS classes for styling:
 </div>
 ```
 
-## JavaScript Integration
+## Plugin Parameters
 
-While the Media Player component itself doesn't include JavaScript functionality, you can use the HTML5 Media API to control the player:
+The Media Player component itself doesn't include JavaScript functionality as a Metro UI plugin. It provides styling for HTML5 video and audio elements with custom controls.
+
+## API Methods
+
+While the Media Player component doesn't have built-in API methods, you can use the HTML5 Media API to control the player:
 
 ```javascript
 $(function(){
@@ -164,6 +129,70 @@ $(function(){
     }
 });
 ```
+
+## Events
+
+The Media Player component doesn't define custom events, but you can use the standard HTML5 media events:
+
+| Event | Description |
+| ----- | ----------- |
+| `play` | Fired when playback has begun |
+| `pause` | Fired when playback is paused |
+| `timeupdate` | Fired when the current playback position has changed |
+| `ended` | Fired when playback has stopped because the end of the media was reached |
+| `volumechange` | Fired when the volume has changed |
+| `loadedmetadata` | Fired when metadata has been loaded |
+
+## Styling with CSS Variables
+
+The Media Player component uses the following CSS variables for styling:
+
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--player-background` | #f2f3f5 | #191919 | Background color of the player |
+| `--player-info-background` | #f2f3f5 | #191919 | Background color of the info box |
+| `--player-info-color` | #191919 | #f2f3f5 | Text color of the info box |
+| `--player-control-background-hover` | #dadbdd | #4e5055 | Background color of controls on hover |
+| `--player-constrol-color-hover` | #191919 | #f2f3f5 | Text color of controls on hover |
+
+### Example of Custom Styling
+
+```css
+.my-custom-player {
+    --player-background: #000000;
+    --player-info-background: #333333;
+    --player-info-color: #ffffff;
+    --player-control-background-hover: #555555;
+    --player-constrol-color-hover: #ffffff;
+}
+```
+
+## Available CSS Classes
+
+### Base Classes
+- `.media-player` - Base class for the media player container
+- `.audio-player` - Additional class for audio players
+
+### Elements
+- `.logo` - Container for a logo overlay
+- `.preloader` - Loading indicator (add `.show` class to display)
+- `.controls` - Container for player controls
+- `.stream` - Progress bar container
+- `.load-audio` - Audio loading progress indicator
+- `.info-box` - Display for time information
+- `.volume` - Volume control container
+
+### Control Buttons
+- `.loop` - Loop button
+- `.play` - Play/pause button
+- `.stop` - Stop button
+- `.mute` - Mute button
+- `.full` - Fullscreen button
+
+### Modifiers
+- `.outside` - Places controls outside the media container
+- `.light` - Light theme variant
+- `.full-screen` - Applied when in fullscreen mode
 
 ## Responsive Behavior
 

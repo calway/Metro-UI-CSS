@@ -2,6 +2,12 @@
 
 The Info Button component provides a button with a title and value section. It's commonly used for displaying information with a count or value, such as notifications, messages, or items in a cart.
 
+## Dependencies
+
+This component requires:
+- Metro UI core
+- Colors CSS module
+
 ## Usage
 
 ### Basic Info Button

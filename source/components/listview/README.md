@@ -2,7 +2,15 @@
 
 The ListView component provides a flexible way to display hierarchical data in various view modes, including list, table, content, tiles, and icons views. It supports features like selection, grouping, and node manipulation.
 
+## Dependencies
+
+This component requires:
+- Metro UI core
+- LESS variables and mixins
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <ul data-role="listview">
@@ -21,27 +29,61 @@ The ListView component provides a flexible way to display hierarchical data in v
 </ul>
 ```
 
-## Parameters
+### Additional Configurations
+
+```html
+<!-- Selectable ListView -->
+<ul data-role="listview" data-selectable="true">
+    <li data-caption="Documents">
+        <ul>
+            <li data-caption="Report.docx"></li>
+            <li data-caption="Presentation.pptx"></li>
+        </ul>
+    </li>
+</ul>
+
+<!-- ListView with Custom Icons -->
+<ul data-role="listview">
+    <li data-caption="Documents" data-icon="<svg>...</svg>">
+        <ul>
+            <li data-caption="Report.docx" data-icon="<svg>...</svg>"></li>
+            <li data-caption="Presentation.pptx" data-icon="<svg>...</svg>"></li>
+        </ul>
+    </li>
+</ul>
+
+<!-- ListView with Description and Date -->
+<ul data-role="listview" data-view="table">
+    <li data-caption="Documents">
+        <ul>
+            <li data-caption="Report.docx" data-desc="Word document" data-date="2023-05-15"></li>
+            <li data-caption="Presentation.pptx" data-desc="PowerPoint presentation" data-date="2023-05-16"></li>
+        </ul>
+    </li>
+</ul>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| listviewDeferred | number | 0 | Deferred initialization time in milliseconds |
-| selectable | boolean | false | If true, enables item selection with checkboxes |
-| duration | number | 100 | Animation duration for expanding/collapsing nodes in milliseconds |
-| view | string | Metro.listView.LIST | View mode (LIST, TABLE, CONTENT, TILES, ICONS, ICONS_MEDIUM, ICONS_LARGE) |
-| selectCurrent | boolean | true | If true, selects the current node when clicked |
-| defaultIcon | string | file_icon | Default icon for nodes |
-| onNodeInsert | function | Metro.noop | Triggered when a node is inserted |
-| onNodeDelete | function | Metro.noop | Triggered when a node is deleted |
-| onNodeClean | function | Metro.noop | Triggered when a node is cleaned |
-| onCollapseNode | function | Metro.noop | Triggered when a node is collapsed |
-| onExpandNode | function | Metro.noop | Triggered when a node is expanded |
-| onGroupNodeClick | function | Metro.noop | Triggered when a group node is clicked |
-| onNodeClick | function | Metro.noop | Triggered when a node is clicked |
-| onNodeDblclick | function | Metro.noop | Triggered when a node is double-clicked |
-| onListViewCreate | function | Metro.noop | Triggered when the listview is created |
+| `listviewDeferred` | number | 0 | Deferred initialization time in milliseconds |
+| `selectable` | boolean | false | If true, enables item selection with checkboxes |
+| `duration` | number | 100 | Animation duration for expanding/collapsing nodes in milliseconds |
+| `view` | string | Metro.listView.LIST | View mode (LIST, TABLE, CONTENT, TILES, ICONS, ICONS_MEDIUM, ICONS_LARGE) |
+| `selectCurrent` | boolean | true | If true, selects the current node when clicked |
+| `defaultIcon` | string | file_icon | Default icon for nodes |
+| `onNodeInsert` | function | Metro.noop | Triggered when a node is inserted |
+| `onNodeDelete` | function | Metro.noop | Triggered when a node is deleted |
+| `onNodeClean` | function | Metro.noop | Triggered when a node is cleaned |
+| `onCollapseNode` | function | Metro.noop | Triggered when a node is collapsed |
+| `onExpandNode` | function | Metro.noop | Triggered when a node is expanded |
+| `onGroupNodeClick` | function | Metro.noop | Triggered when a group node is clicked |
+| `onNodeClick` | function | Metro.noop | Triggered when a node is clicked |
+| `onNodeDblclick` | function | Metro.noop | Triggered when a node is double-clicked |
+| `onListViewCreate` | function | Metro.noop | Triggered when the listview is created |
 
-## Methods
+## API Methods
 
 ### view(v)
 Gets or sets the view mode.
@@ -180,35 +222,48 @@ listview.destroy();
 
 | Event | Description |
 | --- | --- |
-| onNodeInsert | Triggered when a node is inserted |
-| onNodeDelete | Triggered when a node is deleted |
-| onNodeClean | Triggered when a node is cleaned |
-| onCollapseNode | Triggered when a node is collapsed |
-| onExpandNode | Triggered when a node is expanded |
-| onGroupNodeClick | Triggered when a group node is clicked |
-| onNodeClick | Triggered when a node is clicked |
-| onNodeDblclick | Triggered when a node is double-clicked |
-| onListViewCreate | Triggered when the listview is created |
+| `onNodeInsert` | Triggered when a node is inserted |
+| `onNodeDelete` | Triggered when a node is deleted |
+| `onNodeClean` | Triggered when a node is cleaned |
+| `onCollapseNode` | Triggered when a node is collapsed |
+| `onExpandNode` | Triggered when a node is expanded |
+| `onGroupNodeClick` | Triggered when a group node is clicked |
+| `onNodeClick` | Triggered when a node is clicked |
+| `onNodeDblclick` | Triggered when a node is double-clicked |
+| `onListViewCreate` | Triggered when the listview is created |
 
-## CSS Variables
+## Styling with CSS Variables
 
 The ListView component can be styled using the following CSS variables:
 
-| Variable | Default (Light) | Default (Dark) | Description |
+| Variable | Default (Light) | Dark Mode | Description |
 | --- | --- | --- | --- |
-| --listview-item-border-radius | 4px | 4px | Border radius of list items |
-| --listview-item-width | 220px | 220px | Width of list items |
-| --listview-background | #ffffff | #1e1f22 | Background color of the listview |
-| --listview-color | #191919 | #dbdfe7 | Text color of the listview |
-| --listview-color-secondary | #919191 | #bcbcbc | Secondary text color |
-| --listview-item-background-hover | #d4e2ff | #2d2d32 | Background color on hover |
-| --listview-item-background-active | #d4e2ff | #28282c | Background color when active |
-| --listview-badge-background | transparent | transparent | Background color for badges |
-| --listview-badge-color | #191919 | #dbdfe7 | Text color for badges |
+| `--listview-item-border-radius` | 4px | 4px | Border radius of list items |
+| `--listview-item-width` | 220px | 220px | Width of list items |
+| `--listview-background` | #ffffff | #1e1f22 | Background color of the listview |
+| `--listview-color` | #191919 | #dbdfe7 | Text color of the listview |
+| `--listview-color-secondary` | #919191 | #bcbcbc | Secondary text color |
+| `--listview-item-background-hover` | #d4e2ff | #2d2d32 | Background color on hover |
+| `--listview-item-background-active` | #d4e2ff | #28282c | Background color when active |
+| `--listview-badge-background` | transparent | transparent | Background color for badges |
+| `--listview-badge-color` | #191919 | #dbdfe7 | Text color for badges |
+
+### Example of Custom Styling
+
+```css
+/* Custom styling for a specific listview */
+#my-custom-listview {
+    --listview-background: #f0f7ff;
+    --listview-color: #0d47a1;
+    --listview-item-background-hover: #e3f2fd;
+    --listview-item-background-active: #bbdefb;
+    --listview-item-border-radius: 8px;
+}
+```
 
 ## View Modes
 
-The ListView component supports several view modes:
+The ListView component supports several view modes that can be set using the `data-view` attribute:
 
 ### List View
 ```html
@@ -256,62 +311,6 @@ The ListView component supports several view modes:
 ```html
 <ul data-role="listview" data-view="icons-large">
     <!-- items -->
-</ul>
-```
-
-## Examples
-
-### Basic ListView
-```html
-<ul data-role="listview">
-    <li data-caption="Documents">
-        <ul>
-            <li data-caption="Report.docx"></li>
-            <li data-caption="Presentation.pptx"></li>
-        </ul>
-    </li>
-    <li data-caption="Images">
-        <ul>
-            <li data-caption="Photo1.jpg"></li>
-            <li data-caption="Photo2.jpg"></li>
-        </ul>
-    </li>
-</ul>
-```
-
-### Selectable ListView
-```html
-<ul data-role="listview" data-selectable="true">
-    <li data-caption="Documents">
-        <ul>
-            <li data-caption="Report.docx"></li>
-            <li data-caption="Presentation.pptx"></li>
-        </ul>
-    </li>
-</ul>
-```
-
-### ListView with Custom Icons
-```html
-<ul data-role="listview">
-    <li data-caption="Documents" data-icon="<svg>...</svg>">
-        <ul>
-            <li data-caption="Report.docx" data-icon="<svg>...</svg>"></li>
-            <li data-caption="Presentation.pptx" data-icon="<svg>...</svg>"></li>
-        </ul>
-    </li>
-</ul>
-```
-
-### ListView with Description and Date
-```html
-<ul data-role="listview" data-view="table">
-    <li data-caption="Documents">
-        <ul>
-            <li data-caption="Report.docx" data-desc="Word document" data-date="2023-05-15"></li>
-            <li data-caption="Presentation.pptx" data-desc="PowerPoint presentation" data-date="2023-05-16"></li>
-        </ul>
-    </li>
 </ul>
 ```
 

@@ -36,32 +36,44 @@ The Hint component provides a simple and customizable tooltip-like functionality
 
 ## Plugin Parameters
 
-The Hint component accepts the following configuration options:
-
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| hintDeferred | 0 | Delay in milliseconds before showing the hint |
-| hintHide | 5000 | Time in milliseconds before automatically hiding the hint (0 to disable auto-hide) |
-| clsHint | "" | Additional CSS class(es) to apply to the hint element |
-| hintText | "" | Text content of the hint |
-| hintPosition | Metro.position.TOP | Position of the hint relative to the target element (TOP, BOTTOM, RIGHT, LEFT) |
-| hintOffset | 4 | Offset in pixels from the target element |
-| onHintShow | Metro.noop | Callback function triggered when the hint is shown |
-| onHintHide | Metro.noop | Callback function triggered when the hint is hidden |
-| onHintCreate | Metro.noop | Callback function triggered when the hint is created |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| hintDeferred | number | 0 | Delay in milliseconds before showing the hint |
+| hintHide | number | 5000 | Time in milliseconds before automatically hiding the hint (0 to disable auto-hide) |
+| clsHint | string | "" | Additional CSS class(es) to apply to the hint element |
+| hintText | string | "" | Text content of the hint |
+| hintPosition | string | Metro.position.TOP | Position of the hint relative to the target element (TOP, BOTTOM, RIGHT, LEFT) |
+| hintOffset | number | 4 | Offset in pixels from the target element |
+| onHintShow | function | Metro.noop | Callback function triggered when the hint is shown |
+| onHintHide | function | Metro.noop | Callback function triggered when the hint is hidden |
+| onHintCreate | function | Metro.noop | Callback function triggered when the hint is created |
 
 ## API Methods
 
-The Hint component provides the following API methods:
++ `createHint()` - Creates and shows the hint
++ `setPosition()` - Sets the position of the hint based on the target element
++ `removeHint()` - Removes the hint from the DOM
++ `changeText()` - Updates the hint text from the data-hint-text attribute
++ `changeAttribute(attributeName)` - Handles attribute changes (currently supports data-hint-text)
++ `destroy()` - Removes the hint and cleans up event listeners
 
-| Method | Description |
-| ------ | ----------- |
-| createHint() | Creates and shows the hint |
-| setPosition() | Sets the position of the hint based on the target element |
-| removeHint() | Removes the hint from the DOM |
-| changeText() | Updates the hint text from the data-hint-text attribute |
-| changeAttribute(attributeName) | Handles attribute changes (currently supports data-hint-text) |
-| destroy() | Removes the hint and cleans up event listeners |
+### Example of Method Usage
+
+```javascript
+const hintElement = Metro.getPlugin('#myElement', 'hint');
+hintElement.createHint();
+
+// Later, to remove the hint
+hintElement.removeHint();
+```
+
+## Events
+
+| Event | Description |
+| ----- | ----------- |
+| onHintShow | Triggered when the hint is shown |
+| onHintHide | Triggered when the hint is hidden |
+| onHintCreate | Triggered when the hint component is created |
 
 ## Global Configuration
 
@@ -76,8 +88,6 @@ Metro.hintSetup({
 ```
 
 ## Styling with CSS Variables
-
-The Hint component can be styled using the following CSS variables:
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
@@ -105,8 +115,14 @@ The Hint component can be styled using the following CSS variables:
 
 ## Available CSS Classes
 
-### Base Class
+### Base Classes
 - `.hint` - The main hint container
+
+### Modifiers
+- `.top` - Applied when the hint is positioned at the top
+- `.bottom` - Applied when the hint is positioned at the bottom
+- `.left` - Applied when the hint is positioned at the left
+- `.right` - Applied when the hint is positioned at the right
 
 ## Accessibility
 
