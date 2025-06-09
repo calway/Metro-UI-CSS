@@ -5,7 +5,6 @@
     --keypad-background: var(--input-background);
     --keypad-color: var(--input-color);
     --keypad-border-color: #E8E8E8;
-    --keypad-border-radius: 4px;
 }
 
 .dark-side {
@@ -18,7 +17,7 @@
     background: var(--keypad-background);
     color: var(--keypad-color);
     border: 1px solid var(--keypad-border-color);
-    border-radius: var(--keypad-border-radius);
+    border-radius: var(--input-border-radius);
     position: relative;
 }
 
@@ -37,17 +36,20 @@
         position: absolute;
         top: 2px;
         right: 2px;
+        height: calc(100% - 4px);
     }
 
     .button {
         background-color: transparent;
         border-color: transparent;
         color: var(--input-color);
-        height: 30px;
-        width: 30px;
+        height: calc(100% - 0px);
+        aspect-ratio: 1;
         border: 1px solid var(--input-border-color);
         font-size: var(--input-font-size);
         padding: 0;
+        cursor: pointer;
+        z-index: 1;
 
         &:focus, &:active {
             box-shadow: none!important;
@@ -217,6 +219,14 @@
                 margin-left: -1rem;
                 .rotate(-45deg);
             }
+        }
+    }
+
+    &.pill-input {
+        --input-border-radius: calc(var(--input-height) * 0.44);
+
+        .button {
+            border-radius: 50%;
         }
     }
 }

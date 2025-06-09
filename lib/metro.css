@@ -53427,40 +53427,6 @@ input::placeholder {
   order: 1;
   text-align: left;
 }
-.spinner.input-large {
-  height: 50px;
-  line-height: 50px;
-}
-.spinner.input-large input {
-  font-size: 1.3rem;
-}
-.spinner.input-large .spinner-button {
-  height: 48px;
-  width: 48px;
-  min-width: 48px;
-  line-height: 48px;
-  font-size: 1.3rem;
-}
-.spinner.input-large .spinner-button [class*=mif-] {
-  font-size: 1.3rem;
-}
-.spinner.input-small {
-  height: 28px;
-  line-height: 28px;
-}
-.spinner.input-small input {
-  font-size: 0.9rem;
-}
-.spinner.input-small .spinner-button {
-  height: 22px;
-  width: 22px;
-  min-width: 22px;
-  line-height: 22px;
-  font-size: 0.9rem;
-}
-.spinner.input-small .spinner-button [class*=mif-] {
-  font-size: 0.9rem;
-}
 
 /* source/components/calendar/calendar.less */
 :root {
@@ -63155,7 +63121,6 @@ label:has(input) {
   --keypad-background: var(--input-background);
   --keypad-color: var(--input-color);
   --keypad-border-color: #E8E8E8;
-  --keypad-border-radius: 4px;
 }
 .dark-side {
   --keypad-background: var(--input-background);
@@ -63166,7 +63131,7 @@ label:has(input) {
   background: var(--keypad-background);
   color: var(--keypad-color);
   border: 1px solid var(--keypad-border-color);
-  border-radius: var(--keypad-border-radius);
+  border-radius: var(--input-border-radius);
   position: relative;
 }
 .keypad input {
@@ -63181,16 +63146,19 @@ label:has(input) {
   position: absolute;
   top: 2px;
   right: 2px;
+  height: calc(100% - 4px);
 }
 .keypad .button {
   background-color: transparent;
   border-color: transparent;
   color: var(--input-color);
-  height: 30px;
-  width: 30px;
+  height: calc(100% - 0px);
+  aspect-ratio: 1;
   border: 1px solid var(--input-border-color);
   font-size: var(--input-font-size);
   padding: 0;
+  cursor: pointer;
+  z-index: 1;
 }
 .keypad .button:focus,
 .keypad .button:active {
@@ -63338,6 +63306,12 @@ label:has(input) {
   left: 100%;
   margin-left: -1rem;
   transform: rotate(-45deg);
+}
+.keypad.pill-input {
+  --input-border-radius: calc(var(--input-height) * 0.44);
+}
+.keypad.pill-input .button {
+  border-radius: 50%;
 }
 
 /* source/components/lightbox/lightbox.less */
@@ -73325,9 +73299,8 @@ html.metro-touch-device .streamer .stream.focused .stream-icon {
   cursor: text;
   position: relative;
   height: auto;
-  min-height: 36px;
+  min-height: var(--input-height, 36px);
   border-radius: var(--taginput-border-radius);
-  overflow: hidden;
 }
 .tag-input .original-input {
   width: 1px;
@@ -73340,8 +73313,7 @@ html.metro-touch-device .streamer .stream.focused .stream-icon {
 .tag-input .input-wrapper {
   width: auto;
   border: none !important;
-  height: 26px;
-  line-height: 26px;
+  height: calc(var(--input-height) - 6px);
   font-size: 14px;
   padding: 0 4px;
   background: transparent;
@@ -73351,62 +73323,16 @@ html.metro-touch-device .streamer .stream.focused .stream-icon {
   box-shadow: none !important;
 }
 .tag-input .input-clear-button {
-  font-family: "Segoe UI Symbol", serif;
   position: absolute;
   top: 2px;
   right: 2px;
   z-index: 2;
   background-color: transparent;
-  height: 30px;
-  width: 30px;
+  height: calc(var(--input-height) - 6px);
+  width: calc(var(--input-height) - 6px);
 }
 .tag-input.padding-for-clear {
   padding-right: 48px;
-}
-.tag-input.input-large {
-  min-height: 50px;
-}
-.tag-input.input-large input {
-  height: 48px;
-  font-size: 1.3rem;
-  padding: 0 10px;
-  line-height: 48px;
-  min-width: 5em;
-}
-.tag-input.input-large .button {
-  height: 48px;
-  min-width: 48px;
-  font-size: 1.3rem;
-}
-.tag-input.input-large .button [class*=mif-] {
-  font-size: 1.3rem;
-}
-.tag-input.input-large .button .input-clear-button {
-  width: 48px;
-  padding: 0;
-}
-.tag-input.input-small {
-  min-height: 28px;
-}
-.tag-input.input-small input {
-  height: 26px;
-  font-size: 0.9rem;
-  padding: 0 4px;
-  line-height: 26px;
-  min-width: 5em;
-}
-.tag-input.input-small .button {
-  height: 26px;
-  min-width: 26px;
-  font-size: 0.9rem;
-}
-.tag-input.input-small .button [class*=mif-] {
-  font-size: 0.9rem;
-}
-.tag-input.input-small .input-clear-button {
-  width: 26px;
-  padding: 0;
-  font-family: "Segoe UI Symbol", serif;
 }
 .tag-input.static-mode {
   border: none !important;

@@ -106,8 +106,9 @@ You can customize the appearance of the Spinner by overriding the CSS variables:
 The Spinner component supports different sizes:
 
 - Default size: No additional class
-- Large size: Add `input-large` class
-- Small size: Add `input-small` class
+- Large size: Add `large` class
+- Small size: Add `small` class
+- Medium size: Add `medium` class
 
 ```html
 <input data-role="spinner" class="input-large">

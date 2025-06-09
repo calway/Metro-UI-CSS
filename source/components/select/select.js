@@ -117,10 +117,12 @@
                 .html("&times;")
                 .appendTo(tag);
 
-            if (container.hasClass("input-large")) {
+            if (container.hasClass("large")) {
                 tagSize = "large";
-            } else if (container.hasClass("input-small")) {
+            } else if (container.hasClass("small")) {
                 tagSize = "small";
+            } else if (container.hasClass("medium")) {
+                tagSize = "medium";
             }
 
             tag.addClass(tagSize);

@@ -121,8 +121,6 @@ tagInput.enable();
 - `.action` - Tag remove button
 - `.autocomplete-list` - Autocomplete dropdown
 - `.static-mode` - Applied when the component is in static mode
-- `.input-large` - Applied for large size
-- `.input-small` - Applied for small size
 
 ## Styling with CSS Variables
 

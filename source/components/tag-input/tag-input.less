@@ -1,8 +1,6 @@
 @import (once) "../../include/vars";
 @import (once) "../../include/mixins";
 
-@taginput-item-size: 26px;
-
 :root {
     --taginput-border-radius: 4px;
     --taginput-color: var(--input-color);
@@ -22,10 +20,10 @@
     cursor: text;
     position: relative;
     height: auto;
-    min-height: 36px;
+    min-height: var(--input-height, 36px);
     border-radius: var(--taginput-border-radius);
-    overflow: hidden;
-
+    //overflow: hidden;
+    
     .original-input {
         width: 1px;
         height: 1px;
@@ -38,8 +36,7 @@
     .input-wrapper {
         width: auto;
         border: none!important;
-        height: @taginput-item-size;
-        line-height: @taginput-item-size;
+        height: calc( var(--input-height) - 6px );
         font-size: 14px;
         padding: 0 4px;
         background: transparent;
@@ -51,76 +48,18 @@
     }
 
     .input-clear-button {
-        font-family: "Segoe UI Symbol", serif;
+        //font-family: "Segoe UI Symbol", serif;
         position: absolute;
         top: 2px;
         right: 2px;
         z-index: 2;
         background-color: transparent;
-        height: 30px;
-        width: 30px;
+        height: calc( var(--input-height) - 6px );
+        width: calc( var(--input-height) - 6px );
     }
 
     &.padding-for-clear {
         padding-right: 48px;
-    }
-}
-
-.tag-input {
-    &.input-large {
-        min-height: @input-lx;
-
-        input {
-            height: @input-lx - 2;
-            font-size: 1.3rem;
-            padding: 0 10px;
-            line-height: @input-lx - 2;
-            min-width: 5em;
-        }
-
-        .button {
-            height: @input-lx - 2;
-            min-width: @input-lx - 2;
-
-            font-size: 1.3rem;
-
-            [class*=mif-] {
-                font-size: 1.3rem;
-            }
-
-            .input-clear-button {
-                width: @input-lx - 2;
-                padding: 0;
-            }
-        }
-    }
-
-    &.input-small {
-        min-height: @input-sx;
-
-        input {
-            height: @input-sx - 2;
-            font-size: .9rem;
-            padding: 0 4px;
-            line-height: @input-sx - 2;
-            min-width: 5em;
-        }
-
-        .button {
-            height: @input-sx - 2;
-            min-width: @input-sx - 2;
-            font-size: .9rem;
-
-            [class*=mif-] {
-                font-size: .9rem;
-            }
-        }
-
-        .input-clear-button {
-            width: @input-sx - 2;
-            padding: 0;
-            font-family: "Segoe UI Symbol", serif;
-        }
     }
 }
 

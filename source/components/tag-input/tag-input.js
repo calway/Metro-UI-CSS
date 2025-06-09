@@ -90,8 +90,7 @@
             const values = element.val().trim();
 
             container = element.wrap("<div>").addClass(`tag-input ${element[0].className}`).addClass(o.clsComponent);
-
-            container.addClass(`input-${o.size}`);
+            container.attr("id", Hooks.useId(container[0]));
 
             element[0].className = "";
 
@@ -115,23 +114,11 @@
                 });
             }
 
-            if (o.label) {
-                const label = $("<label>")
-                    .addClass("label-for-input")
-                    .addClass(o.clsLabel)
-                    .html(o.label)
-                    .insertBefore(container);
-                if (element.attr("id")) {
-                    label.attr("for", element.attr("id"));
-                } else {
-                    const id = Hooks.useId(element[0]);
-                    label.attr("for", id);
-                    element.attr("id", id);
-                }
-                if (element.attr("dir") === "rtl") {
-                    label.addClass("rtl");
-                }
-            }
+            this._addLabel(o.label, container, {
+                className: o.clsLabel,
+                id: container.attr("id"),
+                dir: element.attr("dir"),
+            });
 
             if (element.is(":disabled")) {
                 this.disable();
@@ -143,7 +130,7 @@
                 container.addClass("static-mode");
             }
 
-            if (!Metro.utils.isNull(o.autocomplete) || !Metro.utils.isNull(o.autocompleteUrl)) {
+            if (!o.autocomplete || !o.autocompleteUrl) {
                 $("<div>")
                     .addClass("autocomplete-list")
                     .css({
@@ -153,7 +140,7 @@
                     .appendTo(container);
             }
 
-            if (Metro.utils.isValue(o.autocomplete)) {
+            if (o.autocomplete) {
                 const autocomplete_obj = Metro.utils.isObject(o.autocomplete);
 
                 if (autocomplete_obj !== false) {
@@ -163,7 +150,7 @@
                 }
             }
 
-            if (Metro.utils.isValue(o.autocompleteUrl)) {
+            if (o.autocompleteUrl) {
                 fetch(o.autocompleteUrl, {
                     method: o.autocompleteUrlMethod,
                 })
@@ -335,12 +322,6 @@
             let tag;
             let remover;
             let tagSize;
-
-            if (container.hasClass("input-large")) {
-                tagSize = "large";
-            } else if (container.hasClass("input-small")) {
-                tagSize = "small";
-            }
 
             if (o.maxTags > 0 && this.values.length === o.maxTags) {
                 return;
