@@ -184,8 +184,6 @@
                 color = Farbe.Routines.toHEX(this.value);
             }
 
-            console.log(color);
-
             colorExample.css({
                 backgroundColor: color,
             });

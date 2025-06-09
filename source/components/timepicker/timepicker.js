@@ -64,7 +64,7 @@
             const element = this.element;
             const o = this.options;
             let i;
-            
+
             this.id = element.attr("id") || Hooks.useId(this.elem);
 
             if (o.distance < 1) {
@@ -154,19 +154,11 @@
             picker.insertBefore(element);
             element.attr("readonly", true).appendTo(picker);
 
-            if (o.label) {
-                const label = $("<label>")
-                    .addClass("label-for-input")
-                    .addClass(o.clsLabel)
-                    .html(o.label)
-                    .insertBefore(picker);
-                if (element.attr("id")) {
-                    label.attr("for", element.attr("id"));
-                }
-                if (element.attr("dir") === "rtl") {
-                    label.addClass("rtl");
-                }
-            }
+            this._addLabel(o.label, picker, {
+                className: o.clsLabel,
+                id: picker.attr("id"),
+                dir: element.attr("dir"),
+            });
 
             timeWrapper = $("<div>").addClass("time-wrapper").appendTo(picker);
 

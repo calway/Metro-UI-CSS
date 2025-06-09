@@ -58213,7 +58213,7 @@ input[type=radio].radio-sand::before {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 0;
-  height: 34px;
+  height: calc(var(--input-height) - 2px);
   padding: 0 0.75rem;
 }
 .color-picker input:focus {
@@ -58230,8 +58230,9 @@ input[type=radio].radio-sand::before {
 .color-picker .button {
   background-color: transparent;
   color: var(--input-color);
-  height: 30px !important;
-  width: 30px !important;
+  height: calc(var(--input-height) - 4px);
+  width: calc(var(--input-height) - 4px);
+  aspect-ratio: 1;
   border: 1px solid var(--input-border-color);
   font-size: var(--input-font-size);
 }
@@ -58256,8 +58257,8 @@ input[type=radio].radio-sand::before {
 }
 .color-picker .color-example-box {
   display: block;
-  height: 26px;
-  width: 26px;
+  height: calc(var(--input-height) - 8px);
+  aspect-ratio: 1;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMUlEQVQ4T2NkYGAQYcAP3uCTZhw1gGGYhAGBZIA/nYDCgBDAm9BGDWAAJyRCgLaBCAAgXwixzAS0pgAAAABJRU5ErkJggg==) top left repeat;
   margin: 4px;
   border: 1px solid var(--border-color);
@@ -59081,16 +59082,30 @@ aside::after {
   --wheel-picker-selected-background: rgba(78, 81, 88, 0.5);
 }
 .wheel-picker {
+  --picker-height: var(--control-height, 36px);
+  --picker-font-size: 16px;
   display: block;
   position: relative;
   width: 100%;
-  min-width: 220px;
+  min-width: calc(var(--picker-height) * 6);
   cursor: default;
   background: var(--input-background);
   color: var(--wheel-picker-color);
-  height: 36px;
+  height: var(--picker-height);
   user-select: none;
   border-radius: var(--wheel-picker-border-radius);
+}
+.wheel-picker.small {
+  --picker-height: var(--control-height-small);
+  --picker-font-size: 12px;
+}
+.wheel-picker.medium {
+  --picker-height: var(--control-height-medium);
+  --picker-font-size: 14px;
+}
+.wheel-picker.large {
+  --picker-height: var(--control-height-large);
+  --picker-font-size: 20px;
 }
 .wheel-picker .select-wrapper {
   display: none;
@@ -59197,6 +59212,7 @@ aside::after {
   border: 1px solid var(--border-color);
   text-align: center;
   height: 100%;
+  font-size: var(--picker-font-size);
 }
 .date-picker .month {
   flex-grow: 2;
@@ -59210,9 +59226,6 @@ aside::after {
 }
 .date-picker .button {
   margin: 2px;
-}
-.date-picker .button .icon {
-  font-family: "Segoe UI Symbol", serif;
 }
 .date-picker li {
   cursor: pointer;
@@ -75968,18 +75981,19 @@ textarea {
 .time-picker .minutes,
 .time-picker .seconds {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex: 1;
   border: 1px solid var(--border-color);
   text-align: center;
   height: 100%;
   position: relative;
+  font-size: var(--picker-font-size);
 }
 .time-picker.show-labels .hours,
 .time-picker.show-labels .minutes,
 .time-picker.show-labels .seconds {
-  line-height: 30px;
+  --before-position: 4px;
 }
 .time-picker.show-labels .hours::before,
 .time-picker.show-labels .minutes::before,
@@ -75987,11 +76001,26 @@ textarea {
   content: attr(data-title);
   position: absolute;
   display: block;
-  font-size: 8px;
+  font-size: calc(var(--picker-font-size) * 0.65);
   line-height: 12px;
   left: 50%;
-  bottom: 0;
-  transform: translate3d(-50%, 0, 0);
+  bottom: var(--before-position);
+  transform: translateX(-50%);
+}
+.time-picker.show-labels.small .hours,
+.time-picker.show-labels.small .minutes,
+.time-picker.show-labels.small .seconds {
+  --before-position: 0px;
+}
+.time-picker.show-labels.medium .hours,
+.time-picker.show-labels.medium .minutes,
+.time-picker.show-labels.medium .seconds {
+  --before-position: 2px;
+}
+.time-picker.show-labels.large .hours,
+.time-picker.show-labels.large .minutes,
+.time-picker.show-labels.large .seconds {
+  --before-position: 10px;
 }
 .time-picker .action-block {
   border: 1px solid var(--border-color);

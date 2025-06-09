@@ -35,7 +35,7 @@
         flex-grow: 1;
         flex-shrink: 0;
         flex-basis: 0;
-        height: @pickerDefaultHeight;
+        height: calc(var(--input-height) - 2px);
         padding: 0 .75rem;
 
         &:focus {
@@ -54,8 +54,9 @@
     button,.button {
         background-color: transparent;
         color: var(--input-color);
-        height: 30px!important;
-        width: 30px!important;
+        height: calc(var(--input-height) - 4px);
+        width: calc(var(--input-height) - 4px);
+        aspect-ratio: 1;
         border: 1px solid var(--input-border-color);
         font-size: var(--input-font-size);
 
@@ -84,8 +85,9 @@
 
     .color-example-box {
         display: block;
-        height: @pickerDefaultHeight - 8;
-        width: @pickerDefaultHeight - 8;
+        height: calc(var(--input-height) - 8px);
+        //width: calc(var(--input-height) - 4px);
+        aspect-ratio: 1;
         background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMUlEQVQ4T2NkYGAQYcAP3uCTZhw1gGGYhAGBZIA/nYDCgBDAm9BGDWAAJyRCgLaBCAAgXwixzAS0pgAAAABJRU5ErkJggg==") top left repeat;
         margin: 4px;
         border: 1px solid var(--border-color);

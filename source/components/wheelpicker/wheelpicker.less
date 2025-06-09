@@ -13,20 +13,35 @@
 }
 
 .wheel-picker {
+    --picker-height: var(--control-height, 36px);
+    --picker-font-size: 16px;
+    
     display: block;
     position: relative;
     width: 100%;
-    min-width: 220px;
+    min-width: calc(var( --picker-height) * 6);
     cursor: default;
     background: var(--input-background);
     color: var(--wheel-picker-color);
-    height: 36px;
+    height: var( --picker-height);
     user-select: none;
     border-radius: var(--wheel-picker-border-radius);
+    
+    &.small {
+        --picker-height: var(--control-height-small);
+        --picker-font-size: 12px;       
+    }
+    &.medium {
+        --picker-height: var(--control-height-medium);
+        --picker-font-size: 14px;       
+    }
+    &.large {
+        --picker-height: var(--control-height-large);
+        --picker-font-size: 20px;       
+    }
 }
 
 .wheel-picker {
-
     .select-wrapper {
         display: none;
         position: absolute;

@@ -547,6 +547,22 @@ import { Props } from "./props.js";
                         this.strings = $.extend({}, Metro.locales.en, Metro.locales[this.locale]);
                     },
 
+                    _addLabel: (text, target, { id, dir = "ltr", className } = {}) => {
+                        if (!text) return;
+
+                        const label = $("<label>")
+                            .addClass("label-for-input")
+                            .addClass(className)
+                            .html(text)
+                            .insertBefore($(target));
+                        if (id) {
+                            label.attr("for", id);
+                        }
+                        if (dir === "rtl") {
+                            label.addClass("rtl");
+                        }
+                    },
+
                     getComponent: function () {
                         return this.component;
                     },

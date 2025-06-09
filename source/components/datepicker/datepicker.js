@@ -17,7 +17,6 @@
         maxYear: null,
         defaultYearDistance: 100,
         scrollSpeed: 4,
-        copyInlineStyles: false,
         openMode: "auto",
         clsPicker: "",
         clsPart: "",
@@ -109,30 +108,20 @@
             let dateWrapper;
             let selectBlock;
 
-            const id = Hooks.useId(this.elem);
-
-            picker = $("<div>").addClass(`wheel-picker date-picker ${element[0].className}`).addClass(o.clsPicker);
+            picker = element
+                .wrap("<div>")
+                .addClass(`wheel-picker date-picker ${element[0].className}`)
+                .addClass(o.clsPicker);
 
             if (!picker.attr("id")) {
-                picker.attr("id", Hooks.useId(element[0]));
+                picker.attr("id", Hooks.useId(picker[0]));
             }
 
-            picker.insertBefore(element);
-            element.appendTo(picker);
-
-            if (o.label) {
-                const label = $("<label>")
-                    .addClass("label-for-input")
-                    .addClass(o.clsLabel)
-                    .html(o.label)
-                    .insertBefore(picker);
-                if (element.attr("id")) {
-                    label.attr("for", element.attr("id"));
-                }
-                if (element.attr("dir") === "rtl") {
-                    label.addClass("rtl");
-                }
-            }
+            this._addLabel(o.label, picker, {
+                className: o.clsLabel,
+                id: picker.attr("id"),
+                dir: element.attr("dir"),
+            });
 
             dateWrapper = $("<div>").addClass("date-wrapper").appendTo(picker);
 
@@ -211,11 +200,6 @@
                 .appendTo(actionBlock);
 
             element[0].className = "";
-            if (o.copyInlineStyles === true) {
-                for (i = 0; i < element[0].style.length; i++) {
-                    picker.css(element[0].style[i], element.css(element[0].style[i]));
-                }
-            }
 
             if (element.prop("disabled")) {
                 picker.addClass("disabled");
@@ -228,30 +212,30 @@
             const that = this;
             const o = this.options;
             const picker = this.picker;
+            const ns = picker.attr("id");
 
-            picker.on("touchstart", ".select-block ul", function (e) {
+            picker.on(Metro.events.startAll, ".select-block ul", function (e) {
                 if (e.changedTouches) {
                     return;
                 }
                 let pageY = Metro.utils.pageXY(e).y;
 
                 $(document).on(
-                    "touchmove",
+                    Metro.events.moveAll,
                     (e) => {
                         this.scrollTop -= o.scrollSpeed * (pageY > Metro.utils.pageXY(e).y ? -1 : 1);
-
                         pageY = Metro.utils.pageXY(e).y;
                     },
-                    { ns: picker.attr("id") },
+                    { ns },
                 );
 
                 $(document).on(
-                    "touchend",
+                    Metro.events.stopAll,
                     () => {
-                        $(document).off(Metro.events.move, { ns: picker.attr("id") });
-                        $(document).off(Metro.events.stop, { ns: picker.attr("id") });
+                        $(document).off(Metro.events.move, { ns });
+                        $(document).off(Metro.events.stop, { ns });
                     },
-                    { ns: picker.attr("id") },
+                    { ns },
                 );
             });
 

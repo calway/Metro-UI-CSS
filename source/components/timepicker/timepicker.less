@@ -21,27 +21,48 @@
 
     .hours, .minutes, .seconds {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         flex: 1;
         border: 1px solid var(--border-color);
         text-align: center;
         height: 100%;
         position: relative;
+        font-size: var(--picker-font-size);
     }
 
     &.show-labels {
         .hours, .minutes, .seconds {
-            line-height: 30px;
+            --before-position: 4px;
+            
             &::before {
                 content: attr(data-title);
                 position: absolute;
                 display: block;
-                font-size: 8px;
+                font-size: calc(var(--picker-font-size) * .65);
                 line-height: 12px;
                 left: 50%;
-                bottom: 0;
-                .translate3d(-50%, 0, 0);
+                bottom: var( --before-position);
+                transform: translateX(-50%);
+            }
+        }
+        
+        
+        &.small {
+            .hours, .minutes, .seconds {
+                --before-position: 0px;
+            }
+        }
+        
+        &.medium {
+            .hours, .minutes, .seconds {
+                --before-position: 2px;
+            }
+        }
+        
+        &.large {
+            .hours, .minutes, .seconds {
+                --before-position: 10px;
             }
         }
     }
