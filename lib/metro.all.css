@@ -2278,7 +2278,6 @@ body {
   margin-top: auto !important;
 }
 .flex-center {
-  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
@@ -52150,6 +52149,8 @@ button:has(.badge.corner),
 
 /* source/components/input-common/input-common.less */
 :root {
+  --input-height: var(--control-height-normal);
+  --input-font-size: 16px;
   --input-background: #ffffff;
   --input-background-disabled: #f7f8fa;
   --input-color-disabled: #c9ccd6;
@@ -52204,12 +52205,13 @@ select,
   border-radius: var(--input-border-radius);
   color: var(--input-color);
   width: 100%;
-  font-size: 16px;
-  height: 36px;
-  line-height: 36px;
+  font-size: var(--input-font-size);
+  height: var(--input-height);
+  line-height: var(--input-height);
   background: var(--input-background) none;
   background-clip: padding-box;
   min-width: 0;
+  padding: 0 8px;
 }
 input[type=text] input,
 input[type=password] input,
@@ -52236,6 +52238,7 @@ select input,
   outline: none;
   width: 100%;
   min-width: 0;
+  height: calc(var(--input-height) - 2px);
 }
 input[type=text] input::-ms-clear,
 input[type=password] input::-ms-clear,
@@ -52347,27 +52350,53 @@ select:focus,
 .color-picker:focus {
   outline: none;
 }
-input[type=text]:hover,
-input[type=password]:hover,
-input[type=email]:hover,
-input[type=date]:hover,
-input[type=datetime-local]:hover,
-input[type=search]:hover,
-input[type=tel]:hover,
-input[type=time]:hover,
-input[type=url]:hover,
-input[type=week]:hover,
-textarea:hover,
-select:hover,
-.metro-input:hover,
-.file:hover,
-.input:hover,
-.textarea:hover,
-.select:hover,
-.tag-input:hover,
-.spinner:hover,
-.color-picker:hover {
-  border-color: var(--input-border-color-hover);
+@media (hover: hover) {
+  input[type=text]:hover,
+  input[type=password]:hover,
+  input[type=email]:hover,
+  input[type=date]:hover,
+  input[type=datetime-local]:hover,
+  input[type=search]:hover,
+  input[type=tel]:hover,
+  input[type=time]:hover,
+  input[type=url]:hover,
+  input[type=week]:hover,
+  textarea:hover,
+  select:hover,
+  .metro-input:hover,
+  .file:hover,
+  .input:hover,
+  .textarea:hover,
+  .select:hover,
+  .tag-input:hover,
+  .spinner:hover,
+  .color-picker:hover {
+    border-color: var(--input-border-color-hover);
+  }
+}
+@media (hover: none) {
+  input[type=text]:active,
+  input[type=password]:active,
+  input[type=email]:active,
+  input[type=date]:active,
+  input[type=datetime-local]:active,
+  input[type=search]:active,
+  input[type=tel]:active,
+  input[type=time]:active,
+  input[type=url]:active,
+  input[type=week]:active,
+  textarea:active,
+  select:active,
+  .metro-input:active,
+  .file:active,
+  .input:active,
+  .textarea:active,
+  .select:active,
+  .tag-input:active,
+  .spinner:active,
+  .color-picker:active {
+    border-color: var(--input-border-color-hover);
+  }
 }
 input[type=text] .input-clear-button,
 input[type=password] .input-clear-button,
@@ -52989,28 +53018,81 @@ select.valid.focused,
 .color-picker.valid.focused {
   box-shadow: 0 0 0 3px var(--input-valid-color) !important;
 }
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=date],
-input[type=datetime-local],
-input[type=search],
-input[type=tel],
-input[type=time],
-input[type=url],
-input[type=week],
-select,
-.metro-input {
-  padding: 0 8px;
-  font-size: var(--input-font-size, 14px);
+input[type=text].small,
+input[type=password].small,
+input[type=email].small,
+input[type=date].small,
+input[type=datetime-local].small,
+input[type=search].small,
+input[type=tel].small,
+input[type=time].small,
+input[type=url].small,
+input[type=week].small,
+textarea.small,
+select.small,
+.metro-input.small,
+.file.small,
+.input.small,
+.textarea.small,
+.select.small,
+.tag-input.small,
+.spinner.small,
+.color-picker.small {
+  --input-height: var(--control-height-small);
+  --input-font-size: 12px;
+}
+input[type=text].medium,
+input[type=password].medium,
+input[type=email].medium,
+input[type=date].medium,
+input[type=datetime-local].medium,
+input[type=search].medium,
+input[type=tel].medium,
+input[type=time].medium,
+input[type=url].medium,
+input[type=week].medium,
+textarea.medium,
+select.medium,
+.metro-input.medium,
+.file.medium,
+.input.medium,
+.textarea.medium,
+.select.medium,
+.tag-input.medium,
+.spinner.medium,
+.color-picker.medium {
+  --input-height: var(--control-height-medium);
+  --input-font-size: 14px;
+}
+input[type=text].large,
+input[type=password].large,
+input[type=email].large,
+input[type=date].large,
+input[type=datetime-local].large,
+input[type=search].large,
+input[type=tel].large,
+input[type=time].large,
+input[type=url].large,
+input[type=week].large,
+textarea.large,
+select.large,
+.metro-input.large,
+.file.large,
+.input.large,
+.textarea.large,
+.select.large,
+.tag-input.large,
+.spinner.large,
+.color-picker.large {
+  --input-height: var(--control-height-large);
+  --input-font-size: 20px;
 }
 textarea {
   padding: 8px;
-  font-size: var(--input-font-size, 14px);
+  font-size: var(--input-font-size);
 }
 textarea.metro-input {
   height: auto;
-  padding: 0 0.75rem;
 }
 input[type=button],
 input[type=submit],
@@ -53031,13 +53113,11 @@ input[type=reset] {
 .tag-input .append,
 .spinner .append,
 .color-picker .append {
-  padding: 0 0.75rem;
-  line-height: 1.25rem;
+  padding: 0 calc(var(--input-height) / 2);
   white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
 }
 .file .prepend,
 .input .prepend,
@@ -53269,17 +53349,9 @@ input[dir=rtl] {
 .label-for-input.rtl {
   text-align: right;
 }
-input[placeholder] {
+input::placeholder {
   text-overflow: ellipsis;
-}
-input::-moz-placeholder {
-  text-overflow: ellipsis;
-}
-input:-moz-placeholder {
-  text-overflow: ellipsis;
-}
-input:-ms-input-placeholder {
-  text-overflow: ellipsis;
+  font-size: var(--input-font-size);
 }
 
 /* source/components/spinner/spinner.less */
@@ -55443,7 +55515,6 @@ input:-ms-input-placeholder {
   --input-autocomplete-selected-color: #468cff;
   --input-autocomplete-selected-background: transparent;
   --input-border-radius: 4px;
-  --input-font-size: 14px;
 }
 .dark-side {
   --input-autocomplete-background: #2b2d30;
@@ -55471,17 +55542,12 @@ input:-ms-input-placeholder {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 0;
-  height: 34px;
   padding: 0 0.75rem;
   background: transparent;
   color: inherit;
-  font-size: var(--input-font-size);
 }
 .input input:focus {
   box-shadow: none;
-}
-.input input[placeholder] {
-  font-size: var(--input-font-size);
 }
 .input .button-group {
   display: flex;
@@ -55494,10 +55560,10 @@ input:-ms-input-placeholder {
   background-color: transparent;
   border-color: transparent;
   color: var(--input-color);
-  height: 30px;
-  width: 30px;
+  height: calc(100% - 4px);
+  aspect-ratio: 1;
   border: 1px solid var(--input-border-color);
-  font-size: var(--input-font-size);
+  font-size: calc(var(--input-font-size) * 0.8);
   padding: 0;
 }
 .input .button:focus,
@@ -55507,9 +55573,7 @@ input:-ms-input-placeholder {
 .input .input-clear-button,
 .input .input-reveal-button,
 .input .input-search-button {
-  font-family: "Segoe UI Symbol", sans-serif;
   background-color: transparent;
-  font-size: var(--input-font-size);
 }
 .input .input-clear-button:hover,
 .input .input-reveal-button:hover,
@@ -55543,8 +55607,6 @@ input:-ms-input-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--input-font-size);
-  padding: 0 var(--input-font-size);
 }
 .input .prepend {
   border-top-left-radius: var(--input-border-radius);
@@ -55556,7 +55618,7 @@ input:-ms-input-placeholder {
 }
 .input.pill-input,
 input.pill-input {
-  --input-border-radius: 1rem;
+  --input-border-radius: calc(var(--input-height) * 0.44);
 }
 .input.pill-input .button,
 input.pill-input .button {
@@ -55619,16 +55681,16 @@ input.pill-input .button {
 }
 .input .badge {
   position: absolute;
-  font-size: 9px;
-  font-weight: 100;
+  font-size: calc(var(--input-font-size) * 0.64);
   text-transform: uppercase;
   background-color: #0a87c1;
   color: #ffffff;
-  border-radius: 6px;
+  border-radius: calc(var(--input-font-size) * 0.16);
   padding: 2px 4px;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+  font-weight: 500;
 }
 .input:hover .badge {
   display: none;

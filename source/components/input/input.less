@@ -7,7 +7,6 @@
     --input-autocomplete-selected-color: #468cff;
     --input-autocomplete-selected-background: transparent;
     --input-border-radius: 4px;
-    --input-font-size: 14px;
 }
 
 .dark-side {
@@ -41,18 +40,14 @@
         flex-grow: 1;
         flex-shrink: 0;
         flex-basis: 0;
-        height: 34px;
         padding: 0 .75rem;
         background: transparent;
         color: inherit;
-        font-size: var(--input-font-size);
 
         &:focus {
             box-shadow: none;
         }
     }
-
-    input[placeholder] {font-size: var(--input-font-size);}
 
     .button-group {
         display: flex;
@@ -66,10 +61,10 @@
         background-color: transparent;
         border-color: transparent;
         color: var(--input-color);
-        height: 30px;
-        width: 30px;
+        height: calc(100% - 4px);
+        aspect-ratio: 1;
         border: 1px solid var(--input-border-color);
-        font-size: var(--input-font-size);
+        font-size: calc(var(--input-font-size) * .8);
         padding: 0;
         
         &:focus, &:active {
@@ -78,9 +73,8 @@
     }
 
     .input-clear-button, .input-reveal-button, .input-search-button {
-        font-family: "Segoe UI Symbol", sans-serif;
         background-color: transparent;
-        font-size: var(--input-font-size);
+        //font-size: var(--input-font-size);
         &:hover {
             background-color: transparent;
         }
@@ -104,8 +98,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: var(--input-font-size);
-        padding: 0 var(--input-font-size);
     }
     
     .prepend {
@@ -121,7 +113,7 @@
 
 .input, input {
     &.pill-input {
-        --input-border-radius: 1rem;
+        --input-border-radius: calc(var(--input-height) * 0.44);
         
         .button {
             border-radius: 50%;
@@ -196,16 +188,16 @@
 .input {
     .badge {
         position: absolute;
-        font-size: 9px;
-        font-weight: 100;
+        font-size: calc(var(--input-font-size) * 0.64);
         text-transform: uppercase;
         background-color: #0a87c1;
         color: #ffffff;
-        border-radius: 6px;
+        border-radius: calc(var(--input-font-size) * 0.16);
         padding: 2px 4px;
         top: 50%;
         right: 10px;
         transform: translateY(-50%);
+        font-weight: 500;
     }
     &:hover .badge {
         display: none;
@@ -224,8 +216,6 @@
 .input {
     .prepend-options, .append-options {
         [aria-hidden=true] {
-            //display: none;
-            //order: 1;
             position: absolute;
             right: 2px;
             top: 50%;

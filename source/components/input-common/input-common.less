@@ -2,6 +2,8 @@
 @import (once) "../../include/mixins";
 
 :root {
+    --input-height: var(--control-height-normal);
+    --input-font-size: 16px;
     --input-background: #ffffff;
     --input-background-disabled: #f7f8fa;
     --input-color-disabled: #c9ccd6;
@@ -59,12 +61,13 @@ select,
     border-radius: var(--input-border-radius);
     color: var(--input-color);
     width: 100%;
-    font-size: 16px;
-    height: 36px;
-    line-height: 36px;
+    font-size: var(--input-font-size);
+    height: var(--input-height);
+    line-height: var(--input-height);
     background: var(--input-background) none;
     background-clip: padding-box;
     min-width: 0;
+    padding: 0 8px;
 
     input {
         appearance: none;
@@ -72,6 +75,7 @@ select,
         outline: none;
         width: 100%;
         min-width: 0;
+        height: calc(var(--input-height) - 2px);
     }
 
     input {
@@ -93,8 +97,16 @@ select,
         outline: none;
     }
 
-    &:hover {
-        border-color: var(--input-border-color-hover);
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--input-border-color-hover);
+        }   
+    }
+    
+    @media (hover: none) {
+        &:active {
+            border-color: var(--input-border-color-hover);
+        }   
     }
 
     .input-clear-button, .input-reveal-button {
@@ -160,31 +172,29 @@ select,
             box-shadow: 0 0 0 3px var(--input-valid-color)!important;
         }
     }
+    
+    &.small {
+        --input-height: var(--control-height-small);
+        --input-font-size: 12px;
+    }
+    &.medium {
+        --input-height: var(--control-height-medium);
+        --input-font-size: 14px;       
+    }
+    &.large {
+        --input-height: var(--control-height-large);
+        --input-font-size: 20px;
+    }
 }
 
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=date],
-input[type=datetime-local],
-input[type=search],
-input[type=tel],
-input[type=time],
-input[type=url],
-input[type=week],
-select,
-.metro-input {
-    padding: 0 8px;
-    font-size: var(--input-font-size, 14px);
-}
 
 textarea {
     padding: 8px;
-    font-size: var(--input-font-size, 14px);
+    font-size: var(--input-font-size);
 }
+
 textarea.metro-input {
     height: auto;
-    padding: 0 .75rem;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -193,13 +203,11 @@ input[type=button], input[type=submit], input[type=reset] {
 
 .file, .input, .select, .textarea, .tag-input, .spinner, .color-picker {
     .prepend, .append {
-        padding: 0 .75rem;
-        line-height: 1.25rem;
+        padding: 0 calc(var(--input-height) / 2);
         white-space: nowrap;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 14px;
     }
     .prepend {
         background-color: var(--input-prepend-background);
@@ -308,7 +316,10 @@ input.rtl, input[dir=rtl] {
     text-align: right;
 }
 
-input[placeholder]          {text-overflow:ellipsis;}
-input::-moz-placeholder     {text-overflow:ellipsis;}
-input:-moz-placeholder      {text-overflow:ellipsis;}
-input:-ms-input-placeholder {text-overflow:ellipsis;}
+input::placeholder {
+    text-overflow:ellipsis;
+    font-size: var(--input-font-size);
+}
+//input::-moz-placeholder     {text-overflow:ellipsis;}
+//input:-moz-placeholder      {text-overflow:ellipsis;}
+
