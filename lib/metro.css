@@ -55221,6 +55221,8 @@ input::placeholder {
   --select-tag-button-color: #dbdfe7;
 }
 .select {
+  --select-height: var(--control-height);
+  --select-font-size: 16px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -55237,12 +55239,26 @@ input::placeholder {
   border: none !important;
   box-shadow: none !important;
 }
+.select.small {
+  --select-height: var(--control-height-small);
+  --select-font-size: 12px;
+}
+.select.medium {
+  --select-height: var(--control-height-medium);
+  --select-font-size: 14px;
+}
+.select.large {
+  --select-height: var(--control-height-large);
+  --select-font-size: 20px;
+}
 .select .dropdown-caret {
+  --caret-size: calc(var(--select-font-size) * 1.5);
   position: absolute;
-  top: 8px;
+  top: calc((var(--select-height, 36px) - var(--caret-size)) / 2);
   right: 8px;
-  width: 16px;
-  height: 16px;
+  height: var(--caret-size);
+  width: var(--caret-size);
+  aspect-ratio: 1 / 1;
   transform: rotate(90deg);
   transition: transform 0.2s ease-in-out;
 }
@@ -55257,7 +55273,6 @@ input::placeholder {
   display: block;
   background-color: var(--select-options-background);
   color: var(--select-options-color);
-  font-size: 0.875rem;
   border-radius: var(--select-border-radius);
   padding: 4px 0;
 }
@@ -55273,7 +55288,7 @@ input::placeholder {
   line-height: 32px;
   text-overflow: ellipsis;
   padding: 0 10px;
-  font-size: 14px;
+  font-size: var(--select-font-size);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -55285,7 +55300,7 @@ input::placeholder {
   top: 8px;
   width: 16px;
   height: 16px;
-  font-size: 16px;
+  font-size: var(--select-font-size);
   display: flex;
   object-fit: cover;
 }
@@ -55329,8 +55344,8 @@ input::placeholder {
 .select .button {
   background-color: var(--select-button-background);
   color: var(--select-button-color);
-  height: 34px;
-  min-width: 34px;
+  height: calc(var(--select-heigt) - 2px);
+  min-width: calc(var(--select-heigt) - 2px);
 }
 .select .button:hover {
   background-color: var(--select-button-background-hover);
@@ -55338,7 +55353,6 @@ input::placeholder {
   text-shadow: rgba(0, 0, 0, 0.25) 0.1em 0.1em 0.2em;
 }
 .select .input-clear-button {
-  font-family: "Segoe UI Symbol", serif;
   background-color: transparent;
 }
 .select .input-clear-button:hover {
@@ -55350,7 +55364,8 @@ input::placeholder {
   align-items: center;
   cursor: pointer;
   width: calc(100% - 0.1rem);
-  height: 34px;
+  height: calc(var(--select-height, 36px) - 2px);
+  font-size: var(--select-font-size);
   padding-left: 10px;
   overflow: hidden;
   white-space: nowrap;
@@ -55358,21 +55373,21 @@ input::placeholder {
 }
 .select .select-input .icon {
   margin: 0 4px;
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
+  width: var(--select-font-size);
+  height: var(--select-font-size);
+  font-size: var(--select-font-size);
   display: flex;
   object-fit: cover;
 }
 .select .select-input .icon * {
   object-fit: cover;
-  font-size: 16px;
+  font-size: inherit;
 }
 .select .select-input:focus {
   box-shadow: none;
 }
 .select select[multiple] ~ .select-input {
-  padding-left: 4px;
+  padding-left: 0;
 }
 .select:hover input {
   border-color: transparent;
@@ -55428,7 +55443,7 @@ input::placeholder {
 .select.multiple {
   flex-wrap: wrap;
   height: auto;
-  min-height: 36px;
+  min-height: var(--select-height, 36px);
 }
 .select.multiple > .button-group {
   position: absolute;
@@ -55437,8 +55452,7 @@ input::placeholder {
 }
 .select.multiple .select-input {
   height: auto;
-  min-height: 36px;
-  margin-right: 34px;
+  min-height: var(--select-height, 36px);
 }
 .select.multiple .button-group:not(.d-none) ~ .select-input {
   margin-right: 68px;
@@ -55490,13 +55504,23 @@ input::placeholder {
   color: var(--select-item-group-title-color);
 }
 .select .tag {
+  --tag-height: calc(var(--select-height, 36px) - 4px);
   background-color: var(--select-tag-background);
   color: var(--select-tag-color);
   border: 1px solid var(--border-color);
+  height: var(--tag-height);
 }
-.select .tag .remover {
-  background-color: var(--select-tag-button-background);
-  color: var(--select-tag-button-color);
+.select .tag .title {
+  height: 100%;
+  font-size: var(--select-font-size);
+}
+.select .tag .action {
+  height: calc(var(--tag-height) - 2px);
+  width: calc(var(--tag-height) - 2px);
+  font-size: calc(var(--select-font-size) * 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .select.no-icons .option-list a {
   padding: 0 1rem;
@@ -55506,6 +55530,19 @@ input::placeholder {
 }
 .select .unselect-option {
   margin-left: 6px;
+}
+.select.pill-input {
+  --select-border-radius: calc(var(--select-height, 36px) * 0.44);
+}
+.select.pill-input .button {
+  border-radius: 50%;
+}
+.select.pill-input .tag {
+  border-radius: var(--select-border-radius);
+}
+.select.pill-input .tag .action {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 
 /* source/components/input/input.less */
