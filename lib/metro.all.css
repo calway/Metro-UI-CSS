@@ -60045,7 +60045,7 @@ aside::after {
 }
 .file .button {
   border: none;
-  height: 30px;
+  height: calc(100% - 4px);
   margin: 2px 2px 2px auto;
   background: var(--file-button-background);
   color: var(--file-button-color);
@@ -60056,7 +60056,6 @@ aside::after {
 }
 .file .button .icon {
   font-size: 20px;
-  font-family: "Segoe UI Symbol", serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60066,7 +60065,7 @@ aside::after {
   background: var(--file-button-background-hover);
 }
 .file .caption {
-  line-height: 35px;
+  height: calc(100% - 4px);
   display: block;
   padding: 0 0.5rem;
   width: 100%;
@@ -60094,6 +60093,12 @@ aside::after {
 }
 .file .button {
   order: 3;
+}
+.file.pill-input {
+  --input-border-radius: calc(var(--input-height) * 0.44);
+}
+.file.pill-input .button {
+  border-radius: var(--input-border-radius);
 }
 .drop-zone {
   display: flex;

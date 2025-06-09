@@ -57,6 +57,9 @@
                         element[0].className,
                 )
                 .addClass(o.clsComponent);
+
+            container.attr("id", Hooks.useId(container[0]));
+
             const caption = $("<span>").addClass("caption").addClass(o.clsCaption);
             const files = $("<span>").addClass("files").addClass(o.clsCaption);
             let icon;
@@ -100,23 +103,11 @@
 
             element[0].className = "";
 
-            if (o.label) {
-                const label = $("<label>")
-                    .addClass("label-for-input")
-                    .addClass(o.clsLabel)
-                    .html(o.label)
-                    .insertBefore(container);
-                if (element.attr("id")) {
-                    label.attr("for", element.attr("id"));
-                } else {
-                    const id = Hooks.useId(element[0]);
-                    label.attr("for", id);
-                    element.attr("id", id);
-                }
-                if (element.attr("dir") === "rtl") {
-                    label.addClass("rtl");
-                }
-            }
+            this._addLabel(o.label, container, {
+                className: o.clsLabel,
+                id: container.attr("id"),
+                dir: element.attr("dir"),
+            });
 
             if (element.is(":disabled")) {
                 this.disable();

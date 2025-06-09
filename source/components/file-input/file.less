@@ -42,7 +42,7 @@
 
     .button {
         border: none;
-        height: 30px;
+        height: calc(100% - 4px);
         margin: 2px 2px 2px auto;
         background: var(--file-button-background);
         color: var(--file-button-color);
@@ -54,7 +54,7 @@
         
         .icon {
             font-size: 20px;
-            font-family: "Segoe UI Symbol", serif;
+            //font-family: "Segoe UI Symbol", serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -67,7 +67,7 @@
     }
 
     .caption {
-        line-height: 35px;
+        height: calc(100% - 4px);
         display: block;
         padding: 0 .5rem;
         width: 100%;
@@ -91,6 +91,15 @@
     .append {order: 4}
     .caption {order: 2;}
     .button { order: 3; }
+
+
+    &.pill-input {
+        --input-border-radius: calc(var(--input-height) * 0.44);
+
+        .button {
+            border-radius: var(--input-border-radius);
+        }
+    }
 }
 
 .drop-zone {
