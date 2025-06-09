@@ -48449,8 +48449,8 @@ input[type=submit].cycle,
 input[type=reset].cycle,
 .button.cycle,
 .flat-button.cycle {
-  width: var(--button-size);
-  height: var(--button-size);
+  width: var(--control-height);
+  height: var(--control-height);
   padding: 0 !important;
   flex-shrink: 0 !important;
   flex-grow: 0 !important;
