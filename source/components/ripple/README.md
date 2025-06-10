@@ -2,6 +2,11 @@
 
 The Ripple component adds a material design-inspired ripple effect to elements when they are clicked. This provides visual feedback to user interactions, enhancing the user experience.
 
+## Dependencies
+
+- Metro UI Core
+- Farbe (for color manipulation)
+
 ## Usage
 
 ### Basic Usage
@@ -43,32 +48,7 @@ The Ripple component adds a material design-inspired ripple effect to elements w
 </div>
 ```
 
-## Component Parameters
-
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| rippleDeferred | 0 | Delay before the ripple effect starts (in milliseconds) |
-| rippleColor | "#fff" | Color of the ripple effect |
-| rippleAlpha | 0.4 | Opacity of the ripple effect (0-1) |
-| rippleTarget | "default" | Selector for child elements that should receive the ripple effect. If "default", the effect applies to the element itself |
-| onRippleCreate | Metro.noop | Callback function triggered when the ripple is created |
-
-## API Methods
-
-### Metro.rippleSetup(options)
-
-Configure global default options for all ripple components.
-
-```javascript
-Metro.rippleSetup({
-    rippleColor: "#0078d7",
-    rippleAlpha: 0.5
-});
-```
-
-### Metro.ripple(target, color, alpha, event)
-
-Manually trigger a ripple effect on an element.
+### Programmatic Usage
 
 ```javascript
 // Trigger ripple on an element with default settings
@@ -83,19 +63,73 @@ element.addEventListener("mousedown", function(e) {
 });
 ```
 
+## Plugin Parameters
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `rippleDeferred` | Number | 0 | Delay before the ripple effect starts (in milliseconds) |
+| `rippleColor` | String | "#fff" | Color of the ripple effect |
+| `rippleAlpha` | Number | 0.4 | Opacity of the ripple effect (0-1) |
+| `rippleTarget` | String | "default" | Selector for child elements that should receive the ripple effect. If "default", the effect applies to the element itself |
+| `onRippleCreate` | Function | Metro.noop | Callback function triggered when the ripple is created |
+
+## API Methods
+
++ `Metro.rippleSetup(options)` - Configure global default options for all ripple components.
++ `Metro.ripple(target, color, alpha, event)` - Manually trigger a ripple effect on an element.
+
+### Example of Method Usage
+
+```javascript
+// Configure global defaults
+Metro.rippleSetup({
+    rippleColor: "#0078d7",
+    rippleAlpha: 0.5
+});
+
+// Get the ripple component instance
+const ripple = Metro.getPlugin("#myElement", "ripple");
+
+// Manually trigger ripple effect
+Metro.ripple("#myElement");
+```
+
+## Events
+
+| Event | Description |
+| ----- | ----------- |
+| `onRippleCreate` | Triggered when the ripple effect is created |
+
+## Styling with CSS Variables
+
+The ripple component doesn't use CSS variables directly, but you can customize its appearance through the plugin parameters.
+
+## Available CSS Classes
+
+### Base Classes
+- `.ripple` - The base ripple element that creates the circular effect
+- `.rippleEffect` - Applied to the ripple when the animation is active
+
+### Animation
+The component uses a keyframe animation called `rippleDrop` that scales the ripple and fades it out over 0.5 seconds.
+
+```css
+@keyframes rippleDrop {
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+```
+
 ## HTML Attributes
 
 | Attribute | Description |
 | --------- | ----------- |
-| data-ripple-color | Sets the color of the ripple effect |
-| data-ripple-alpha | Sets the opacity of the ripple effect (0-1) |
-
-## CSS Styling
-
-The ripple effect uses simple CSS animations to create the expanding circle effect. While there are no specific CSS variables for this component, you can customize the appearance by modifying the following classes:
-
-- `.ripple` - The base ripple element
-- `.rippleEffect` - Applied to the ripple when the animation is active
+| `data-role="ripple"` | Initializes the ripple component on an element |
+| `data-ripple-color` | Sets the color of the ripple effect |
+| `data-ripple-alpha` | Sets the opacity of the ripple effect (0-1) |
+| `data-ripple-target` | Selector for child elements that should receive the ripple effect |
 
 ## Accessibility
 

@@ -2,34 +2,13 @@
 
 The Swipe Component adds touch and mouse swipe gesture detection to elements. It allows you to detect swipe gestures in four directions: left, right, up, and down.
 
-## Plugin Parameters
+## Dependencies
 
-The Swipe Component accepts the following parameter:
+This component has no additional dependencies beyond the core Metro UI library.
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| swipeThreshold | Number | 32 | The minimum distance (in pixels) required for a swipe to be detected |
+## Usage
 
-## Events
-
-The Swipe Component provides the following events:
-
-| Event | Description |
-|-------|-------------|
-| onSwipe | Triggered for any swipe direction with direction information |
-| onSwipeRight | Triggered specifically for right swipes |
-| onSwipeLeft | Triggered specifically for left swipes |
-| onSwipeUp | Triggered specifically for upward swipes |
-| onSwipeDown | Triggered specifically for downward swipes |
-| onSwipeCreate | Triggered when the swipe component is created |
-
-## CSS Styling
-
-This component does not have specific CSS variables for styling as it's primarily a behavior component that adds gesture detection functionality.
-
-## Example Usage
-
-### HTML
+### Basic Usage
 
 ```html
 <div id="swipeElement" data-role="swipe">
@@ -39,7 +18,23 @@ This component does not have specific CSS variables for styling as it's primaril
 </div>
 ```
 
-### JavaScript
+### With Event Handler
+
+```html
+<div data-role="swipe" data-on-swipe="mySwipeHandler">
+    <div class="p-4">
+        Swipe me in any direction
+    </div>
+</div>
+
+<script>
+    function mySwipeHandler(start, swipe, direction) {
+        console.log('Swiped in direction:', direction);
+    }
+</script>
+```
+
+### JavaScript Initialization
 
 ```javascript
 // Initialize with JavaScript
@@ -63,11 +58,39 @@ Metro.makePlugin('#swipeElement', 'swipe', {
 });
 ```
 
-## Event Data
+## Plugin Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `swipeThreshold` | Number | 32 | The minimum distance (in pixels) required for a swipe to be detected |
+
+## API Methods
+
++ `destroy()` - Removes the element from the DOM.
+
+#### Example of Method Usage
+
+```javascript
+const swipeComponent = Metro.getPlugin('#swipeElement', 'swipe');
+swipeComponent.destroy();
+```
+
+## Events
+
+| Event | Description |
+|-------|-------------|
+| `onSwipe` | Triggered for any swipe direction with direction information |
+| `onSwipeRight` | Triggered specifically for right swipes |
+| `onSwipeLeft` | Triggered specifically for left swipes |
+| `onSwipeUp` | Triggered specifically for upward swipes |
+| `onSwipeDown` | Triggered specifically for downward swipes |
+| `onSwipeCreate` | Triggered when the swipe component is created |
+
+### Event Data
 
 The event callbacks receive data with the following properties:
 
-### For onSwipe:
+#### For onSwipe:
 
 ```javascript
 {
@@ -77,7 +100,7 @@ The event callbacks receive data with the following properties:
 }
 ```
 
-### For direction-specific events (onSwipeLeft, onSwipeRight, onSwipeUp, onSwipeDown):
+#### For direction-specific events (onSwipeLeft, onSwipeRight, onSwipeUp, onSwipeDown):
 
 ```javascript
 {
@@ -85,6 +108,14 @@ The event callbacks receive data with the following properties:
     swipe: {x: Number, y: Number}  // Swipe distance in x and y directions
 }
 ```
+
+## Styling with CSS Variables
+
+This component does not have specific CSS variables for styling as it's primarily a behavior component that adds gesture detection functionality.
+
+## Available CSS Classes
+
+This component does not add any specific CSS classes beyond setting `user-select: none` on the element to prevent text selection during swipe gestures.
 
 ## Notes
 

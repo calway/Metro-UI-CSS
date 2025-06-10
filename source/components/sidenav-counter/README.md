@@ -2,9 +2,15 @@
 
 The Sidenav Counter component provides a compact, icon-based navigation menu with counters that can expand to show text labels. It's ideal for applications that need to save space while still providing clear navigation options.
 
+## Dependencies
+
+- Metro UI CSS
+- Metro UI JavaScript
+- Metro UI Icons
+
 ## Usage
 
-### Basic Sidenav Counter
+### Basic Usage
 
 ```html
 <!-- Basic sidenav counter -->
@@ -58,24 +64,23 @@ The Sidenav Counter component provides a compact, icon-based navigation menu wit
 </ul>
 ```
 
-## Component Parameters
+## Plugin Parameters
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| compacted | false | Whether the sidenav starts in compacted mode |
-| toggle | null | Selector for the element that toggles the sidenav |
-| expandPoint | "fs" | Media breakpoint at which the sidenav automatically expands (e.g., "fs", "sm", "md", "lg", "xl") |
-| onMenuItemClick | Metro.noop | Callback function when a menu item is clicked |
-| onCollapse | Metro.noop | Callback function when the sidenav collapses |
-| onExpand | Metro.noop | Callback function when the sidenav expands |
-| onSidenavCreate | Metro.noop | Callback function when the sidenav is created |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `compacted` | boolean | false | Whether the sidenav starts in compacted mode |
+| `toggle` | string | null | Selector for the element that toggles the sidenav |
+| `expandPoint` | string | "fs" | Media breakpoint at which the sidenav automatically expands (e.g., "fs", "sm", "md", "lg", "xl") |
+| `onMenuItemClick` | function | Metro.noop | Callback function when a menu item is clicked |
+| `onCollapse` | function | Metro.noop | Callback function when the sidenav collapses |
+| `onExpand` | function | Metro.noop | Callback function when the sidenav expands |
+| `onSidenavCreate` | function | Metro.noop | Callback function when the sidenav is created |
 
 ## API Methods
 
-### Metro.sidenavCounterSetup(options)
++ `Metro.sidenavCounterSetup(options)` - Configure global default options for all sidenav-counter components.
 
-Configure global default options for all sidenav-counter components.
-
+#### Example of Method Usage
 ```javascript
 Metro.sidenavCounterSetup({
     expandPoint: "md",
@@ -83,47 +88,35 @@ Metro.sidenavCounterSetup({
 });
 ```
 
-## HTML Structure
++ `destroy()` - Removes the component from the DOM.
 
-```html
-<ul data-role="sidenav-counter">
-    <li class="active">
-        <a href="#">
-            <span class="icon mif-home"></span>
-            <span class="title">Home</span>
-            <span class="counter">3</span>
-        </a>
-    </li>
-    <!-- More menu items -->
-</ul>
+#### Example of Method Usage
+```javascript
+const sidenav = Metro.getPlugin("#mySidenav", "sidenav-counter");
+sidenav.destroy();
 ```
 
-## States
+## Events
 
-The sidenav-counter component has two main states:
-
-1. **Collapsed** (default on mobile): Only icons and counters are visible, width is 52px
-2. **Expanded**: Icons, titles, and counters are visible, width is 220px
-
-The state can be toggled by:
-- Clicking on a toggle element specified by the `toggle` parameter
-- Automatically based on screen size using the `expandPoint` parameter
-- User preference is remembered between sessions using local storage
+| Event | Description |
+| ----- | ----------- |
+| `onMenuItemClick` | Triggered when a menu item is clicked |
+| `onCollapse` | Triggered when the sidenav collapses |
+| `onExpand` | Triggered when the sidenav expands |
+| `onSidenavCreate` | Triggered when the sidenav is created |
 
 ## Styling with CSS Variables
 
-The Sidenav Counter component can be styled using the following CSS variables:
-
-| Variable | Light Mode | Dark Mode | Description |
-| -------- | ---------- | --------- | ----------- |
-| --sidenav-counter-background | #f6f6f6 | #2b2d30 | Background color of the sidenav |
-| --sidenav-counter-color | #191919 | #dfe1e5 | Text color of the sidenav |
-| --sidenav-counter-icon-color | #191919 | #dfe1e5 | Color of the icons |
-| --sidenav-counter-counter-color | #191919 | #dfe1e5 | Color of the counters |
-| --sidenav-counter-background-hover | #cecece | #43454a | Background color on hover |
-| --sidenav-counter-color-hover | #0a0a0a | #ffffff | Text color on hover |
-| --sidenav-counter-background-active | #68a3ff | #468cff | Background color of active items |
-| --sidenav-counter-color-active | #ffffff | #ffffff | Text color of active items |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--sidenav-counter-background` | #f6f6f6 | #2b2d30 | Background color of the sidenav |
+| `--sidenav-counter-color` | #191919 | #dfe1e5 | Text color of the sidenav |
+| `--sidenav-counter-icon-color` | #191919 | #dfe1e5 | Color of the icons |
+| `--sidenav-counter-counter-color` | #191919 | #dfe1e5 | Color of the counters |
+| `--sidenav-counter-background-hover` | #cecece | #43454a | Background color on hover |
+| `--sidenav-counter-color-hover` | #0a0a0a | #ffffff | Text color on hover |
+| `--sidenav-counter-background-active` | #68a3ff | #468cff | Background color of active items |
+| `--sidenav-counter-color-active` | #ffffff | #ffffff | Text color of active items |
 
 ### Example of Custom Styling
 
@@ -140,9 +133,29 @@ The Sidenav Counter component can be styled using the following CSS variables:
 }
 ```
 
-## Dark Mode Support
+## Available CSS Classes
 
-The Sidenav Counter component automatically adjusts its colors when the `.dark-side` class is applied to a parent element, providing appropriate styling for dark mode interfaces.
+### Base Classes
+- `.sidenav-counter` - The main component class (automatically added)
+- `.expanded` - Applied when the sidenav is expanded
+- `.active` - Applied to the active menu item
+
+### Elements
+- `.icon` - Applied to the icon element
+- `.title` - Applied to the title element
+- `.counter` - Applied to the counter element
+
+## States
+
+The sidenav-counter component has two main states:
+
+1. **Collapsed** (default on mobile): Only icons and counters are visible, width is 52px
+2. **Expanded**: Icons, titles, and counters are visible, width is 220px
+
+The state can be toggled by:
+- Clicking on a toggle element specified by the `toggle` parameter
+- Automatically based on screen size using the `expandPoint` parameter
+- User preference is remembered between sessions using local storage
 
 ## Accessibility
 

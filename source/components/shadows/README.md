@@ -2,6 +2,10 @@
 
 The Shadows component provides a comprehensive set of CSS classes for adding shadow effects to elements and text. It includes various shadow styles, sizes, and color options that can be easily applied to enhance the visual hierarchy and depth of your UI.
 
+## Dependencies
+
+- Metro UI Core
+
 ## Usage
 
 ### Box Shadows

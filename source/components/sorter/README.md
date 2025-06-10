@@ -1,10 +1,14 @@
-# Sorter Component
+# Sorter
 
 The Sorter component provides functionality to sort HTML elements based on their content. It can sort elements in ascending or descending order and supports various data formats including text, numbers, dates, and more.
 
+## Dependencies
+
+This component has no external dependencies beyond the core Metro UI library.
+
 ## Usage
 
-### Basic Sorting
+### Basic Usage
 
 ```html
 <!-- Sort list items -->
@@ -14,7 +18,11 @@ The Sorter component provides functionality to sort HTML elements based on their
     <li>Orange</li>
     <li>Grape</li>
 </ul>
+```
 
+### Sorting Table Rows
+
+```html
 <!-- Sort table rows -->
 <table>
     <thead>
@@ -96,30 +104,29 @@ The Sorter component provides functionality to sort HTML elements based on their
 </ul>
 ```
 
-## Component Parameters
+## Plugin Parameters
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| sorterDeferred | 0 | Delay before initialization (in milliseconds) |
-| thousandSeparator | "," | Character used as thousand separator for number parsing |
-| decimalSeparator | "," | Character used as decimal separator for number parsing |
-| sortTarget | null | Selector for elements to be sorted. If null, uses the first child element's tag name |
-| sortSource | null | Selector for the element within each item that contains the content to sort by |
-| sortDir | "asc" | Initial sort direction ("asc" or "desc") |
-| sortStart | true | Whether to sort items on initialization |
-| saveInitial | true | Whether to save the initial order for reset functionality |
-| onSortStart | Metro.noop | Callback function when sorting starts |
-| onSortStop | Metro.noop | Callback function when sorting ends |
-| onSortItemSwitch | Metro.noop | Callback function when items are switched during sorting |
-| onSorterCreate | Metro.noop | Callback function when the sorter is created |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `sorterDeferred` | number | 0 | Delay before initialization (in milliseconds) |
+| `thousandSeparator` | string | "," | Character used as thousand separator for number parsing |
+| `decimalSeparator` | string | "," | Character used as decimal separator for number parsing |
+| `sortTarget` | string | null | Selector for elements to be sorted. If null, uses the first child element's tag name |
+| `sortSource` | string | null | Selector for the element within each item that contains the content to sort by |
+| `sortDir` | string | "asc" | Initial sort direction ("asc" or "desc") |
+| `sortStart` | boolean | true | Whether to sort items on initialization |
+| `saveInitial` | boolean | true | Whether to save the initial order for reset functionality |
+| `onSortStart` | function | Metro.noop | Callback function when sorting starts |
+| `onSortStop` | function | Metro.noop | Callback function when sorting ends |
+| `onSortItemSwitch` | function | Metro.noop | Callback function when items are switched during sorting |
+| `onSorterCreate` | function | Metro.noop | Callback function when the sorter is created |
 
 ## API Methods
 
-### Metro.sorterSetup(options)
-
-Configure global default options for all sorter components.
+### Global Configuration
 
 ```javascript
+// Configure global default options for all sorter components
 Metro.sorterSetup({
     sortDir: "desc",
     thousandSeparator: ".",
@@ -129,11 +136,14 @@ Metro.sorterSetup({
 
 ### Instance Methods
 
-These methods can be called on a sorter instance:
++ `sort(dir)` - Sorts the elements in the specified direction ("asc" or "desc").
++ `reset()` - Resets the elements to their initial order.
+
+#### Example of Method Usage
 
 ```javascript
 // Get sorter instance
-var sorter = Metro.getPlugin('#mySorter', 'sorter');
+const sorter = Metro.getPlugin('#mySorter', 'sorter');
 
 // Sort in ascending order
 sorter.sort("asc");
@@ -147,21 +157,32 @@ sorter.reset();
 
 ### Static Methods
 
-These methods can be called directly on the Metro.sorter object:
+Metro.sorter namespace provides several utility methods:
+
++ `create(el, op)` - Creates a new sorter on the specified element with the given options.
++ `isSorter(el)` - Checks if the specified element is a sorter.
++ `sort(el, dir)` - Sorts the specified sorter element in the given direction.
++ `reset(el)` - Resets the specified sorter element to its initial order.
 
 ```javascript
 // Sort in ascending order
 Metro.sorter.sort('#mySorter', 'asc');
 
-// Sort in descending order
-Metro.sorter.sort('#mySorter', 'desc');
-
 // Reset to initial order
 Metro.sorter.reset('#mySorter');
 
 // Check if element is a sorter
-var isSorter = Metro.sorter.isSorter('#mySorter');
+const isSorter = Metro.sorter.isSorter('#mySorter');
 ```
+
+## Events
+
+| Event | Description |
+| ----- | ----------- |
+| `onSortStart` | Triggered when sorting begins |
+| `onSortStop` | Triggered when sorting is complete |
+| `onSortItemSwitch` | Triggered when two items are switched during sorting |
+| `onSorterCreate` | Triggered when the sorter component is created |
 
 ## Supported Data Formats
 
@@ -169,21 +190,23 @@ The sorter component can handle various data formats by specifying the `data-for
 
 | Format | Description | Example |
 | ------ | ----------- | ------- |
-| date | Date values | `<li data-format="date">2023-01-15</li>` |
-| number | General numbers | `<li data-format="number">42</li>` |
-| int | Integer numbers | `<li data-format="int">42</li>` |
-| float | Floating point numbers | `<li data-format="float">42.5</li>` |
-| money | Currency values | `<li data-format="money">$42.50</li>` |
-| card | Credit card numbers | `<li data-format="card">4111 1111 1111 1111</li>` |
-| phone | Phone numbers | `<li data-format="phone">(123) 456-7890</li>` |
+| `date` | Date values | `<li data-format="date">2023-01-15</li>` |
+| `number` | General numbers | `<li data-format="number">42</li>` |
+| `int` | Integer numbers | `<li data-format="int">42</li>` |
+| `float` | Floating point numbers | `<li data-format="float">42.5</li>` |
+| `money` | Currency values | `<li data-format="money">$42.50</li>` |
+| `card` | Credit card numbers | `<li data-format="card">4111 1111 1111 1111</li>` |
+| `phone` | Phone numbers | `<li data-format="phone">(123) 456-7890</li>` |
 
 ## HTML Attributes
 
 | Attribute | Description |
 | --------- | ----------- |
-| data-sort-dir | Sets the sort direction ("asc" or "desc") |
-| data-sort-content | Sets the content to sort by |
-| data-format | Specifies the data format for proper sorting |
+| `data-role="sorter"` | Identifies the element as a sorter component |
+| `data-sort-dir` | Sets the sort direction ("asc" or "desc") |
+| `data-sort-target` | Specifies the elements to be sorted |
+| `data-sort-source` | Specifies the element containing the content to sort by |
+| `data-format` | Specifies the data format for proper sorting |
 
 ## Best Practices
 

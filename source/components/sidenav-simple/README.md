@@ -1,8 +1,14 @@
-# Sidenav Simple Component
+# Sidenav Simple
 
-The Sidenav Simple component provides a compact, icon-based side navigation menu that can expand to show titles.
+A compact, icon-based side navigation menu that can expand to show titles. This component provides a clean, space-efficient navigation solution that can be used in various layouts.
+
+## Dependencies
+
+This component has no JavaScript dependencies as it's purely CSS-based.
 
 ## Usage
+
+### Basic Usage
 
 ```html
 <ul class="sidenav-simple">
@@ -27,76 +33,105 @@ The Sidenav Simple component provides a compact, icon-based side navigation menu
 </ul>
 ```
 
-## Features
-
-### Compact Design
-
-By default, the Sidenav Simple component is in a collapsed state with a width of 52px, showing only icons.
-
-### Icons
-
-Add icons to menu items:
-
-```html
-<a href="#">
-    <span class="icon mif-home"></span>
-    <span class="title">Home</span>
-</a>
-```
-
-### Active State
-
-Mark the current active menu item:
-
-```html
-<li class="active">
-    <a href="#">
-        <span class="icon mif-home"></span>
-        <span class="title">Home</span>
-    </a>
-</li>
-```
-
-### Expandable Navigation
-
-The sidenav can expand to show titles using responsive classes:
+### With Responsive Expansion
 
 ```html
 <ul class="sidenav-simple sidenav-simple-expand-md">
-    <!-- Menu items -->
+    <li>
+        <a href="#">
+            <span class="icon mif-home"></span>
+            <span class="title">Home</span>
+        </a>
+    </li>
+    <li class="active">
+        <a href="#">
+            <span class="icon mif-cog"></span>
+            <span class="title">Settings</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <span class="icon mif-user"></span>
+            <span class="title">Profile</span>
+        </a>
+    </li>
 </ul>
 ```
 
-Available expansion breakpoints:
-- `sidenav-simple-expand-sm`: Expands on small screens and larger
-- `sidenav-simple-expand-md`: Expands on medium screens and larger
-- `sidenav-simple-expand-lg`: Expands on large screens and larger
-- `sidenav-simple-expand-xl`: Expands on extra-large screens and larger
-- `sidenav-simple-expand-xxl`: Expands on extra-extra-large screens and larger
-
-When expanded, the navigation width increases to 220px and titles become visible.
-
-### RTL Support
-
-For right-to-left languages, add the `dir="rtl"` attribute:
+### With RTL Support
 
 ```html
 <ul class="sidenav-simple" dir="rtl">
-    <!-- Menu items -->
+    <li>
+        <a href="#">
+            <span class="icon mif-home"></span>
+            <span class="title">Home</span>
+        </a>
+    </li>
+    <li class="active">
+        <a href="#">
+            <span class="icon mif-cog"></span>
+            <span class="title">Settings</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <span class="icon mif-user"></span>
+            <span class="title">Profile</span>
+        </a>
+    </li>
 </ul>
 ```
 
-## Styling
+## Styling with CSS
 
-The Sidenav Simple component uses the following styling:
+### CSS Variables
 
-- Default width: 52px (collapsed)
-- Expanded width: 220px
-- Background color: Light
-- Hover state: Light hover background
-- Active state: Cyan background with white text
+This component doesn't use CSS variables directly, but it uses Metro UI's color variables from the LESS files.
 
-## Example
+### Available CSS Classes
+
+#### Base Classes
+- `.sidenav-simple` - The main container class for the side navigation
+
+#### Modifiers
+- `.sidenav-simple-expand-sm` - Expands the navigation on small screens and larger (≥576px)
+- `.sidenav-simple-expand-md` - Expands the navigation on medium screens and larger (≥768px)
+- `.sidenav-simple-expand-lg` - Expands the navigation on large screens and larger (≥992px)
+- `.sidenav-simple-expand-xl` - Expands the navigation on extra-large screens and larger (≥1200px)
+- `.sidenav-simple-expand-xxl` - Expands the navigation on extra-extra-large screens and larger (≥1452px)
+
+#### Element Classes
+- `.active` - Applied to the `<li>` element to indicate the current active menu item
+- `.icon` - Applied to the element containing the icon
+- `.title` - Applied to the element containing the menu item title
+
+## Component Structure
+
+The component has a simple structure:
+
+```
+ul.sidenav-simple
+  └── li
+       └── a
+            ├── span.icon
+            └── span.title
+```
+
+## Styling Details
+
+- **Default width**: 52px (collapsed)
+- **Expanded width**: 220px
+- **Item height**: 52px
+- **Background color**: Light theme background
+- **Hover state**: Light hover background
+- **Active state**: Cyan background with white text
+
+## RTL Support
+
+For right-to-left languages, add the `dir="rtl"` attribute to the `.sidenav-simple` element. This will adjust the positioning of icons and text accordingly.
+
+## Complete Example
 
 ```html
 <style>

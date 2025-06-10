@@ -51258,7 +51258,7 @@ button:has(.badge.corner),
 }
 .app-bar .app-bar-item,
 .app-bar .app-bar-item-static,
-.app-bar .app-bar-menu a {
+.app-bar .app-bar-menu > li > a {
   display: flex;
   align-items: center;
   font-size: 13px;
@@ -51275,7 +51275,7 @@ button:has(.badge.corner),
 @media (hover: hover) {
   .app-bar .app-bar-item:hover,
   .app-bar .app-bar-item-static:hover,
-  .app-bar .app-bar-menu a:hover {
+  .app-bar .app-bar-menu > li > a:hover {
     color: var(--appbar-item-color-hover);
     text-decoration: none;
     background-color: var(--appbar-item-background-hover);
@@ -51284,7 +51284,7 @@ button:has(.badge.corner),
 @media (hover: none) {
   .app-bar .app-bar-item:active,
   .app-bar .app-bar-item-static:active,
-  .app-bar .app-bar-menu a:active {
+  .app-bar .app-bar-menu > li > a:active {
     color: var(--appbar-item-color-hover);
     text-decoration: none;
     background-color: var(--appbar-item-background-hover);
@@ -51292,12 +51292,12 @@ button:has(.badge.corner),
 }
 .app-bar .app-bar-item:focus,
 .app-bar .app-bar-item-static:focus,
-.app-bar .app-bar-menu a:focus {
+.app-bar .app-bar-menu > li > a:focus {
   outline: none;
 }
 .app-bar .app-bar-item.disabled,
 .app-bar .app-bar-item-static.disabled,
-.app-bar .app-bar-menu a.disabled {
+.app-bar .app-bar-menu > li > a.disabled {
   color: var(--appbar-item-color-disabled);
 }
 @media (hover: hover) {
@@ -54399,16 +54399,13 @@ input::placeholder {
   position: fixed !important;
   z-index: 1030 !important;
 }
-.dropdown-toggle {
-  padding-right: 4px !important;
-}
-.dropdown-toggle svg {
+.dropdown-caret svg {
   fill: var(--drop-menu-toggle-color);
   transform: rotate(90deg);
   margin-left: auto;
   transition: transform 0.3s;
 }
-.dropdown-toggle.active-toggle svg {
+.dropdown-caret.active-toggle svg {
   transform: rotate(270deg);
 }
 .drop-left {
@@ -58532,10 +58529,19 @@ aside::after {
   flex-wrap: nowrap;
   line-height: 20px;
 }
-.d-menu a:hover {
-  color: var(--d-menu-item-color-hover);
-  text-decoration: none;
-  background-color: var(--d-menu-item-background-hover);
+@media (hover: hover) {
+  .d-menu a:hover {
+    color: var(--d-menu-item-color-hover);
+    text-decoration: none;
+    background-color: var(--d-menu-item-background-hover);
+  }
+}
+@media (hover: none) {
+  .d-menu a:active {
+    color: var(--d-menu-item-color-hover);
+    text-decoration: none;
+    background-color: var(--d-menu-item-background-hover);
+  }
 }
 .d-menu .caption {
   margin-right: 1rem;
@@ -58552,13 +58558,6 @@ aside::after {
   width: 16px;
   height: 16px;
   font-size: 16px;
-}
-.d-menu .dropdown-toggle::before {
-  transform: rotate(-135deg);
-  border-color: var(--d-menu-dropdown-toogle-color) !important;
-}
-.d-menu .dropdown-toggle.active-toggle::before {
-  transform: rotate(45deg);
 }
 .d-menu .divider {
   padding: 0;

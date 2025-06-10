@@ -1,8 +1,14 @@
-# Social Box Component
+# Social Box
 
 The Social Box component provides a card-like element for displaying social profiles or user information with a centered avatar that overlaps the header and content sections.
 
+## Dependencies
+
+This is a CSS-only component with no JavaScript dependencies.
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <div class="social-box">
@@ -41,7 +47,19 @@ The Social Box component provides a card-like element for displaying social prof
 </div>
 ```
 
-## Structure
+### Dark Mode
+
+The component automatically adapts to dark mode when the `.dark-side` class is applied to a parent element:
+
+```html
+<div class="dark-side">
+    <div class="social-box">
+        <!-- Social box content -->
+    </div>
+</div>
+```
+
+## Component Structure
 
 The Social Box component consists of the following parts:
 
@@ -97,34 +115,22 @@ The Social Box component can be customized using CSS variables:
 | `--social-box-avatar-background` | `#e6e6e6` | `#3b414e` | Background color of the avatar |
 | `--social-box-avatar-color` | `#191919` | `#fbfbfb` | Text color of the avatar |
 
-### Dark Mode
+### Example of Custom Styling
 
-The component automatically adapts to dark mode when the `.dark-side` class is applied to a parent element:
-
-```html
-<div class="dark-side">
-    <div class="social-box">
-        <!-- Social box content -->
-    </div>
-</div>
+```css
+.custom-social-box {
+    --social-box-border-radius: 10px;
+    --social-box-border-color: #3b5998;
+    --social-box-background: #f8f9fa;
+    --social-box-color: #333333;
+    --social-box-header-background: #3b5998;
+    --social-box-header-color: #ffffff;
+    --social-box-avatar-background: #ffffff;
+    --social-box-avatar-color: #3b5998;
+}
 ```
 
-## Example with Custom Styling
-
 ```html
-<style>
-    .custom-social-box {
-        --social-box-border-radius: 10px;
-        --social-box-border-color: #3b5998;
-        --social-box-background: #f8f9fa;
-        --social-box-color: #333333;
-        --social-box-header-background: #3b5998;
-        --social-box-header-color: #ffffff;
-        --social-box-avatar-background: #ffffff;
-        --social-box-avatar-color: #3b5998;
-    }
-</style>
-
 <div class="social-box custom-social-box">
     <div class="header">
         <div class="avatar">
@@ -169,3 +175,14 @@ The component automatically adapts to dark mode when the `.dark-side` class is a
 ```
 
 This example creates a social box with Facebook-themed styling for a social media manager's profile.
+
+## Available CSS Classes
+
+### Base Classes
+- `.social-box` - The main container class for the component
+- `.header` - Container for the header section
+- `.avatar` - Container for the user avatar (image or icon)
+- `.title` - Element for the main title text
+- `.subtitle` - Element for the secondary title text
+- `.content` - Container for the content section
+- `.skills` - Unordered list for social media stats or links

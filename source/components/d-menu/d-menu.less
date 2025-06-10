@@ -73,11 +73,21 @@
         flex-wrap: nowrap;
         line-height: 20px;
 
-        &:hover {
-            color: var(--d-menu-item-color-hover);
-            text-decoration: none;
-            background-color: var(--d-menu-item-background-hover);
+        @media (hover: hover) {
+            &:hover {
+                color: var(--d-menu-item-color-hover);
+                text-decoration: none;
+                background-color: var(--d-menu-item-background-hover);
+            }
         }
+        
+        @media (hover: none) {
+            &:active {
+                color: var(--d-menu-item-color-hover);
+                text-decoration: none;
+                background-color: var(--d-menu-item-background-hover);
+            }
+        }        
     }
 
     .caption {
@@ -97,19 +107,6 @@
         width: 16px;
         height: 16px;
         font-size: 16px;
-    }
-
-    .dropdown-toggle {
-        &::before {
-            transform: rotate(-135deg);
-            border-color: var(--d-menu-dropdown-toogle-color)!important;
-        }
-
-        &.active-toggle {
-            &::before {
-                transform: rotate(45deg);
-            }
-        }
     }
 
     .divider {

@@ -2,6 +2,10 @@
 
 The Splitter component divides a container into resizable panels, allowing users to adjust the size of each panel by dragging the divider (gutter) between them.
 
+## Dependencies
+
+This component has no external dependencies beyond the core Metro UI library.
+
 ## Usage
 
 ```html
@@ -24,7 +28,7 @@ The Splitter component divides a container into resizable panels, allowing users
 | minSizes | string/array | null | Minimum sizes of the panels (comma-separated string or array) |
 | children | string | "*" | Selector for the child elements to be split |
 | gutterClick | string | "expand" | Behavior when the gutter is clicked |
-| saveState | boolean | false | Whether to save the state of the splitter |
+| saveState | boolean | false | Whether to save the state of the splitter in browser storage (recently fixed to properly save and restore state) |
 | noResize | boolean | false | Whether to disable resizing |
 
 ## Events
@@ -37,7 +41,16 @@ The Splitter component divides a container into resizable panels, allowing users
 | onResizeWindow | Triggered when the window is resized |
 | onSplitterCreate | Triggered when the splitter is created |
 
-## Methods
+## API Methods
+
+### size(size)
+
+Sets the sizes of the split panels.
+
+```javascript
+// Set panel sizes to 30%, 40%, 30%
+Metro.getPlugin('#mySplitter', 'splitter').size([30, 40, 30]);
+```
 
 ### changeAttribute(attributeName)
 
@@ -47,13 +60,12 @@ Updates the splitter when specified attributes change.
 Metro.getPlugin('#mySplitter', 'splitter').changeAttribute('data-split-sizes');
 ```
 
-### setSize(sizes)
+### destroy()
 
-Sets the sizes of the split panels.
+Removes the splitter component and its event handlers.
 
 ```javascript
-// Set panel sizes to 30%, 40%, 30%
-Metro.getPlugin('#mySplitter', 'splitter').setSize([30, 40, 30]);
+Metro.getPlugin('#mySplitter', 'splitter').destroy();
 ```
 
 ## CSS Variables
@@ -71,6 +83,22 @@ The Splitter component can be styled using the following CSS variables:
 | --gutter-bg-position | calc(var(--gutter-bg-size) / 2) | calc(var(--gutter-bg-size) / 2) | Position of the background in the dotted gutter style |
 | --gutter-dot-color | var(--splitter-color) | var(--splitter-color) | Color of the dots in the dotted gutter style |
 | --gutter-dot-color-second | var(--splitter-gutter-color) | var(--splitter-gutter-color) | Secondary color of the dots in the dotted gutter style |
+
+## Available CSS Classes
+
+### Base Classes
+- `.splitter` - Main class for the splitter component
+- `.split-block` - Class for the split panels
+- `.gutter` - Class for the gutter element
+
+### Modifiers
+- `.vertical` - Class for vertical orientation (panels side by side)
+- `.horizontal` - Class for horizontal orientation (panels stacked)
+- `.active` - Class for active state (applied during resizing)
+- `.static-size` - Class for non-resizable splitter
+- `.gutter-style-ribbed` - Class for ribbed gutter style
+- `.gutter-style-dashed` - Class for dashed gutter style
+- `.gutter-style-dotted` - Class for dotted gutter style
 
 ## Styling with CSS
 
@@ -95,7 +123,7 @@ The Splitter component supports different gutter styles:
 - Dotted: Add `gutter-style-dotted` class
 
 ```html
-<div data-role="splitter" data-gutter-style="ribbed">
+<div data-role="splitter" class="gutter-style-ribbed">
   <div>Panel 1 Content</div>
   <div>Panel 2 Content</div>
 </div>
@@ -158,5 +186,26 @@ You can disable resizing by setting the `data-no-resize` attribute to `true`:
   <div>Left Panel (min 100px)</div>
   <div>Middle Panel (min 200px)</div>
   <div>Right Panel (min 100px)</div>
+</div>
+```
+
+### Splitter with State Saving
+
+```html
+<div id="mySplitter" data-role="splitter" data-save-state="true">
+  <div>Panel 1 Content</div>
+  <div>Panel 2 Content</div>
+</div>
+```
+
+### Nested Splitters
+
+```html
+<div data-role="splitter">
+  <div>Left Panel</div>
+  <div data-role="splitter" data-split="horizontal">
+    <div>Top Right Panel</div>
+    <div>Bottom Right Panel</div>
+  </div>
 </div>
 ```

@@ -1,8 +1,16 @@
-# Sidenav M3 Component
+# Sidenav M3
 
-The Sidenav M3 component provides a Metro 3 style side navigation menu for your application.
+## Description
+
+The Sidenav M3 component provides a Metro 3 style side navigation menu for your application. It's a CSS-only component that creates a vertical navigation menu with support for titles, icons, dropdown menus, and visual effects.
+
+## Dependencies
+
+- Metro UI CSS core styles
 
 ## Usage
+
+### Basic Usage
 
 ```html
 <ul class="sidenav-m3">
@@ -28,123 +36,177 @@ The Sidenav M3 component provides a Metro 3 style side navigation menu for your 
 </ul>
 ```
 
-## Features
-
-### Title
-
-Add a title to your navigation menu:
+### With Active Item
 
 ```html
-<li class="title">Navigation Title</li>
+<ul class="sidenav-m3">
+    <li class="title">Navigation</li>
+    <li class="active">
+        <a href="#">
+            <span class="icon mif-home"></span>
+            Home
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <span class="icon mif-cog"></span>
+            Settings
+        </a>
+    </li>
+</ul>
 ```
 
-### Icons
-
-Add icons to menu items:
+### With Dropdown Menu
 
 ```html
-<a href="#">
-    <span class="icon mif-home"></span>
-    Home
-</a>
+<ul class="sidenav-m3">
+    <li class="title">Navigation</li>
+    <li>
+        <a href="#" class="dropdown-toggle">
+            <span class="icon mif-cog"></span>
+            Settings
+        </a>
+        <ul class="d-menu" data-role="dropdown">
+            <li><a href="#">General</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Privacy</a></li>
+        </ul>
+    </li>
+</ul>
 ```
 
-### Dropdown Menus
-
-Add dropdown menus using the `.d-menu` class:
+### With Stick Effect and Background Color
 
 ```html
-<li>
-    <a href="#" class="dropdown-toggle">
-        <span class="icon mif-cog"></span>
-        Settings
-    </a>
-    <ul class="d-menu">
-        <li><a href="#">General</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">Privacy</a></li>
-    </ul>
-</li>
+<ul class="sidenav-m3">
+    <li class="title">Navigation</li>
+    <li class="stick-left bg-green">
+        <a href="#">
+            <span class="icon mif-home"></span>
+            Home
+        </a>
+    </li>
+    <li class="stick-right bg-red">
+        <a href="#">
+            <span class="icon mif-cog"></span>
+            Settings
+        </a>
+    </li>
+</ul>
 ```
 
-### Stick Effect
-
-Add a visual "stick" effect to menu items:
+### With Disabled Item
 
 ```html
-<li class="stick-left">
-    <a href="#">
-        <span class="icon mif-home"></span>
-        Home
-    </a>
-</li>
+<ul class="sidenav-m3">
+    <li class="title">Navigation</li>
+    <li>
+        <a href="#">
+            <span class="icon mif-home"></span>
+            Home
+        </a>
+    </li>
+    <li class="disabled">
+        <a href="#">
+            <span class="icon mif-cog"></span>
+            Settings
+        </a>
+    </li>
+</ul>
 ```
 
-Options:
-- `stick-left`: Adds a stick effect on the left side
-- `stick-right`: Adds a stick effect on the right side
-
-## RTL Support
-
-For right-to-left languages, add the `dir="rtl"` attribute:
+### With RTL Support
 
 ```html
 <ul class="sidenav-m3" dir="rtl">
-    <!-- Menu items -->
+    <li class="title">التنقل</li>
+    <li>
+        <a href="#">
+            <span class="icon mif-home"></span>
+            الصفحة الرئيسية
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <span class="icon mif-cog"></span>
+            الإعدادات
+        </a>
+    </li>
 </ul>
 ```
 
 ## Styling with CSS Variables
 
-The Sidenav M3 component can be customized using CSS variables:
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--border-color` | Inherited from theme | Inherited from theme | The color of borders between menu items |
 
-| CSS Variable | Description |
-|--------------|-------------|
-| `--border-color` | The color of borders between menu items |
+### Example of Custom Styling
 
-## Example
+```css
+/* Custom styling example */
+.my-sidenav {
+    --border-color: #ff5252;
+}
+```
+
+## Available CSS Classes
+
+### Base Classes
+- `.sidenav-m3` - The main container class for the sidenav component
+
+### Item Classes
+- `.title` - Defines a title section in the navigation
+- `.active` - Marks an item as active/selected
+- `.disabled` - Marks an item as disabled
+- `.stick-left` - Adds a visual stick effect on the left side of an item
+- `.stick-right` - Adds a visual stick effect on the right side of an item
+
+### Element Classes
+- `.icon` - Used for icons within navigation items
+- `.dropdown-toggle` - Used for items that have dropdown menus
+- `.d-menu` - Used for dropdown menus
+
+### Background Color Classes
+You can add background color classes to items with stick effects:
+- `.bg-red`, `.bg-green`, `.bg-blue`, etc. - Adds background color to the stick effect
+
+## Complete Example
 
 ```html
-<style>
-    :root {
-        --border-color: #e0e0e0;
-    }
-    
-    .dark-theme {
-        --border-color: #444444;
-    }
-    
-    .sidenav-container {
-        height: 100vh;
-    }
-</style>
-
-<div class="sidenav-container">
+<div style="height: 500px;">
     <ul class="sidenav-m3">
-        <li class="title">My App</li>
-        <li class="stick-left">
+        <li class="title">My Application</li>
+        <li class="active">
             <a href="#">
-                <span class="icon mif-home"></span>
-                Home
+                <span class="mif-home icon"></span>
+                Dashboard
             </a>
         </li>
-        <li>
+        <li class="stick-right bg-red">
             <a href="#">
-                <span class="icon mif-cog"></span>
+                <span class="mif-cog icon"></span>
                 Settings
             </a>
         </li>
-        <li>
-            <a href="#" class="dropdown-toggle">
-                <span class="icon mif-user"></span>
-                Account
+        <li class="stick-left bg-green">
+            <a class="dropdown-toggle" href="#">
+                <span class="mif-tree icon"></span>
+                Categories
             </a>
-            <ul class="d-menu">
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Security</a></li>
-                <li><a href="#">Logout</a></li>
+            <ul class="d-menu" data-role="dropdown">
+                <li><a href="#"><span class="mif-vpn-lock icon"></span> Category 1</a></li>
+                <li><a href="#">Category 2</a></li>
+                <li><a href="#">Category 3</a></li>
+                <li class="disabled"><a href="#">Category 4 (Disabled)</a></li>
             </ul>
         </li>
+        <li><a href="#">Regular Item</a></li>
+        <li class="disabled"><a href="#">Disabled Item</a></li>
+
+        <li class="title">Additional Options</li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">About</a></li>
     </ul>
 </div>
 ```

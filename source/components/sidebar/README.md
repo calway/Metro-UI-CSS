@@ -2,6 +2,11 @@
 
 The Sidebar component provides a collapsible side panel for navigation, settings, or other content. It can be positioned on either side of the screen and supports both static and dynamic modes.
 
+## Dependencies
+
+- Metro UI Core
+- Metro UI DOM utilities
+
 ## Usage
 
 ### Basic Sidebar
@@ -74,7 +79,7 @@ The Sidebar component provides a collapsible side panel for navigation, settings
 | shift | null       | Selector for elements to be shifted when the sidebar opens |
 | staticShift | null       | Selector for elements to be shifted when the sidebar is in static mode |
 | toggle | null       | Selector for the element that toggles the sidebar |
-| duration | 200        | Duration of the animation when opening/closing |
+| duration | 300        | Duration of the animation when opening/closing (in milliseconds) |
 | static | null       | Breakpoint at which the sidebar becomes static (e.g., "lg", "md") |
 | closeOutside | true       | Whether to close the sidebar when clicking outside |
 | onOpen | Metro.noop | Callback function when the sidebar opens |
@@ -202,6 +207,36 @@ The Sidebar component can be styled using the following CSS variables:
     --sidebar-item-marker-color: #ff4081;
 }
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.sidebar` - Main sidebar container
+- `.sidebar-header` - Header section of the sidebar
+- `.sidebar-menu` - Menu container
+- `.sidebar-content` - Additional content container
+
+### Position Classes
+- `.on-left` - Positions the sidebar on the left side (default)
+- `.on-right` - Positions the sidebar on the right side
+
+### State Classes
+- `.open` - Applied when the sidebar is open
+- `.static` - Applied when the sidebar is in static mode
+
+### Menu Item Classes
+- `.active` - Indicates the active menu item
+- `.disabled` - Disables a menu item
+- `.divider` - Creates a divider line between menu items
+- `.group-title` - Creates a group title for categorizing menu items
+
+### Element Classes
+- `.avatar` - Container for user avatar in the header
+- `.title` - Title text in the header
+- `.subtitle` - Subtitle text in the header
+- `.action` - Action button in the header
+- `.icon` - Icon element in menu items
+- `.hotkey` - Hotkey indicator in menu items
 
 ## Dark Mode Support
 

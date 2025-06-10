@@ -46,14 +46,17 @@
                     throw new Error("Menu toggle not found");
                 }
             }
-            return toggle[0];
+            return $(toggle[0]);
         },
 
         _createStructure: function () {
             const element = this.element;
             const o = this.options;
             this.level = element.parents("[data-role-dropmenu]").length;
-            this.toggle = $(this._toggle()).append(toggleImage);
+            this.toggle = this._toggle();
+            if (this.toggle.hasClass("dropdown-caret")) {
+                this.toggle.append(toggleImage);
+            }
             this.displayOrigin = element.css("display");
             this.element
                 .addClass("drop-menu")

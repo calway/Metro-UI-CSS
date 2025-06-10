@@ -2,7 +2,13 @@
 
 The Resizer component is a utility that monitors window and element size changes, as well as media query changes. It provides events for responding to these changes, making it useful for creating responsive behaviors in your application.
 
+## Dependencies
+
+This component has no additional dependencies beyond the core Metro UI library.
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <!-- Basic usage -->
@@ -18,26 +24,36 @@ The Resizer component is a utility that monitors window and element size changes
 </div>
 ```
 
-## Parameters
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| resizerDeferred | number | 0 | Deferred initialization time in milliseconds |
+| `resizerDeferred` | number | 0 | Deferred initialization time in milliseconds |
+
+## API Methods
+
++ `destroy()` - Destroys the resizer component and removes event listeners.
+
+### Example of Method Usage
+```javascript
+var resizer = Metro.getPlugin('#myElement', 'resizer');
+resizer.destroy();
+```
 
 ## Events
 
 | Event | Description |
 | --- | --- |
-| onMediaPoint | Triggered when a media point changes |
-| onMediaPointEnter | Triggered when entering a media point |
-| onMediaPointLeave | Triggered when leaving a media point |
-| onWindowResize | Triggered when the window is resized |
-| onElementResize | Triggered when the element is resized |
-| onResizerCreate | Triggered when the resizer component is created |
+| `onMediaPoint` | Triggered when a media point changes |
+| `onMediaPointEnter` | Triggered when entering a media point |
+| `onMediaPointLeave` | Triggered when leaving a media point |
+| `onWindowResize` | Triggered when the window is resized |
+| `onElementResize` | Triggered when the element is resized |
+| `onResizerCreate` | Triggered when the resizer component is created |
 
-## Event Data
+### Event Data
 
-### onWindowResize
+#### onWindowResize
 ```javascript
 {
     width: windowWidth,    // Current window width
@@ -46,7 +62,7 @@ The Resizer component is a utility that monitors window and element size changes
 }
 ```
 
-### onElementResize
+#### onElementResize
 ```javascript
 {
     width: elementWidth,   // Current element width
@@ -59,7 +75,7 @@ The Resizer component is a utility that monitors window and element size changes
 }
 ```
 
-### onMediaPoint, onMediaPointEnter, onMediaPointLeave
+#### onMediaPoint, onMediaPointEnter, onMediaPointLeave
 ```javascript
 {
     point: point,          // The media point that changed
@@ -67,15 +83,13 @@ The Resizer component is a utility that monitors window and element size changes
 }
 ```
 
-## Methods
+## Styling with CSS Variables
 
-### destroy()
-Destroys the resizer component and removes event listeners.
+The Resizer component is a utility component with no specific styling or CSS variables.
 
-```javascript
-var resizer = Metro.getPlugin('#myElement', 'resizer');
-resizer.destroy();
-```
+## Available CSS Classes
+
+The Resizer component doesn't add any CSS classes to the elements it monitors.
 
 ## Examples
 

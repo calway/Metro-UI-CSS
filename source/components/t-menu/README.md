@@ -1,8 +1,17 @@
-# Tile Menu Component
+# Tile Menu
 
 The Tile Menu (t-menu) component provides a tile-based navigation menu with support for both vertical and horizontal layouts, as well as dropdown submenus. It's designed for icon-based navigation.
 
+## Dependencies
+
+This component relies on the following:
+- Metro UI CSS base styles
+- Metro UI icons (for menu icons)
+- Metro UI dropdown component (for dropdown functionality)
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <ul class="t-menu open">
@@ -12,14 +21,9 @@ The Tile Menu (t-menu) component provides a tile-based navigation menu with supp
         </a>
     </li>
     <li>
-        <a href="#" class="dropdown-toggle">
+        <a href="#">
             <span class="mif-cog"></span>
         </a>
-        <ul class="t-menu">
-            <li><a href="#"><span class="mif-wrench"></span></a></li>
-            <li><a href="#"><span class="mif-user"></span></a></li>
-            <li><a href="#"><span class="mif-lock"></span></a></li>
-        </ul>
     </li>
     <li>
         <a href="#">
@@ -29,157 +33,115 @@ The Tile Menu (t-menu) component provides a tile-based navigation menu with supp
 </ul>
 ```
 
-## Features
-
-### Basic Menu Items
-
-Basic menu items consist of a list item with a link containing an icon:
-
-```html
-<li>
-    <a href="#">
-        <span class="mif-home"></span>
-    </a>
-</li>
-```
-
 ### Horizontal Layout
-
-By default, the t-menu is vertical. To create a horizontal menu, add the `horizontal` class:
 
 ```html
 <ul class="t-menu horizontal open">
-    <!-- Menu items -->
+    <li><a href="#"><span class="mif-home"></span></a></li>
+    <li><a href="#"><span class="mif-cog"></span></a></li>
+    <li><a href="#"><span class="mif-bell"></span></a></li>
 </ul>
 ```
 
 ### Compact Size
 
-For smaller tiles (40px instead of the default 60px), add the `compact` class:
-
 ```html
 <ul class="t-menu compact open">
-    <!-- Menu items -->
+    <li><a href="#"><span class="mif-home"></span></a></li>
+    <li><a href="#"><span class="mif-cog"></span></a></li>
+    <li><a href="#"><span class="mif-bell"></span></a></li>
 </ul>
 ```
 
 ### Dropdown Menus
 
-Create dropdown menus by adding the `dropdown-toggle` class to the link and including a nested `t-menu` list:
-
-```html
-<li>
-    <a href="#" class="dropdown-toggle">
-        <span class="mif-cog"></span>
-    </a>
-    <ul class="t-menu">
-        <li><a href="#"><span class="mif-wrench"></span></a></li>
-        <li><a href="#"><span class="mif-user"></span></a></li>
-        <li><a href="#"><span class="mif-lock"></span></a></li>
-    </ul>
-</li>
-```
-
-### Displaying the Menu
-
-The t-menu is hidden by default. To display it, add the `open` class:
-
 ```html
 <ul class="t-menu open">
-    <!-- Menu items -->
-</ul>
-```
-
-## Styling with CSS Variables
-
-The Tile Menu component can be customized using CSS variables:
-
-| CSS Variable | Default Value (Light) | Default Value (Dark) | Description |
-|--------------|----------------------|---------------------|-------------|
-| `--t-menu-border-radius` | `6px` | `6px` | Border radius of the menu |
-| `--t-menu-border-color` | `#ececec` | `#484b4c` | Border color of the menu |
-| `--t-menu-background` | `#fefefe` | `#343637` | Background color of the menu |
-| `--t-menu-color` | `#191919` | `#dbdfe7` | Text color of the menu |
-
-### Dark Mode
-
-The component automatically adapts to dark mode when the `.dark-side` class is applied to a parent element:
-
-```html
-<div class="dark-side">
-    <ul class="t-menu open">
-        <!-- Menu items -->
-    </ul>
-</div>
-```
-
-## Example with Custom Styling
-
-```html
-<style>
-    .custom-t-menu {
-        --t-menu-border-radius: 8px;
-        --t-menu-border-color: #3b5998;
-        --t-menu-background: #4c70ba;
-        --t-menu-color: #ffffff;
-    }
-    
-    .custom-t-menu > li:hover {
-        background-color: #3b5998;
-    }
-</style>
-
-<ul class="t-menu horizontal compact open custom-t-menu">
-    <li>
-        <a href="#">
-            <span class="mif-home"></span>
-        </a>
-    </li>
+    <li><a href="#"><span class="mif-home"></span></a></li>
     <li>
         <a href="#" class="dropdown-toggle">
             <span class="mif-cog"></span>
         </a>
-        <ul class="t-menu custom-t-menu">
+        <ul class="t-menu" data-role="dropdown">
             <li><a href="#"><span class="mif-wrench"></span></a></li>
             <li><a href="#"><span class="mif-user"></span></a></li>
             <li><a href="#"><span class="mif-lock"></span></a></li>
         </ul>
     </li>
-    <li>
-        <a href="#">
-            <span class="mif-bell"></span>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <span class="mif-apps"></span>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <span class="mif-exit"></span>
-        </a>
-    </li>
+    <li><a href="#"><span class="mif-bell"></span></a></li>
 </ul>
 ```
 
-This example creates a horizontal, compact tile menu with Facebook-inspired styling.
+## Plugin Parameters
 
-## JavaScript Integration
+The t-menu component is primarily CSS-based and doesn't have its own JavaScript plugin. However, when using dropdown functionality, you'll need to initialize the dropdown plugin for the menu items:
 
-While the t-menu component itself doesn't include JavaScript functionality, you'll typically need to use it with Metro UI's dropdown component to handle the opening and closing of dropdown menus:
+```javascript
+Metro.makePlugin(document.querySelectorAll('.t-menu .dropdown-toggle'), 'dropdown', {
+    dropFilter: '.t-menu'
+});
+```
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `dropFilter` | string | null | Selector for the dropdown container (used to properly position nested menus) |
+
+## API Methods
+
+Since the t-menu component is primarily CSS-based, it doesn't have specific API methods. However, you can use standard DOM methods to manipulate the menu:
+
+```javascript
+// To show the menu
+document.querySelector('.t-menu').classList.add('open');
+
+// To hide the menu
+document.querySelector('.t-menu').classList.remove('open');
+```
+
+## Events
+
+The t-menu component doesn't have specific events, but you can use the dropdown component's events when working with dropdown menus.
+
+## Styling with CSS Variables
+
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--t-menu-border-radius` | `6px` | `6px` | Border radius of the menu |
+| `--t-menu-border-color` | `#ececec` | `#484b4c` | Border color of the menu |
+| `--t-menu-background` | `#fefefe` | `#343637` | Background color of the menu |
+| `--t-menu-color` | `#191919` | `#dbdfe7` | Text color of the menu |
+
+### Example of Custom Styling
+
+```css
+.custom-t-menu {
+    --t-menu-border-radius: 8px;
+    --t-menu-border-color: #3b5998;
+    --t-menu-background: #4c70ba;
+    --t-menu-color: #ffffff;
+}
+
+.custom-t-menu > li:hover {
+    background-color: #3b5998;
+}
+```
 
 ```html
-<script>
-    // Initialize dropdowns for the menu
-    Metro.makePlugin(document.querySelectorAll('.t-menu .dropdown-toggle'), 'dropdown', {
-        dropFilter: '.t-menu'
-    });
-    
-    // To manually open the menu
-    document.querySelector('.t-menu').classList.add('open');
-</script>
+<ul class="t-menu open custom-t-menu">
+    <!-- Menu items -->
+</ul>
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.t-menu` - The main menu container
+- `.t-menu.open` - Makes the menu visible (by default it's hidden)
+
+### Modifiers
+- `.horizontal` - Changes the menu orientation to horizontal
+- `.compact` - Creates a smaller version of the menu (40px instead of 60px)
+- `.dropdown-toggle` - Applied to links that have dropdown submenus
 
 ## Nesting Menus
 
@@ -191,13 +153,13 @@ You can create complex navigation structures by nesting t-menus:
         <a href="#" class="dropdown-toggle">
             <span class="mif-cog"></span>
         </a>
-        <ul class="t-menu">
+        <ul class="t-menu" data-role="dropdown">
             <li><a href="#"><span class="mif-wrench"></span></a></li>
             <li>
                 <a href="#" class="dropdown-toggle">
                     <span class="mif-user"></span>
                 </a>
-                <ul class="t-menu">
+                <ul class="t-menu" data-role="dropdown">
                     <li><a href="#"><span class="mif-profile"></span></a></li>
                     <li><a href="#"><span class="mif-security"></span></a></li>
                 </ul>
@@ -207,5 +169,3 @@ You can create complex navigation structures by nesting t-menus:
     </li>
 </ul>
 ```
-
-This creates a nested menu structure with multiple levels of navigation.

@@ -2,7 +2,14 @@
 
 Time Picker component allows users to select time values (hours, minutes, seconds) using wheel-based interface with customizable steps and formats.
 
+## Dependencies
+
+- Metro UI Core
+- Dom library
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <!-- Basic usage -->
@@ -12,7 +19,26 @@ Time Picker component allows users to select time values (hours, minutes, second
 <input data-role="time-picker" data-hours-step="2" data-minutes-step="5" data-seconds="false">
 ```
 
-## Component Parameters
+### Additional Configurations
+
+```html
+<!-- With label -->
+<input data-role="time-picker" data-label="Select time">
+
+<!-- Hours and minutes only -->
+<input data-role="time-picker" data-seconds="false">
+
+<!-- With custom steps -->
+<input data-role="time-picker" data-hours-step="2" data-minutes-step="15" data-seconds-step="30">
+
+<!-- With initial value -->
+<input data-role="time-picker" data-value="14:30:00">
+
+<!-- Dialog mode (useful for mobile) -->
+<input data-role="time-picker" data-open-mode="dialog">
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -42,6 +68,54 @@ Time Picker component allows users to select time values (hours, minutes, second
 | `okButtonIcon` | String | `"✓"` | Icon for OK button |
 | `cancelButtonIcon` | String | `"𐄂"` | Icon for Cancel button |
 
+## API Methods
+
++ `val([value])` - Gets or sets the current time as string (format: "HH:MM:SS").
++ `time([value])` - Gets or sets the current time as object with h, m, s properties.
++ `date([value])` - Gets or sets the current time using Date object.
++ `open()` - Opens the time picker dropdown.
++ `close()` - Closes the time picker dropdown.
++ `disable()` - Disables the time picker component.
++ `enable()` - Enables the time picker component.
++ `toggleState()` - Toggles between enabled and disabled states.
++ `destroy()` - Destroys the component and returns the element to its original state.
+
+### Example of Method Usage
+
+```javascript
+// Get plugin instance
+const timepicker = Metro.getPlugin('#my-timepicker', 'time-picker');
+
+// Get current value
+const currentValue = timepicker.val();
+
+// Set new value
+timepicker.val("14:30:00");
+
+// Get time as object
+const timeObj = timepicker.time();  // returns {h: 14, m: 30, s: 0}
+
+// Set time from object
+timepicker.time({h: 15, m: 45, s: 30});
+
+// Get time as Date object
+const dateObj = timepicker.date();
+
+// Set time from Date object
+const date = new Date();
+date.setHours(10);
+date.setMinutes(20);
+timepicker.date(date);
+
+// Open/close the picker
+timepicker.open();
+timepicker.close();
+
+// Enable/disable the picker
+timepicker.enable();
+timepicker.disable();
+```
+
 ## Events
 
 | Event | Arguments | Description |
@@ -51,104 +125,6 @@ Time Picker component allows users to select time values (hours, minutes, second
 | `onClose` | `{val}` | Triggered when time picker is closed |
 | `onScroll` | `{target, list, picker}` | Triggered when scrolling time lists |
 | `onTimePickerCreate` | `{element}` | Triggered after time picker component creation |
-
-## API Methods
-
-### val([value])
-
-Gets or sets the current time as string (format: "HH:MM:SS").
-
-```javascript
-// Get current value
-var timepicker = $("#my-timepicker").data("timepicker");
-var currentValue = timepicker.val();
-
-// Set new value
-timepicker.val("14:30:00");
-```
-
-### time([value])
-
-Gets or sets the current time as object with h, m, s properties.
-
-```javascript
-// Get current time as object
-var timepicker = $("#my-timepicker").data("timepicker");
-var timeObj = timepicker.time();  // returns {h: 14, m: 30, s: 0}
-
-// Set new time from object
-timepicker.time({h: 15, m: 45, s: 30});
-```
-
-### date([value])
-
-Gets or sets the current time using Date object.
-
-```javascript
-// Get current time as Date object
-var timepicker = $("#my-timepicker").data("timepicker");
-var dateObj = timepicker.date();
-
-// Set time from Date object
-var date = new Date();
-date.setHours(10);
-date.setMinutes(20);
-timepicker.date(date);
-```
-
-### open()
-
-Opens the time picker dropdown.
-
-```javascript
-var timepicker = $("#my-timepicker").data("timepicker");
-timepicker.open();
-```
-
-### close()
-
-Closes the time picker dropdown.
-
-```javascript
-var timepicker = $("#my-timepicker").data("timepicker");
-timepicker.close();
-```
-
-### disable()
-
-Disables the time picker component.
-
-```javascript
-var timepicker = $("#my-timepicker").data("timepicker");
-timepicker.disable();
-```
-
-### enable()
-
-Enables the time picker component.
-
-```javascript
-var timepicker = $("#my-timepicker").data("timepicker");
-timepicker.enable();
-```
-
-### toggleState()
-
-Toggles between enabled and disabled states.
-
-```javascript
-var timepicker = $("#my-timepicker").data("timepicker");
-timepicker.toggleState();
-```
-
-### destroy()
-
-Destroys the component and returns the element to its original state.
-
-```javascript
-var timepicker = $("#my-timepicker").data("timepicker");
-timepicker.destroy();
-```
 
 ## Global Configuration
 
@@ -163,41 +139,34 @@ Metro.timePickerSetup({
 });
 ```
 
-## CSS Variables
-
-The time picker component uses the following CSS variables that you can customize:
+## Styling with CSS Variables
 
 | Variable | Default | Description |
 | --- | --- | --- |
-| `--border-color` | `#e4e4e4` | Border color for various elements |
+| `--border-color` | Depends on theme | Border color for various elements |
 | `--wheel-picker-border-radius` | `4px` | Border radius for the time picker |
+| `--picker-font-size` | Depends on theme | Font size for time elements |
 | `--datepicker-border-radius` | `4px` | Border radius for action block |
 
-Example of customizing CSS variables:
+### Example of Custom Styling
 
 ```css
-:root {
+.my-custom-timepicker {
     --wheel-picker-border-radius: 8px;
+    --picker-font-size: 1.2rem;
 }
 ```
 
-## Time Format Examples
+## Available CSS Classes
 
-```html
-<!-- Hours and minutes only -->
-<input data-role="time-picker" data-seconds="false">
+### Base Classes
+- `.time-picker` - Main container class
+- `.time-wrapper` - Wrapper for time elements
+- `.hours`, `.minutes`, `.seconds` - Time part elements
+- `.action-block` - Container for action buttons
+- `.button` - Style for buttons
 
-<!-- With custom steps -->
-<input data-role="time-picker" data-hours-step="2" data-minutes-step="15" data-seconds-step="30">
-
-<!-- With initial value -->
-<input data-role="time-picker" data-value="14:30:00">
-```
-
-## Dialog Mode
-
-You can set the dropdown to always open as a dialog, which is useful for mobile devices:
-
-```html
-<input data-role="time-picker" data-open-mode="dialog">
-```
+### Modifiers
+- `.show-labels` - Shows labels for hours, minutes, seconds
+- `.small`, `.medium`, `.large` - Size modifiers affecting label positioning
+- `.disabled` - Disabled state for the time picker

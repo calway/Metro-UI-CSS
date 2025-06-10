@@ -2,13 +2,33 @@
 
 The Spinner component provides a numeric input field with increment and decrement buttons, allowing users to easily adjust numeric values.
 
+## Dependencies
+
+The Spinner component depends on:
+- Input Common component
+- Button component
+
 ## Usage
 
+### Basic Usage
+
 ```html
-<input data-role="spinner" data-default-value="0" data-step="1">
+<input data-role="spinner">
 ```
 
-## Parameters
+### With Custom Configuration
+
+```html
+<input data-role="spinner" data-default-value="10" data-step="5" data-min-value="0" data-max-value="100">
+```
+
+### With Label
+
+```html
+<input data-role="spinner" data-label="Quantity">
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -31,6 +51,39 @@ The Spinner component provides a numeric input field with increment and decremen
 | clsSpinnerButtonMinus | string | "" | Additional CSS class for the decrement button |
 | clsLabel | string | "" | Additional CSS class for the label |
 
+## API Methods
+
++ `val(value)` - Gets or sets the current value of the spinner.
++ `toDefault()` - Resets the spinner to its default value.
++ `disable()` - Disables the spinner.
++ `enable()` - Enables the spinner.
++ `toggleState()` - Toggles the enabled/disabled state of the spinner.
+
+### Example of Method Usage
+
+```javascript
+// Get the spinner instance
+const spinner = Metro.getPlugin('#my-spinner', 'spinner');
+
+// Get current value
+const value = spinner.val();
+
+// Set value
+spinner.val(10);
+
+// Reset to default value
+spinner.toDefault();
+
+// Disable spinner
+spinner.disable();
+
+// Enable spinner
+spinner.enable();
+
+// Toggle state
+spinner.toggleState();
+```
+
 ## Events
 
 | Event | Description |
@@ -45,70 +98,51 @@ The Spinner component provides a numeric input field with increment and decremen
 | onArrowClick | Triggered when any arrow key is pressed |
 | onSpinnerCreate | Triggered when the spinner is created |
 
-## Methods
-
-### val(value)
-
-Gets or sets the current value of the spinner.
+### Example of Event Handling
 
 ```javascript
-// Get value
-const value = Metro.getPlugin('#my-spinner', 'spinner').val();
+// Using jQuery-style event binding
+$("@spinner").on("arrow-click", function(e){
+    console.log("Arrow " + (e.detail.button === "plus" ? "up" : "down") + " pressed");
+});
 
-// Set value
-Metro.getPlugin('#my-spinner', 'spinner').val(10);
+// Using data attributes
+<input data-role="spinner" data-on-change="console.log('Value changed to: ' + arguments[0].detail.val)">
 ```
 
-### disable()
+## Styling with CSS Variables
 
-Disables the spinner.
+| Variable | Default (Light) | Dark Mode | Description |
+| --- | --- | --- | --- |
+| `--spinner-border-radius` | 4px | 4px | Border radius for the spinner |
 
-```javascript
-Metro.getPlugin('#my-spinner', 'spinner').disable();
-```
-
-### enable()
-
-Enables the spinner.
-
-```javascript
-Metro.getPlugin('#my-spinner', 'spinner').enable();
-```
-
-### toggleState()
-
-Toggles the enabled/disabled state of the spinner.
-
-```javascript
-Metro.getPlugin('#my-spinner', 'spinner').toggleState();
-```
-
-## CSS Variables
-
-The Spinner component can be styled using the following CSS variables:
-
-| Variable | Default | Description |
-| --- | --- | --- |
-| --spinner-border-radius | 4px | Border radius for the spinner |
-
-## Styling with CSS
-
-You can customize the appearance of the Spinner by overriding the CSS variables:
+### Example of Custom Styling
 
 ```css
-:root {
-  --spinner-border-radius: 8px;
+/* Custom styling example */
+#my-spinner {
+    --spinner-border-radius: 8px;
 }
 ```
 
-### Size Variants
+## Available CSS Classes
+
+### Base Classes
+- `.spinner` - Main container class (automatically added)
+- `.spinner-button` - Base class for buttons
+- `.spinner-button-plus` - Plus button
+- `.spinner-button-minus` - Minus button
+
+### Modifiers
+- `.buttons-left` - Positions both buttons on the left
+- `.buttons-right` - Positions both buttons on the right
+- `.pill-input` - Makes the spinner and buttons rounded (pill-shaped)
+- `.input-small` - Small size variant
+- `.input-large` - Large size variant
+
+## Size Variants
 
 The Spinner component supports different sizes:
-
-- Default size: No additional class
-- Large size: Add `large` class
-- Small size: Add `small` class
-- Medium size: Add `medium` class
 
 ```html
 <input data-role="spinner" class="input-large">
@@ -116,22 +150,12 @@ The Spinner component supports different sizes:
 <input data-role="spinner" class="input-small">
 ```
 
-### Button Positions
+## Button Positions
 
 You can change the position of the buttons:
-
-- Default: Minus on the left, plus on the right, input in the middle
-- Left: Both buttons on the left, input on the right
-- Right: Both buttons on the right, input on the left
 
 ```html
 <input data-role="spinner" data-buttons-position="default">
 <input data-role="spinner" data-buttons-position="left">
 <input data-role="spinner" data-buttons-position="right">
 ```
-
-## Dependencies
-
-The Spinner component depends on:
-- Input Common component
-- Button component

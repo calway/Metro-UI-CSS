@@ -2,13 +2,35 @@
 
 The Stepper component displays a sequence of steps, highlighting the current step and marking completed steps. It's useful for multi-step processes like wizards, forms, or checkout flows.
 
+## Dependencies
+
+No additional dependencies required.
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <div data-role="stepper" data-steps="5" data-step="2"></div>
 ```
 
-## Parameters
+### Additional Configurations
+
+```html
+<!-- Circular steps with step 2 active -->
+<div data-role="stepper" data-view="cycle" data-step="2"></div>
+
+<!-- Diamond-shaped steps with step 3 active -->
+<div data-role="stepper" data-view="diamond" data-step="3"></div>
+
+<!-- Vertical stepper -->
+<div data-role="stepper" class="vertical" data-steps="5"></div>
+
+<!-- Interactive stepper (clickable steps) -->
+<div data-role="stepper" data-steps="4" data-step="1" data-step-click="true"></div>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -22,6 +44,35 @@ The Stepper component displays a sequence of steps, highlighting the current ste
 | clsComplete | string | "" | Additional CSS class for completed steps |
 | clsCurrent | string | "" | Additional CSS class for the current step |
 
+## API Methods
+
++ `next()` - Moves to the next step.
++ `prev()` - Moves to the previous step.
++ `first()` - Moves to the first step.
++ `last()` - Moves to the last step.
++ `toStep(step)` - Moves to a specific step.
+
+### Example of Method Usage
+
+```javascript
+const stepper = Metro.getPlugin('#myStepper', 'stepper');
+
+// Move to the next step
+stepper.next();
+
+// Move to the previous step
+stepper.prev();
+
+// Move to the first step
+stepper.first();
+
+// Move to the last step
+stepper.last();
+
+// Move to step 3
+stepper.toStep(3);
+```
+
 ## Events
 
 | Event | Description |
@@ -30,52 +81,7 @@ The Stepper component displays a sequence of steps, highlighting the current ste
 | onStepClick | Triggered when a step is clicked |
 | onStepperCreate | Triggered when the stepper is created |
 
-## Methods
-
-### next()
-
-Moves to the next step.
-
-```javascript
-Metro.getPlugin('#myStepper', 'stepper').next();
-```
-
-### prev()
-
-Moves to the previous step.
-
-```javascript
-Metro.getPlugin('#myStepper', 'stepper').prev();
-```
-
-### first()
-
-Moves to the first step.
-
-```javascript
-Metro.getPlugin('#myStepper', 'stepper').first();
-```
-
-### last()
-
-Moves to the last step.
-
-```javascript
-Metro.getPlugin('#myStepper', 'stepper').last();
-```
-
-### toStep(step)
-
-Moves to a specific step.
-
-```javascript
-// Move to step 3
-Metro.getPlugin('#myStepper', 'stepper').toStep(3);
-```
-
-## CSS Variables
-
-The Stepper component can be styled using the following CSS variables:
+## Styling with CSS Variables
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
@@ -87,12 +93,10 @@ The Stepper component can be styled using the following CSS variables:
 | --stepper-step-color-current | #FFFFFF | #FFFFFF | Text color of the current step |
 | --stepper-line-color | #e3e3e3 | #2b2d30 | Color of the line connecting the steps |
 
-## Styling with CSS
-
-You can customize the appearance of the Stepper by overriding the CSS variables:
+### Example of Custom Styling
 
 ```css
-:root {
+#my-stepper {
   --stepper-step-background: #757575;
   --stepper-step-color: #ffffff;
   --stepper-step-background-complete: #4caf50;
@@ -103,27 +107,18 @@ You can customize the appearance of the Stepper by overriding the CSS variables:
 }
 ```
 
-### Step Shapes
+## Available CSS Classes
 
-The Stepper component supports different step shapes:
+### Base Classes
+- `.stepper` - Main container class (automatically added)
+- `.stepper.vertical` - For vertical orientation
+- `.step` - Individual step element
+- `.step.complete` - Completed step
+- `.step.current` - Current step
 
-- Square: Default shape (no additional class needed)
-- Cycle (Round): Add `data-view="cycle"` attribute
-- Diamond: Add `data-view="diamond"` attribute
-
-```html
-<div data-role="stepper" data-view="square" data-steps="4"></div>
-<div data-role="stepper" data-view="cycle" data-steps="4"></div>
-<div data-role="stepper" data-view="diamond" data-steps="4"></div>
-```
-
-### Vertical Stepper
-
-You can create a vertical stepper by adding the `vertical` class:
-
-```html
-<div data-role="stepper" class="vertical" data-steps="5"></div>
-```
+### Modifiers
+- `.stepper.cycle` - For circular steps
+- `.stepper.diamond` - For diamond-shaped steps
 
 ## Examples
 
@@ -149,4 +144,29 @@ You can create a vertical stepper by adding the `vertical` class:
      data-cls-complete="custom-complete" 
      data-cls-current="custom-current">
 </div>
+```
+
+### Programmatic Creation and Control
+
+```javascript
+// Initialize the stepper
+const element = document.getElementById('myStepper');
+Metro.makePlugin(element, 'stepper', {
+    steps: 5,
+    step: 1,
+    view: 'cycle',
+    stepClick: true
+});
+
+// Get the stepper instance
+const stepper = Metro.getPlugin('#myStepper', 'stepper');
+
+// Add navigation buttons
+document.getElementById('nextBtn').addEventListener('click', () => {
+    stepper.next();
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    stepper.prev();
+});
 ```

@@ -1,8 +1,14 @@
-# Skill Box Component
+# Skill Box
 
-The Skill Box component provides a card-like element for displaying a person's skills, expertise, or other information with a header containing an avatar, title, and subtitle.
+A card-like component for displaying a person's skills, expertise, or other information with a header containing an avatar, title, and subtitle.
+
+## Dependencies
+
+This component has no JavaScript dependencies as it's purely CSS-based.
 
 ## Usage
+
+### Basic Usage
 
 ```html
 <div class="skill-box">
@@ -32,7 +38,41 @@ The Skill Box component provides a card-like element for displaying a person's s
 </div>
 ```
 
-## Structure
+### With Icon Avatar
+
+```html
+<div class="skill-box">
+    <div class="header">
+        <div class="avatar">
+            <span class="mif-user"></span>
+        </div>
+        <div class="title">Jane Smith</div>
+        <div class="subtitle">UX Designer</div>
+    </div>
+    <div class="content">
+        <ul class="skills">
+            <li>
+                UI Design <span class="badge bg-green fg-white">Expert</span>
+            </li>
+            <li>
+                Wireframing <span class="badge bg-blue fg-white">Advanced</span>
+            </li>
+        </ul>
+    </div>
+</div>
+```
+
+### With Dark Mode
+
+```html
+<div class="dark-side">
+    <div class="skill-box">
+        <!-- Skill box content -->
+    </div>
+</div>
+```
+
+## Component Structure
 
 The Skill Box component consists of the following parts:
 
@@ -71,10 +111,8 @@ The content section can contain any content, but is typically used with a skills
 
 ## Styling with CSS Variables
 
-The Skill Box component can be customized using CSS variables:
-
-| CSS Variable | Default Value (Light) | Default Value (Dark) | Description |
-|--------------|----------------------|---------------------|-------------|
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
 | `--skill-box-border-radius` | `6px` | `6px` | Border radius of the box |
 | `--skill-box-border-color` | `var(--border-color)` | `var(--border-color)` | Border color of the box |
 | `--skill-box-background` | `#ffffff` | `#2b2d30` | Background color of the box |
@@ -84,19 +122,45 @@ The Skill Box component can be customized using CSS variables:
 | `--skill-box-avatar-background` | `#e6e6e6` | `#3b414e` | Background color of the avatar |
 | `--skill-box-avatar-color` | `#191919` | `#fbfbfb` | Text color of the avatar |
 
-### Dark Mode
+### Example of Custom Styling
 
-The component automatically adapts to dark mode when the `.dark-side` class is applied to a parent element:
+```css
+.custom-skill-box {
+    --skill-box-border-radius: 10px;
+    --skill-box-border-color: #dcdcdc;
+    --skill-box-background: #f8f9fa;
+    --skill-box-color: #333333;
+    --skill-box-header-background: #e9ecef;
+    --skill-box-header-color: #212529;
+    --skill-box-avatar-background: #dee2e6;
+    --skill-box-avatar-color: #212529;
+}
+```
 
 ```html
-<div class="dark-side">
-    <div class="skill-box">
-        <!-- Skill box content -->
-    </div>
+<div class="skill-box custom-skill-box">
+    <!-- Skill box content -->
 </div>
 ```
 
-## Example with Custom Styling
+## Available CSS Classes
+
+### Base Classes
+- `.skill-box` - The main container class for the skill box component
+- `.header` - Container for the header section
+- `.content` - Container for the content section
+
+### Header Elements
+- `.avatar` - Container for the avatar (image or icon)
+- `.title` - Element for the main title
+- `.subtitle` - Element for the subtitle
+
+### Content Elements
+- `.skills` - Unordered list for skills
+- `.skills li` - List item for each skill
+- `.badge` - Badge element for skill level indication
+
+## Example with Complete Custom Styling
 
 ```html
 <style>

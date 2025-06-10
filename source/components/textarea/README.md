@@ -1,25 +1,57 @@
-# Textarea Component
+# Textarea
 
-Textarea component provides an enhanced textarea field with additional features like character counting, auto-resizing, and styling options.
+The Textarea component provides an enhanced textarea field with additional features like auto-sizing, character counting, clear button, and custom styling options.
+
+## Dependencies
+
+- Metro UI Core
+- DOM utilities
 
 ## Usage
 
+### Basic Usage
+
 ```html
-<textarea data-role="textarea" data-auto-size="true">Content goes here</textarea>
+<textarea data-role="textarea"></textarea>
 ```
 
-## Component Parameters
+### With Maximum Height
+
+```html
+<textarea data-role="textarea" data-max-height="300"></textarea>
+```
+
+### With Label
+
+```html
+<textarea data-role="textarea" data-label="Text"></textarea>
+```
+
+### With Character Counter
+
+```html
+<textarea data-role="textarea" data-chars-counter="#counter"></textarea>
+<span id="counter">0</span>
+```
+
+### With Prepend and Append
+
+```html
+<textarea data-role="textarea" data-prepend="<span class='mif-pencil'></span>" data-append="<span class='mif-checkmark'></span>"></textarea>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
+| --------- | ---- | ------- | ----------- |
 | `label` | String | `""` | Label text for textarea |
 | `textareaDeferred` | Number | `0` | Defer initialization of component |
-| `charsCounter` | String/Object | `null` | Selector for character counter element |
-| `charsCounterTemplate` | String | `"$1"` | Template for character counter, where $1 will be replaced with count |
-| `defaultValue` | String | `""` | Default value for textarea |
+| `charsCounter` | String | `null` | Selector for element to display character count |
+| `charsCounterTemplate` | String | `"$1"` | Template for character counter, where $1 is replaced with the count |
+| `defaultValue` | String | `""` | Default value for the textarea |
 | `prepend` | String | `""` | Content to prepend before textarea |
 | `append` | String | `""` | Content to append after textarea |
-| `clearButton` | Boolean | `true` | Display clear button |
+| `clearButton` | Boolean | `true` | Show clear button |
 | `clearButtonIcon` | String | `"❌"` | Icon for clear button |
 | `autoSize` | Boolean | `true` | Auto-resize textarea based on content |
 | `maxHeight` | Number | `0` | Maximum height for textarea (0 = no limit) |
@@ -29,135 +61,96 @@ Textarea component provides an enhanced textarea field with additional features 
 | `clsTextarea` | String | `""` | Additional class for textarea element |
 | `clsLabel` | String | `""` | Additional class for label element |
 
-## Events
-
-| Event | Arguments | Description |
-| --- | --- | --- |
-| `onChange` | `{val, length}` | Triggered when textarea value changes |
-| `onTextareaCreate` | `{element}` | Triggered after textarea component creation |
-
 ## API Methods
 
-### resize()
-
-Recalculates the height of the textarea based on its content.
++ `resize()` - Recalculates the height of the textarea based on its content.
 
 ```javascript
-var textarea = $('#my-textarea').data('textarea');
+const textarea = Metro.getPlugin('#my-textarea', 'textarea');
 textarea.resize();
 ```
 
-### clear()
-
-Clears the textarea.
++ `clear()` - Clears the textarea.
 
 ```javascript
-var textarea = $('#my-textarea').data('textarea');
+const textarea = Metro.getPlugin('#my-textarea', 'textarea');
 textarea.clear();
 ```
 
-### toDefault()
-
-Resets textarea to default value.
++ `toDefault()` - Resets the textarea to its default value.
 
 ```javascript
-var textarea = $('#my-textarea').data('textarea');
+const textarea = Metro.getPlugin('#my-textarea', 'textarea');
 textarea.toDefault();
 ```
 
-### length()
-
-Returns the number of characters in the textarea.
++ `length()` - Returns the number of characters in the textarea.
 
 ```javascript
-var textarea = $('#my-textarea').data('textarea');
-var charCount = textarea.length();
+const textarea = Metro.getPlugin('#my-textarea', 'textarea');
+const charCount = textarea.length();
 ```
 
-### disable()
-
-Disables the textarea component.
++ `disable()` - Disables the textarea.
 
 ```javascript
-var textarea = $('#my-textarea').data('textarea');
+const textarea = Metro.getPlugin('#my-textarea', 'textarea');
 textarea.disable();
 ```
 
-### enable()
-
-Enables the textarea component.
++ `enable()` - Enables the textarea.
 
 ```javascript
-var textarea = $('#my-textarea').data('textarea');
+const textarea = Metro.getPlugin('#my-textarea', 'textarea');
 textarea.enable();
 ```
 
-### toggleState()
-
-Toggles between enabled and disabled states.
++ `toggleState()` - Toggles between enabled and disabled states.
 
 ```javascript
-var textarea = $('#my-textarea').data('textarea');
+const textarea = Metro.getPlugin('#my-textarea', 'textarea');
 textarea.toggleState();
 ```
 
-## Global Configuration
+## Events
 
-You can globally configure the textarea component using the `Metro.textareaSetup` method:
+| Event | Description |
+| ----- | ----------- |
+| `onChange` | Triggered when textarea value changes, provides `{val, length}` |
+| `onTextareaCreate` | Triggered after textarea component creation, provides `{element}` |
 
-```javascript
-Metro.textareaSetup({
-    autoSize: false,
-    clearButton: false,
-    // other options
-});
-```
+## Styling with CSS Variables
 
-## CSS Variables
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--textarea-color` | `#191919` | `#dbdfe7` | Text color |
+| `--textarea-border-color` | `var(--border-color)` | `#444444` | Border color |
+| `--textarea-font-size` | `14px` | `14px` | Font size |
+| `--textarea-border-radius` | `4px` | `4px` | Border radius |
 
-The textarea component uses the following CSS variables that you can customize:
-
-| Variable | Default | Description |
-| --- | --- | --- |
-| `--textarea-color` | `#191919` | Text color for textarea |
-| `--textarea-border-color` | `var(--border-color)` | Border color |
-| `--textarea-font-size` | `14px` | Font size |
-| `--textarea-border-radius` | `4px` | Border radius |
-
-Example of customizing CSS variables:
+### Example of Custom Styling
 
 ```css
-:root {
-    --textarea-color: #0066aa;
+#my-textarea {
+    --textarea-color: #0066cc;
+    --textarea-border-color: #99ccff;
     --textarea-font-size: 16px;
     --textarea-border-radius: 8px;
 }
 ```
 
-## Character Counter
+## Available CSS Classes
 
-You can add a character counter to your textarea:
+### Base Classes
+- `.textarea` - Main container class
+- `.fake-textarea` - Hidden textarea used for auto-sizing calculations
 
-```html
-<textarea data-role="textarea" data-chars-counter="#counter"></textarea>
-<span id="counter">0</span>
+### Modifiers
+- `.no-scroll-vertical` - Hides vertical scrollbar when auto-sizing is enabled
+- `.disabled` - Applied when the textarea is disabled
+- `.rtl` - Applied for right-to-left text direction
 
-<!-- Or with template -->
-<textarea data-role="textarea" data-chars-counter="#counter" 
-          data-chars-counter-template="Characters: $1"></textarea>
-<span id="counter">Characters: 0</span>
-```
-
-## Auto-resize Feature
-
-By default, the textarea will automatically resize to fit its content. You can disable this feature:
-
-```html
-<textarea data-role="textarea" data-auto-size="false"></textarea>
-```
-
-If you want to limit the maximum height when using auto-size:
-
-```html
-<textarea data-role="textarea" data-auto-size="true" data-max-height="200"></textarea>
-```
+### Child Elements
+- `.prepend` - Container for prepended content
+- `.append` - Container for appended content
+- `.input-clear-button` - Clear button

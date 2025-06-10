@@ -2,9 +2,14 @@
 
 The Shortcut component provides styled shortcut icons that can be used for application launchers, desktop icons, or navigation elements. It offers both standard and Windows-style shortcut designs with customizable icons and captions.
 
+## Dependencies
+
+- Metro UI Core
+- Metro UI Icon component (for icon display)
+
 ## Usage
 
-### Standard Shortcut
+### Basic Usage
 
 ```html
 <!-- Basic shortcut with icon and caption -->
@@ -12,7 +17,11 @@ The Shortcut component provides styled shortcut icons that can be used for appli
     <span class="icon mif-windows"></span>
     <span class="caption">Windows</span>
 </div>
+```
 
+### Additional Configurations
+
+```html
 <!-- Shortcut with only an icon -->
 <div class="shortcut">
     <span class="icon mif-chrome"></span>
@@ -24,11 +33,7 @@ The Shortcut component provides styled shortcut icons that can be used for appli
     <span class="caption">Mail</span>
     <span class="badge">3</span>
 </div>
-```
 
-### Windows-Style Shortcut
-
-```html
 <!-- Windows-style shortcut -->
 <div class="windows-shortcut">
     <span class="icon mif-windows"></span>
@@ -40,11 +45,7 @@ The Shortcut component provides styled shortcut icons that can be used for appli
     <img class="icon" src="path/to/icon.png">
     <span class="caption">Application</span>
 </div>
-```
 
-### Shortcut Variants
-
-```html
 <!-- Outline shortcut -->
 <div class="shortcut outline">
     <span class="icon mif-file"></span>
@@ -60,27 +61,25 @@ The Shortcut component provides styled shortcut icons that can be used for appli
 
 ## Styling with CSS Variables
 
-The Shortcut component can be styled using the following CSS variables:
-
 ### Standard Shortcut Variables
 
-| Variable | Light Mode | Dark Mode | Description |
-| -------- | ---------- | --------- | ----------- |
-| --shortcut-border-radius | 6px | 6px | Border radius of the shortcut |
-| --shortcut-background | #f8f8f8 | #2e2e2e | Background color of the shortcut |
-| --shortcut-color | #191919 | #F8F8F8 | Text color of the shortcut |
-| --shortcut-background-hover | #dadada | #373737 | Background color on hover |
-| --shortcut-color-hover | #474747 | #bfbfbf | Text color on hover |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--shortcut-border-radius` | 6px | 6px | Border radius of the shortcut |
+| `--shortcut-background` | #f8f8f8 | #2e2e2e | Background color of the shortcut |
+| `--shortcut-color` | #191919 | #F8F8F8 | Text color of the shortcut |
+| `--shortcut-background-hover` | #dadada | #373737 | Background color on hover |
+| `--shortcut-color-hover` | #474747 | #bfbfbf | Text color on hover |
 
 ### Windows-Style Shortcut Variables
 
-| Variable | Light Mode | Dark Mode | Description |
-| -------- | ---------- | --------- | ----------- |
-| --windows-shortcut-icon-size | 40px | 40px | Size of the icon in Windows-style shortcuts |
-| --windows-shortcut-border-radius | 4px | 4px | Border radius of Windows-style shortcuts |
-| --windows-shortcut-background | transparent | transparent | Background color of Windows-style shortcuts |
-| --windows-shortcut-background-hover | #efefef | #373737 | Background color on hover |
-| --windows-shortcut-color | #191919 | #F8F8F8 | Text color of Windows-style shortcuts |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--windows-shortcut-icon-size` | 40px | 40px | Size of the icon in Windows-style shortcuts |
+| `--windows-shortcut-border-radius` | 4px | 4px | Border radius of Windows-style shortcuts |
+| `--windows-shortcut-background` | transparent | transparent | Background color of Windows-style shortcuts |
+| `--windows-shortcut-background-hover` | #efefef | #373737 | Background color on hover |
+| `--windows-shortcut-color` | #191919 | #F8F8F8 | Text color of Windows-style shortcuts |
 
 ### Example of Custom Styling
 
@@ -103,7 +102,7 @@ The Shortcut component can be styled using the following CSS variables:
 - `.shortcut` - Standard shortcut style
 - `.windows-shortcut` - Windows-style shortcut
 
-### Modifier Classes
+### Modifiers
 - `.outline` - Shortcut with transparent background and border
 - `.disabled` - Disabled shortcut with reduced opacity
 - `.focus` - Shortcut with focus styling

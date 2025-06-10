@@ -1,24 +1,49 @@
-# Theme Switcher Component
+# Theme Switcher
 
-Theme Switcher component provides a convenient way to toggle between light and dark themes in your Metro UI application.
+A component that provides a convenient way to toggle between light and dark themes in your Metro UI application.
+
+## Dependencies
+
+None
 
 ## Usage
+
+### Basic Usage
 
 ```html
 <!-- Basic usage -->
 <input type="checkbox" data-role="theme-switcher">
+```
 
+### Additional Configurations
+
+```html
 <!-- With custom options -->
 <input type="checkbox" data-role="theme-switcher" 
        data-mode="button" 
        data-dark-symbol="🌚" 
-       data-light-symbol="🌝">
+       data-light-symbol="🌝"
+       data-state="dark">
+
+<!-- Disabled state -->
+<input type="checkbox" data-role="theme-switcher" disabled>
 ```
 
-## Component Parameters
+### JavaScript Initialization
+
+```javascript
+// Initialize with Metro.makePlugin
+const themeSwitcher = Metro.makePlugin("#myThemeSwitcher", "theme-switcher", {
+    mode: "button",
+    darkSymbol: "🌚",
+    lightSymbol: "🌝"
+});
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
+| --------- | ---- | ------- | ----------- |
 | `state` | String | `Metro.theme.LIGHT` | Initial state of the theme switcher |
 | `target` | String | `"html"` | Selector for the element to apply theme classes to |
 | `saveState` | Boolean | `true` | Whether to save the selected theme in localStorage |
@@ -28,23 +53,17 @@ Theme Switcher component provides a convenient way to toggle between light and d
 | `lightSymbol` | String | `"🌞"` | Symbol displayed when light theme is active |
 | `mode` | String | `"switch"` | Display mode: "switch" (toggle switch) or "button" (circular button) |
 
-## Events
-
-| Event | Arguments | Description |
-| --- | --- | --- |
-| `onThemeSwitcherCreate` | `{element}` | Triggered after theme switcher component creation |
-| `onChangeTheme` | `{state}` | Triggered when theme is changed (state is a boolean: true for dark, false for light) |
-
 ## API Methods
 
-### val([value])
++ `val([value])` - Gets or sets the current theme value. Returns `Metro.theme.DARK` or `Metro.theme.LIGHT` if called without arguments.
++ `destroy()` - Destroys the component and removes it from the DOM.
 
-Gets or sets the current theme value. Returns `Metro.theme.DARK` or `Metro.theme.LIGHT` if called without arguments.
+### Example of Method Usage
 
 ```javascript
 // Get current theme
-var themeSwitcher = $('#theme-switcher').data('theme-switcher');
-var currentTheme = themeSwitcher.val(); // Returns "dark" or "light"
+const themeSwitcher = Metro.getPlugin('#myThemeSwitcher', 'theme-switcher');
+const currentTheme = themeSwitcher.val(); // Returns "dark" or "light"
 
 // Set theme
 themeSwitcher.val(Metro.theme.DARK); // Switch to dark theme
@@ -52,13 +71,25 @@ themeSwitcher.val(Metro.theme.DARK); // Switch to dark theme
 themeSwitcher.val(true); // Same as above
 ```
 
-### destroy()
+## Events
 
-Destroys the component and removes it from the DOM.
+| Event | Description |
+| ----- | ----------- |
+| `onThemeSwitcherCreate` | Triggered after theme switcher component creation |
+| `onChangeTheme` | Triggered when theme is changed (receives an object with `state` property: true for dark, false for light) |
+
+### Example of Event Usage
 
 ```javascript
-var themeSwitcher = $('#theme-switcher').data('theme-switcher');
-themeSwitcher.destroy();
+// Initialize with event handlers
+Metro.makePlugin("#myThemeSwitcher", "theme-switcher", {
+    onThemeSwitcherCreate: function() {
+        console.log("Theme switcher created");
+    },
+    onChangeTheme: function(e) {
+        console.log("Theme changed to:", e.state ? "dark" : "light");
+    }
+});
 ```
 
 ## Global Configuration
@@ -74,12 +105,10 @@ Metro.themeSwitcherSetup({
 });
 ```
 
-## CSS Variables
+## Styling with CSS Variables
 
-The theme-switcher component uses the following CSS variables that you can customize:
-
-| Variable | Light Theme Default | Dark Theme Default | Description |
-| --- | --- | --- | --- |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
 | `--theme-switcher-background` | `#e9e9e9` | `#232527` | Background color of the switcher track |
 | `--theme-switcher-background-button` | `#ffffff` | `#232527` | Background color in button mode |
 | `--theme-switcher-background-checked` | `#191919` | `#474748` | Background color when checked (dark mode) |
@@ -91,33 +120,25 @@ The theme-switcher component uses the following CSS variables that you can custo
 | `--theme-switcher-focus-color` | `#e8e8e8` | `#191919` | Focus outline color |
 | `--theme-switcher-border-color` | `#e8e8e8` | `#474748` | Border color |
 
-Example of customizing CSS variables:
+### Example of Custom Styling
 
 ```css
-:root {
+/* Custom styling example */
+#myThemeSwitcher {
     --theme-switcher-background: #f0f0f0;
     --theme-switcher-background-checked: #333;
     --theme-switcher-toggle-color: #ffd700;
 }
 ```
 
-## Display Modes
+## Available CSS Classes
 
-### Switch Mode (Default)
+### Base Classes
+- `.theme-switcher` - Base class for the component (automatically added)
 
-Displays as a toggle switch with the light/dark symbols:
-
-```html
-<input type="checkbox" data-role="theme-switcher" data-mode="switch">
-```
-
-### Button Mode
-
-Displays as a circular button that toggles between light/dark symbols:
-
-```html
-<input type="checkbox" data-role="theme-switcher" data-mode="button">
-```
+### Modifiers
+- `.mode-switch` - Applied when mode is set to "switch" (default)
+- `.mode-button` - Applied when mode is set to "button"
 
 ## Theme Implementation
 
@@ -134,3 +155,5 @@ When activated, the component adds the class `dark-side` to the target element (
     --text-color: #ffffff;
 }
 ```
+
+This allows you to define different CSS variable values for light and dark themes, which your components can then use for styling.
