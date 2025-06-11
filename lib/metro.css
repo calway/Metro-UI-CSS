@@ -54408,6 +54408,9 @@ input::placeholder {
 .dropdown-caret.active-toggle svg {
   transform: rotate(270deg);
 }
+.no-dropdown-caret .dropdown-caret {
+  display: none !important;
+}
 .drop-left {
   right: 100% !important;
   top: 0 !important;
@@ -55163,7 +55166,7 @@ input::placeholder {
   --select-tag-button-color: #dbdfe7;
 }
 .select {
-  --select-height: var(--control-height);
+  --select-height: var(--control-height-normal);
   --select-font-size: 16px;
   display: flex;
   flex-flow: row nowrap;
@@ -55286,8 +55289,8 @@ input::placeholder {
 .select .button {
   background-color: var(--select-button-background);
   color: var(--select-button-color);
-  height: calc(var(--select-heigt) - 2px);
-  min-width: calc(var(--select-heigt) - 2px);
+  height: calc(var(--select-heigt, 36px) - 2px);
+  min-width: calc(var(--select-heigt, 36px) - 2px);
 }
 .select .button:hover {
   background-color: var(--select-button-background-hover);

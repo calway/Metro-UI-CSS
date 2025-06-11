@@ -54,9 +54,7 @@
             const o = this.options;
             this.level = element.parents("[data-role-dropmenu]").length;
             this.toggle = this._toggle();
-            if (this.toggle.hasClass("dropdown-caret")) {
-                this.toggle.append(toggleImage);
-            }
+            this.toggle.append(toggleImage);
             this.displayOrigin = element.css("display");
             this.element
                 .addClass("drop-menu")

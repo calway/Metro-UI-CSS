@@ -82,8 +82,7 @@
             }
 
             toggle = o.toggleElement ? $(o.toggleElement) : $(this._toggle());
-
-            if (toggle.length && toggle.hasClass("dropdown-caret")) {
+            if (toggle.length) {
                 toggle.append(toggleImage);
             }
 
