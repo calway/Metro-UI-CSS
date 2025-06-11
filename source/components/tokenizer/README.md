@@ -1,13 +1,23 @@
-# Tokenizer Component
+# Tokenizer
 
-The Tokenizer component splits text content into individual tokens (words, characters, or custom defined fragments) and applies styling and functionality to each token separately.
+The Tokenizer component splits text content into individual tokens (words, characters, or custom defined fragments) and applies styling and functionality to each token separately. This allows for precise control over the appearance and behavior of each text element.
+
+## Dependencies
+
+This component has no external dependencies beyond the Metro UI core.
 
 ## Usage
+
+### Basic Usage
 
 ```html
 <!-- Basic usage with element content -->
 <div data-role="tokenizer">This text will be tokenized</div>
+```
 
+### Additional Configurations
+
+```html
 <!-- With custom options -->
 <div data-role="tokenizer" 
      data-splitter=" " 
@@ -32,10 +42,10 @@ $("#tokenizer").tokenizer({
 });
 ```
 
-## Component Parameters
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
+| --------- | ---- | ------- | ----------- |
 | `textToTokenize` | String | `""` | Text to tokenize. If empty, element's text content will be used |
 | `spaceSymbol` | String | `""` | Symbol to replace spaces with |
 | `spaceClass` | String | `"space"` | CSS class for space tokens |
@@ -51,32 +61,60 @@ $("#tokenizer").tokenizer({
 | `prepend` | String | `""` | Content to prepend to each token. Can be selector or HTML |
 | `append` | String | `""` | Content to append to each token. Can be selector or HTML |
 
-## Events
-
-| Event | Arguments | Description |
-| --- | --- | --- |
-| `onTokenCreate` | `{token}` | Triggered when each token is created |
-| `onTokenize` | `{tokens, originalText}` | Triggered after all text is tokenized |
-| `onTokenizerCreate` | `{element}` | Triggered after tokenizer component creation |
-
 ## API Methods
 
-### tokenize(text)
++ `tokenize(text)` - Tokenizes the provided text.
++ `destroy()` - Destroys the component and removes it from the DOM.
 
-Tokenizes the provided text.
+#### Example of Method Usage
 
 ```javascript
-var tokenizer = $("#my-tokenizer").data("tokenizer");
+const tokenizer = Metro.getPlugin('#my-tokenizer', 'tokenizer');
 tokenizer.tokenize("New text to tokenize");
 ```
 
-### destroy()
+## Events
 
-Destroys the component and removes it from the DOM.
+| Event | Description |
+| ----- | ----------- |
+| `onTokenCreate` | Triggered when each token is created with `{token}` argument |
+| `onTokenize` | Triggered after all text is tokenized with `{tokens, originalText}` arguments |
+| `onTokenizerCreate` | Triggered after tokenizer component creation with `{element}` argument |
 
-```javascript
-var tokenizer = $("#my-tokenizer").data("tokenizer");
-tokenizer.destroy();
+## Styling with CSS Variables
+
+The tokenizer component doesn't use specific CSS variables, but relies on classes for styling.
+
+## Available CSS Classes
+
+### Base Classes
+- No default base class is added, but you can specify one using the `clsTokenizer` option
+
+### Token Classes
+- `space` - For space tokens (customizable with `spaceClass` option)
+- `ts-X` - Token symbol class, where X is the token content with spaces replaced by underscores (if `useTokenSymbol` is true)
+- `ti-X` - Token index class, where X is the token position (if `useTokenIndex` is true)
+- `te-odd` or `te-even` - For odd/even tokens
+- Classes specified in `clsToken`, `clsTokenOdd`, and `clsTokenEven` options
+
+### Example of Custom Styling
+
+```css
+/* Style all tokens */
+.tokenizer .ts-important { 
+    color: red; 
+    font-weight: bold; 
+}
+
+/* Style tokens by index */
+.tokenizer .ti-1 { 
+    animation-delay: 0.1s; 
+}
+
+/* Style odd/even tokens */
+.tokenizer .te-odd {
+    background-color: var(--light);
+}
 ```
 
 ## Global Configuration
@@ -90,16 +128,6 @@ Metro.tokenizerSetup({
     splitter: " "
 });
 ```
-
-## Token Classes
-
-The tokenizer adds several classes to each token automatically:
-
-- `space` - For space tokens (customizable with `spaceClass` option)
-- `ts-X` - Token symbol class, where X is the token content with spaces replaced by underscores (if `useTokenSymbol` is true)
-- `ti-X` - Token index class, where X is the token position (if `useTokenIndex` is true)
-- `te-odd` or `te-even` - For odd/even tokens
-- Classes specified in `clsToken`, `clsTokenOdd`, and `clsTokenEven` options
 
 ## Example Use Cases
 
@@ -128,6 +156,24 @@ The tokenizer adds several classes to each token automatically:
     .ts-important { color: red; font-weight: bold; }
     .ts-keywords { color: blue; font-weight: bold; }
 </style>
+```
+
+### Nested tokenizers (words and characters)
+
+```html
+<div id="nested-example">
+    Metro UI is awesome!
+</div>
+
+<script>
+    $('#nested-example').tokenizer({
+        splitter: ' ',
+        clsToken: "word",
+        tokenElement: "div"
+    }).children().tokenizer({
+        clsToken: "char"
+    });
+</script>
 ```
 
 ### Custom token styling

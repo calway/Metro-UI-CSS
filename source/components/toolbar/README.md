@@ -1,8 +1,14 @@
-# Toolbar Component
+# Toolbar
 
-The Toolbar component provides a container for action buttons (tool buttons) that can be arranged horizontally or vertically.
+The Toolbar component provides a container for action buttons (tool buttons) that can be arranged horizontally or vertically. It's a versatile UI element for grouping related actions in a compact, organized manner.
+
+## Dependencies
+
+This component has no external dependencies beyond the Metro UI core CSS.
 
 ## Usage
+
+### Basic Usage
 
 ```html
 <!-- Basic horizontal toolbar -->
@@ -11,7 +17,11 @@ The Toolbar component provides a container for action buttons (tool buttons) tha
     <button class="tool-button"><span class="mif-pencil"></span></button>
     <button class="tool-button"><span class="mif-search"></span></button>
 </div>
+```
 
+### Additional Configurations
+
+```html
 <!-- Vertical toolbar -->
 <div class="toolbar vertical">
     <button class="tool-button"><span class="mif-home"></span></button>
@@ -27,13 +37,59 @@ The Toolbar component provides a container for action buttons (tool buttons) tha
 </div>
 ```
 
-## Toolbar Modifiers
+## Plugin Parameters
 
-| Class | Description |
-| --- | --- |
-| `vertical` | Arranges buttons in a vertical column |
-| `movable` | Adds a draggable handle to the toolbar |
-| `no-divider` | Removes the divider (handle) from the toolbar |
+The toolbar is a CSS-only component and doesn't have JavaScript plugin parameters.
+
+## API Methods
+
+The toolbar is a CSS-only component and doesn't have JavaScript API methods.
+
+## Events
+
+The toolbar is a CSS-only component and doesn't have JavaScript events.
+
+## Styling with CSS Variables
+
+The toolbar component uses the following CSS variables that you can customize:
+
+| Variable | Default (Light) | Dark Mode | Description |
+| --- | --- | --- | --- |
+| `--tool-button-border-radius` | `4px` | `4px` | Border radius for tool buttons |
+| `--tool-button-background` | `#F8F8F8` | `#2e2e2e` | Background color for tool buttons |
+| `--tool-button-color` | `#191919` | `#F8F8F8` | Text color for tool buttons |
+| `--tool-button-background-hover` | `#dcdcdc` | `#373737` | Background color for tool buttons on hover |
+| `--tool-button-color-hover` | `#474747` | `#bfbfbf` | Text color for tool buttons on hover |
+| `--tool-button-border-color` | `#E8E8E8` | `#4A4D51` | Border color for outline tool buttons |
+
+### Example of Custom Styling
+
+```css
+:root {
+    --tool-button-background: #0078d7;
+    --tool-button-color: white;
+    --tool-button-background-hover: #106ebe;
+    --tool-button-color-hover: white;
+    --tool-button-border-radius: 2px;
+}
+```
+
+## Available CSS Classes
+
+### Base Classes
+- `.toolbar` - The main container class for the toolbar
+- `.tool-button` - Class for individual action buttons within the toolbar
+
+### Modifiers
+- `.toolbar.vertical` - Arranges buttons in a vertical column
+- `.toolbar.movable` - Adds a draggable handle to the toolbar
+- `.toolbar.no-divider` - Removes the divider (handle) from the toolbar
+
+### Tool Button Modifiers
+- `.tool-button.text-button` - Creates a button with text (auto-width)
+- `.tool-button.outline` - Creates a button with an outline style
+- `.tool-button.w-auto` - Creates a button with automatic width
+- `.tool-button.disabled` - Styles for disabled buttons
 
 ## Tool Button Types
 
@@ -110,31 +166,6 @@ Tool buttons support various icon formats:
 <button class="tool-button">
     <img src="icon.png" alt="Icon">
 </button>
-```
-
-## CSS Variables
-
-The toolbar component uses the following CSS variables that you can customize:
-
-| Variable | Default (Light Theme) | Default (Dark Theme) | Description |
-| --- | --- | --- | --- |
-| `--tool-button-border-radius` | `4px` | `4px` | Border radius for tool buttons |
-| `--tool-button-background` | `#F8F8F8` | `#2e2e2e` | Background color for tool buttons |
-| `--tool-button-color` | `#191919` | `#F8F8F8` | Text color for tool buttons |
-| `--tool-button-background-hover` | `#dcdcdc` | `#373737` | Background color for tool buttons on hover |
-| `--tool-button-color-hover` | `#474747` | `#bfbfbf` | Text color for tool buttons on hover |
-| `--tool-button-border-color` | `#E8E8E8` | `#4A4D51` | Border color for outline tool buttons |
-
-Example of customizing CSS variables:
-
-```css
-:root {
-    --tool-button-background: #0078d7;
-    --tool-button-color: white;
-    --tool-button-background-hover: #106ebe;
-    --tool-button-color-hover: white;
-    --tool-button-border-radius: 2px;
-}
 ```
 
 ## Customizing Appearance

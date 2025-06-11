@@ -2,7 +2,14 @@
 
 The Wizard Classic component provides a step-by-step interface for guiding users through multi-step processes or forms. It features customizable navigation buttons, page transitions, and various styling options.
 
+## Dependencies
+
+- Metro
+- Dom
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <div data-role="wizard-classic">
@@ -12,10 +19,10 @@ The Wizard Classic component provides a step-by-step interface for guiding users
 </div>
 ```
 
-## Options
+## Plugin Parameters
 
-| Option | Type | Default | Description |
-| --- | --- | --- | --- |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
 | `buttons` | string | `"next, prev, finish, cancel, help"` | Comma-separated list of buttons to display |
 | `startPage` | number | `1` | The initial page to show (1-based index) |
 | `height` | number | `300` | Height of the wizard in pixels |
@@ -41,7 +48,7 @@ The Wizard Classic component provides a step-by-step interface for guiding users
 ## Events
 
 | Event | Description |
-| --- | --- |
+| ----- | ----------- |
 | `onBeforePage` | Fires before changing the page. Return `false` to prevent page change. |
 | `onPage` | Fires when the page changes |
 | `onNext` | Fires when the Next button is clicked |
@@ -49,40 +56,64 @@ The Wizard Classic component provides a step-by-step interface for guiding users
 | `onFinish` | Fires when the Finish button is clicked |
 | `onCancel` | Fires when the Cancel button is clicked |
 | `onHelp` | Fires when the Help button is clicked |
-| `onMyObjectCreate` | Fires when the component is created |
+| `onWizardCreate` | Fires when the component is created |
 
-## Methods
+## API Methods
 
-### next()
-Navigate to the next page.
++ `next()` - Navigate to the next page.
++ `prev()` - Navigate to the previous page.
++ `destroy()` - Destroy the component and remove it from the DOM.
+
+### Example of Method Usage
+
+```javascript
+const wizard = Metro.getPlugin('#myWizard', 'wizard-classic');
+wizard.next();
+```
+
+You can also use jQuery-style access:
 
 ```javascript
 $(element).data('wizard-classic').next();
 ```
 
-### prev()
-Navigate to the previous page.
+## Styling with CSS Variables
 
-```javascript
-$(element).data('wizard-classic').prev();
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--wizard-classic-border-color` | `#f3f3f3` | - | Border color of the wizard |
+| `--wizard-classic-background` | `#ffffff` | - | Background color of the wizard |
+| `--wizard-classic-color` | `#191919` | - | Text color of the wizard |
+
+### Example of Custom Styling
+
+```css
+#my-wizard {
+    --wizard-classic-border-color: #dcdcdc;
+    --wizard-classic-background: #f8f8f8;
+    --wizard-classic-color: #333333;
+}
 ```
 
-### destroy()
-Destroy the component and remove it from the DOM.
+## Available CSS Classes
 
-```javascript
-$(element).data('wizard-classic').destroy();
-```
+### Base Classes
+- `.wizard-classic` - Main container class (automatically added)
+- `.wizard-pages` - Container for pages
+- `.page` - Individual page class
 
-## CSS Variables
+### State Classes
+- `.active` - Applied to the currently visible page
+- `.out` - Applied to a page that's being moved out
+- `.disabled` - Applied to buttons that are disabled in the current state
 
-The component can be customized using the following CSS variables:
-
-| Variable | Default | Description |
-| --- | --- | --- |
-| `--wizard-classic-border-color` | `#f3f3f3` | Border color of the wizard |
-| `--wizard-classic-background` | `#ffffff` | Background color of the wizard |
-| `--wizard-classic-color` | `#191919` | Text color of the wizard |
+### Button Classes
+- `.wizard-actions` - Container for action buttons
+- `.wizard-help` - Help button
+- `.wizard-prev` - Previous button
+- `.wizard-next` - Next button
+- `.wizard-finish` - Finish button
+- `.wizard-cancel` - Cancel button
 
 ## Example
 

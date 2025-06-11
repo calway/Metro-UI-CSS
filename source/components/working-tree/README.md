@@ -1,52 +1,76 @@
-# Working Tree Component
+# Working Tree
 
 The Working Tree component provides a visual representation of processes or tasks with status indicators. It displays a hierarchical structure with nodes that can have different states (pending, success, fail) and child items.
 
+## Dependencies
+
+This component has no additional dependencies beyond the core Metro UI library.
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <!-- Basic usage -->
 <ul data-role="working-tree" id="my-tree"></ul>
-
-<!-- Controlling with JavaScript -->
-<script>
-    // Get component reference
-    var workingTree = $("#my-tree").data("working-tree");
-    
-    // Add a node with children
-    var nodeId = workingTree.addNode({
-        title: "Installation process",
-        value: "0%",
-        items: [
-            {title: "Download files", value: "Pending"},
-            {title: "Extract archive", value: "Waiting"},
-            {title: "Install components", value: "Waiting"}
-        ]
-    });
-    
-    // Change node state
-    workingTree.setState(nodeId, "pending");
-    
-    // Later update to success
-    setTimeout(function() {
-        workingTree.setState(nodeId, "success");
-    }, 3000);
-</script>
 ```
 
-## Component Parameters
+### Programmatic Creation
+
+```javascript
+// Get component reference
+const workingTree = Metro.getPlugin("#my-tree", "working-tree");
+
+// Add a node with children
+const nodeId = workingTree.addNode({
+    title: "Installation process",
+    value: "0%",
+    items: [
+        {title: "Download files", value: "Pending"},
+        {title: "Extract archive", value: "Waiting"},
+        {title: "Install components", value: "Waiting"}
+    ]
+});
+
+// Change node state
+workingTree.setState(nodeId, "pending");
+
+// Later update to success
+setTimeout(function() {
+    workingTree.setState(nodeId, "success");
+}, 3000);
+```
+
+### Manual HTML Structure
+
+You can also create the working tree structure manually:
+
+```html
+<ul class="working-tree">
+    <li class="work-pending">
+        <div class="bull"><span data-role="bull" data-type="pending"></span></div>
+        <div class="node">
+            <div class="title">Node Title</div>
+            <div class="value">Value Text</div>
+        </div>
+        <ul class="leaves">
+            <li>
+                <div class="title">Item Title</div>
+                <div class="value">Item Value</div>
+            </li>
+            <!-- More items... -->
+        </ul>
+    </li>
+    <!-- More nodes... -->
+</ul>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | `onStateChange` | Function | `Metro.noop` | Triggered when node state changes |
 | `onWorkingTreeCreate` | Function | `Metro.noop` | Triggered after working tree component creation |
-
-## Events
-
-| Event | Arguments | Description |
-| --- | --- | --- |
-| `state-change` | `{id, state, node}` | Triggered when a node changes state |
-| `tree-create` | `{element}` | Triggered after component creation |
 
 ## API Methods
 
@@ -55,7 +79,7 @@ The Working Tree component provides a visual representation of processes or task
 Adds a new node to the working tree.
 
 ```javascript
-var nodeId = workingTree.addNode({
+const nodeId = workingTree.addNode({
     id: "optional-id", // Optional - auto-generated if not provided
     title: "Process Title",
     value: "In Progress",
@@ -83,6 +107,21 @@ Valid states:
 - `"success"` - Completed successfully (green indicator)
 - `"fail"` - Failed (red indicator)
 
+### destroy()
+
+Removes the component from the DOM.
+
+```javascript
+workingTree.destroy();
+```
+
+## Events
+
+| Event | Arguments | Description |
+| --- | --- | --- |
+| `onStateChange` | `{id, state, node}` | Triggered when a node changes state |
+| `onWorkingTreeCreate` | `{element}` | Triggered after component creation |
+
 ## Global Configuration
 
 You can globally configure the working tree component using the `Metro.workingTreeSetup` method:
@@ -95,11 +134,9 @@ Metro.workingTreeSetup({
 });
 ```
 
-## CSS Variables
+## Styling with CSS Variables
 
-The working tree component uses the following CSS variables that you can customize:
-
-| Variable | Default (Light Theme) | Default (Dark Theme) | Description |
+| Variable | Default (Light) | Dark Mode | Description |
 | --- | --- | --- | --- |
 | `--working-tree-marker-color` | `#e8e8e8` | `#3d444d` | Color for connection lines and default markers |
 | `--working-tree-marker-success` | `#219707` | `#81e06c` | Color for success state markers |
@@ -107,7 +144,7 @@ The working tree component uses the following CSS variables that you can customi
 | `--working-tree-marker-pending` | `#ff9c17` | `#ff9c17` | Color for pending state markers |
 | `--working-tree-color` | `#191919` | `#efefef` | Text color |
 
-Example of customizing CSS variables:
+### Example of Custom Styling
 
 ```css
 :root {
@@ -117,28 +154,19 @@ Example of customizing CSS variables:
 }
 ```
 
-## Structure
+## Available CSS Classes
 
-The component creates the following HTML structure:
+### Base Classes
+- `.working-tree` - Main container class
+- `.working-tree > li` - Node container
+- `.working-tree > li .node` - Node content container
+- `.working-tree .bull` - Bullet point container
+- `.working-tree .title` - Title text styling
+- `.working-tree .value` - Value text styling
+- `.working-tree .leaves` - Container for child nodes
+- `.working-tree .leaves li` - Child node styling
 
-```html
-<ul class="working-tree">
-    <li id="working-tree-node-1" class="work-pending">
-        <div class="bull">
-            <span data-role="bull" data-type="pending"></span>
-        </div>
-        <div class="node">
-            <div class="title">Node Title</div>
-            <div class="value">Value Text</div>
-        </div>
-        <ul class="leaves">
-            <li>
-                <div class="title">Item Title</div>
-                <div class="value">Item Value</div>
-            </li>
-            <!-- More items... -->
-        </ul>
-    </li>
-    <!-- More nodes... -->
-</ul>
-```
+### Modifiers
+- `.work-success` - Success state styling (green)
+- `.work-pending` - Pending state styling (orange)
+- `.work-fail` - Failure state styling (red)

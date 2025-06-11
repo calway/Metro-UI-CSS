@@ -2,6 +2,10 @@
 
 The Vertical Menu (v-menu) component provides a vertical navigation menu with support for dropdown items, icons, hotkeys, and dividers.
 
+## Dependencies
+
+This component has no JavaScript dependencies as it's a CSS-only component.
+
 ## Usage
 
 ```html

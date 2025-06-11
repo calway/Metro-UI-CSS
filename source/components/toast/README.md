@@ -1,8 +1,18 @@
-# Toast Component
+# Toast
 
-The Toast component creates non-intrusive notification messages that appear temporarily on the screen before automatically disappearing.
+Brief notification messages that appear temporarily on the screen and automatically disappear after a specified time.
+
+## Dependencies
+
+None
 
 ## Usage
+
+### Basic Usage
+
+```html
+<!-- No HTML markup required for toast -->
+```
 
 ```javascript
 // Basic usage
@@ -20,49 +30,50 @@ Metro.toast.create("Operation completed", function(){
 });
 ```
 
-## Component Parameters
-
-| Parameter | Type | Default      | Description |
-| --- | --- |--------------| --- |
-| `callback` | Function | `Metro.noop` | Function called after toast is closed |
-| `timeout` | Number | `3000`       | Time in milliseconds before toast auto-closes |
-| `distance` | Number | `20`         | Distance from the edge of the screen in pixels |
-| `position` | String | `"bottom"`   | Position of the toast: "bottom", "top", or "center" |
-| `clsToast` | String | `""`         | Additional CSS class(es) for toast element |
-
-## Methods
-
-### Metro.toast.create(message, options)
-
-Creates and displays a toast notification.
+### Additional Configurations
 
 ```javascript
-// With object options
+// Using the shorthand method
+Metro.createToast("Hello World!");
+
+// With custom styling
+Metro.toast.create("Custom styled toast", {
+    clsToast: "alert"
+});
+```
+
+## Plugin Parameters
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `callback` | Function | `Metro.noop` | Function called after toast is closed |
+| `timeout` | Number | `3000` | Time in milliseconds before toast auto-closes |
+| `distance` | Number | `20` | Distance from the edge of the screen in pixels |
+| `position` | String | `"bottom"` | Position of the toast: "bottom", "top", or "center" |
+| `clsToast` | String | `""` | Additional CSS class(es) for toast element |
+
+## API Methods
+
++ `Metro.toast.create(message, options)` - Creates and displays a toast notification.
++ `Metro.createToast(message, options)` - Alias for `Metro.toast.create()`.
++ `Metro.toast.remove(toast, callback)` - Manually remove a toast element (generally used internally).
+
+### Example of Method Usage
+
+```javascript
+// Create a toast with options
 Metro.toast.create("Hello World!", {
     timeout: 3000,
     position: "center",
     clsToast: "primary"
 });
 
-// With callback function
+// Create a toast with callback function
 Metro.toast.create("Hello World!", function(){
     console.log("Toast closed");
 });
-```
 
-### Metro.createToast(message, options)
-
-Alias for `Metro.toast.create()`.
-
-```javascript
-Metro.createToast("Hello World!");
-```
-
-### Metro.toast.remove(toast, callback)
-
-Manually remove a toast element. Generally used internally.
-
-```javascript
+// Manually remove a toast
 const toastElement = $(".toast");
 Metro.toast.remove(toastElement, function(){
     console.log("Toast manually removed");
@@ -82,12 +93,10 @@ Metro.toastSetup({
 });
 ```
 
-## CSS Variables
+## Styling with CSS Variables
 
-The toast component uses the following CSS variables that you can customize:
-
-| Variable | Default (Light Theme) | Default (Dark Theme) | Description |
-| --- | --- | --- | --- |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
 | `--toast-background` | `#323232` | `#2b2d30` | Toast background color |
 | `--toast-color` | `#ffffff` | `#ffffff` | Toast text color |
 | `--toast-border-radius` | `6px` | `6px` | Toast border radius |
@@ -96,7 +105,7 @@ The toast component uses the following CSS variables that you can customize:
 | `--toast-closer-background-hover` | `var(--color-alert)` | `var(--color-alert)` | Close button background on hover |
 | `--toast-closer-color-hover` | `var(--color-light)` | `var(--color-light)` | Close button text color on hover |
 
-Example of customizing CSS variables:
+### Example of Custom Styling
 
 ```css
 :root {
@@ -106,32 +115,35 @@ Example of customizing CSS variables:
 }
 ```
 
-## Toast Positions
+## Available CSS Classes
 
-You can position toasts in three different ways:
+### Base Classes
+- `.toast` - The main toast container
 
-### Bottom (default)
+### Modifiers
+- `.show-top` - Positions the toast at the top of the screen
+- `.show-center` - Positions the toast in the center of the screen
+
+### Example of Position Classes
+
 ```javascript
+// Bottom (default)
 Metro.toast.create("Toast at the bottom", {
     position: "bottom"
 });
-```
 
-### Top
-```javascript
+// Top
 Metro.toast.create("Toast at the top", {
     position: "top"
 });
-```
 
-### Center
-```javascript
+// Center
 Metro.toast.create("Toast in the center", {
     position: "center"
 });
 ```
 
-## Custom Styling
+### Custom Styling with Classes
 
 You can add custom styles to your toast notifications using the `clsToast` option:
 

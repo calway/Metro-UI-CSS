@@ -2,8 +2,15 @@
 
 Vegas component provides a versatile background slideshow with various transitions and animation effects. It's based on the Vegas Background Slideshow plugin by Jay Salvat, adapted for Metro UI.
 
+## Dependencies
+
+The Vegas component has the following dependencies:
+- Metro UI Core
+- DOM library (included in Metro UI)
+
 ## Usage
 
+### Basic Usage
 ```html
 <!-- Basic usage -->
 <div data-role="vegas" data-slides='[
@@ -25,7 +32,7 @@ Vegas component provides a versatile background slideshow with various transitio
      ]'></div>
 ```
 
-## Component Parameters
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -68,7 +75,7 @@ Vegas component provides a versatile background slideshow with various transitio
 Starts or resumes the slideshow.
 
 ```javascript
-var vegas = $("#my-vegas").data("vegas");
+const vegas = Metro.getPlugin("#my-vegas", "vegas");
 vegas.play();
 ```
 
@@ -77,7 +84,7 @@ vegas.play();
 Pauses the slideshow.
 
 ```javascript
-var vegas = $("#my-vegas").data("vegas");
+const vegas = Metro.getPlugin("#my-vegas", "vegas");
 vegas.pause();
 ```
 
@@ -86,7 +93,7 @@ vegas.pause();
 Toggles between playing and paused states.
 
 ```javascript
-var vegas = $("#my-vegas").data("vegas");
+const vegas = Metro.getPlugin("#my-vegas", "vegas");
 vegas.toggle();
 ```
 
@@ -95,8 +102,8 @@ vegas.toggle();
 Returns whether the slideshow is currently playing.
 
 ```javascript
-var vegas = $("#my-vegas").data("vegas");
-var isPlaying = vegas.playing(); // true or false
+const vegas = Metro.getPlugin("#my-vegas", "vegas");
+const isPlaying = vegas.playing(); // true or false
 ```
 
 ### current([advanced])
@@ -104,9 +111,9 @@ var isPlaying = vegas.playing(); // true or false
 Gets the current slide. If advanced is true, returns an object with slide index and data.
 
 ```javascript
-var vegas = $("#my-vegas").data("vegas");
-var currentIndex = vegas.current(); // Index number
-var currentData = vegas.current(true); // {slide: index, data: slideObject}
+const vegas = Metro.getPlugin("#my-vegas", "vegas");
+const currentIndex = vegas.current(); // Index number
+const currentData = vegas.current(true); // {slide: index, data: slideObject}
 ```
 
 ### jump(n)
@@ -114,7 +121,7 @@ var currentData = vegas.current(true); // {slide: index, data: slideObject}
 Jumps to a specific slide (1-based index).
 
 ```javascript
-var vegas = $("#my-vegas").data("vegas");
+const vegas = Metro.getPlugin("#my-vegas", "vegas");
 vegas.jump(2); // Jump to second slide
 ```
 
@@ -123,7 +130,7 @@ vegas.jump(2); // Jump to second slide
 Advances to the next slide.
 
 ```javascript
-var vegas = $("#my-vegas").data("vegas");
+const vegas = Metro.getPlugin("#my-vegas", "vegas");
 vegas.next();
 ```
 
@@ -132,7 +139,7 @@ vegas.next();
 Goes back to the previous slide.
 
 ```javascript
-var vegas = $("#my-vegas").data("vegas");
+const vegas = Metro.getPlugin("#my-vegas", "vegas");
 vegas.prev();
 ```
 
@@ -234,7 +241,7 @@ The component includes 9 overlay patterns (numbered 1-9) that can be applied on 
 
 <script>
     // Control the slideshow via JavaScript
-    var vegas = $("#vegas-background").data("vegas");
+    const vegas = Metro.getPlugin("#vegas-background", "vegas");
     
     // Pause when a button is clicked
     $("#pause-button").on("click", function(){
@@ -248,7 +255,7 @@ The component includes 9 overlay patterns (numbered 1-9) that can be applied on 
 </script>
 ```
 
-## CSS Variables
+## Styling with CSS Variables
 
 The Vegas component uses the following CSS variables that you can customize:
 
@@ -263,3 +270,28 @@ Example of customizing CSS variables:
     --vegas-timer-color: #ff0000;
 }
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.vegas-container` - Applied to the element that contains the Vegas slideshow
+- `.vegas-wrapper` - Wrapper for content inside the Vegas container
+- `.vegas-overlay` - Overlay element that can display patterns on top of slides
+- `.vegas-timer` - Timer element showing progress of current slide
+- `.vegas-timer-progress` - Progress bar inside the timer element
+- `.vegas-slide` - Individual slide element
+- `.vegas-slide-inner` - Inner content of a slide (for images)
+- `.vegas-video` - Video element within a slide
+
+### Overlay Classes
+- `.overlay1` through `.overlay9` - Different overlay patterns that can be applied
+
+### Transition Classes
+- `.vegas-transition-[name]` - Base class for transitions (e.g., `.vegas-transition-fade`)
+- `.vegas-transition-[name]-in` - Class for incoming slide during transition
+- `.vegas-transition-[name]-out` - Class for outgoing slide during transition
+
+### Animation Classes
+- `.vegas-animation-[name]` - Animation classes (e.g., `.vegas-animation-kenburns`)
+
+These classes are automatically applied by the component and can be used for custom styling if needed.

@@ -1,14 +1,24 @@
-# Video Player Component
+# Video Player
 
-Video Player component provides a customizable HTML5 video player with various controls and features such as volume control, fullscreen mode, and custom aspect ratios.
+A component that provides customizable HTML5 video playback functionality with controls for volume, playback, fullscreen mode, and custom aspect ratios.
+
+## Dependencies
+
+- Metro UI Core
+- Metro Slider Component (for volume and progress controls)
+- Metro Activity Component (for preloader)
 
 ## Usage
 
-```html
-<!-- Basic usage -->
-<video data-role="video-player" src="video.mp4"></video>
+### Basic Usage
 
-<!-- With custom options -->
+```html
+<video data-role="video-player" src="video.mp4"></video>
+```
+
+### With Custom Options
+
+```html
 <video data-role="video-player" 
        data-aspect-ratio="16/9"
        data-volume="0.8" 
@@ -17,8 +27,11 @@ Video Player component provides a customizable HTML5 video player with various c
     <source src="video.mp4" type="video/mp4">
     <source src="video.webm" type="video/webm">
 </video>
+```
 
-<!-- With array of source files -->
+### With Array of Source Files
+
+```html
 <video data-role="video-player" 
        data-src='[
            {"src": "video.mp4", "type": "video/mp4"},
@@ -27,7 +40,7 @@ Video Player component provides a customizable HTML5 video player with various c
 </video>
 ```
 
-## Component Parameters
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -52,7 +65,7 @@ Video Player component provides a customizable HTML5 video player with various c
 | `showStream` | Boolean | `true` | Whether to show progress slider |
 | `showVolume` | Boolean | `true` | Whether to show volume slider |
 | `showInfo` | Boolean | `true` | Whether to show time info display |
-| `loopIcon` | String | `"🔁"` | Icon for loop button |
+| `loopIcon` | String | `"⮔"` | Icon for loop button |
 | `stopIcon` | String | `"⏹"` | Icon for stop button |
 | `playIcon` | String | `"▶"` | Icon for play button |
 | `pauseIcon` | String | `"⏸"` | Icon for pause button |
@@ -61,106 +74,63 @@ Video Player component provides a customizable HTML5 video player with various c
 | `volumeMediumIcon` | String | `"🔉"` | Icon for medium volume |
 | `volumeHighIcon` | String | `"🔊"` | Icon for high volume |
 | `screenMoreIcon` | String | `"⬜"` | Icon for entering fullscreen |
-| `screenLessIcon` | String | `"⬚"` | Icon for exiting fullscreen |
-
-## Events
-
-| Event | Arguments | Description |
-| --- | --- | --- |
-| `onPlay` | `{video, player}` | Triggered when video starts playing |
-| `onPause` | `{video, player}` | Triggered when video is paused |
-| `onStop` | `{video, player}` | Triggered when video is stopped |
-| `onEnd` | `{video, player}` | Triggered when video reaches the end |
-| `onMetadata` | `{video, player}` | Triggered when video metadata is loaded |
-| `onTime` | `{currentTime, duration, video, player}` | Triggered when playback time updates |
-| `onVideoPlayerCreate` | `{element, player}` | Triggered after video player component creation |
+| `screenLessIcon` | String | `"▫️"` | Icon for exiting fullscreen |
 
 ## API Methods
 
-### play([src])
++ `play([src])` - Plays the video. If `src` parameter is provided, changes the video source first.
++ `pause()` - Pauses video playback.
++ `resume()` - Resumes video playback if paused.
++ `stop()` - Stops video playback and resets to the beginning.
++ `setVolume(v)` - Gets or sets the video volume level (0 to 1 or 0 to 100).
++ `loop()` - Toggles the loop state of the video.
++ `mute()` - Toggles the muted state of the video.
++ `aspectRatio(ratio)` - Changes the aspect ratio of the player.
++ `destroy()` - Destroys the component and returns the original element.
 
-Plays the video. If `src` parameter is provided, changes the video source first.
+### Example of Method Usage
 
 ```javascript
-var player = $("#my-video").data("video-player");
+const player = Metro.getPlugin('#my-video', 'video-player');
 player.play(); // Play current video
 player.play("new-video.mp4"); // Change source and play
 ```
 
-### pause()
+## Events
 
-Pauses video playback.
+| Event | Description |
+| ----- | ----------- |
+| `onPlay` | Triggered when video starts playing |
+| `onPause` | Triggered when video is paused |
+| `onStop` | Triggered when video is stopped |
+| `onEnd` | Triggered when video reaches the end |
+| `onMetadata` | Triggered when video metadata is loaded |
+| `onTime` | Triggered when playback time updates |
+| `onVideoPlayerCreate` | Triggered after video player component creation |
 
-```javascript
-var player = $("#my-video").data("video-player");
-player.pause();
+## Styling with CSS Variables
+
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--player-wrapper-background` | `#000` | `#000` | Background color for the video wrapper |
+
+### Example of Custom Styling
+
+```css
+#my-video-player {
+    --player-wrapper-background: #1a1a1a;
+}
 ```
 
-### resume()
+## Available CSS Classes
 
-Resumes video playback if paused.
+### Base Classes
+- `.video-player` - Main container class for the video player component
+- `.video-wrapper` - Container for the video element
+- `.controls` - Container for the playback controls
 
-```javascript
-var player = $("#my-video").data("video-player");
-player.resume();
-```
-
-### stop()
-
-Stops video playback and resets to the beginning.
-
-```javascript
-var player = $("#my-video").data("video-player");
-player.stop();
-```
-
-### setVolume(v)
-
-Gets or sets the video volume level (0 to 1).
-
-```javascript
-var player = $("#my-video").data("video-player");
-var currentVolume = player.setVolume(); // Get current volume
-
-player.setVolume(0.7); // Set to 70%
-player.setVolume(50); // Also accepts 0-100 scale
-```
-
-### loop()
-
-Toggles the loop state of the video.
-
-```javascript
-var player = $("#my-video").data("video-player");
-player.loop();
-```
-
-### mute()
-
-Toggles the muted state of the video.
-
-```javascript
-var player = $("#my-video").data("video-player");
-player.mute();
-```
-
-### aspectRatio(ratio)
-
-Changes the aspect ratio of the player.
-
-```javascript
-var player = $("#my-video").data("video-player");
-player.aspectRatio(Metro.aspectRatio.SD); // Change to 4:3
-```
-
-### destroy()
-
-Destroys the component and returns the original element.
-
-```javascript
-var player = $("#my-video").data("video-player");
-var element = player.destroy();
-```
+### Modifiers
+- `.full-screen` - Applied when the player is in fullscreen mode
 
 ## Global Configuration
 
@@ -170,8 +140,7 @@ You can globally configure the video player component using the `Metro.videoPlay
 Metro.videoPlayerSetup({
     aspectRatio: Metro.aspectRatio.SD,
     volume: 0.8,
-    autoplay: true,
-    showControls: false
+    autoplay: true
 });
 ```
 

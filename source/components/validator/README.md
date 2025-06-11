@@ -1,8 +1,14 @@
-# Validator Component
+# Validator
 
-The Validator component provides form validation functionality with a variety of validation rules. It allows you to validate form inputs using custom data attributes and handles form submission based on validation results.
+The Validator component provides form validation functionality with a variety of validation rules. It allows you to validate form inputs using custom data attributes and handles form submission based on validation results. The component automatically validates form inputs before submission and prevents the form from being submitted if validation fails.
+
+## Dependencies
+
+- Farbe - Used for color validation
 
 ## Usage
+
+### Basic Usage
 
 ```html
 <form data-role="validator">
@@ -13,35 +19,64 @@ The Validator component provides form validation functionality with a variety of
 </form>
 ```
 
-## Component Parameters
+### Additional Configurations
+
+```html
+<form data-role="validator" data-interactive-check="true" data-clear-invalid="2000">
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" data-validate="required email">
+    </div>
+    <button type="submit">Submit</button>
+</form>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
+| --------- | ---- | ------- | ----------- |
 | `validatorDeferred` | Number | `0` | Defer initialization of component in milliseconds |
 | `submitTimeout` | Number | `200` | Timeout before form submission in milliseconds |
 | `interactiveCheck` | Boolean | `false` | If true, validation occurs on input change |
 | `clearInvalid` | Number | `0` | Time in milliseconds to automatically clear invalid state (0 = disabled) |
 | `requiredMode` | Boolean | `true` | If true, all validation rules are applied; if false, empty fields bypass non-required validations |
 | `useRequiredClass` | Boolean | `true` | If true, adds "required" class to elements with required validation |
+| `onBeforeSubmit` | Function | `Metro.noop_true` | Triggered before form submission, return false to prevent submission |
+| `onSubmit` | Function | `Metro.noop` | Triggered on successful form submission |
+| `onError` | Function | `Metro.noop` | Triggered when an input validation fails |
+| `onValidate` | Function | `Metro.noop` | Triggered when an input validation passes |
+| `onErrorForm` | Function | `Metro.noop` | Triggered when form validation fails |
+| `onValidateForm` | Function | `Metro.noop` | Triggered when form validation passes |
+| `onValidatorCreate` | Function | `Metro.noop` | Triggered after validator component creation |
+
+## API Methods
+
+The validator component exposes its functionality through the global `Metro.validator` object:
+
++ `validate(element, result, onOk, onError, requiredMode)` - Validates a specific element with optional result object, callbacks, and required mode.
++ `reset(form)` - Resets validation state for all elements in a form.
++ `reset_state(element)` - Resets the validation state of a specific element.
++ `set_valid_state(element)` - Sets the valid state for a specific element.
++ `set_invalid_state(element)` - Sets the invalid state for a specific element.
 
 ## Events
 
-| Event | Arguments | Description |
-| --- | --- | --- |
-| `onBeforeSubmit` | `[formData]` | Triggered before form submission, return false to prevent submission |
-| `onSubmit` | `[formData]` | Triggered on successful form submission |
-| `onError` | `[input, value]` | Triggered when an input validation fails |
-| `onValidate` | `[input, value]` | Triggered when an input validation passes |
-| `onErrorForm` | `{log, data}` | Triggered when form validation fails |
-| `onValidateForm` | `{data}` | Triggered when form validation passes |
-| `onValidatorCreate` | `{element}` | Triggered after validator component creation |
+| Event | Description |
+| ----- | ----------- |
+| `onBeforeSubmit` | Triggered before form submission, return false to prevent submission |
+| `onSubmit` | Triggered on successful form submission |
+| `onError` | Triggered when an input validation fails |
+| `onValidate` | Triggered when an input validation passes |
+| `onErrorForm` | Triggered when form validation fails |
+| `onValidateForm` | Triggered when form validation passes |
+| `onValidatorCreate` | Triggered after validator component creation |
 
 ## Validation Rules
 
 Add validation rules to form elements using the `data-validate` attribute. Multiple rules can be combined with spaces.
 
 | Rule | Format | Description |
-| --- | --- | --- |
+| ---- | ------ | ----------- |
 | `required` | `required` | Field cannot be empty |
 | `length` | `length=n` | Field must be exactly n characters long |
 | `minlength` | `minlength=n` | Field must be at least n characters long |
@@ -91,17 +126,38 @@ Metro.validatorSetup({
 });
 ```
 
-## CSS Classes
+## Styling with CSS Variables
 
-The validator component adds status classes to form elements:
+The validator component doesn't use specific CSS variables for styling, but it adds CSS classes to elements for styling purposes.
 
-| Class | Description |
-| --- | --- |
-| `required` | Added to elements with required validation (if useRequiredClass is true) |
-| `invalid` | Added to elements that fail validation |
-| `valid` | Added to elements that pass validation |
+## Available CSS Classes
+
+### Base Classes
+- `.required` - Added to elements with required validation (if useRequiredClass is true)
+- `.invalid` - Added to elements that fail validation
+- `.valid` - Added to elements that pass validation
 
 For controls with `data-role` attributes (like select or input), these classes are added to the parent element.
+
+### Example of Custom Styling
+
+```css
+/* Custom styling for validation states */
+.invalid {
+    border-color: #ff0000;
+    background-color: #ffeeee;
+}
+
+.valid {
+    border-color: #00ff00;
+    background-color: #eeffee;
+}
+
+.required::after {
+    content: "*";
+    color: #ff0000;
+}
+```
 
 ## Examples
 

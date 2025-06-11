@@ -59,6 +59,7 @@
         aspect-ratio: 1;
         border: 1px solid var(--input-border-color);
         font-size: var(--input-font-size);
+        padding: 0;
 
         &:focus, &:active {
             box-shadow: none!important;
@@ -123,6 +124,16 @@
     &.open {
         .color-selector-box {
             display: block!important;
+        }
+    }
+}
+
+.color-picker {
+    &.pill-input {
+        --input-border-radius: calc(var(--input-height) * 0.44);
+
+        .button, .color-example-box {
+            border-radius: 50%;
         }
     }
 }

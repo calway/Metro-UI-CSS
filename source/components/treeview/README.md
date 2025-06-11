@@ -1,29 +1,78 @@
-# TreeView Component
+# TreeView
 
-TreeView component provides a hierarchical view of data in a tree-like structure, allowing users to navigate through different levels of information.
+A hierarchical component that displays data in a tree-like structure, allowing users to navigate through different levels of information.
+
+## Dependencies
+
+- Button
+- Dropdown
+- Dropdown-button
 
 ## Usage
 
+### Basic Usage
+
 ```html
-<!-- Basic usage -->
-<ul data-role="tree-view">
+<ul data-role="treeview">
     <li data-caption="Item 1"></li>
-    <li data-caption="Folder 1" data-type="node">
+    <li data-caption="Folder 1">
         <ul>
             <li data-caption="Sub Item 1"></li>
             <li data-caption="Sub Item 2" data-icon="<span class='mif-file'></span>"></li>
         </ul>
     </li>
 </ul>
+```
 
-<!-- With checkboxes -->
-<ul data-role="tree-view">
-    <li data-caption="Option 1" data-type="checkbox" data-name="options[]" data-value="1"></li>
-    <li data-caption="Option 2" data-type="checkbox" data-name="options[]" data-value="2"></li>
+### With Icons
+
+```html
+<ul data-role="treeview">
+    <li data-icon="<span class='mif-star-full fg-red'>" data-caption="Favorites">
+        <ul>
+            <li data-icon="<span class='mif-library fg-green'>" data-caption="Projects"></li>
+            <li data-icon="<span class='mif-download fg-cyan'>" data-caption="Downloads"></li>
+            <li data-icon="<span class='mif-apps'>" data-caption="Desktop"></li>
+        </ul>
+    </li>
 </ul>
 ```
 
-## Component Parameters
+### With Checkboxes
+
+```html
+<ul data-role="treeview">
+    <li>
+        <input type="checkbox" data-role="checkbox" data-append="Play video" title="" data-three-state="true">
+        <ul>
+            <li><input type="checkbox" data-role="checkbox" data-append="AVI" title=""></li>
+            <li><input type="checkbox" data-role="checkbox" data-append="MPEG" title=""></li>
+            <li><input checked type="checkbox" data-role="checkbox" data-append="VIDX" title=""></li>
+        </ul>
+    </li>
+</ul>
+```
+
+### With Custom Content
+
+```html
+<ul data-role="treeview">
+    <li class="w-100 expanded">
+        <div class="d-flex flex-align-center">
+            <input type="text" data-role="materialinput" value="Custom item">
+            <a id="btmMore-1" class="button">
+                <span class="mif-more-horiz"></span>
+            </a>
+            <ul class="d-menu drop-down-right" data-role="dropdown" data-toggle-element="#btmMore-1">
+                <li><a href="#"><span class="mif-user icon"></span> Profile</a></li>
+                <li><a href="#">Calendar</a></li>
+            </ul>
+        </div>
+    </li>
+</ul>
+```
+
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -33,181 +82,104 @@ TreeView component provides a hierarchical view of data in a tree-like structure
 | `hideActionsOnLeave` | Boolean | `true` | Hide action menu when mouse leaves node |
 | `recheckTimeout` | Number | `100` | Timeout for rechecking state of tree checkboxes |
 | `leaves` | Array/Object | `[]` | Data to create tree structure |
-
-## Events
-
-| Event | Arguments | Description |
-| --- | --- | --- |
-| `onNodeClick` | `{node}` | Triggered when a node is clicked |
-| `onNodeDblClick` | `{node}` | Triggered when a node is double-clicked |
-| `onNodeDelete` | `{node}` | Triggered when a node is deleted |
-| `onNodeInsert` | `{node, parent}` | Triggered when a node is inserted |
-| `onNodeClean` | `{node}` | Triggered when a node is cleaned (children removed) |
-| `onCheckClick` | `{checked, check, node}` | Triggered when a checkbox is clicked |
-| `onRadioClick` | `{checked, check, node}` | Triggered when a radio button is clicked |
-| `onExpandNode` | `{node}` | Triggered when a node is expanded |
-| `onCollapseNode` | `{node}` | Triggered when a node is collapsed |
-| `onTreeViewCreate` | `{element}` | Triggered after tree view component creation |
+| `onNodeClick` | Function | `Metro.noop` | Triggered when a node is clicked |
+| `onNodeDblClick` | Function | `Metro.noop` | Triggered when a node is double-clicked |
+| `onNodeDelete` | Function | `Metro.noop` | Triggered when a node is deleted |
+| `onNodeInsert` | Function | `Metro.noop` | Triggered when a node is inserted |
+| `onNodeClean` | Function | `Metro.noop` | Triggered when a node is cleaned (children removed) |
+| `onCheckClick` | Function | `Metro.noop` | Triggered when a checkbox is clicked |
+| `onRadioClick` | Function | `Metro.noop` | Triggered when a radio button is clicked |
+| `onExpandNode` | Function | `Metro.noop` | Triggered when a node is expanded |
+| `onCollapseNode` | Function | `Metro.noop` | Triggered when a node is collapsed |
+| `onTreeViewCreate` | Function | `Metro.noop` | Triggered after tree view component creation |
 
 ## API Methods
 
-### current([node])
++ `current([node])` - Gets or sets the current node. If node is not specified, returns the current node.
++ `toggleNode(node)` - Toggles a node's expanded/collapsed state.
++ `expandNode(node)` - Expands a specific node.
++ `collapseNode(node)` - Collapses a specific node.
++ `expandAll()` - Expands all nodes in the tree.
++ `collapseAll()` - Collapses all nodes in the tree.
++ `addTo(targetNode, data)` - Adds a new node to the target node or to the root if targetNode is not specified.
++ `insertBefore(targetNode, data)` - Inserts a node before the specified target node.
++ `insertAfter(targetNode, data)` - Inserts a node after the specified target node.
++ `del(targetNode)` - Deletes the specified node.
++ `clean(targetNode)` - Removes all children from the specified node.
++ `fillTree(leaves, [node])` - Fills the tree with data.
 
-Gets or sets the current node.
-
-```javascript
-// Get current node
-var treeView = $("#my-tree").data("tree-view");
-var currentNode = treeView.current();
-
-// Set current node
-treeView.current($("#my-tree li").eq(2));
-```
-
-### toggleNode(node)
-
-Toggles a node's expanded/collapsed state.
+### Example of Method Usage
 
 ```javascript
-var treeView = $("#my-tree").data("tree-view");
-treeView.toggleNode($("#my-tree li").eq(1));
-```
+// Get the treeview component
+const treeview = Metro.getPlugin('#myTreeview', 'treeview');
 
-### expandNode(node)
-
-Expands a specific node.
-
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-treeView.expandNode($("#my-tree li.tree-node").eq(0));
-```
-
-### collapseNode(node)
-
-Collapses a specific node.
-
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-treeView.collapseNode($("#my-tree li.tree-node").eq(0));
-```
-
-### expandAll()
-
-Expands all nodes in the tree.
-
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-treeView.expandAll();
-```
-
-### collapseAll()
-
-Collapses all nodes in the tree.
-
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-treeView.collapseAll();
-```
-
-### addTo(targetNode, data)
-
-Adds a new node to the target node or to the root if targetNode is not specified.
-
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-
-// Add to root
-treeView.addTo(null, {
-    caption: "New Root Item",
+// Add a new node
+treeview.addTo(null, {
+    caption: "New Item",
     icon: "<span class='mif-file'></span>"
 });
 
-// Add to specific node
-var targetNode = $("#my-tree li").eq(1);
-treeView.addTo(targetNode, {
-    caption: "New Child Item",
-    icon: "<span class='mif-file'></span>"
-});
+// Expand all nodes
+treeview.expandAll();
+
+// Delete a node
+const nodeToDelete = document.querySelector('#myTreeview li:nth-child(2)');
+treeview.del(nodeToDelete);
 ```
 
-### insertBefore(targetNode, data)
+## Events
 
-Inserts a node before the specified target node.
+| Event | Description |
+| --- | --- |
+| `onNodeClick` | Triggered when a node is clicked |
+| `onNodeDblClick` | Triggered when a node is double-clicked |
+| `onNodeDelete` | Triggered when a node is deleted |
+| `onNodeInsert` | Triggered when a node is inserted |
+| `onNodeClean` | Triggered when a node is cleaned (children removed) |
+| `onCheckClick` | Triggered when a checkbox is clicked |
+| `onRadioClick` | Triggered when a radio button is clicked |
+| `onExpandNode` | Triggered when a node is expanded |
+| `onCollapseNode` | Triggered when a node is collapsed |
+| `onTreeViewCreate` | Triggered after tree view component creation |
 
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-var targetNode = $("#my-tree li").eq(1);
+## Styling with CSS Variables
 
-treeView.insertBefore(targetNode, {
-    caption: "New Item Before",
-    icon: "<span class='mif-file'></span>"
-});
+| Variable | Default (Light) | Dark Mode | Description |
+| --- | --- | --- | --- |
+| `--treeview-background` | `#ffffff` | `#1e1f22` | Background color |
+| `--treeview-color` | `#43454a` | `#dfe1e5` | Text color |
+| `--treeview-selected-row-background` | `#d4e2ff` | `#43454a` | Selected node background |
+| `--treeview-selected-row-color` | `#2b2d30` | `#ffffff` | Selected node text color |
+| `--treeview-node-toggle-color` | `#191919` | `#ffffff` | Toggle icon color |
+
+### Example of Custom Styling
+
+```css
+#myTreeview {
+    --treeview-background: #f0f0f0;
+    --treeview-selected-row-background: #0078d7;
+    --treeview-selected-row-color: white;
+}
 ```
 
-### insertAfter(targetNode, data)
+## Available CSS Classes
 
-Inserts a node after the specified target node.
+### Base Classes
+- `.treeview` - The main container class
+- `.tree-node` - Applied to nodes that have children
+- `.expanded` - Applied to nodes that are expanded
+- `.current` - Applied to the currently selected node
 
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-var targetNode = $("#my-tree li").eq(1);
-
-treeView.insertAfter(targetNode, {
-    caption: "New Item After",
-    icon: "<span class='mif-file'></span>"
-});
-```
-
-### del(targetNode)
-
-Deletes the specified node.
-
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-var nodeToDelete = $("#my-tree li").eq(2);
-
-treeView.del(nodeToDelete);
-```
-
-### clean(targetNode)
-
-Removes all children from the specified node.
-
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-var nodeToClean = $("#my-tree li").eq(1);
-
-treeView.clean(nodeToClean);
-```
-
-### fillTree(leaves, [node])
-
-Fills the tree with data.
-
-```javascript
-var treeView = $("#my-tree").data("tree-view");
-
-treeView.fillTree([
-    {
-        caption: "Item 1",
-        icon: "<span class='mif-file'></span>"
-    },
-    {
-        caption: "Folder 1",
-        icon: "<span class='mif-folder'></span>",
-        items: [
-            {
-                caption: "Sub Item 1",
-                icon: "<span class='mif-file'></span>"
-            },
-            {
-                caption: "Sub Item 2",
-                icon: "<span class='mif-file'></span>"
-            }
-        ]
-    }
-]);
-```
+### Element Classes
+- `.node-toggle` - The toggle button for expanding/collapsing nodes
+- `.icon` - For node icons
+- `.caption` - For node text
+- `.badge` - For badges in nodes
+- `.secondary-text` - For secondary text in nodes
+- `.actions-holder` - Container for node actions
+- `.actions-list` - List of actions
+- `.actions-list-trigger` - Trigger for actions list
 
 ## Node Data Structure
 
@@ -242,12 +214,13 @@ When creating nodes programmatically, you can use the following properties:
             cls: "alert",
             onclick: function() { console.log("Delete clicked"); }
         }
-    ],
-    items: []                           // Child items
+    ]
 }
 ```
 
-## Checkbox and Radio Nodes
+### Special Node Types
+
+#### Checkbox and Radio Nodes
 
 ```javascript
 // Checkbox node
@@ -269,7 +242,7 @@ When creating nodes programmatically, you can use the following properties:
 }
 ```
 
-## Input Nodes
+#### Input Nodes
 
 ```javascript
 // Input node
@@ -292,58 +265,4 @@ Metro.treeViewSetup({
     hideActionsOnLeave: false,
     // other options
 });
-```
-
-## CSS Variables
-
-The treeview component uses the following CSS variables that you can customize:
-
-| Variable | Default (Light Theme) | Default (Dark Theme) | Description |
-| --- | --- | --- | --- |
-| `--treeview-background` | `#ffffff` | `#1e1f22` | Background color |
-| `--treeview-color` | `#43454a` | `#dfe1e5` | Text color |
-| `--treeview-selected-row-background` | `#d4e2ff` | `#43454a` | Selected node background |
-| `--treeview-selected-row-color` | `#2b2d30` | `#ffffff` | Selected node text color |
-| `--treeview-node-toggle-color` | `#191919` | `#ffffff` | Toggle icon color |
-
-Example of customizing CSS variables:
-
-```css
-:root {
-    --treeview-background: #f0f0f0;
-    --treeview-selected-row-background: #0078d7;
-    --treeview-selected-row-color: white;
-}
-```
-
-## HTML Structure Example
-
-```html
-<ul data-role="tree-view">
-    <!-- Simple item -->
-    <li data-caption="Simple item"></li>
-    
-    <!-- Item with icon -->
-    <li data-caption="Item with icon" data-icon="<span class='mif-file'></span>"></li>
-    
-    <!-- Node with children -->
-    <li data-caption="Node with children" data-type="node" data-collapsed="true">
-        <ul>
-            <li data-caption="Child item 1"></li>
-            <li data-caption="Child item 2"></li>
-        </ul>
-    </li>
-    
-    <!-- Item with badge -->
-    <li data-caption="Item with badge" data-badge="5:bg-red"></li>
-    
-    <!-- Item with secondary text -->
-    <li data-caption="Item with secondary" data-secondary="Details"></li>
-    
-    <!-- Checkbox item -->
-    <li data-caption="Checkbox item" data-type="checkbox" data-name="check1" data-value="1"></li>
-    
-    <!-- Radio item -->
-    <li data-caption="Radio item" data-type="radio" data-name="radio1" data-value="1"></li>
-</ul>
 ```

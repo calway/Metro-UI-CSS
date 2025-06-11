@@ -54466,7 +54466,6 @@ input::placeholder {
   margin: 2px;
   padding: 0;
   height: 26px;
-  line-height: 26px;
   background: var(--tag-background);
   color: var(--tag-color);
   cursor: default;
@@ -54488,9 +54487,8 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 26px;
   height: 100%;
-  line-height: 22px;
+  aspect-ratio: 1;
   text-align: center;
   cursor: pointer;
   background: var(--tag-action-background);
@@ -54498,43 +54496,20 @@ input::placeholder {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   transition: all 0.15s ease-in-out;
-  font-size: 12px;
+  line-height: 1;
 }
-.tag .action:hover {
-  font-size: 1.4rem;
+@media (hover: hover) {
+  .tag .action:hover {
+    font-size: 1.4em;
+  }
+}
+@media (hover: none) {
+  .tag .action:active {
+    font-size: 1.4em;
+  }
 }
 .tag.short-tag .title {
   max-width: 120px;
-}
-.tag.small {
-  margin: 2px 2px;
-  height: 18px;
-  line-height: 18px;
-}
-.tag.small .title {
-  font-size: 0.7rem;
-  line-height: 18px;
-}
-.tag.small .action {
-  width: 18px;
-  height: 18px;
-  line-height: 18px;
-  font-size: 0.8rem;
-}
-.tag.large {
-  margin: 2px 2px;
-  height: 36px;
-  line-height: 36px;
-}
-.tag.large .title {
-  font-size: 1.3rem;
-  line-height: 36px;
-}
-.tag.large .action {
-  width: 35px;
-  height: 35px;
-  line-height: 33px;
-  font-size: 1.6rem;
 }
 .tag.static {
   background: #d4f0ff;
@@ -55480,14 +55455,6 @@ input::placeholder {
 .select .tag .title {
   height: 100%;
   font-size: var(--select-font-size);
-}
-.select .tag .action {
-  height: calc(var(--tag-height) - 2px);
-  width: calc(var(--tag-height) - 2px);
-  font-size: calc(var(--select-font-size) * 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .select.no-icons .option-list a {
   padding: 0 1rem;
@@ -58202,6 +58169,7 @@ input[type=radio].radio-sand::before {
   aspect-ratio: 1;
   border: 1px solid var(--input-border-color);
   font-size: var(--input-font-size);
+  padding: 0;
 }
 .color-picker button:focus,
 .color-picker .button:focus,
@@ -58264,6 +58232,13 @@ input[type=radio].radio-sand::before {
 }
 .color-picker.open .color-selector-box {
   display: block !important;
+}
+.color-picker.pill-input {
+  --input-border-radius: calc(var(--input-height) * 0.44);
+}
+.color-picker.pill-input .button,
+.color-picker.pill-input .color-example-box {
+  border-radius: 50%;
 }
 
 /* source/components/command-button/command-button.less */
@@ -59198,6 +59173,20 @@ aside::after {
 }
 .date-picker li {
   cursor: pointer;
+}
+.date-picker.pill-input {
+  --picker-border-radius: calc(var(--picker-height) * 0.44);
+}
+.date-picker.pill-input .date-wrapper {
+  border-radius: var(--picker-border-radius);
+}
+.date-picker.pill-input .date-wrapper div:first-child {
+  border-top-left-radius: var(--picker-border-radius);
+  border-bottom-left-radius: var(--picker-border-radius);
+}
+.date-picker.pill-input .date-wrapper div:last-child {
+  border-top-right-radius: var(--picker-border-radius);
+  border-bottom-right-radius: var(--picker-border-radius);
 }
 
 /* source/components/directive/directive.less */
@@ -75968,6 +75957,20 @@ textarea {
 }
 .time-picker li {
   cursor: pointer;
+}
+.time-picker.pill-input {
+  --picker-border-radius: calc(var(--picker-height) * 0.44);
+}
+.time-picker.pill-input .time-wrapper {
+  border-radius: var(--picker-border-radius);
+}
+.time-picker.pill-input .time-wrapper div:first-child {
+  border-top-left-radius: var(--picker-border-radius);
+  border-bottom-left-radius: var(--picker-border-radius);
+}
+.time-picker.pill-input .time-wrapper div:last-child {
+  border-top-right-radius: var(--picker-border-radius);
+  border-bottom-right-radius: var(--picker-border-radius);
 }
 
 /* source/components/toast/toast.less */

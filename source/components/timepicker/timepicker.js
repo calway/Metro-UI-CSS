@@ -162,7 +162,7 @@
 
             timeWrapper = $("<div>").addClass("time-wrapper").appendTo(picker);
 
-            if (o.hours === true) {
+            if (o.hours) {
                 hours = $("<div>")
                     .attr("data-title", strings.label_hours)
                     .addClass("hours")
@@ -170,7 +170,7 @@
                     .addClass(o.clsHours)
                     .appendTo(timeWrapper);
             }
-            if (o.minutes === true) {
+            if (o.minutes) {
                 minutes = $("<div>")
                     .attr("data-title", strings.label_minutes)
                     .addClass("minutes")
@@ -178,7 +178,7 @@
                     .addClass(o.clsMinutes)
                     .appendTo(timeWrapper);
             }
-            if (o.seconds === true) {
+            if (o.seconds) {
                 seconds = $("<div>")
                     .attr("data-title", strings.label_seconds)
                     .addClass("seconds")

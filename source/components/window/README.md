@@ -2,14 +2,26 @@
 
 The Window component provides a customizable floating window interface with features like dragging, resizing, minimizing, and maximizing. It can be used to create modal dialogs, information panels, or application windows.
 
+## Dependencies
+
+- Metro.Component
+- Metro.draggable
+- Metro.resizable
+
 ## Usage
+
+### Basic Usage
 
 ```html
 <!-- Basic usage -->
 <div id="my-window" data-role="window" data-title="My Window">
     Window content goes here
 </div>
+```
 
+### Additional Configurations
+
+```html
 <!-- With custom options -->
 <div data-role="window" 
      data-title="Custom Window"
@@ -38,7 +50,7 @@ var win = Metro.window.create({
 });
 ```
 
-## Component Parameters
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -83,65 +95,61 @@ var win = Metro.window.create({
 
 ## Events
 
-| Event | Arguments | Description |
-| --- | --- | --- |
-| `onDragStart` | `{}` | Triggered when window dragging starts |
-| `onDragStop` | `{}` | Triggered when window dragging stops |
-| `onDragMove` | `{}` | Triggered when window is being dragged |
-| `onWindowClick` | `{win, e}` | Triggered when window is clicked |
-| `onCaptionClick` | `{win, e}` | Triggered when caption is clicked |
-| `onCaptionDblClick` | `{win}` | Triggered when caption is double-clicked |
-| `onCloseClick` | `{win}` | Triggered when close button is clicked |
-| `onMaxClick` | `{win}` | Triggered when maximize button is clicked |
-| `onMinClick` | `{win}` | Triggered when minimize button is clicked |
-| `onResizeStart` | `{}` | Triggered when resizing starts |
-| `onResizeStop` | `{}` | Triggered when resizing stops |
-| `onResize` | `{}` | Triggered when window is being resized |
-| `onWindowCreate` | `{win, element}` | Triggered after window creation |
-| `onShow` | `{win, element}` | Triggered when window is shown |
-| `onWindowDestroy` | `{win}` | Triggered before window is destroyed |
-| `onCanClose` | `{win}` | Function that determines if window can be closed |
-| `onMinimize` | `{win}` | Triggered when window is minimized |
-| `onMaximize` | `{win}` | Triggered when window is maximized |
-| `onClose` | `{win}` | Triggered when window is closed |
+| Event | Description |
+| --- | --- |
+| `onDragStart` | Triggered when window dragging starts |
+| `onDragStop` | Triggered when window dragging stops |
+| `onDragMove` | Triggered when window is being dragged |
+| `onWindowClick` | Triggered when window is clicked |
+| `onCaptionClick` | Triggered when caption is clicked |
+| `onCaptionDblClick` | Triggered when caption is double-clicked |
+| `onCloseClick` | Triggered when close button is clicked |
+| `onMaxClick` | Triggered when maximize button is clicked |
+| `onMinClick` | Triggered when minimize button is clicked |
+| `onResizeStart` | Triggered when resizing starts |
+| `onResizeStop` | Triggered when resizing stops |
+| `onResize` | Triggered when window is being resized |
+| `onWindowCreate` | Triggered after window creation |
+| `onShow` | Triggered when window is shown |
+| `onWindowDestroy` | Triggered before window is destroyed |
+| `onCanClose` | Function that determines if window can be closed |
+| `onMinimize` | Triggered when window is minimized |
+| `onMaximize` | Triggered when window is maximized |
+| `onClose` | Triggered when window is closed |
 
 ## API Methods
 
-### Instance Methods
-
-These methods are accessed through the component instance:
+To access the window component API:
 
 ```javascript
 // Get window component
-var window = $("#my-window").data("window");
+var window = Metro.getPlugin("#my-window", "window");
 
-// Call method on instance
+// Call method
 window.setTitle("New Title");
 ```
 
-| Method | Parameters | Description |
-| --- | --- | --- |
-| `width(value)` | `value` (optional) | Get or set window width |
-| `height(value)` | `value` (optional) | Get or set window height |
-| `maximize(event)` | `event` | Maximize the window |
-| `minimize()` | - | Minimize the window |
-| `close()` | - | Close the window |
-| `hide()` | - | Hide the window |
-| `show()` | - | Show the window |
-| `toggle()` | - | Toggle window visibility |
-| `isOpen()` | - | Check if window is visible |
-| `min(toggle)` | `toggle` | Set minimized state |
-| `max(toggle)` | `toggle` | Set maximized state |
-| `setContent(content)` | `content` | Set window content |
-| `setTitle(title)` | `title` | Set window title |
-| `setIcon(icon)` | `icon` | Set window icon |
-| `getIcon()` | - | Get window icon |
-| `getTitle()` | - | Get window title |
-| `toggleDraggable(flag)` | `flag` | Enable/disable dragging |
-| `toggleResizable(flag)` | `flag` | Enable/disable resizing |
-| `pos(top, left)` | `top, left` | Set window position |
-| `top(value)` | `value` | Set window top position |
-| `left(value)` | `value` | Set window left position |
++ `width(value)` - Get or set window width
++ `height(value)` - Get or set window height
++ `maximize(event)` - Maximize the window
++ `minimize()` - Minimize the window
++ `close()` - Close the window
++ `hide()` - Hide the window
++ `show()` - Show the window
++ `toggle()` - Toggle window visibility
++ `isOpen()` - Check if window is visible
++ `min(toggle)` - Set minimized state
++ `max(toggle)` - Set maximized state
++ `setContent(content)` - Set window content
++ `setTitle(title)` - Set window title
++ `setIcon(icon)` - Set window icon
++ `getIcon()` - Get window icon
++ `getTitle()` - Get window title
++ `toggleDraggable(flag)` - Enable/disable dragging
++ `toggleResizable(flag)` - Enable/disable resizing
++ `pos(top, left)` - Set window position
++ `top(value)` - Set window top position
++ `left(value)` - Set window left position
 
 ### Static Methods
 
@@ -153,67 +161,25 @@ Metro.window.min("#my-window", true);
 Metro.window.close("#my-window");
 ```
 
-| Method | Parameters | Description |
-| --- | --- | --- |
-| `Metro.window.min(el, flag)` | `el, flag` | Minimize window |
-| `Metro.window.max(el, flag)` | `el, flag` | Maximize window |
-| `Metro.window.show(el)` | `el` | Show window |
-| `Metro.window.hide(el)` | `el` | Hide window |
-| `Metro.window.toggle(el)` | `el` | Toggle window visibility |
-| `Metro.window.isOpen(el)` | `el` | Check if window is open |
-| `Metro.window.close(el)` | `el` | Close window |
-| `Metro.window.pos(el, top, left)` | `el, top, left` | Set window position |
-| `Metro.window.top(el, top)` | `el, top` | Set window top position |
-| `Metro.window.left(el, left)` | `el, left` | Set window left position |
-| `Metro.window.width(el, width)` | `el, width` | Set window width |
-| `Metro.window.height(el, height)` | `el, height` | Set window height |
-| `Metro.window.create(options, parent)` | `options, parent` | Create new window |
++ `Metro.window.min(el, flag)` - Minimize window
++ `Metro.window.max(el, flag)` - Maximize window
++ `Metro.window.show(el)` - Show window
++ `Metro.window.hide(el)` - Hide window
++ `Metro.window.toggle(el)` - Toggle window visibility
++ `Metro.window.isOpen(el)` - Check if window is open
++ `Metro.window.close(el)` - Close window
++ `Metro.window.pos(el, top, left)` - Set window position
++ `Metro.window.top(el, top)` - Set window top position
++ `Metro.window.left(el, left)` - Set window left position
++ `Metro.window.width(el, width)` - Set window width
++ `Metro.window.height(el, height)` - Set window height
++ `Metro.window.create(options, parent)` - Create new window
 
-## Window Placement Options
-
-The `place` option allows you to position the window in different areas:
-
-- `"center"` (default when `"auto"`) - Center of parent
-- `"top-left"` - Top-left corner
-- `"top-center"` - Top-center
-- `"top-right"` - Top-right corner
-- `"right-center"` - Right-center
-- `"bottom-right"` - Bottom-right corner
-- `"bottom-center"` - Bottom-center
-- `"bottom-left"` - Bottom-left corner
-- `"left-center"` - Left-center
-
-## Custom Buttons
-
-You can add custom buttons to the window caption:
-
-```javascript
-Metro.window.create({
-    title: "Window with custom buttons",
-    customButtons: [
-        {
-            html: "<span class='mif-rocket'></span>",
-            cls: "alert",
-            onclick: function() {
-                alert("Custom button clicked!");
-            }
-        },
-        {
-            html: "<span class='mif-cog'></span>",
-            cls: "",
-            onclick: function() {
-                alert("Settings button clicked!");
-            }
-        }
-    ]
-});
-```
-
-## CSS Variables
+## Styling with CSS Variables
 
 The window component uses the following CSS variables that you can customize:
 
-| Variable | Default (Light Theme) | Default (Dark Theme) | Description |
+| Variable | Default (Light) | Dark Mode | Description |
 | --- | --- | --- | --- |
 | `--window-scrollbar-size` | `6px` | `6px` | Scrollbar size |
 | `--window-scrollbar-track-radius` | `0` | `0` | Scrollbar track radius |
@@ -231,19 +197,36 @@ The window component uses the following CSS variables that you can customize:
 | `--window-close-button-backgroud-hover` | `#C75050FF` | `#C75050FF` | Close button hover background |
 | `--window-close-button-color-hover` | `#ffffff` | `#ffffff` | Close button hover text color |
 
-Example of customizing CSS variables:
+### Example of Custom Styling
 
 ```css
-:root {
+#my-window {
     --window-border-radius: 10px;
     --window-border-color: #0078d7;
     --window-caption-color: #ffffff;
 }
 ```
 
-## Colored Windows
+## Available CSS Classes
 
-You can add predefined color classes to your windows:
+### Base Classes
+- `.window` - Main window container
+- `.window-caption` - Window title bar
+- `.window-content` - Window content area
+- `.window-status` - Window status bar
+
+### Modifiers
+- `.shadowed` - Adds shadow to window
+- `.modal` - Modal window style
+- `.minimized` - Minimized window state
+- `.maximized` - Maximized window state
+- `.resizable` - Allows window to be resized
+- `.info-window` - Info-styled window
+- `.alert-window` - Alert-styled window
+- `.warning-window` - Warning-styled window
+- `.success-window` - Success-styled window
+
+### Example of Colored Windows
 
 ```html
 <!-- Info window -->
@@ -259,7 +242,7 @@ You can add predefined color classes to your windows:
 <div data-role="window" class="success-window">Success window</div>
 ```
 
-## Global Configuration
+### Global Configuration
 
 You can globally configure the window component using the `Metro.windowSetup` method:
 
