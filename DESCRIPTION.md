@@ -24,13 +24,10 @@ You can add Metro UI to your project in several ways:
    npm install @olton/metroui
    ```
 
-2. **Direct Download**:
-   Download the files from the [official website](https://metroui.org.ua)
-
-3. **CDN**:
+2**CDN**:
    ```html
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@olton/metroui/lib/metro.min.css">
-   <script src="https://cdn.jsdelivr.net/npm/@olton/metroui/lib/metro.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.metroui.org.ua/current/metro.css">
+   <script src="https://cdn.metroui.org.ua/current/metro.js"></script>
    ```
 
 ### Basic Setup
@@ -44,13 +41,13 @@ Here's a minimal HTML template to get started:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Metro UI Project</title>
-    
+
     <!-- Metro UI CSS -->
     <link rel="stylesheet" href="path/to/metro.css">
 </head>
 <body>
     <!-- Your content here -->
-    
+
     <!-- Metro UI JavaScript -->
     <script src="path/to/metro.js"></script>
 </body>
@@ -127,7 +124,7 @@ Most components accept configuration options that can be specified in several wa
    });
    ```
 
-## Key Components Overview
+## Components Overview
 
 Metro UI offers a wide range of components. Here are some of the most commonly used ones:
 
@@ -137,21 +134,76 @@ Metro UI offers a wide range of components. Here are some of the most commonly u
 - **Container**: Centered content container with responsive widths
 - **Splitter**: Resizable split panels
 - **Panel**: Simple content containers with optional headers and footers
+- **Box**: Basic container for content
+- **Cube**: 3D cube container with rotating sides
+- **Flip Card**: Two-sided card that can be flipped
+- **Hero**: Large banner-like container for featured content
+- **Hover Box**: Container that changes appearance on hover
+- **Resizable**: Elements that can be resized by the user
+- **Resizer**: Component for resizing elements
+- **Window**: Draggable and resizable window-like container
 
 ### Navigation Components
 
 - **App Bar**: Top navigation bar for applications
 - **Nav View**: Side navigation panel
 - **Tabs**: Tabbed interface for content organization
+- **Tabs Material**: Material design styled tabs
 - **Menus**: Various menu styles (dropdown, context, etc.)
+- **Breadcrumbs**: Navigation path indicator
+- **Button Group**: Group of related buttons
+- **Command Button**: Button with icon and text
+- **Context Menu**: Right-click menu
+- **D-Menu**: Dropdown menu
+- **Drop Menu**: Customizable dropdown menu
+- **Dropdown**: Dropdown selection component
+- **Dropdown Button**: Button with dropdown menu
+- **H-Menu**: Horizontal menu
+- **Hamburger**: Mobile menu toggle button
+- **Page Control**: Multi-page navigation control
+- **Pagination**: Page navigation controls
+- **Ribbon**: Office-style ribbon interface
+- **Ribbon Menu**: Menu in ribbon style
+- **Sidebar**: Side panel for navigation or content
+- **Sidenav Counter**: Side navigation with counters
+- **Sidenav M3**: Metro 3 style side navigation
+- **Sidenav Simple**: Simple side navigation
+- **Split Button**: Button with primary and dropdown actions
+- **T-Menu**: Tabbed menu
+- **Task Bar**: Windows-like taskbar
+- **V-Menu**: Vertical menu
+- **Wizard**: Step-by-step navigation interface
+- **Wizard Classic**: Classic style wizard interface
 
 ### Form Components
 
 - **Input**: Text input fields with various styles and validations
+- **Input Common**: Common input field styles
+- **Input Material**: Material design styled inputs
+- **Input Mask**: Input with formatting mask
 - **Select**: Dropdown selection fields
-- **Checkbox & Radio**: Selection controls
-- **Datepicker & Timepicker**: Date and time selection controls
+- **Checkbox**: Selection control for multiple choices
+- **Radio**: Selection control for single choice
+- **Radio Buttons**: Group of radio buttons
+- **Custom Checkbox**: Styled checkbox controls
+- **Datepicker**: Date selection control
+- **Timepicker**: Time selection control
+- **Calendarpicker**: Calendar date selection
+- **Wheelpicker**: Wheel-style picker control
 - **Color Picker**: Color selection control
+- **Color Selector**: Alternative color selection interface
+- **Double Select Box**: Two-column selection interface
+- **Double Slider**: Range slider with two handles
+- **File Input**: File upload control
+- **Form**: Container for form elements
+- **Keypad**: Numeric or custom keypad input
+- **Rating**: Star rating input
+- **Slider**: Range selection control
+- **Switch**: Toggle switch control
+- **Tag Input**: Input for creating tags
+- **Textarea**: Multi-line text input
+- **Tokenizer**: Token-based input field
+- **Validator**: Form validation component
 
 ### Feedback Components
 
@@ -159,13 +211,93 @@ Metro UI offers a wide range of components. Here are some of the most commonly u
 - **Toast**: Brief notifications
 - **Notify**: More prominent notifications
 - **Progress**: Progress indicators
+- **Activity**: Loading animation
+- **Adblock**: Adblock detection notification
+- **Cookie Disclaimer**: Cookie usage notification
+- **Hint**: Tooltip-style help text
+- **Info Box**: Information display box
+- **Info Button**: Button with information popup
+- **Info Panel**: Panel for displaying information
+- **Overlay**: Screen overlay for modals
+- **Popover**: Popup information container
+- **Remark**: Highlighted remarks or notes
+- **Ripple**: Material design ripple effect
+- **Spinner**: Loading spinner animation
 
 ### Data Display
 
 - **Table**: Enhanced data tables with sorting and filtering
+- **List**: Simple list display
 - **List View**: List displays with various formatting options
 - **Cards**: Content containers with flexible layouts
 - **Timeline**: Chronological content display
+- **Accordion**: Collapsible content panels
+- **Badges**: Small count or status indicators
+- **Calendar**: Month view calendar display
+- **Carousel**: Slideshow for cycling through elements
+- **Chart Card**: Card with embedded charts
+- **Chips**: Compact elements representing attributes
+- **Collapse**: Expandable/collapsible content
+- **Countdown**: Timer counting down to a date
+- **Counter**: Animated number counter
+- **Donut**: Donut chart visualization
+- **Gauge**: Gauge chart visualization
+- **Gravatar**: Globally recognized avatar
+- **Image Box**: Container for images with effects
+- **Image Compare**: Before/after image comparison
+- **Image Grid**: Grid layout for images
+- **Image Magnifier**: Image zoom functionality
+- **Lightbox**: Image gallery with lightbox effect
+- **Marquee**: Scrolling text display
+- **Remote Table**: Table with remote data source
+- **Skill Box**: Skill level visualization
+- **Social Box**: Social media links display
+- **Sorter**: Sortable list or grid
+- **Streamer**: Stream of content items
+- **Tag**: Label or category indicator
+- **Tile**: Metro-style tile display
+- **Treeview**: Hierarchical data display
+- **Working Tree**: Tree structure with checkboxes
+
+### Media Components
+
+- **Audio Button**: Button with audio playback
+- **Audio Player**: Audio playback control
+- **Image Button**: Button with image
+- **Media Player**: Generic media playback control
+- **Video Player**: Video playback control
+- **Vegas**: Fullscreen background slideshow
+
+### Utility Components
+
+- **Action Button**: Floating action button
+- **Analog Clock**: Clock with analog display
+- **Bulls**: Bullet point indicators
+- **Charms**: Windows 8 style charms bar
+- **Clock**: Digital clock display
+- **Cloak**: Element visibility control
+- **Cookie**: Cookie management
+- **Directive**: Custom directive implementation
+- **Drag Items**: Drag and drop functionality
+- **Draggable**: Make elements draggable
+- **Eval**: JavaScript evaluation component
+- **Export**: Data export functionality
+- **Gradient Box**: Box with gradient background
+- **Hotkey**: Keyboard shortcut handling
+- **HTML Container**: Container for HTML content
+- **Icon Box**: Container with icon
+- **Image Placeholder**: Placeholder for images
+- **Master**: Master-detail interface
+- **MD5**: MD5 hash generation
+- **Package Manager**: Package management interface
+- **Remote Dataset**: Remote data handling
+- **Shortcut**: Keyboard shortcut display
+- **Storage**: Local storage management
+- **Swipe**: Touch swipe detection
+- **Template**: Template rendering
+- **Theme Switcher**: Theme selection control
+- **Typer**: Typewriter text effect
+- **Viewport Check**: Viewport detection
 
 ## Theming and Customization
 
@@ -193,7 +325,7 @@ You can customize components by overriding CSS variables:
 :root {
     /* Customize primary color */
     --primary: #3498db;
-    
+
     /* Customize button appearance */
     --button-background: #f0f0f0;
     --button-color: #333333;
@@ -248,12 +380,12 @@ Metro.makePlugin("#myDatepicker", "datepicker", {
         <label>Name</label>
         <input type="text" data-role="input">
     </div>
-    
+
     <div class="form-group">
         <label>Birth Date</label>
         <input type="text" data-role="datepicker">
     </div>
-    
+
     <div class="form-group">
         <label>Country</label>
         <select data-role="select">
@@ -262,7 +394,7 @@ Metro.makePlugin("#myDatepicker", "datepicker", {
             <option value="uk">United Kingdom</option>
         </select>
     </div>
-    
+
     <div class="form-group">
         <button class="button primary">Submit</button>
         <button class="button" type="reset">Reset</button>
@@ -282,7 +414,7 @@ Metro.makePlugin("#myDatepicker", "datepicker", {
             <a href="#" class="app-bar-item">Settings</a>
         </div>
     </div>
-    
+
     <div class="grid">
         <div class="row">
             <div class="cell-md-4">
@@ -293,7 +425,7 @@ Metro.makePlugin("#myDatepicker", "datepicker", {
                     </div>
                 </div>
             </div>
-            
+
             <div class="cell-md-8">
                 <div class="card">
                     <div class="card-header">Recent Activity</div>
@@ -305,6 +437,122 @@ Metro.makePlugin("#myDatepicker", "datepicker", {
         </div>
     </div>
 </div>
+```
+
+## Related Libraries and Components
+
+Metro UI integrates with several companion libraries to provide enhanced functionality across different aspects of web development. These libraries are seamlessly incorporated into the framework and are available globally when you include Metro UI in your project.
+
+### Companion Libraries
+
+#### datetime
+The datetime library provides comprehensive date and time manipulation capabilities. It's based on the @olton/datetime package and offers functions for parsing, formatting, and manipulating dates with localization support.
+
+```javascript
+// Examples of datetime usage
+const now = datetime(); // Current date and time
+const formatted = now.format("YYYY-MM-DD HH:mm"); // Format date
+const nextWeek = now.addDay(7); // Date arithmetic
+```
+
+#### dom
+The dom library provides jQuery-like DOM manipulation capabilities without jQuery dependencies. It's based on the @olton/dom package and is available globally as both `$` and `Dom`.
+
+```javascript
+// Examples of dom usage
+const element = $("#myElement"); // Select element by ID
+element.addClass("active"); // Add class
+element.on("click", function() { /* handle click */ }); // Add event listener
+```
+
+#### farbe
+The farbe library provides color manipulation and conversion utilities. It's based on the @olton/farbe package and offers functions for working with colors in different formats (RGB, HSL, HEX, etc.).
+
+```javascript
+// Examples of farbe usage
+const color = farbe("#3498db"); // Create color from hex
+const darkerColor = color.darken(20); // Darken color by 20%
+const rgbValue = color.rgb; // Get RGB values
+```
+
+#### guardian
+The guardian library provides data validation utilities. It's based on the @olton/guardian package and offers functions for validating various types of data.
+
+```javascript
+// Examples of guardian usage
+G.isEmail("user@example.com"); // Check if string is valid email
+G.isUrl("https://metroui.org.ua"); // Check if string is valid URL
+G.isNumber("123"); // Check if string is a number
+```
+
+#### hooks
+The hooks library provides React-like hooks functionality for state management and side effects in non-React applications. It's based on the @olton/hooks package.
+
+```javascript
+// Examples of hooks usage
+const [count, setCount] = Hooks.useState(0); // Create state
+Hooks.useEffect(() => { /* side effect */ }, [count]); // Run effect when count changes
+```
+
+#### html
+The html library provides utilities for creating and manipulating HTML elements programmatically. It's based on the @olton/html package and offers functions for rendering HTML, loading CSS and JavaScript resources.
+
+```javascript
+// Examples of html usage
+const div = HTML.div({ class: "container" }, "Content"); // Create div element
+HTML.render(div, document.body); // Render element to DOM
+```
+
+#### model
+The model library provides functionality for creating and managing data models with reactivity. It's based on the @olton/model package.
+
+```javascript
+// Examples of model usage
+const userModel = new Model({ name: "John", age: 30 }); // Create model
+userModel.on("change", (prop, val) => { /* handle change */ }); // Listen for changes
+userModel.name = "Jane"; // Update property (triggers change event)
+```
+
+#### router
+The router library provides client-side routing functionality for single-page applications. It's based on the @olton/router package.
+
+```javascript
+// Examples of router usage
+const router = new Router(); // Create router
+router.add("/home", () => { /* render home page */ }); // Add route
+router.start(); // Start routing
+```
+
+#### string
+The string library provides enhanced string manipulation functionality. It's based on the @olton/string package and offers functions for working with strings.
+
+```javascript
+// Examples of string usage
+const s = str("Hello, World!"); // Create string object
+s.capitalize(); // "Hello, world!"
+s.truncate(5); // "Hello..."
+```
+
+### Core Components
+
+#### common-css
+The common-css component provides a comprehensive set of CSS utilities for common styling needs. It includes utilities for animations, borders, typography, flexbox layouts, positioning, spacing, and more.
+
+```html
+<!-- Examples of common-css usage -->
+<div class="border bd-default p-2 m-2"><!-- Element with border, padding, and margin --></div>
+<div class="d-flex flex-justify-between"><!-- Flexbox container with space-between --></div>
+<div class="text-center text-bold"><!-- Centered, bold text --></div>
+```
+
+#### common-js
+The common-js component provides a comprehensive set of JavaScript utility functions for Metro UI applications. These utilities help with common tasks such as type checking, DOM manipulation, object handling, and more.
+
+```javascript
+// Examples of common-js usage
+Metro.utils.isFunc(myValue); // Check if value is a function
+Metro.utils.coords(element); // Get element coordinates
+Metro.utils.secondsToTime(3600); // Convert seconds to time object
 ```
 
 ## Troubleshooting
@@ -323,7 +571,7 @@ Metro.makePlugin("#myDatepicker", "datepicker", {
 
 ## Resources
 
-- [Official Documentation](https://v5.metroui.org.ua/)
+- [Documentation](https://v5.metroui.org.ua/)
 - [GitHub Repository](https://github.com/olton/metroui)
 - [Demo Site](https://panda.metroui.org.ua/)
 - [Community Discord](https://discord.gg/cxrhV7pGG8)

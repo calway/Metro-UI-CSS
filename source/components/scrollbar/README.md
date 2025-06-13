@@ -2,6 +2,10 @@
 
 The Scrollbar component provides custom styling for browser scrollbars, allowing you to create more visually appealing and consistent scrollbars across different elements in your application.
 
+## Dependencies
+
+None - this is a standalone CSS component.
+
 ## Usage
 
 ### Basic Usage
@@ -57,14 +61,26 @@ The Scrollbar component provides custom styling for browser scrollbars, allowing
 </div>
 ```
 
+## Plugin Parameters
+
+This component doesn't have JavaScript functionality or plugin parameters as it's a CSS-only component.
+
+## API Methods
+
+This component doesn't provide JavaScript API methods as it's a CSS-only component.
+
+## Events
+
+This component doesn't trigger any events as it's a CSS-only component.
+
 ## Styling with CSS Variables
 
 The Scrollbar component uses LESS variables for styling, which can be customized by overriding these variables in your own LESS files:
 
-| Variable | Default | Description |
-| -------- | ------- | ----------- |
-| @scrollbarBackgroundColor | rgb(232, 232, 232) | Background color of the scrollbar track |
-| @scrollbarThumbColor | rgba(101, 95, 95, 0.71) | Color of the scrollbar thumb (the draggable part) |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| @scrollbarBackgroundColor | rgb(232, 232, 232) | N/A | Background color of the scrollbar track |
+| @scrollbarThumbColor | rgba(101, 95, 95, 0.71) | N/A | Color of the scrollbar thumb (the draggable part) |
 
 ### Example of Custom Styling
 
@@ -78,15 +94,23 @@ The Scrollbar component uses LESS variables for styling, which can be customized
 
 ### Base Classes
 - `.scrollbar-type-1` - Basic scrollbar with 6px width/height
-- `.scrollbar-type-2` - Rounded scrollbar with 6px width/height
+- `.scrollbar-type-2` - Rounded scrollbar with 6px width/height and border-radius
 - `.scrollbar-type-3` - Larger scrollbar with 10px width/height
-- `.scrollbar-type-4` - Larger rounded scrollbar with 12px width/height
+- `.scrollbar-type-4` - Larger rounded scrollbar with 12px width/height and border-radius
 
 ### Color Modifiers
 - `.sb-{color}` - Changes the scrollbar thumb color to the specified color (e.g., `.sb-red`, `.sb-blue`, `.sb-green`)
 
 ### Utility Classes
 - `.scroll-container` - Prevents overscroll effects (bouncing/rubber-banding) with `overscroll-behavior: contain`
+
+## HTML Attributes
+
+This component doesn't use any specific HTML attributes as it's a CSS-only component. You simply apply the CSS classes to your elements.
+
+## Accessibility
+
+Custom scrollbar styling is a visual enhancement and doesn't affect the accessibility of scrollable content. The native scrolling functionality remains intact, ensuring that keyboard navigation and screen readers can still interact with the content properly.
 
 ## Browser Compatibility
 
@@ -101,3 +125,4 @@ Note that Internet Explorer does not support custom scrollbar styling.
 3. Consider using smaller scrollbars (Type 1 or Type 2) for content areas where space is limited
 4. Use the `.scroll-container` class on mobile-friendly interfaces to prevent unwanted overscroll effects
 5. Be aware that custom scrollbar styling may not be visible on some touch devices where scrollbars are hidden by default
+6. Test your scrollbar styling across different browsers to ensure consistent appearance

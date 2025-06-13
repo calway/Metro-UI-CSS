@@ -2,6 +2,12 @@
 
 The Rating component provides an interactive star rating system that allows users to view and select ratings. It supports both static display and interactive modes, with customizable symbols, colors, and behaviors.
 
+## Dependencies
+
+- Metro UI Core
+- DOM library
+- Farbe (for color manipulation)
+
 ## Usage
 
 ### Basic Usage
@@ -36,40 +42,40 @@ The Rating component provides an interactive star rating system that allows user
 <input data-role="rating" data-half="false" data-value="4">
 ```
 
-## Configuration Options
+## Plugin Parameters
 
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| ratingDeferred | 0 | Deferred initialization time in milliseconds |
-| label | "" | Label for the rating component |
-| static | false | If true, the rating is display-only and not interactive |
-| title | null | Title text displayed before the stars |
-| value | 0 | Initial rating value |
-| values | null | Custom values for each star (array or comma-separated string) |
-| message | "" | Message text displayed after the stars |
-| stars | 5 | Number of stars to display |
-| onColor | null | Color for active (rated) stars |
-| offColor | null | Color for inactive stars |
-| roundFunc | "round" | Rounding function for values ("round", "ceil", "floor", or "none") |
-| half | true | If true, allows half-star ratings in static mode |
-| symbol | "★" | Symbol to use for stars |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `ratingDeferred` | number | 0 | Deferred initialization time in milliseconds |
+| `label` | string | "" | Label for the rating component |
+| `static` | boolean | false | If true, the rating is display-only and not interactive |
+| `title` | string | null | Title text displayed before the stars |
+| `value` | number | 0 | Initial rating value |
+| `values` | array/string | null | Custom values for each star (array or comma-separated string) |
+| `message` | string | "" | Message text displayed after the stars |
+| `stars` | number | 5 | Number of stars to display |
+| `onColor` | string | null | Color for active (rated) stars |
+| `offColor` | string | null | Color for inactive stars |
+| `roundFunc` | string | "round" | Rounding function for values ("round", "ceil", "floor", or "none") |
+| `half` | boolean | true | If true, allows half-star ratings in static mode |
+| `symbol` | string | "★" | Symbol to use for stars |
 
 ### CSS Classes Options
 
 | Option | Default | Description |
 | ------ | ------- | ----------- |
-| clsRating | "" | Additional CSS class for the rating container |
-| clsTitle | "" | Additional CSS class for the title |
-| clsStars | "" | Additional CSS class for the stars container |
-| clsResult | "" | Additional CSS class for the result message |
-| clsLabel | "" | Additional CSS class for the label |
+| `clsRating` | "" | Additional CSS class for the rating container |
+| `clsTitle` | "" | Additional CSS class for the title |
+| `clsStars` | "" | Additional CSS class for the stars container |
+| `clsResult` | "" | Additional CSS class for the result message |
+| `clsLabel` | "" | Additional CSS class for the label |
 
 ### Callback Options
 
 | Option | Default | Description |
 | ------ | ------- | ----------- |
-| onStarClick | Metro.noop | Triggered when a star is clicked |
-| onRatingCreate | Metro.noop | Triggered when the component is created |
+| `onStarClick` | Metro.noop | Triggered when a star is clicked |
+| `onRatingCreate` | Metro.noop | Triggered when the component is created |
 
 ## JavaScript Usage
 
@@ -158,12 +164,12 @@ rating.destroy();
 
 The Rating component can be styled using the following CSS variables:
 
-| Variable | Default | Description |
-| -------- | ------- | ----------- |
-| --rating-star-size | 24px | Size of the rating stars |
-| --rating-off-color | var(--color-light-blue) | Color of inactive stars |
-| --rating-on-color | var(--color-blue) | Color of active (rated) stars |
-| --rating-background | transparent | Background color of the rating component |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--rating-star-size` | 24px | 24px | Size of the rating stars |
+| `--rating-off-color` | var(--color-light-blue) | var(--color-light-blue) | Color of inactive stars |
+| `--rating-on-color` | var(--color-blue) | var(--color-blue) | Color of active (rated) stars |
+| `--rating-background` | transparent | transparent | Background color of the rating component |
 
 ### Example of Custom Styling
 
@@ -197,6 +203,17 @@ $(document).on("rating-create", function(event, data){
     console.log("Rating created:", data.element);
 });
 ```
+
+## Available CSS Classes
+
+### Base Classes
+- `.rating` - Main container class for the rating component
+- `.stars` - Container for the star elements
+- `.result` - Class for the result message
+- `.title` - Class for the title
+- `.on` - Class applied to active (rated) stars
+- `.half` - Class applied to half-filled stars
+- `.static` - Class applied to the rating component in static mode
 
 ## Accessibility
 

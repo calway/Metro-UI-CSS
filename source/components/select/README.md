@@ -282,3 +282,53 @@ The Select component provides an enhanced replacement for the standard HTML sele
     --select-tag-color: #007bff;
 }
 ```
+
+## HTML Attributes
+
+The Select component uses the following HTML attributes:
+
+| Attribute | Description |
+| --------- | ----------- |
+| `data-role="select"` | Initializes the element as a Select component |
+| `multiple` | Enables multiple selection mode |
+| `data-icon` | Specifies an icon for an option (used on `<option>` elements) |
+| `data-display` | Specifies alternative display text for an option (used on `<option>` elements) |
+| `data-template` | Specifies a template for option display, where `$1` is replaced with the option text |
+| `data-source` | URL for fetching options from a remote data source |
+| `data-source-method` | HTTP method for the remote data source request (default: "GET") |
+| `data-source-type` | Data type for the remote data source (default: "json") |
+| `data-filter-source` | URL for filtering options from a remote data source |
+| `data-on-data` | Callback function name for transforming remote data before it's used to populate the select |
+
+## Accessibility
+
+The Select component maintains accessibility by:
+
+1. Preserving keyboard navigation - users can navigate through options using arrow keys
+2. Supporting screen readers by maintaining proper ARIA attributes
+3. Providing visual focus indicators for keyboard navigation
+4. Maintaining proper contrast ratios between text and background colors
+5. Supporting text scaling without loss of functionality
+
+## Browser Compatibility
+
+The Select component is compatible with:
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+Some visual styling may vary slightly between browsers, but core functionality remains consistent.
+
+## Best Practices
+
+1. Always provide meaningful option text that clearly describes what each option represents
+2. Use filtering for selects with many options (more than 10-15 items)
+3. Consider using multiple selection with tags for cases where users need to select several related items
+4. Include a clear button for multiple selects to allow users to easily reset their selections
+5. Use appropriate sizing based on the context - smaller selects for forms with limited space, larger ones for more prominent UI elements
+6. Provide placeholder text that guides users on what to select
+7. Group related options using `<optgroup>` for better organization
+8. For remote data sources, implement proper loading indicators and error handling
+9. Test keyboard navigation to ensure all options are accessible without a mouse

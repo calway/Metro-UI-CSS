@@ -2,29 +2,28 @@
 
 The Ribbon component provides a stylish, ribbon-shaped label that can be positioned on elements. It's commonly used to highlight special features, promotions, or status indicators on cards, images, or containers.
 
+## Dependencies
+
+- Metro UI Core CSS
+
 ## Usage
 
-### Basic Ribbon
+### Basic Usage
 
 ```html
+<!-- Basic ribbon -->
 <div style="position: relative; width: 300px; height: 200px; background-color: #f0f0f0;">
     <span class="ribbon">New</span>
     Content with a ribbon label
 </div>
-```
 
-### Right-Positioned Ribbon
-
-```html
+<!-- Right-positioned ribbon -->
 <div style="position: relative; width: 300px; height: 200px; background-color: #f0f0f0;">
     <span class="ribbon right">Featured</span>
     Content with a right-positioned ribbon
 </div>
-```
 
-### Ribbon with Icon
-
-```html
+<!-- Ribbon with icon -->
 <div style="position: relative; width: 300px; height: 200px; background-color: #f0f0f0;">
     <span class="ribbon">
         <span class="icon mif-star-full"></span>
@@ -34,74 +33,47 @@ The Ribbon component provides a stylish, ribbon-shaped label that can be positio
 </div>
 ```
 
-### Colored Ribbons
+### Color Variants
 
 ```html
+<!-- Red ribbon -->
 <div style="position: relative; width: 300px; height: 200px; background-color: #f0f0f0;">
     <span class="ribbon ribbon-red">Sale</span>
     Content with a red ribbon
 </div>
 
+<!-- Green ribbon -->
 <div style="position: relative; width: 300px; height: 200px; background-color: #f0f0f0;">
     <span class="ribbon ribbon-green">Success</span>
     Content with a green ribbon
 </div>
 
+<!-- Blue ribbon -->
 <div style="position: relative; width: 300px; height: 200px; background-color: #f0f0f0;">
     <span class="ribbon ribbon-blue">Info</span>
     Content with a blue ribbon
 </div>
 
+<!-- Yellow ribbon -->
 <div style="position: relative; width: 300px; height: 200px; background-color: #f0f0f0;">
     <span class="ribbon ribbon-yellow">Warning</span>
     Content with a yellow ribbon
 </div>
 ```
 
-## CSS Variables
+## Styling with CSS Variables
 
 The Ribbon component can be styled using the following CSS variables:
 
-| Variable | Default (Light) | Default (Dark) | Description |
-| --- | --- | --- | --- |
-| --ribbon-background | rgb(117, 117, 117) | rgba(117, 117, 117, 0.32) | Background color of the ribbon |
-| --ribbon-color | #ffffff | #ffffff | Text color of the ribbon |
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| `--ribbon-background` | rgb(117, 117, 117) | rgba(117, 117, 117, 0.32) | Background color of the ribbon |
+| `--ribbon-color` | #ffffff | #ffffff | Text color of the ribbon |
 
-## Available CSS Classes
-
-### Base Class
-- `.ribbon` - The base class for the ribbon component
-
-### Position Variants
-- `.right` - Positions the ribbon on the right side of the element
-
-### Color Variants
-- `.ribbon-red` - Red ribbon
-- `.ribbon-green` - Green ribbon
-- `.ribbon-blue` - Blue ribbon
-- `.ribbon-yellow` - Yellow ribbon
-- `.ribbon-orange` - Orange ribbon
-- `.ribbon-purple` - Purple ribbon
-- `.ribbon-lime` - Lime ribbon
-- And other standard Metro UI colors
-
-## Structure
-
-The Ribbon component has the following structure:
-
-```html
-<span class="ribbon [position] [color-variant]">
-    <!-- Optional icon -->
-    <span class="icon [icon-class]"></span>
-    
-    <!-- Ribbon text -->
-    Ribbon text
-</span>
-```
-
-## Custom Styling Example
+### Example of Custom Styling
 
 ```css
+/* Custom styling for a specific ribbon */
 .custom-ribbon {
     --ribbon-background: #3498db;
     --ribbon-color: #ffffff;
@@ -125,12 +97,37 @@ The Ribbon component has the following structure:
 </div>
 ```
 
-## Important Notes
+## Available CSS Classes
 
-1. The parent element must have `position: relative` (or absolute/fixed) for the ribbon to be positioned correctly
-2. The ribbon is positioned absolutely at the top-left (or top-right) of the parent element
-3. The ribbon has a z-index value that places it above most elements but below fixed elements
-4. The ribbon includes a shadow effect for depth
+### Base Classes
+- `.ribbon` - The base class for the ribbon component
+
+### Position Variants
+- `.right` - Positions the ribbon on the right side of the element
+
+### Color Variants
+- `.ribbon-red` - Red ribbon
+- `.ribbon-green` - Green ribbon
+- `.ribbon-blue` - Blue ribbon
+- `.ribbon-yellow` - Yellow ribbon
+- `.ribbon-orange` - Orange ribbon
+- `.ribbon-purple` - Purple ribbon
+- `.ribbon-lime` - Lime ribbon
+- And other standard Metro UI colors
+
+## Structure
+
+The Ribbon component has the following structure:
+
+```html
+<span class="ribbon [position] [color-variant]">
+    <!-- Optional icon -->
+    <span class="icon [icon-class]"></span>
+
+    <!-- Ribbon text -->
+    Ribbon text
+</span>
+```
 
 ## Examples
 
@@ -162,12 +159,12 @@ The Ribbon component has the following structure:
         <img src="image1.jpg" alt="Image 1">
         <div class="caption">Image 1</div>
     </div>
-    
+
     <div class="image-item" style="position: relative;">
         <img src="image2.jpg" alt="Image 2">
         <div class="caption">Image 2</div>
     </div>
-    
+
     <div class="image-item" style="position: relative;">
         <span class="ribbon ribbon-blue right">New</span>
         <img src="image3.jpg" alt="Image 3">
@@ -176,6 +173,13 @@ The Ribbon component has the following structure:
 </div>
 ```
 
+## Important Notes
+
+1. The parent element must have `position: relative` (or absolute/fixed) for the ribbon to be positioned correctly
+2. The ribbon is positioned absolutely at the top-left (or top-right) of the parent element
+3. The ribbon has a z-index value that places it above most elements but below fixed elements
+4. The ribbon includes a shadow effect for depth
+
 ## Best Practices
 
 1. Use ribbons sparingly to highlight truly important information
@@ -183,3 +187,4 @@ The Ribbon component has the following structure:
 3. Keep ribbon text short and concise for better readability
 4. Consider using icons to enhance visual recognition
 5. Ensure the ribbon doesn't obscure important content in the parent element
+6. For accessibility, ensure sufficient color contrast between the ribbon and its text

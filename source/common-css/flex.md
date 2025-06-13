@@ -164,7 +164,7 @@ For example:
 - `.flex-column-lg` - Applies column direction on large screens and above
 - `.flex-justify-center-xl` - Centers items on extra-large screens and above
 
-Where `{breakpoint}` can be: xs, sm, md, lg, xl, xxl, xxxl
+Where `{breakpoint}` can be: `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `xxxl`
 
 ## Usage Examples
 

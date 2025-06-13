@@ -2,10 +2,6 @@
 
 The Wizard component provides a step-by-step interface for guiding users through multi-step processes or forms. It features navigation buttons, progress tracking, and customizable styling options.
 
-## Dependencies
-
-- Metro UI Core
-- DOM Library
 
 ## Usage
 

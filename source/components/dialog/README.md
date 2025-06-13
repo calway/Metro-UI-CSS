@@ -2,6 +2,13 @@
 
 The Dialog component provides a customizable modal dialog box for displaying messages, alerts, confirmations, or custom content. It supports various configurations, including custom buttons, overlay options, and positioning.
 
+## Dependencies
+
+The Dialog component depends on:
+- Button component
+- Colors CSS
+- Farbe module
+
 ## Usage
 
 ### Basic Dialog
@@ -96,9 +103,9 @@ The Dialog component accepts the following configuration options:
 | `removeOnClose` | boolean | `false` | Remove dialog from DOM when closed |
 | `show` | boolean | `false` | Show dialog immediately after initialization |
 
-### Event Callbacks
+## Events
 
-| Callback | Description |
+| Event | Description |
 | -------- | ----------- |
 | `onOk` | Triggered when OK button is clicked |
 | `onCancel` | Triggered when Cancel button is clicked |
@@ -109,34 +116,140 @@ The Dialog component accepts the following configuration options:
 | `onClose` | Triggered when dialog is closed |
 | `onDialogCreate` | Triggered when dialog is created |
 
+### Example with Events
+
+```html
+<div id="myDialog" data-role="dialog" 
+     data-on-ok="console.log('OK clicked')"
+     data-on-cancel="console.log('Cancel clicked')"
+     data-on-open="console.log('Dialog opened')">
+    <div class="dialog-title">Dialog with Events</div>
+    <div class="dialog-content">This dialog has event handlers.</div>
+    <div class="dialog-actions">
+        <button class="button js-dialog-close">OK</button>
+        <button class="button js-dialog-close">Cancel</button>
+    </div>
+</div>
+```
+
 ## API Methods
 
-The Dialog component provides the following methods:
+### open()
+Opens the dialog.
 
-| Method | Parameters | Description |
-| ------ | ---------- | ----------- |
-| `open()` | - | Opens the dialog |
-| `close()` | - | Closes the dialog |
-| `toggle()` | - | Toggles the dialog between open and closed states |
-| `isOpen()` | - | Returns true if the dialog is open |
-| `setContent(content)` | content: string/element | Sets the dialog content |
-| `setTitle(title)` | title: string | Sets the dialog title |
-| `setPosition()` | - | Recalculates and sets the dialog position |
-| `show(callback)` | callback: function | Shows the dialog and executes callback |
-| `hide(callback)` | callback: function | Hides the dialog and executes callback |
+```javascript
+Metro.getPlugin('#myDialog', 'dialog').open();
+```
+
+### close()
+Closes the dialog.
+
+```javascript
+Metro.getPlugin('#myDialog', 'dialog').close();
+```
+
+### toggle()
+Toggles the dialog between open and closed states.
+
+```javascript
+Metro.getPlugin('#myDialog', 'dialog').toggle();
+```
+
+### isOpen()
+Returns true if the dialog is open.
+
+```javascript
+const isOpen = Metro.getPlugin('#myDialog', 'dialog').isOpen();
+```
+
+### setContent(content)
+Sets the dialog content.
+
+```javascript
+Metro.getPlugin('#myDialog', 'dialog').setContent('New content');
+```
+
+### setTitle(title)
+Sets the dialog title.
+
+```javascript
+Metro.getPlugin('#myDialog', 'dialog').setTitle('New Title');
+```
+
+### setPosition()
+Recalculates and sets the dialog position.
+
+```javascript
+Metro.getPlugin('#myDialog', 'dialog').setPosition();
+```
+
+### show(callback)
+Shows the dialog and executes callback.
+
+```javascript
+Metro.getPlugin('#myDialog', 'dialog').show(() => {
+    console.log('Dialog shown');
+});
+```
+
+### hide(callback)
+Hides the dialog and executes callback.
+
+```javascript
+Metro.getPlugin('#myDialog', 'dialog').hide(() => {
+    console.log('Dialog hidden');
+});
+```
 
 ### Static Methods
 
 The Dialog component also provides static methods through the `Metro.dialog` object:
 
-| Method | Parameters | Description |
-| ------ | ---------- | ----------- |
-| `open(el, content, title)` | el: element, content: string, title: string | Opens an existing dialog with optional new content and title |
-| `close(el)` | el: element | Closes the specified dialog |
-| `toggle(el)` | el: element | Toggles the specified dialog |
-| `isOpen(el)` | el: element | Checks if the specified dialog is open |
-| `remove(el)` | el: element | Removes the specified dialog from DOM after closing |
-| `create(options)` | options: object | Creates and returns a new dialog with the specified options |
+#### open(el, content, title)
+Opens an existing dialog with optional new content and title.
+
+```javascript
+Metro.dialog.open('#myDialog', 'New content', 'New title');
+```
+
+#### close(el)
+Closes the specified dialog.
+
+```javascript
+Metro.dialog.close('#myDialog');
+```
+
+#### toggle(el)
+Toggles the specified dialog.
+
+```javascript
+Metro.dialog.toggle('#myDialog');
+```
+
+#### isOpen(el)
+Checks if the specified dialog is open.
+
+```javascript
+const isOpen = Metro.dialog.isOpen('#myDialog');
+```
+
+#### remove(el)
+Removes the specified dialog from DOM after closing.
+
+```javascript
+Metro.dialog.remove('#myDialog');
+```
+
+#### create(options)
+Creates and returns a new dialog with the specified options.
+
+```javascript
+const dialog = Metro.dialog.create({
+    title: 'Dialog Title',
+    content: 'Dialog content',
+    closeButton: true
+});
+```
 
 ## Styling with CSS Variables
 
@@ -163,6 +276,31 @@ The Dialog component can be styled using the following CSS variables:
     --dialog-border-color: #2196f3;
     --dialog-border-radius: 12px;
 }
+```
+
+## Available CSS Classes
+
+### Base Classes
+- `.dialog` - Main container class for the dialog
+- `.dialog-title` - Class for the dialog title section
+- `.dialog-content` - Class for the dialog content section
+- `.dialog-actions` - Class for the dialog actions/buttons section
+- `.closer` - Class for the close button in the top-right corner
+
+### Modifier Classes
+- `.text-left` - Aligns dialog actions to the left
+- `.text-center` - Centers dialog actions
+- `.text-right` - Aligns dialog actions to the right
+
+### Color Classes
+The dialog supports accent color classes that change the border and title background:
+- `.primary`, `.secondary`, `.success`, `.alert`, `.warning`, `.yellow`, `.info`, `.light`
+
+```css
+/* Example of using color classes */
+<div id="colorDialog" class="dialog success" data-role="dialog">
+    <!-- This dialog will have success color styling -->
+</div>
 ```
 
 ## Additional Information

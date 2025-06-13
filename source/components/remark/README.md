@@ -2,6 +2,10 @@
 
 The Remark component provides styled message boxes or callouts that can be used to highlight important information, quotes, or notes in your application. It's a CSS-only component with various styling options.
 
+## Dependencies
+
+This component has no dependencies other than the core Metro UI CSS.
+
 ## Usage
 
 ### Basic Remark
@@ -16,41 +20,43 @@ The Remark component provides styled message boxes or callouts that can be used 
 
 ```html
 <div class="remark">
-    <span class="icon mif-info"></span>
+    <span class="mif-report icon"></span>
     This remark includes an icon on the left side.
 </div>
 ```
+
+> Note: The `mif-report` class is from the Metro UI icon library. You can use any icon from the library by changing the class name.
 
 ### Color Variants
 
 ```html
 <!-- Alert/Error Remark -->
 <div class="remark alert">
-    <span class="icon mif-warning"></span>
+    <span class="mif-report icon"></span>
     This is an alert message for critical information.
 </div>
 
 <!-- Warning Remark -->
 <div class="remark warning">
-    <span class="icon mif-warning"></span>
+    <span class="mif-report icon"></span>
     This is a warning message for important cautions.
 </div>
 
 <!-- Info Remark -->
 <div class="remark info">
-    <span class="icon mif-info"></span>
+    <span class="mif-report icon"></span>
     This is an informational message.
 </div>
 
 <!-- Success Remark -->
 <div class="remark success">
-    <span class="icon mif-checkmark"></span>
+    <span class="mif-report icon"></span>
     This is a success message.
 </div>
 
 <!-- Dark Remark -->
 <div class="remark dark">
-    <span class="icon mif-books"></span>
+    <span class="mif-report icon"></span>
     This is a dark-themed remark.
 </div>
 ```
@@ -118,12 +124,14 @@ The Remark component has the following structure:
 ```html
 <div class="remark [color-variant]">
     <!-- Optional icon -->
-    <span class="icon [icon-class]"></span>
-    
+    <span class="[icon-class] icon"></span>
+
     <!-- Remark content -->
     Your content here
 </div>
 ```
+
+> Note: The icon class (e.g., `mif-report`) should come before the `icon` class.
 
 ## Best Practices
 
@@ -132,3 +140,7 @@ The Remark component has the following structure:
 3. Keep remark content concise and focused
 4. Use remarks sparingly to highlight truly important information
 5. Consider accessibility by ensuring sufficient color contrast
+
+## Additional Notes
+
+The Remark component is a CSS-only component and does not require JavaScript initialization. It does not have any JavaScript API methods or events. Simply add the appropriate HTML markup and CSS classes to use it in your project.

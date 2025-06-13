@@ -2,6 +2,10 @@
 
 The Typer component creates a typing animation effect that types out text, deletes it, and then types the next segment, with a blinking cursor. It's perfect for creating dynamic, attention-grabbing text elements on your website.
 
+## Dependencies
+
+This component has no additional dependencies beyond the core Metro UI library.
+
 ## Usage
 
 ### Basic Usage
@@ -76,6 +80,10 @@ typer.start(); // Start the typing animation again
 | `onType` | Triggered during typing with current word and character information |
 | `onTyperCreate` | Triggered when the typer component is created |
 
+## Styling with CSS Variables
+
+This component doesn't use CSS variables for styling. You can customize its appearance using the available CSS classes.
+
 ## Available CSS Classes
 
 ### Base Classes
@@ -96,3 +104,21 @@ typer.start(); // Start the typing animation again
     color: #ff0000;
 }
 ```
+
+## Additional Notes
+
+The typer component can be used within any HTML element, not just span elements. For example, you can use it within heading elements for more prominent display:
+
+```html
+<h1>
+    <span>Welcome to</span>
+    <span data-role="typer" data-colors="#ed426d,#6d67c6,#b74033">Metro UI, Impressive Components Library, First in Metro Style</span>
+</h1>
+```
+
+## Best Practices
+
+- Use short, impactful phrases for better visual effect
+- Consider using custom colors to match your website's theme
+- Adjust typing speed and delays based on the content length and desired effect
+- For longer text segments, consider using a larger delay to give users time to read

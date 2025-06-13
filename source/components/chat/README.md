@@ -2,6 +2,12 @@
 
 The Chat component provides a flexible and interactive messaging interface for applications. It supports both incoming and outgoing messages with avatars, sender names, timestamps, and a message input area with a send button.
 
+## Dependencies
+
+- Input component (imported from "../input/index.js")
+- Button component (imported from "../button/index.js")
+- Datetime module (used for formatting timestamps)
+
 ## Usage
 
 ### Basic Usage

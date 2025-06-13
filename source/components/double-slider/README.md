@@ -2,6 +2,11 @@
 
 The Double Slider component provides a range slider with two markers that allow users to select a range of values between a minimum and maximum. It's ideal for filtering data based on ranges like prices, dates, or any numeric values.
 
+## Dependencies
+
+The Double Slider component depends on:
+- Slider component (for styling and base functionality)
+
 ## Usage
 
 ### Basic Double Slider
@@ -52,6 +57,10 @@ The Double Slider component provides a range slider with two markers that allow 
 <input data-role="double-slider" data-target="#rangeValue">
 <div id="rangeValue"></div>
 ```
+
+### More Examples
+
+For more examples, see the [double-slider.html](__html__/double-slider.html) example file in the project.
 
 ## Plugin Parameters
 

@@ -4,9 +4,7 @@ The Sidenav Counter component provides a compact, icon-based navigation menu wit
 
 ## Dependencies
 
-- Metro UI CSS
-- Metro UI JavaScript
-- Metro UI Icons
+- None
 
 ## Usage
 

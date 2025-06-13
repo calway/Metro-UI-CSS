@@ -31,7 +31,7 @@ For example:
 - `.float-right-lg` - Floats an element right on large screens and above
 - `.float-none-xl` - Removes float on extra-large screens and above
 
-Where `{breakpoint}` can be: xs, sm, md, lg, xl, xxl, xxxl
+Where `{breakpoint}` can be: `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `xxxl`
 
 ## Usage Examples
 

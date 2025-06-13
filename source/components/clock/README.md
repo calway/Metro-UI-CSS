@@ -2,9 +2,13 @@
 
 The Clock component provides a simple and customizable way to display the current date and time on your web page. It automatically updates and can be configured to show various date and time formats.
 
+## Dependencies
+
+- Datetime module (imported from "../../datetime/index.js")
+
 ## Usage
 
-### Basic Clock
+### Basic Usage
 
 ```html
 <!-- Basic clock with default settings -->
@@ -42,30 +46,26 @@ The Clock component provides a simple and customizable way to display the curren
 
 ## Plugin Parameters
 
-The Clock component accepts the following configuration options:
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `clockDeferred` | number | 0 | Delay before initialization (in milliseconds) |
+| `show` | string | "row" | Display mode: "row" (horizontal) or "column" (vertical) |
+| `showTime` | boolean | true | Whether to display the time |
+| `showDate` | boolean | true | Whether to display the date |
+| `dateFormat` | string | "DD.MM.YYYY" | Format for displaying the date |
+| `timeFormat` | string | "HH:mm" | Format for displaying the time |
+| `divider` | string | "&nbsp;&nbsp;" | HTML content to use as divider between date and time |
+| `twoLines` | boolean | false | Whether to display date and time on separate lines |
 
-| Parameter | Default | Description |
-| --------- | ------- | ----------- |
-| clockDeferred | 0 | Delay before initialization (in milliseconds) |
-| show | "row" | Display mode: "row" (horizontal) or "column" (vertical) |
-| showTime | true | Whether to display the time |
-| showDate | true | Whether to display the date |
-| dateFormat | "DD.MM.YYYY" | Format for displaying the date |
-| timeFormat | "HH:mm" | Format for displaying the time |
-| divider | "&nbsp;&nbsp;" | HTML content to use as divider between date and time |
-| twoLines | false | Whether to display date and time on separate lines |
+## Events
 
-### Event Callbacks
-
-| Callback | Description |
-| -------- | ----------- |
-| onTick | Triggered every 500ms when the clock updates |
-| onSecond | Triggered every second |
-| onClockCreate | Triggered when the clock component is created |
+| Event | Description |
+| ----- | ----------- |
+| `onTick` | Triggered every 500ms when the clock updates |
+| `onSecond` | Triggered every second |
+| `onClockCreate` | Triggered when the clock component is created |
 
 ## API Methods
-
-The Clock component provides the following API methods:
 
 ### changeAttribute(attr, val)
 
@@ -86,6 +86,12 @@ clock.changeAttribute('data-show-date', 'true');
 
 // Show/hide time
 clock.changeAttribute('data-show-time', 'false');
+
+// Change the divider
+clock.changeAttribute('data-divider', ' | ');
+
+// Enable/disable two lines mode
+clock.changeAttribute('data-two-lines', 'true');
 ```
 
 ### destroy()
@@ -102,13 +108,11 @@ clock.destroy();
 
 ## Styling with CSS Variables
 
-The Clock component can be styled using the following CSS variables:
-
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| --clock-background | transparent | transparent | Background color of the clock |
-| --clock-color | #191919 | #dbdfe7 | Text color of the clock |
-| --clock-font-size | 14px | 14px | Font size of the clock text |
+| `--clock-background` | transparent | transparent | Background color of the clock |
+| `--clock-color` | #191919 | #dbdfe7 | Text color of the clock |
+| `--clock-font-size` | 14px | 14px | Font size of the clock text |
 
 ### Example of Custom Styling
 

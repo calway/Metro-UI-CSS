@@ -4,7 +4,7 @@ A card-like component for displaying a person's skills, expertise, or other info
 
 ## Dependencies
 
-This component has no JavaScript dependencies as it's purely CSS-based.
+This component has no JavaScript dependencies as it's purely CSS-based. It only requires the LESS stylesheet to be included in your project.
 
 ## Usage
 
@@ -204,3 +204,20 @@ The content section can contain any content, but is typically used with a skills
 ```
 
 This example creates a skill box with custom styling for a UX designer's profile.
+
+## Best Practices
+
+- Use the skill-box component for displaying professional profiles, team member information, or skill sets.
+- Keep the title and subtitle concise for better readability.
+- Use appropriate badges with contrasting colors to highlight skill levels.
+- Consider using icons instead of images for the avatar when a user photo is not available.
+- For better accessibility, ensure there's sufficient color contrast between text and background.
+- When using custom styling, maintain the component's structure to ensure proper layout.
+- In responsive designs, consider how the skill-box will display on smaller screens.
+
+## Additional Notes
+
+- The skill-box component is designed to be simple and lightweight, focusing on presenting information clearly.
+- While the examples show skills with badges, the content section can contain any HTML content you need.
+- The component works well in both light and dark modes without requiring additional configuration.
+- You can combine this component with other Metro UI components like buttons or progress bars in the content section for more interactive displays.

@@ -308,6 +308,22 @@ const accordion = Metro.getPlugin("#myAccordion", "accordion");
    - `.modifier-class` - Description
    ```
 
+#### **Additional Notes**
+   ```markdown
+   ## Additional Notes
+   
+   Any additional information that might be useful for users of the component.
+   ```
+
+#### **Best Practices**
+   ```markdown
+   ## Best Practices
+   
+   - Use the component in a way that adheres to its intended use.
+   - Avoid modifying the component's internal structure directly.
+   - Always check for updates and compatibility with the latest version of Metro UI.
+   ```
+
 ### How to Create Documentation
 
 For each component that needs documentation:

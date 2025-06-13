@@ -2,6 +2,10 @@
 
 The Checkbox component provides a customizable checkbox input with support for three states: checked, unchecked, and indeterminate.
 
+## Dependencies
+
+This component has no additional dependencies beyond the core Metro UI library.
+
 ## Usage
 
 ### Basic Usage
@@ -45,6 +49,14 @@ To create a three-state checkbox (checked, unchecked, indeterminate), you can us
 <input type="checkbox" data-role="checkbox" data-three-state="true" data-caption="Three-state Checkbox">
 ```
 
+Alternatively, you can use the `data-role="checkbox-three-state"` attribute and set the initial state with `data-state`:
+
+```html
+<input type="checkbox" data-role="checkbox-three-state" data-caption="Checked" data-state="checked">
+<input type="checkbox" data-role="checkbox-three-state" data-caption="Unchecked" data-state="unchecked">
+<input type="checkbox" data-role="checkbox-three-state" data-caption="Indeterminate" data-state="indeterminate">
+```
+
 ### With Prepend and Append
 You can add text or HTML content before (prepend) or after (append) the checkbox using the `data-prepend` and `data-append` attributes.
 
@@ -56,6 +68,15 @@ You can add text or HTML content before (prepend) or after (append) the checkbox
 
 ```html
 <input type="checkbox" data-role="checkbox" data-caption="Custom Classes" data-cls-checkbox="custom-checkbox" data-cls-caption="custom-caption">
+```
+
+### Custom Styling with CSS Variables
+You can customize the appearance of the checkbox using CSS variables:
+
+```html
+<div style="--checkbox-color: red;">
+    <input type="checkbox" data-role="checkbox" data-caption="Red Checkbox">
+</div>
 ```
 
 ## Plugin Parameters

@@ -59962,7 +59962,7 @@ aside::after {
   border-color: var(--dropdown-button-toggle-color);
 }
 
-/* source/components/file-input/file.less */
+/* source/components/file/file.less */
 :root {
   --file-height: 36px;
   --file-button-background: #ebebeb;
@@ -66408,7 +66408,7 @@ label:has(input) {
   --progress-bar-color: #f8f8f8;
 }
 
-/* source/components/radio-buttons/radio-buttons.less */
+/* source/components/radio-button/radio-button.less */
 :root {
   --rb-group-background: #dadee9;
   --rb-group-color: #7e7e77;
@@ -66423,7 +66423,7 @@ label:has(input) {
   --rb-item-color: #ffffff;
   --rb-item-hover: hsl(7, 100%, 68%);
 }
-.radio-buttons {
+.radio-button {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -66433,7 +66433,7 @@ label:has(input) {
   padding: 4px;
   border-radius: 6px;
 }
-.radio-buttons .button {
+.radio-button .button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66446,16 +66446,16 @@ label:has(input) {
   font-weight: 500;
 }
 @media (hover: hover) {
-  .radio-buttons .button:hover:not(.active) {
+  .radio-button .button:hover:not(.active) {
     color: var(--rb-item-hover);
   }
 }
 @media (hover: none) {
-  .radio-buttons .button:active:not(.active) {
+  .radio-button .button:active:not(.active) {
     color: var(--rb-item-hover);
   }
 }
-.radio-buttons .button.active {
+.radio-button .button.active {
   background: var(--rb-item-background);
   color: var(--rb-item-color);
   font-weight: 600;

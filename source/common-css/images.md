@@ -130,7 +130,7 @@ The overlay is designed to work on both hover-capable devices and touch devices 
     position: relative;
     vertical-align: middle;
     background-color: transparent;
-    transition: [transition];
+    transition: all .3s ease-in-out;
     overflow: hidden;
     border-radius: var(--img-border-radius);
 }

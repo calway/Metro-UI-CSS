@@ -2,23 +2,13 @@
 
 The Form component provides styling for HTML forms in Metro UI. It's a CSS-only component that offers various layout options and styling for form elements.
 
+## Dependencies
+
+This component has no dependencies other than the core Metro UI CSS variables.
+
 ## Usage
 
-Import the component in your JavaScript:
-
-```javascript
-import "@olton/metroui/source/components/form";
-```
-
-Or include it in your HTML:
-
-```html
-<link href="path/to/metro.css" rel="stylesheet">
-```
-
-## CSS Classes
-
-### Basic Form
+### Basic Usage
 
 ```html
 <form class="form">
@@ -34,26 +24,23 @@ Or use the `.form` class on any element:
 </div>
 ```
 
-### Form Groups
-
-Group form elements with labels:
+### Form with Groups and Actions
 
 ```html
-<div class="form-group">
-  <label>Input Label:</label>
-  <input type="text">
-</div>
-```
-
-### Form Actions
-
-Container for form buttons and controls:
-
-```html
-<div class="form-actions">
-  <button type="submit">Submit</button>
-  <button type="reset">Reset</button>
-</div>
+<form class="form">
+  <div class="form-group">
+    <label>Username:</label>
+    <input type="text">
+  </div>
+  <div class="form-group">
+    <label>Password:</label>
+    <input type="password">
+  </div>
+  <div class="form-actions">
+    <button type="submit">Login</button>
+    <button type="button">Cancel</button>
+  </div>
+</form>
 ```
 
 ### Inline Form
@@ -104,19 +91,27 @@ Create responsive grid layouts for forms:
 </form>
 ```
 
-## CSS Variables
+## Plugin Parameters
 
-The Form component uses the following CSS variables for styling:
+This component is CSS-only and does not have JavaScript plugin parameters.
 
-| Variable | Default Value | Description |
-|----------|---------------|-------------|
-| `--form-column-min-width` | `200px` | Minimum width for columns in grid forms |
-| `--form-gap-size` | `1rem` | Gap size between form elements in grid forms |
-| `--border-color` | Inherited from theme | Color for borders in form elements |
+## API Methods
 
-## Customization
+This component is CSS-only and does not have JavaScript API methods.
 
-You can customize the appearance of forms by overriding the CSS variables:
+## Events
+
+This component is CSS-only and does not have JavaScript events.
+
+## Styling with CSS Variables
+
+| Variable | Default (Light) | Dark Mode | Description |
+|----------|---------------|-------------|-------------|
+| `--form-column-min-width` | `200px` | Same | Minimum width for columns in grid forms |
+| `--form-gap-size` | `1rem` | Same | Gap size between form elements in grid forms |
+| `--border-color` | Inherited from theme | Inherited from theme | Color for borders in form elements |
+
+### Example of Custom Styling
 
 ```css
 :root {
@@ -126,49 +121,21 @@ You can customize the appearance of forms by overriding the CSS variables:
 }
 ```
 
-## Examples
+## Available CSS Classes
 
-### Basic Form
+### Base Classes
+- `.form` - The main container class for form styling
+- `.form-group` - Container for form elements with labels
+- `.form-actions` - Container for form buttons and controls
 
-```html
-<form>
-  <div class="form-group">
-    <label>Username:</label>
-    <input type="text">
-  </div>
-  <div class="form-group">
-    <label>Password:</label>
-    <input type="password">
-  </div>
-  <div class="form-actions">
-    <button type="submit">Login</button>
-    <button type="button">Cancel</button>
-  </div>
-</form>
-```
+### Modifiers
+- `.inline-form` - Creates a horizontal form layout
+- `.grid-form` - Creates a responsive grid layout for forms
 
-### Grid Form
+## Notes
 
-```html
-<form class="grid-form">
-  <div class="form-group">
-    <label>First Name:</label>
-    <input type="text">
-  </div>
-  <div class="form-group">
-    <label>Last Name:</label>
-    <input type="text">
-  </div>
-  <div class="form-group">
-    <label>Email:</label>
-    <input type="email">
-  </div>
-  <div class="form-group">
-    <label>Phone:</label>
-    <input type="tel">
-  </div>
-  <div class="form-actions">
-    <button type="submit">Submit</button>
-  </div>
-</form>
-```
+- Form groups are stacked vertically by default with a margin between them
+- Form actions have a top border by default
+- Inline forms remove the top margin from form groups and align elements horizontally
+- Grid forms use CSS Grid to create responsive layouts
+- The grid form's column width and gap size can be customized using CSS variables

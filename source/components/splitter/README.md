@@ -16,7 +16,7 @@ This component has no external dependencies beyond the core Metro UI library.
 </div>
 ```
 
-## Parameters
+## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -28,7 +28,7 @@ This component has no external dependencies beyond the core Metro UI library.
 | minSizes | string/array | null | Minimum sizes of the panels (comma-separated string or array) |
 | children | string | "*" | Selector for the child elements to be split |
 | gutterClick | string | "expand" | Behavior when the gutter is clicked |
-| saveState | boolean | false | Whether to save the state of the splitter in browser storage (recently fixed to properly save and restore state) |
+| saveState | boolean | false | Whether to save the state of the splitter in browser storage |
 | noResize | boolean | false | Whether to disable resizing |
 
 ## Events

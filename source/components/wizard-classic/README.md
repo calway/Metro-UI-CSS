@@ -2,11 +2,6 @@
 
 The Wizard Classic component provides a step-by-step interface for guiding users through multi-step processes or forms. It features customizable navigation buttons, page transitions, and various styling options.
 
-## Dependencies
-
-- Metro
-- Dom
-
 ## Usage
 
 ### Basic Usage
