@@ -9,6 +9,7 @@ import "./app-bar/index.js";
 import "./audio-button/index.js";
 import "./audio-player/index.js";
 import "./badges/index.js";
+import "./bar3d/index.js";
 import "./box/index.js";
 import "./breadcrumbs/index.js";
 import "./bulls/index.js";
