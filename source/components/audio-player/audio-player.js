@@ -445,7 +445,7 @@
             Metro.getPlugin(this.stream, "slider").destroy();
             Metro.getPlugin(this.volume, "slider").destroy();
 
-            return element;
+            element.remove();
         },
     });
 })(Metro, Dom);

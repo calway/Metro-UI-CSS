@@ -11,10 +11,19 @@
 }
 
 .dropdown-caret {
+    margin-left: 4px;
+}
+
+ul ul {
+    .dropdown-caret {
+        margin-left: auto;
+    }
+}
+
+.dropdown-toggle {
     svg {
         fill: var(--drop-menu-toggle-color);
         transform: rotate(90deg);
-        margin-left: auto;
         transition: transform .3s;
     }
 

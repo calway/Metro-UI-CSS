@@ -4,8 +4,9 @@
     let AudioButtonDefaultConfig = {
         audioVolume: 0.5,
         audioSrc: "",
-        onAudioStart: Metro.noop,
-        onAudioEnd: Metro.noop,
+        onStart: Metro.noop,
+        onEnd: Metro.noop,
+        onProgress: Metro.noop,
         onAudioButtonCreate: Metro.noop,
     };
 
@@ -24,6 +25,7 @@
                 canPlay: null,
                 id: null,
                 playing: false,
+                duration: 0,
             });
 
             return this;
@@ -53,15 +55,29 @@
             const o = this.options;
             const audio = this.audio;
 
+            audio.addEventListener("loadedmetadata", () => {
+                this.duration = audio.duration.toFixed(0);
+            });
+
             audio.addEventListener("loadeddata", () => {
                 this.canPlay = true;
             });
 
             audio.addEventListener("ended", () => {
                 this.playing = false;
-                this._fireEvent("audioEnd", {
+                this._fireEvent("end", {
                     src: o.audioSrc,
                     audio: audio,
+                });
+            });
+
+            audio.addEventListener("timeupdate", () => {
+                const position = audio.currentTime;
+                const percent = Math.round((audio.currentTime * 100) / this.duration);
+                this._fireEvent("progress", {
+                    duration: this.duration,
+                    position,
+                    percent,
                 });
             });
 
@@ -84,9 +100,11 @@
                 return;
             }
 
+            element.addClass("playing");
+
             if (o.audioSrc !== "" && this.audio.duration && this.canPlay) {
                 this.playing = true;
-                this._fireEvent("audioStart", {
+                this._fireEvent("start", {
                     src: o.audioSrc,
                     audio: audio,
                 });
@@ -106,10 +124,12 @@
 
             this.playing = false;
 
+            element.removeClass("playing");
+
             audio.pause();
             audio.currentTime = 0;
 
-            this._fireEvent("audioEnd", {
+            this._fireEvent("end", {
                 src: o.audioSrc,
                 audio: audio,
             });

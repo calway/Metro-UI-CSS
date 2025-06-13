@@ -118,7 +118,7 @@ article > * + * {
   --control-height-small: 26px;
   --control-height-medium: 30px;
   --control-height-large: 54px;
-  --default-background: #d0d0d0;
+  --default-background: #fff;
   --default-color: #191919;
   --default-color-hover: #000000;
   --default-background-disabled: #f7f8fa;
@@ -54476,13 +54476,18 @@ input::placeholder {
   position: fixed !important;
   z-index: 1030 !important;
 }
-.dropdown-caret svg {
+.dropdown-caret {
+  margin-left: 4px;
+}
+ul ul .dropdown-caret {
+  margin-left: auto;
+}
+.dropdown-toggle svg {
   fill: var(--drop-menu-toggle-color);
   transform: rotate(90deg);
-  margin-left: auto;
   transition: transform 0.3s;
 }
-.dropdown-caret.active-toggle svg {
+.dropdown-toggle.active-toggle svg {
   transform: rotate(270deg);
 }
 .no-dropdown-caret .dropdown-caret {
@@ -71791,9 +71796,7 @@ label:has(input) {
   padding: 0;
 }
 .split-button .split .dropdown-caret {
-  transform: rotate(90deg);
-  fill: var(--split-button-color);
-  transition: all 0.15s ease-in-out;
+  margin: 0;
 }
 .split-button .split.light-toggle .dropdown-caret {
   fill: #ffffff;
