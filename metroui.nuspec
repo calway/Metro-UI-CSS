@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>metroui</id>
-    <version>5.1.6</version>
+    <version>5.1.7</version>
     <title>Metro UI Components Library</title>
     <authors>Serhii Pimenov</authors>
     <owners>serhii_pimenov</owners>
@@ -14,11 +14,19 @@
     <language>en-US</language>
     <copyright>Copyright 2012-2025, Serhii Pimenov</copyright>
     <tags>Metro UI CSS Framework LESS CSS JS HTML</tags>
+    <readme>README.md</readme>
     <releaseNotes>
-        5.1.6
-
-        + Fixed knob position developing the `switch` component
-        + Updated docs for a lot of components
+        ### 5.1.7
+        
+        + [x] Added component `radio-buttons` (n8n style)
+        + [x] Fixed component `splitter` for save state
+        + [x] Added sizes to `info-button`, `image-button`, `split-button`
+        + [x] Added sizes to input controls
+        + [x] Fixed hover on appbar menu subitems
+        + [x] Updated docs for a lot of components
+        + [x] Added component `bar3d`
+        + [x] Added component `github-box`
+        + [x] Improved component `audio-button`
     </releaseNotes>
     <repository type="git" url="https://github.com/olton/metroui" branch="master"/>
   </metadata>

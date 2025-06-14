@@ -9,3 +9,4 @@
 + [x] Added component `bar3d`
 + [x] Added component `github-box`
 + [x] Improved component `audio-button`
+
