@@ -55,6 +55,7 @@ import "./file/index.js";
 import "./flip-card/index.js";
 import "./form/index.js";
 import "./gauge/index.js";
+import "./github-box/index.js";
 import "./gradient-box/index.js";
 import "./gravatar/index.js";
 import "./grid/index.js";

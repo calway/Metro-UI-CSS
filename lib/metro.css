@@ -54566,6 +54566,7 @@ ul ul .dropdown-caret {
   text-overflow: ellipsis;
   padding: 0 0.5rem;
   white-space: nowrap;
+  height: 100%;
 }
 .tag .action {
   display: flex;
@@ -60543,6 +60544,412 @@ label:has(input) {
     #D90E21 0 calc(9 * var(--_dg)),
     #D80010 0 calc(10 * var(--_dg)),
     #0000 0 var(--analog-gauge-range);
+}
+
+/* source/components/github-box/github-box.less */
+:root {
+  --github-box-border-radius: 6px;
+  --github-box-border-color: #d1d9e0;
+  --github-box-background: #ffffff;
+  --github-box-color: #191919;
+  --github-box-header-background: #f7f8fa;
+  --github-box-header-color: #191919;
+}
+.github-box {
+  display: flex;
+  flex-flow: column wrap;
+  border-radius: var(--github-box-border-radius);
+  border: 1px solid var(--github-box-border-color);
+  font-size: 14px;
+}
+.github-box .box-header {
+  background: var(--github-box-header-background);
+  color: var(--github-box-header-color);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 6px;
+  border-bottom: 1px solid;
+  border-color: inherit;
+  width: 100%;
+  border-top-left-radius: var(--github-box-border-radius);
+  border-top-right-radius: var(--github-box-border-radius);
+}
+.github-box .box-header .author {
+  font-weight: 600;
+}
+.github-box .box-header .time {
+  font-size: 12px;
+}
+.github-box .box-header .actions {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2px;
+  align-items: center;
+}
+.github-box .box-header .actions .more-button .dropdown-caret {
+  display: none;
+}
+.github-box .box-header .prc {
+  display: flex;
+  margin-left: auto;
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 12px;
+  border: 1px solid;
+}
+.github-box .box-content {
+  padding: 1rem;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow: hidden;
+  width: calc(100% - 1rem);
+}
+.github-box.-default {
+  border-color: #54aeff66;
+}
+.github-box.-default .prc {
+  border-color: #54aeff;
+}
+.github-box.-default .ticket-box__header {
+  background: #def3fe;
+  color: #191919;
+}
+.github-box.-default .button {
+  background: #54aeff;
+  color: #fff;
+}
+.box-lime {
+  border-color: #AEFD6C;
+}
+.box-lime .box-header {
+  background: #f2ffe7;
+  color: #557f32;
+}
+.box-lime .prc {
+  border-color: #AEFD6C;
+}
+.box-green {
+  border-color: #00b500;
+}
+.box-green .box-header {
+  background: #e7f6e6;
+  color: #003d00;
+}
+.box-green .prc {
+  border-color: #00b500;
+}
+.box-emerald {
+  border-color: #50c878;
+}
+.box-emerald .box-header {
+  background: #d1e6cc;
+  color: #246339;
+}
+.box-emerald .prc {
+  border-color: #50c878;
+}
+.box-blue {
+  border-color: #5e87ff;
+}
+.box-blue .box-header {
+  background: #e7eaff;
+  color: #132a6f;
+}
+.box-blue .prc {
+  border-color: #5e87ff;
+}
+.box-teal {
+  border-color: #1ac5c5;
+}
+.box-teal .box-header {
+  background: #e1f2f3;
+  color: #014848;
+}
+.box-teal .prc {
+  border-color: #1ac5c5;
+}
+.box-cyan {
+  border-color: #94b6ff;
+}
+.box-cyan .box-header {
+  background: #e3edff;
+  color: #456c7e;
+}
+.box-cyan .prc {
+  border-color: #94b6ff;
+}
+.box-cobalt {
+  border-color: #0047ab;
+}
+.box-cobalt .box-header {
+  background: #d1ecff;
+  color: #001f54;
+}
+.box-cobalt .prc {
+  border-color: #0047ab;
+}
+.box-indigo {
+  border-color: #6400a8;
+}
+.box-indigo .box-header {
+  background: #f3dcf3;
+  color: #21003e;
+}
+.box-indigo .prc {
+  border-color: #6400a8;
+}
+.box-almost {
+  border-color: #6a2ded;
+}
+.box-almost .box-header {
+  background: #eee5ff;
+  color: #2f0687;
+}
+.box-almost .prc {
+  border-color: #6a2ded;
+}
+.box-violet {
+  border-color: #ee82ee;
+}
+.box-violet .box-header {
+  background: #fce2fb;
+  color: #773e77;
+}
+.box-violet .prc {
+  border-color: #ee82ee;
+}
+.box-pink {
+  border-color: #ffc0cb;
+}
+.box-pink .box-header {
+  background: #ffeef1;
+  color: #805f65;
+}
+.box-pink .prc {
+  border-color: #ffc0cb;
+}
+.box-magenta {
+  border-color: #ff00ff;
+}
+.box-magenta .box-header {
+  background: #ffe2ff;
+  color: #800080;
+}
+.box-magenta .prc {
+  border-color: #ff00ff;
+}
+.box-crimson {
+  border-color: #df0e38;
+}
+.box-crimson .box-header {
+  background: #ffd1da;
+  color: #6e0519;
+}
+.box-crimson .prc {
+  border-color: #df0e38;
+}
+.box-red {
+  border-color: #ff0000;
+}
+.box-red .box-header {
+  background: #ffe1e1;
+  color: #800000;
+}
+.box-red .prc {
+  border-color: #ff0000;
+}
+.box-orange {
+  border-color: #ffa500;
+}
+.box-orange .box-header {
+  background: #fff3de;
+  color: #805100;
+}
+.box-orange .prc {
+  border-color: #ffa500;
+}
+.box-amber {
+  border-color: #ffca2a;
+}
+.box-amber .box-header {
+  background: #fff8e1;
+  color: #805e00;
+}
+.box-amber .prc {
+  border-color: #ffca2a;
+}
+.box-yellow {
+  border-color: #ffe95e;
+}
+.box-yellow .box-header {
+  background: #ffffc6;
+  color: #bca826;
+}
+.box-yellow .prc {
+  border-color: #ffe95e;
+}
+.box-brown {
+  border-color: #ca773c;
+}
+.box-brown .box-header {
+  background: #ffeed9;
+  color: #42240f;
+}
+.box-brown .prc {
+  border-color: #ca773c;
+}
+.box-olive {
+  border-color: #a1a100;
+}
+.box-olive .box-header {
+  background: #f8fde7;
+  color: #3d3d00;
+}
+.box-olive .prc {
+  border-color: #a1a100;
+}
+.box-steel {
+  border-color: #7b91a6;
+}
+.box-steel .box-header {
+  background: #edeeee;
+  color: #2e3841;
+}
+.box-steel .prc {
+  border-color: #7b91a6;
+}
+.box-mauve {
+  border-color: #e0afff;
+}
+.box-mauve .box-header {
+  background: #f7ecfe;
+  color: #705680;
+}
+.box-mauve .prc {
+  border-color: #e0afff;
+}
+.box-taupe {
+  border-color: #977e67;
+}
+.box-taupe .box-header {
+  background: #eadccf;
+  color: #261e18;
+}
+.box-taupe .prc {
+  border-color: #977e67;
+}
+.box-champagne {
+  border-color: #f7e6ca;
+}
+.box-champagne .box-header {
+  background: #fff9f2;
+  color: #7c7364;
+}
+.box-champagne .prc {
+  border-color: #f7e6ca;
+}
+.box-khaki {
+  border-color: #d5c58a;
+}
+.box-khaki .box-header {
+  background: #f6f1dd;
+  color: #6a6142;
+}
+.box-khaki .prc {
+  border-color: #d5c58a;
+}
+.box-charcoal {
+  border-color: #989898;
+}
+.box-charcoal .box-header {
+  background: #e8e8e8;
+  color: #202020;
+}
+.box-charcoal .prc {
+  border-color: #989898;
+}
+.box-bronze {
+  border-color: #e48d3e;
+}
+.box-bronze .box-header {
+  background: #ffecdc;
+  color: #693c13;
+}
+.box-bronze .prc {
+  border-color: #e48d3e;
+}
+.box-windstorm {
+  border-color: #799ed6;
+}
+.box-windstorm .box-header {
+  background: #e6ebf5;
+  color: #304462;
+}
+.box-windstorm .prc {
+  border-color: #799ed6;
+}
+.box-nude {
+  border-color: #f7d9bc;
+}
+.box-nude .box-header {
+  background: #fcf0e4;
+  color: #7c6c5d;
+}
+.box-nude .prc {
+  border-color: #f7d9bc;
+}
+.box-terracotta {
+  border-color: #e35336;
+}
+.box-terracotta .box-header {
+  background: #ffe5df;
+  color: #712516;
+}
+.box-terracotta .prc {
+  border-color: #e35336;
+}
+.box-coral {
+  border-color: #ff8559;
+}
+.box-coral .box-header {
+  background: #ffd8c8;
+  color: #804028;
+}
+.box-coral .prc {
+  border-color: #ff8559;
+}
+.box-army {
+  border-color: #5d6532;
+}
+.box-army .box-header {
+  background: #eceacb;
+  color: #2a2f14;
+}
+.box-army .prc {
+  border-color: #5d6532;
+}
+.box-seashell {
+  border-color: #fff1e7;
+}
+.box-seashell .box-header {
+  background: #fff9f8;
+  color: #bfa89a;
+}
+.box-seashell .prc {
+  border-color: #fff1e7;
+}
+.box-sand {
+  border-color: #f1e0ae;
+}
+.box-sand .box-header {
+  background: #f8f3e0;
+  color: #8f8975;
+}
+.box-sand .prc {
+  border-color: #f1e0ae;
 }
 
 /* source/components/grid/grid.less */
