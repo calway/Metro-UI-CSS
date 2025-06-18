@@ -1,19 +1,19 @@
 ((Metro, $) => {
-    let RadioButtonDefaultConfig = {
-        onRadioButtonCreate: Metro.noop,
+    let ToggleButtonDefaultConfig = {
+        onToggleButtonCreate: Metro.noop,
     };
 
-    Metro.radioButtonSetup = (options) => {
-        RadioButtonDefaultConfig = $.extend({}, RadioButtonDefaultConfig, options);
+    Metro.toggleButtonSetup = (options) => {
+        ToggleButtonDefaultConfig = $.extend({}, ToggleButtonDefaultConfig, options);
     };
 
-    if (typeof window.metroRadioButtonSetup !== "undefined") {
-        Metro.radioButtonSetup(window.metroRadioButtonSetup);
+    if (typeof window.metroToggleButtonSetup !== "undefined") {
+        Metro.toggleButtonSetup(window.metroToggleButtonSetup);
     }
 
-    Metro.Component("radio-button", {
+    Metro.Component("toggle-button", {
         init: function (options, elem) {
-            this._super(elem, options, RadioButtonDefaultConfig, {
+            this._super(elem, options, ToggleButtonDefaultConfig, {
                 // define instance vars here
             });
             return this;
@@ -38,16 +38,16 @@
             const o = this.options;
 
             element.on("click", ".button", function () {
-                const radioButton = $(this);
+                const toggleButton = $(this);
 
-                if (radioButton.hasClass("active")) {
+                if (toggleButton.hasClass("active")) {
                     return;
                 }
 
                 element.find(".button").removeClass("active");
-                radioButton.addClass("active");
+                toggleButton.addClass("active");
 
-                that._fireEvent("change", { button: radioButton });
+                that._fireEvent("change", { button: toggleButton });
             });
         },
 
