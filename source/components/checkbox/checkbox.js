@@ -92,7 +92,7 @@
                         .addClass("caption-append")
                         .addClass(o.clsAppend)
                         .addClass(o.clsCaption)
-                        .html(o.caption ? o.caption : o.append),
+                        .html(o.append || o.caption),
                 );
             }
 

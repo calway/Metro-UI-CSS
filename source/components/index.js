@@ -38,6 +38,7 @@ import "./countdown/index.js";
 import "./counter/index.js";
 import "./cube/index.js";
 import "./custom-checkbox/index.js";
+import "./cutter/index.js";
 import "./d-menu/index.js";
 import "./datepicker/index.js";
 import "./dialog/index.js";
