@@ -162,6 +162,21 @@ const TABLE_COL_OPTIONS = {
         onViewCreated: Metro.noop,
         onTableCreate: Metro.noop,
         onSkip: Metro.noop,
+        onDrawHead: Metro.noop,
+        onDrawFoot: Metro.noop,
+        onDrawBody: Metro.noop,
+        onInspectorOpen: Metro.noop,
+        onInspectorClose: Metro.noop,
+        onFieldShow: Metro.noop,
+        onFieldHide: Metro.noop,
+        onFieldToggle: Metro.noop,
+        onFieldMove: Metro.noop,
+        onSort: Metro.noop,
+        onPageChange: Metro.noop,
+        onRowClick: Metro.noop,
+        onRowDblClick: Metro.noop,
+        onCellClick: Metro.noop,
+        onCellDblClick: Metro.noop,
     };
 
     Metro.tableSetup = (options) => {
@@ -844,6 +859,10 @@ const TABLE_COL_OPTIONS = {
             for (j = 0; j < cells.length; j++) {
                 tds[j].appendTo(tr);
             }
+
+            this._fireEvent("draw-head", {
+                head,
+            });
         },
 
         _createTableBody: function () {
@@ -903,6 +922,10 @@ const TABLE_COL_OPTIONS = {
                 }
 
                 th.appendTo(tr);
+            });
+
+            this._fireEvent("draw-foot", {
+                foot,
             });
         },
 
@@ -1187,6 +1210,10 @@ const TABLE_COL_OPTIONS = {
                             that.busy = false;
                             if (o.muteTable === true) element.removeClass("disabled");
                         });
+                        that._fireEvent("sort", {
+                            col: col[0],
+                            dir: that.sort.dir,
+                        });
                     });
                 });
             });
@@ -1199,7 +1226,7 @@ const TABLE_COL_OPTIONS = {
                 const storage = Metro.storage;
                 let data = storage.getItem(store_key);
                 const is_radio = check.attr("type") === "radio";
-                
+
                 if (is_radio) {
                     data = [];
                 }
@@ -1276,6 +1303,54 @@ const TABLE_COL_OPTIONS = {
                 });
             });
 
+            element.on(Metro.events.click, "tbody > tr > td", function () {
+                that._fireEvent(
+                    "cell-click",
+                    {
+                        cell: this,
+                    },
+                    false,
+                    false,
+                    this,
+                );
+            });
+
+            element.on(Metro.events.dblclick, "tbody > tr > td", function () {
+                that._fireEvent(
+                    "cell-dbl-click",
+                    {
+                        cell: this,
+                    },
+                    false,
+                    false,
+                    this,
+                );
+            });
+
+            element.on(Metro.events.click, "tbody > tr", function () {
+                that._fireEvent(
+                    "row-click",
+                    {
+                        row: this,
+                    },
+                    false,
+                    false,
+                    this,
+                );
+            });
+
+            element.on(Metro.events.dblclick, "tbody > tr", function () {
+                that._fireEvent(
+                    "row-dbl-click",
+                    {
+                        row: this,
+                    },
+                    false,
+                    false,
+                    this,
+                );
+            });
+
             let _search = function () {
                 that.searchString = this.value.trim().toLowerCase();
                 that.currentPage = 1;
@@ -1321,6 +1396,10 @@ const TABLE_COL_OPTIONS = {
                 }
 
                 that._draw();
+
+                that._fireEvent("page-change", {
+                    page: that.currentPage,
+                });
             }
 
             component.on(Metro.events.click, ".pagination .page-link", function () {
@@ -1371,6 +1450,12 @@ const TABLE_COL_OPTIONS = {
                     that.view[t.data("index")]["index-view"] = index_view;
                 });
 
+                that._fireEvent("field-move", {
+                    field: that.heads[index],
+                    index: index,
+                    direction: "up",
+                });
+
                 that._createTableHeader();
                 that._draw();
             });
@@ -1401,6 +1486,12 @@ const TABLE_COL_OPTIONS = {
                     that.view[t.data("index")]["index-view"] = index_view;
                 });
 
+                that._fireEvent("field-move", {
+                    field: that.heads[index],
+                    index: index,
+                    direction: "down",
+                });
+
                 that._createTableHeader();
                 that._draw();
             });
@@ -1420,6 +1511,10 @@ const TABLE_COL_OPTIONS = {
                         that.heads[index][this] = a.join(" ");
                         that.view[index].show = true;
                     });
+                    that._fireEvent("field-show", {
+                        field: that.heads[index],
+                        index: index,
+                    });
                 } else {
                     $.each(op, function () {
                         const a = Metro.utils.isValue(that.heads[index][this])
@@ -1431,7 +1526,17 @@ const TABLE_COL_OPTIONS = {
                         that.heads[index][this] = a.join(" ");
                         that.view[index].show = false;
                     });
+                    that._fireEvent("field-hide", {
+                        field: that.heads[index],
+                        index: index,
+                    });
                 }
+
+                that._fireEvent("field-toggle", {
+                    field: that.heads[index],
+                    index,
+                    status,
+                });
 
                 that._createTableHeader();
                 that._draw();
@@ -1663,7 +1768,7 @@ const TABLE_COL_OPTIONS = {
             let cells;
             let tds;
             let is_even_row;
-            const rows = Number.parseInt(o.rows)
+            const rows = Number.parseInt(o.rows);
             const start = rows === -1 ? 0 : rows * (+this.currentPage - 1);
             const stop = rows === -1 ? this.items.length - 1 : +start + rows - 1;
             let items;
@@ -1848,6 +1953,10 @@ const TABLE_COL_OPTIONS = {
             if (cb !== undefined) {
                 Metro.utils.exec(cb, null, element[0]);
             }
+
+            this._fireEvent("draw-body", {
+                body,
+            });
         },
 
         _getItemContent: function (row) {
@@ -2377,8 +2486,14 @@ const TABLE_COL_OPTIONS = {
                         left: ($(globalThis).width() - ins.outerWidth(true)) / 2 + pageXOffset,
                     }).data("open", true);
                 });
+                this._fireEvent("inspector-open", {
+                    target: ins,
+                });
             } else {
                 ins.hide().data("open", false);
+                this._fireEvent("inspector-close", {
+                    target: ins,
+                });
             }
         },
 

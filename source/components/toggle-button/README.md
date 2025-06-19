@@ -1,134 +1,103 @@
-# Radio Button Component
+# Toggle Button
 
-The Radio Button component provides a group of buttons where only one can be active at a time, similar to radio inputs but with a button-like appearance. It's ideal for toggle selections in a compact, visually appealing format.
-
-## Dependencies
-
-- Metro UI Core
-- DOM library
+Toggle Button is a component that creates a group of buttons where only one can be active at a time, similar to radio buttons but with a different visual style. It's also known as "n8n radio buttons" in some contexts.
 
 ## Usage
 
 ### Basic Usage
 
 ```html
-<!-- Basic radio button group -->
-<div data-role="radio-button">
-    <button class="button active">Option 1</button>
-    <button class="button">Option 2</button>
-    <button class="button">Option 3</button>
+<div data-role="toggle-button">
+    <button class="button active" data-value="1">Editor</button>
+    <button class="button" data-value="2">Executions</button>
+    <button class="button" data-value="3">Evaluations</button>
 </div>
 ```
 
-### With Icons
+The component automatically adds the class `radio-button` to the container element. Each button inside should have the class `button`. The button with the `active` class will be selected by default.
 
-```html
-<!-- Radio button group with icons -->
-<div data-role="radio-button">
-    <button class="button active"><span class="mif-home"></span></button>
-    <button class="button"><span class="mif-heart"></span></button>
-    <button class="button"><span class="mif-star"></span></button>
-</div>
-```
+You can add a `data-value` attribute to each button to store its value, which can be useful when handling the change event.
 
-### With Text and Icons
+### Initialization via JavaScript
 
-```html
-<!-- Radio button group with text and icons -->
-<div data-role="radio-button">
-    <button class="button active"><span class="mif-home"></span> Home</button>
-    <button class="button"><span class="mif-heart"></span> Favorites</button>
-    <button class="button"><span class="mif-star"></span> Starred</button>
-</div>
+```javascript
+const element = Metro.makePlugin("#myToggleButton", "toggle-button");
 ```
 
 ## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| `onRadioButtonCreate` | function | `Metro.noop` | Callback function triggered when the component is created |
-
-## JavaScript Usage
-
-```javascript
-// Initialize with JavaScript
-const radioButton = Metro.makePlugin('#myRadioButton', 'radio-button', {
-    onRadioButtonCreate: function() {
-        console.log("Radio button group created!");
-    }
-});
-
-// Global setup
-Metro.radioButtonSetup({
-    onRadioButtonCreate: function() {
-        console.log("All radio button groups created!");
-    }
-});
-```
+| `onToggleButtonCreate` | function | `Metro.noop` | Callback function that is called when the toggle button is created |
 
 ## API Methods
 
-### destroy()
-Destroys the component and removes it from the DOM.
++ `destroy()` - Removes the element from the DOM.
+
+### Example of Method Usage
 
 ```javascript
-const radioButton = Metro.getPlugin('#myRadioButton', 'radio-button');
-radioButton.destroy();
+const toggleButton = Metro.getPlugin('#myToggleButton', 'toggle-button');
+toggleButton.destroy();
 ```
 
 ## Events
 
 | Event | Description |
 | ----- | ----------- |
-| `onRadioButtonCreate` | Triggered when the radio button component is created |
-| `change` | Triggered when a button in the group is selected, providing the selected button as a parameter |
+| `onToggleButtonCreate` | Triggered when the toggle button is created |
+| `change` | Triggered when a button is clicked and becomes active. The event handler receives an object with a `button` property containing the jQuery object of the clicked button |
 
-### Example of Event Usage
+### Example of Event Handling
 
 ```javascript
-const radioButton = Metro.getPlugin('#myRadioButton', 'radio-button');
-radioButton.element.on('change', function(e, data) {
-    console.log("Selected button:", data.button);
+// Using data attribute
+<div data-role="toggle-button" data-on-change="console.log('Button changed:', arguments[0].button.data('value'))">
+    <!-- buttons here -->
+</div>
+
+// Using JavaScript
+const toggleButton = Metro.getPlugin('#myToggleButton', 'toggle-button');
+toggleButton.element.on("change", function(e, data) {
+    console.log('Button changed:', data.button.data('value'));
 });
 ```
 
 ## Styling with CSS Variables
 
-The Radio Button component can be styled using the following CSS variables:
-
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
-| `--rb-group-background` | #dadee9 | #545957 | Background color of the button group |
-| `--rb-group-color` | #7e7e77 | #bdc5d2 | Text color of the button group |
-| `--rb-item-background` | #ffffff | #2c2f2e | Background color of the active button |
-| `--rb-item-color` | #191919 | #ffffff | Text color of the active button |
-| `--rb-item-hover` | hsl(7, 100%, 68%) | hsl(7, 100%, 68%) | Hover color for buttons |
+| `--toggle-button-background` | `#dadee9` | `#545957` | Background color of the toggle button container |
+| `--toggle-button-color` | `#7e7e77` | `#bdc5d2` | Text color of inactive buttons |
+| `--toggle-button-item-background` | `#ffffff` | `#2c2f2e` | Background color of the active button |
+| `--toggle-button-item-color` | `#191919` | `#ffffff` | Text color of the active button |
+| `--toggle-button-item-hover-color` | `hsl(7, 100%, 68%)` | `hsl(7, 100%, 68%)` | Text color of buttons on hover |
 
 ### Example of Custom Styling
 
 ```css
-/* Custom styling for a specific radio button group */
-#myCustomRadioButton {
-    --rb-group-background: #e3f2fd;
-    --rb-group-color: #2196f3;
-    --rb-item-background: #2196f3;
-    --rb-item-color: #ffffff;
-    --rb-item-hover: #64b5f6;
+#myToggleButton {
+    --toggle-button-background: #f0f0f0;
+    --toggle-button-color: #333333;
+    --toggle-button-item-background: #007bff;
+    --toggle-button-item-color: #ffffff;
+    --toggle-button-item-hover-color: #ff9900;
 }
 ```
 
 ## Available CSS Classes
 
 ### Base Classes
-- `.radio-button` - Main container class for the radio button component
-- `.button` - Class for individual buttons within the group
-- `.active` - Class applied to the currently selected button
+- `.radio-button` - The main container class (added automatically)
+- `.button` - Class for each button inside the toggle button component
+
+### States
+- `.active` - Applied to the currently selected button
 
 ## Best Practices
 
-1. Use radio buttons when users need to select one option from a small set of mutually exclusive choices
-2. Keep button labels short and descriptive
-3. Use icons to enhance visual recognition when appropriate
-4. Ensure there is always one button selected by default (with the `.active` class)
-5. Use consistent styling across your application for all radio button groups
-6. Consider using icons alone for very compact interfaces, but ensure they are intuitive
+- Always include at least one button with the `active` class to ensure a default selection
+- Use the `data-value` attribute to store values for each button
+- Keep button labels concise to maintain a clean appearance
+- Consider using the toggle button component for options that are mutually exclusive
+- For accessibility, ensure that the toggle button has appropriate ARIA attributes if needed

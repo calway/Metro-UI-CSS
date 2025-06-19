@@ -2,30 +2,32 @@
 @import "../../include/mixins";
 
 :root {
-    --rb-group-background: #dadee9;
-    --rb-group-color: #7e7e77;
-    --rb-item-background: #ffffff;
-    --rb-item-color: #191919;
-    --rb-item-hover: hsl(7, 100%, 68%);
+    --toggle-button-background: #dadee9;
+    --toggle-button-color: #7e7e77;
+    --toggle-button-item-background: #ffffff;
+    --toggle-button-item-color: #191919;
+    --toggle-button-item-hover-color: hsl(7, 100%, 68%);
 }
 
 .dark-side {
-    --rb-group-background: #545957;
-    --rb-group-color: #bdc5d2;
-    --rb-item-background: #2c2f2e;
-    --rb-item-color: #ffffff;
-    --rb-item-hover: hsl(7, 100%, 68%);
+    --toggle-button-background: #545957;
+    --toggle-button-color: #bdc5d2;
+    --toggle-button-item-background: #2c2f2e;
+    --toggle-button-item-color: #ffffff;
+    --toggle-button-item-hover-color: hsl(7, 100%, 68%);
 }
 
 .radio-button {
-    display: flex;
+    //display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    background: var(--rb-group-background);
-    color: var(--rb-group-color);
+    background: var(--toggle-button-background);
+    color: var(--toggle-button-color);
     padding: 4px;
     border-radius: 6px;
+    width: auto;
+    display: inline-flex;
     
     .button {
         display: flex;
@@ -41,19 +43,19 @@
         
         @media (hover: hover) {
             &:hover:not(.active) {
-                color: var(--rb-item-hover);
+                color: var(--toggle-button-item-hover-color);
             }
         }
         
         @media (hover: none) {
             &:active:not(.active) {
-                color: var(--rb-item-hover);
+                color: var(--toggle-button-item-hover-color);
             }
         }
         
         &.active {
-            background: var(--rb-item-background);
-            color: var(--rb-item-color);
+            background: var(--toggle-button-item-background);
+            color: var(--toggle-button-item-color);
             font-weight: 600;
         }
     }
