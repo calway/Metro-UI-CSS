@@ -43,7 +43,7 @@
     },
     "browserslist": ["last 2 versions"],
     "devDependencies": {
-        "@biomejs/biome": "2.0.2",
+        "@biomejs/biome": "2.0.4",
         "@olton/esbuild-plugin-autoprefixer": "^0.2.1",
         "@olton/esbuild-plugin-progress": "^0.3.1",
         "@olton/esbuild-plugin-unlink": "^0.2.1",
