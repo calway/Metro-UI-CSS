@@ -98,8 +98,8 @@ function drawCell(td, val, index, head, cells) {
 | `useCurrentSlice` | boolean | false | Use current slice for operations |
 | `showInspectorButton` | boolean | false | Show inspector button |
 | `inspectorButtonIcon` | string | "🔧" | Icon for inspector button |
-| `templateBeginToken` | string | "<%" | Begin token for templates |
-| `templateEndToken` | string | "%>" | End token for templates |
+| `templateBeginToken` | string | `<%` | Begin token for templates |
+| `templateEndToken` | string | `%>` | End token for templates |
 | `paginationDistance` | number | 5 | Distance between pagination buttons |
 | `paginationIslandSize` | number | 3 | Size of pagination islands |
 | `paginationShortTrack` | number | 10 | Short track for pagination |
