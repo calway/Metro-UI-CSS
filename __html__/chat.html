@@ -9,19 +9,22 @@
     <title>Test Chart - Metro UI :: Popular HTML, CSS and JS library</title>
 
 </head>
-<body class="m4-cloak">
-<div class="container">
-    <h1>Chat test page</h1>
-
+<body class="cloak h-100-vh">
+<nav data-role="appbar" class="border-bottom bd-default" data-expand="true">
+    <div class="app-bar-item-static no-hover">
+        <div class="text-leader">Chat</div>
+    </div>
+    <div class="app-bar-item-static no-hover ml-auto">
+        <input type="checkbox" data-role="theme-switcher"/>
+    </div>
+</nav>
+<div class="container h-100 d-flex flex-center">
     <div lang="ua">
-        <div id="chat" class="mx-auto"
+        <div id="chat"
              data-role="chat"
              data-width="480"
              data-height="640"
              data-title="Direct chat"
-             data-cls-send-button="bg-crimson fg-white"
-             data-send-button-icon="<span class='mif-paper-plane'>"
-             data-send-button-title=" "
              data-random-color="true"
              data-welcome="Welcome to the chat!"
              data-cls-message-left="default"
