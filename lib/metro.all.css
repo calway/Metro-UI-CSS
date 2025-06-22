@@ -143,8 +143,8 @@ article > * + * {
   --body-color: var(--default-color);
   --body-color-secondary: #c0c0c0;
   --border-color: #4a4d51;
-  --link-color: #5a87cb;
-  --link-color-hover: #0056B3FF;
+  --link-color: #4493f8;
+  --link-color-hover: #2771d1;
   --selected-row-background: #26282e;
   --selected-item-background: #2e436e;
 }
@@ -55840,6 +55840,7 @@ input.pill-input .button {
   object-fit: cover;
 }
 .chat .message .message-item .message-text {
+  max-width: 50%;
   display: flex;
   align-items: center;
   border: 1px solid var(--chat-border-color);
@@ -55849,7 +55850,6 @@ input.pill-input .button {
   line-height: 1.2;
   padding: 30px 10px;
   min-width: 100px;
-  max-width: 100%;
   background: var(--chat-message-background);
   color: var(--chat-message-color);
   position: relative;
@@ -55907,10 +55907,43 @@ input.pill-input .button {
 .chat .message.right .message-text.--next::before {
   display: none;
 }
+.chat .message-text img,
+.chat .message-text video,
+.chat .message-text audio {
+  max-width: 100%;
+}
+.chat a.attach {
+  color: var(--link-color);
+}
 .chat .message-input {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 4px;
   flex-shrink: 0;
   margin-top: auto;
   padding: 8px;
+}
+.chat .message-input .js-chat-attach-button {
+  height: 36px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--chat-color);
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+.chat .message-input .js-chat-attach-button svg {
+  height: 24px !important;
+  width: 24px !important;
+  fill: var(--chat-color);
+}
+@media (hover: hover) {
+  .chat .message-input .js-chat-attach-button:hover {
+    background: var(--button-background-hover);
+    border-color: var(--chat-border-color);
+  }
 }
 .chat .message-input.disabled {
   opacity: 0.5;

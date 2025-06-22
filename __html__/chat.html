@@ -12,31 +12,26 @@
 <body class="cloak h-100-vh">
 <nav data-role="appbar" class="border-bottom bd-default" data-expand="true">
     <div class="app-bar-item-static no-hover">
-        <div class="text-leader">Chat</div>
+        <div class="text-leader">Chat Demo</div>
     </div>
     <div class="app-bar-item-static no-hover ml-auto">
         <input type="checkbox" data-role="theme-switcher"/>
     </div>
 </nav>
 <div class="container h-100 d-flex flex-center">
-    <div lang="ua">
-        <div id="chat"
-             data-role="chat"
-             data-width="480"
-             data-height="640"
-             data-title="Direct chat"
-             data-random-color="true"
-             data-welcome="Welcome to the chat!"
-             data-cls-message-left="default"
-             data-cls-message-right="bg-crimson fg-white bd-crimson"
-             data-on-send="sendMessage"
-             data-on-message="onMessage"
-             data-avatar="<span>👦</span>"
-             data-welcome-avatar="<span>📎</span>"
-             data-readonly="false"
-        ></div>
-    </div>
-
+    <div id="chat"
+         data-role="chat, draggable"
+         data-width="640"
+         data-height="860"
+         data-title="Direct chat"
+         data-random-color="true"
+         data-welcome="Welcome to the chat!"
+         data-on-send="sendMessage"
+         data-on-message="onMessage"
+         data-avatar="<span>👦</span>"
+         data-welcome-avatar="<span>📎</span>"
+         data-readonly="false"
+    ></div>
 </div>
 
 <script src="../lib/metro.js"></script>

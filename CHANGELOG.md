@@ -6,4 +6,5 @@
 + [x] Added new events to `table` component: `onDrawHead`, `onDrawFoot`, `onDrawBody`, `onInspectorOpen`, `onInspectorClose`, `onFieldShow`, `onFieldHide`, `onFieldToggle`, `onFieldMove`, `onSort`, `onPageChange`, `onRowClick`, `onRowDblClick`, `onCellClick`, `onCellDblClick`
 + [x] Added color classes for `tabs`
 + [x] Updated `tabs` API: method `open` now can accept `target` as a parameter
++ [x] Added attachment feature to `chat` component
 
