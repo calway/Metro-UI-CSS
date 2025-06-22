@@ -65071,6 +65071,7 @@ label:has(input) {
   border: 1px solid var(--border-color);
   width: 100%;
   border-radius: 0;
+  overflow: hidden;
 }
 .tabs-expand:not(.tabs-bottom) ul.tabs-group > li a {
   justify-content: center;
@@ -65079,6 +65080,18 @@ label:has(input) {
   background: var(--tabs-item-background-active);
   color: var(--tabs-item-color-active);
   font-weight: 500;
+}
+.tabs-expand:not(.tabs-bottom) ul.tabs-group > li.active::before {
+  content: "";
+  width: 4px;
+  aspect-ratio: 1/1;
+  background-color: var(--tabs-item-marker-active);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 8px;
+  z-index: 1;
+  border-radius: 50%;
 }
 .tabs-expand:not(.tabs-bottom) ul.tabs-group > li:first-child {
   border-top-left-radius: var(--tabs-border-radius);
@@ -65105,10 +65118,21 @@ label:has(input) {
   border-color: var(--border-color);
   background: var(--tabs-item-background-active);
   color: var(--tabs-item-color-active);
+  padding-left: 8px;
 }
-.tabs .tabs-text .active::before,
-.tabs .tabs-pills .active::before,
-.tabs .tabs-group .active::before {
+.tabs-expand:not(.tabs-bottom) ul.tabs-pills > li.active::before {
+  content: "";
+  width: 4px;
+  aspect-ratio: 1/1;
+  background-color: var(--tabs-item-marker-active);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 8px;
+  z-index: 1;
+  border-radius: 50%;
+}
+.tabs .tabs-text .active::before {
   display: none !important;
 }
 .tabs .tabs-list:not(.tabs-group).align-left {
@@ -65119,6 +65143,465 @@ label:has(input) {
 }
 .tabs .tabs-list:not(.tabs-group).align-right {
   justify-content: flex-end;
+}
+.tabs-black {
+  --tabs-item-marker-active: #000000;
+}
+.tabs-white {
+  --tabs-item-marker-active: #ffffff;
+}
+.tabs-dark {
+  --tabs-item-marker-active: #1d1d1d;
+}
+.tabs-light {
+  --tabs-item-marker-active: #f8f8f8;
+}
+.tabs-gray {
+  --tabs-item-marker-active: #ccc;
+}
+.tabs-gray-blue {
+  --tabs-item-marker-active: #6a89a7;
+}
+.tabs-gray-white {
+  --tabs-item-marker-active: #f5f5f5;
+}
+.tabs-gray-mouse {
+  --tabs-item-marker-active: #566b75;
+}
+.tabs-lime {
+  --tabs-item-marker-active: #AEFD6C;
+}
+.tabs-green {
+  --tabs-item-marker-active: #00b500;
+}
+.tabs-emerald {
+  --tabs-item-marker-active: #50c878;
+}
+.tabs-blue {
+  --tabs-item-marker-active: #5e87ff;
+}
+.tabs-teal {
+  --tabs-item-marker-active: #1ac5c5;
+}
+.tabs-cyan {
+  --tabs-item-marker-active: #94b6ff;
+}
+.tabs-cobalt {
+  --tabs-item-marker-active: #0047ab;
+}
+.tabs-indigo {
+  --tabs-item-marker-active: #6400a8;
+}
+.tabs-almost {
+  --tabs-item-marker-active: #6a2ded;
+}
+.tabs-violet {
+  --tabs-item-marker-active: #ee82ee;
+}
+.tabs-pink {
+  --tabs-item-marker-active: #ffc0cb;
+}
+.tabs-magenta {
+  --tabs-item-marker-active: #ff00ff;
+}
+.tabs-crimson {
+  --tabs-item-marker-active: #df0e38;
+}
+.tabs-red {
+  --tabs-item-marker-active: #ff0000;
+}
+.tabs-clown {
+  --tabs-item-marker-active: #ff6d66;
+}
+.tabs-orange {
+  --tabs-item-marker-active: #ffa500;
+}
+.tabs-amber {
+  --tabs-item-marker-active: #ffca2a;
+}
+.tabs-yellow {
+  --tabs-item-marker-active: #ffe95e;
+}
+.tabs-brown {
+  --tabs-item-marker-active: #ca773c;
+}
+.tabs-olive {
+  --tabs-item-marker-active: #a1a100;
+}
+.tabs-steel {
+  --tabs-item-marker-active: #7b91a6;
+}
+.tabs-mauve {
+  --tabs-item-marker-active: #e0afff;
+}
+.tabs-taupe {
+  --tabs-item-marker-active: #977e67;
+}
+.tabs-champagne {
+  --tabs-item-marker-active: #f7e6ca;
+}
+.tabs-khaki {
+  --tabs-item-marker-active: #d5c58a;
+}
+.tabs-charcoal {
+  --tabs-item-marker-active: #989898;
+}
+.tabs-bronze {
+  --tabs-item-marker-active: #e48d3e;
+}
+.tabs-windstorm {
+  --tabs-item-marker-active: #799ed6;
+}
+.tabs-nude {
+  --tabs-item-marker-active: #f7d9bc;
+}
+.tabs-terracotta {
+  --tabs-item-marker-active: #e35336;
+}
+.tabs-coral {
+  --tabs-item-marker-active: #ff8559;
+}
+.tabs-army {
+  --tabs-item-marker-active: #5d6532;
+}
+.tabs-seashell {
+  --tabs-item-marker-active: #fff1e7;
+}
+.tabs-sand {
+  --tabs-item-marker-active: #f1e0ae;
+}
+.tabs-light-lime {
+  --tabs-item-marker-active: #f2ffe7;
+}
+.tabs-light-green {
+  --tabs-item-marker-active: #e7f6e6;
+}
+.tabs-light-emerald {
+  --tabs-item-marker-active: #d1e6cc;
+}
+.tabs-light-blue {
+  --tabs-item-marker-active: #e7eaff;
+}
+.tabs-light-teal {
+  --tabs-item-marker-active: #e1f2f3;
+}
+.tabs-light-cyan {
+  --tabs-item-marker-active: #e3edff;
+}
+.tabs-light-cobalt {
+  --tabs-item-marker-active: #d1ecff;
+}
+.tabs-light-indigo {
+  --tabs-item-marker-active: #f3dcf3;
+}
+.tabs-light-almost {
+  --tabs-item-marker-active: #eee5ff;
+}
+.tabs-light-violet {
+  --tabs-item-marker-active: #fce2fb;
+}
+.tabs-light-pink {
+  --tabs-item-marker-active: #ffeef1;
+}
+.tabs-light-magenta {
+  --tabs-item-marker-active: #ffe2ff;
+}
+.tabs-light-crimson {
+  --tabs-item-marker-active: #ffd1da;
+}
+.tabs-light-red {
+  --tabs-item-marker-active: #ffe1e1;
+}
+.tabs-light-clown {
+  --tabs-item-marker-active: #ffdede;
+}
+.tabs-light-orange {
+  --tabs-item-marker-active: #fff3de;
+}
+.tabs-light-amber {
+  --tabs-item-marker-active: #fff8e1;
+}
+.tabs-light-yellow {
+  --tabs-item-marker-active: #ffffc6;
+}
+.tabs-light-brown {
+  --tabs-item-marker-active: #ffeed9;
+}
+.tabs-light-olive {
+  --tabs-item-marker-active: #f8fde7;
+}
+.tabs-light-steel {
+  --tabs-item-marker-active: #edeeee;
+}
+.tabs-light-mauve {
+  --tabs-item-marker-active: #f7ecfe;
+}
+.tabs-light-taupe {
+  --tabs-item-marker-active: #eadccf;
+}
+.tabs-light-gray {
+  --tabs-item-marker-active: #f4f4f4;
+}
+.tabs-light-gray-blue {
+  --tabs-item-marker-active: #bee2f4;
+}
+.tabs-light-gray-mouse {
+  --tabs-item-marker-active: #8ab4c8;
+}
+.tabs-light-champagne {
+  --tabs-item-marker-active: #fff9f2;
+}
+.tabs-light-khaki {
+  --tabs-item-marker-active: #f6f1dd;
+}
+.tabs-light-charcoal {
+  --tabs-item-marker-active: #e8e8e8;
+}
+.tabs-light-bronze {
+  --tabs-item-marker-active: #ffecdc;
+}
+.tabs-light-windstorm {
+  --tabs-item-marker-active: #e6ebf5;
+}
+.tabs-light-nude {
+  --tabs-item-marker-active: #fcf0e4;
+}
+.tabs-light-terracotta {
+  --tabs-item-marker-active: #ffe5df;
+}
+.tabs-light-coral {
+  --tabs-item-marker-active: #ffd8c8;
+}
+.tabs-light-army {
+  --tabs-item-marker-active: #eceacb;
+}
+.tabs-light-seashell {
+  --tabs-item-marker-active: #fff9f8;
+}
+.tabs-light-sand {
+  --tabs-item-marker-active: #f8f3e0;
+}
+.tabs-dark-lime {
+  --tabs-item-marker-active: #557f32;
+}
+.tabs-dark-green {
+  --tabs-item-marker-active: #003d00;
+}
+.tabs-dark-emerald {
+  --tabs-item-marker-active: #246339;
+}
+.tabs-dark-blue {
+  --tabs-item-marker-active: #132a6f;
+}
+.tabs-dark-teal {
+  --tabs-item-marker-active: #014848;
+}
+.tabs-dark-cyan {
+  --tabs-item-marker-active: #456c7e;
+}
+.tabs-dark-cobalt {
+  --tabs-item-marker-active: #001f54;
+}
+.tabs-dark-indigo {
+  --tabs-item-marker-active: #21003e;
+}
+.tabs-dark-almost {
+  --tabs-item-marker-active: #2f0687;
+}
+.tabs-dark-violet {
+  --tabs-item-marker-active: #773e77;
+}
+.tabs-dark-pink {
+  --tabs-item-marker-active: #805f65;
+}
+.tabs-dark-magenta {
+  --tabs-item-marker-active: #800080;
+}
+.tabs-dark-crimson {
+  --tabs-item-marker-active: #6e0519;
+}
+.tabs-dark-red {
+  --tabs-item-marker-active: #800000;
+}
+.tabs-dark-clown {
+  --tabs-item-marker-active: #aa2824;
+}
+.tabs-dark-orange {
+  --tabs-item-marker-active: #805100;
+}
+.tabs-dark-amber {
+  --tabs-item-marker-active: #805e00;
+}
+.tabs-dark-yellow {
+  --tabs-item-marker-active: #bca826;
+}
+.tabs-dark-brown {
+  --tabs-item-marker-active: #42240f;
+}
+.tabs-dark-olive {
+  --tabs-item-marker-active: #3d3d00;
+}
+.tabs-dark-steel {
+  --tabs-item-marker-active: #2e3841;
+}
+.tabs-dark-mauve {
+  --tabs-item-marker-active: #705680;
+}
+.tabs-dark-taupe {
+  --tabs-item-marker-active: #261e18;
+}
+.tabs-dark-gray {
+  --tabs-item-marker-active: #515151;
+}
+.tabs-dark-gray-blue {
+  --tabs-item-marker-active: #36464e;
+}
+.tabs-dark-gray-mouse {
+  --tabs-item-marker-active: #2e3c42;
+}
+.tabs-dark-champagne {
+  --tabs-item-marker-active: #7c7364;
+}
+.tabs-dark-khaki {
+  --tabs-item-marker-active: #6a6142;
+}
+.tabs-dark-charcoal {
+  --tabs-item-marker-active: #202020;
+}
+.tabs-dark-bronze {
+  --tabs-item-marker-active: #693c13;
+}
+.tabs-dark-windstorm {
+  --tabs-item-marker-active: #304462;
+}
+.tabs-dark-nude {
+  --tabs-item-marker-active: #7c6c5d;
+}
+.tabs-dark-terracotta {
+  --tabs-item-marker-active: #712516;
+}
+.tabs-dark-coral {
+  --tabs-item-marker-active: #804028;
+}
+.tabs-dark-army {
+  --tabs-item-marker-active: #2a2f14;
+}
+.tabs-dark-seashell {
+  --tabs-item-marker-active: #bfa89a;
+}
+.tabs-dark-sand {
+  --tabs-item-marker-active: #8f8975;
+}
+.tabs-sat-lime {
+  --tabs-item-marker-active: #7dba4a;
+}
+.tabs-sat-green {
+  --tabs-item-marker-active: #008f00;
+}
+.tabs-sat-emerald {
+  --tabs-item-marker-active: #3ca15d;
+}
+.tabs-sat-blue {
+  --tabs-item-marker-active: #1f43ae;
+}
+.tabs-sat-teal {
+  --tabs-item-marker-active: #008a8a;
+}
+.tabs-sat-cyan {
+  --tabs-item-marker-active: #659db6;
+}
+.tabs-sat-cobalt {
+  --tabs-item-marker-active: #003391;
+}
+.tabs-sat-indigo {
+  --tabs-item-marker-active: #430080;
+}
+.tabs-sat-almost {
+  --tabs-item-marker-active: #4e18c1;
+}
+.tabs-sat-violet {
+  --tabs-item-marker-active: #b65fb6;
+}
+.tabs-sat-pink {
+  --tabs-item-marker-active: #cc7296;
+}
+.tabs-sat-magenta {
+  --tabs-item-marker-active: #c500c5;
+}
+.tabs-sat-crimson {
+  --tabs-item-marker-active: #980824;
+}
+.tabs-sat-red {
+  --tabs-item-marker-active: #b80000;
+}
+.tabs-sat-clown {
+  --tabs-item-marker-active: #d64f48;
+}
+.tabs-sat-orange {
+  --tabs-item-marker-active: #bc7700;
+}
+.tabs-sat-amber {
+  --tabs-item-marker-active: #d19b00;
+}
+.tabs-sat-yellow {
+  --tabs-item-marker-active: #e4ce43;
+}
+.tabs-sat-brown {
+  --tabs-item-marker-active: #884b20;
+}
+.tabs-sat-olive {
+  --tabs-item-marker-active: #838300;
+}
+.tabs-sat-steel {
+  --tabs-item-marker-active: #5c7081;
+}
+.tabs-sat-mauve {
+  --tabs-item-marker-active: #a982c1;
+}
+.tabs-sat-taupe {
+  --tabs-item-marker-active: #5e4a3c;
+}
+.tabs-sat-gray {
+  --tabs-item-marker-active: #9c9c9c;
+}
+.tabs-sat-gray-blue {
+  --tabs-item-marker-active: #5f7a88;
+}
+.tabs-sat-gray-mouse {
+  --tabs-item-marker-active: #3f535c;
+}
+.tabs-sat-champagne {
+  --tabs-item-marker-active: #ccbca5;
+}
+.tabs-sat-khaki {
+  --tabs-item-marker-active: #aa9c6b;
+}
+.tabs-sat-charcoal {
+  --tabs-item-marker-active: #5e5e5e;
+}
+.tabs-sat-bronze {
+  --tabs-item-marker-active: #aa621f;
+}
+.tabs-sat-windstorm {
+  --tabs-item-marker-active: #5071a3;
+}
+.tabs-sat-nude {
+  --tabs-item-marker-active: #baa28b;
+}
+.tabs-sat-terracotta {
+  --tabs-item-marker-active: #af3a23;
+}
+.tabs-sat-coral {
+  --tabs-item-marker-active: #b65c39;
+}
+.tabs-sat-army {
+  --tabs-item-marker-active: #647030;
+}
+.tabs-sat-seashell {
+  --tabs-item-marker-active: #e1cbbd;
+}
+.tabs-sat-sand {
+  --tabs-item-marker-active: #d1c5a1;
 }
 
 /* source/components/package-manager/package-manager.less */
