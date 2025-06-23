@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>metroui</id>
-    <version>5.1.7</version>
+    <version>5.1.8</version>
     <title>Metro UI Components Library</title>
     <authors>Serhii Pimenov</authors>
     <owners>serhii_pimenov</owners>
@@ -16,17 +16,15 @@
     <tags>Metro UI CSS Framework LESS CSS JS HTML</tags>
     <readme>README.md</readme>
     <releaseNotes>
-        ### 5.1.7
+        ### 5.1.8
         
-        + [x] Added component `radio-buttons` (n8n style)
-        + [x] Fixed component `splitter` for save state
-        + [x] Added sizes to `info-button`, `image-button`, `split-button`
-        + [x] Added sizes to input controls
-        + [x] Fixed hover on appbar menu subitems
-        + [x] Updated docs for a lot of components
-        + [x] Added component `bar3d`
-        + [x] Added component `github-box`
-        + [x] Improved component `audio-button`
+        + [x] Renamed `radio-button` to `toggle-button`
+        + [x] Fixed attribute `data-caption` for `radio` component
+        + [x] Added component `cutter` for visual cutting page
+        + [x] Added new events to `table` component: `onDrawHead`, `onDrawFoot`, `onDrawBody`, `onInspectorOpen`, `onInspectorClose`, `onFieldShow`, `onFieldHide`, `onFieldToggle`, `onFieldMove`, `onSort`, `onPageChange`, `onRowClick`, `onRowDblClick`, `onCellClick`, `onCellDblClick`
+        + [x] Added color classes for `tabs`
+        + [x] Updated `tabs` API: method `open` now can accept `target` as a parameter
+        + [x] Added new features to `chat` component: attachments, links, code blocks
     </releaseNotes>
     <repository type="git" url="https://github.com/olton/metroui" branch="master"/>
   </metadata>
