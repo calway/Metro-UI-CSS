@@ -118,6 +118,8 @@ article > * + * {
   --control-height-small: 26px;
   --control-height-medium: 30px;
   --control-height-large: 54px;
+}
+:root {
   --default-background: #fff;
   --default-color: #191919;
   --default-color-hover: #000000;
@@ -24347,22 +24349,16 @@ h6,
 .text-muted {
   color: var(--body-color-secondary);
 }
-.leader,
 .h1,
 h1,
-.sub-leader,
 .h2,
 h2,
-.header,
 .h3,
 h3,
-.sub-header,
 .h4,
 h4,
-.alt-header,
 .h5,
 h5,
-.sub-alt-header,
 .h6,
 h6 {
   color: inherit;
@@ -24370,40 +24366,28 @@ h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
-.leader > small,
 .h1 > small,
 h1 > small,
-.sub-leader > small,
 .h2 > small,
 h2 > small,
-.header > small,
 .h3 > small,
 h3 > small,
-.sub-header > small,
 .h4 > small,
 h4 > small,
-.alt-header > small,
 .h5 > small,
 h5 > small,
-.sub-alt-header > small,
 .h6 > small,
 h6 > small,
-.leader > .small,
 .h1 > .small,
 h1 > .small,
-.sub-leader > .small,
 .h2 > .small,
 h2 > .small,
-.header > .small,
 .h3 > .small,
 h3 > .small,
-.sub-header > .small,
 .h4 > .small,
 h4 > .small,
-.alt-header > .small,
 .h5 > .small,
 h5 > .small,
-.sub-alt-header > .small,
 .h6 > .small,
 h6 > .small {
   font-weight: 400;
@@ -24411,22 +24395,16 @@ h6 > .small {
   line-height: 1;
   color: var(--body-color-secondary);
 }
-.leader:nth-child(1),
 .h1:nth-child(1),
 h1:nth-child(1),
-.sub-leader:nth-child(1),
 .h2:nth-child(1),
 h2:nth-child(1),
-.header:nth-child(1),
 .h3:nth-child(1),
 h3:nth-child(1),
-.sub-header:nth-child(1),
 .h4:nth-child(1),
 h4:nth-child(1),
-.alt-header:nth-child(1),
 .h5:nth-child(1),
 h5:nth-child(1),
-.sub-alt-header:nth-child(1),
 .h6:nth-child(1),
 h6:nth-child(1) {
   margin-top: 0;
@@ -24543,7 +24521,7 @@ kbd {
   font-size: 13px;
   align-items: center;
   white-space: nowrap;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   overflow-wrap: break-word;
   padding: 0 6px;
 }
@@ -55764,12 +55742,14 @@ input.pill-input .button {
   --chat-color: #191919;
   --chat-message-background: #f5f5f5;
   --chat-message-color: #191919;
+  --chat-attach-link-background: #ffffff;
 }
 .dark-side {
   --chat-background: #343637;
   --chat-color: #dbdfe7;
   --chat-message-background: #4a4d51;
   --chat-message-color: #dbdfe7;
+  --chat-attach-link-background: #343637;
 }
 .chat {
   display: flex;
@@ -55911,6 +55891,12 @@ input.pill-input .button {
 .chat .message-text video,
 .chat .message-text audio {
   max-width: 100%;
+}
+.chat .attach-link {
+  margin-top: 4px;
+  padding: 4px 8px;
+  background: var(--chat-attach-link-background);
+  border-radius: 4px;
 }
 .chat a.attach {
   color: var(--link-color);

@@ -27,6 +27,7 @@
 		attachButtonIcon: "📎",
 		readonly: false,
 		attachAccept: "*",
+		scrollSpeed: 200,
 
 		clsChat: "",
 		clsName: "",
@@ -62,6 +63,7 @@
 				lastMessage: null,
 				attach: null,
 				file: null,
+				locale: null,
 			});
 
 			return this;
@@ -69,6 +71,8 @@
 
 		_create: function () {
 			const element = this.element;
+
+			this.locale = element.closest("[lang]").attr("lang") || "en";
 
 			this._createStructure();
 			this._createEvents();
@@ -136,12 +140,12 @@
 				});
 			}
 
-			if (Metro.utils.isValue(o.messages) && typeof o.messages === "string") {
+			if (typeof o.messages === "string" && o.messages) {
 				o.messages = Metro.utils.isObject(o.messages);
 			}
 
 			if (
-				!Metro.utils.isNull(o.messages) &&
+				o.messages &&
 				typeof o.messages === "object" &&
 				Metro.utils.objectLength(o.messages) > 0
 			) {
@@ -214,40 +218,47 @@
 		add: function (msg) {
 			const element = this.element;
 			const o = this.options;
-			const locale = this.locale;
-			let message;
-			let item;
 			let avatar;
 			let text;
 			const messages = element.find(".messages");
+
+			const addLink = (url, attach) => {
+				return `<div class="attach-link"><a class="attach" href="${url}" target="_blank" download="${attach.name}">${attach.name} <span class="reduce-2">(Size: ${Math.round(attach.size / 1024 ** 2)} MB)</span></a></div>`;
+			};
 
 			const includeAttach = (attach) => {
 				if (attach === null) {
 					return "";
 				}
+				const file = URL.createObjectURL(attach);
+
 				let attachHtml = `<div class="message-attach">`;
 				if (attach.type.startsWith("image/")) {
-					attachHtml += `<img class="attach" src="${URL.createObjectURL(attach)}" alt="${attach.name}">`;
+					attachHtml += `<img class="attach" src="${file}" alt="${attach.name}">`;
+					attachHtml += addLink(file, attach);
 				} else if (attach.type.startsWith("video/")) {
-					attachHtml += `<video class="attach" controls><source src="${URL.createObjectURL(attach)}" type="${attach.type}"></video>`;
+					attachHtml += `<video class="attach" controls><source src="${file}" type="${attach.type}"></video>`;
+					attachHtml += addLink(file, attach);
 				} else if (attach.type.startsWith("audio/")) {
-					attachHtml += `<audio class="attach" controls><source src="${URL.createObjectURL(attach)}" type="${attach.type}"></audio>`;
+					attachHtml += `<audio class="attach" controls><source src="${file}" type="${attach.type}"></audio>`;
+					attachHtml += addLink(file, attach);
 				} else {
-					const file = URL.createObjectURL(attach);
-					attachHtml += `<a class="attach" href="${file}" target="_blank" download="${attach.name}">${attach.name} <div class="reduce-2">(Size: ${Math.round(attach.size / 1024 ** 2)} MB)</div></a>`;
+					attachHtml += addLink(file, attach);
 				}
 				attachHtml += `</div>`;
 				return attachHtml;
 			};
 
 			const messageDate = o.inputTimeFormat
-				? Datetime.from(msg.time, o.inputTimeFormat, locale)
+				? Datetime.from(msg.time, o.inputTimeFormat, this.locale)
 				: datetime(msg.time);
-			message = $("<div>")
+
+			const message = $("<div>")
 				.addClass("message")
 				.addClass(msg.position)
 				.appendTo(messages);
-			item = $("<div>").addClass("message-item").appendTo(message);
+
+			const item = $("<div>").addClass("message-item").appendTo(message);
 
 			if (Metro.utils.isUrl(msg.avatar) || msg.avatar.includes("data:image")) {
 				avatar = $("<img>")
@@ -267,14 +278,21 @@
 				}
 			}
 
+			let _msg = Str.stripTags(msg.text);
+
+			// _msg = _msg.replace(/```(\w+)?\n?([\s\S]*?)```/g, "<pre><code class='$1'>$2</code></pre>");
+			_msg = _msg.replace(/`([^`]+)`/g, "<code>$1</code>");
+
+			if (_msg.startsWith("http")) {
+				_msg = `<a href="${_msg}" target="_blank">${_msg}</a>`;
+			}
+
 			text = $("<div>")
 				.addClass("message-text")
 				.append(
 					$("<div>")
 						.addClass("message-text-inner")
-						.html(
-							msg.attach ? includeAttach(msg.attach) : Str.escapeHtml(msg.text),
-						),
+						.html(msg.attach ? includeAttach(msg.attach) : _msg),
 				)
 				.appendTo(item);
 
@@ -297,6 +315,7 @@
 			if (msg.position === "left" && Metro.utils.isValue(o.clsMessageLeft)) {
 				text.addClass(o.clsMessageLeft);
 			}
+
 			if (msg.position === "right" && Metro.utils.isValue(o.clsMessageRight)) {
 				text.addClass(o.clsMessageRight);
 			}
@@ -323,7 +342,7 @@
 				draw: {
 					scrollTop: messages[0].scrollHeight,
 				},
-				dur: 1000,
+				dur: o.scrollSpeed,
 			});
 
 			this.lastMessage = msg;
@@ -335,7 +354,7 @@
 			const that = this;
 			let _messages = messages;
 
-			if (Metro.utils.isValue(_messages) && typeof _messages === "string") {
+			if (typeof _messages === "string" && _messages) {
 				_messages = Metro.utils.isObject(_messages);
 			}
 
@@ -361,14 +380,14 @@
 
 		updMessage: function (msg) {
 			const element = this.element;
-			const message = element.find(".messages").find(`#${msg.id}`);
 			const o = this.options;
-			const locale = this.locale;
+			const msgId = typeof msg === "string" ? msg : msg.id;
+			const message = element.find(".messages").find(`#${msgId}`);
 
 			if (message.length === 0) return this;
 
 			const messageDate = o.inputTimeFormat
-				? Datetime.from(msg.time, o.inputTimeFormat, locale)
+				? Datetime.from(msg.time, o.inputTimeFormat, this.locale)
 				: datetime(msg.time);
 
 			message.find(".message-text-inner").html(msg.text);
