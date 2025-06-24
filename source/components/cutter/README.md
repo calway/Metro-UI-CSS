@@ -11,11 +11,7 @@ This is a CSS-only component with no JavaScript dependencies.
 ### Basic Usage
 
 ```html
-<div class="cutter">
-    <div class="content">
-        Your content here
-    </div>
-</div>
+<div class="cutter"></div>
 ```
 
 ### Example with Text Content
