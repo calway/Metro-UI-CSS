@@ -5,3 +5,4 @@
 + [x] Updated `chat`, added attribute `data-send-mode` (values: `button`, `enter`, `control+enter`)
 + [x] Updated `chat`, an input field type changed to `textarea`
 + [x] Updated `chat`, added support "```...```" code blocks
++ [x] Fixed `toggle-button` behavior

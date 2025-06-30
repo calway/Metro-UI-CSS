@@ -14,7 +14,8 @@ Toggle Button is a component that creates a group of buttons where only one can 
 </div>
 ```
 
-The component automatically adds the class `radio-button` to the container element. Each button inside should have the class `button`. The button with the `active` class will be selected by default.
+The component automatically adds the class `toggle-button` to the container element. 
+The button with the `active` class will be selected by default. If no button has the `active` class, the first button will be selected by default.
 
 You can add a `data-value` attribute to each button to store its value, which can be useful when handling the change event.
 

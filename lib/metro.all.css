@@ -77005,7 +77005,7 @@ textarea {
   --toggle-button-item-color: #ffffff;
   --toggle-button-item-hover-color: hsl(7, 100%, 68%);
 }
-.radio-button {
+.toggle-button {
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
@@ -77016,7 +77016,7 @@ textarea {
   width: auto;
   display: inline-flex;
 }
-.radio-button .button {
+.toggle-button button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77029,16 +77029,16 @@ textarea {
   font-weight: 500;
 }
 @media (hover: hover) {
-  .radio-button .button:hover:not(.active) {
+  .toggle-button button:hover:not(.active) {
     color: var(--toggle-button-item-hover-color);
   }
 }
 @media (hover: none) {
-  .radio-button .button:active:not(.active) {
+  .toggle-button button:active:not(.active) {
     color: var(--toggle-button-item-hover-color);
   }
 }
-.radio-button .button.active {
+.toggle-button button.active {
   background: var(--toggle-button-item-background);
   color: var(--toggle-button-item-color);
   font-weight: 600;
