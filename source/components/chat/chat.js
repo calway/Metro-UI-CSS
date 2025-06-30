@@ -2,12 +2,21 @@
 	// biome-ignore lint/suspicious/noRedundantUseStrict: <explanation>
 	"use strict";
 
-	const attachIcon = `<?xml version="1.0" encoding="utf-8"?><svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.617 14.496a1 1 0 0 1 1.414 1.414l-3.182 3.182a7 7 0 1 1-9.9-9.9l5.658-5.656a5 5 0 1 1 7.07 7.07l-5.656 5.658a3 3 0 0 1-4.243-4.243l4.596-4.596a1 1 0 1 1 1.415 1.414l-4.597 4.596a1 1 0 1 0 1.415 1.414l5.656-5.657a3 3 0 1 0-4.242-4.242l-5.657 5.657a5 5 0 1 0 7.071 7.07l3.182-3.181z"/></svg>`;
-	const videoIcon = `<?xml version="1.0" encoding="utf-8"?><svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 6.34315 14.6569 5 13 5H4C2.34315 5 1 6.34315 1 8V16C1 17.6569 2.34315 19 4 19H13C14.6569 19 16 17.6569 16 16V13.9432L21.4188 17.8137C21.7236 18.0315 22.1245 18.0606 22.4576 17.8892C22.7907 17.7178 23 17.3746 23 17V7C23 6.62541 22.7907 6.28224 22.4576 6.11083C22.1245 5.93943 21.7236 5.96854 21.4188 6.18627L16 10.0568V8ZM16.7205 12L21 8.94319V15.0568L16.7205 12ZM13 7C13.5523 7 14 7.44772 14 8V12V16C14 16.5523 13.5523 17 13 17H4C3.44772 17 3 16.5523 3 16V8C3 7.44772 3.44772 7 4 7H13Z"/></svg>`;
-	const audioIcon = `<?xml version="1.0" encoding="utf-8"?><svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M4 10.171V0h12v6H6v7c0 1.657-1.347 3-3 3-1.657 0-3-1.347-3-3a3.002 3.002 0 0 1 4-2.829zM4 12H2v2h2v-2zM6 2v2h8V2H6zm8 6.171V6h2v5c0 1.657-1.347 3-3 3-1.657 0-3-1.347-3-3a3.002 3.002 0 0 1 4-2.829zM14 10h-2v2h2v-2z" fill-rule="evenodd"/></svg>`;
-	const imageIcon = `️<?xml version="1.0" encoding="utf-8"?><svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M23 4C23 2.34315 21.6569 1 20 1H4C2.34315 1 1 2.34315 1 4V20C1 21.6569 2.34315 23 4 23H20C21.6569 23 23 21.6569 23 20V4ZM21 4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4Z"/><path d="M4.80665 17.5211L9.1221 9.60947C9.50112 8.91461 10.4989 8.91461 10.8779 9.60947L14.0465 15.4186L15.1318 13.5194C15.5157 12.8476 16.4843 12.8476 16.8682 13.5194L19.1451 17.5039C19.526 18.1705 19.0446 19 18.2768 19H5.68454C4.92548 19 4.44317 18.1875 4.80665 17.5211Z" /><path d="M18 8C18 9.10457 17.1046 10 16 10C14.8954 10 14 9.10457 14 8C14 6.89543 14.8954 6 16 6C17.1046 6 18 6.89543 18 8Z"/></svg>`;
-	const textIcon = `<?xml version="1.0" encoding="utf-8"?><svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 5C3 4.44772 3.44772 4 4 4H12H20C20.5523 4 21 4.44772 21 5V7C21 7.55228 20.5523 8 20 8C19.4477 8 19 7.55228 19 7V6H13V19H15C15.5523 19 16 19.4477 16 20C16 20.5523 15.5523 21 15 21H12H9C8.44772 21 8 20.5523 8 20C8 19.4477 8.44772 19 9 19H11V6H5V7C5 7.55228 4.55228 8 4 8C3.44772 8 3 7.55228 3 7V5Z" /></svg>`;
-	const binaryIcon = `<?xml version="1.0" encoding="utf-8"?><svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path  d="M4,11A3,3,0,0,0,7,8V6A3,3,0,0,0,1,6V8A3,3,0,0,0,4,11ZM3,6A1,1,0,0,1,5,6V8A1,1,0,0,1,3,8ZM19,6a3,3,0,0,0-6,0V8a3,3,0,0,0,6,0ZM17,8a1,1,0,0,1-2,0V6a1,1,0,0,1,2,0Zm-7,3a1,1,0,0,1-1-1V4a1,1,0,0,1,2,0v6A1,1,0,0,1,10,11ZM23,4v6a1,1,0,0,1-2,0V4a1,1,0,0,1,2,0ZM7,18V16a3,3,0,0,0-6,0v2a3,3,0,0,0,6,0ZM3,18V16a1,1,0,0,1,2,0v2a1,1,0,0,1-2,0Zm6,0a3,3,0,0,0,6,0V16a3,3,0,0,0-6,0Zm2-2a1,1,0,0,1,2,0v2a1,1,0,0,1-2,0Zm12-2v6a1,1,0,0,1-2,0V14a1,1,0,0,1,2,0Zm-5-1a1,1,0,0,1,1,1v6a1,1,0,0,1-2,0V14A1,1,0,0,1,18,13Z"/></svg>`;
+	const attachIcon = `
+	<?xml version="1.0" encoding="utf-8"?>
+	<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M16.617 14.496a1 1 0 0 1 1.414 1.414l-3.182 3.182a7 7 0 1 1-9.9-9.9l5.658-5.656a5 5 0 1 1 7.07 7.07l-5.656 5.658a3 3 0 0 1-4.243-4.243l4.596-4.596a1 1 0 1 1 1.415 1.414l-4.597 4.596a1 1 0 1 0 1.415 1.414l5.656-5.657a3 3 0 1 0-4.242-4.242l-5.657 5.657a5 5 0 1 0 7.071 7.07l3.182-3.181z"/>
+	</svg>
+	`;
+	const sendIcon = `
+	<?xml version="1.0" encoding="utf-8"?>
+	<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+		<g>
+			<path fill="none" d="M0 0h24v24H0z"/>
+			<path d="M3 13h6v-2H3V1.846a.5.5 0 0 1 .741-.438l18.462 10.154a.5.5 0 0 1 0 .876L3.741 22.592A.5.5 0 0 1 3 22.154V13z"/>
+		</g>
+	</svg>
+	`;
 
 	let ChatDefaultConfig = {
 		chatDeferred: 0,
@@ -28,6 +37,7 @@
 		readonly: false,
 		attachAccept: "*",
 		scrollSpeed: 200,
+		sendMode: "enter", // "button" or "enter" or "control+enter"
 
 		clsChat: "",
 		clsName: "",
@@ -86,13 +96,6 @@
 			const that = this;
 			const element = this.element;
 			const o = this.options;
-			const customButtons = [
-				{
-					text: `${o.sendButtonTitle || this.strings.label_send}${o.sendButtonIcon}`,
-					cls: `${o.clsSendButton} js-chat-send-button`,
-					onclick: o.onSendButtonClick,
-				},
-			];
 
 			element.addClass("chat").addClass(o.clsChat);
 
@@ -123,12 +126,20 @@
 				.html(attachIcon);
 			attachBtn.appendTo(messageInput);
 
-			const input = $("<input type='text'>").addClass("chat-input");
+			const input = $("<textarea>").attr("placeholder", "Write a message...");
 			input.appendTo(messageInput);
-			Metro.makePlugin(input[0], "input", {
-				customButtons: customButtons,
+			Metro.makePlugin(input[0], "textarea", {
 				clsInput: o.clsInput,
+				initialHeight: 34,
+				clearButton: false,
 			});
+			input.addClass("chat-input");
+
+			const sendBtn = $("<span>")
+				.addClass(`flat js-chat-send-button ${o.clsSendButton}`)
+				.attr("title", o.sendButtonTitle || this.strings.label_send)
+				.html(sendIcon);
+			sendBtn.appendTo(messageInput);
 
 			if (o.welcome) {
 				this.add({
@@ -162,7 +173,7 @@
 		_createEvents: function () {
 			const element = this.element;
 			const o = this.options;
-			const input = element.find(".chat-input input");
+			const input = element.find("textarea");
 
 			const send = () => {
 				const msg = `${input.val()}`;
@@ -184,7 +195,7 @@
 						: null,
 				};
 				this.add(m);
-				input.val("");
+				input.val("").trigger("change");
 				this.attach = null;
 				this._fireEvent("send", {
 					msg: m,
@@ -196,9 +207,17 @@
 				send();
 			});
 
-			element.on(Metro.events.keyup, ".chat-input > input", (e) => {
+			element.on(Metro.events.keyup, "textarea", (e) => {
+				if (o.sendMode === "button") {
+					return;
+				}
 				if (e.keyCode === Metro.keyCode.ENTER) {
-					send();
+					if (
+						(o.sendMode === "control+enter" && (e.ctrlKey || e.metaKey)) ||
+						(o.sendMode === "enter" && !e.shiftKey)
+					) {
+						send();
+					}
 				}
 			});
 
@@ -280,7 +299,10 @@
 
 			let _msg = Str.stripTags(msg.text);
 
-			// _msg = _msg.replace(/```(\w+)?\n?([\s\S]*?)```/g, "<pre><code class='$1'>$2</code></pre>");
+			_msg = _msg.replace(
+				/```(\w+)?\n?([\s\S]*?)```/g,
+				"<pre><code class='$1'>$2</code></pre>",
+			);
 			_msg = _msg.replace(/`([^`]+)`/g, "<code>$1</code>");
 
 			if (_msg.startsWith("http")) {

@@ -55909,8 +55909,14 @@ input.pill-input .button {
   margin-top: auto;
   padding: 8px;
 }
-.chat .message-input .js-chat-attach-button {
-  height: 36px;
+.chat .message-input .textarea {
+  width: 100%;
+  flex-shrink: 1;
+}
+.chat .message-input .js-chat-attach-button,
+.chat .message-input .js-chat-send-button {
+  width: 42px;
+  height: 42px;
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
@@ -55920,13 +55926,15 @@ input.pill-input .button {
   border-radius: 4px;
   border: 1px solid transparent;
 }
-.chat .message-input .js-chat-attach-button svg {
+.chat .message-input .js-chat-attach-button svg,
+.chat .message-input .js-chat-send-button svg {
   height: 24px !important;
   width: 24px !important;
   fill: var(--chat-color);
 }
 @media (hover: hover) {
-  .chat .message-input .js-chat-attach-button:hover {
+  .chat .message-input .js-chat-attach-button:hover,
+  .chat .message-input .js-chat-send-button:hover {
     background: var(--button-background-hover);
     border-color: var(--chat-border-color);
   }
@@ -74495,9 +74503,8 @@ textarea {
   appearance: none;
   display: block;
   outline: none;
-  padding: 0.75rem;
+  padding: 6px 6px 0;
   width: 100%;
-  min-height: 100px;
   resize: none;
   border: none !important;
   transition: height 0.1s linear;
@@ -74512,9 +74519,9 @@ textarea {
   overflow-y: hidden !important;
 }
 .textarea .button {
-  width: 30px;
-  height: 30px;
   color: var(--textarea-color);
+  width: 32px;
+  height: 32px;
 }
 .textarea .input-clear-button {
   font-family: "Segoe UI Symbol", serif;
