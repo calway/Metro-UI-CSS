@@ -120,12 +120,6 @@
 				.addClass("message-input")
 				.appendTo(element);
 
-			const attachBtn = $("<span>")
-				.addClass(`flat js-chat-attach-button ${o.clsAttachButton}`)
-				.attr("title", o.attachButtonTitle || this.strings.label_attach)
-				.html(attachIcon);
-			attachBtn.appendTo(messageInput);
-
 			const input = $("<textarea>").attr("placeholder", "Write a message...");
 			input.appendTo(messageInput);
 			Metro.makePlugin(input[0], "textarea", {
@@ -134,6 +128,12 @@
 				clearButton: false,
 			});
 			input.addClass("chat-input");
+
+			const attachBtn = $("<span>")
+				.addClass(`flat js-chat-attach-button ${o.clsAttachButton}`)
+				.attr("title", o.attachButtonTitle || this.strings.label_attach)
+				.html(attachIcon);
+			attachBtn.appendTo(messageInput);
 
 			const sendBtn = $("<span>")
 				.addClass(`flat js-chat-send-button ${o.clsSendButton}`)

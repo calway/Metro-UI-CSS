@@ -4,7 +4,7 @@ The Chat component provides a flexible and interactive messaging interface for a
 
 ## Dependencies
 
-- Input component (imported from "../input/index.js")
+- Textarea component (imported from "../textarea/index.js")
 - Button component (imported from "../button/index.js")
 - Datetime module (used for formatting timestamps)
 
@@ -46,29 +46,43 @@ const chat = Metro.makePlugin("#myChatElement", "chat", {
 
 ## Plugin Parameters
 
-| Parameter | Type | Default | Description |
-| --------- | ---- | ------- | ----------- |
-| `chatDeferred` | number | 0 | Deferred initialization time in milliseconds |
-| `inputTimeFormat` | string | null | Format for parsing input time strings |
-| `timeFormat` | string | "D MMM hh:mm A" | Format for displaying message timestamps |
-| `name` | string | "John Doe" | Default name for outgoing messages |
-| `avatar` | string | "<span>👦</span>" | HTML for the avatar of outgoing messages |
-| `welcome` | string | null | Welcome message text (displayed when chat initializes) |
-| `welcomeAvatar` | string | "<span>👽</span>" | HTML for the avatar of the welcome message |
-| `title` | string | null | Title for the chat component |
-| `width` | string | "100%" | Width of the chat component |
-| `height` | string | "auto" | Height of the chat component |
-| `messages` | object | null | Initial messages to display |
-| `sendButtonTitle` | string | "" | Text for the send button |
-| `sendButtonIcon` | string | "" | Icon HTML for the send button |
-| `readonly` | boolean | false | Whether the chat is in read-only mode |
-| `clsChat` | string | "" | Additional CSS class for the chat container |
-| `clsName` | string | "" | Additional CSS class for the sender name |
-| `clsTime` | string | "" | Additional CSS class for the message time |
-| `clsInput` | string | "" | Additional CSS class for the input field |
-| `clsSendButton` | string | "" | Additional CSS class for the send button |
-| `clsMessageLeft` | string | "default" | CSS class for left-aligned messages |
-| `clsMessageRight` | string | "default" | CSS class for right-aligned messages |
+| Parameter           | Type    | Default           | Description                                                  |
+|---------------------|---------|-------------------|--------------------------------------------------------------|
+| `chatDeferred`      | number  | 0                 | Deferred initialization time in milliseconds                 |
+| `inputTimeFormat`   | string  | null              | Format for parsing input time strings                        |
+| `timeFormat`        | string  | "D MMM hh:mm A"   | Format for displaying message timestamps                     |
+| `name`              | string  | "John Doe"        | Default name for outgoing messages                           |
+| `avatar`            | string  | "<span>👦</span>" | HTML for the avatar of outgoing messages                     |
+| `welcome`           | string  | null              | Welcome message text (displayed when chat initializes)       |
+| `welcomeAvatar`     | string  | "<span>👽</span>" | HTML for the avatar of the welcome message                   |
+| `title`             | string  | null              | Title for the chat component                                 |
+| `width`             | string  | "100%"            | Width of the chat component                                  |
+| `height`            | string  | "auto"            | Height of the chat component                                 |
+| `initialHeight`     | number  | 100               | Initial Height of the chat component                         |
+| `messages`          | object  | null              | Initial messages to display                                  |
+| `sendButtonTitle`   | string  | ""                | Text for the send button                                     |
+| `attachButtonTitle` | string  | ""                | Text for the attach button                                   |
+| `attachAccept`      | string  | "*"               | Attach file types                                            |
+| `readonly`          | boolean | false             | Whether the chat is in read-only mode                        |
+| `sendMode`          | string  | "enter"           | Trigger for message send: `enter`, `control+enter`, `button` |
+| `clsChat`           | string  | ""                | Additional CSS class for the chat container                  |
+| `clsName`           | string  | ""                | Additional CSS class for the sender name                     |
+| `clsTime`           | string  | ""                | Additional CSS class for the message time                    |
+| `clsInput`          | string  | ""                | Additional CSS class for the input field                     |
+| `clsSendButton`     | string  | ""                | Additional CSS class for the send button                     |
+| `clsMessageLeft`    | string  | "default"         | CSS class for left-aligned messages                          |
+| `clsMessageRight`   | string  | "default"         | CSS class for right-aligned messages                         |
+
+## Message Structure
+Each message object should contain the following properties:
+- `text` - Message text
+- `time` - Message timestamp
+- `position` - "left" or "right"
+- `name` - Sender name
+- `avatar` - Sender avatar HTML
+- `id` (optional) - Unique message ID
+- `attach` (optional) - Attachment, must be a file object
+
 
 ## API Methods
 
@@ -79,12 +93,6 @@ const chat = Metro.getPlugin("#myChatElement", "chat");
 ```
 
 + `add(msg)` - Adds a message to the chat. The message object should contain:
-  - `text` - Message text
-  - `time` - Message timestamp
-  - `position` - "left" or "right"
-  - `name` - Sender name
-  - `avatar` - Sender avatar HTML
-  - `id` (optional) - Unique message ID
 
 ```javascript
 chat.add({
@@ -94,6 +102,17 @@ chat.add({
     text: "Hello, world!",
     position: "left", // "left" or "right"
     time: new Date() // Date object or string
+});
+```
+
+```js
+const attach = new File(["content"], "file.txt", { type: "text/plain" });
+chat.add({
+    name: "User Name",
+    avatar: "<span>👨</span>",
+    position: "right",
+    time: new Date(),
+    attach: attach // File object for attachment
 });
 ```
 

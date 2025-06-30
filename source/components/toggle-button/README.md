@@ -1,6 +1,6 @@
 # Toggle Button
 
-Toggle Button is a component that creates a group of buttons where only one can be active at a time, similar to radio buttons but with a different visual style. It's also known as "n8n radio buttons" in some contexts.
+Toggle Button is a component that creates a group of buttons where only one can be active at a time, similar to radio buttons but with a different visual style. It's also known as `n8n radio buttons` in some contexts.
 
 ## Usage
 
@@ -14,10 +14,8 @@ Toggle Button is a component that creates a group of buttons where only one can 
 </div>
 ```
 
-The component automatically adds the class `toggle-button` to the container element. 
+The component automatically adds the class `toggle-button` to the container element.
 The button with the `active` class will be selected by default. If no button has the `active` class, the first button will be selected by default.
-
-You can add a `data-value` attribute to each button to store its value, which can be useful when handling the change event.
 
 ### Initialization via JavaScript
 
@@ -27,9 +25,11 @@ const element = Metro.makePlugin("#myToggleButton", "toggle-button");
 
 ## Plugin Parameters
 
-| Parameter | Type | Default | Description |
-| --------- | ---- | ------- | ----------- |
-| `onToggleButtonCreate` | function | `Metro.noop` | Callback function that is called when the toggle button is created |
+| Parameter              | Type | Default | Description                                                    |
+|------------------------| ---- | ------- |----------------------------------------------------------------|
+| `onChange`             | function | `Metro.noop` | Callback is called then active button changed         |
+| `onButtonClick`        | function | `Metro.noop` | Callback is called when the button is clicked         |
+| `onToggleButtonCreate` | function | `Metro.noop` | Callback is called when the toggle button is created  |
 
 ## API Methods
 
@@ -47,7 +47,8 @@ toggleButton.destroy();
 | Event | Description |
 | ----- | ----------- |
 | `onToggleButtonCreate` | Triggered when the toggle button is created |
-| `change` | Triggered when a button is clicked and becomes active. The event handler receives an object with a `button` property containing the jQuery object of the clicked button |
+| `onChange` | Triggered when active button changed. The event handler receives an object with a `button` |
+| `onButtonClick` | Triggered when a button is clicked. The event handler receives an object with a `button` |
 
 ### Example of Event Handling
 
@@ -89,8 +90,7 @@ toggleButton.element.on("change", function(e, data) {
 ## Available CSS Classes
 
 ### Base Classes
-- `.radio-button` - The main container class (added automatically)
-- `.button` - Class for each button inside the toggle button component
+- `.toggle-button` - The main container class (added automatically)
 
 ### States
 - `.active` - Applied to the currently selected button
