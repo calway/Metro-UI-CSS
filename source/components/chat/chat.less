@@ -138,6 +138,10 @@
                     }
                 }
             }
+            
+            .smile {
+                font-size: 48px;                
+            }
         }
 
         &.right {
@@ -209,15 +213,32 @@
         flex-shrink: 0;
         margin-top: auto;
         padding: 8px;
+        position: relative;
 
         .textarea {
             width: 100%;
             flex-shrink: 1;
+            
+            textarea {
+                margin-right: 76px;
+            }
         }
         
-        .js-chat-attach-button, .js-chat-send-button {
-            width: 42px;
-            height: 42px;
+        .buttons {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            z-index: 2;
+        }
+        
+        .js-chat-attach-button, .js-chat-send-button, .js-chat-smile-button {
+            width: 34px;
+            height: 34px;
             aspect-ratio: 1/1;
             display: flex;
             align-items: center;

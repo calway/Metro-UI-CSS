@@ -1,3 +1,5 @@
+import { emojiMap } from "./emoji.js";
+
 ((Metro, $) => {
 	// biome-ignore lint/suspicious/noRedundantUseStrict: <explanation>
 	"use strict";
@@ -17,6 +19,12 @@
 		</g>
 	</svg>
 	`;
+	const smileIcon = `
+	<?xml version="1.0" encoding="utf-8"?>
+	<svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M4.111 2.18a7 7 0 1 1 7.778 11.64A7 7 0 0 1 4.11 2.18zm.556 10.809a6 6 0 1 0 6.666-9.978 6 6 0 0 0-6.666 9.978zM6.5 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm5 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM8 11a3 3 0 0 1-2.65-1.58l-.87.48a4 4 0 0 0 7.12-.16l-.9-.43A3 3 0 0 1 8 11z"/>
+	</svg>
+	`;
 
 	let ChatDefaultConfig = {
 		chatDeferred: 0,
@@ -30,14 +38,15 @@
 		width: "100%",
 		height: "auto",
 		messages: null,
-		sendButtonTitle: "",
-		sendButtonIcon: "",
-		attachButtonTitle: "",
-		attachButtonIcon: "📎",
 		readonly: false,
 		attachAccept: "*",
 		scrollSpeed: 200,
 		sendMode: "enter", // "button" or "enter" or "control+enter"
+		buttons: "smile attach send",
+
+		useEmoji: true,
+		useCode: true,
+		useLink: true,
 
 		clsChat: "",
 		clsName: "",
@@ -45,6 +54,7 @@
 		clsInput: "",
 		clsSendButton: "",
 		clsAttachButton: "",
+		clsSmileButton: "",
 		clsMessageLeft: "default",
 		clsMessageRight: "default",
 
@@ -74,6 +84,7 @@
 				attach: null,
 				file: null,
 				locale: null,
+				buttons: [],
 			});
 
 			return this;
@@ -83,6 +94,7 @@
 			const element = this.element;
 
 			this.locale = element.closest("[lang]").attr("lang") || "en";
+			this.buttons = this.options.buttons.toArray(" ");
 
 			this._createStructure();
 			this._createEvents();
@@ -129,17 +141,28 @@
 			});
 			input.addClass("chat-input");
 
-			const attachBtn = $("<span>")
-				.addClass(`flat js-chat-attach-button ${o.clsAttachButton}`)
-				.attr("title", o.attachButtonTitle || this.strings.label_attach)
-				.html(attachIcon);
-			attachBtn.appendTo(messageInput);
+			const buttons = $("<div>").addClass("buttons").appendTo(messageInput);
 
-			const sendBtn = $("<span>")
-				.addClass(`flat js-chat-send-button ${o.clsSendButton}`)
-				.attr("title", o.sendButtonTitle || this.strings.label_send)
-				.html(sendIcon);
-			sendBtn.appendTo(messageInput);
+			if (this.buttons.includes("smile")) {
+				const smileBtn = $("<span>")
+					.addClass(`flat js-chat-smile-button ${o.clsSmileButton}`)
+					.html(smileIcon);
+				smileBtn.appendTo(buttons);
+			}
+
+			if (this.buttons.includes("attach")) {
+				const attachBtn = $("<span>")
+					.addClass(`flat js-chat-attach-button ${o.clsAttachButton}`)
+					.html(attachIcon);
+				attachBtn.appendTo(buttons);
+			}
+
+			if (this.buttons.includes("send")) {
+				const sendBtn = $("<span>")
+					.addClass(`flat js-chat-send-button ${o.clsSendButton}`)
+					.html(sendIcon);
+				sendBtn.appendTo(buttons);
+			}
 
 			if (o.welcome) {
 				this.add({
@@ -299,13 +322,29 @@
 
 			let _msg = Str.stripTags(msg.text);
 
-			_msg = _msg.replace(
-				/```(\w+)?\n?([\s\S]*?)```/g,
-				"<pre><code class='$1'>$2</code></pre>",
-			);
-			_msg = _msg.replace(/`([^`]+)`/g, "<code>$1</code>");
+			if (o.useEmoji) {
+				const words = _msg.split(" ");
+				const newWords = [];
 
-			if (_msg.startsWith("http")) {
+				for (let word of words) {
+					if (!word) continue;
+					if (word in emojiMap) {
+						word = emojiMap[word];
+					}
+					newWords.push(word);
+				}
+				_msg = newWords.join(" ");
+			}
+
+			if (o.useCode) {
+				_msg = _msg.replace(
+					/```(\w+)?\n?([\s\S]*?)```/g,
+					"<pre><code class='$1'>$2</code></pre>",
+				);
+				_msg = _msg.replace(/`([^`]+)`/g, "<code>$1</code>");
+			}
+
+			if (o.useLink && _msg.startsWith("http")) {
 				_msg = `<a href="${_msg}" target="_blank">${_msg}</a>`;
 			}
 

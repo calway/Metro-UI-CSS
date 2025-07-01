@@ -65,6 +65,9 @@ const chat = Metro.makePlugin("#myChatElement", "chat", {
 | `attachAccept`      | string  | "*"               | Attach file types                                            |
 | `readonly`          | boolean | false             | Whether the chat is in read-only mode                        |
 | `sendMode`          | string  | "enter"           | Trigger for message send: `enter`, `control+enter`, `button` |
+| `useEmoji`          | boolean | true              | Use emoji in message                                         |
+| `useLink`           | boolean | true              | Use link in message                                          |
+| `useCode`           | boolean | true              | Use code blocks in message                                   |
 | `clsChat`           | string  | ""                | Additional CSS class for the chat container                  |
 | `clsName`           | string  | ""                | Additional CSS class for the sender name                     |
 | `clsTime`           | string  | ""                | Additional CSS class for the message time                    |
