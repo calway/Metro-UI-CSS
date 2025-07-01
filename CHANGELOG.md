@@ -5,3 +5,6 @@
 - [x] Fixed `t-menu` for items with submenus.
 - [x] Fixed position property for `context-menu` component.
 - [x] Improved `sidebar` component.
+- [x] Improved `sidenav-simple` menu.
+- [x] Improved `sidenav-counter` menu.
+- [x] Improved `sidenav-m3` menu.

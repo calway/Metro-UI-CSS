@@ -2,6 +2,11 @@
 @import (once) "../../include/mixins";
 
 :root {
+    --sidenav-counter-width: 220px;
+    --sidenav-counter-border-radius: 4px;
+}
+
+:root {
     --sidenav-counter-background: #f6f6f6;
     --sidenav-counter-color: #191919;
     --sidenav-counter-icon-color: #191919;
@@ -29,11 +34,11 @@
     position: relative;
     list-style: none inside;
     height: 100%;
-    width: 52px;
+    width: 60px;
     overflow-x: hidden;
     overflow-y: auto;
     margin: 0;
-    padding: 0;
+    padding: 0 6px;
     background-color: var(--sidenav-counter-background);
     color: var(--sidenav-counter-color);
 
@@ -49,6 +54,7 @@
         background-color: inherit;
         color: inherit;
         width: 100%;
+        border-radius: var(--sidenav-counter-border-radius);
     }
 
     a {
@@ -87,7 +93,7 @@
     }
 
     .counter {
-        font-size: .7rem;
+        font-size: .8rem;
         font-weight: normal;
         position: absolute;
         top: 0;
@@ -119,7 +125,7 @@
 }
 
 .sidenav-counter.expanded {
-    width: 220px;
+    width: var(--sidenav-counter-width);
 
     a {
         padding: .625rem 1rem .625rem 3.75rem;

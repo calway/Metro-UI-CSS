@@ -1,38 +1,66 @@
 @import (once) "../../include/vars";
 @import (once) "../../include/mixins";
 
+:root {
+    --sidenav-simple-width: 220px;
+    --sidenav-simple-border-radius: 4px;
+}
+
+:root {
+    --sidenav-simple-background: #f6f6f6;
+    --sidenav-simple-color: #191919;
+    --sidenav-simple-icon-color: #191919;
+    --sidenav-simple-counter-color: #191919;
+    --sidenav-simple-background-hover: #cecece;
+    --sidenav-simple-color-hover: #0a0a0a;
+    --sidenav-simple-background-active: #68a3ff;
+    --sidenav-simple-color-active: #ffffff;
+}
+
+.dark-side {
+    --sidenav-simple-background: #2b2d30;
+    --sidenav-simple-color: #dfe1e5;
+    --sidenav-simple-icon-color: #dfe1e5;
+    --sidenav-simple-counter-color: #dfe1e5;
+    --sidenav-simple-background-hover: #43454a;
+    --sidenav-simple-color-hover: #ffffff;
+    --sidenav-simple-background-active: #468cff;
+    --sidenav-simple-color-active: #ffffff;
+}
+
 .sidenav-simple {
     display: block;
     position: relative;
     list-style: none inside;
-    height: 100%;
-    width: 52px;
+    width: 64px;
     overflow-x: hidden;
     overflow-y: auto;
     margin: 0;
-    padding: 0;
-    transition: @transition-base;
-    background-color: @light;
+    padding: 0 6px;
+    background-color: var(--sidenav-simple-background);
+    color: var(--sidenav-simple-color);
+    height: 100%;
 
     .hideScrollBars();
 }
 
 .sidenav-simple {
     li, a {
-        display: block;
         position: relative;
-        height: 52px;
-        line-height: 52px;
         background-color: inherit;
         color: inherit;
         width: 100%;
+        border-radius: var(--sidenav-simple-border-radius, 4px);
     }
 
 
     a {
-        padding: .625rem 0 .625rem 0;
-        line-height: .875rem;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
         text-decoration: none;
+        padding: .75rem;
 
         &:hover {
             text-decoration: none;
@@ -41,14 +69,13 @@
     }
 
     .icon {
-        .square(28, px);
+        width: 28px;
+        height: 28px;
         font-size: 26px;
         line-height: 28px;
         vertical-align: middle;
         text-align: center;
-        position: absolute;
-        left: .625rem;
-        top: .635rem;
+        margin-right: .75rem;
     }
 
     .title {
@@ -57,21 +84,21 @@
         font-size: .875rem;
         text-transform: uppercase;
         display: none;
-        line-height: 52px;
     }
 
     li:hover {
-        background-color: @hoverBackground;
+        background-color: var(--sidenav-simple-background-hover);
+        color: var(--sidenav-simple-color-hover);
     }
 
     li:active {
-        background-color: @dark-cyan;
-        color: @white;
+        background-color: var(--sidenav-simple-background-active);
+        color: var(--sidenav-simple-color-active);
     }
 
     .active, li.active:hover {
-        background-color: @cyan;
-        color: @white;
+        background-color: var(--sidenav-simple-background-active);
+        color: var(--sidenav-simple-color-active);
     }
 }
 
@@ -81,32 +108,11 @@
     }
 }
 
-.sidenav-simple-expand() {
-    width: 220px;
-
-    a {
-        padding: 0 1rem 0 3.75rem;
-    }
+.sidenav-simple.expanded {
+    width: var( --sidenav-simple-width );
 
     .title {
         display: block;
     }
 }
 
-each(@mediaBreakpointListMobile, {
-    @media screen and (min-width: @@value) {
-        .sidenav-simple-expand-@{value} {
-            .sidenav-simple-expand();
-        }
-        &.sidenav-simple-expand-@{value}[dir=rtl] {
-            a {
-                padding: .625rem 3.75rem .625rem 1rem;
-            }
-
-            .icon {
-                left: auto;
-                right: .625rem;
-            }
-        }
-    }
-})
