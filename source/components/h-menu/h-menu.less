@@ -1,120 +1,72 @@
 @import (once) "../../include/vars";
 @import (once) "../../include/mixins";
 
+:root {
+    --h-menu-gap: 0;
+    --h-menu-font-size: 13px;
+    --h-menu-border-radius: 4px;   
+}
+
+:root {
+    --h-menu-background: #ffffff;
+    --h-menu-color: #191919;
+    --h-menu-item-hover-background: #e8e8e8;
+    --h-menu-item-hover-color: #191919;
+}
+
+.dark-side {
+    --h-menu-background: #1e1f22;
+    --h-menu-color: #dbdfe7;
+    --h-menu-item-hover-background: #2b2d30;
+    --h-menu-item-hover-color: #ffffff;
+}
+
 .h-menu {
     list-style: none inside;
-    display: block;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     margin: 0;
     padding: 0;
-    background-color: @white;
-    color: @dark;
-    .clear();
-
+    background-color: var( --h-menu-background);
+    color: var( --h-menu-color);
+    gap: var( --h-menu-gap);
+    font-size: var( --h-menu-font-size);
+    position: relative;
+    
     & > li, & > li > a {
-        display: block;
-        position: relative;
-    }
-
-    & > li {
-        background-color: inherit;
         color: inherit;
-        float: left;
-
-        &:hover {
-            background-color: @hoverBackground;
-            & > a, .icon {
-                color: inherit;
-            }
-        }
+        background: transparent;
+        border-radius: var( --h-menu-border-radius);
+        position: relative;
     }
 
     & > li > a {
-        font-weight: normal;
-        color: inherit;
-        font-size: 1rem;
-        outline: none;
+        display: flex;
+        align-items: center;
         text-decoration: none;
-        padding: .5rem 1rem;
-        border: none;
-        background-color: inherit;
-        white-space: nowrap;
+        padding: 4px 8px;
+        cursor: pointer;
 
-        &:hover {
-            text-decoration: none;
-        }
-
-        &.dropdown-toggle {
-            padding-right: 2rem!important;
-            &::before {
-                margin-left: -1.25rem;
-            }
+        & > .dropdown-caret {
+            margin-left: 4px;            
         }
     }
-
-    &.no-hover {
-        & > li > a {
-            padding-left: .5rem;
-            padding-right: .5rem;
-            color: lighten(@dark, 30%);
-        }
-
-        & > li:hover, & > li > a:hover {
-            background-color: transparent;
-            color: @dark;
+    
+    @media (hover: hover) {
+        li:hover {
+            background-color: var( --h-menu-item-hover-background);
+            color: var( --h-menu-item-hover-color);
         }
     }
-
-    &.large > li > a {
-        padding: 1.125rem 1.625rem;
-        font-size: 2rem;
-
-        &.dropdown-toggle {
-            padding-right: 2.5rem!important;
-            &::before {
-                .px2rem(height, 10px);
-                .px2rem(width, 10px);
-                margin-left: -1.75rem;
-            }
+    
+    @media (hover: none) {
+        li:active {
+            background-color: var( --h-menu-item-hover-background);
+            color: var( --h-menu-item-hover-color);
         }
-    }
-
-    & > .divider {
-        display: none;
     }
 }
 
-// Mega menu
-.h-menu {
-    &.mega {
-        position: relative;
-
-        & > li {
-            position: static;
-
-            &.active-container {
-                background-color: inherit;
-
-                a {
-                    background-color: inherit;
-                }
-            }
-        }
-
-        .mega-container {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            padding: 0;
-            background-color: inherit;
-            display: none;
-            color: inherit;
-            z-index: @zindex-dropdown;
-            .shadow(2px, 2px, 2px, 0, @dark);
-
-            * {
-                color: inherit;
-            }
-        }
-    }
-}

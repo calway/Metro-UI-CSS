@@ -129,6 +129,17 @@
             color: var(--d-menu-item-color-disabled)!important;
         }
     }
+    
+    .dropdown-caret {
+        margin-left: auto;
+        transform: rotate(0deg);
+    }
+    
+    .active-container {
+        .dropdown-caret {
+            transform: rotate(180deg);
+        }
+    }
 }
 
 .d-menu {
