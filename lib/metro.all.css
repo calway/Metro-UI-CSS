@@ -71848,6 +71848,9 @@ label:has(input) {
 /* source/components/sidebar/sidebar.less */
 :root {
   --sidebar-width: 240px;
+  --sidebar-item-border-radius: 4px;
+}
+:root {
   --sidebar-background: #ffffff;
   --sidebar-color: #191919;
   --sidebar-header-background: #f8f8f8;
@@ -71894,7 +71897,7 @@ label:has(input) {
   color: var(--sidebar-color);
   padding: 0;
   z-index: 1031;
-  height: 100vh;
+  height: 100%;
 }
 .sidebar.on-left {
   right: auto !important;
@@ -71987,19 +71990,18 @@ label:has(input) {
   margin: 0;
   padding: 4px;
   flex-flow: column nowrap;
+  font-size: 13px;
+  user-select: none;
 }
 .sidebar-menu li {
-  display: block;
   position: relative;
+  border-radius: var(--sidebar-item-border-radius);
   cursor: pointer;
-  border-radius: 4px;
-  overflow: hidden;
 }
 .sidebar-menu a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 13px;
   color: var(--sidebar-item-color);
   background: var(--sidebar-item-background);
   text-decoration: none;
@@ -72007,13 +72009,11 @@ label:has(input) {
   border-radius: var(--sidebar-item-border-radius);
   white-space: nowrap;
   flex-wrap: nowrap;
-  line-height: 20px;
-  height: 32px;
   border: 2px solid transparent;
   position: relative;
 }
-.sidebar-menu a.dropdown-toggle {
-  padding-right: 10px !important;
+.sidebar-menu a .dropdown-caret {
+  margin-left: auto;
 }
 .sidebar-menu li.disabled a {
   color: var(--sidebar-item-color-disabled);
@@ -72084,6 +72084,9 @@ label:has(input) {
 .sidebar-menu .v-menu {
   position: relative;
   float: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
 }
 .sidebar-header ~ .sidebar-menu {
   height: calc(100% - 160px);
