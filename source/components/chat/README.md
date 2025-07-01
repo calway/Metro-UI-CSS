@@ -6,7 +6,6 @@ The Chat component provides a flexible and interactive messaging interface for a
 
 - Textarea component (imported from "../textarea/index.js")
 - Button component (imported from "../button/index.js")
-- Datetime module (used for formatting timestamps)
 
 ## Usage
 
@@ -60,14 +59,13 @@ const chat = Metro.makePlugin("#myChatElement", "chat", {
 | `height`            | string  | "auto"            | Height of the chat component                                 |
 | `initialHeight`     | number  | 100               | Initial Height of the chat component                         |
 | `messages`          | object  | null              | Initial messages to display                                  |
-| `sendButtonTitle`   | string  | ""                | Text for the send button                                     |
-| `attachButtonTitle` | string  | ""                | Text for the attach button                                   |
 | `attachAccept`      | string  | "*"               | Attach file types                                            |
 | `readonly`          | boolean | false             | Whether the chat is in read-only mode                        |
 | `sendMode`          | string  | "enter"           | Trigger for message send: `enter`, `control+enter`, `button` |
 | `useEmoji`          | boolean | true              | Use emoji in message                                         |
 | `useLink`           | boolean | true              | Use link in message                                          |
 | `useCode`           | boolean | true              | Use code blocks in message                                   |
+| `buttons`           | string  | "send attach"     | Buttons to use                                               |
 | `clsChat`           | string  | ""                | Additional CSS class for the chat container                  |
 | `clsName`           | string  | ""                | Additional CSS class for the sender name                     |
 | `clsTime`           | string  | ""                | Additional CSS class for the message time                    |

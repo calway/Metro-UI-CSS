@@ -42,7 +42,7 @@ import { emojiMap } from "./emoji.js";
 		attachAccept: "*",
 		scrollSpeed: 200,
 		sendMode: "enter", // "button" or "enter" or "control+enter"
-		buttons: "smile attach send",
+		buttons: "attach send",
 
 		useEmoji: true,
 		useCode: true,
@@ -142,13 +142,6 @@ import { emojiMap } from "./emoji.js";
 			input.addClass("chat-input");
 
 			const buttons = $("<div>").addClass("buttons").appendTo(messageInput);
-
-			if (this.buttons.includes("smile")) {
-				const smileBtn = $("<span>")
-					.addClass(`flat js-chat-smile-button ${o.clsSmileButton}`)
-					.html(smileIcon);
-				smileBtn.appendTo(buttons);
-			}
 
 			if (this.buttons.includes("attach")) {
 				const attachBtn = $("<span>")
