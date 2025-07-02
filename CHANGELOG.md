@@ -8,3 +8,4 @@
 - [x] Improved `sidenav-simple` menu.
 - [x] Improved `sidenav-counter` menu.
 - [x] Improved `sidenav-m3` menu.
+- [x] Fixed bug in `toast` for applying options
