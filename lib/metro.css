@@ -68705,14 +68705,44 @@ label:has(input) {
 .table.subcompact .th,
 .table.subcompact .td {
   padding: 3px 8px;
-  font-size: 80%;
+  font-size: 0.8em;
 }
 .table.compact th,
 .table.compact td,
 .table.compact .th,
 .table.compact .td {
   padding: 7px 8px;
-  font-size: 80%;
+  font-size: 0.9em;
+}
+.table.small-padding th,
+.table.small-padding td,
+.table.small-padding .th,
+.table.small-padding .td {
+  padding: 3px;
+}
+.table.medium-padding th,
+.table.medium-padding td,
+.table.medium-padding .th,
+.table.medium-padding .td {
+  padding: 6px;
+}
+.table.default-padding th,
+.table.default-padding td,
+.table.default-padding .th,
+.table.default-padding .td {
+  padding: 10px;
+}
+.table.large-padding th,
+.table.large-padding td,
+.table.large-padding .th,
+.table.large-padding .td {
+  padding: 16px;
+}
+.table.largest-padding th,
+.table.largest-padding td,
+.table.largest-padding .th,
+.table.largest-padding .td {
+  padding: 20px;
 }
 .table .check-cell,
 .table .rownum-cell {
