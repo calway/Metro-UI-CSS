@@ -12,3 +12,4 @@
 - [x] Updated button size, reduce `large`, added `largest`
 - [x] Updated input size, reduce `large`, added `largest`
 - [x] Fixed `gravatar` for creating when an element is not `img`, added `avatar` class
+- [x] Improved `split-button` component, added `place-left` class for dropdown menu

@@ -73011,6 +73011,12 @@ label:has(input) {
   right: 0;
   top: 100%;
 }
+.split-button [data-role-dropdown].place-left,
+.split-button [data-role-dropmenu].place-left,
+.split-button .drop-object.place-left {
+  left: 0;
+  right: auto;
+}
 .split-button.no-gap {
   gap: 0;
 }
