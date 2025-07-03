@@ -61275,6 +61275,28 @@ label:has(input) {
   border-color: #f1e0ae;
 }
 
+/* source/components/gravatar/gravatar.less */
+:root {
+  --gravatar-border-color: #efefef;
+}
+.dark-side {
+  --gravatar-border-color: #2b2d30;
+}
+.gravatar {
+  object-fit: cover;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.gravatar img {
+  object-fit: cover;
+}
+.gravatar.avatar {
+  border-radius: 50%;
+  border: 2px solid #fff;
+  overflow: hidden;
+}
+
 /* source/components/grid/grid.less */
 :root {
   --grid-gap: 16px;

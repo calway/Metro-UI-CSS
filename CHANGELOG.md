@@ -11,3 +11,4 @@
 - [x] Fixed bug in `toast` for applying options
 - [x] Updated button size, reduce `large`, added `largest`
 - [x] Updated input size, reduce `large`, added `largest`
+- [x] Fixed `gravatar` for creating when an element is not `img`, added `avatar` class
