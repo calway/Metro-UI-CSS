@@ -115,6 +115,10 @@ input[type="reset"],
     }
     &.large {
         --control-height: var(--control-height-large);
+        --button-font-size: 16px;
+    }
+    &.largest {
+        --control-height: var(--control-height-largest);
         --button-font-size: 18px;
     }
 
@@ -232,10 +236,15 @@ each(@media-rules, {
         input[type="submit"],
         input[type="reset"],
         .button {
-            &.large-@{key} {
+            &.largest-@{key} {
                 --button-pill-radius: 27px;
                 --button-size: 54px;
                 --button-font-size: 18px;
+            }
+            &.large-@{key} {
+                --button-pill-radius: 20px;
+                --button-size: 40px;
+                --button-font-size: 16px;
             }
             &.small-@{key} {
                 --button-pill-radius: 13px;
@@ -308,6 +317,11 @@ button, .button {
     &.shadow { box-shadow: 6px 6px 0 var(--shadow-color-3d); }
     &.shadow:active { transform: translate(4px, 4px); }
     
+    &.largest {
+        &.shadow { box-shadow: 8px 8px 0 var(--shadow-color-3d); }
+        &.shadow:active { transform: translate(6px, 6px); }
+    }
+    
     &.large {
         &.shadow { box-shadow: 8px 8px 0 var(--shadow-color-3d); }
         &.shadow:active { transform: translate(6px, 6px); }
@@ -331,6 +345,7 @@ button, .button {
 button, .button {
     &.shift { &:active {transform: translate(2px, 2px);} }
     &.large.shift { &:active {transform: translate(4px, 4px);} }
+    &.largest.shift { &:active {transform: translate(4px, 4px);} }
     &.small.shift { &:active {transform: translate(2px, 2px);} }
     &.mini.shift { &:active {transform: translate(1px, 1px);} }
 }
