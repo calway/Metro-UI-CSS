@@ -14,3 +14,4 @@
 - [x] Fixed `gravatar` for creating when an element is not `img`, added `avatar` class
 - [x] Improved `split-button` component, added `place-left` class for dropdown menu
 - [x] Updated `table`, added padding classes `small-padding`, `medium-padding`, `large-padding`, `largest-padding`
+- [x] Updated icons, added tags set
