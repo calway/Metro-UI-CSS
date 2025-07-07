@@ -13,10 +13,16 @@
     display: inline-block;
     position: relative;
     width: auto;
-    height: 36px;
+    height: auto;
     line-height: 1;
     
     .dropdown-toggle::before {
         border-color: var(--dropdown-button-toggle-color);
+    }
+    
+    .no-dropdown-caret {
+        .dropdown-caret {
+            display: none!important;
+        }
     }
 }

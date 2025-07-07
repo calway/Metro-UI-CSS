@@ -15,6 +15,7 @@
     --sidenav-m3-color-hover: #0a0a0a;
     --sidenav-m3-background-active: #68a3ff;
     --sidenav-m3-color-active: #ffffff;
+    --sidenav-m3-border-color: var(--border-color);
 }
 
 .dark-side {
@@ -26,6 +27,7 @@
     --sidenav-m3-color-hover: #ffffff;
     --sidenav-m3-background-active: #468cff;
     --sidenav-m3-color-active: #ffffff;
+    --sidenav-m3-border-color: var(--border-color);
 }
 
 
@@ -96,7 +98,7 @@
     }
 
     li + li {
-        border-top: 1px solid var(--border-color);
+        border-top: 1px solid var(--sidenav-m3-border-color);
     }
 
     .icon {
@@ -155,13 +157,14 @@
     .d-menu {
         position: relative;
         box-shadow: none;
-        background-color: var(--sidenav-m3-background);
+        //background-color: var(--sidenav-m3-background);
         width: 100%;
         float: none;
         border-radius: 0!important;
         padding: 0;
         margin: 0;
         border: none;
+        border-bottom: 1px solid var(--sidenav-m3-border-color);
 
         li {
             margin: 0;
