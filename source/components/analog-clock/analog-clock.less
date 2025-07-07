@@ -29,6 +29,8 @@
 }
 
 .analog-clock {
+    --i: 0;
+    --i2: 0;
     position: relative;
     display: flex;
     height: var(--analog-clock-size);
@@ -128,7 +130,7 @@
         span {
             display: inline-block;
             font-weight: 600;
-            color: var(--black-color);
+            color: var(--analog-clock-dash-color);
         }
     }
        
@@ -152,7 +154,7 @@
         span {
             display: inline-block;
             font-weight: 600;
-            color: var(--black-color);
+            color: var(--analog-clock-dash-color);
         }
     }
     

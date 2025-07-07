@@ -12,6 +12,11 @@
     --analog-gauge-value-mark-w: 6ch;
     --analog-gauge-segments-w: 1deg;
     --analog-gauge-segments: 10;
+    --analog-gauge-needle-cp: polygon(7.5% 50%, 78% 0%, 83% 35%, 83% 65%, 78% 100%);
+    --analog-gauge-value-mark-asr: 1;
+    --analog-gauge-value-mark-fs: 3cqi;
+    --analog-gauge-value-mark-fw: 400;
+    --analog-gauge-value: 0;
 }
 
 .dark-side {
@@ -23,8 +28,10 @@
 }
 
 .analog-gauge {
+    --analog-gauge-mask-composite: subtract;
     --_m: calc(100cqi/6);
     --_w: calc(100cqi / 3 * 2);
+    --_d: 0;
 
     --analog-gauge-bg:
             #009, #69f, #ff0, #f90, #f00 var(--analog-gauge-range),

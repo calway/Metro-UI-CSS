@@ -54,12 +54,11 @@
 			e.preventDefault();
 			e.stopPropagation();
 			$(".context-menu").hide();
+			$(this.context_menu).data("context-element", this);
 			this.context_menu.style.position = `fixed`;
 			this.context_menu.style.left = `${e.pageX}px`;
 			this.context_menu.style.top = `${e.pageY}px`;
 			this.context_menu.style.display = "block";
-
-			console.log(`Context menu opened at (${e.pageX}, ${e.pageY})`);
 		};
 	};
 

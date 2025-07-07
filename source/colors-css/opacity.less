@@ -1,11 +1,11 @@
 @import (once) "../include/vars";
 
 .op-default {
-    background-color: rgba(red(@cyan), green(@cyan), blue(@cyan), .5) !important;
+    background-color: hsl(from @primaryColor h s l / 0.5) !important;
 }
 
 each(@colors, {
-    .op-@{value} {background-color: rgba(red(@@value), green(@@value), blue(@@value), .5) !important;}
-    .op-@{value}-hi {background-color: rgba(red(@@value), green(@@value), blue(@@value), .2) !important;}
-    .op-@{value}-low {background-color: rgba(red(@@value), green(@@value), blue(@@value), .8) !important;}
+    .op-@{value} {background-color: hsl(from @@value h s l / 0.5) !important;}
+    .op-@{value}-hi {background-color: hsl(from @@value h s l / 0.2) !important;}
+    .op-@{value}-low {background-color: hsl(from @@value h s l / 0.8) !important;}
 })
