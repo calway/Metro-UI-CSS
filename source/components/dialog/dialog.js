@@ -79,8 +79,8 @@
 		},
 
 		_build: function () {
+			const that = this;
 			const element = this.element;
-			const elem = this.elem;
 			const o = this.options;
 			const strings = this.strings;
 			const body = $("body");
@@ -140,15 +140,21 @@
 				const customButtons = Metro.utils.isObject(o.customButtons);
 				if (Array.isArray(customButtons))
 					$.each(customButtons, function () {
-						button = $("<button>")
+						const btn = $("<button>")
 							.addClass("button")
 							.addClass(this.cls)
-							.html(this.text);
-						if (this.onclick)
-							button.on(Metro.events.click, () => {
-								Metro.utils.exec(this.onclick, [element]);
+							.html(this.text || this.html || "");
+
+						that._setAttributes(btn, this.attr);
+
+						if (this.onclick) {
+							btn.on(Metro.events.click, (e) => {
+								if (Metro.utils.isRightMouse(e)) return;
+								Metro.utils.exec(this.onclick, [btn[0], element[0]]);
 							});
-						button.appendTo(buttons);
+						}
+						
+						btn.appendTo(buttons);
 					});
 			}
 

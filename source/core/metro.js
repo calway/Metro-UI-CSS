@@ -608,6 +608,16 @@ import { Props } from "./props.js";
 							label.addClass("rtl");
 						}
 					},
+					
+					_setAttributes: (element, attributes) => {
+						if (typeof attributes !== "object") return;
+
+						const el = $(element);
+						
+						$.each(attributes, (k, v) => {
+							el.attr(Str.dashedName(k), v);
+						});
+					},
 
 					getComponent: function () {
 						return this.component;

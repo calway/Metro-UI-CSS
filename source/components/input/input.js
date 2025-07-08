@@ -223,19 +223,16 @@
 						.addClass(this.cls)
 						.attr("tabindex", -1)
 						.attr("type", "button")
-						.html(this.text);
+						.html(this.text || this.html || "");
 
-					if (this.attr && typeof this.attr === "object") {
-						$.each(this.attr, (k, v) => {
-							btn.attr(Str.dashedName(k), v);
+					that._setAttributes(btn, this.attr);
+
+					if (this.onclick) {
+						btn.on("click", (e) => {
+							if (Metro.utils.isRightMouse(e)) return;
+							Metro.utils.exec(this.onclick, [btn[0], element[0]]);
 						});
 					}
-
-					if (this.onclick)
-						btn.on("click", () => {
-							Metro.utils.exec(this.onclick, [btn[0], element[0]]);
-							// this.onclick.apply(btn, [btn[0], element[0]]);
-						});
 
 					btn.appendTo(buttons);
 				});
