@@ -233,7 +233,7 @@
 
 					if (this.onclick)
 						btn.on("click", () => {
-							this.onclick.apply(btn, [element.valueOf(), element]);
+							this.onclick.apply(btn, [btn[0], element[0]]);
 						});
 
 					btn.appendTo(buttons);
