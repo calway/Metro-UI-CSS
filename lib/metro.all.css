@@ -49408,8 +49408,12 @@ input.pill-input .button {
 .input .append-options [aria-hidden=true] {
   position: absolute;
   right: 2px;
-  top: 50%;
+  top: calc(var(--input-height) / 2 - 5px);
   margin-top: -0.5rem;
+}
+.input .prepend-options .dropdown-caret,
+.input .append-options .dropdown-caret {
+  margin-left: 2rem;
 }
 .input .prepend-options .options-list,
 .input .append-options .options-list {
@@ -49418,7 +49422,7 @@ input.pill-input .button {
   height: 100%;
   border-radius: var(--input-border-radius) 0 0 var(--input-border-radius);
   font-size: var(--input-font-size);
-  padding-right: 1rem;
+  padding-right: 30px;
 }
 .input .append-options .options-list {
   border-right: none;

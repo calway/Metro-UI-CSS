@@ -233,7 +233,8 @@
 
 					if (this.onclick)
 						btn.on("click", () => {
-							this.onclick.apply(btn, [btn[0], element[0]]);
+							Metro.utils.exec(this.onclick, [btn[0], element[0]]);
+							// this.onclick.apply(btn, [btn[0], element[0]]);
 						});
 
 					btn.appendTo(buttons);
