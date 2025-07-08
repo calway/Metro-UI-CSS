@@ -15,3 +15,4 @@
 - [x] Improved `split-button` component, added `place-left` class for dropdown menu
 - [x] Updated `table`, added padding classes `small-padding`, `medium-padding`, `large-padding`, `largest-padding`
 - [x] Updated icons, added tags set
+- [x] Improved **custom buttons** in `input`, `dialog`, `panel`, and `window` components
