@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("navview.html tests", () => {
     it("navview.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/navview.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/navview.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("analog-clock.html tests", () => {
     it("analog-clock.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/analog-clock.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/analog-clock.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("context-menu.html tests", () => {
     it("context-menu.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/context-menu.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/context-menu.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

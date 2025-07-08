@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("double-select-box.html tests", () => {
     it("double-select-box.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/double-select-box.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/double-select-box.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

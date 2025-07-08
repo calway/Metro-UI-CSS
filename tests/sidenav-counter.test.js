@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("sidenav-counter.html tests", () => {
     it("sidenav-counter.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/sidenav-counter.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/sidenav-counter.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

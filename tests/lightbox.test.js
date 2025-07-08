@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("lightbox.html tests", () => {
     it("lightbox.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/lightbox.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/lightbox.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

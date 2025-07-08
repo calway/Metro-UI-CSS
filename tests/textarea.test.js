@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("textarea.html tests", () => {
     it("textarea.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/textarea.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/textarea.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

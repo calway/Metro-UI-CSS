@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("scrollbar.html tests", () => {
     it("scrollbar.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/scrollbar.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/scrollbar.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

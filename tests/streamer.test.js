@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("streamer.json tests", () => {
     it("streamer.json", async () => {
-        await B.visit(`${getFileUrl(`./__html__/streamer.json`)}`)
+        await B.visit(`${getFileUrl(`./examples/streamer.json`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

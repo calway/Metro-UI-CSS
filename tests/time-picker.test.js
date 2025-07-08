@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("time-picker.html tests", () => {
     it("time-picker.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/time-picker.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/time-picker.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

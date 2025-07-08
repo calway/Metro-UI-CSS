@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("theme-switcher.html tests", () => {
     it("theme-switcher.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/theme-switcher.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/theme-switcher.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

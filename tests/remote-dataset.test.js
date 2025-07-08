@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("remote-dataset.html tests", () => {
     it("remote-dataset.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/remote-dataset.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/remote-dataset.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

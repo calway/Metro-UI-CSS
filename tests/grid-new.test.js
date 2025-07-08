@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("grid-new.html tests", () => {
     it("grid-new.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/grid-new.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/grid-new.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

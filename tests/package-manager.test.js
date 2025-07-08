@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("package-manager.html tests", () => {
     it("package-manager.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/package-manager.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/package-manager.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

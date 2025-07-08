@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("cookie-disclaimer.html tests", () => {
     it("cookie-disclaimer.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/cookie-disclaimer.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/cookie-disclaimer.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

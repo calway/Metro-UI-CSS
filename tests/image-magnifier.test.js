@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("image-magnifier.html tests", () => {
     it("image-magnifier.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/image-magnifier.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/image-magnifier.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

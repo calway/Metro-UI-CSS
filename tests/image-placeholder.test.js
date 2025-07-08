@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("image-placeholder.html tests", () => {
     it("image-placeholder.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/image-placeholder.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/image-placeholder.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("tokenizer.html tests", () => {
     it("tokenizer.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/tokenizer.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/tokenizer.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

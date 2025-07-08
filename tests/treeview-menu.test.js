@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("treeview-menu.html tests", () => {
     it("treeview-menu.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/treeview-menu.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/treeview-menu.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

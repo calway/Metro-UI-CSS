@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("animate-border.html tests", () => {
     it("animate-border.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/animate-border.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/animate-border.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

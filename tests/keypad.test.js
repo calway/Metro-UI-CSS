@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("keypad.html tests", () => {
     it("keypad.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/keypad.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/keypad.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

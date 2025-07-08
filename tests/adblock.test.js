@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("adblock.html tests", () => {
     it("adblock.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/adblock.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/adblock.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

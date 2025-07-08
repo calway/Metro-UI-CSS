@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("hover-box.html tests", () => {
     it("hover-box.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/hover-box.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/hover-box.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

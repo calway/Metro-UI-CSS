@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("radio.html tests", () => {
     it("radio.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/radio.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/radio.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

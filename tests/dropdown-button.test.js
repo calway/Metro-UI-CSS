@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("dropdown-button.html tests", () => {
     it("dropdown-button.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/dropdown-button.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/dropdown-button.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

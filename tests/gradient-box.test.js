@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("gradient-box.html tests", () => {
     it("gradient-box.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/gradient-box.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/gradient-box.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("template.html tests", () => {
     it("template.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/template.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/template.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

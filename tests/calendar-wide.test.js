@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("calendar-wide.html tests", () => {
     it("calendar-wide.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/calendar-wide.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/calendar-wide.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

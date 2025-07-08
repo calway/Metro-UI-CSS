@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("custom-checkbox.html tests", () => {
     it("custom-checkbox.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/custom-checkbox.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/custom-checkbox.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

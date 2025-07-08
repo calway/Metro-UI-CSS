@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("hotkey.html tests", () => {
     it("hotkey.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/hotkey.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/hotkey.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

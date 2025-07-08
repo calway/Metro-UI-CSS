@@ -11,7 +11,7 @@ afterAll(async () => {
 
 describe("directive2.html tests", () => {
     it("directive2.html", async () => {
-        await B.visit(`${getFileUrl(`./__html__/directive2.html`)}`)
+        await B.visit(`${getFileUrl(`./examples/directive2.html`)}`)
         expect(B.error).toBeNull(B.error)
     })
 })

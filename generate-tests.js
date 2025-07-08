@@ -44,6 +44,7 @@ fs.readdir(targetDir, (err, files) => {
 	if (err) throw err;
 
 	for (const file of files) {
+		console.log(`Deleting file: ${file}`);
 		fs.unlink(path.join(targetDir, file), (err) => {
 			if (err) throw err;
 		});
@@ -53,6 +54,7 @@ fs.readdir(targetDir, (err, files) => {
 readFiles(
 	sourceDir,
 	(filename, content) => {
+		console.log(`Processing file: ${filename}`);
 		const [name, _] = filename.split(".");
 		fs.writeFile(
 			`${targetDir}/${name}.test.js`,
