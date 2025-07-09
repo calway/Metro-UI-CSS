@@ -68,18 +68,43 @@
 
 .diagonal {
     position: relative;
+    isolation: isolate;
+    --skew-angle: 5deg;
+    --background: var(--color-primary);
     
     &::after {
         content: "";
         position: absolute;
         inset: 0;
-        transform: skewY(-5deg);
+        transform: skewY(calc(-1 * var(--skew-angle)));
         z-index: -1;
+        background: var(--background);
     }
     
     &.reverse {
         &::after {
-            transform: skewY(5deg);
+            transform: skewY(calc(1 * var(--skew-angle)));
         }
     }
+}
+
+.concave {
+    --deep: 10%;
+    clip-path: polygon(0 0, 50% var(--deep), 100% 0, 100% 100%, 50% calc(100% - var(--deep)), 0 100%);
+}
+
+.concave2 {
+    --deep: 10%;
+    --divider: 2;
+    clip-path: polygon(0 0, 50% var(--deep), 100% 0, calc(100% - var(--deep) / var(--divider)) 50%, 100% 100%, 50% calc(100% - var(--deep)), 0 100%, calc(var(--deep) / var(--divider)) 50%);
+}
+
+.wavy {
+    --mask:
+            radial-gradient(67.08px at 50% 90px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 51% repeat-x,
+            radial-gradient(67.08px at 50% -60px,#0000 99%,#000 101%) 50% 30px/120px calc(51% - 30px) repeat-x,
+            radial-gradient(67.08px at 50% calc(100% - 90px),#000 99%,#0000 101%) calc(50% - 60px) 100%/120px 51% repeat-x,
+            radial-gradient(67.08px at 50% calc(100% + 60px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px calc(51% - 30px) repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
 }

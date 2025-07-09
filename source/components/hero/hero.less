@@ -44,7 +44,11 @@
 }
 
 .hero5 {
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 75%, 70% 65%, 50% 80%, 30% 65%, 15% 75%, 0 70%);
+    --mask:
+            radial-gradient(67.08px at 50% calc(100% - 90px),#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+            radial-gradient(67.08px at 50% calc(100% + 60px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
 }
 
 @media all and (min-width: @md) {
