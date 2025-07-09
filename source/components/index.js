@@ -111,6 +111,7 @@ import "./ripple/index.js";
 import "./scrollbar/index.js";
 import "./select/index.js";
 import "./shadows/index.js";
+import "./shapes/index.js";
 import "./shortcut/index.js";
 import "./sidebar/index.js";
 import "./sidenav-counter/index.js";
