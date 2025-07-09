@@ -19,6 +19,24 @@
     position: relative;
     background-color: var(--hero-background);
     color: var(--hero-color);
+    
+    .hero-image {
+        height: 220px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.hero1 {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.hero2 {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
+
+.hero3 {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 
 @media all and (min-width: @md) {

@@ -27100,6 +27100,1590 @@ hr.fat {
 .bg-sand-focus:focus {
   background-color: hsl(45, 71%, 81%) !important;
 }
+.bg-light-lime {
+  background-color: hsl(93, 97%, 91%) !important;
+}
+.bg-light-lime-active:active {
+  background-color: hsl(93, 97%, 91%) !important;
+}
+.bg-light-lime-hover:hover {
+  background-color: hsl(93, 97%, 91%) !important;
+}
+.bg-light-lime-focus:focus {
+  background-color: hsl(93, 97%, 91%) !important;
+}
+.bg-minor-lime {
+  background-color: hsl(93, 97%, 81%) !important;
+}
+.bg-minor-lime-active:active {
+  background-color: hsl(93, 97%, 81%) !important;
+}
+.bg-minor-lime-hover:hover {
+  background-color: hsl(93, 97%, 81%) !important;
+}
+.bg-minor-lime-focus:focus {
+  background-color: hsl(93, 97%, 81%) !important;
+}
+.bg-sat-lime {
+  background-color: hsl(93, 97%, 61%) !important;
+}
+.bg-sat-lime-active:active {
+  background-color: hsl(93, 97%, 61%) !important;
+}
+.bg-sat-lime-hover:hover {
+  background-color: hsl(93, 97%, 61%) !important;
+}
+.bg-sat-lime-focus:focus {
+  background-color: hsl(93, 97%, 61%) !important;
+}
+.bg-dark-lime {
+  background-color: hsl(93, 97%, 51%) !important;
+}
+.bg-dark-lime-active:active {
+  background-color: hsl(93, 97%, 51%) !important;
+}
+.bg-dark-lime-hover:hover {
+  background-color: hsl(93, 97%, 51%) !important;
+}
+.bg-dark-lime-focus:focus {
+  background-color: hsl(93, 97%, 51%) !important;
+}
+.bg-light-green {
+  background-color: hsl(120, 100%, 75%) !important;
+}
+.bg-light-green-active:active {
+  background-color: hsl(120, 100%, 75%) !important;
+}
+.bg-light-green-hover:hover {
+  background-color: hsl(120, 100%, 75%) !important;
+}
+.bg-light-green-focus:focus {
+  background-color: hsl(120, 100%, 75%) !important;
+}
+.bg-minor-green {
+  background-color: hsl(120, 100%, 45%) !important;
+}
+.bg-minor-green-active:active {
+  background-color: hsl(120, 100%, 45%) !important;
+}
+.bg-minor-green-hover:hover {
+  background-color: hsl(120, 100%, 45%) !important;
+}
+.bg-minor-green-focus:focus {
+  background-color: hsl(120, 100%, 45%) !important;
+}
+.bg-sat-green {
+  background-color: hsl(120, 100%, 25%) !important;
+}
+.bg-sat-green-active:active {
+  background-color: hsl(120, 100%, 25%) !important;
+}
+.bg-sat-green-hover:hover {
+  background-color: hsl(120, 100%, 25%) !important;
+}
+.bg-sat-green-focus:focus {
+  background-color: hsl(120, 100%, 25%) !important;
+}
+.bg-dark-green {
+  background-color: hsl(120, 100%, 15%) !important;
+}
+.bg-dark-green-active:active {
+  background-color: hsl(120, 100%, 15%) !important;
+}
+.bg-dark-green-hover:hover {
+  background-color: hsl(120, 100%, 15%) !important;
+}
+.bg-dark-green-focus:focus {
+  background-color: hsl(120, 100%, 15%) !important;
+}
+.bg-light-emerald {
+  background-color: hsl(140, 52%, 85%) !important;
+}
+.bg-light-emerald-active:active {
+  background-color: hsl(140, 52%, 85%) !important;
+}
+.bg-light-emerald-hover:hover {
+  background-color: hsl(140, 52%, 85%) !important;
+}
+.bg-light-emerald-focus:focus {
+  background-color: hsl(140, 52%, 85%) !important;
+}
+.bg-minor-emerald {
+  background-color: hsl(140, 52%, 65%) !important;
+}
+.bg-minor-emerald-active:active {
+  background-color: hsl(140, 52%, 65%) !important;
+}
+.bg-minor-emerald-hover:hover {
+  background-color: hsl(140, 52%, 65%) !important;
+}
+.bg-minor-emerald-focus:focus {
+  background-color: hsl(140, 52%, 65%) !important;
+}
+.bg-sat-emerald {
+  background-color: hsl(140, 52%, 45%) !important;
+}
+.bg-sat-emerald-active:active {
+  background-color: hsl(140, 52%, 45%) !important;
+}
+.bg-sat-emerald-hover:hover {
+  background-color: hsl(140, 52%, 45%) !important;
+}
+.bg-sat-emerald-focus:focus {
+  background-color: hsl(140, 52%, 45%) !important;
+}
+.bg-dark-emerald {
+  background-color: hsl(140, 52%, 35%) !important;
+}
+.bg-dark-emerald-active:active {
+  background-color: hsl(140, 52%, 35%) !important;
+}
+.bg-dark-emerald-hover:hover {
+  background-color: hsl(140, 52%, 35%) !important;
+}
+.bg-dark-emerald-focus:focus {
+  background-color: hsl(140, 52%, 35%) !important;
+}
+.bg-light-blue {
+  background-color: hsl(225, 100%, 93%) !important;
+}
+.bg-light-blue-active:active {
+  background-color: hsl(225, 100%, 93%) !important;
+}
+.bg-light-blue-hover:hover {
+  background-color: hsl(225, 100%, 93%) !important;
+}
+.bg-light-blue-focus:focus {
+  background-color: hsl(225, 100%, 93%) !important;
+}
+.bg-minor-blue {
+  background-color: hsl(225, 100%, 78%) !important;
+}
+.bg-minor-blue-active:active {
+  background-color: hsl(225, 100%, 78%) !important;
+}
+.bg-minor-blue-hover:hover {
+  background-color: hsl(225, 100%, 78%) !important;
+}
+.bg-minor-blue-focus:focus {
+  background-color: hsl(225, 100%, 78%) !important;
+}
+.bg-sat-blue {
+  background-color: hsl(225, 100%, 58%) !important;
+}
+.bg-sat-blue-active:active {
+  background-color: hsl(225, 100%, 58%) !important;
+}
+.bg-sat-blue-hover:hover {
+  background-color: hsl(225, 100%, 58%) !important;
+}
+.bg-sat-blue-focus:focus {
+  background-color: hsl(225, 100%, 58%) !important;
+}
+.bg-dark-blue {
+  background-color: hsl(225, 100%, 48%) !important;
+}
+.bg-dark-blue-active:active {
+  background-color: hsl(225, 100%, 48%) !important;
+}
+.bg-dark-blue-hover:hover {
+  background-color: hsl(225, 100%, 48%) !important;
+}
+.bg-dark-blue-focus:focus {
+  background-color: hsl(225, 100%, 48%) !important;
+}
+.bg-light-teal {
+  background-color: hsl(180, 77%, 74%) !important;
+}
+.bg-light-teal-active:active {
+  background-color: hsl(180, 77%, 74%) !important;
+}
+.bg-light-teal-hover:hover {
+  background-color: hsl(180, 77%, 74%) !important;
+}
+.bg-light-teal-focus:focus {
+  background-color: hsl(180, 77%, 74%) !important;
+}
+.bg-minor-teal {
+  background-color: hsl(180, 77%, 54%) !important;
+}
+.bg-minor-teal-active:active {
+  background-color: hsl(180, 77%, 54%) !important;
+}
+.bg-minor-teal-hover:hover {
+  background-color: hsl(180, 77%, 54%) !important;
+}
+.bg-minor-teal-focus:focus {
+  background-color: hsl(180, 77%, 54%) !important;
+}
+.bg-sat-teal {
+  background-color: hsl(180, 77%, 34%) !important;
+}
+.bg-sat-teal-active:active {
+  background-color: hsl(180, 77%, 34%) !important;
+}
+.bg-sat-teal-hover:hover {
+  background-color: hsl(180, 77%, 34%) !important;
+}
+.bg-sat-teal-focus:focus {
+  background-color: hsl(180, 77%, 34%) !important;
+}
+.bg-dark-teal {
+  background-color: hsl(180, 77%, 24%) !important;
+}
+.bg-dark-teal-active:active {
+  background-color: hsl(180, 77%, 24%) !important;
+}
+.bg-dark-teal-hover:hover {
+  background-color: hsl(180, 77%, 24%) !important;
+}
+.bg-dark-teal-focus:focus {
+  background-color: hsl(180, 77%, 24%) !important;
+}
+.bg-light-cyan {
+  background-color: hsl(221, 100%, 94%) !important;
+}
+.bg-light-cyan-active:active {
+  background-color: hsl(221, 100%, 94%) !important;
+}
+.bg-light-cyan-hover:hover {
+  background-color: hsl(221, 100%, 94%) !important;
+}
+.bg-light-cyan-focus:focus {
+  background-color: hsl(221, 100%, 94%) !important;
+}
+.bg-minor-cyan {
+  background-color: hsl(221, 100%, 89%) !important;
+}
+.bg-minor-cyan-active:active {
+  background-color: hsl(221, 100%, 89%) !important;
+}
+.bg-minor-cyan-hover:hover {
+  background-color: hsl(221, 100%, 89%) !important;
+}
+.bg-minor-cyan-focus:focus {
+  background-color: hsl(221, 100%, 89%) !important;
+}
+.bg-sat-cyan {
+  background-color: hsl(221, 100%, 69%) !important;
+}
+.bg-sat-cyan-active:active {
+  background-color: hsl(221, 100%, 69%) !important;
+}
+.bg-sat-cyan-hover:hover {
+  background-color: hsl(221, 100%, 69%) !important;
+}
+.bg-sat-cyan-focus:focus {
+  background-color: hsl(221, 100%, 69%) !important;
+}
+.bg-dark-cyan {
+  background-color: hsl(221, 100%, 59%) !important;
+}
+.bg-dark-cyan-active:active {
+  background-color: hsl(221, 100%, 59%) !important;
+}
+.bg-dark-cyan-hover:hover {
+  background-color: hsl(221, 100%, 59%) !important;
+}
+.bg-dark-cyan-focus:focus {
+  background-color: hsl(221, 100%, 59%) !important;
+}
+.bg-light-cobalt {
+  background-color: hsl(215, 100%, 74%) !important;
+}
+.bg-light-cobalt-active:active {
+  background-color: hsl(215, 100%, 74%) !important;
+}
+.bg-light-cobalt-hover:hover {
+  background-color: hsl(215, 100%, 74%) !important;
+}
+.bg-light-cobalt-focus:focus {
+  background-color: hsl(215, 100%, 74%) !important;
+}
+.bg-minor-cobalt {
+  background-color: hsl(215, 100%, 44%) !important;
+}
+.bg-minor-cobalt-active:active {
+  background-color: hsl(215, 100%, 44%) !important;
+}
+.bg-minor-cobalt-hover:hover {
+  background-color: hsl(215, 100%, 44%) !important;
+}
+.bg-minor-cobalt-focus:focus {
+  background-color: hsl(215, 100%, 44%) !important;
+}
+.bg-sat-cobalt {
+  background-color: hsl(215, 100%, 24%) !important;
+}
+.bg-sat-cobalt-active:active {
+  background-color: hsl(215, 100%, 24%) !important;
+}
+.bg-sat-cobalt-hover:hover {
+  background-color: hsl(215, 100%, 24%) !important;
+}
+.bg-sat-cobalt-focus:focus {
+  background-color: hsl(215, 100%, 24%) !important;
+}
+.bg-dark-cobalt {
+  background-color: hsl(215, 100%, 14%) !important;
+}
+.bg-dark-cobalt-active:active {
+  background-color: hsl(215, 100%, 14%) !important;
+}
+.bg-dark-cobalt-hover:hover {
+  background-color: hsl(215, 100%, 14%) !important;
+}
+.bg-dark-cobalt-focus:focus {
+  background-color: hsl(215, 100%, 14%) !important;
+}
+.bg-light-indigo {
+  background-color: hsl(276, 100%, 73%) !important;
+}
+.bg-light-indigo-active:active {
+  background-color: hsl(276, 100%, 73%) !important;
+}
+.bg-light-indigo-hover:hover {
+  background-color: hsl(276, 100%, 73%) !important;
+}
+.bg-light-indigo-focus:focus {
+  background-color: hsl(276, 100%, 73%) !important;
+}
+.bg-minor-indigo {
+  background-color: hsl(276, 100%, 43%) !important;
+}
+.bg-minor-indigo-active:active {
+  background-color: hsl(276, 100%, 43%) !important;
+}
+.bg-minor-indigo-hover:hover {
+  background-color: hsl(276, 100%, 43%) !important;
+}
+.bg-minor-indigo-focus:focus {
+  background-color: hsl(276, 100%, 43%) !important;
+}
+.bg-sat-indigo {
+  background-color: hsl(276, 100%, 23%) !important;
+}
+.bg-sat-indigo-active:active {
+  background-color: hsl(276, 100%, 23%) !important;
+}
+.bg-sat-indigo-hover:hover {
+  background-color: hsl(276, 100%, 23%) !important;
+}
+.bg-sat-indigo-focus:focus {
+  background-color: hsl(276, 100%, 23%) !important;
+}
+.bg-dark-indigo {
+  background-color: hsl(276, 100%, 13%) !important;
+}
+.bg-dark-indigo-active:active {
+  background-color: hsl(276, 100%, 13%) !important;
+}
+.bg-dark-indigo-hover:hover {
+  background-color: hsl(276, 100%, 13%) !important;
+}
+.bg-dark-indigo-focus:focus {
+  background-color: hsl(276, 100%, 13%) !important;
+}
+.bg-light-almost {
+  background-color: hsl(259, 84%, 85%) !important;
+}
+.bg-light-almost-active:active {
+  background-color: hsl(259, 84%, 85%) !important;
+}
+.bg-light-almost-hover:hover {
+  background-color: hsl(259, 84%, 85%) !important;
+}
+.bg-light-almost-focus:focus {
+  background-color: hsl(259, 84%, 85%) !important;
+}
+.bg-minor-almost {
+  background-color: hsl(259, 84%, 65%) !important;
+}
+.bg-minor-almost-active:active {
+  background-color: hsl(259, 84%, 65%) !important;
+}
+.bg-minor-almost-hover:hover {
+  background-color: hsl(259, 84%, 65%) !important;
+}
+.bg-minor-almost-focus:focus {
+  background-color: hsl(259, 84%, 65%) !important;
+}
+.bg-sat-almost {
+  background-color: hsl(259, 84%, 45%) !important;
+}
+.bg-sat-almost-active:active {
+  background-color: hsl(259, 84%, 45%) !important;
+}
+.bg-sat-almost-hover:hover {
+  background-color: hsl(259, 84%, 45%) !important;
+}
+.bg-sat-almost-focus:focus {
+  background-color: hsl(259, 84%, 45%) !important;
+}
+.bg-dark-almost {
+  background-color: hsl(259, 84%, 35%) !important;
+}
+.bg-dark-almost-active:active {
+  background-color: hsl(259, 84%, 35%) !important;
+}
+.bg-dark-almost-hover:hover {
+  background-color: hsl(259, 84%, 35%) !important;
+}
+.bg-dark-almost-focus:focus {
+  background-color: hsl(259, 84%, 35%) !important;
+}
+.bg-light-violet {
+  background-color: hsl(300, 76%, 92%) !important;
+}
+.bg-light-violet-active:active {
+  background-color: hsl(300, 76%, 92%) !important;
+}
+.bg-light-violet-hover:hover {
+  background-color: hsl(300, 76%, 92%) !important;
+}
+.bg-light-violet-focus:focus {
+  background-color: hsl(300, 76%, 92%) !important;
+}
+.bg-minor-violet {
+  background-color: hsl(300, 76%, 82%) !important;
+}
+.bg-minor-violet-active:active {
+  background-color: hsl(300, 76%, 82%) !important;
+}
+.bg-minor-violet-hover:hover {
+  background-color: hsl(300, 76%, 82%) !important;
+}
+.bg-minor-violet-focus:focus {
+  background-color: hsl(300, 76%, 82%) !important;
+}
+.bg-sat-violet {
+  background-color: hsl(300, 76%, 62%) !important;
+}
+.bg-sat-violet-active:active {
+  background-color: hsl(300, 76%, 62%) !important;
+}
+.bg-sat-violet-hover:hover {
+  background-color: hsl(300, 76%, 62%) !important;
+}
+.bg-sat-violet-focus:focus {
+  background-color: hsl(300, 76%, 62%) !important;
+}
+.bg-dark-violet {
+  background-color: hsl(300, 76%, 52%) !important;
+}
+.bg-dark-violet-active:active {
+  background-color: hsl(300, 76%, 52%) !important;
+}
+.bg-dark-violet-hover:hover {
+  background-color: hsl(300, 76%, 52%) !important;
+}
+.bg-dark-violet-focus:focus {
+  background-color: hsl(300, 76%, 52%) !important;
+}
+.bg-light-pink {
+  background-color: hsl(350, 100%, 98%) !important;
+}
+.bg-light-pink-active:active {
+  background-color: hsl(350, 100%, 98%) !important;
+}
+.bg-light-pink-hover:hover {
+  background-color: hsl(350, 100%, 98%) !important;
+}
+.bg-light-pink-focus:focus {
+  background-color: hsl(350, 100%, 98%) !important;
+}
+.bg-minor-pink {
+  background-color: hsl(350, 100%, 93%) !important;
+}
+.bg-minor-pink-active:active {
+  background-color: hsl(350, 100%, 93%) !important;
+}
+.bg-minor-pink-hover:hover {
+  background-color: hsl(350, 100%, 93%) !important;
+}
+.bg-minor-pink-focus:focus {
+  background-color: hsl(350, 100%, 93%) !important;
+}
+.bg-sat-pink {
+  background-color: hsl(350, 100%, 78%) !important;
+}
+.bg-sat-pink-active:active {
+  background-color: hsl(350, 100%, 78%) !important;
+}
+.bg-sat-pink-hover:hover {
+  background-color: hsl(350, 100%, 78%) !important;
+}
+.bg-sat-pink-focus:focus {
+  background-color: hsl(350, 100%, 78%) !important;
+}
+.bg-dark-pink {
+  background-color: hsl(350, 100%, 68%) !important;
+}
+.bg-dark-pink-active:active {
+  background-color: hsl(350, 100%, 68%) !important;
+}
+.bg-dark-pink-hover:hover {
+  background-color: hsl(350, 100%, 68%) !important;
+}
+.bg-dark-pink-focus:focus {
+  background-color: hsl(350, 100%, 68%) !important;
+}
+.bg-light-magenta {
+  background-color: hsl(300, 100%, 90%) !important;
+}
+.bg-light-magenta-active:active {
+  background-color: hsl(300, 100%, 90%) !important;
+}
+.bg-light-magenta-hover:hover {
+  background-color: hsl(300, 100%, 90%) !important;
+}
+.bg-light-magenta-focus:focus {
+  background-color: hsl(300, 100%, 90%) !important;
+}
+.bg-minor-magenta {
+  background-color: hsl(300, 100%, 70%) !important;
+}
+.bg-minor-magenta-active:active {
+  background-color: hsl(300, 100%, 70%) !important;
+}
+.bg-minor-magenta-hover:hover {
+  background-color: hsl(300, 100%, 70%) !important;
+}
+.bg-minor-magenta-focus:focus {
+  background-color: hsl(300, 100%, 70%) !important;
+}
+.bg-sat-magenta {
+  background-color: hsl(300, 100%, 40%) !important;
+}
+.bg-sat-magenta-active:active {
+  background-color: hsl(300, 100%, 40%) !important;
+}
+.bg-sat-magenta-hover:hover {
+  background-color: hsl(300, 100%, 40%) !important;
+}
+.bg-sat-magenta-focus:focus {
+  background-color: hsl(300, 100%, 40%) !important;
+}
+.bg-dark-magenta {
+  background-color: hsl(300, 100%, 30%) !important;
+}
+.bg-dark-magenta-active:active {
+  background-color: hsl(300, 100%, 30%) !important;
+}
+.bg-dark-magenta-hover:hover {
+  background-color: hsl(300, 100%, 30%) !important;
+}
+.bg-dark-magenta-focus:focus {
+  background-color: hsl(300, 100%, 30%) !important;
+}
+.bg-light-crimson {
+  background-color: hsl(348, 88%, 81%) !important;
+}
+.bg-light-crimson-active:active {
+  background-color: hsl(348, 88%, 81%) !important;
+}
+.bg-light-crimson-hover:hover {
+  background-color: hsl(348, 88%, 81%) !important;
+}
+.bg-light-crimson-focus:focus {
+  background-color: hsl(348, 88%, 81%) !important;
+}
+.bg-minor-crimson {
+  background-color: hsl(348, 88%, 66%) !important;
+}
+.bg-minor-crimson-active:active {
+  background-color: hsl(348, 88%, 66%) !important;
+}
+.bg-minor-crimson-hover:hover {
+  background-color: hsl(348, 88%, 66%) !important;
+}
+.bg-minor-crimson-focus:focus {
+  background-color: hsl(348, 88%, 66%) !important;
+}
+.bg-sat-crimson {
+  background-color: hsl(348, 88%, 36%) !important;
+}
+.bg-sat-crimson-active:active {
+  background-color: hsl(348, 88%, 36%) !important;
+}
+.bg-sat-crimson-hover:hover {
+  background-color: hsl(348, 88%, 36%) !important;
+}
+.bg-sat-crimson-focus:focus {
+  background-color: hsl(348, 88%, 36%) !important;
+}
+.bg-dark-crimson {
+  background-color: hsl(348, 88%, 26%) !important;
+}
+.bg-dark-crimson-active:active {
+  background-color: hsl(348, 88%, 26%) !important;
+}
+.bg-dark-crimson-hover:hover {
+  background-color: hsl(348, 88%, 26%) !important;
+}
+.bg-dark-crimson-focus:focus {
+  background-color: hsl(348, 88%, 26%) !important;
+}
+.bg-light-red {
+  background-color: hsl(0, 100%, 80%) !important;
+}
+.bg-light-red-active:active {
+  background-color: hsl(0, 100%, 80%) !important;
+}
+.bg-light-red-hover:hover {
+  background-color: hsl(0, 100%, 80%) !important;
+}
+.bg-light-red-focus:focus {
+  background-color: hsl(0, 100%, 80%) !important;
+}
+.bg-minor-red {
+  background-color: hsl(0, 100%, 70%) !important;
+}
+.bg-minor-red-active:active {
+  background-color: hsl(0, 100%, 70%) !important;
+}
+.bg-minor-red-hover:hover {
+  background-color: hsl(0, 100%, 70%) !important;
+}
+.bg-minor-red-focus:focus {
+  background-color: hsl(0, 100%, 70%) !important;
+}
+.bg-sat-red {
+  background-color: hsl(0, 100%, 40%) !important;
+}
+.bg-sat-red-active:active {
+  background-color: hsl(0, 100%, 40%) !important;
+}
+.bg-sat-red-hover:hover {
+  background-color: hsl(0, 100%, 40%) !important;
+}
+.bg-sat-red-focus:focus {
+  background-color: hsl(0, 100%, 40%) !important;
+}
+.bg-dark-red {
+  background-color: hsl(0, 100%, 30%) !important;
+}
+.bg-dark-red-active:active {
+  background-color: hsl(0, 100%, 30%) !important;
+}
+.bg-dark-red-hover:hover {
+  background-color: hsl(0, 100%, 30%) !important;
+}
+.bg-dark-red-focus:focus {
+  background-color: hsl(0, 100%, 30%) !important;
+}
+.bg-light-orange {
+  background-color: hsl(39, 100%, 90%) !important;
+}
+.bg-light-orange-active:active {
+  background-color: hsl(39, 100%, 90%) !important;
+}
+.bg-light-orange-hover:hover {
+  background-color: hsl(39, 100%, 90%) !important;
+}
+.bg-light-orange-focus:focus {
+  background-color: hsl(39, 100%, 90%) !important;
+}
+.bg-minor-orange {
+  background-color: hsl(39, 100%, 70%) !important;
+}
+.bg-minor-orange-active:active {
+  background-color: hsl(39, 100%, 70%) !important;
+}
+.bg-minor-orange-hover:hover {
+  background-color: hsl(39, 100%, 70%) !important;
+}
+.bg-minor-orange-focus:focus {
+  background-color: hsl(39, 100%, 70%) !important;
+}
+.bg-sat-orange {
+  background-color: hsl(39, 100%, 40%) !important;
+}
+.bg-sat-orange-active:active {
+  background-color: hsl(39, 100%, 40%) !important;
+}
+.bg-sat-orange-hover:hover {
+  background-color: hsl(39, 100%, 40%) !important;
+}
+.bg-sat-orange-focus:focus {
+  background-color: hsl(39, 100%, 40%) !important;
+}
+.bg-dark-orange {
+  background-color: hsl(39, 100%, 30%) !important;
+}
+.bg-dark-orange-active:active {
+  background-color: hsl(39, 100%, 30%) !important;
+}
+.bg-dark-orange-hover:hover {
+  background-color: hsl(39, 100%, 30%) !important;
+}
+.bg-dark-orange-focus:focus {
+  background-color: hsl(39, 100%, 30%) !important;
+}
+.bg-light-amber {
+  background-color: hsl(45, 100%, 78%) !important;
+}
+.bg-light-amber-active:active {
+  background-color: hsl(45, 100%, 78%) !important;
+}
+.bg-light-amber-hover:hover {
+  background-color: hsl(45, 100%, 78%) !important;
+}
+.bg-light-amber-focus:focus {
+  background-color: hsl(45, 100%, 78%) !important;
+}
+.bg-minor-amber {
+  background-color: hsl(45, 100%, 68%) !important;
+}
+.bg-minor-amber-active:active {
+  background-color: hsl(45, 100%, 68%) !important;
+}
+.bg-minor-amber-hover:hover {
+  background-color: hsl(45, 100%, 68%) !important;
+}
+.bg-minor-amber-focus:focus {
+  background-color: hsl(45, 100%, 68%) !important;
+}
+.bg-sat-amber {
+  background-color: hsl(45, 100%, 48%) !important;
+}
+.bg-sat-amber-active:active {
+  background-color: hsl(45, 100%, 48%) !important;
+}
+.bg-sat-amber-hover:hover {
+  background-color: hsl(45, 100%, 48%) !important;
+}
+.bg-sat-amber-focus:focus {
+  background-color: hsl(45, 100%, 48%) !important;
+}
+.bg-dark-amber {
+  background-color: hsl(45, 100%, 38%) !important;
+}
+.bg-dark-amber-active:active {
+  background-color: hsl(45, 100%, 38%) !important;
+}
+.bg-dark-amber-hover:hover {
+  background-color: hsl(45, 100%, 38%) !important;
+}
+.bg-dark-amber-focus:focus {
+  background-color: hsl(45, 100%, 38%) !important;
+}
+.bg-light-yellow {
+  background-color: hsl(52, 100%, 93%) !important;
+}
+.bg-light-yellow-active:active {
+  background-color: hsl(52, 100%, 93%) !important;
+}
+.bg-light-yellow-hover:hover {
+  background-color: hsl(52, 100%, 93%) !important;
+}
+.bg-light-yellow-focus:focus {
+  background-color: hsl(52, 100%, 93%) !important;
+}
+.bg-minor-yellow {
+  background-color: hsl(52, 100%, 83%) !important;
+}
+.bg-minor-yellow-active:active {
+  background-color: hsl(52, 100%, 83%) !important;
+}
+.bg-minor-yellow-hover:hover {
+  background-color: hsl(52, 100%, 83%) !important;
+}
+.bg-minor-yellow-focus:focus {
+  background-color: hsl(52, 100%, 83%) !important;
+}
+.bg-sat-yellow {
+  background-color: hsl(52, 100%, 58%) !important;
+}
+.bg-sat-yellow-active:active {
+  background-color: hsl(52, 100%, 58%) !important;
+}
+.bg-sat-yellow-hover:hover {
+  background-color: hsl(52, 100%, 58%) !important;
+}
+.bg-sat-yellow-focus:focus {
+  background-color: hsl(52, 100%, 58%) !important;
+}
+.bg-dark-yellow {
+  background-color: hsl(52, 100%, 48%) !important;
+}
+.bg-dark-yellow-active:active {
+  background-color: hsl(52, 100%, 48%) !important;
+}
+.bg-dark-yellow-hover:hover {
+  background-color: hsl(52, 100%, 48%) !important;
+}
+.bg-dark-yellow-focus:focus {
+  background-color: hsl(52, 100%, 48%) !important;
+}
+.bg-light-brown {
+  background-color: hsl(25, 57%, 81%) !important;
+}
+.bg-light-brown-active:active {
+  background-color: hsl(25, 57%, 81%) !important;
+}
+.bg-light-brown-hover:hover {
+  background-color: hsl(25, 57%, 81%) !important;
+}
+.bg-light-brown-focus:focus {
+  background-color: hsl(25, 57%, 81%) !important;
+}
+.bg-minor-brown {
+  background-color: hsl(25, 57%, 66%) !important;
+}
+.bg-minor-brown-active:active {
+  background-color: hsl(25, 57%, 66%) !important;
+}
+.bg-minor-brown-hover:hover {
+  background-color: hsl(25, 57%, 66%) !important;
+}
+.bg-minor-brown-focus:focus {
+  background-color: hsl(25, 57%, 66%) !important;
+}
+.bg-sat-brown {
+  background-color: hsl(25, 57%, 41%) !important;
+}
+.bg-sat-brown-active:active {
+  background-color: hsl(25, 57%, 41%) !important;
+}
+.bg-sat-brown-hover:hover {
+  background-color: hsl(25, 57%, 41%) !important;
+}
+.bg-sat-brown-focus:focus {
+  background-color: hsl(25, 57%, 41%) !important;
+}
+.bg-dark-brown {
+  background-color: hsl(25, 57%, 31%) !important;
+}
+.bg-dark-brown-active:active {
+  background-color: hsl(25, 57%, 31%) !important;
+}
+.bg-dark-brown-hover:hover {
+  background-color: hsl(25, 57%, 31%) !important;
+}
+.bg-dark-brown-focus:focus {
+  background-color: hsl(25, 57%, 31%) !important;
+}
+.bg-light-olive {
+  background-color: hsl(60, 100%, 72%) !important;
+}
+.bg-light-olive-active:active {
+  background-color: hsl(60, 100%, 72%) !important;
+}
+.bg-light-olive-hover:hover {
+  background-color: hsl(60, 100%, 72%) !important;
+}
+.bg-light-olive-focus:focus {
+  background-color: hsl(60, 100%, 72%) !important;
+}
+.bg-minor-olive {
+  background-color: hsl(60, 100%, 42%) !important;
+}
+.bg-minor-olive-active:active {
+  background-color: hsl(60, 100%, 42%) !important;
+}
+.bg-minor-olive-hover:hover {
+  background-color: hsl(60, 100%, 42%) !important;
+}
+.bg-minor-olive-focus:focus {
+  background-color: hsl(60, 100%, 42%) !important;
+}
+.bg-sat-olive {
+  background-color: hsl(60, 100%, 22%) !important;
+}
+.bg-sat-olive-active:active {
+  background-color: hsl(60, 100%, 22%) !important;
+}
+.bg-sat-olive-hover:hover {
+  background-color: hsl(60, 100%, 22%) !important;
+}
+.bg-sat-olive-focus:focus {
+  background-color: hsl(60, 100%, 22%) !important;
+}
+.bg-dark-olive {
+  background-color: hsl(60, 100%, 12%) !important;
+}
+.bg-dark-olive-active:active {
+  background-color: hsl(60, 100%, 12%) !important;
+}
+.bg-dark-olive-hover:hover {
+  background-color: hsl(60, 100%, 12%) !important;
+}
+.bg-dark-olive-focus:focus {
+  background-color: hsl(60, 100%, 12%) !important;
+}
+.bg-light-steel {
+  background-color: hsl(209, 19%, 87%) !important;
+}
+.bg-light-steel-active:active {
+  background-color: hsl(209, 19%, 87%) !important;
+}
+.bg-light-steel-hover:hover {
+  background-color: hsl(209, 19%, 87%) !important;
+}
+.bg-light-steel-focus:focus {
+  background-color: hsl(209, 19%, 87%) !important;
+}
+.bg-minor-steel {
+  background-color: hsl(209, 19%, 77%) !important;
+}
+.bg-minor-steel-active:active {
+  background-color: hsl(209, 19%, 77%) !important;
+}
+.bg-minor-steel-hover:hover {
+  background-color: hsl(209, 19%, 77%) !important;
+}
+.bg-minor-steel-focus:focus {
+  background-color: hsl(209, 19%, 77%) !important;
+}
+.bg-sat-steel {
+  background-color: hsl(209, 19%, 47%) !important;
+}
+.bg-sat-steel-active:active {
+  background-color: hsl(209, 19%, 47%) !important;
+}
+.bg-sat-steel-hover:hover {
+  background-color: hsl(209, 19%, 47%) !important;
+}
+.bg-sat-steel-focus:focus {
+  background-color: hsl(209, 19%, 47%) !important;
+}
+.bg-dark-steel {
+  background-color: hsl(209, 19%, 37%) !important;
+}
+.bg-dark-steel-active:active {
+  background-color: hsl(209, 19%, 37%) !important;
+}
+.bg-dark-steel-hover:hover {
+  background-color: hsl(209, 19%, 37%) !important;
+}
+.bg-dark-steel-focus:focus {
+  background-color: hsl(209, 19%, 37%) !important;
+}
+.bg-light-mauve {
+  background-color: hsl(277, 100%, 96%) !important;
+}
+.bg-light-mauve-active:active {
+  background-color: hsl(277, 100%, 96%) !important;
+}
+.bg-light-mauve-hover:hover {
+  background-color: hsl(277, 100%, 96%) !important;
+}
+.bg-light-mauve-focus:focus {
+  background-color: hsl(277, 100%, 96%) !important;
+}
+.bg-minor-mauve {
+  background-color: hsl(277, 100%, 90%) !important;
+}
+.bg-minor-mauve-active:active {
+  background-color: hsl(277, 100%, 90%) !important;
+}
+.bg-minor-mauve-hover:hover {
+  background-color: hsl(277, 100%, 90%) !important;
+}
+.bg-minor-mauve-focus:focus {
+  background-color: hsl(277, 100%, 90%) !important;
+}
+.bg-sat-mauve {
+  background-color: hsl(277, 100%, 74%) !important;
+}
+.bg-sat-mauve-active:active {
+  background-color: hsl(277, 100%, 74%) !important;
+}
+.bg-sat-mauve-hover:hover {
+  background-color: hsl(277, 100%, 74%) !important;
+}
+.bg-sat-mauve-focus:focus {
+  background-color: hsl(277, 100%, 74%) !important;
+}
+.bg-dark-mauve {
+  background-color: hsl(277, 100%, 64%) !important;
+}
+.bg-dark-mauve-active:active {
+  background-color: hsl(277, 100%, 64%) !important;
+}
+.bg-dark-mauve-hover:hover {
+  background-color: hsl(277, 100%, 64%) !important;
+}
+.bg-dark-mauve-focus:focus {
+  background-color: hsl(277, 100%, 64%) !important;
+}
+.bg-light-taupe {
+  background-color: hsl(29, 19%, 80%) !important;
+}
+.bg-light-taupe-active:active {
+  background-color: hsl(29, 19%, 80%) !important;
+}
+.bg-light-taupe-hover:hover {
+  background-color: hsl(29, 19%, 80%) !important;
+}
+.bg-light-taupe-focus:focus {
+  background-color: hsl(29, 19%, 80%) !important;
+}
+.bg-minor-taupe {
+  background-color: hsl(29, 19%, 67%) !important;
+}
+.bg-minor-taupe-active:active {
+  background-color: hsl(29, 19%, 67%) !important;
+}
+.bg-minor-taupe-hover:hover {
+  background-color: hsl(29, 19%, 67%) !important;
+}
+.bg-minor-taupe-focus:focus {
+  background-color: hsl(29, 19%, 67%) !important;
+}
+.bg-sat-taupe {
+  background-color: hsl(29, 19%, 40%) !important;
+}
+.bg-sat-taupe-active:active {
+  background-color: hsl(29, 19%, 40%) !important;
+}
+.bg-sat-taupe-hover:hover {
+  background-color: hsl(29, 19%, 40%) !important;
+}
+.bg-sat-taupe-focus:focus {
+  background-color: hsl(29, 19%, 40%) !important;
+}
+.bg-dark-taupe {
+  background-color: hsl(29, 19%, 30%) !important;
+}
+.bg-dark-taupe-active:active {
+  background-color: hsl(29, 19%, 30%) !important;
+}
+.bg-dark-taupe-hover:hover {
+  background-color: hsl(29, 19%, 30%) !important;
+}
+.bg-dark-taupe-focus:focus {
+  background-color: hsl(29, 19%, 30%) !important;
+}
+.bg-light-champagne {
+  background-color: hsl(37, 74%, 98%) !important;
+}
+.bg-light-champagne-active:active {
+  background-color: hsl(37, 74%, 98%) !important;
+}
+.bg-light-champagne-hover:hover {
+  background-color: hsl(37, 74%, 98%) !important;
+}
+.bg-light-champagne-focus:focus {
+  background-color: hsl(37, 74%, 98%) !important;
+}
+.bg-minor-champagne {
+  background-color: hsl(37, 74%, 93%) !important;
+}
+.bg-minor-champagne-active:active {
+  background-color: hsl(37, 74%, 93%) !important;
+}
+.bg-minor-champagne-hover:hover {
+  background-color: hsl(37, 74%, 93%) !important;
+}
+.bg-minor-champagne-focus:focus {
+  background-color: hsl(37, 74%, 93%) !important;
+}
+.bg-sat-champagne {
+  background-color: hsl(37, 74%, 78%) !important;
+}
+.bg-sat-champagne-active:active {
+  background-color: hsl(37, 74%, 78%) !important;
+}
+.bg-sat-champagne-hover:hover {
+  background-color: hsl(37, 74%, 78%) !important;
+}
+.bg-sat-champagne-focus:focus {
+  background-color: hsl(37, 74%, 78%) !important;
+}
+.bg-dark-champagne {
+  background-color: hsl(37, 74%, 68%) !important;
+}
+.bg-dark-champagne-active:active {
+  background-color: hsl(37, 74%, 68%) !important;
+}
+.bg-dark-champagne-hover:hover {
+  background-color: hsl(37, 74%, 68%) !important;
+}
+.bg-dark-champagne-focus:focus {
+  background-color: hsl(37, 74%, 68%) !important;
+}
+.bg-light-khaki {
+  background-color: hsl(47, 47%, 94%) !important;
+}
+.bg-light-khaki-active:active {
+  background-color: hsl(47, 47%, 94%) !important;
+}
+.bg-light-khaki-hover:hover {
+  background-color: hsl(47, 47%, 94%) !important;
+}
+.bg-light-khaki-focus:focus {
+  background-color: hsl(47, 47%, 94%) !important;
+}
+.bg-minor-khaki {
+  background-color: hsl(47, 47%, 84%) !important;
+}
+.bg-minor-khaki-active:active {
+  background-color: hsl(47, 47%, 84%) !important;
+}
+.bg-minor-khaki-hover:hover {
+  background-color: hsl(47, 47%, 84%) !important;
+}
+.bg-minor-khaki-focus:focus {
+  background-color: hsl(47, 47%, 84%) !important;
+}
+.bg-sat-khaki {
+  background-color: hsl(47, 47%, 59%) !important;
+}
+.bg-sat-khaki-active:active {
+  background-color: hsl(47, 47%, 59%) !important;
+}
+.bg-sat-khaki-hover:hover {
+  background-color: hsl(47, 47%, 59%) !important;
+}
+.bg-sat-khaki-focus:focus {
+  background-color: hsl(47, 47%, 59%) !important;
+}
+.bg-dark-khaki {
+  background-color: hsl(47, 47%, 49%) !important;
+}
+.bg-dark-khaki-active:active {
+  background-color: hsl(47, 47%, 49%) !important;
+}
+.bg-dark-khaki-hover:hover {
+  background-color: hsl(47, 47%, 49%) !important;
+}
+.bg-dark-khaki-focus:focus {
+  background-color: hsl(47, 47%, 49%) !important;
+}
+.bg-light-charcoal {
+  background-color: hsl(0, 0%, 85%) !important;
+}
+.bg-light-charcoal-active:active {
+  background-color: hsl(0, 0%, 85%) !important;
+}
+.bg-light-charcoal-hover:hover {
+  background-color: hsl(0, 0%, 85%) !important;
+}
+.bg-light-charcoal-focus:focus {
+  background-color: hsl(0, 0%, 85%) !important;
+}
+.bg-minor-charcoal {
+  background-color: hsl(0, 0%, 75%) !important;
+}
+.bg-minor-charcoal-active:active {
+  background-color: hsl(0, 0%, 75%) !important;
+}
+.bg-minor-charcoal-hover:hover {
+  background-color: hsl(0, 0%, 75%) !important;
+}
+.bg-minor-charcoal-focus:focus {
+  background-color: hsl(0, 0%, 75%) !important;
+}
+.bg-sat-charcoal {
+  background-color: hsl(0, 0%, 50%) !important;
+}
+.bg-sat-charcoal-active:active {
+  background-color: hsl(0, 0%, 50%) !important;
+}
+.bg-sat-charcoal-hover:hover {
+  background-color: hsl(0, 0%, 50%) !important;
+}
+.bg-sat-charcoal-focus:focus {
+  background-color: hsl(0, 0%, 50%) !important;
+}
+.bg-dark-charcoal {
+  background-color: hsl(0, 0%, 40%) !important;
+}
+.bg-dark-charcoal-active:active {
+  background-color: hsl(0, 0%, 40%) !important;
+}
+.bg-dark-charcoal-hover:hover {
+  background-color: hsl(0, 0%, 40%) !important;
+}
+.bg-dark-charcoal-focus:focus {
+  background-color: hsl(0, 0%, 40%) !important;
+}
+.bg-light-bronze {
+  background-color: hsl(29, 75%, 87%) !important;
+}
+.bg-light-bronze-active:active {
+  background-color: hsl(29, 75%, 87%) !important;
+}
+.bg-light-bronze-hover:hover {
+  background-color: hsl(29, 75%, 87%) !important;
+}
+.bg-light-bronze-focus:focus {
+  background-color: hsl(29, 75%, 87%) !important;
+}
+.bg-minor-bronze {
+  background-color: hsl(29, 75%, 72%) !important;
+}
+.bg-minor-bronze-active:active {
+  background-color: hsl(29, 75%, 72%) !important;
+}
+.bg-minor-bronze-hover:hover {
+  background-color: hsl(29, 75%, 72%) !important;
+}
+.bg-minor-bronze-focus:focus {
+  background-color: hsl(29, 75%, 72%) !important;
+}
+.bg-sat-bronze {
+  background-color: hsl(29, 75%, 47%) !important;
+}
+.bg-sat-bronze-active:active {
+  background-color: hsl(29, 75%, 47%) !important;
+}
+.bg-sat-bronze-hover:hover {
+  background-color: hsl(29, 75%, 47%) !important;
+}
+.bg-sat-bronze-focus:focus {
+  background-color: hsl(29, 75%, 47%) !important;
+}
+.bg-dark-bronze {
+  background-color: hsl(29, 75%, 37%) !important;
+}
+.bg-dark-bronze-active:active {
+  background-color: hsl(29, 75%, 37%) !important;
+}
+.bg-dark-bronze-hover:hover {
+  background-color: hsl(29, 75%, 37%) !important;
+}
+.bg-dark-bronze-focus:focus {
+  background-color: hsl(29, 75%, 37%) !important;
+}
+.bg-light-windstorm {
+  background-color: hsl(216, 53%, 93%) !important;
+}
+.bg-light-windstorm-active:active {
+  background-color: hsl(216, 53%, 93%) !important;
+}
+.bg-light-windstorm-hover:hover {
+  background-color: hsl(216, 53%, 93%) !important;
+}
+.bg-light-windstorm-focus:focus {
+  background-color: hsl(216, 53%, 93%) !important;
+}
+.bg-minor-windstorm {
+  background-color: hsl(216, 53%, 81%) !important;
+}
+.bg-minor-windstorm-active:active {
+  background-color: hsl(216, 53%, 81%) !important;
+}
+.bg-minor-windstorm-hover:hover {
+  background-color: hsl(216, 53%, 81%) !important;
+}
+.bg-minor-windstorm-focus:focus {
+  background-color: hsl(216, 53%, 81%) !important;
+}
+.bg-sat-windstorm {
+  background-color: hsl(216, 53%, 56%) !important;
+}
+.bg-sat-windstorm-active:active {
+  background-color: hsl(216, 53%, 56%) !important;
+}
+.bg-sat-windstorm-hover:hover {
+  background-color: hsl(216, 53%, 56%) !important;
+}
+.bg-sat-windstorm-focus:focus {
+  background-color: hsl(216, 53%, 56%) !important;
+}
+.bg-dark-windstorm {
+  background-color: hsl(216, 53%, 46%) !important;
+}
+.bg-dark-windstorm-active:active {
+  background-color: hsl(216, 53%, 46%) !important;
+}
+.bg-dark-windstorm-hover:hover {
+  background-color: hsl(216, 53%, 46%) !important;
+}
+.bg-dark-windstorm-focus:focus {
+  background-color: hsl(216, 53%, 46%) !important;
+}
+.bg-light-nude {
+  background-color: hsl(29, 79%, 97%) !important;
+}
+.bg-light-nude-active:active {
+  background-color: hsl(29, 79%, 97%) !important;
+}
+.bg-light-nude-hover:hover {
+  background-color: hsl(29, 79%, 97%) !important;
+}
+.bg-light-nude-focus:focus {
+  background-color: hsl(29, 79%, 97%) !important;
+}
+.bg-minor-nude {
+  background-color: hsl(29, 79%, 92%) !important;
+}
+.bg-minor-nude-active:active {
+  background-color: hsl(29, 79%, 92%) !important;
+}
+.bg-minor-nude-hover:hover {
+  background-color: hsl(29, 79%, 92%) !important;
+}
+.bg-minor-nude-focus:focus {
+  background-color: hsl(29, 79%, 92%) !important;
+}
+.bg-sat-nude {
+  background-color: hsl(29, 79%, 75%) !important;
+}
+.bg-sat-nude-active:active {
+  background-color: hsl(29, 79%, 75%) !important;
+}
+.bg-sat-nude-hover:hover {
+  background-color: hsl(29, 79%, 75%) !important;
+}
+.bg-sat-nude-focus:focus {
+  background-color: hsl(29, 79%, 75%) !important;
+}
+.bg-dark-nude {
+  background-color: hsl(29, 79%, 65%) !important;
+}
+.bg-dark-nude-active:active {
+  background-color: hsl(29, 79%, 65%) !important;
+}
+.bg-dark-nude-hover:hover {
+  background-color: hsl(29, 79%, 65%) !important;
+}
+.bg-dark-nude-focus:focus {
+  background-color: hsl(29, 79%, 65%) !important;
+}
+.bg-light-terracotta {
+  background-color: hsl(10, 76%, 85%) !important;
+}
+.bg-light-terracotta-active:active {
+  background-color: hsl(10, 76%, 85%) !important;
+}
+.bg-light-terracotta-hover:hover {
+  background-color: hsl(10, 76%, 85%) !important;
+}
+.bg-light-terracotta-focus:focus {
+  background-color: hsl(10, 76%, 85%) !important;
+}
+.bg-minor-terracotta {
+  background-color: hsl(10, 76%, 70%) !important;
+}
+.bg-minor-terracotta-active:active {
+  background-color: hsl(10, 76%, 70%) !important;
+}
+.bg-minor-terracotta-hover:hover {
+  background-color: hsl(10, 76%, 70%) !important;
+}
+.bg-minor-terracotta-focus:focus {
+  background-color: hsl(10, 76%, 70%) !important;
+}
+.bg-sat-terracotta {
+  background-color: hsl(10, 76%, 45%) !important;
+}
+.bg-sat-terracotta-active:active {
+  background-color: hsl(10, 76%, 45%) !important;
+}
+.bg-sat-terracotta-hover:hover {
+  background-color: hsl(10, 76%, 45%) !important;
+}
+.bg-sat-terracotta-focus:focus {
+  background-color: hsl(10, 76%, 45%) !important;
+}
+.bg-dark-terracotta {
+  background-color: hsl(10, 76%, 35%) !important;
+}
+.bg-dark-terracotta-active:active {
+  background-color: hsl(10, 76%, 35%) !important;
+}
+.bg-dark-terracotta-hover:hover {
+  background-color: hsl(10, 76%, 35%) !important;
+}
+.bg-dark-terracotta-focus:focus {
+  background-color: hsl(10, 76%, 35%) !important;
+}
+.bg-light-coral {
+  background-color: hsl(16, 100%, 92%) !important;
+}
+.bg-light-coral-active:active {
+  background-color: hsl(16, 100%, 92%) !important;
+}
+.bg-light-coral-hover:hover {
+  background-color: hsl(16, 100%, 92%) !important;
+}
+.bg-light-coral-focus:focus {
+  background-color: hsl(16, 100%, 92%) !important;
+}
+.bg-minor-coral {
+  background-color: hsl(16, 100%, 82%) !important;
+}
+.bg-minor-coral-active:active {
+  background-color: hsl(16, 100%, 82%) !important;
+}
+.bg-minor-coral-hover:hover {
+  background-color: hsl(16, 100%, 82%) !important;
+}
+.bg-minor-coral-focus:focus {
+  background-color: hsl(16, 100%, 82%) !important;
+}
+.bg-sat-coral {
+  background-color: hsl(16, 100%, 57%) !important;
+}
+.bg-sat-coral-active:active {
+  background-color: hsl(16, 100%, 57%) !important;
+}
+.bg-sat-coral-hover:hover {
+  background-color: hsl(16, 100%, 57%) !important;
+}
+.bg-sat-coral-focus:focus {
+  background-color: hsl(16, 100%, 57%) !important;
+}
+.bg-dark-coral {
+  background-color: hsl(16, 100%, 47%) !important;
+}
+.bg-dark-coral-active:active {
+  background-color: hsl(16, 100%, 47%) !important;
+}
+.bg-dark-coral-hover:hover {
+  background-color: hsl(16, 100%, 47%) !important;
+}
+.bg-dark-coral-focus:focus {
+  background-color: hsl(16, 100%, 47%) !important;
+}
+.bg-light-army {
+  background-color: hsl(69, 34%, 65%) !important;
+}
+.bg-light-army-active:active {
+  background-color: hsl(69, 34%, 65%) !important;
+}
+.bg-light-army-hover:hover {
+  background-color: hsl(69, 34%, 65%) !important;
+}
+.bg-light-army-focus:focus {
+  background-color: hsl(69, 34%, 65%) !important;
+}
+.bg-minor-army {
+  background-color: hsl(69, 34%, 47%) !important;
+}
+.bg-minor-army-active:active {
+  background-color: hsl(69, 34%, 47%) !important;
+}
+.bg-minor-army-hover:hover {
+  background-color: hsl(69, 34%, 47%) !important;
+}
+.bg-minor-army-focus:focus {
+  background-color: hsl(69, 34%, 47%) !important;
+}
+.bg-sat-army {
+  background-color: hsl(69, 34%, 20%) !important;
+}
+.bg-sat-army-active:active {
+  background-color: hsl(69, 34%, 20%) !important;
+}
+.bg-sat-army-hover:hover {
+  background-color: hsl(69, 34%, 20%) !important;
+}
+.bg-sat-army-focus:focus {
+  background-color: hsl(69, 34%, 20%) !important;
+}
+.bg-dark-army {
+  background-color: hsl(69, 34%, 10%) !important;
+}
+.bg-dark-army-active:active {
+  background-color: hsl(69, 34%, 10%) !important;
+}
+.bg-dark-army-hover:hover {
+  background-color: hsl(69, 34%, 10%) !important;
+}
+.bg-dark-army-focus:focus {
+  background-color: hsl(69, 34%, 10%) !important;
+}
+.bg-light-seashell {
+  background-color: hsl(25, 100%, 98%) !important;
+}
+.bg-light-seashell-active:active {
+  background-color: hsl(25, 100%, 98%) !important;
+}
+.bg-light-seashell-hover:hover {
+  background-color: hsl(25, 100%, 98%) !important;
+}
+.bg-light-seashell-focus:focus {
+  background-color: hsl(25, 100%, 98%) !important;
+}
+.bg-minor-seashell {
+  background-color: hsl(25, 100%, 97%) !important;
+}
+.bg-minor-seashell-active:active {
+  background-color: hsl(25, 100%, 97%) !important;
+}
+.bg-minor-seashell-hover:hover {
+  background-color: hsl(25, 100%, 97%) !important;
+}
+.bg-minor-seashell-focus:focus {
+  background-color: hsl(25, 100%, 97%) !important;
+}
+.bg-sat-seashell {
+  background-color: hsl(25, 100%, 85%) !important;
+}
+.bg-sat-seashell-active:active {
+  background-color: hsl(25, 100%, 85%) !important;
+}
+.bg-sat-seashell-hover:hover {
+  background-color: hsl(25, 100%, 85%) !important;
+}
+.bg-sat-seashell-focus:focus {
+  background-color: hsl(25, 100%, 85%) !important;
+}
+.bg-dark-seashell {
+  background-color: hsl(25, 100%, 75%) !important;
+}
+.bg-dark-seashell-active:active {
+  background-color: hsl(25, 100%, 75%) !important;
+}
+.bg-dark-seashell-hover:hover {
+  background-color: hsl(25, 100%, 75%) !important;
+}
+.bg-dark-seashell-focus:focus {
+  background-color: hsl(25, 100%, 75%) !important;
+}
+.bg-light-sand {
+  background-color: hsl(45, 71%, 96%) !important;
+}
+.bg-light-sand-active:active {
+  background-color: hsl(45, 71%, 96%) !important;
+}
+.bg-light-sand-hover:hover {
+  background-color: hsl(45, 71%, 96%) !important;
+}
+.bg-light-sand-focus:focus {
+  background-color: hsl(45, 71%, 96%) !important;
+}
+.bg-minor-sand {
+  background-color: hsl(45, 71%, 88%) !important;
+}
+.bg-minor-sand-active:active {
+  background-color: hsl(45, 71%, 88%) !important;
+}
+.bg-minor-sand-hover:hover {
+  background-color: hsl(45, 71%, 88%) !important;
+}
+.bg-minor-sand-focus:focus {
+  background-color: hsl(45, 71%, 88%) !important;
+}
+.bg-sat-sand {
+  background-color: hsl(45, 71%, 71%) !important;
+}
+.bg-sat-sand-active:active {
+  background-color: hsl(45, 71%, 71%) !important;
+}
+.bg-sat-sand-hover:hover {
+  background-color: hsl(45, 71%, 71%) !important;
+}
+.bg-sat-sand-focus:focus {
+  background-color: hsl(45, 71%, 71%) !important;
+}
+.bg-dark-sand {
+  background-color: hsl(45, 71%, 61%) !important;
+}
+.bg-dark-sand-active:active {
+  background-color: hsl(45, 71%, 61%) !important;
+}
+.bg-dark-sand-hover:hover {
+  background-color: hsl(45, 71%, 61%) !important;
+}
+.bg-dark-sand-focus:focus {
+  background-color: hsl(45, 71%, 61%) !important;
+}
 :root {
   --gm-value: 16px;
 }
@@ -32342,6 +33926,1590 @@ hr.fat {
 .fg-sand-focus:focus {
   color: hsl(45, 71%, 81%) !important;
 }
+.fg-light-lime {
+  color: hsl(93, 97%, 91%) !important;
+}
+.fg-light-lime-active:active {
+  color: hsl(93, 97%, 91%) !important;
+}
+.fg-light-lime-hover:hover {
+  color: hsl(93, 97%, 91%) !important;
+}
+.fg-light-lime-focus:focus {
+  color: hsl(93, 97%, 91%) !important;
+}
+.fg-minor-lime {
+  color: hsl(93, 97%, 81%) !important;
+}
+.fg-minor-lime-active:active {
+  color: hsl(93, 97%, 81%) !important;
+}
+.fg-minor-lime-hover:hover {
+  color: hsl(93, 97%, 81%) !important;
+}
+.fg-minor-lime-focus:focus {
+  color: hsl(93, 97%, 81%) !important;
+}
+.fg-sat-lime {
+  color: hsl(93, 97%, 61%) !important;
+}
+.fg-sat-lime-active:active {
+  color: hsl(93, 97%, 61%) !important;
+}
+.fg-sat-lime-hover:hover {
+  color: hsl(93, 97%, 61%) !important;
+}
+.fg-sat-lime-focus:focus {
+  color: hsl(93, 97%, 61%) !important;
+}
+.fg-dark-lime {
+  color: hsl(93, 97%, 51%) !important;
+}
+.fg-dark-lime-active:active {
+  color: hsl(93, 97%, 51%) !important;
+}
+.fg-dark-lime-hover:hover {
+  color: hsl(93, 97%, 51%) !important;
+}
+.fg-dark-lime-focus:focus {
+  color: hsl(93, 97%, 51%) !important;
+}
+.fg-light-green {
+  color: hsl(120, 100%, 75%) !important;
+}
+.fg-light-green-active:active {
+  color: hsl(120, 100%, 75%) !important;
+}
+.fg-light-green-hover:hover {
+  color: hsl(120, 100%, 75%) !important;
+}
+.fg-light-green-focus:focus {
+  color: hsl(120, 100%, 75%) !important;
+}
+.fg-minor-green {
+  color: hsl(120, 100%, 45%) !important;
+}
+.fg-minor-green-active:active {
+  color: hsl(120, 100%, 45%) !important;
+}
+.fg-minor-green-hover:hover {
+  color: hsl(120, 100%, 45%) !important;
+}
+.fg-minor-green-focus:focus {
+  color: hsl(120, 100%, 45%) !important;
+}
+.fg-sat-green {
+  color: hsl(120, 100%, 25%) !important;
+}
+.fg-sat-green-active:active {
+  color: hsl(120, 100%, 25%) !important;
+}
+.fg-sat-green-hover:hover {
+  color: hsl(120, 100%, 25%) !important;
+}
+.fg-sat-green-focus:focus {
+  color: hsl(120, 100%, 25%) !important;
+}
+.fg-dark-green {
+  color: hsl(120, 100%, 15%) !important;
+}
+.fg-dark-green-active:active {
+  color: hsl(120, 100%, 15%) !important;
+}
+.fg-dark-green-hover:hover {
+  color: hsl(120, 100%, 15%) !important;
+}
+.fg-dark-green-focus:focus {
+  color: hsl(120, 100%, 15%) !important;
+}
+.fg-light-emerald {
+  color: hsl(140, 52%, 85%) !important;
+}
+.fg-light-emerald-active:active {
+  color: hsl(140, 52%, 85%) !important;
+}
+.fg-light-emerald-hover:hover {
+  color: hsl(140, 52%, 85%) !important;
+}
+.fg-light-emerald-focus:focus {
+  color: hsl(140, 52%, 85%) !important;
+}
+.fg-minor-emerald {
+  color: hsl(140, 52%, 65%) !important;
+}
+.fg-minor-emerald-active:active {
+  color: hsl(140, 52%, 65%) !important;
+}
+.fg-minor-emerald-hover:hover {
+  color: hsl(140, 52%, 65%) !important;
+}
+.fg-minor-emerald-focus:focus {
+  color: hsl(140, 52%, 65%) !important;
+}
+.fg-sat-emerald {
+  color: hsl(140, 52%, 45%) !important;
+}
+.fg-sat-emerald-active:active {
+  color: hsl(140, 52%, 45%) !important;
+}
+.fg-sat-emerald-hover:hover {
+  color: hsl(140, 52%, 45%) !important;
+}
+.fg-sat-emerald-focus:focus {
+  color: hsl(140, 52%, 45%) !important;
+}
+.fg-dark-emerald {
+  color: hsl(140, 52%, 35%) !important;
+}
+.fg-dark-emerald-active:active {
+  color: hsl(140, 52%, 35%) !important;
+}
+.fg-dark-emerald-hover:hover {
+  color: hsl(140, 52%, 35%) !important;
+}
+.fg-dark-emerald-focus:focus {
+  color: hsl(140, 52%, 35%) !important;
+}
+.fg-light-blue {
+  color: hsl(225, 100%, 93%) !important;
+}
+.fg-light-blue-active:active {
+  color: hsl(225, 100%, 93%) !important;
+}
+.fg-light-blue-hover:hover {
+  color: hsl(225, 100%, 93%) !important;
+}
+.fg-light-blue-focus:focus {
+  color: hsl(225, 100%, 93%) !important;
+}
+.fg-minor-blue {
+  color: hsl(225, 100%, 78%) !important;
+}
+.fg-minor-blue-active:active {
+  color: hsl(225, 100%, 78%) !important;
+}
+.fg-minor-blue-hover:hover {
+  color: hsl(225, 100%, 78%) !important;
+}
+.fg-minor-blue-focus:focus {
+  color: hsl(225, 100%, 78%) !important;
+}
+.fg-sat-blue {
+  color: hsl(225, 100%, 58%) !important;
+}
+.fg-sat-blue-active:active {
+  color: hsl(225, 100%, 58%) !important;
+}
+.fg-sat-blue-hover:hover {
+  color: hsl(225, 100%, 58%) !important;
+}
+.fg-sat-blue-focus:focus {
+  color: hsl(225, 100%, 58%) !important;
+}
+.fg-dark-blue {
+  color: hsl(225, 100%, 48%) !important;
+}
+.fg-dark-blue-active:active {
+  color: hsl(225, 100%, 48%) !important;
+}
+.fg-dark-blue-hover:hover {
+  color: hsl(225, 100%, 48%) !important;
+}
+.fg-dark-blue-focus:focus {
+  color: hsl(225, 100%, 48%) !important;
+}
+.fg-light-teal {
+  color: hsl(180, 77%, 74%) !important;
+}
+.fg-light-teal-active:active {
+  color: hsl(180, 77%, 74%) !important;
+}
+.fg-light-teal-hover:hover {
+  color: hsl(180, 77%, 74%) !important;
+}
+.fg-light-teal-focus:focus {
+  color: hsl(180, 77%, 74%) !important;
+}
+.fg-minor-teal {
+  color: hsl(180, 77%, 54%) !important;
+}
+.fg-minor-teal-active:active {
+  color: hsl(180, 77%, 54%) !important;
+}
+.fg-minor-teal-hover:hover {
+  color: hsl(180, 77%, 54%) !important;
+}
+.fg-minor-teal-focus:focus {
+  color: hsl(180, 77%, 54%) !important;
+}
+.fg-sat-teal {
+  color: hsl(180, 77%, 34%) !important;
+}
+.fg-sat-teal-active:active {
+  color: hsl(180, 77%, 34%) !important;
+}
+.fg-sat-teal-hover:hover {
+  color: hsl(180, 77%, 34%) !important;
+}
+.fg-sat-teal-focus:focus {
+  color: hsl(180, 77%, 34%) !important;
+}
+.fg-dark-teal {
+  color: hsl(180, 77%, 24%) !important;
+}
+.fg-dark-teal-active:active {
+  color: hsl(180, 77%, 24%) !important;
+}
+.fg-dark-teal-hover:hover {
+  color: hsl(180, 77%, 24%) !important;
+}
+.fg-dark-teal-focus:focus {
+  color: hsl(180, 77%, 24%) !important;
+}
+.fg-light-cyan {
+  color: hsl(221, 100%, 94%) !important;
+}
+.fg-light-cyan-active:active {
+  color: hsl(221, 100%, 94%) !important;
+}
+.fg-light-cyan-hover:hover {
+  color: hsl(221, 100%, 94%) !important;
+}
+.fg-light-cyan-focus:focus {
+  color: hsl(221, 100%, 94%) !important;
+}
+.fg-minor-cyan {
+  color: hsl(221, 100%, 89%) !important;
+}
+.fg-minor-cyan-active:active {
+  color: hsl(221, 100%, 89%) !important;
+}
+.fg-minor-cyan-hover:hover {
+  color: hsl(221, 100%, 89%) !important;
+}
+.fg-minor-cyan-focus:focus {
+  color: hsl(221, 100%, 89%) !important;
+}
+.fg-sat-cyan {
+  color: hsl(221, 100%, 69%) !important;
+}
+.fg-sat-cyan-active:active {
+  color: hsl(221, 100%, 69%) !important;
+}
+.fg-sat-cyan-hover:hover {
+  color: hsl(221, 100%, 69%) !important;
+}
+.fg-sat-cyan-focus:focus {
+  color: hsl(221, 100%, 69%) !important;
+}
+.fg-dark-cyan {
+  color: hsl(221, 100%, 59%) !important;
+}
+.fg-dark-cyan-active:active {
+  color: hsl(221, 100%, 59%) !important;
+}
+.fg-dark-cyan-hover:hover {
+  color: hsl(221, 100%, 59%) !important;
+}
+.fg-dark-cyan-focus:focus {
+  color: hsl(221, 100%, 59%) !important;
+}
+.fg-light-cobalt {
+  color: hsl(215, 100%, 74%) !important;
+}
+.fg-light-cobalt-active:active {
+  color: hsl(215, 100%, 74%) !important;
+}
+.fg-light-cobalt-hover:hover {
+  color: hsl(215, 100%, 74%) !important;
+}
+.fg-light-cobalt-focus:focus {
+  color: hsl(215, 100%, 74%) !important;
+}
+.fg-minor-cobalt {
+  color: hsl(215, 100%, 44%) !important;
+}
+.fg-minor-cobalt-active:active {
+  color: hsl(215, 100%, 44%) !important;
+}
+.fg-minor-cobalt-hover:hover {
+  color: hsl(215, 100%, 44%) !important;
+}
+.fg-minor-cobalt-focus:focus {
+  color: hsl(215, 100%, 44%) !important;
+}
+.fg-sat-cobalt {
+  color: hsl(215, 100%, 24%) !important;
+}
+.fg-sat-cobalt-active:active {
+  color: hsl(215, 100%, 24%) !important;
+}
+.fg-sat-cobalt-hover:hover {
+  color: hsl(215, 100%, 24%) !important;
+}
+.fg-sat-cobalt-focus:focus {
+  color: hsl(215, 100%, 24%) !important;
+}
+.fg-dark-cobalt {
+  color: hsl(215, 100%, 14%) !important;
+}
+.fg-dark-cobalt-active:active {
+  color: hsl(215, 100%, 14%) !important;
+}
+.fg-dark-cobalt-hover:hover {
+  color: hsl(215, 100%, 14%) !important;
+}
+.fg-dark-cobalt-focus:focus {
+  color: hsl(215, 100%, 14%) !important;
+}
+.fg-light-indigo {
+  color: hsl(276, 100%, 73%) !important;
+}
+.fg-light-indigo-active:active {
+  color: hsl(276, 100%, 73%) !important;
+}
+.fg-light-indigo-hover:hover {
+  color: hsl(276, 100%, 73%) !important;
+}
+.fg-light-indigo-focus:focus {
+  color: hsl(276, 100%, 73%) !important;
+}
+.fg-minor-indigo {
+  color: hsl(276, 100%, 43%) !important;
+}
+.fg-minor-indigo-active:active {
+  color: hsl(276, 100%, 43%) !important;
+}
+.fg-minor-indigo-hover:hover {
+  color: hsl(276, 100%, 43%) !important;
+}
+.fg-minor-indigo-focus:focus {
+  color: hsl(276, 100%, 43%) !important;
+}
+.fg-sat-indigo {
+  color: hsl(276, 100%, 23%) !important;
+}
+.fg-sat-indigo-active:active {
+  color: hsl(276, 100%, 23%) !important;
+}
+.fg-sat-indigo-hover:hover {
+  color: hsl(276, 100%, 23%) !important;
+}
+.fg-sat-indigo-focus:focus {
+  color: hsl(276, 100%, 23%) !important;
+}
+.fg-dark-indigo {
+  color: hsl(276, 100%, 13%) !important;
+}
+.fg-dark-indigo-active:active {
+  color: hsl(276, 100%, 13%) !important;
+}
+.fg-dark-indigo-hover:hover {
+  color: hsl(276, 100%, 13%) !important;
+}
+.fg-dark-indigo-focus:focus {
+  color: hsl(276, 100%, 13%) !important;
+}
+.fg-light-almost {
+  color: hsl(259, 84%, 85%) !important;
+}
+.fg-light-almost-active:active {
+  color: hsl(259, 84%, 85%) !important;
+}
+.fg-light-almost-hover:hover {
+  color: hsl(259, 84%, 85%) !important;
+}
+.fg-light-almost-focus:focus {
+  color: hsl(259, 84%, 85%) !important;
+}
+.fg-minor-almost {
+  color: hsl(259, 84%, 65%) !important;
+}
+.fg-minor-almost-active:active {
+  color: hsl(259, 84%, 65%) !important;
+}
+.fg-minor-almost-hover:hover {
+  color: hsl(259, 84%, 65%) !important;
+}
+.fg-minor-almost-focus:focus {
+  color: hsl(259, 84%, 65%) !important;
+}
+.fg-sat-almost {
+  color: hsl(259, 84%, 45%) !important;
+}
+.fg-sat-almost-active:active {
+  color: hsl(259, 84%, 45%) !important;
+}
+.fg-sat-almost-hover:hover {
+  color: hsl(259, 84%, 45%) !important;
+}
+.fg-sat-almost-focus:focus {
+  color: hsl(259, 84%, 45%) !important;
+}
+.fg-dark-almost {
+  color: hsl(259, 84%, 35%) !important;
+}
+.fg-dark-almost-active:active {
+  color: hsl(259, 84%, 35%) !important;
+}
+.fg-dark-almost-hover:hover {
+  color: hsl(259, 84%, 35%) !important;
+}
+.fg-dark-almost-focus:focus {
+  color: hsl(259, 84%, 35%) !important;
+}
+.fg-light-violet {
+  color: hsl(300, 76%, 92%) !important;
+}
+.fg-light-violet-active:active {
+  color: hsl(300, 76%, 92%) !important;
+}
+.fg-light-violet-hover:hover {
+  color: hsl(300, 76%, 92%) !important;
+}
+.fg-light-violet-focus:focus {
+  color: hsl(300, 76%, 92%) !important;
+}
+.fg-minor-violet {
+  color: hsl(300, 76%, 82%) !important;
+}
+.fg-minor-violet-active:active {
+  color: hsl(300, 76%, 82%) !important;
+}
+.fg-minor-violet-hover:hover {
+  color: hsl(300, 76%, 82%) !important;
+}
+.fg-minor-violet-focus:focus {
+  color: hsl(300, 76%, 82%) !important;
+}
+.fg-sat-violet {
+  color: hsl(300, 76%, 62%) !important;
+}
+.fg-sat-violet-active:active {
+  color: hsl(300, 76%, 62%) !important;
+}
+.fg-sat-violet-hover:hover {
+  color: hsl(300, 76%, 62%) !important;
+}
+.fg-sat-violet-focus:focus {
+  color: hsl(300, 76%, 62%) !important;
+}
+.fg-dark-violet {
+  color: hsl(300, 76%, 52%) !important;
+}
+.fg-dark-violet-active:active {
+  color: hsl(300, 76%, 52%) !important;
+}
+.fg-dark-violet-hover:hover {
+  color: hsl(300, 76%, 52%) !important;
+}
+.fg-dark-violet-focus:focus {
+  color: hsl(300, 76%, 52%) !important;
+}
+.fg-light-pink {
+  color: hsl(350, 100%, 98%) !important;
+}
+.fg-light-pink-active:active {
+  color: hsl(350, 100%, 98%) !important;
+}
+.fg-light-pink-hover:hover {
+  color: hsl(350, 100%, 98%) !important;
+}
+.fg-light-pink-focus:focus {
+  color: hsl(350, 100%, 98%) !important;
+}
+.fg-minor-pink {
+  color: hsl(350, 100%, 93%) !important;
+}
+.fg-minor-pink-active:active {
+  color: hsl(350, 100%, 93%) !important;
+}
+.fg-minor-pink-hover:hover {
+  color: hsl(350, 100%, 93%) !important;
+}
+.fg-minor-pink-focus:focus {
+  color: hsl(350, 100%, 93%) !important;
+}
+.fg-sat-pink {
+  color: hsl(350, 100%, 78%) !important;
+}
+.fg-sat-pink-active:active {
+  color: hsl(350, 100%, 78%) !important;
+}
+.fg-sat-pink-hover:hover {
+  color: hsl(350, 100%, 78%) !important;
+}
+.fg-sat-pink-focus:focus {
+  color: hsl(350, 100%, 78%) !important;
+}
+.fg-dark-pink {
+  color: hsl(350, 100%, 68%) !important;
+}
+.fg-dark-pink-active:active {
+  color: hsl(350, 100%, 68%) !important;
+}
+.fg-dark-pink-hover:hover {
+  color: hsl(350, 100%, 68%) !important;
+}
+.fg-dark-pink-focus:focus {
+  color: hsl(350, 100%, 68%) !important;
+}
+.fg-light-magenta {
+  color: hsl(300, 100%, 90%) !important;
+}
+.fg-light-magenta-active:active {
+  color: hsl(300, 100%, 90%) !important;
+}
+.fg-light-magenta-hover:hover {
+  color: hsl(300, 100%, 90%) !important;
+}
+.fg-light-magenta-focus:focus {
+  color: hsl(300, 100%, 90%) !important;
+}
+.fg-minor-magenta {
+  color: hsl(300, 100%, 70%) !important;
+}
+.fg-minor-magenta-active:active {
+  color: hsl(300, 100%, 70%) !important;
+}
+.fg-minor-magenta-hover:hover {
+  color: hsl(300, 100%, 70%) !important;
+}
+.fg-minor-magenta-focus:focus {
+  color: hsl(300, 100%, 70%) !important;
+}
+.fg-sat-magenta {
+  color: hsl(300, 100%, 40%) !important;
+}
+.fg-sat-magenta-active:active {
+  color: hsl(300, 100%, 40%) !important;
+}
+.fg-sat-magenta-hover:hover {
+  color: hsl(300, 100%, 40%) !important;
+}
+.fg-sat-magenta-focus:focus {
+  color: hsl(300, 100%, 40%) !important;
+}
+.fg-dark-magenta {
+  color: hsl(300, 100%, 30%) !important;
+}
+.fg-dark-magenta-active:active {
+  color: hsl(300, 100%, 30%) !important;
+}
+.fg-dark-magenta-hover:hover {
+  color: hsl(300, 100%, 30%) !important;
+}
+.fg-dark-magenta-focus:focus {
+  color: hsl(300, 100%, 30%) !important;
+}
+.fg-light-crimson {
+  color: hsl(348, 88%, 81%) !important;
+}
+.fg-light-crimson-active:active {
+  color: hsl(348, 88%, 81%) !important;
+}
+.fg-light-crimson-hover:hover {
+  color: hsl(348, 88%, 81%) !important;
+}
+.fg-light-crimson-focus:focus {
+  color: hsl(348, 88%, 81%) !important;
+}
+.fg-minor-crimson {
+  color: hsl(348, 88%, 66%) !important;
+}
+.fg-minor-crimson-active:active {
+  color: hsl(348, 88%, 66%) !important;
+}
+.fg-minor-crimson-hover:hover {
+  color: hsl(348, 88%, 66%) !important;
+}
+.fg-minor-crimson-focus:focus {
+  color: hsl(348, 88%, 66%) !important;
+}
+.fg-sat-crimson {
+  color: hsl(348, 88%, 36%) !important;
+}
+.fg-sat-crimson-active:active {
+  color: hsl(348, 88%, 36%) !important;
+}
+.fg-sat-crimson-hover:hover {
+  color: hsl(348, 88%, 36%) !important;
+}
+.fg-sat-crimson-focus:focus {
+  color: hsl(348, 88%, 36%) !important;
+}
+.fg-dark-crimson {
+  color: hsl(348, 88%, 26%) !important;
+}
+.fg-dark-crimson-active:active {
+  color: hsl(348, 88%, 26%) !important;
+}
+.fg-dark-crimson-hover:hover {
+  color: hsl(348, 88%, 26%) !important;
+}
+.fg-dark-crimson-focus:focus {
+  color: hsl(348, 88%, 26%) !important;
+}
+.fg-light-red {
+  color: hsl(0, 100%, 80%) !important;
+}
+.fg-light-red-active:active {
+  color: hsl(0, 100%, 80%) !important;
+}
+.fg-light-red-hover:hover {
+  color: hsl(0, 100%, 80%) !important;
+}
+.fg-light-red-focus:focus {
+  color: hsl(0, 100%, 80%) !important;
+}
+.fg-minor-red {
+  color: hsl(0, 100%, 70%) !important;
+}
+.fg-minor-red-active:active {
+  color: hsl(0, 100%, 70%) !important;
+}
+.fg-minor-red-hover:hover {
+  color: hsl(0, 100%, 70%) !important;
+}
+.fg-minor-red-focus:focus {
+  color: hsl(0, 100%, 70%) !important;
+}
+.fg-sat-red {
+  color: hsl(0, 100%, 40%) !important;
+}
+.fg-sat-red-active:active {
+  color: hsl(0, 100%, 40%) !important;
+}
+.fg-sat-red-hover:hover {
+  color: hsl(0, 100%, 40%) !important;
+}
+.fg-sat-red-focus:focus {
+  color: hsl(0, 100%, 40%) !important;
+}
+.fg-dark-red {
+  color: hsl(0, 100%, 30%) !important;
+}
+.fg-dark-red-active:active {
+  color: hsl(0, 100%, 30%) !important;
+}
+.fg-dark-red-hover:hover {
+  color: hsl(0, 100%, 30%) !important;
+}
+.fg-dark-red-focus:focus {
+  color: hsl(0, 100%, 30%) !important;
+}
+.fg-light-orange {
+  color: hsl(39, 100%, 90%) !important;
+}
+.fg-light-orange-active:active {
+  color: hsl(39, 100%, 90%) !important;
+}
+.fg-light-orange-hover:hover {
+  color: hsl(39, 100%, 90%) !important;
+}
+.fg-light-orange-focus:focus {
+  color: hsl(39, 100%, 90%) !important;
+}
+.fg-minor-orange {
+  color: hsl(39, 100%, 70%) !important;
+}
+.fg-minor-orange-active:active {
+  color: hsl(39, 100%, 70%) !important;
+}
+.fg-minor-orange-hover:hover {
+  color: hsl(39, 100%, 70%) !important;
+}
+.fg-minor-orange-focus:focus {
+  color: hsl(39, 100%, 70%) !important;
+}
+.fg-sat-orange {
+  color: hsl(39, 100%, 40%) !important;
+}
+.fg-sat-orange-active:active {
+  color: hsl(39, 100%, 40%) !important;
+}
+.fg-sat-orange-hover:hover {
+  color: hsl(39, 100%, 40%) !important;
+}
+.fg-sat-orange-focus:focus {
+  color: hsl(39, 100%, 40%) !important;
+}
+.fg-dark-orange {
+  color: hsl(39, 100%, 30%) !important;
+}
+.fg-dark-orange-active:active {
+  color: hsl(39, 100%, 30%) !important;
+}
+.fg-dark-orange-hover:hover {
+  color: hsl(39, 100%, 30%) !important;
+}
+.fg-dark-orange-focus:focus {
+  color: hsl(39, 100%, 30%) !important;
+}
+.fg-light-amber {
+  color: hsl(45, 100%, 78%) !important;
+}
+.fg-light-amber-active:active {
+  color: hsl(45, 100%, 78%) !important;
+}
+.fg-light-amber-hover:hover {
+  color: hsl(45, 100%, 78%) !important;
+}
+.fg-light-amber-focus:focus {
+  color: hsl(45, 100%, 78%) !important;
+}
+.fg-minor-amber {
+  color: hsl(45, 100%, 68%) !important;
+}
+.fg-minor-amber-active:active {
+  color: hsl(45, 100%, 68%) !important;
+}
+.fg-minor-amber-hover:hover {
+  color: hsl(45, 100%, 68%) !important;
+}
+.fg-minor-amber-focus:focus {
+  color: hsl(45, 100%, 68%) !important;
+}
+.fg-sat-amber {
+  color: hsl(45, 100%, 48%) !important;
+}
+.fg-sat-amber-active:active {
+  color: hsl(45, 100%, 48%) !important;
+}
+.fg-sat-amber-hover:hover {
+  color: hsl(45, 100%, 48%) !important;
+}
+.fg-sat-amber-focus:focus {
+  color: hsl(45, 100%, 48%) !important;
+}
+.fg-dark-amber {
+  color: hsl(45, 100%, 38%) !important;
+}
+.fg-dark-amber-active:active {
+  color: hsl(45, 100%, 38%) !important;
+}
+.fg-dark-amber-hover:hover {
+  color: hsl(45, 100%, 38%) !important;
+}
+.fg-dark-amber-focus:focus {
+  color: hsl(45, 100%, 38%) !important;
+}
+.fg-light-yellow {
+  color: hsl(52, 100%, 93%) !important;
+}
+.fg-light-yellow-active:active {
+  color: hsl(52, 100%, 93%) !important;
+}
+.fg-light-yellow-hover:hover {
+  color: hsl(52, 100%, 93%) !important;
+}
+.fg-light-yellow-focus:focus {
+  color: hsl(52, 100%, 93%) !important;
+}
+.fg-minor-yellow {
+  color: hsl(52, 100%, 83%) !important;
+}
+.fg-minor-yellow-active:active {
+  color: hsl(52, 100%, 83%) !important;
+}
+.fg-minor-yellow-hover:hover {
+  color: hsl(52, 100%, 83%) !important;
+}
+.fg-minor-yellow-focus:focus {
+  color: hsl(52, 100%, 83%) !important;
+}
+.fg-sat-yellow {
+  color: hsl(52, 100%, 58%) !important;
+}
+.fg-sat-yellow-active:active {
+  color: hsl(52, 100%, 58%) !important;
+}
+.fg-sat-yellow-hover:hover {
+  color: hsl(52, 100%, 58%) !important;
+}
+.fg-sat-yellow-focus:focus {
+  color: hsl(52, 100%, 58%) !important;
+}
+.fg-dark-yellow {
+  color: hsl(52, 100%, 48%) !important;
+}
+.fg-dark-yellow-active:active {
+  color: hsl(52, 100%, 48%) !important;
+}
+.fg-dark-yellow-hover:hover {
+  color: hsl(52, 100%, 48%) !important;
+}
+.fg-dark-yellow-focus:focus {
+  color: hsl(52, 100%, 48%) !important;
+}
+.fg-light-brown {
+  color: hsl(25, 57%, 81%) !important;
+}
+.fg-light-brown-active:active {
+  color: hsl(25, 57%, 81%) !important;
+}
+.fg-light-brown-hover:hover {
+  color: hsl(25, 57%, 81%) !important;
+}
+.fg-light-brown-focus:focus {
+  color: hsl(25, 57%, 81%) !important;
+}
+.fg-minor-brown {
+  color: hsl(25, 57%, 66%) !important;
+}
+.fg-minor-brown-active:active {
+  color: hsl(25, 57%, 66%) !important;
+}
+.fg-minor-brown-hover:hover {
+  color: hsl(25, 57%, 66%) !important;
+}
+.fg-minor-brown-focus:focus {
+  color: hsl(25, 57%, 66%) !important;
+}
+.fg-sat-brown {
+  color: hsl(25, 57%, 41%) !important;
+}
+.fg-sat-brown-active:active {
+  color: hsl(25, 57%, 41%) !important;
+}
+.fg-sat-brown-hover:hover {
+  color: hsl(25, 57%, 41%) !important;
+}
+.fg-sat-brown-focus:focus {
+  color: hsl(25, 57%, 41%) !important;
+}
+.fg-dark-brown {
+  color: hsl(25, 57%, 31%) !important;
+}
+.fg-dark-brown-active:active {
+  color: hsl(25, 57%, 31%) !important;
+}
+.fg-dark-brown-hover:hover {
+  color: hsl(25, 57%, 31%) !important;
+}
+.fg-dark-brown-focus:focus {
+  color: hsl(25, 57%, 31%) !important;
+}
+.fg-light-olive {
+  color: hsl(60, 100%, 72%) !important;
+}
+.fg-light-olive-active:active {
+  color: hsl(60, 100%, 72%) !important;
+}
+.fg-light-olive-hover:hover {
+  color: hsl(60, 100%, 72%) !important;
+}
+.fg-light-olive-focus:focus {
+  color: hsl(60, 100%, 72%) !important;
+}
+.fg-minor-olive {
+  color: hsl(60, 100%, 42%) !important;
+}
+.fg-minor-olive-active:active {
+  color: hsl(60, 100%, 42%) !important;
+}
+.fg-minor-olive-hover:hover {
+  color: hsl(60, 100%, 42%) !important;
+}
+.fg-minor-olive-focus:focus {
+  color: hsl(60, 100%, 42%) !important;
+}
+.fg-sat-olive {
+  color: hsl(60, 100%, 22%) !important;
+}
+.fg-sat-olive-active:active {
+  color: hsl(60, 100%, 22%) !important;
+}
+.fg-sat-olive-hover:hover {
+  color: hsl(60, 100%, 22%) !important;
+}
+.fg-sat-olive-focus:focus {
+  color: hsl(60, 100%, 22%) !important;
+}
+.fg-dark-olive {
+  color: hsl(60, 100%, 12%) !important;
+}
+.fg-dark-olive-active:active {
+  color: hsl(60, 100%, 12%) !important;
+}
+.fg-dark-olive-hover:hover {
+  color: hsl(60, 100%, 12%) !important;
+}
+.fg-dark-olive-focus:focus {
+  color: hsl(60, 100%, 12%) !important;
+}
+.fg-light-steel {
+  color: hsl(209, 19%, 87%) !important;
+}
+.fg-light-steel-active:active {
+  color: hsl(209, 19%, 87%) !important;
+}
+.fg-light-steel-hover:hover {
+  color: hsl(209, 19%, 87%) !important;
+}
+.fg-light-steel-focus:focus {
+  color: hsl(209, 19%, 87%) !important;
+}
+.fg-minor-steel {
+  color: hsl(209, 19%, 77%) !important;
+}
+.fg-minor-steel-active:active {
+  color: hsl(209, 19%, 77%) !important;
+}
+.fg-minor-steel-hover:hover {
+  color: hsl(209, 19%, 77%) !important;
+}
+.fg-minor-steel-focus:focus {
+  color: hsl(209, 19%, 77%) !important;
+}
+.fg-sat-steel {
+  color: hsl(209, 19%, 47%) !important;
+}
+.fg-sat-steel-active:active {
+  color: hsl(209, 19%, 47%) !important;
+}
+.fg-sat-steel-hover:hover {
+  color: hsl(209, 19%, 47%) !important;
+}
+.fg-sat-steel-focus:focus {
+  color: hsl(209, 19%, 47%) !important;
+}
+.fg-dark-steel {
+  color: hsl(209, 19%, 37%) !important;
+}
+.fg-dark-steel-active:active {
+  color: hsl(209, 19%, 37%) !important;
+}
+.fg-dark-steel-hover:hover {
+  color: hsl(209, 19%, 37%) !important;
+}
+.fg-dark-steel-focus:focus {
+  color: hsl(209, 19%, 37%) !important;
+}
+.fg-light-mauve {
+  color: hsl(277, 100%, 96%) !important;
+}
+.fg-light-mauve-active:active {
+  color: hsl(277, 100%, 96%) !important;
+}
+.fg-light-mauve-hover:hover {
+  color: hsl(277, 100%, 96%) !important;
+}
+.fg-light-mauve-focus:focus {
+  color: hsl(277, 100%, 96%) !important;
+}
+.fg-minor-mauve {
+  color: hsl(277, 100%, 90%) !important;
+}
+.fg-minor-mauve-active:active {
+  color: hsl(277, 100%, 90%) !important;
+}
+.fg-minor-mauve-hover:hover {
+  color: hsl(277, 100%, 90%) !important;
+}
+.fg-minor-mauve-focus:focus {
+  color: hsl(277, 100%, 90%) !important;
+}
+.fg-sat-mauve {
+  color: hsl(277, 100%, 74%) !important;
+}
+.fg-sat-mauve-active:active {
+  color: hsl(277, 100%, 74%) !important;
+}
+.fg-sat-mauve-hover:hover {
+  color: hsl(277, 100%, 74%) !important;
+}
+.fg-sat-mauve-focus:focus {
+  color: hsl(277, 100%, 74%) !important;
+}
+.fg-dark-mauve {
+  color: hsl(277, 100%, 64%) !important;
+}
+.fg-dark-mauve-active:active {
+  color: hsl(277, 100%, 64%) !important;
+}
+.fg-dark-mauve-hover:hover {
+  color: hsl(277, 100%, 64%) !important;
+}
+.fg-dark-mauve-focus:focus {
+  color: hsl(277, 100%, 64%) !important;
+}
+.fg-light-taupe {
+  color: hsl(29, 19%, 80%) !important;
+}
+.fg-light-taupe-active:active {
+  color: hsl(29, 19%, 80%) !important;
+}
+.fg-light-taupe-hover:hover {
+  color: hsl(29, 19%, 80%) !important;
+}
+.fg-light-taupe-focus:focus {
+  color: hsl(29, 19%, 80%) !important;
+}
+.fg-minor-taupe {
+  color: hsl(29, 19%, 67%) !important;
+}
+.fg-minor-taupe-active:active {
+  color: hsl(29, 19%, 67%) !important;
+}
+.fg-minor-taupe-hover:hover {
+  color: hsl(29, 19%, 67%) !important;
+}
+.fg-minor-taupe-focus:focus {
+  color: hsl(29, 19%, 67%) !important;
+}
+.fg-sat-taupe {
+  color: hsl(29, 19%, 40%) !important;
+}
+.fg-sat-taupe-active:active {
+  color: hsl(29, 19%, 40%) !important;
+}
+.fg-sat-taupe-hover:hover {
+  color: hsl(29, 19%, 40%) !important;
+}
+.fg-sat-taupe-focus:focus {
+  color: hsl(29, 19%, 40%) !important;
+}
+.fg-dark-taupe {
+  color: hsl(29, 19%, 30%) !important;
+}
+.fg-dark-taupe-active:active {
+  color: hsl(29, 19%, 30%) !important;
+}
+.fg-dark-taupe-hover:hover {
+  color: hsl(29, 19%, 30%) !important;
+}
+.fg-dark-taupe-focus:focus {
+  color: hsl(29, 19%, 30%) !important;
+}
+.fg-light-champagne {
+  color: hsl(37, 74%, 98%) !important;
+}
+.fg-light-champagne-active:active {
+  color: hsl(37, 74%, 98%) !important;
+}
+.fg-light-champagne-hover:hover {
+  color: hsl(37, 74%, 98%) !important;
+}
+.fg-light-champagne-focus:focus {
+  color: hsl(37, 74%, 98%) !important;
+}
+.fg-minor-champagne {
+  color: hsl(37, 74%, 93%) !important;
+}
+.fg-minor-champagne-active:active {
+  color: hsl(37, 74%, 93%) !important;
+}
+.fg-minor-champagne-hover:hover {
+  color: hsl(37, 74%, 93%) !important;
+}
+.fg-minor-champagne-focus:focus {
+  color: hsl(37, 74%, 93%) !important;
+}
+.fg-sat-champagne {
+  color: hsl(37, 74%, 78%) !important;
+}
+.fg-sat-champagne-active:active {
+  color: hsl(37, 74%, 78%) !important;
+}
+.fg-sat-champagne-hover:hover {
+  color: hsl(37, 74%, 78%) !important;
+}
+.fg-sat-champagne-focus:focus {
+  color: hsl(37, 74%, 78%) !important;
+}
+.fg-dark-champagne {
+  color: hsl(37, 74%, 68%) !important;
+}
+.fg-dark-champagne-active:active {
+  color: hsl(37, 74%, 68%) !important;
+}
+.fg-dark-champagne-hover:hover {
+  color: hsl(37, 74%, 68%) !important;
+}
+.fg-dark-champagne-focus:focus {
+  color: hsl(37, 74%, 68%) !important;
+}
+.fg-light-khaki {
+  color: hsl(47, 47%, 94%) !important;
+}
+.fg-light-khaki-active:active {
+  color: hsl(47, 47%, 94%) !important;
+}
+.fg-light-khaki-hover:hover {
+  color: hsl(47, 47%, 94%) !important;
+}
+.fg-light-khaki-focus:focus {
+  color: hsl(47, 47%, 94%) !important;
+}
+.fg-minor-khaki {
+  color: hsl(47, 47%, 84%) !important;
+}
+.fg-minor-khaki-active:active {
+  color: hsl(47, 47%, 84%) !important;
+}
+.fg-minor-khaki-hover:hover {
+  color: hsl(47, 47%, 84%) !important;
+}
+.fg-minor-khaki-focus:focus {
+  color: hsl(47, 47%, 84%) !important;
+}
+.fg-sat-khaki {
+  color: hsl(47, 47%, 59%) !important;
+}
+.fg-sat-khaki-active:active {
+  color: hsl(47, 47%, 59%) !important;
+}
+.fg-sat-khaki-hover:hover {
+  color: hsl(47, 47%, 59%) !important;
+}
+.fg-sat-khaki-focus:focus {
+  color: hsl(47, 47%, 59%) !important;
+}
+.fg-dark-khaki {
+  color: hsl(47, 47%, 49%) !important;
+}
+.fg-dark-khaki-active:active {
+  color: hsl(47, 47%, 49%) !important;
+}
+.fg-dark-khaki-hover:hover {
+  color: hsl(47, 47%, 49%) !important;
+}
+.fg-dark-khaki-focus:focus {
+  color: hsl(47, 47%, 49%) !important;
+}
+.fg-light-charcoal {
+  color: hsl(0, 0%, 85%) !important;
+}
+.fg-light-charcoal-active:active {
+  color: hsl(0, 0%, 85%) !important;
+}
+.fg-light-charcoal-hover:hover {
+  color: hsl(0, 0%, 85%) !important;
+}
+.fg-light-charcoal-focus:focus {
+  color: hsl(0, 0%, 85%) !important;
+}
+.fg-minor-charcoal {
+  color: hsl(0, 0%, 75%) !important;
+}
+.fg-minor-charcoal-active:active {
+  color: hsl(0, 0%, 75%) !important;
+}
+.fg-minor-charcoal-hover:hover {
+  color: hsl(0, 0%, 75%) !important;
+}
+.fg-minor-charcoal-focus:focus {
+  color: hsl(0, 0%, 75%) !important;
+}
+.fg-sat-charcoal {
+  color: hsl(0, 0%, 50%) !important;
+}
+.fg-sat-charcoal-active:active {
+  color: hsl(0, 0%, 50%) !important;
+}
+.fg-sat-charcoal-hover:hover {
+  color: hsl(0, 0%, 50%) !important;
+}
+.fg-sat-charcoal-focus:focus {
+  color: hsl(0, 0%, 50%) !important;
+}
+.fg-dark-charcoal {
+  color: hsl(0, 0%, 40%) !important;
+}
+.fg-dark-charcoal-active:active {
+  color: hsl(0, 0%, 40%) !important;
+}
+.fg-dark-charcoal-hover:hover {
+  color: hsl(0, 0%, 40%) !important;
+}
+.fg-dark-charcoal-focus:focus {
+  color: hsl(0, 0%, 40%) !important;
+}
+.fg-light-bronze {
+  color: hsl(29, 75%, 87%) !important;
+}
+.fg-light-bronze-active:active {
+  color: hsl(29, 75%, 87%) !important;
+}
+.fg-light-bronze-hover:hover {
+  color: hsl(29, 75%, 87%) !important;
+}
+.fg-light-bronze-focus:focus {
+  color: hsl(29, 75%, 87%) !important;
+}
+.fg-minor-bronze {
+  color: hsl(29, 75%, 72%) !important;
+}
+.fg-minor-bronze-active:active {
+  color: hsl(29, 75%, 72%) !important;
+}
+.fg-minor-bronze-hover:hover {
+  color: hsl(29, 75%, 72%) !important;
+}
+.fg-minor-bronze-focus:focus {
+  color: hsl(29, 75%, 72%) !important;
+}
+.fg-sat-bronze {
+  color: hsl(29, 75%, 47%) !important;
+}
+.fg-sat-bronze-active:active {
+  color: hsl(29, 75%, 47%) !important;
+}
+.fg-sat-bronze-hover:hover {
+  color: hsl(29, 75%, 47%) !important;
+}
+.fg-sat-bronze-focus:focus {
+  color: hsl(29, 75%, 47%) !important;
+}
+.fg-dark-bronze {
+  color: hsl(29, 75%, 37%) !important;
+}
+.fg-dark-bronze-active:active {
+  color: hsl(29, 75%, 37%) !important;
+}
+.fg-dark-bronze-hover:hover {
+  color: hsl(29, 75%, 37%) !important;
+}
+.fg-dark-bronze-focus:focus {
+  color: hsl(29, 75%, 37%) !important;
+}
+.fg-light-windstorm {
+  color: hsl(216, 53%, 93%) !important;
+}
+.fg-light-windstorm-active:active {
+  color: hsl(216, 53%, 93%) !important;
+}
+.fg-light-windstorm-hover:hover {
+  color: hsl(216, 53%, 93%) !important;
+}
+.fg-light-windstorm-focus:focus {
+  color: hsl(216, 53%, 93%) !important;
+}
+.fg-minor-windstorm {
+  color: hsl(216, 53%, 81%) !important;
+}
+.fg-minor-windstorm-active:active {
+  color: hsl(216, 53%, 81%) !important;
+}
+.fg-minor-windstorm-hover:hover {
+  color: hsl(216, 53%, 81%) !important;
+}
+.fg-minor-windstorm-focus:focus {
+  color: hsl(216, 53%, 81%) !important;
+}
+.fg-sat-windstorm {
+  color: hsl(216, 53%, 56%) !important;
+}
+.fg-sat-windstorm-active:active {
+  color: hsl(216, 53%, 56%) !important;
+}
+.fg-sat-windstorm-hover:hover {
+  color: hsl(216, 53%, 56%) !important;
+}
+.fg-sat-windstorm-focus:focus {
+  color: hsl(216, 53%, 56%) !important;
+}
+.fg-dark-windstorm {
+  color: hsl(216, 53%, 46%) !important;
+}
+.fg-dark-windstorm-active:active {
+  color: hsl(216, 53%, 46%) !important;
+}
+.fg-dark-windstorm-hover:hover {
+  color: hsl(216, 53%, 46%) !important;
+}
+.fg-dark-windstorm-focus:focus {
+  color: hsl(216, 53%, 46%) !important;
+}
+.fg-light-nude {
+  color: hsl(29, 79%, 97%) !important;
+}
+.fg-light-nude-active:active {
+  color: hsl(29, 79%, 97%) !important;
+}
+.fg-light-nude-hover:hover {
+  color: hsl(29, 79%, 97%) !important;
+}
+.fg-light-nude-focus:focus {
+  color: hsl(29, 79%, 97%) !important;
+}
+.fg-minor-nude {
+  color: hsl(29, 79%, 92%) !important;
+}
+.fg-minor-nude-active:active {
+  color: hsl(29, 79%, 92%) !important;
+}
+.fg-minor-nude-hover:hover {
+  color: hsl(29, 79%, 92%) !important;
+}
+.fg-minor-nude-focus:focus {
+  color: hsl(29, 79%, 92%) !important;
+}
+.fg-sat-nude {
+  color: hsl(29, 79%, 75%) !important;
+}
+.fg-sat-nude-active:active {
+  color: hsl(29, 79%, 75%) !important;
+}
+.fg-sat-nude-hover:hover {
+  color: hsl(29, 79%, 75%) !important;
+}
+.fg-sat-nude-focus:focus {
+  color: hsl(29, 79%, 75%) !important;
+}
+.fg-dark-nude {
+  color: hsl(29, 79%, 65%) !important;
+}
+.fg-dark-nude-active:active {
+  color: hsl(29, 79%, 65%) !important;
+}
+.fg-dark-nude-hover:hover {
+  color: hsl(29, 79%, 65%) !important;
+}
+.fg-dark-nude-focus:focus {
+  color: hsl(29, 79%, 65%) !important;
+}
+.fg-light-terracotta {
+  color: hsl(10, 76%, 85%) !important;
+}
+.fg-light-terracotta-active:active {
+  color: hsl(10, 76%, 85%) !important;
+}
+.fg-light-terracotta-hover:hover {
+  color: hsl(10, 76%, 85%) !important;
+}
+.fg-light-terracotta-focus:focus {
+  color: hsl(10, 76%, 85%) !important;
+}
+.fg-minor-terracotta {
+  color: hsl(10, 76%, 70%) !important;
+}
+.fg-minor-terracotta-active:active {
+  color: hsl(10, 76%, 70%) !important;
+}
+.fg-minor-terracotta-hover:hover {
+  color: hsl(10, 76%, 70%) !important;
+}
+.fg-minor-terracotta-focus:focus {
+  color: hsl(10, 76%, 70%) !important;
+}
+.fg-sat-terracotta {
+  color: hsl(10, 76%, 45%) !important;
+}
+.fg-sat-terracotta-active:active {
+  color: hsl(10, 76%, 45%) !important;
+}
+.fg-sat-terracotta-hover:hover {
+  color: hsl(10, 76%, 45%) !important;
+}
+.fg-sat-terracotta-focus:focus {
+  color: hsl(10, 76%, 45%) !important;
+}
+.fg-dark-terracotta {
+  color: hsl(10, 76%, 35%) !important;
+}
+.fg-dark-terracotta-active:active {
+  color: hsl(10, 76%, 35%) !important;
+}
+.fg-dark-terracotta-hover:hover {
+  color: hsl(10, 76%, 35%) !important;
+}
+.fg-dark-terracotta-focus:focus {
+  color: hsl(10, 76%, 35%) !important;
+}
+.fg-light-coral {
+  color: hsl(16, 100%, 92%) !important;
+}
+.fg-light-coral-active:active {
+  color: hsl(16, 100%, 92%) !important;
+}
+.fg-light-coral-hover:hover {
+  color: hsl(16, 100%, 92%) !important;
+}
+.fg-light-coral-focus:focus {
+  color: hsl(16, 100%, 92%) !important;
+}
+.fg-minor-coral {
+  color: hsl(16, 100%, 82%) !important;
+}
+.fg-minor-coral-active:active {
+  color: hsl(16, 100%, 82%) !important;
+}
+.fg-minor-coral-hover:hover {
+  color: hsl(16, 100%, 82%) !important;
+}
+.fg-minor-coral-focus:focus {
+  color: hsl(16, 100%, 82%) !important;
+}
+.fg-sat-coral {
+  color: hsl(16, 100%, 57%) !important;
+}
+.fg-sat-coral-active:active {
+  color: hsl(16, 100%, 57%) !important;
+}
+.fg-sat-coral-hover:hover {
+  color: hsl(16, 100%, 57%) !important;
+}
+.fg-sat-coral-focus:focus {
+  color: hsl(16, 100%, 57%) !important;
+}
+.fg-dark-coral {
+  color: hsl(16, 100%, 47%) !important;
+}
+.fg-dark-coral-active:active {
+  color: hsl(16, 100%, 47%) !important;
+}
+.fg-dark-coral-hover:hover {
+  color: hsl(16, 100%, 47%) !important;
+}
+.fg-dark-coral-focus:focus {
+  color: hsl(16, 100%, 47%) !important;
+}
+.fg-light-army {
+  color: hsl(69, 34%, 65%) !important;
+}
+.fg-light-army-active:active {
+  color: hsl(69, 34%, 65%) !important;
+}
+.fg-light-army-hover:hover {
+  color: hsl(69, 34%, 65%) !important;
+}
+.fg-light-army-focus:focus {
+  color: hsl(69, 34%, 65%) !important;
+}
+.fg-minor-army {
+  color: hsl(69, 34%, 47%) !important;
+}
+.fg-minor-army-active:active {
+  color: hsl(69, 34%, 47%) !important;
+}
+.fg-minor-army-hover:hover {
+  color: hsl(69, 34%, 47%) !important;
+}
+.fg-minor-army-focus:focus {
+  color: hsl(69, 34%, 47%) !important;
+}
+.fg-sat-army {
+  color: hsl(69, 34%, 20%) !important;
+}
+.fg-sat-army-active:active {
+  color: hsl(69, 34%, 20%) !important;
+}
+.fg-sat-army-hover:hover {
+  color: hsl(69, 34%, 20%) !important;
+}
+.fg-sat-army-focus:focus {
+  color: hsl(69, 34%, 20%) !important;
+}
+.fg-dark-army {
+  color: hsl(69, 34%, 10%) !important;
+}
+.fg-dark-army-active:active {
+  color: hsl(69, 34%, 10%) !important;
+}
+.fg-dark-army-hover:hover {
+  color: hsl(69, 34%, 10%) !important;
+}
+.fg-dark-army-focus:focus {
+  color: hsl(69, 34%, 10%) !important;
+}
+.fg-light-seashell {
+  color: hsl(25, 100%, 98%) !important;
+}
+.fg-light-seashell-active:active {
+  color: hsl(25, 100%, 98%) !important;
+}
+.fg-light-seashell-hover:hover {
+  color: hsl(25, 100%, 98%) !important;
+}
+.fg-light-seashell-focus:focus {
+  color: hsl(25, 100%, 98%) !important;
+}
+.fg-minor-seashell {
+  color: hsl(25, 100%, 97%) !important;
+}
+.fg-minor-seashell-active:active {
+  color: hsl(25, 100%, 97%) !important;
+}
+.fg-minor-seashell-hover:hover {
+  color: hsl(25, 100%, 97%) !important;
+}
+.fg-minor-seashell-focus:focus {
+  color: hsl(25, 100%, 97%) !important;
+}
+.fg-sat-seashell {
+  color: hsl(25, 100%, 85%) !important;
+}
+.fg-sat-seashell-active:active {
+  color: hsl(25, 100%, 85%) !important;
+}
+.fg-sat-seashell-hover:hover {
+  color: hsl(25, 100%, 85%) !important;
+}
+.fg-sat-seashell-focus:focus {
+  color: hsl(25, 100%, 85%) !important;
+}
+.fg-dark-seashell {
+  color: hsl(25, 100%, 75%) !important;
+}
+.fg-dark-seashell-active:active {
+  color: hsl(25, 100%, 75%) !important;
+}
+.fg-dark-seashell-hover:hover {
+  color: hsl(25, 100%, 75%) !important;
+}
+.fg-dark-seashell-focus:focus {
+  color: hsl(25, 100%, 75%) !important;
+}
+.fg-light-sand {
+  color: hsl(45, 71%, 96%) !important;
+}
+.fg-light-sand-active:active {
+  color: hsl(45, 71%, 96%) !important;
+}
+.fg-light-sand-hover:hover {
+  color: hsl(45, 71%, 96%) !important;
+}
+.fg-light-sand-focus:focus {
+  color: hsl(45, 71%, 96%) !important;
+}
+.fg-minor-sand {
+  color: hsl(45, 71%, 88%) !important;
+}
+.fg-minor-sand-active:active {
+  color: hsl(45, 71%, 88%) !important;
+}
+.fg-minor-sand-hover:hover {
+  color: hsl(45, 71%, 88%) !important;
+}
+.fg-minor-sand-focus:focus {
+  color: hsl(45, 71%, 88%) !important;
+}
+.fg-sat-sand {
+  color: hsl(45, 71%, 71%) !important;
+}
+.fg-sat-sand-active:active {
+  color: hsl(45, 71%, 71%) !important;
+}
+.fg-sat-sand-hover:hover {
+  color: hsl(45, 71%, 71%) !important;
+}
+.fg-sat-sand-focus:focus {
+  color: hsl(45, 71%, 71%) !important;
+}
+.fg-dark-sand {
+  color: hsl(45, 71%, 61%) !important;
+}
+.fg-dark-sand-active:active {
+  color: hsl(45, 71%, 61%) !important;
+}
+.fg-dark-sand-hover:hover {
+  color: hsl(45, 71%, 61%) !important;
+}
+.fg-dark-sand-focus:focus {
+  color: hsl(45, 71%, 61%) !important;
+}
 
 /* source/colors-css/opacity.less */
 .op-default {
@@ -32724,6 +35892,1194 @@ hr.fat {
 }
 .op-sand-low {
   background-color: hsl(from hsl(45, 71%, 81%) h s l / 0.8) !important;
+}
+.op-light-lime {
+  background-color: hsl(from hsl(93, 97%, 91%) h s l / 0.5) !important;
+}
+.op-light-lime-hi {
+  background-color: hsl(from hsl(93, 97%, 91%) h s l / 0.2) !important;
+}
+.op-light-lime-low {
+  background-color: hsl(from hsl(93, 97%, 91%) h s l / 0.8) !important;
+}
+.op-minor-lime {
+  background-color: hsl(from hsl(93, 97%, 81%) h s l / 0.5) !important;
+}
+.op-minor-lime-hi {
+  background-color: hsl(from hsl(93, 97%, 81%) h s l / 0.2) !important;
+}
+.op-minor-lime-low {
+  background-color: hsl(from hsl(93, 97%, 81%) h s l / 0.8) !important;
+}
+.op-sat-lime {
+  background-color: hsl(from hsl(93, 97%, 61%) h s l / 0.5) !important;
+}
+.op-sat-lime-hi {
+  background-color: hsl(from hsl(93, 97%, 61%) h s l / 0.2) !important;
+}
+.op-sat-lime-low {
+  background-color: hsl(from hsl(93, 97%, 61%) h s l / 0.8) !important;
+}
+.op-dark-lime {
+  background-color: hsl(from hsl(93, 97%, 51%) h s l / 0.5) !important;
+}
+.op-dark-lime-hi {
+  background-color: hsl(from hsl(93, 97%, 51%) h s l / 0.2) !important;
+}
+.op-dark-lime-low {
+  background-color: hsl(from hsl(93, 97%, 51%) h s l / 0.8) !important;
+}
+.op-light-green {
+  background-color: hsl(from hsl(120, 100%, 75%) h s l / 0.5) !important;
+}
+.op-light-green-hi {
+  background-color: hsl(from hsl(120, 100%, 75%) h s l / 0.2) !important;
+}
+.op-light-green-low {
+  background-color: hsl(from hsl(120, 100%, 75%) h s l / 0.8) !important;
+}
+.op-minor-green {
+  background-color: hsl(from hsl(120, 100%, 45%) h s l / 0.5) !important;
+}
+.op-minor-green-hi {
+  background-color: hsl(from hsl(120, 100%, 45%) h s l / 0.2) !important;
+}
+.op-minor-green-low {
+  background-color: hsl(from hsl(120, 100%, 45%) h s l / 0.8) !important;
+}
+.op-sat-green {
+  background-color: hsl(from hsl(120, 100%, 25%) h s l / 0.5) !important;
+}
+.op-sat-green-hi {
+  background-color: hsl(from hsl(120, 100%, 25%) h s l / 0.2) !important;
+}
+.op-sat-green-low {
+  background-color: hsl(from hsl(120, 100%, 25%) h s l / 0.8) !important;
+}
+.op-dark-green {
+  background-color: hsl(from hsl(120, 100%, 15%) h s l / 0.5) !important;
+}
+.op-dark-green-hi {
+  background-color: hsl(from hsl(120, 100%, 15%) h s l / 0.2) !important;
+}
+.op-dark-green-low {
+  background-color: hsl(from hsl(120, 100%, 15%) h s l / 0.8) !important;
+}
+.op-light-emerald {
+  background-color: hsl(from hsl(140, 52%, 85%) h s l / 0.5) !important;
+}
+.op-light-emerald-hi {
+  background-color: hsl(from hsl(140, 52%, 85%) h s l / 0.2) !important;
+}
+.op-light-emerald-low {
+  background-color: hsl(from hsl(140, 52%, 85%) h s l / 0.8) !important;
+}
+.op-minor-emerald {
+  background-color: hsl(from hsl(140, 52%, 65%) h s l / 0.5) !important;
+}
+.op-minor-emerald-hi {
+  background-color: hsl(from hsl(140, 52%, 65%) h s l / 0.2) !important;
+}
+.op-minor-emerald-low {
+  background-color: hsl(from hsl(140, 52%, 65%) h s l / 0.8) !important;
+}
+.op-sat-emerald {
+  background-color: hsl(from hsl(140, 52%, 45%) h s l / 0.5) !important;
+}
+.op-sat-emerald-hi {
+  background-color: hsl(from hsl(140, 52%, 45%) h s l / 0.2) !important;
+}
+.op-sat-emerald-low {
+  background-color: hsl(from hsl(140, 52%, 45%) h s l / 0.8) !important;
+}
+.op-dark-emerald {
+  background-color: hsl(from hsl(140, 52%, 35%) h s l / 0.5) !important;
+}
+.op-dark-emerald-hi {
+  background-color: hsl(from hsl(140, 52%, 35%) h s l / 0.2) !important;
+}
+.op-dark-emerald-low {
+  background-color: hsl(from hsl(140, 52%, 35%) h s l / 0.8) !important;
+}
+.op-light-blue {
+  background-color: hsl(from hsl(225, 100%, 93%) h s l / 0.5) !important;
+}
+.op-light-blue-hi {
+  background-color: hsl(from hsl(225, 100%, 93%) h s l / 0.2) !important;
+}
+.op-light-blue-low {
+  background-color: hsl(from hsl(225, 100%, 93%) h s l / 0.8) !important;
+}
+.op-minor-blue {
+  background-color: hsl(from hsl(225, 100%, 78%) h s l / 0.5) !important;
+}
+.op-minor-blue-hi {
+  background-color: hsl(from hsl(225, 100%, 78%) h s l / 0.2) !important;
+}
+.op-minor-blue-low {
+  background-color: hsl(from hsl(225, 100%, 78%) h s l / 0.8) !important;
+}
+.op-sat-blue {
+  background-color: hsl(from hsl(225, 100%, 58%) h s l / 0.5) !important;
+}
+.op-sat-blue-hi {
+  background-color: hsl(from hsl(225, 100%, 58%) h s l / 0.2) !important;
+}
+.op-sat-blue-low {
+  background-color: hsl(from hsl(225, 100%, 58%) h s l / 0.8) !important;
+}
+.op-dark-blue {
+  background-color: hsl(from hsl(225, 100%, 48%) h s l / 0.5) !important;
+}
+.op-dark-blue-hi {
+  background-color: hsl(from hsl(225, 100%, 48%) h s l / 0.2) !important;
+}
+.op-dark-blue-low {
+  background-color: hsl(from hsl(225, 100%, 48%) h s l / 0.8) !important;
+}
+.op-light-teal {
+  background-color: hsl(from hsl(180, 77%, 74%) h s l / 0.5) !important;
+}
+.op-light-teal-hi {
+  background-color: hsl(from hsl(180, 77%, 74%) h s l / 0.2) !important;
+}
+.op-light-teal-low {
+  background-color: hsl(from hsl(180, 77%, 74%) h s l / 0.8) !important;
+}
+.op-minor-teal {
+  background-color: hsl(from hsl(180, 77%, 54%) h s l / 0.5) !important;
+}
+.op-minor-teal-hi {
+  background-color: hsl(from hsl(180, 77%, 54%) h s l / 0.2) !important;
+}
+.op-minor-teal-low {
+  background-color: hsl(from hsl(180, 77%, 54%) h s l / 0.8) !important;
+}
+.op-sat-teal {
+  background-color: hsl(from hsl(180, 77%, 34%) h s l / 0.5) !important;
+}
+.op-sat-teal-hi {
+  background-color: hsl(from hsl(180, 77%, 34%) h s l / 0.2) !important;
+}
+.op-sat-teal-low {
+  background-color: hsl(from hsl(180, 77%, 34%) h s l / 0.8) !important;
+}
+.op-dark-teal {
+  background-color: hsl(from hsl(180, 77%, 24%) h s l / 0.5) !important;
+}
+.op-dark-teal-hi {
+  background-color: hsl(from hsl(180, 77%, 24%) h s l / 0.2) !important;
+}
+.op-dark-teal-low {
+  background-color: hsl(from hsl(180, 77%, 24%) h s l / 0.8) !important;
+}
+.op-light-cyan {
+  background-color: hsl(from hsl(221, 100%, 94%) h s l / 0.5) !important;
+}
+.op-light-cyan-hi {
+  background-color: hsl(from hsl(221, 100%, 94%) h s l / 0.2) !important;
+}
+.op-light-cyan-low {
+  background-color: hsl(from hsl(221, 100%, 94%) h s l / 0.8) !important;
+}
+.op-minor-cyan {
+  background-color: hsl(from hsl(221, 100%, 89%) h s l / 0.5) !important;
+}
+.op-minor-cyan-hi {
+  background-color: hsl(from hsl(221, 100%, 89%) h s l / 0.2) !important;
+}
+.op-minor-cyan-low {
+  background-color: hsl(from hsl(221, 100%, 89%) h s l / 0.8) !important;
+}
+.op-sat-cyan {
+  background-color: hsl(from hsl(221, 100%, 69%) h s l / 0.5) !important;
+}
+.op-sat-cyan-hi {
+  background-color: hsl(from hsl(221, 100%, 69%) h s l / 0.2) !important;
+}
+.op-sat-cyan-low {
+  background-color: hsl(from hsl(221, 100%, 69%) h s l / 0.8) !important;
+}
+.op-dark-cyan {
+  background-color: hsl(from hsl(221, 100%, 59%) h s l / 0.5) !important;
+}
+.op-dark-cyan-hi {
+  background-color: hsl(from hsl(221, 100%, 59%) h s l / 0.2) !important;
+}
+.op-dark-cyan-low {
+  background-color: hsl(from hsl(221, 100%, 59%) h s l / 0.8) !important;
+}
+.op-light-cobalt {
+  background-color: hsl(from hsl(215, 100%, 74%) h s l / 0.5) !important;
+}
+.op-light-cobalt-hi {
+  background-color: hsl(from hsl(215, 100%, 74%) h s l / 0.2) !important;
+}
+.op-light-cobalt-low {
+  background-color: hsl(from hsl(215, 100%, 74%) h s l / 0.8) !important;
+}
+.op-minor-cobalt {
+  background-color: hsl(from hsl(215, 100%, 44%) h s l / 0.5) !important;
+}
+.op-minor-cobalt-hi {
+  background-color: hsl(from hsl(215, 100%, 44%) h s l / 0.2) !important;
+}
+.op-minor-cobalt-low {
+  background-color: hsl(from hsl(215, 100%, 44%) h s l / 0.8) !important;
+}
+.op-sat-cobalt {
+  background-color: hsl(from hsl(215, 100%, 24%) h s l / 0.5) !important;
+}
+.op-sat-cobalt-hi {
+  background-color: hsl(from hsl(215, 100%, 24%) h s l / 0.2) !important;
+}
+.op-sat-cobalt-low {
+  background-color: hsl(from hsl(215, 100%, 24%) h s l / 0.8) !important;
+}
+.op-dark-cobalt {
+  background-color: hsl(from hsl(215, 100%, 14%) h s l / 0.5) !important;
+}
+.op-dark-cobalt-hi {
+  background-color: hsl(from hsl(215, 100%, 14%) h s l / 0.2) !important;
+}
+.op-dark-cobalt-low {
+  background-color: hsl(from hsl(215, 100%, 14%) h s l / 0.8) !important;
+}
+.op-light-indigo {
+  background-color: hsl(from hsl(276, 100%, 73%) h s l / 0.5) !important;
+}
+.op-light-indigo-hi {
+  background-color: hsl(from hsl(276, 100%, 73%) h s l / 0.2) !important;
+}
+.op-light-indigo-low {
+  background-color: hsl(from hsl(276, 100%, 73%) h s l / 0.8) !important;
+}
+.op-minor-indigo {
+  background-color: hsl(from hsl(276, 100%, 43%) h s l / 0.5) !important;
+}
+.op-minor-indigo-hi {
+  background-color: hsl(from hsl(276, 100%, 43%) h s l / 0.2) !important;
+}
+.op-minor-indigo-low {
+  background-color: hsl(from hsl(276, 100%, 43%) h s l / 0.8) !important;
+}
+.op-sat-indigo {
+  background-color: hsl(from hsl(276, 100%, 23%) h s l / 0.5) !important;
+}
+.op-sat-indigo-hi {
+  background-color: hsl(from hsl(276, 100%, 23%) h s l / 0.2) !important;
+}
+.op-sat-indigo-low {
+  background-color: hsl(from hsl(276, 100%, 23%) h s l / 0.8) !important;
+}
+.op-dark-indigo {
+  background-color: hsl(from hsl(276, 100%, 13%) h s l / 0.5) !important;
+}
+.op-dark-indigo-hi {
+  background-color: hsl(from hsl(276, 100%, 13%) h s l / 0.2) !important;
+}
+.op-dark-indigo-low {
+  background-color: hsl(from hsl(276, 100%, 13%) h s l / 0.8) !important;
+}
+.op-light-almost {
+  background-color: hsl(from hsl(259, 84%, 85%) h s l / 0.5) !important;
+}
+.op-light-almost-hi {
+  background-color: hsl(from hsl(259, 84%, 85%) h s l / 0.2) !important;
+}
+.op-light-almost-low {
+  background-color: hsl(from hsl(259, 84%, 85%) h s l / 0.8) !important;
+}
+.op-minor-almost {
+  background-color: hsl(from hsl(259, 84%, 65%) h s l / 0.5) !important;
+}
+.op-minor-almost-hi {
+  background-color: hsl(from hsl(259, 84%, 65%) h s l / 0.2) !important;
+}
+.op-minor-almost-low {
+  background-color: hsl(from hsl(259, 84%, 65%) h s l / 0.8) !important;
+}
+.op-sat-almost {
+  background-color: hsl(from hsl(259, 84%, 45%) h s l / 0.5) !important;
+}
+.op-sat-almost-hi {
+  background-color: hsl(from hsl(259, 84%, 45%) h s l / 0.2) !important;
+}
+.op-sat-almost-low {
+  background-color: hsl(from hsl(259, 84%, 45%) h s l / 0.8) !important;
+}
+.op-dark-almost {
+  background-color: hsl(from hsl(259, 84%, 35%) h s l / 0.5) !important;
+}
+.op-dark-almost-hi {
+  background-color: hsl(from hsl(259, 84%, 35%) h s l / 0.2) !important;
+}
+.op-dark-almost-low {
+  background-color: hsl(from hsl(259, 84%, 35%) h s l / 0.8) !important;
+}
+.op-light-violet {
+  background-color: hsl(from hsl(300, 76%, 92%) h s l / 0.5) !important;
+}
+.op-light-violet-hi {
+  background-color: hsl(from hsl(300, 76%, 92%) h s l / 0.2) !important;
+}
+.op-light-violet-low {
+  background-color: hsl(from hsl(300, 76%, 92%) h s l / 0.8) !important;
+}
+.op-minor-violet {
+  background-color: hsl(from hsl(300, 76%, 82%) h s l / 0.5) !important;
+}
+.op-minor-violet-hi {
+  background-color: hsl(from hsl(300, 76%, 82%) h s l / 0.2) !important;
+}
+.op-minor-violet-low {
+  background-color: hsl(from hsl(300, 76%, 82%) h s l / 0.8) !important;
+}
+.op-sat-violet {
+  background-color: hsl(from hsl(300, 76%, 62%) h s l / 0.5) !important;
+}
+.op-sat-violet-hi {
+  background-color: hsl(from hsl(300, 76%, 62%) h s l / 0.2) !important;
+}
+.op-sat-violet-low {
+  background-color: hsl(from hsl(300, 76%, 62%) h s l / 0.8) !important;
+}
+.op-dark-violet {
+  background-color: hsl(from hsl(300, 76%, 52%) h s l / 0.5) !important;
+}
+.op-dark-violet-hi {
+  background-color: hsl(from hsl(300, 76%, 52%) h s l / 0.2) !important;
+}
+.op-dark-violet-low {
+  background-color: hsl(from hsl(300, 76%, 52%) h s l / 0.8) !important;
+}
+.op-light-pink {
+  background-color: hsl(from hsl(350, 100%, 98%) h s l / 0.5) !important;
+}
+.op-light-pink-hi {
+  background-color: hsl(from hsl(350, 100%, 98%) h s l / 0.2) !important;
+}
+.op-light-pink-low {
+  background-color: hsl(from hsl(350, 100%, 98%) h s l / 0.8) !important;
+}
+.op-minor-pink {
+  background-color: hsl(from hsl(350, 100%, 93%) h s l / 0.5) !important;
+}
+.op-minor-pink-hi {
+  background-color: hsl(from hsl(350, 100%, 93%) h s l / 0.2) !important;
+}
+.op-minor-pink-low {
+  background-color: hsl(from hsl(350, 100%, 93%) h s l / 0.8) !important;
+}
+.op-sat-pink {
+  background-color: hsl(from hsl(350, 100%, 78%) h s l / 0.5) !important;
+}
+.op-sat-pink-hi {
+  background-color: hsl(from hsl(350, 100%, 78%) h s l / 0.2) !important;
+}
+.op-sat-pink-low {
+  background-color: hsl(from hsl(350, 100%, 78%) h s l / 0.8) !important;
+}
+.op-dark-pink {
+  background-color: hsl(from hsl(350, 100%, 68%) h s l / 0.5) !important;
+}
+.op-dark-pink-hi {
+  background-color: hsl(from hsl(350, 100%, 68%) h s l / 0.2) !important;
+}
+.op-dark-pink-low {
+  background-color: hsl(from hsl(350, 100%, 68%) h s l / 0.8) !important;
+}
+.op-light-magenta {
+  background-color: hsl(from hsl(300, 100%, 90%) h s l / 0.5) !important;
+}
+.op-light-magenta-hi {
+  background-color: hsl(from hsl(300, 100%, 90%) h s l / 0.2) !important;
+}
+.op-light-magenta-low {
+  background-color: hsl(from hsl(300, 100%, 90%) h s l / 0.8) !important;
+}
+.op-minor-magenta {
+  background-color: hsl(from hsl(300, 100%, 70%) h s l / 0.5) !important;
+}
+.op-minor-magenta-hi {
+  background-color: hsl(from hsl(300, 100%, 70%) h s l / 0.2) !important;
+}
+.op-minor-magenta-low {
+  background-color: hsl(from hsl(300, 100%, 70%) h s l / 0.8) !important;
+}
+.op-sat-magenta {
+  background-color: hsl(from hsl(300, 100%, 40%) h s l / 0.5) !important;
+}
+.op-sat-magenta-hi {
+  background-color: hsl(from hsl(300, 100%, 40%) h s l / 0.2) !important;
+}
+.op-sat-magenta-low {
+  background-color: hsl(from hsl(300, 100%, 40%) h s l / 0.8) !important;
+}
+.op-dark-magenta {
+  background-color: hsl(from hsl(300, 100%, 30%) h s l / 0.5) !important;
+}
+.op-dark-magenta-hi {
+  background-color: hsl(from hsl(300, 100%, 30%) h s l / 0.2) !important;
+}
+.op-dark-magenta-low {
+  background-color: hsl(from hsl(300, 100%, 30%) h s l / 0.8) !important;
+}
+.op-light-crimson {
+  background-color: hsl(from hsl(348, 88%, 81%) h s l / 0.5) !important;
+}
+.op-light-crimson-hi {
+  background-color: hsl(from hsl(348, 88%, 81%) h s l / 0.2) !important;
+}
+.op-light-crimson-low {
+  background-color: hsl(from hsl(348, 88%, 81%) h s l / 0.8) !important;
+}
+.op-minor-crimson {
+  background-color: hsl(from hsl(348, 88%, 66%) h s l / 0.5) !important;
+}
+.op-minor-crimson-hi {
+  background-color: hsl(from hsl(348, 88%, 66%) h s l / 0.2) !important;
+}
+.op-minor-crimson-low {
+  background-color: hsl(from hsl(348, 88%, 66%) h s l / 0.8) !important;
+}
+.op-sat-crimson {
+  background-color: hsl(from hsl(348, 88%, 36%) h s l / 0.5) !important;
+}
+.op-sat-crimson-hi {
+  background-color: hsl(from hsl(348, 88%, 36%) h s l / 0.2) !important;
+}
+.op-sat-crimson-low {
+  background-color: hsl(from hsl(348, 88%, 36%) h s l / 0.8) !important;
+}
+.op-dark-crimson {
+  background-color: hsl(from hsl(348, 88%, 26%) h s l / 0.5) !important;
+}
+.op-dark-crimson-hi {
+  background-color: hsl(from hsl(348, 88%, 26%) h s l / 0.2) !important;
+}
+.op-dark-crimson-low {
+  background-color: hsl(from hsl(348, 88%, 26%) h s l / 0.8) !important;
+}
+.op-light-red {
+  background-color: hsl(from hsl(0, 100%, 80%) h s l / 0.5) !important;
+}
+.op-light-red-hi {
+  background-color: hsl(from hsl(0, 100%, 80%) h s l / 0.2) !important;
+}
+.op-light-red-low {
+  background-color: hsl(from hsl(0, 100%, 80%) h s l / 0.8) !important;
+}
+.op-minor-red {
+  background-color: hsl(from hsl(0, 100%, 70%) h s l / 0.5) !important;
+}
+.op-minor-red-hi {
+  background-color: hsl(from hsl(0, 100%, 70%) h s l / 0.2) !important;
+}
+.op-minor-red-low {
+  background-color: hsl(from hsl(0, 100%, 70%) h s l / 0.8) !important;
+}
+.op-sat-red {
+  background-color: hsl(from hsl(0, 100%, 40%) h s l / 0.5) !important;
+}
+.op-sat-red-hi {
+  background-color: hsl(from hsl(0, 100%, 40%) h s l / 0.2) !important;
+}
+.op-sat-red-low {
+  background-color: hsl(from hsl(0, 100%, 40%) h s l / 0.8) !important;
+}
+.op-dark-red {
+  background-color: hsl(from hsl(0, 100%, 30%) h s l / 0.5) !important;
+}
+.op-dark-red-hi {
+  background-color: hsl(from hsl(0, 100%, 30%) h s l / 0.2) !important;
+}
+.op-dark-red-low {
+  background-color: hsl(from hsl(0, 100%, 30%) h s l / 0.8) !important;
+}
+.op-light-orange {
+  background-color: hsl(from hsl(39, 100%, 90%) h s l / 0.5) !important;
+}
+.op-light-orange-hi {
+  background-color: hsl(from hsl(39, 100%, 90%) h s l / 0.2) !important;
+}
+.op-light-orange-low {
+  background-color: hsl(from hsl(39, 100%, 90%) h s l / 0.8) !important;
+}
+.op-minor-orange {
+  background-color: hsl(from hsl(39, 100%, 70%) h s l / 0.5) !important;
+}
+.op-minor-orange-hi {
+  background-color: hsl(from hsl(39, 100%, 70%) h s l / 0.2) !important;
+}
+.op-minor-orange-low {
+  background-color: hsl(from hsl(39, 100%, 70%) h s l / 0.8) !important;
+}
+.op-sat-orange {
+  background-color: hsl(from hsl(39, 100%, 40%) h s l / 0.5) !important;
+}
+.op-sat-orange-hi {
+  background-color: hsl(from hsl(39, 100%, 40%) h s l / 0.2) !important;
+}
+.op-sat-orange-low {
+  background-color: hsl(from hsl(39, 100%, 40%) h s l / 0.8) !important;
+}
+.op-dark-orange {
+  background-color: hsl(from hsl(39, 100%, 30%) h s l / 0.5) !important;
+}
+.op-dark-orange-hi {
+  background-color: hsl(from hsl(39, 100%, 30%) h s l / 0.2) !important;
+}
+.op-dark-orange-low {
+  background-color: hsl(from hsl(39, 100%, 30%) h s l / 0.8) !important;
+}
+.op-light-amber {
+  background-color: hsl(from hsl(45, 100%, 78%) h s l / 0.5) !important;
+}
+.op-light-amber-hi {
+  background-color: hsl(from hsl(45, 100%, 78%) h s l / 0.2) !important;
+}
+.op-light-amber-low {
+  background-color: hsl(from hsl(45, 100%, 78%) h s l / 0.8) !important;
+}
+.op-minor-amber {
+  background-color: hsl(from hsl(45, 100%, 68%) h s l / 0.5) !important;
+}
+.op-minor-amber-hi {
+  background-color: hsl(from hsl(45, 100%, 68%) h s l / 0.2) !important;
+}
+.op-minor-amber-low {
+  background-color: hsl(from hsl(45, 100%, 68%) h s l / 0.8) !important;
+}
+.op-sat-amber {
+  background-color: hsl(from hsl(45, 100%, 48%) h s l / 0.5) !important;
+}
+.op-sat-amber-hi {
+  background-color: hsl(from hsl(45, 100%, 48%) h s l / 0.2) !important;
+}
+.op-sat-amber-low {
+  background-color: hsl(from hsl(45, 100%, 48%) h s l / 0.8) !important;
+}
+.op-dark-amber {
+  background-color: hsl(from hsl(45, 100%, 38%) h s l / 0.5) !important;
+}
+.op-dark-amber-hi {
+  background-color: hsl(from hsl(45, 100%, 38%) h s l / 0.2) !important;
+}
+.op-dark-amber-low {
+  background-color: hsl(from hsl(45, 100%, 38%) h s l / 0.8) !important;
+}
+.op-light-yellow {
+  background-color: hsl(from hsl(52, 100%, 93%) h s l / 0.5) !important;
+}
+.op-light-yellow-hi {
+  background-color: hsl(from hsl(52, 100%, 93%) h s l / 0.2) !important;
+}
+.op-light-yellow-low {
+  background-color: hsl(from hsl(52, 100%, 93%) h s l / 0.8) !important;
+}
+.op-minor-yellow {
+  background-color: hsl(from hsl(52, 100%, 83%) h s l / 0.5) !important;
+}
+.op-minor-yellow-hi {
+  background-color: hsl(from hsl(52, 100%, 83%) h s l / 0.2) !important;
+}
+.op-minor-yellow-low {
+  background-color: hsl(from hsl(52, 100%, 83%) h s l / 0.8) !important;
+}
+.op-sat-yellow {
+  background-color: hsl(from hsl(52, 100%, 58%) h s l / 0.5) !important;
+}
+.op-sat-yellow-hi {
+  background-color: hsl(from hsl(52, 100%, 58%) h s l / 0.2) !important;
+}
+.op-sat-yellow-low {
+  background-color: hsl(from hsl(52, 100%, 58%) h s l / 0.8) !important;
+}
+.op-dark-yellow {
+  background-color: hsl(from hsl(52, 100%, 48%) h s l / 0.5) !important;
+}
+.op-dark-yellow-hi {
+  background-color: hsl(from hsl(52, 100%, 48%) h s l / 0.2) !important;
+}
+.op-dark-yellow-low {
+  background-color: hsl(from hsl(52, 100%, 48%) h s l / 0.8) !important;
+}
+.op-light-brown {
+  background-color: hsl(from hsl(25, 57%, 81%) h s l / 0.5) !important;
+}
+.op-light-brown-hi {
+  background-color: hsl(from hsl(25, 57%, 81%) h s l / 0.2) !important;
+}
+.op-light-brown-low {
+  background-color: hsl(from hsl(25, 57%, 81%) h s l / 0.8) !important;
+}
+.op-minor-brown {
+  background-color: hsl(from hsl(25, 57%, 66%) h s l / 0.5) !important;
+}
+.op-minor-brown-hi {
+  background-color: hsl(from hsl(25, 57%, 66%) h s l / 0.2) !important;
+}
+.op-minor-brown-low {
+  background-color: hsl(from hsl(25, 57%, 66%) h s l / 0.8) !important;
+}
+.op-sat-brown {
+  background-color: hsl(from hsl(25, 57%, 41%) h s l / 0.5) !important;
+}
+.op-sat-brown-hi {
+  background-color: hsl(from hsl(25, 57%, 41%) h s l / 0.2) !important;
+}
+.op-sat-brown-low {
+  background-color: hsl(from hsl(25, 57%, 41%) h s l / 0.8) !important;
+}
+.op-dark-brown {
+  background-color: hsl(from hsl(25, 57%, 31%) h s l / 0.5) !important;
+}
+.op-dark-brown-hi {
+  background-color: hsl(from hsl(25, 57%, 31%) h s l / 0.2) !important;
+}
+.op-dark-brown-low {
+  background-color: hsl(from hsl(25, 57%, 31%) h s l / 0.8) !important;
+}
+.op-light-olive {
+  background-color: hsl(from hsl(60, 100%, 72%) h s l / 0.5) !important;
+}
+.op-light-olive-hi {
+  background-color: hsl(from hsl(60, 100%, 72%) h s l / 0.2) !important;
+}
+.op-light-olive-low {
+  background-color: hsl(from hsl(60, 100%, 72%) h s l / 0.8) !important;
+}
+.op-minor-olive {
+  background-color: hsl(from hsl(60, 100%, 42%) h s l / 0.5) !important;
+}
+.op-minor-olive-hi {
+  background-color: hsl(from hsl(60, 100%, 42%) h s l / 0.2) !important;
+}
+.op-minor-olive-low {
+  background-color: hsl(from hsl(60, 100%, 42%) h s l / 0.8) !important;
+}
+.op-sat-olive {
+  background-color: hsl(from hsl(60, 100%, 22%) h s l / 0.5) !important;
+}
+.op-sat-olive-hi {
+  background-color: hsl(from hsl(60, 100%, 22%) h s l / 0.2) !important;
+}
+.op-sat-olive-low {
+  background-color: hsl(from hsl(60, 100%, 22%) h s l / 0.8) !important;
+}
+.op-dark-olive {
+  background-color: hsl(from hsl(60, 100%, 12%) h s l / 0.5) !important;
+}
+.op-dark-olive-hi {
+  background-color: hsl(from hsl(60, 100%, 12%) h s l / 0.2) !important;
+}
+.op-dark-olive-low {
+  background-color: hsl(from hsl(60, 100%, 12%) h s l / 0.8) !important;
+}
+.op-light-steel {
+  background-color: hsl(from hsl(209, 19%, 87%) h s l / 0.5) !important;
+}
+.op-light-steel-hi {
+  background-color: hsl(from hsl(209, 19%, 87%) h s l / 0.2) !important;
+}
+.op-light-steel-low {
+  background-color: hsl(from hsl(209, 19%, 87%) h s l / 0.8) !important;
+}
+.op-minor-steel {
+  background-color: hsl(from hsl(209, 19%, 77%) h s l / 0.5) !important;
+}
+.op-minor-steel-hi {
+  background-color: hsl(from hsl(209, 19%, 77%) h s l / 0.2) !important;
+}
+.op-minor-steel-low {
+  background-color: hsl(from hsl(209, 19%, 77%) h s l / 0.8) !important;
+}
+.op-sat-steel {
+  background-color: hsl(from hsl(209, 19%, 47%) h s l / 0.5) !important;
+}
+.op-sat-steel-hi {
+  background-color: hsl(from hsl(209, 19%, 47%) h s l / 0.2) !important;
+}
+.op-sat-steel-low {
+  background-color: hsl(from hsl(209, 19%, 47%) h s l / 0.8) !important;
+}
+.op-dark-steel {
+  background-color: hsl(from hsl(209, 19%, 37%) h s l / 0.5) !important;
+}
+.op-dark-steel-hi {
+  background-color: hsl(from hsl(209, 19%, 37%) h s l / 0.2) !important;
+}
+.op-dark-steel-low {
+  background-color: hsl(from hsl(209, 19%, 37%) h s l / 0.8) !important;
+}
+.op-light-mauve {
+  background-color: hsl(from hsl(277, 100%, 96%) h s l / 0.5) !important;
+}
+.op-light-mauve-hi {
+  background-color: hsl(from hsl(277, 100%, 96%) h s l / 0.2) !important;
+}
+.op-light-mauve-low {
+  background-color: hsl(from hsl(277, 100%, 96%) h s l / 0.8) !important;
+}
+.op-minor-mauve {
+  background-color: hsl(from hsl(277, 100%, 90%) h s l / 0.5) !important;
+}
+.op-minor-mauve-hi {
+  background-color: hsl(from hsl(277, 100%, 90%) h s l / 0.2) !important;
+}
+.op-minor-mauve-low {
+  background-color: hsl(from hsl(277, 100%, 90%) h s l / 0.8) !important;
+}
+.op-sat-mauve {
+  background-color: hsl(from hsl(277, 100%, 74%) h s l / 0.5) !important;
+}
+.op-sat-mauve-hi {
+  background-color: hsl(from hsl(277, 100%, 74%) h s l / 0.2) !important;
+}
+.op-sat-mauve-low {
+  background-color: hsl(from hsl(277, 100%, 74%) h s l / 0.8) !important;
+}
+.op-dark-mauve {
+  background-color: hsl(from hsl(277, 100%, 64%) h s l / 0.5) !important;
+}
+.op-dark-mauve-hi {
+  background-color: hsl(from hsl(277, 100%, 64%) h s l / 0.2) !important;
+}
+.op-dark-mauve-low {
+  background-color: hsl(from hsl(277, 100%, 64%) h s l / 0.8) !important;
+}
+.op-light-taupe {
+  background-color: hsl(from hsl(29, 19%, 80%) h s l / 0.5) !important;
+}
+.op-light-taupe-hi {
+  background-color: hsl(from hsl(29, 19%, 80%) h s l / 0.2) !important;
+}
+.op-light-taupe-low {
+  background-color: hsl(from hsl(29, 19%, 80%) h s l / 0.8) !important;
+}
+.op-minor-taupe {
+  background-color: hsl(from hsl(29, 19%, 67%) h s l / 0.5) !important;
+}
+.op-minor-taupe-hi {
+  background-color: hsl(from hsl(29, 19%, 67%) h s l / 0.2) !important;
+}
+.op-minor-taupe-low {
+  background-color: hsl(from hsl(29, 19%, 67%) h s l / 0.8) !important;
+}
+.op-sat-taupe {
+  background-color: hsl(from hsl(29, 19%, 40%) h s l / 0.5) !important;
+}
+.op-sat-taupe-hi {
+  background-color: hsl(from hsl(29, 19%, 40%) h s l / 0.2) !important;
+}
+.op-sat-taupe-low {
+  background-color: hsl(from hsl(29, 19%, 40%) h s l / 0.8) !important;
+}
+.op-dark-taupe {
+  background-color: hsl(from hsl(29, 19%, 30%) h s l / 0.5) !important;
+}
+.op-dark-taupe-hi {
+  background-color: hsl(from hsl(29, 19%, 30%) h s l / 0.2) !important;
+}
+.op-dark-taupe-low {
+  background-color: hsl(from hsl(29, 19%, 30%) h s l / 0.8) !important;
+}
+.op-light-champagne {
+  background-color: hsl(from hsl(37, 74%, 98%) h s l / 0.5) !important;
+}
+.op-light-champagne-hi {
+  background-color: hsl(from hsl(37, 74%, 98%) h s l / 0.2) !important;
+}
+.op-light-champagne-low {
+  background-color: hsl(from hsl(37, 74%, 98%) h s l / 0.8) !important;
+}
+.op-minor-champagne {
+  background-color: hsl(from hsl(37, 74%, 93%) h s l / 0.5) !important;
+}
+.op-minor-champagne-hi {
+  background-color: hsl(from hsl(37, 74%, 93%) h s l / 0.2) !important;
+}
+.op-minor-champagne-low {
+  background-color: hsl(from hsl(37, 74%, 93%) h s l / 0.8) !important;
+}
+.op-sat-champagne {
+  background-color: hsl(from hsl(37, 74%, 78%) h s l / 0.5) !important;
+}
+.op-sat-champagne-hi {
+  background-color: hsl(from hsl(37, 74%, 78%) h s l / 0.2) !important;
+}
+.op-sat-champagne-low {
+  background-color: hsl(from hsl(37, 74%, 78%) h s l / 0.8) !important;
+}
+.op-dark-champagne {
+  background-color: hsl(from hsl(37, 74%, 68%) h s l / 0.5) !important;
+}
+.op-dark-champagne-hi {
+  background-color: hsl(from hsl(37, 74%, 68%) h s l / 0.2) !important;
+}
+.op-dark-champagne-low {
+  background-color: hsl(from hsl(37, 74%, 68%) h s l / 0.8) !important;
+}
+.op-light-khaki {
+  background-color: hsl(from hsl(47, 47%, 94%) h s l / 0.5) !important;
+}
+.op-light-khaki-hi {
+  background-color: hsl(from hsl(47, 47%, 94%) h s l / 0.2) !important;
+}
+.op-light-khaki-low {
+  background-color: hsl(from hsl(47, 47%, 94%) h s l / 0.8) !important;
+}
+.op-minor-khaki {
+  background-color: hsl(from hsl(47, 47%, 84%) h s l / 0.5) !important;
+}
+.op-minor-khaki-hi {
+  background-color: hsl(from hsl(47, 47%, 84%) h s l / 0.2) !important;
+}
+.op-minor-khaki-low {
+  background-color: hsl(from hsl(47, 47%, 84%) h s l / 0.8) !important;
+}
+.op-sat-khaki {
+  background-color: hsl(from hsl(47, 47%, 59%) h s l / 0.5) !important;
+}
+.op-sat-khaki-hi {
+  background-color: hsl(from hsl(47, 47%, 59%) h s l / 0.2) !important;
+}
+.op-sat-khaki-low {
+  background-color: hsl(from hsl(47, 47%, 59%) h s l / 0.8) !important;
+}
+.op-dark-khaki {
+  background-color: hsl(from hsl(47, 47%, 49%) h s l / 0.5) !important;
+}
+.op-dark-khaki-hi {
+  background-color: hsl(from hsl(47, 47%, 49%) h s l / 0.2) !important;
+}
+.op-dark-khaki-low {
+  background-color: hsl(from hsl(47, 47%, 49%) h s l / 0.8) !important;
+}
+.op-light-charcoal {
+  background-color: hsl(from hsl(0, 0%, 85%) h s l / 0.5) !important;
+}
+.op-light-charcoal-hi {
+  background-color: hsl(from hsl(0, 0%, 85%) h s l / 0.2) !important;
+}
+.op-light-charcoal-low {
+  background-color: hsl(from hsl(0, 0%, 85%) h s l / 0.8) !important;
+}
+.op-minor-charcoal {
+  background-color: hsl(from hsl(0, 0%, 75%) h s l / 0.5) !important;
+}
+.op-minor-charcoal-hi {
+  background-color: hsl(from hsl(0, 0%, 75%) h s l / 0.2) !important;
+}
+.op-minor-charcoal-low {
+  background-color: hsl(from hsl(0, 0%, 75%) h s l / 0.8) !important;
+}
+.op-sat-charcoal {
+  background-color: hsl(from hsl(0, 0%, 50%) h s l / 0.5) !important;
+}
+.op-sat-charcoal-hi {
+  background-color: hsl(from hsl(0, 0%, 50%) h s l / 0.2) !important;
+}
+.op-sat-charcoal-low {
+  background-color: hsl(from hsl(0, 0%, 50%) h s l / 0.8) !important;
+}
+.op-dark-charcoal {
+  background-color: hsl(from hsl(0, 0%, 40%) h s l / 0.5) !important;
+}
+.op-dark-charcoal-hi {
+  background-color: hsl(from hsl(0, 0%, 40%) h s l / 0.2) !important;
+}
+.op-dark-charcoal-low {
+  background-color: hsl(from hsl(0, 0%, 40%) h s l / 0.8) !important;
+}
+.op-light-bronze {
+  background-color: hsl(from hsl(29, 75%, 87%) h s l / 0.5) !important;
+}
+.op-light-bronze-hi {
+  background-color: hsl(from hsl(29, 75%, 87%) h s l / 0.2) !important;
+}
+.op-light-bronze-low {
+  background-color: hsl(from hsl(29, 75%, 87%) h s l / 0.8) !important;
+}
+.op-minor-bronze {
+  background-color: hsl(from hsl(29, 75%, 72%) h s l / 0.5) !important;
+}
+.op-minor-bronze-hi {
+  background-color: hsl(from hsl(29, 75%, 72%) h s l / 0.2) !important;
+}
+.op-minor-bronze-low {
+  background-color: hsl(from hsl(29, 75%, 72%) h s l / 0.8) !important;
+}
+.op-sat-bronze {
+  background-color: hsl(from hsl(29, 75%, 47%) h s l / 0.5) !important;
+}
+.op-sat-bronze-hi {
+  background-color: hsl(from hsl(29, 75%, 47%) h s l / 0.2) !important;
+}
+.op-sat-bronze-low {
+  background-color: hsl(from hsl(29, 75%, 47%) h s l / 0.8) !important;
+}
+.op-dark-bronze {
+  background-color: hsl(from hsl(29, 75%, 37%) h s l / 0.5) !important;
+}
+.op-dark-bronze-hi {
+  background-color: hsl(from hsl(29, 75%, 37%) h s l / 0.2) !important;
+}
+.op-dark-bronze-low {
+  background-color: hsl(from hsl(29, 75%, 37%) h s l / 0.8) !important;
+}
+.op-light-windstorm {
+  background-color: hsl(from hsl(216, 53%, 93%) h s l / 0.5) !important;
+}
+.op-light-windstorm-hi {
+  background-color: hsl(from hsl(216, 53%, 93%) h s l / 0.2) !important;
+}
+.op-light-windstorm-low {
+  background-color: hsl(from hsl(216, 53%, 93%) h s l / 0.8) !important;
+}
+.op-minor-windstorm {
+  background-color: hsl(from hsl(216, 53%, 81%) h s l / 0.5) !important;
+}
+.op-minor-windstorm-hi {
+  background-color: hsl(from hsl(216, 53%, 81%) h s l / 0.2) !important;
+}
+.op-minor-windstorm-low {
+  background-color: hsl(from hsl(216, 53%, 81%) h s l / 0.8) !important;
+}
+.op-sat-windstorm {
+  background-color: hsl(from hsl(216, 53%, 56%) h s l / 0.5) !important;
+}
+.op-sat-windstorm-hi {
+  background-color: hsl(from hsl(216, 53%, 56%) h s l / 0.2) !important;
+}
+.op-sat-windstorm-low {
+  background-color: hsl(from hsl(216, 53%, 56%) h s l / 0.8) !important;
+}
+.op-dark-windstorm {
+  background-color: hsl(from hsl(216, 53%, 46%) h s l / 0.5) !important;
+}
+.op-dark-windstorm-hi {
+  background-color: hsl(from hsl(216, 53%, 46%) h s l / 0.2) !important;
+}
+.op-dark-windstorm-low {
+  background-color: hsl(from hsl(216, 53%, 46%) h s l / 0.8) !important;
+}
+.op-light-nude {
+  background-color: hsl(from hsl(29, 79%, 97%) h s l / 0.5) !important;
+}
+.op-light-nude-hi {
+  background-color: hsl(from hsl(29, 79%, 97%) h s l / 0.2) !important;
+}
+.op-light-nude-low {
+  background-color: hsl(from hsl(29, 79%, 97%) h s l / 0.8) !important;
+}
+.op-minor-nude {
+  background-color: hsl(from hsl(29, 79%, 92%) h s l / 0.5) !important;
+}
+.op-minor-nude-hi {
+  background-color: hsl(from hsl(29, 79%, 92%) h s l / 0.2) !important;
+}
+.op-minor-nude-low {
+  background-color: hsl(from hsl(29, 79%, 92%) h s l / 0.8) !important;
+}
+.op-sat-nude {
+  background-color: hsl(from hsl(29, 79%, 75%) h s l / 0.5) !important;
+}
+.op-sat-nude-hi {
+  background-color: hsl(from hsl(29, 79%, 75%) h s l / 0.2) !important;
+}
+.op-sat-nude-low {
+  background-color: hsl(from hsl(29, 79%, 75%) h s l / 0.8) !important;
+}
+.op-dark-nude {
+  background-color: hsl(from hsl(29, 79%, 65%) h s l / 0.5) !important;
+}
+.op-dark-nude-hi {
+  background-color: hsl(from hsl(29, 79%, 65%) h s l / 0.2) !important;
+}
+.op-dark-nude-low {
+  background-color: hsl(from hsl(29, 79%, 65%) h s l / 0.8) !important;
+}
+.op-light-terracotta {
+  background-color: hsl(from hsl(10, 76%, 85%) h s l / 0.5) !important;
+}
+.op-light-terracotta-hi {
+  background-color: hsl(from hsl(10, 76%, 85%) h s l / 0.2) !important;
+}
+.op-light-terracotta-low {
+  background-color: hsl(from hsl(10, 76%, 85%) h s l / 0.8) !important;
+}
+.op-minor-terracotta {
+  background-color: hsl(from hsl(10, 76%, 70%) h s l / 0.5) !important;
+}
+.op-minor-terracotta-hi {
+  background-color: hsl(from hsl(10, 76%, 70%) h s l / 0.2) !important;
+}
+.op-minor-terracotta-low {
+  background-color: hsl(from hsl(10, 76%, 70%) h s l / 0.8) !important;
+}
+.op-sat-terracotta {
+  background-color: hsl(from hsl(10, 76%, 45%) h s l / 0.5) !important;
+}
+.op-sat-terracotta-hi {
+  background-color: hsl(from hsl(10, 76%, 45%) h s l / 0.2) !important;
+}
+.op-sat-terracotta-low {
+  background-color: hsl(from hsl(10, 76%, 45%) h s l / 0.8) !important;
+}
+.op-dark-terracotta {
+  background-color: hsl(from hsl(10, 76%, 35%) h s l / 0.5) !important;
+}
+.op-dark-terracotta-hi {
+  background-color: hsl(from hsl(10, 76%, 35%) h s l / 0.2) !important;
+}
+.op-dark-terracotta-low {
+  background-color: hsl(from hsl(10, 76%, 35%) h s l / 0.8) !important;
+}
+.op-light-coral {
+  background-color: hsl(from hsl(16, 100%, 92%) h s l / 0.5) !important;
+}
+.op-light-coral-hi {
+  background-color: hsl(from hsl(16, 100%, 92%) h s l / 0.2) !important;
+}
+.op-light-coral-low {
+  background-color: hsl(from hsl(16, 100%, 92%) h s l / 0.8) !important;
+}
+.op-minor-coral {
+  background-color: hsl(from hsl(16, 100%, 82%) h s l / 0.5) !important;
+}
+.op-minor-coral-hi {
+  background-color: hsl(from hsl(16, 100%, 82%) h s l / 0.2) !important;
+}
+.op-minor-coral-low {
+  background-color: hsl(from hsl(16, 100%, 82%) h s l / 0.8) !important;
+}
+.op-sat-coral {
+  background-color: hsl(from hsl(16, 100%, 57%) h s l / 0.5) !important;
+}
+.op-sat-coral-hi {
+  background-color: hsl(from hsl(16, 100%, 57%) h s l / 0.2) !important;
+}
+.op-sat-coral-low {
+  background-color: hsl(from hsl(16, 100%, 57%) h s l / 0.8) !important;
+}
+.op-dark-coral {
+  background-color: hsl(from hsl(16, 100%, 47%) h s l / 0.5) !important;
+}
+.op-dark-coral-hi {
+  background-color: hsl(from hsl(16, 100%, 47%) h s l / 0.2) !important;
+}
+.op-dark-coral-low {
+  background-color: hsl(from hsl(16, 100%, 47%) h s l / 0.8) !important;
+}
+.op-light-army {
+  background-color: hsl(from hsl(69, 34%, 65%) h s l / 0.5) !important;
+}
+.op-light-army-hi {
+  background-color: hsl(from hsl(69, 34%, 65%) h s l / 0.2) !important;
+}
+.op-light-army-low {
+  background-color: hsl(from hsl(69, 34%, 65%) h s l / 0.8) !important;
+}
+.op-minor-army {
+  background-color: hsl(from hsl(69, 34%, 47%) h s l / 0.5) !important;
+}
+.op-minor-army-hi {
+  background-color: hsl(from hsl(69, 34%, 47%) h s l / 0.2) !important;
+}
+.op-minor-army-low {
+  background-color: hsl(from hsl(69, 34%, 47%) h s l / 0.8) !important;
+}
+.op-sat-army {
+  background-color: hsl(from hsl(69, 34%, 20%) h s l / 0.5) !important;
+}
+.op-sat-army-hi {
+  background-color: hsl(from hsl(69, 34%, 20%) h s l / 0.2) !important;
+}
+.op-sat-army-low {
+  background-color: hsl(from hsl(69, 34%, 20%) h s l / 0.8) !important;
+}
+.op-dark-army {
+  background-color: hsl(from hsl(69, 34%, 10%) h s l / 0.5) !important;
+}
+.op-dark-army-hi {
+  background-color: hsl(from hsl(69, 34%, 10%) h s l / 0.2) !important;
+}
+.op-dark-army-low {
+  background-color: hsl(from hsl(69, 34%, 10%) h s l / 0.8) !important;
+}
+.op-light-seashell {
+  background-color: hsl(from hsl(25, 100%, 98%) h s l / 0.5) !important;
+}
+.op-light-seashell-hi {
+  background-color: hsl(from hsl(25, 100%, 98%) h s l / 0.2) !important;
+}
+.op-light-seashell-low {
+  background-color: hsl(from hsl(25, 100%, 98%) h s l / 0.8) !important;
+}
+.op-minor-seashell {
+  background-color: hsl(from hsl(25, 100%, 97%) h s l / 0.5) !important;
+}
+.op-minor-seashell-hi {
+  background-color: hsl(from hsl(25, 100%, 97%) h s l / 0.2) !important;
+}
+.op-minor-seashell-low {
+  background-color: hsl(from hsl(25, 100%, 97%) h s l / 0.8) !important;
+}
+.op-sat-seashell {
+  background-color: hsl(from hsl(25, 100%, 85%) h s l / 0.5) !important;
+}
+.op-sat-seashell-hi {
+  background-color: hsl(from hsl(25, 100%, 85%) h s l / 0.2) !important;
+}
+.op-sat-seashell-low {
+  background-color: hsl(from hsl(25, 100%, 85%) h s l / 0.8) !important;
+}
+.op-dark-seashell {
+  background-color: hsl(from hsl(25, 100%, 75%) h s l / 0.5) !important;
+}
+.op-dark-seashell-hi {
+  background-color: hsl(from hsl(25, 100%, 75%) h s l / 0.2) !important;
+}
+.op-dark-seashell-low {
+  background-color: hsl(from hsl(25, 100%, 75%) h s l / 0.8) !important;
+}
+.op-light-sand {
+  background-color: hsl(from hsl(45, 71%, 96%) h s l / 0.5) !important;
+}
+.op-light-sand-hi {
+  background-color: hsl(from hsl(45, 71%, 96%) h s l / 0.2) !important;
+}
+.op-light-sand-low {
+  background-color: hsl(from hsl(45, 71%, 96%) h s l / 0.8) !important;
+}
+.op-minor-sand {
+  background-color: hsl(from hsl(45, 71%, 88%) h s l / 0.5) !important;
+}
+.op-minor-sand-hi {
+  background-color: hsl(from hsl(45, 71%, 88%) h s l / 0.2) !important;
+}
+.op-minor-sand-low {
+  background-color: hsl(from hsl(45, 71%, 88%) h s l / 0.8) !important;
+}
+.op-sat-sand {
+  background-color: hsl(from hsl(45, 71%, 71%) h s l / 0.5) !important;
+}
+.op-sat-sand-hi {
+  background-color: hsl(from hsl(45, 71%, 71%) h s l / 0.2) !important;
+}
+.op-sat-sand-low {
+  background-color: hsl(from hsl(45, 71%, 71%) h s l / 0.8) !important;
+}
+.op-dark-sand {
+  background-color: hsl(from hsl(45, 71%, 61%) h s l / 0.5) !important;
+}
+.op-dark-sand-hi {
+  background-color: hsl(from hsl(45, 71%, 61%) h s l / 0.2) !important;
+}
+.op-dark-sand-low {
+  background-color: hsl(from hsl(45, 71%, 61%) h s l / 0.8) !important;
 }
 
 /* source/colors-css/outline.less */
@@ -33233,6 +37589,150 @@ hr.fat {
 }
 
 /* source/colors-css/pseudo.less */
+.before-bg-black::before {
+  background: #000000 !important;
+}
+.before-fg-black::before {
+  color: #000000 !important;
+}
+.before-bd-black::before {
+  border-color: #000000 !important;
+}
+.after-bg-black::after {
+  background: #000000 !important;
+}
+.after-fg-black::after {
+  color: #000000 !important;
+}
+.after-bd-black::after {
+  border-color: #000000 !important;
+}
+.before-bg-white::before {
+  background: #ffffff !important;
+}
+.before-fg-white::before {
+  color: #ffffff !important;
+}
+.before-bd-white::before {
+  border-color: #ffffff !important;
+}
+.after-bg-white::after {
+  background: #ffffff !important;
+}
+.after-fg-white::after {
+  color: #ffffff !important;
+}
+.after-bd-white::after {
+  border-color: #ffffff !important;
+}
+.before-bg-dark::before {
+  background: #1d1d1d !important;
+}
+.before-fg-dark::before {
+  color: #1d1d1d !important;
+}
+.before-bd-dark::before {
+  border-color: #1d1d1d !important;
+}
+.after-bg-dark::after {
+  background: #1d1d1d !important;
+}
+.after-fg-dark::after {
+  color: #1d1d1d !important;
+}
+.after-bd-dark::after {
+  border-color: #1d1d1d !important;
+}
+.before-bg-light::before {
+  background: #f8f8f8 !important;
+}
+.before-fg-light::before {
+  color: #f8f8f8 !important;
+}
+.before-bd-light::before {
+  border-color: #f8f8f8 !important;
+}
+.after-bg-light::after {
+  background: #f8f8f8 !important;
+}
+.after-fg-light::after {
+  color: #f8f8f8 !important;
+}
+.after-bd-light::after {
+  border-color: #f8f8f8 !important;
+}
+.before-bg-gray::before {
+  background: hsl(0, 0%, 80%) !important;
+}
+.before-fg-gray::before {
+  color: hsl(0, 0%, 80%) !important;
+}
+.before-bd-gray::before {
+  border-color: hsl(0, 0%, 80%) !important;
+}
+.after-bg-gray::after {
+  background: hsl(0, 0%, 80%) !important;
+}
+.after-fg-gray::after {
+  color: hsl(0, 0%, 80%) !important;
+}
+.after-bd-gray::after {
+  border-color: hsl(0, 0%, 80%) !important;
+}
+.before-bg-gray-blue::before {
+  background: hsl(210, 26%, 54%) !important;
+}
+.before-fg-gray-blue::before {
+  color: hsl(210, 26%, 54%) !important;
+}
+.before-bd-gray-blue::before {
+  border-color: hsl(210, 26%, 54%) !important;
+}
+.after-bg-gray-blue::after {
+  background: hsl(210, 26%, 54%) !important;
+}
+.after-fg-gray-blue::after {
+  color: hsl(210, 26%, 54%) !important;
+}
+.after-bd-gray-blue::after {
+  border-color: hsl(210, 26%, 54%) !important;
+}
+.before-bg-gray-white::before {
+  background: hsl(0, 0%, 96%) !important;
+}
+.before-fg-gray-white::before {
+  color: hsl(0, 0%, 96%) !important;
+}
+.before-bd-gray-white::before {
+  border-color: hsl(0, 0%, 96%) !important;
+}
+.after-bg-gray-white::after {
+  background: hsl(0, 0%, 96%) !important;
+}
+.after-fg-gray-white::after {
+  color: hsl(0, 0%, 96%) !important;
+}
+.after-bd-gray-white::after {
+  border-color: hsl(0, 0%, 96%) !important;
+}
+.before-bg-gray-mouse::before {
+  background: hsl(199, 15%, 40%) !important;
+}
+.before-fg-gray-mouse::before {
+  color: hsl(199, 15%, 40%) !important;
+}
+.before-bd-gray-mouse::before {
+  border-color: hsl(199, 15%, 40%) !important;
+}
+.after-bg-gray-mouse::after {
+  background: hsl(199, 15%, 40%) !important;
+}
+.after-fg-gray-mouse::after {
+  color: hsl(199, 15%, 40%) !important;
+}
+.after-bd-gray-mouse::after {
+  border-color: hsl(199, 15%, 40%) !important;
+}
 .before-bg-lime::before {
   background: hsl(93, 97%, 71%) !important;
 }
@@ -33484,6 +37984,24 @@ hr.fat {
 }
 .after-bd-red::after {
   border-color: hsl(0, 100%, 50%) !important;
+}
+.before-bg-clown::before {
+  background: hsl(3, 100%, 70%) !important;
+}
+.before-fg-clown::before {
+  color: hsl(3, 100%, 70%) !important;
+}
+.before-bd-clown::before {
+  border-color: hsl(3, 100%, 70%) !important;
+}
+.after-bg-clown::after {
+  background: hsl(3, 100%, 70%) !important;
+}
+.after-fg-clown::after {
+  color: hsl(3, 100%, 70%) !important;
+}
+.after-bd-clown::after {
+  border-color: hsl(3, 100%, 70%) !important;
 }
 .before-bg-orange::before {
   background: hsl(39, 100%, 50%) !important;
@@ -33826,6 +38344,2382 @@ hr.fat {
 }
 .after-bd-sand::after {
   border-color: hsl(45, 71%, 81%) !important;
+}
+.before-bg-light-lime::before {
+  background: hsl(93, 97%, 91%) !important;
+}
+.before-fg-light-lime::before {
+  color: hsl(93, 97%, 91%) !important;
+}
+.before-bd-light-lime::before {
+  border-color: hsl(93, 97%, 91%) !important;
+}
+.after-bg-light-lime::after {
+  background: hsl(93, 97%, 91%) !important;
+}
+.after-fg-light-lime::after {
+  color: hsl(93, 97%, 91%) !important;
+}
+.after-bd-light-lime::after {
+  border-color: hsl(93, 97%, 91%) !important;
+}
+.before-bg-minor-lime::before {
+  background: hsl(93, 97%, 81%) !important;
+}
+.before-fg-minor-lime::before {
+  color: hsl(93, 97%, 81%) !important;
+}
+.before-bd-minor-lime::before {
+  border-color: hsl(93, 97%, 81%) !important;
+}
+.after-bg-minor-lime::after {
+  background: hsl(93, 97%, 81%) !important;
+}
+.after-fg-minor-lime::after {
+  color: hsl(93, 97%, 81%) !important;
+}
+.after-bd-minor-lime::after {
+  border-color: hsl(93, 97%, 81%) !important;
+}
+.before-bg-sat-lime::before {
+  background: hsl(93, 97%, 61%) !important;
+}
+.before-fg-sat-lime::before {
+  color: hsl(93, 97%, 61%) !important;
+}
+.before-bd-sat-lime::before {
+  border-color: hsl(93, 97%, 61%) !important;
+}
+.after-bg-sat-lime::after {
+  background: hsl(93, 97%, 61%) !important;
+}
+.after-fg-sat-lime::after {
+  color: hsl(93, 97%, 61%) !important;
+}
+.after-bd-sat-lime::after {
+  border-color: hsl(93, 97%, 61%) !important;
+}
+.before-bg-dark-lime::before {
+  background: hsl(93, 97%, 51%) !important;
+}
+.before-fg-dark-lime::before {
+  color: hsl(93, 97%, 51%) !important;
+}
+.before-bd-dark-lime::before {
+  border-color: hsl(93, 97%, 51%) !important;
+}
+.after-bg-dark-lime::after {
+  background: hsl(93, 97%, 51%) !important;
+}
+.after-fg-dark-lime::after {
+  color: hsl(93, 97%, 51%) !important;
+}
+.after-bd-dark-lime::after {
+  border-color: hsl(93, 97%, 51%) !important;
+}
+.before-bg-light-green::before {
+  background: hsl(120, 100%, 75%) !important;
+}
+.before-fg-light-green::before {
+  color: hsl(120, 100%, 75%) !important;
+}
+.before-bd-light-green::before {
+  border-color: hsl(120, 100%, 75%) !important;
+}
+.after-bg-light-green::after {
+  background: hsl(120, 100%, 75%) !important;
+}
+.after-fg-light-green::after {
+  color: hsl(120, 100%, 75%) !important;
+}
+.after-bd-light-green::after {
+  border-color: hsl(120, 100%, 75%) !important;
+}
+.before-bg-minor-green::before {
+  background: hsl(120, 100%, 45%) !important;
+}
+.before-fg-minor-green::before {
+  color: hsl(120, 100%, 45%) !important;
+}
+.before-bd-minor-green::before {
+  border-color: hsl(120, 100%, 45%) !important;
+}
+.after-bg-minor-green::after {
+  background: hsl(120, 100%, 45%) !important;
+}
+.after-fg-minor-green::after {
+  color: hsl(120, 100%, 45%) !important;
+}
+.after-bd-minor-green::after {
+  border-color: hsl(120, 100%, 45%) !important;
+}
+.before-bg-sat-green::before {
+  background: hsl(120, 100%, 25%) !important;
+}
+.before-fg-sat-green::before {
+  color: hsl(120, 100%, 25%) !important;
+}
+.before-bd-sat-green::before {
+  border-color: hsl(120, 100%, 25%) !important;
+}
+.after-bg-sat-green::after {
+  background: hsl(120, 100%, 25%) !important;
+}
+.after-fg-sat-green::after {
+  color: hsl(120, 100%, 25%) !important;
+}
+.after-bd-sat-green::after {
+  border-color: hsl(120, 100%, 25%) !important;
+}
+.before-bg-dark-green::before {
+  background: hsl(120, 100%, 15%) !important;
+}
+.before-fg-dark-green::before {
+  color: hsl(120, 100%, 15%) !important;
+}
+.before-bd-dark-green::before {
+  border-color: hsl(120, 100%, 15%) !important;
+}
+.after-bg-dark-green::after {
+  background: hsl(120, 100%, 15%) !important;
+}
+.after-fg-dark-green::after {
+  color: hsl(120, 100%, 15%) !important;
+}
+.after-bd-dark-green::after {
+  border-color: hsl(120, 100%, 15%) !important;
+}
+.before-bg-light-emerald::before {
+  background: hsl(140, 52%, 85%) !important;
+}
+.before-fg-light-emerald::before {
+  color: hsl(140, 52%, 85%) !important;
+}
+.before-bd-light-emerald::before {
+  border-color: hsl(140, 52%, 85%) !important;
+}
+.after-bg-light-emerald::after {
+  background: hsl(140, 52%, 85%) !important;
+}
+.after-fg-light-emerald::after {
+  color: hsl(140, 52%, 85%) !important;
+}
+.after-bd-light-emerald::after {
+  border-color: hsl(140, 52%, 85%) !important;
+}
+.before-bg-minor-emerald::before {
+  background: hsl(140, 52%, 65%) !important;
+}
+.before-fg-minor-emerald::before {
+  color: hsl(140, 52%, 65%) !important;
+}
+.before-bd-minor-emerald::before {
+  border-color: hsl(140, 52%, 65%) !important;
+}
+.after-bg-minor-emerald::after {
+  background: hsl(140, 52%, 65%) !important;
+}
+.after-fg-minor-emerald::after {
+  color: hsl(140, 52%, 65%) !important;
+}
+.after-bd-minor-emerald::after {
+  border-color: hsl(140, 52%, 65%) !important;
+}
+.before-bg-sat-emerald::before {
+  background: hsl(140, 52%, 45%) !important;
+}
+.before-fg-sat-emerald::before {
+  color: hsl(140, 52%, 45%) !important;
+}
+.before-bd-sat-emerald::before {
+  border-color: hsl(140, 52%, 45%) !important;
+}
+.after-bg-sat-emerald::after {
+  background: hsl(140, 52%, 45%) !important;
+}
+.after-fg-sat-emerald::after {
+  color: hsl(140, 52%, 45%) !important;
+}
+.after-bd-sat-emerald::after {
+  border-color: hsl(140, 52%, 45%) !important;
+}
+.before-bg-dark-emerald::before {
+  background: hsl(140, 52%, 35%) !important;
+}
+.before-fg-dark-emerald::before {
+  color: hsl(140, 52%, 35%) !important;
+}
+.before-bd-dark-emerald::before {
+  border-color: hsl(140, 52%, 35%) !important;
+}
+.after-bg-dark-emerald::after {
+  background: hsl(140, 52%, 35%) !important;
+}
+.after-fg-dark-emerald::after {
+  color: hsl(140, 52%, 35%) !important;
+}
+.after-bd-dark-emerald::after {
+  border-color: hsl(140, 52%, 35%) !important;
+}
+.before-bg-light-blue::before {
+  background: hsl(225, 100%, 93%) !important;
+}
+.before-fg-light-blue::before {
+  color: hsl(225, 100%, 93%) !important;
+}
+.before-bd-light-blue::before {
+  border-color: hsl(225, 100%, 93%) !important;
+}
+.after-bg-light-blue::after {
+  background: hsl(225, 100%, 93%) !important;
+}
+.after-fg-light-blue::after {
+  color: hsl(225, 100%, 93%) !important;
+}
+.after-bd-light-blue::after {
+  border-color: hsl(225, 100%, 93%) !important;
+}
+.before-bg-minor-blue::before {
+  background: hsl(225, 100%, 78%) !important;
+}
+.before-fg-minor-blue::before {
+  color: hsl(225, 100%, 78%) !important;
+}
+.before-bd-minor-blue::before {
+  border-color: hsl(225, 100%, 78%) !important;
+}
+.after-bg-minor-blue::after {
+  background: hsl(225, 100%, 78%) !important;
+}
+.after-fg-minor-blue::after {
+  color: hsl(225, 100%, 78%) !important;
+}
+.after-bd-minor-blue::after {
+  border-color: hsl(225, 100%, 78%) !important;
+}
+.before-bg-sat-blue::before {
+  background: hsl(225, 100%, 58%) !important;
+}
+.before-fg-sat-blue::before {
+  color: hsl(225, 100%, 58%) !important;
+}
+.before-bd-sat-blue::before {
+  border-color: hsl(225, 100%, 58%) !important;
+}
+.after-bg-sat-blue::after {
+  background: hsl(225, 100%, 58%) !important;
+}
+.after-fg-sat-blue::after {
+  color: hsl(225, 100%, 58%) !important;
+}
+.after-bd-sat-blue::after {
+  border-color: hsl(225, 100%, 58%) !important;
+}
+.before-bg-dark-blue::before {
+  background: hsl(225, 100%, 48%) !important;
+}
+.before-fg-dark-blue::before {
+  color: hsl(225, 100%, 48%) !important;
+}
+.before-bd-dark-blue::before {
+  border-color: hsl(225, 100%, 48%) !important;
+}
+.after-bg-dark-blue::after {
+  background: hsl(225, 100%, 48%) !important;
+}
+.after-fg-dark-blue::after {
+  color: hsl(225, 100%, 48%) !important;
+}
+.after-bd-dark-blue::after {
+  border-color: hsl(225, 100%, 48%) !important;
+}
+.before-bg-light-teal::before {
+  background: hsl(180, 77%, 74%) !important;
+}
+.before-fg-light-teal::before {
+  color: hsl(180, 77%, 74%) !important;
+}
+.before-bd-light-teal::before {
+  border-color: hsl(180, 77%, 74%) !important;
+}
+.after-bg-light-teal::after {
+  background: hsl(180, 77%, 74%) !important;
+}
+.after-fg-light-teal::after {
+  color: hsl(180, 77%, 74%) !important;
+}
+.after-bd-light-teal::after {
+  border-color: hsl(180, 77%, 74%) !important;
+}
+.before-bg-minor-teal::before {
+  background: hsl(180, 77%, 54%) !important;
+}
+.before-fg-minor-teal::before {
+  color: hsl(180, 77%, 54%) !important;
+}
+.before-bd-minor-teal::before {
+  border-color: hsl(180, 77%, 54%) !important;
+}
+.after-bg-minor-teal::after {
+  background: hsl(180, 77%, 54%) !important;
+}
+.after-fg-minor-teal::after {
+  color: hsl(180, 77%, 54%) !important;
+}
+.after-bd-minor-teal::after {
+  border-color: hsl(180, 77%, 54%) !important;
+}
+.before-bg-sat-teal::before {
+  background: hsl(180, 77%, 34%) !important;
+}
+.before-fg-sat-teal::before {
+  color: hsl(180, 77%, 34%) !important;
+}
+.before-bd-sat-teal::before {
+  border-color: hsl(180, 77%, 34%) !important;
+}
+.after-bg-sat-teal::after {
+  background: hsl(180, 77%, 34%) !important;
+}
+.after-fg-sat-teal::after {
+  color: hsl(180, 77%, 34%) !important;
+}
+.after-bd-sat-teal::after {
+  border-color: hsl(180, 77%, 34%) !important;
+}
+.before-bg-dark-teal::before {
+  background: hsl(180, 77%, 24%) !important;
+}
+.before-fg-dark-teal::before {
+  color: hsl(180, 77%, 24%) !important;
+}
+.before-bd-dark-teal::before {
+  border-color: hsl(180, 77%, 24%) !important;
+}
+.after-bg-dark-teal::after {
+  background: hsl(180, 77%, 24%) !important;
+}
+.after-fg-dark-teal::after {
+  color: hsl(180, 77%, 24%) !important;
+}
+.after-bd-dark-teal::after {
+  border-color: hsl(180, 77%, 24%) !important;
+}
+.before-bg-light-cyan::before {
+  background: hsl(221, 100%, 94%) !important;
+}
+.before-fg-light-cyan::before {
+  color: hsl(221, 100%, 94%) !important;
+}
+.before-bd-light-cyan::before {
+  border-color: hsl(221, 100%, 94%) !important;
+}
+.after-bg-light-cyan::after {
+  background: hsl(221, 100%, 94%) !important;
+}
+.after-fg-light-cyan::after {
+  color: hsl(221, 100%, 94%) !important;
+}
+.after-bd-light-cyan::after {
+  border-color: hsl(221, 100%, 94%) !important;
+}
+.before-bg-minor-cyan::before {
+  background: hsl(221, 100%, 89%) !important;
+}
+.before-fg-minor-cyan::before {
+  color: hsl(221, 100%, 89%) !important;
+}
+.before-bd-minor-cyan::before {
+  border-color: hsl(221, 100%, 89%) !important;
+}
+.after-bg-minor-cyan::after {
+  background: hsl(221, 100%, 89%) !important;
+}
+.after-fg-minor-cyan::after {
+  color: hsl(221, 100%, 89%) !important;
+}
+.after-bd-minor-cyan::after {
+  border-color: hsl(221, 100%, 89%) !important;
+}
+.before-bg-sat-cyan::before {
+  background: hsl(221, 100%, 69%) !important;
+}
+.before-fg-sat-cyan::before {
+  color: hsl(221, 100%, 69%) !important;
+}
+.before-bd-sat-cyan::before {
+  border-color: hsl(221, 100%, 69%) !important;
+}
+.after-bg-sat-cyan::after {
+  background: hsl(221, 100%, 69%) !important;
+}
+.after-fg-sat-cyan::after {
+  color: hsl(221, 100%, 69%) !important;
+}
+.after-bd-sat-cyan::after {
+  border-color: hsl(221, 100%, 69%) !important;
+}
+.before-bg-dark-cyan::before {
+  background: hsl(221, 100%, 59%) !important;
+}
+.before-fg-dark-cyan::before {
+  color: hsl(221, 100%, 59%) !important;
+}
+.before-bd-dark-cyan::before {
+  border-color: hsl(221, 100%, 59%) !important;
+}
+.after-bg-dark-cyan::after {
+  background: hsl(221, 100%, 59%) !important;
+}
+.after-fg-dark-cyan::after {
+  color: hsl(221, 100%, 59%) !important;
+}
+.after-bd-dark-cyan::after {
+  border-color: hsl(221, 100%, 59%) !important;
+}
+.before-bg-light-cobalt::before {
+  background: hsl(215, 100%, 74%) !important;
+}
+.before-fg-light-cobalt::before {
+  color: hsl(215, 100%, 74%) !important;
+}
+.before-bd-light-cobalt::before {
+  border-color: hsl(215, 100%, 74%) !important;
+}
+.after-bg-light-cobalt::after {
+  background: hsl(215, 100%, 74%) !important;
+}
+.after-fg-light-cobalt::after {
+  color: hsl(215, 100%, 74%) !important;
+}
+.after-bd-light-cobalt::after {
+  border-color: hsl(215, 100%, 74%) !important;
+}
+.before-bg-minor-cobalt::before {
+  background: hsl(215, 100%, 44%) !important;
+}
+.before-fg-minor-cobalt::before {
+  color: hsl(215, 100%, 44%) !important;
+}
+.before-bd-minor-cobalt::before {
+  border-color: hsl(215, 100%, 44%) !important;
+}
+.after-bg-minor-cobalt::after {
+  background: hsl(215, 100%, 44%) !important;
+}
+.after-fg-minor-cobalt::after {
+  color: hsl(215, 100%, 44%) !important;
+}
+.after-bd-minor-cobalt::after {
+  border-color: hsl(215, 100%, 44%) !important;
+}
+.before-bg-sat-cobalt::before {
+  background: hsl(215, 100%, 24%) !important;
+}
+.before-fg-sat-cobalt::before {
+  color: hsl(215, 100%, 24%) !important;
+}
+.before-bd-sat-cobalt::before {
+  border-color: hsl(215, 100%, 24%) !important;
+}
+.after-bg-sat-cobalt::after {
+  background: hsl(215, 100%, 24%) !important;
+}
+.after-fg-sat-cobalt::after {
+  color: hsl(215, 100%, 24%) !important;
+}
+.after-bd-sat-cobalt::after {
+  border-color: hsl(215, 100%, 24%) !important;
+}
+.before-bg-dark-cobalt::before {
+  background: hsl(215, 100%, 14%) !important;
+}
+.before-fg-dark-cobalt::before {
+  color: hsl(215, 100%, 14%) !important;
+}
+.before-bd-dark-cobalt::before {
+  border-color: hsl(215, 100%, 14%) !important;
+}
+.after-bg-dark-cobalt::after {
+  background: hsl(215, 100%, 14%) !important;
+}
+.after-fg-dark-cobalt::after {
+  color: hsl(215, 100%, 14%) !important;
+}
+.after-bd-dark-cobalt::after {
+  border-color: hsl(215, 100%, 14%) !important;
+}
+.before-bg-light-indigo::before {
+  background: hsl(276, 100%, 73%) !important;
+}
+.before-fg-light-indigo::before {
+  color: hsl(276, 100%, 73%) !important;
+}
+.before-bd-light-indigo::before {
+  border-color: hsl(276, 100%, 73%) !important;
+}
+.after-bg-light-indigo::after {
+  background: hsl(276, 100%, 73%) !important;
+}
+.after-fg-light-indigo::after {
+  color: hsl(276, 100%, 73%) !important;
+}
+.after-bd-light-indigo::after {
+  border-color: hsl(276, 100%, 73%) !important;
+}
+.before-bg-minor-indigo::before {
+  background: hsl(276, 100%, 43%) !important;
+}
+.before-fg-minor-indigo::before {
+  color: hsl(276, 100%, 43%) !important;
+}
+.before-bd-minor-indigo::before {
+  border-color: hsl(276, 100%, 43%) !important;
+}
+.after-bg-minor-indigo::after {
+  background: hsl(276, 100%, 43%) !important;
+}
+.after-fg-minor-indigo::after {
+  color: hsl(276, 100%, 43%) !important;
+}
+.after-bd-minor-indigo::after {
+  border-color: hsl(276, 100%, 43%) !important;
+}
+.before-bg-sat-indigo::before {
+  background: hsl(276, 100%, 23%) !important;
+}
+.before-fg-sat-indigo::before {
+  color: hsl(276, 100%, 23%) !important;
+}
+.before-bd-sat-indigo::before {
+  border-color: hsl(276, 100%, 23%) !important;
+}
+.after-bg-sat-indigo::after {
+  background: hsl(276, 100%, 23%) !important;
+}
+.after-fg-sat-indigo::after {
+  color: hsl(276, 100%, 23%) !important;
+}
+.after-bd-sat-indigo::after {
+  border-color: hsl(276, 100%, 23%) !important;
+}
+.before-bg-dark-indigo::before {
+  background: hsl(276, 100%, 13%) !important;
+}
+.before-fg-dark-indigo::before {
+  color: hsl(276, 100%, 13%) !important;
+}
+.before-bd-dark-indigo::before {
+  border-color: hsl(276, 100%, 13%) !important;
+}
+.after-bg-dark-indigo::after {
+  background: hsl(276, 100%, 13%) !important;
+}
+.after-fg-dark-indigo::after {
+  color: hsl(276, 100%, 13%) !important;
+}
+.after-bd-dark-indigo::after {
+  border-color: hsl(276, 100%, 13%) !important;
+}
+.before-bg-light-almost::before {
+  background: hsl(259, 84%, 85%) !important;
+}
+.before-fg-light-almost::before {
+  color: hsl(259, 84%, 85%) !important;
+}
+.before-bd-light-almost::before {
+  border-color: hsl(259, 84%, 85%) !important;
+}
+.after-bg-light-almost::after {
+  background: hsl(259, 84%, 85%) !important;
+}
+.after-fg-light-almost::after {
+  color: hsl(259, 84%, 85%) !important;
+}
+.after-bd-light-almost::after {
+  border-color: hsl(259, 84%, 85%) !important;
+}
+.before-bg-minor-almost::before {
+  background: hsl(259, 84%, 65%) !important;
+}
+.before-fg-minor-almost::before {
+  color: hsl(259, 84%, 65%) !important;
+}
+.before-bd-minor-almost::before {
+  border-color: hsl(259, 84%, 65%) !important;
+}
+.after-bg-minor-almost::after {
+  background: hsl(259, 84%, 65%) !important;
+}
+.after-fg-minor-almost::after {
+  color: hsl(259, 84%, 65%) !important;
+}
+.after-bd-minor-almost::after {
+  border-color: hsl(259, 84%, 65%) !important;
+}
+.before-bg-sat-almost::before {
+  background: hsl(259, 84%, 45%) !important;
+}
+.before-fg-sat-almost::before {
+  color: hsl(259, 84%, 45%) !important;
+}
+.before-bd-sat-almost::before {
+  border-color: hsl(259, 84%, 45%) !important;
+}
+.after-bg-sat-almost::after {
+  background: hsl(259, 84%, 45%) !important;
+}
+.after-fg-sat-almost::after {
+  color: hsl(259, 84%, 45%) !important;
+}
+.after-bd-sat-almost::after {
+  border-color: hsl(259, 84%, 45%) !important;
+}
+.before-bg-dark-almost::before {
+  background: hsl(259, 84%, 35%) !important;
+}
+.before-fg-dark-almost::before {
+  color: hsl(259, 84%, 35%) !important;
+}
+.before-bd-dark-almost::before {
+  border-color: hsl(259, 84%, 35%) !important;
+}
+.after-bg-dark-almost::after {
+  background: hsl(259, 84%, 35%) !important;
+}
+.after-fg-dark-almost::after {
+  color: hsl(259, 84%, 35%) !important;
+}
+.after-bd-dark-almost::after {
+  border-color: hsl(259, 84%, 35%) !important;
+}
+.before-bg-light-violet::before {
+  background: hsl(300, 76%, 92%) !important;
+}
+.before-fg-light-violet::before {
+  color: hsl(300, 76%, 92%) !important;
+}
+.before-bd-light-violet::before {
+  border-color: hsl(300, 76%, 92%) !important;
+}
+.after-bg-light-violet::after {
+  background: hsl(300, 76%, 92%) !important;
+}
+.after-fg-light-violet::after {
+  color: hsl(300, 76%, 92%) !important;
+}
+.after-bd-light-violet::after {
+  border-color: hsl(300, 76%, 92%) !important;
+}
+.before-bg-minor-violet::before {
+  background: hsl(300, 76%, 82%) !important;
+}
+.before-fg-minor-violet::before {
+  color: hsl(300, 76%, 82%) !important;
+}
+.before-bd-minor-violet::before {
+  border-color: hsl(300, 76%, 82%) !important;
+}
+.after-bg-minor-violet::after {
+  background: hsl(300, 76%, 82%) !important;
+}
+.after-fg-minor-violet::after {
+  color: hsl(300, 76%, 82%) !important;
+}
+.after-bd-minor-violet::after {
+  border-color: hsl(300, 76%, 82%) !important;
+}
+.before-bg-sat-violet::before {
+  background: hsl(300, 76%, 62%) !important;
+}
+.before-fg-sat-violet::before {
+  color: hsl(300, 76%, 62%) !important;
+}
+.before-bd-sat-violet::before {
+  border-color: hsl(300, 76%, 62%) !important;
+}
+.after-bg-sat-violet::after {
+  background: hsl(300, 76%, 62%) !important;
+}
+.after-fg-sat-violet::after {
+  color: hsl(300, 76%, 62%) !important;
+}
+.after-bd-sat-violet::after {
+  border-color: hsl(300, 76%, 62%) !important;
+}
+.before-bg-dark-violet::before {
+  background: hsl(300, 76%, 52%) !important;
+}
+.before-fg-dark-violet::before {
+  color: hsl(300, 76%, 52%) !important;
+}
+.before-bd-dark-violet::before {
+  border-color: hsl(300, 76%, 52%) !important;
+}
+.after-bg-dark-violet::after {
+  background: hsl(300, 76%, 52%) !important;
+}
+.after-fg-dark-violet::after {
+  color: hsl(300, 76%, 52%) !important;
+}
+.after-bd-dark-violet::after {
+  border-color: hsl(300, 76%, 52%) !important;
+}
+.before-bg-light-pink::before {
+  background: hsl(350, 100%, 98%) !important;
+}
+.before-fg-light-pink::before {
+  color: hsl(350, 100%, 98%) !important;
+}
+.before-bd-light-pink::before {
+  border-color: hsl(350, 100%, 98%) !important;
+}
+.after-bg-light-pink::after {
+  background: hsl(350, 100%, 98%) !important;
+}
+.after-fg-light-pink::after {
+  color: hsl(350, 100%, 98%) !important;
+}
+.after-bd-light-pink::after {
+  border-color: hsl(350, 100%, 98%) !important;
+}
+.before-bg-minor-pink::before {
+  background: hsl(350, 100%, 93%) !important;
+}
+.before-fg-minor-pink::before {
+  color: hsl(350, 100%, 93%) !important;
+}
+.before-bd-minor-pink::before {
+  border-color: hsl(350, 100%, 93%) !important;
+}
+.after-bg-minor-pink::after {
+  background: hsl(350, 100%, 93%) !important;
+}
+.after-fg-minor-pink::after {
+  color: hsl(350, 100%, 93%) !important;
+}
+.after-bd-minor-pink::after {
+  border-color: hsl(350, 100%, 93%) !important;
+}
+.before-bg-sat-pink::before {
+  background: hsl(350, 100%, 78%) !important;
+}
+.before-fg-sat-pink::before {
+  color: hsl(350, 100%, 78%) !important;
+}
+.before-bd-sat-pink::before {
+  border-color: hsl(350, 100%, 78%) !important;
+}
+.after-bg-sat-pink::after {
+  background: hsl(350, 100%, 78%) !important;
+}
+.after-fg-sat-pink::after {
+  color: hsl(350, 100%, 78%) !important;
+}
+.after-bd-sat-pink::after {
+  border-color: hsl(350, 100%, 78%) !important;
+}
+.before-bg-dark-pink::before {
+  background: hsl(350, 100%, 68%) !important;
+}
+.before-fg-dark-pink::before {
+  color: hsl(350, 100%, 68%) !important;
+}
+.before-bd-dark-pink::before {
+  border-color: hsl(350, 100%, 68%) !important;
+}
+.after-bg-dark-pink::after {
+  background: hsl(350, 100%, 68%) !important;
+}
+.after-fg-dark-pink::after {
+  color: hsl(350, 100%, 68%) !important;
+}
+.after-bd-dark-pink::after {
+  border-color: hsl(350, 100%, 68%) !important;
+}
+.before-bg-light-magenta::before {
+  background: hsl(300, 100%, 90%) !important;
+}
+.before-fg-light-magenta::before {
+  color: hsl(300, 100%, 90%) !important;
+}
+.before-bd-light-magenta::before {
+  border-color: hsl(300, 100%, 90%) !important;
+}
+.after-bg-light-magenta::after {
+  background: hsl(300, 100%, 90%) !important;
+}
+.after-fg-light-magenta::after {
+  color: hsl(300, 100%, 90%) !important;
+}
+.after-bd-light-magenta::after {
+  border-color: hsl(300, 100%, 90%) !important;
+}
+.before-bg-minor-magenta::before {
+  background: hsl(300, 100%, 70%) !important;
+}
+.before-fg-minor-magenta::before {
+  color: hsl(300, 100%, 70%) !important;
+}
+.before-bd-minor-magenta::before {
+  border-color: hsl(300, 100%, 70%) !important;
+}
+.after-bg-minor-magenta::after {
+  background: hsl(300, 100%, 70%) !important;
+}
+.after-fg-minor-magenta::after {
+  color: hsl(300, 100%, 70%) !important;
+}
+.after-bd-minor-magenta::after {
+  border-color: hsl(300, 100%, 70%) !important;
+}
+.before-bg-sat-magenta::before {
+  background: hsl(300, 100%, 40%) !important;
+}
+.before-fg-sat-magenta::before {
+  color: hsl(300, 100%, 40%) !important;
+}
+.before-bd-sat-magenta::before {
+  border-color: hsl(300, 100%, 40%) !important;
+}
+.after-bg-sat-magenta::after {
+  background: hsl(300, 100%, 40%) !important;
+}
+.after-fg-sat-magenta::after {
+  color: hsl(300, 100%, 40%) !important;
+}
+.after-bd-sat-magenta::after {
+  border-color: hsl(300, 100%, 40%) !important;
+}
+.before-bg-dark-magenta::before {
+  background: hsl(300, 100%, 30%) !important;
+}
+.before-fg-dark-magenta::before {
+  color: hsl(300, 100%, 30%) !important;
+}
+.before-bd-dark-magenta::before {
+  border-color: hsl(300, 100%, 30%) !important;
+}
+.after-bg-dark-magenta::after {
+  background: hsl(300, 100%, 30%) !important;
+}
+.after-fg-dark-magenta::after {
+  color: hsl(300, 100%, 30%) !important;
+}
+.after-bd-dark-magenta::after {
+  border-color: hsl(300, 100%, 30%) !important;
+}
+.before-bg-light-crimson::before {
+  background: hsl(348, 88%, 81%) !important;
+}
+.before-fg-light-crimson::before {
+  color: hsl(348, 88%, 81%) !important;
+}
+.before-bd-light-crimson::before {
+  border-color: hsl(348, 88%, 81%) !important;
+}
+.after-bg-light-crimson::after {
+  background: hsl(348, 88%, 81%) !important;
+}
+.after-fg-light-crimson::after {
+  color: hsl(348, 88%, 81%) !important;
+}
+.after-bd-light-crimson::after {
+  border-color: hsl(348, 88%, 81%) !important;
+}
+.before-bg-minor-crimson::before {
+  background: hsl(348, 88%, 66%) !important;
+}
+.before-fg-minor-crimson::before {
+  color: hsl(348, 88%, 66%) !important;
+}
+.before-bd-minor-crimson::before {
+  border-color: hsl(348, 88%, 66%) !important;
+}
+.after-bg-minor-crimson::after {
+  background: hsl(348, 88%, 66%) !important;
+}
+.after-fg-minor-crimson::after {
+  color: hsl(348, 88%, 66%) !important;
+}
+.after-bd-minor-crimson::after {
+  border-color: hsl(348, 88%, 66%) !important;
+}
+.before-bg-sat-crimson::before {
+  background: hsl(348, 88%, 36%) !important;
+}
+.before-fg-sat-crimson::before {
+  color: hsl(348, 88%, 36%) !important;
+}
+.before-bd-sat-crimson::before {
+  border-color: hsl(348, 88%, 36%) !important;
+}
+.after-bg-sat-crimson::after {
+  background: hsl(348, 88%, 36%) !important;
+}
+.after-fg-sat-crimson::after {
+  color: hsl(348, 88%, 36%) !important;
+}
+.after-bd-sat-crimson::after {
+  border-color: hsl(348, 88%, 36%) !important;
+}
+.before-bg-dark-crimson::before {
+  background: hsl(348, 88%, 26%) !important;
+}
+.before-fg-dark-crimson::before {
+  color: hsl(348, 88%, 26%) !important;
+}
+.before-bd-dark-crimson::before {
+  border-color: hsl(348, 88%, 26%) !important;
+}
+.after-bg-dark-crimson::after {
+  background: hsl(348, 88%, 26%) !important;
+}
+.after-fg-dark-crimson::after {
+  color: hsl(348, 88%, 26%) !important;
+}
+.after-bd-dark-crimson::after {
+  border-color: hsl(348, 88%, 26%) !important;
+}
+.before-bg-light-red::before {
+  background: hsl(0, 100%, 80%) !important;
+}
+.before-fg-light-red::before {
+  color: hsl(0, 100%, 80%) !important;
+}
+.before-bd-light-red::before {
+  border-color: hsl(0, 100%, 80%) !important;
+}
+.after-bg-light-red::after {
+  background: hsl(0, 100%, 80%) !important;
+}
+.after-fg-light-red::after {
+  color: hsl(0, 100%, 80%) !important;
+}
+.after-bd-light-red::after {
+  border-color: hsl(0, 100%, 80%) !important;
+}
+.before-bg-minor-red::before {
+  background: hsl(0, 100%, 70%) !important;
+}
+.before-fg-minor-red::before {
+  color: hsl(0, 100%, 70%) !important;
+}
+.before-bd-minor-red::before {
+  border-color: hsl(0, 100%, 70%) !important;
+}
+.after-bg-minor-red::after {
+  background: hsl(0, 100%, 70%) !important;
+}
+.after-fg-minor-red::after {
+  color: hsl(0, 100%, 70%) !important;
+}
+.after-bd-minor-red::after {
+  border-color: hsl(0, 100%, 70%) !important;
+}
+.before-bg-sat-red::before {
+  background: hsl(0, 100%, 40%) !important;
+}
+.before-fg-sat-red::before {
+  color: hsl(0, 100%, 40%) !important;
+}
+.before-bd-sat-red::before {
+  border-color: hsl(0, 100%, 40%) !important;
+}
+.after-bg-sat-red::after {
+  background: hsl(0, 100%, 40%) !important;
+}
+.after-fg-sat-red::after {
+  color: hsl(0, 100%, 40%) !important;
+}
+.after-bd-sat-red::after {
+  border-color: hsl(0, 100%, 40%) !important;
+}
+.before-bg-dark-red::before {
+  background: hsl(0, 100%, 30%) !important;
+}
+.before-fg-dark-red::before {
+  color: hsl(0, 100%, 30%) !important;
+}
+.before-bd-dark-red::before {
+  border-color: hsl(0, 100%, 30%) !important;
+}
+.after-bg-dark-red::after {
+  background: hsl(0, 100%, 30%) !important;
+}
+.after-fg-dark-red::after {
+  color: hsl(0, 100%, 30%) !important;
+}
+.after-bd-dark-red::after {
+  border-color: hsl(0, 100%, 30%) !important;
+}
+.before-bg-light-orange::before {
+  background: hsl(39, 100%, 90%) !important;
+}
+.before-fg-light-orange::before {
+  color: hsl(39, 100%, 90%) !important;
+}
+.before-bd-light-orange::before {
+  border-color: hsl(39, 100%, 90%) !important;
+}
+.after-bg-light-orange::after {
+  background: hsl(39, 100%, 90%) !important;
+}
+.after-fg-light-orange::after {
+  color: hsl(39, 100%, 90%) !important;
+}
+.after-bd-light-orange::after {
+  border-color: hsl(39, 100%, 90%) !important;
+}
+.before-bg-minor-orange::before {
+  background: hsl(39, 100%, 70%) !important;
+}
+.before-fg-minor-orange::before {
+  color: hsl(39, 100%, 70%) !important;
+}
+.before-bd-minor-orange::before {
+  border-color: hsl(39, 100%, 70%) !important;
+}
+.after-bg-minor-orange::after {
+  background: hsl(39, 100%, 70%) !important;
+}
+.after-fg-minor-orange::after {
+  color: hsl(39, 100%, 70%) !important;
+}
+.after-bd-minor-orange::after {
+  border-color: hsl(39, 100%, 70%) !important;
+}
+.before-bg-sat-orange::before {
+  background: hsl(39, 100%, 40%) !important;
+}
+.before-fg-sat-orange::before {
+  color: hsl(39, 100%, 40%) !important;
+}
+.before-bd-sat-orange::before {
+  border-color: hsl(39, 100%, 40%) !important;
+}
+.after-bg-sat-orange::after {
+  background: hsl(39, 100%, 40%) !important;
+}
+.after-fg-sat-orange::after {
+  color: hsl(39, 100%, 40%) !important;
+}
+.after-bd-sat-orange::after {
+  border-color: hsl(39, 100%, 40%) !important;
+}
+.before-bg-dark-orange::before {
+  background: hsl(39, 100%, 30%) !important;
+}
+.before-fg-dark-orange::before {
+  color: hsl(39, 100%, 30%) !important;
+}
+.before-bd-dark-orange::before {
+  border-color: hsl(39, 100%, 30%) !important;
+}
+.after-bg-dark-orange::after {
+  background: hsl(39, 100%, 30%) !important;
+}
+.after-fg-dark-orange::after {
+  color: hsl(39, 100%, 30%) !important;
+}
+.after-bd-dark-orange::after {
+  border-color: hsl(39, 100%, 30%) !important;
+}
+.before-bg-light-amber::before {
+  background: hsl(45, 100%, 78%) !important;
+}
+.before-fg-light-amber::before {
+  color: hsl(45, 100%, 78%) !important;
+}
+.before-bd-light-amber::before {
+  border-color: hsl(45, 100%, 78%) !important;
+}
+.after-bg-light-amber::after {
+  background: hsl(45, 100%, 78%) !important;
+}
+.after-fg-light-amber::after {
+  color: hsl(45, 100%, 78%) !important;
+}
+.after-bd-light-amber::after {
+  border-color: hsl(45, 100%, 78%) !important;
+}
+.before-bg-minor-amber::before {
+  background: hsl(45, 100%, 68%) !important;
+}
+.before-fg-minor-amber::before {
+  color: hsl(45, 100%, 68%) !important;
+}
+.before-bd-minor-amber::before {
+  border-color: hsl(45, 100%, 68%) !important;
+}
+.after-bg-minor-amber::after {
+  background: hsl(45, 100%, 68%) !important;
+}
+.after-fg-minor-amber::after {
+  color: hsl(45, 100%, 68%) !important;
+}
+.after-bd-minor-amber::after {
+  border-color: hsl(45, 100%, 68%) !important;
+}
+.before-bg-sat-amber::before {
+  background: hsl(45, 100%, 48%) !important;
+}
+.before-fg-sat-amber::before {
+  color: hsl(45, 100%, 48%) !important;
+}
+.before-bd-sat-amber::before {
+  border-color: hsl(45, 100%, 48%) !important;
+}
+.after-bg-sat-amber::after {
+  background: hsl(45, 100%, 48%) !important;
+}
+.after-fg-sat-amber::after {
+  color: hsl(45, 100%, 48%) !important;
+}
+.after-bd-sat-amber::after {
+  border-color: hsl(45, 100%, 48%) !important;
+}
+.before-bg-dark-amber::before {
+  background: hsl(45, 100%, 38%) !important;
+}
+.before-fg-dark-amber::before {
+  color: hsl(45, 100%, 38%) !important;
+}
+.before-bd-dark-amber::before {
+  border-color: hsl(45, 100%, 38%) !important;
+}
+.after-bg-dark-amber::after {
+  background: hsl(45, 100%, 38%) !important;
+}
+.after-fg-dark-amber::after {
+  color: hsl(45, 100%, 38%) !important;
+}
+.after-bd-dark-amber::after {
+  border-color: hsl(45, 100%, 38%) !important;
+}
+.before-bg-light-yellow::before {
+  background: hsl(52, 100%, 93%) !important;
+}
+.before-fg-light-yellow::before {
+  color: hsl(52, 100%, 93%) !important;
+}
+.before-bd-light-yellow::before {
+  border-color: hsl(52, 100%, 93%) !important;
+}
+.after-bg-light-yellow::after {
+  background: hsl(52, 100%, 93%) !important;
+}
+.after-fg-light-yellow::after {
+  color: hsl(52, 100%, 93%) !important;
+}
+.after-bd-light-yellow::after {
+  border-color: hsl(52, 100%, 93%) !important;
+}
+.before-bg-minor-yellow::before {
+  background: hsl(52, 100%, 83%) !important;
+}
+.before-fg-minor-yellow::before {
+  color: hsl(52, 100%, 83%) !important;
+}
+.before-bd-minor-yellow::before {
+  border-color: hsl(52, 100%, 83%) !important;
+}
+.after-bg-minor-yellow::after {
+  background: hsl(52, 100%, 83%) !important;
+}
+.after-fg-minor-yellow::after {
+  color: hsl(52, 100%, 83%) !important;
+}
+.after-bd-minor-yellow::after {
+  border-color: hsl(52, 100%, 83%) !important;
+}
+.before-bg-sat-yellow::before {
+  background: hsl(52, 100%, 58%) !important;
+}
+.before-fg-sat-yellow::before {
+  color: hsl(52, 100%, 58%) !important;
+}
+.before-bd-sat-yellow::before {
+  border-color: hsl(52, 100%, 58%) !important;
+}
+.after-bg-sat-yellow::after {
+  background: hsl(52, 100%, 58%) !important;
+}
+.after-fg-sat-yellow::after {
+  color: hsl(52, 100%, 58%) !important;
+}
+.after-bd-sat-yellow::after {
+  border-color: hsl(52, 100%, 58%) !important;
+}
+.before-bg-dark-yellow::before {
+  background: hsl(52, 100%, 48%) !important;
+}
+.before-fg-dark-yellow::before {
+  color: hsl(52, 100%, 48%) !important;
+}
+.before-bd-dark-yellow::before {
+  border-color: hsl(52, 100%, 48%) !important;
+}
+.after-bg-dark-yellow::after {
+  background: hsl(52, 100%, 48%) !important;
+}
+.after-fg-dark-yellow::after {
+  color: hsl(52, 100%, 48%) !important;
+}
+.after-bd-dark-yellow::after {
+  border-color: hsl(52, 100%, 48%) !important;
+}
+.before-bg-light-brown::before {
+  background: hsl(25, 57%, 81%) !important;
+}
+.before-fg-light-brown::before {
+  color: hsl(25, 57%, 81%) !important;
+}
+.before-bd-light-brown::before {
+  border-color: hsl(25, 57%, 81%) !important;
+}
+.after-bg-light-brown::after {
+  background: hsl(25, 57%, 81%) !important;
+}
+.after-fg-light-brown::after {
+  color: hsl(25, 57%, 81%) !important;
+}
+.after-bd-light-brown::after {
+  border-color: hsl(25, 57%, 81%) !important;
+}
+.before-bg-minor-brown::before {
+  background: hsl(25, 57%, 66%) !important;
+}
+.before-fg-minor-brown::before {
+  color: hsl(25, 57%, 66%) !important;
+}
+.before-bd-minor-brown::before {
+  border-color: hsl(25, 57%, 66%) !important;
+}
+.after-bg-minor-brown::after {
+  background: hsl(25, 57%, 66%) !important;
+}
+.after-fg-minor-brown::after {
+  color: hsl(25, 57%, 66%) !important;
+}
+.after-bd-minor-brown::after {
+  border-color: hsl(25, 57%, 66%) !important;
+}
+.before-bg-sat-brown::before {
+  background: hsl(25, 57%, 41%) !important;
+}
+.before-fg-sat-brown::before {
+  color: hsl(25, 57%, 41%) !important;
+}
+.before-bd-sat-brown::before {
+  border-color: hsl(25, 57%, 41%) !important;
+}
+.after-bg-sat-brown::after {
+  background: hsl(25, 57%, 41%) !important;
+}
+.after-fg-sat-brown::after {
+  color: hsl(25, 57%, 41%) !important;
+}
+.after-bd-sat-brown::after {
+  border-color: hsl(25, 57%, 41%) !important;
+}
+.before-bg-dark-brown::before {
+  background: hsl(25, 57%, 31%) !important;
+}
+.before-fg-dark-brown::before {
+  color: hsl(25, 57%, 31%) !important;
+}
+.before-bd-dark-brown::before {
+  border-color: hsl(25, 57%, 31%) !important;
+}
+.after-bg-dark-brown::after {
+  background: hsl(25, 57%, 31%) !important;
+}
+.after-fg-dark-brown::after {
+  color: hsl(25, 57%, 31%) !important;
+}
+.after-bd-dark-brown::after {
+  border-color: hsl(25, 57%, 31%) !important;
+}
+.before-bg-light-olive::before {
+  background: hsl(60, 100%, 72%) !important;
+}
+.before-fg-light-olive::before {
+  color: hsl(60, 100%, 72%) !important;
+}
+.before-bd-light-olive::before {
+  border-color: hsl(60, 100%, 72%) !important;
+}
+.after-bg-light-olive::after {
+  background: hsl(60, 100%, 72%) !important;
+}
+.after-fg-light-olive::after {
+  color: hsl(60, 100%, 72%) !important;
+}
+.after-bd-light-olive::after {
+  border-color: hsl(60, 100%, 72%) !important;
+}
+.before-bg-minor-olive::before {
+  background: hsl(60, 100%, 42%) !important;
+}
+.before-fg-minor-olive::before {
+  color: hsl(60, 100%, 42%) !important;
+}
+.before-bd-minor-olive::before {
+  border-color: hsl(60, 100%, 42%) !important;
+}
+.after-bg-minor-olive::after {
+  background: hsl(60, 100%, 42%) !important;
+}
+.after-fg-minor-olive::after {
+  color: hsl(60, 100%, 42%) !important;
+}
+.after-bd-minor-olive::after {
+  border-color: hsl(60, 100%, 42%) !important;
+}
+.before-bg-sat-olive::before {
+  background: hsl(60, 100%, 22%) !important;
+}
+.before-fg-sat-olive::before {
+  color: hsl(60, 100%, 22%) !important;
+}
+.before-bd-sat-olive::before {
+  border-color: hsl(60, 100%, 22%) !important;
+}
+.after-bg-sat-olive::after {
+  background: hsl(60, 100%, 22%) !important;
+}
+.after-fg-sat-olive::after {
+  color: hsl(60, 100%, 22%) !important;
+}
+.after-bd-sat-olive::after {
+  border-color: hsl(60, 100%, 22%) !important;
+}
+.before-bg-dark-olive::before {
+  background: hsl(60, 100%, 12%) !important;
+}
+.before-fg-dark-olive::before {
+  color: hsl(60, 100%, 12%) !important;
+}
+.before-bd-dark-olive::before {
+  border-color: hsl(60, 100%, 12%) !important;
+}
+.after-bg-dark-olive::after {
+  background: hsl(60, 100%, 12%) !important;
+}
+.after-fg-dark-olive::after {
+  color: hsl(60, 100%, 12%) !important;
+}
+.after-bd-dark-olive::after {
+  border-color: hsl(60, 100%, 12%) !important;
+}
+.before-bg-light-steel::before {
+  background: hsl(209, 19%, 87%) !important;
+}
+.before-fg-light-steel::before {
+  color: hsl(209, 19%, 87%) !important;
+}
+.before-bd-light-steel::before {
+  border-color: hsl(209, 19%, 87%) !important;
+}
+.after-bg-light-steel::after {
+  background: hsl(209, 19%, 87%) !important;
+}
+.after-fg-light-steel::after {
+  color: hsl(209, 19%, 87%) !important;
+}
+.after-bd-light-steel::after {
+  border-color: hsl(209, 19%, 87%) !important;
+}
+.before-bg-minor-steel::before {
+  background: hsl(209, 19%, 77%) !important;
+}
+.before-fg-minor-steel::before {
+  color: hsl(209, 19%, 77%) !important;
+}
+.before-bd-minor-steel::before {
+  border-color: hsl(209, 19%, 77%) !important;
+}
+.after-bg-minor-steel::after {
+  background: hsl(209, 19%, 77%) !important;
+}
+.after-fg-minor-steel::after {
+  color: hsl(209, 19%, 77%) !important;
+}
+.after-bd-minor-steel::after {
+  border-color: hsl(209, 19%, 77%) !important;
+}
+.before-bg-sat-steel::before {
+  background: hsl(209, 19%, 47%) !important;
+}
+.before-fg-sat-steel::before {
+  color: hsl(209, 19%, 47%) !important;
+}
+.before-bd-sat-steel::before {
+  border-color: hsl(209, 19%, 47%) !important;
+}
+.after-bg-sat-steel::after {
+  background: hsl(209, 19%, 47%) !important;
+}
+.after-fg-sat-steel::after {
+  color: hsl(209, 19%, 47%) !important;
+}
+.after-bd-sat-steel::after {
+  border-color: hsl(209, 19%, 47%) !important;
+}
+.before-bg-dark-steel::before {
+  background: hsl(209, 19%, 37%) !important;
+}
+.before-fg-dark-steel::before {
+  color: hsl(209, 19%, 37%) !important;
+}
+.before-bd-dark-steel::before {
+  border-color: hsl(209, 19%, 37%) !important;
+}
+.after-bg-dark-steel::after {
+  background: hsl(209, 19%, 37%) !important;
+}
+.after-fg-dark-steel::after {
+  color: hsl(209, 19%, 37%) !important;
+}
+.after-bd-dark-steel::after {
+  border-color: hsl(209, 19%, 37%) !important;
+}
+.before-bg-light-mauve::before {
+  background: hsl(277, 100%, 96%) !important;
+}
+.before-fg-light-mauve::before {
+  color: hsl(277, 100%, 96%) !important;
+}
+.before-bd-light-mauve::before {
+  border-color: hsl(277, 100%, 96%) !important;
+}
+.after-bg-light-mauve::after {
+  background: hsl(277, 100%, 96%) !important;
+}
+.after-fg-light-mauve::after {
+  color: hsl(277, 100%, 96%) !important;
+}
+.after-bd-light-mauve::after {
+  border-color: hsl(277, 100%, 96%) !important;
+}
+.before-bg-minor-mauve::before {
+  background: hsl(277, 100%, 90%) !important;
+}
+.before-fg-minor-mauve::before {
+  color: hsl(277, 100%, 90%) !important;
+}
+.before-bd-minor-mauve::before {
+  border-color: hsl(277, 100%, 90%) !important;
+}
+.after-bg-minor-mauve::after {
+  background: hsl(277, 100%, 90%) !important;
+}
+.after-fg-minor-mauve::after {
+  color: hsl(277, 100%, 90%) !important;
+}
+.after-bd-minor-mauve::after {
+  border-color: hsl(277, 100%, 90%) !important;
+}
+.before-bg-sat-mauve::before {
+  background: hsl(277, 100%, 74%) !important;
+}
+.before-fg-sat-mauve::before {
+  color: hsl(277, 100%, 74%) !important;
+}
+.before-bd-sat-mauve::before {
+  border-color: hsl(277, 100%, 74%) !important;
+}
+.after-bg-sat-mauve::after {
+  background: hsl(277, 100%, 74%) !important;
+}
+.after-fg-sat-mauve::after {
+  color: hsl(277, 100%, 74%) !important;
+}
+.after-bd-sat-mauve::after {
+  border-color: hsl(277, 100%, 74%) !important;
+}
+.before-bg-dark-mauve::before {
+  background: hsl(277, 100%, 64%) !important;
+}
+.before-fg-dark-mauve::before {
+  color: hsl(277, 100%, 64%) !important;
+}
+.before-bd-dark-mauve::before {
+  border-color: hsl(277, 100%, 64%) !important;
+}
+.after-bg-dark-mauve::after {
+  background: hsl(277, 100%, 64%) !important;
+}
+.after-fg-dark-mauve::after {
+  color: hsl(277, 100%, 64%) !important;
+}
+.after-bd-dark-mauve::after {
+  border-color: hsl(277, 100%, 64%) !important;
+}
+.before-bg-light-taupe::before {
+  background: hsl(29, 19%, 80%) !important;
+}
+.before-fg-light-taupe::before {
+  color: hsl(29, 19%, 80%) !important;
+}
+.before-bd-light-taupe::before {
+  border-color: hsl(29, 19%, 80%) !important;
+}
+.after-bg-light-taupe::after {
+  background: hsl(29, 19%, 80%) !important;
+}
+.after-fg-light-taupe::after {
+  color: hsl(29, 19%, 80%) !important;
+}
+.after-bd-light-taupe::after {
+  border-color: hsl(29, 19%, 80%) !important;
+}
+.before-bg-minor-taupe::before {
+  background: hsl(29, 19%, 67%) !important;
+}
+.before-fg-minor-taupe::before {
+  color: hsl(29, 19%, 67%) !important;
+}
+.before-bd-minor-taupe::before {
+  border-color: hsl(29, 19%, 67%) !important;
+}
+.after-bg-minor-taupe::after {
+  background: hsl(29, 19%, 67%) !important;
+}
+.after-fg-minor-taupe::after {
+  color: hsl(29, 19%, 67%) !important;
+}
+.after-bd-minor-taupe::after {
+  border-color: hsl(29, 19%, 67%) !important;
+}
+.before-bg-sat-taupe::before {
+  background: hsl(29, 19%, 40%) !important;
+}
+.before-fg-sat-taupe::before {
+  color: hsl(29, 19%, 40%) !important;
+}
+.before-bd-sat-taupe::before {
+  border-color: hsl(29, 19%, 40%) !important;
+}
+.after-bg-sat-taupe::after {
+  background: hsl(29, 19%, 40%) !important;
+}
+.after-fg-sat-taupe::after {
+  color: hsl(29, 19%, 40%) !important;
+}
+.after-bd-sat-taupe::after {
+  border-color: hsl(29, 19%, 40%) !important;
+}
+.before-bg-dark-taupe::before {
+  background: hsl(29, 19%, 30%) !important;
+}
+.before-fg-dark-taupe::before {
+  color: hsl(29, 19%, 30%) !important;
+}
+.before-bd-dark-taupe::before {
+  border-color: hsl(29, 19%, 30%) !important;
+}
+.after-bg-dark-taupe::after {
+  background: hsl(29, 19%, 30%) !important;
+}
+.after-fg-dark-taupe::after {
+  color: hsl(29, 19%, 30%) !important;
+}
+.after-bd-dark-taupe::after {
+  border-color: hsl(29, 19%, 30%) !important;
+}
+.before-bg-light-champagne::before {
+  background: hsl(37, 74%, 98%) !important;
+}
+.before-fg-light-champagne::before {
+  color: hsl(37, 74%, 98%) !important;
+}
+.before-bd-light-champagne::before {
+  border-color: hsl(37, 74%, 98%) !important;
+}
+.after-bg-light-champagne::after {
+  background: hsl(37, 74%, 98%) !important;
+}
+.after-fg-light-champagne::after {
+  color: hsl(37, 74%, 98%) !important;
+}
+.after-bd-light-champagne::after {
+  border-color: hsl(37, 74%, 98%) !important;
+}
+.before-bg-minor-champagne::before {
+  background: hsl(37, 74%, 93%) !important;
+}
+.before-fg-minor-champagne::before {
+  color: hsl(37, 74%, 93%) !important;
+}
+.before-bd-minor-champagne::before {
+  border-color: hsl(37, 74%, 93%) !important;
+}
+.after-bg-minor-champagne::after {
+  background: hsl(37, 74%, 93%) !important;
+}
+.after-fg-minor-champagne::after {
+  color: hsl(37, 74%, 93%) !important;
+}
+.after-bd-minor-champagne::after {
+  border-color: hsl(37, 74%, 93%) !important;
+}
+.before-bg-sat-champagne::before {
+  background: hsl(37, 74%, 78%) !important;
+}
+.before-fg-sat-champagne::before {
+  color: hsl(37, 74%, 78%) !important;
+}
+.before-bd-sat-champagne::before {
+  border-color: hsl(37, 74%, 78%) !important;
+}
+.after-bg-sat-champagne::after {
+  background: hsl(37, 74%, 78%) !important;
+}
+.after-fg-sat-champagne::after {
+  color: hsl(37, 74%, 78%) !important;
+}
+.after-bd-sat-champagne::after {
+  border-color: hsl(37, 74%, 78%) !important;
+}
+.before-bg-dark-champagne::before {
+  background: hsl(37, 74%, 68%) !important;
+}
+.before-fg-dark-champagne::before {
+  color: hsl(37, 74%, 68%) !important;
+}
+.before-bd-dark-champagne::before {
+  border-color: hsl(37, 74%, 68%) !important;
+}
+.after-bg-dark-champagne::after {
+  background: hsl(37, 74%, 68%) !important;
+}
+.after-fg-dark-champagne::after {
+  color: hsl(37, 74%, 68%) !important;
+}
+.after-bd-dark-champagne::after {
+  border-color: hsl(37, 74%, 68%) !important;
+}
+.before-bg-light-khaki::before {
+  background: hsl(47, 47%, 94%) !important;
+}
+.before-fg-light-khaki::before {
+  color: hsl(47, 47%, 94%) !important;
+}
+.before-bd-light-khaki::before {
+  border-color: hsl(47, 47%, 94%) !important;
+}
+.after-bg-light-khaki::after {
+  background: hsl(47, 47%, 94%) !important;
+}
+.after-fg-light-khaki::after {
+  color: hsl(47, 47%, 94%) !important;
+}
+.after-bd-light-khaki::after {
+  border-color: hsl(47, 47%, 94%) !important;
+}
+.before-bg-minor-khaki::before {
+  background: hsl(47, 47%, 84%) !important;
+}
+.before-fg-minor-khaki::before {
+  color: hsl(47, 47%, 84%) !important;
+}
+.before-bd-minor-khaki::before {
+  border-color: hsl(47, 47%, 84%) !important;
+}
+.after-bg-minor-khaki::after {
+  background: hsl(47, 47%, 84%) !important;
+}
+.after-fg-minor-khaki::after {
+  color: hsl(47, 47%, 84%) !important;
+}
+.after-bd-minor-khaki::after {
+  border-color: hsl(47, 47%, 84%) !important;
+}
+.before-bg-sat-khaki::before {
+  background: hsl(47, 47%, 59%) !important;
+}
+.before-fg-sat-khaki::before {
+  color: hsl(47, 47%, 59%) !important;
+}
+.before-bd-sat-khaki::before {
+  border-color: hsl(47, 47%, 59%) !important;
+}
+.after-bg-sat-khaki::after {
+  background: hsl(47, 47%, 59%) !important;
+}
+.after-fg-sat-khaki::after {
+  color: hsl(47, 47%, 59%) !important;
+}
+.after-bd-sat-khaki::after {
+  border-color: hsl(47, 47%, 59%) !important;
+}
+.before-bg-dark-khaki::before {
+  background: hsl(47, 47%, 49%) !important;
+}
+.before-fg-dark-khaki::before {
+  color: hsl(47, 47%, 49%) !important;
+}
+.before-bd-dark-khaki::before {
+  border-color: hsl(47, 47%, 49%) !important;
+}
+.after-bg-dark-khaki::after {
+  background: hsl(47, 47%, 49%) !important;
+}
+.after-fg-dark-khaki::after {
+  color: hsl(47, 47%, 49%) !important;
+}
+.after-bd-dark-khaki::after {
+  border-color: hsl(47, 47%, 49%) !important;
+}
+.before-bg-light-charcoal::before {
+  background: hsl(0, 0%, 85%) !important;
+}
+.before-fg-light-charcoal::before {
+  color: hsl(0, 0%, 85%) !important;
+}
+.before-bd-light-charcoal::before {
+  border-color: hsl(0, 0%, 85%) !important;
+}
+.after-bg-light-charcoal::after {
+  background: hsl(0, 0%, 85%) !important;
+}
+.after-fg-light-charcoal::after {
+  color: hsl(0, 0%, 85%) !important;
+}
+.after-bd-light-charcoal::after {
+  border-color: hsl(0, 0%, 85%) !important;
+}
+.before-bg-minor-charcoal::before {
+  background: hsl(0, 0%, 75%) !important;
+}
+.before-fg-minor-charcoal::before {
+  color: hsl(0, 0%, 75%) !important;
+}
+.before-bd-minor-charcoal::before {
+  border-color: hsl(0, 0%, 75%) !important;
+}
+.after-bg-minor-charcoal::after {
+  background: hsl(0, 0%, 75%) !important;
+}
+.after-fg-minor-charcoal::after {
+  color: hsl(0, 0%, 75%) !important;
+}
+.after-bd-minor-charcoal::after {
+  border-color: hsl(0, 0%, 75%) !important;
+}
+.before-bg-sat-charcoal::before {
+  background: hsl(0, 0%, 50%) !important;
+}
+.before-fg-sat-charcoal::before {
+  color: hsl(0, 0%, 50%) !important;
+}
+.before-bd-sat-charcoal::before {
+  border-color: hsl(0, 0%, 50%) !important;
+}
+.after-bg-sat-charcoal::after {
+  background: hsl(0, 0%, 50%) !important;
+}
+.after-fg-sat-charcoal::after {
+  color: hsl(0, 0%, 50%) !important;
+}
+.after-bd-sat-charcoal::after {
+  border-color: hsl(0, 0%, 50%) !important;
+}
+.before-bg-dark-charcoal::before {
+  background: hsl(0, 0%, 40%) !important;
+}
+.before-fg-dark-charcoal::before {
+  color: hsl(0, 0%, 40%) !important;
+}
+.before-bd-dark-charcoal::before {
+  border-color: hsl(0, 0%, 40%) !important;
+}
+.after-bg-dark-charcoal::after {
+  background: hsl(0, 0%, 40%) !important;
+}
+.after-fg-dark-charcoal::after {
+  color: hsl(0, 0%, 40%) !important;
+}
+.after-bd-dark-charcoal::after {
+  border-color: hsl(0, 0%, 40%) !important;
+}
+.before-bg-light-bronze::before {
+  background: hsl(29, 75%, 87%) !important;
+}
+.before-fg-light-bronze::before {
+  color: hsl(29, 75%, 87%) !important;
+}
+.before-bd-light-bronze::before {
+  border-color: hsl(29, 75%, 87%) !important;
+}
+.after-bg-light-bronze::after {
+  background: hsl(29, 75%, 87%) !important;
+}
+.after-fg-light-bronze::after {
+  color: hsl(29, 75%, 87%) !important;
+}
+.after-bd-light-bronze::after {
+  border-color: hsl(29, 75%, 87%) !important;
+}
+.before-bg-minor-bronze::before {
+  background: hsl(29, 75%, 72%) !important;
+}
+.before-fg-minor-bronze::before {
+  color: hsl(29, 75%, 72%) !important;
+}
+.before-bd-minor-bronze::before {
+  border-color: hsl(29, 75%, 72%) !important;
+}
+.after-bg-minor-bronze::after {
+  background: hsl(29, 75%, 72%) !important;
+}
+.after-fg-minor-bronze::after {
+  color: hsl(29, 75%, 72%) !important;
+}
+.after-bd-minor-bronze::after {
+  border-color: hsl(29, 75%, 72%) !important;
+}
+.before-bg-sat-bronze::before {
+  background: hsl(29, 75%, 47%) !important;
+}
+.before-fg-sat-bronze::before {
+  color: hsl(29, 75%, 47%) !important;
+}
+.before-bd-sat-bronze::before {
+  border-color: hsl(29, 75%, 47%) !important;
+}
+.after-bg-sat-bronze::after {
+  background: hsl(29, 75%, 47%) !important;
+}
+.after-fg-sat-bronze::after {
+  color: hsl(29, 75%, 47%) !important;
+}
+.after-bd-sat-bronze::after {
+  border-color: hsl(29, 75%, 47%) !important;
+}
+.before-bg-dark-bronze::before {
+  background: hsl(29, 75%, 37%) !important;
+}
+.before-fg-dark-bronze::before {
+  color: hsl(29, 75%, 37%) !important;
+}
+.before-bd-dark-bronze::before {
+  border-color: hsl(29, 75%, 37%) !important;
+}
+.after-bg-dark-bronze::after {
+  background: hsl(29, 75%, 37%) !important;
+}
+.after-fg-dark-bronze::after {
+  color: hsl(29, 75%, 37%) !important;
+}
+.after-bd-dark-bronze::after {
+  border-color: hsl(29, 75%, 37%) !important;
+}
+.before-bg-light-windstorm::before {
+  background: hsl(216, 53%, 93%) !important;
+}
+.before-fg-light-windstorm::before {
+  color: hsl(216, 53%, 93%) !important;
+}
+.before-bd-light-windstorm::before {
+  border-color: hsl(216, 53%, 93%) !important;
+}
+.after-bg-light-windstorm::after {
+  background: hsl(216, 53%, 93%) !important;
+}
+.after-fg-light-windstorm::after {
+  color: hsl(216, 53%, 93%) !important;
+}
+.after-bd-light-windstorm::after {
+  border-color: hsl(216, 53%, 93%) !important;
+}
+.before-bg-minor-windstorm::before {
+  background: hsl(216, 53%, 81%) !important;
+}
+.before-fg-minor-windstorm::before {
+  color: hsl(216, 53%, 81%) !important;
+}
+.before-bd-minor-windstorm::before {
+  border-color: hsl(216, 53%, 81%) !important;
+}
+.after-bg-minor-windstorm::after {
+  background: hsl(216, 53%, 81%) !important;
+}
+.after-fg-minor-windstorm::after {
+  color: hsl(216, 53%, 81%) !important;
+}
+.after-bd-minor-windstorm::after {
+  border-color: hsl(216, 53%, 81%) !important;
+}
+.before-bg-sat-windstorm::before {
+  background: hsl(216, 53%, 56%) !important;
+}
+.before-fg-sat-windstorm::before {
+  color: hsl(216, 53%, 56%) !important;
+}
+.before-bd-sat-windstorm::before {
+  border-color: hsl(216, 53%, 56%) !important;
+}
+.after-bg-sat-windstorm::after {
+  background: hsl(216, 53%, 56%) !important;
+}
+.after-fg-sat-windstorm::after {
+  color: hsl(216, 53%, 56%) !important;
+}
+.after-bd-sat-windstorm::after {
+  border-color: hsl(216, 53%, 56%) !important;
+}
+.before-bg-dark-windstorm::before {
+  background: hsl(216, 53%, 46%) !important;
+}
+.before-fg-dark-windstorm::before {
+  color: hsl(216, 53%, 46%) !important;
+}
+.before-bd-dark-windstorm::before {
+  border-color: hsl(216, 53%, 46%) !important;
+}
+.after-bg-dark-windstorm::after {
+  background: hsl(216, 53%, 46%) !important;
+}
+.after-fg-dark-windstorm::after {
+  color: hsl(216, 53%, 46%) !important;
+}
+.after-bd-dark-windstorm::after {
+  border-color: hsl(216, 53%, 46%) !important;
+}
+.before-bg-light-nude::before {
+  background: hsl(29, 79%, 97%) !important;
+}
+.before-fg-light-nude::before {
+  color: hsl(29, 79%, 97%) !important;
+}
+.before-bd-light-nude::before {
+  border-color: hsl(29, 79%, 97%) !important;
+}
+.after-bg-light-nude::after {
+  background: hsl(29, 79%, 97%) !important;
+}
+.after-fg-light-nude::after {
+  color: hsl(29, 79%, 97%) !important;
+}
+.after-bd-light-nude::after {
+  border-color: hsl(29, 79%, 97%) !important;
+}
+.before-bg-minor-nude::before {
+  background: hsl(29, 79%, 92%) !important;
+}
+.before-fg-minor-nude::before {
+  color: hsl(29, 79%, 92%) !important;
+}
+.before-bd-minor-nude::before {
+  border-color: hsl(29, 79%, 92%) !important;
+}
+.after-bg-minor-nude::after {
+  background: hsl(29, 79%, 92%) !important;
+}
+.after-fg-minor-nude::after {
+  color: hsl(29, 79%, 92%) !important;
+}
+.after-bd-minor-nude::after {
+  border-color: hsl(29, 79%, 92%) !important;
+}
+.before-bg-sat-nude::before {
+  background: hsl(29, 79%, 75%) !important;
+}
+.before-fg-sat-nude::before {
+  color: hsl(29, 79%, 75%) !important;
+}
+.before-bd-sat-nude::before {
+  border-color: hsl(29, 79%, 75%) !important;
+}
+.after-bg-sat-nude::after {
+  background: hsl(29, 79%, 75%) !important;
+}
+.after-fg-sat-nude::after {
+  color: hsl(29, 79%, 75%) !important;
+}
+.after-bd-sat-nude::after {
+  border-color: hsl(29, 79%, 75%) !important;
+}
+.before-bg-dark-nude::before {
+  background: hsl(29, 79%, 65%) !important;
+}
+.before-fg-dark-nude::before {
+  color: hsl(29, 79%, 65%) !important;
+}
+.before-bd-dark-nude::before {
+  border-color: hsl(29, 79%, 65%) !important;
+}
+.after-bg-dark-nude::after {
+  background: hsl(29, 79%, 65%) !important;
+}
+.after-fg-dark-nude::after {
+  color: hsl(29, 79%, 65%) !important;
+}
+.after-bd-dark-nude::after {
+  border-color: hsl(29, 79%, 65%) !important;
+}
+.before-bg-light-terracotta::before {
+  background: hsl(10, 76%, 85%) !important;
+}
+.before-fg-light-terracotta::before {
+  color: hsl(10, 76%, 85%) !important;
+}
+.before-bd-light-terracotta::before {
+  border-color: hsl(10, 76%, 85%) !important;
+}
+.after-bg-light-terracotta::after {
+  background: hsl(10, 76%, 85%) !important;
+}
+.after-fg-light-terracotta::after {
+  color: hsl(10, 76%, 85%) !important;
+}
+.after-bd-light-terracotta::after {
+  border-color: hsl(10, 76%, 85%) !important;
+}
+.before-bg-minor-terracotta::before {
+  background: hsl(10, 76%, 70%) !important;
+}
+.before-fg-minor-terracotta::before {
+  color: hsl(10, 76%, 70%) !important;
+}
+.before-bd-minor-terracotta::before {
+  border-color: hsl(10, 76%, 70%) !important;
+}
+.after-bg-minor-terracotta::after {
+  background: hsl(10, 76%, 70%) !important;
+}
+.after-fg-minor-terracotta::after {
+  color: hsl(10, 76%, 70%) !important;
+}
+.after-bd-minor-terracotta::after {
+  border-color: hsl(10, 76%, 70%) !important;
+}
+.before-bg-sat-terracotta::before {
+  background: hsl(10, 76%, 45%) !important;
+}
+.before-fg-sat-terracotta::before {
+  color: hsl(10, 76%, 45%) !important;
+}
+.before-bd-sat-terracotta::before {
+  border-color: hsl(10, 76%, 45%) !important;
+}
+.after-bg-sat-terracotta::after {
+  background: hsl(10, 76%, 45%) !important;
+}
+.after-fg-sat-terracotta::after {
+  color: hsl(10, 76%, 45%) !important;
+}
+.after-bd-sat-terracotta::after {
+  border-color: hsl(10, 76%, 45%) !important;
+}
+.before-bg-dark-terracotta::before {
+  background: hsl(10, 76%, 35%) !important;
+}
+.before-fg-dark-terracotta::before {
+  color: hsl(10, 76%, 35%) !important;
+}
+.before-bd-dark-terracotta::before {
+  border-color: hsl(10, 76%, 35%) !important;
+}
+.after-bg-dark-terracotta::after {
+  background: hsl(10, 76%, 35%) !important;
+}
+.after-fg-dark-terracotta::after {
+  color: hsl(10, 76%, 35%) !important;
+}
+.after-bd-dark-terracotta::after {
+  border-color: hsl(10, 76%, 35%) !important;
+}
+.before-bg-light-coral::before {
+  background: hsl(16, 100%, 92%) !important;
+}
+.before-fg-light-coral::before {
+  color: hsl(16, 100%, 92%) !important;
+}
+.before-bd-light-coral::before {
+  border-color: hsl(16, 100%, 92%) !important;
+}
+.after-bg-light-coral::after {
+  background: hsl(16, 100%, 92%) !important;
+}
+.after-fg-light-coral::after {
+  color: hsl(16, 100%, 92%) !important;
+}
+.after-bd-light-coral::after {
+  border-color: hsl(16, 100%, 92%) !important;
+}
+.before-bg-minor-coral::before {
+  background: hsl(16, 100%, 82%) !important;
+}
+.before-fg-minor-coral::before {
+  color: hsl(16, 100%, 82%) !important;
+}
+.before-bd-minor-coral::before {
+  border-color: hsl(16, 100%, 82%) !important;
+}
+.after-bg-minor-coral::after {
+  background: hsl(16, 100%, 82%) !important;
+}
+.after-fg-minor-coral::after {
+  color: hsl(16, 100%, 82%) !important;
+}
+.after-bd-minor-coral::after {
+  border-color: hsl(16, 100%, 82%) !important;
+}
+.before-bg-sat-coral::before {
+  background: hsl(16, 100%, 57%) !important;
+}
+.before-fg-sat-coral::before {
+  color: hsl(16, 100%, 57%) !important;
+}
+.before-bd-sat-coral::before {
+  border-color: hsl(16, 100%, 57%) !important;
+}
+.after-bg-sat-coral::after {
+  background: hsl(16, 100%, 57%) !important;
+}
+.after-fg-sat-coral::after {
+  color: hsl(16, 100%, 57%) !important;
+}
+.after-bd-sat-coral::after {
+  border-color: hsl(16, 100%, 57%) !important;
+}
+.before-bg-dark-coral::before {
+  background: hsl(16, 100%, 47%) !important;
+}
+.before-fg-dark-coral::before {
+  color: hsl(16, 100%, 47%) !important;
+}
+.before-bd-dark-coral::before {
+  border-color: hsl(16, 100%, 47%) !important;
+}
+.after-bg-dark-coral::after {
+  background: hsl(16, 100%, 47%) !important;
+}
+.after-fg-dark-coral::after {
+  color: hsl(16, 100%, 47%) !important;
+}
+.after-bd-dark-coral::after {
+  border-color: hsl(16, 100%, 47%) !important;
+}
+.before-bg-light-army::before {
+  background: hsl(69, 34%, 65%) !important;
+}
+.before-fg-light-army::before {
+  color: hsl(69, 34%, 65%) !important;
+}
+.before-bd-light-army::before {
+  border-color: hsl(69, 34%, 65%) !important;
+}
+.after-bg-light-army::after {
+  background: hsl(69, 34%, 65%) !important;
+}
+.after-fg-light-army::after {
+  color: hsl(69, 34%, 65%) !important;
+}
+.after-bd-light-army::after {
+  border-color: hsl(69, 34%, 65%) !important;
+}
+.before-bg-minor-army::before {
+  background: hsl(69, 34%, 47%) !important;
+}
+.before-fg-minor-army::before {
+  color: hsl(69, 34%, 47%) !important;
+}
+.before-bd-minor-army::before {
+  border-color: hsl(69, 34%, 47%) !important;
+}
+.after-bg-minor-army::after {
+  background: hsl(69, 34%, 47%) !important;
+}
+.after-fg-minor-army::after {
+  color: hsl(69, 34%, 47%) !important;
+}
+.after-bd-minor-army::after {
+  border-color: hsl(69, 34%, 47%) !important;
+}
+.before-bg-sat-army::before {
+  background: hsl(69, 34%, 20%) !important;
+}
+.before-fg-sat-army::before {
+  color: hsl(69, 34%, 20%) !important;
+}
+.before-bd-sat-army::before {
+  border-color: hsl(69, 34%, 20%) !important;
+}
+.after-bg-sat-army::after {
+  background: hsl(69, 34%, 20%) !important;
+}
+.after-fg-sat-army::after {
+  color: hsl(69, 34%, 20%) !important;
+}
+.after-bd-sat-army::after {
+  border-color: hsl(69, 34%, 20%) !important;
+}
+.before-bg-dark-army::before {
+  background: hsl(69, 34%, 10%) !important;
+}
+.before-fg-dark-army::before {
+  color: hsl(69, 34%, 10%) !important;
+}
+.before-bd-dark-army::before {
+  border-color: hsl(69, 34%, 10%) !important;
+}
+.after-bg-dark-army::after {
+  background: hsl(69, 34%, 10%) !important;
+}
+.after-fg-dark-army::after {
+  color: hsl(69, 34%, 10%) !important;
+}
+.after-bd-dark-army::after {
+  border-color: hsl(69, 34%, 10%) !important;
+}
+.before-bg-light-seashell::before {
+  background: hsl(25, 100%, 98%) !important;
+}
+.before-fg-light-seashell::before {
+  color: hsl(25, 100%, 98%) !important;
+}
+.before-bd-light-seashell::before {
+  border-color: hsl(25, 100%, 98%) !important;
+}
+.after-bg-light-seashell::after {
+  background: hsl(25, 100%, 98%) !important;
+}
+.after-fg-light-seashell::after {
+  color: hsl(25, 100%, 98%) !important;
+}
+.after-bd-light-seashell::after {
+  border-color: hsl(25, 100%, 98%) !important;
+}
+.before-bg-minor-seashell::before {
+  background: hsl(25, 100%, 97%) !important;
+}
+.before-fg-minor-seashell::before {
+  color: hsl(25, 100%, 97%) !important;
+}
+.before-bd-minor-seashell::before {
+  border-color: hsl(25, 100%, 97%) !important;
+}
+.after-bg-minor-seashell::after {
+  background: hsl(25, 100%, 97%) !important;
+}
+.after-fg-minor-seashell::after {
+  color: hsl(25, 100%, 97%) !important;
+}
+.after-bd-minor-seashell::after {
+  border-color: hsl(25, 100%, 97%) !important;
+}
+.before-bg-sat-seashell::before {
+  background: hsl(25, 100%, 85%) !important;
+}
+.before-fg-sat-seashell::before {
+  color: hsl(25, 100%, 85%) !important;
+}
+.before-bd-sat-seashell::before {
+  border-color: hsl(25, 100%, 85%) !important;
+}
+.after-bg-sat-seashell::after {
+  background: hsl(25, 100%, 85%) !important;
+}
+.after-fg-sat-seashell::after {
+  color: hsl(25, 100%, 85%) !important;
+}
+.after-bd-sat-seashell::after {
+  border-color: hsl(25, 100%, 85%) !important;
+}
+.before-bg-dark-seashell::before {
+  background: hsl(25, 100%, 75%) !important;
+}
+.before-fg-dark-seashell::before {
+  color: hsl(25, 100%, 75%) !important;
+}
+.before-bd-dark-seashell::before {
+  border-color: hsl(25, 100%, 75%) !important;
+}
+.after-bg-dark-seashell::after {
+  background: hsl(25, 100%, 75%) !important;
+}
+.after-fg-dark-seashell::after {
+  color: hsl(25, 100%, 75%) !important;
+}
+.after-bd-dark-seashell::after {
+  border-color: hsl(25, 100%, 75%) !important;
+}
+.before-bg-light-sand::before {
+  background: hsl(45, 71%, 96%) !important;
+}
+.before-fg-light-sand::before {
+  color: hsl(45, 71%, 96%) !important;
+}
+.before-bd-light-sand::before {
+  border-color: hsl(45, 71%, 96%) !important;
+}
+.after-bg-light-sand::after {
+  background: hsl(45, 71%, 96%) !important;
+}
+.after-fg-light-sand::after {
+  color: hsl(45, 71%, 96%) !important;
+}
+.after-bd-light-sand::after {
+  border-color: hsl(45, 71%, 96%) !important;
+}
+.before-bg-minor-sand::before {
+  background: hsl(45, 71%, 88%) !important;
+}
+.before-fg-minor-sand::before {
+  color: hsl(45, 71%, 88%) !important;
+}
+.before-bd-minor-sand::before {
+  border-color: hsl(45, 71%, 88%) !important;
+}
+.after-bg-minor-sand::after {
+  background: hsl(45, 71%, 88%) !important;
+}
+.after-fg-minor-sand::after {
+  color: hsl(45, 71%, 88%) !important;
+}
+.after-bd-minor-sand::after {
+  border-color: hsl(45, 71%, 88%) !important;
+}
+.before-bg-sat-sand::before {
+  background: hsl(45, 71%, 71%) !important;
+}
+.before-fg-sat-sand::before {
+  color: hsl(45, 71%, 71%) !important;
+}
+.before-bd-sat-sand::before {
+  border-color: hsl(45, 71%, 71%) !important;
+}
+.after-bg-sat-sand::after {
+  background: hsl(45, 71%, 71%) !important;
+}
+.after-fg-sat-sand::after {
+  color: hsl(45, 71%, 71%) !important;
+}
+.after-bd-sat-sand::after {
+  border-color: hsl(45, 71%, 71%) !important;
+}
+.before-bg-dark-sand::before {
+  background: hsl(45, 71%, 61%) !important;
+}
+.before-fg-dark-sand::before {
+  color: hsl(45, 71%, 61%) !important;
+}
+.before-bd-dark-sand::before {
+  border-color: hsl(45, 71%, 61%) !important;
+}
+.after-bg-dark-sand::after {
+  background: hsl(45, 71%, 61%) !important;
+}
+.after-fg-dark-sand::after {
+  color: hsl(45, 71%, 61%) !important;
+}
+.after-bd-dark-sand::after {
+  border-color: hsl(45, 71%, 61%) !important;
 }
 
 /* source/colors-css/ribbed.less */
@@ -54265,6 +61159,20 @@ label:has(input) {
   background-color: var(--hero-background);
   color: var(--hero-color);
 }
+.hero .hero-image {
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+.hero1 {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+.hero2 {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
+.hero3 {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
 @media all and (min-width: 768px) {
   .hero {
     padding: 160px 80px;
@@ -59501,13 +66409,9 @@ label:has(input) {
   flex-grow: 0;
 }
 .remote-dataset .service-block .count-block {
-  flex-basis: 100px;
+  flex-basis: 160px;
   flex-shrink: 0;
   flex-grow: 0;
-}
-.remote-dataset .service-block .count-block .option-list li a {
-  justify-content: flex-end;
-  padding-right: 32px;
 }
 .remote-dataset .hide-block {
   display: none;
