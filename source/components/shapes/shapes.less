@@ -65,3 +65,21 @@
 .message-shape {
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 }
+
+.diagonal {
+    position: relative;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transform: skewY(-5deg);
+        z-index: -1;
+    }
+    
+    &.reverse {
+        &::after {
+            transform: skewY(5deg);
+        }
+    }
+}
