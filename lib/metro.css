@@ -56399,7 +56399,6 @@ input.pill-input .button {
 }
 .label-for-input {
   font-size: 12px;
-  text-transform: uppercase;
 }
 .label-for-input.rtl {
   text-align: right;
