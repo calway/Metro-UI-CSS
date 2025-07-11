@@ -166,7 +166,6 @@
 					return;
 				}
 				this.addParam(o.keySearch, val);
-				console.log(o.urlSearch);
 				if (o.urlSearch) {
 					this.url = o.urlSearch;
 				}
@@ -317,8 +316,6 @@
 					url += `&${key}=${encodeURIComponent(this.params[key])}`;
 				}
 			}
-
-			console.log(url);
 
 			url = o.onBeforeLoad(url, this);
 
