@@ -1,244 +1,282 @@
-# Remote Table Component
+# Remote Table
 
-The Remote Table component provides a way to fetch and display tabular data from a remote API with built-in pagination, sorting, and searching capabilities. It's designed to handle large datasets efficiently by loading data in chunks and displaying it in a structured table format.
+A powerful component for displaying data from remote sources with built-in pagination, sorting, searching, and customizable rendering. The Remote Table component automatically handles API calls, data loading, and provides a rich user interface for data interaction.
 
 ## Dependencies
 
-- Table component (styles)
-- Pagination component
+- Hooks (for debounced search)
+- Metro Pagination component
 
 ## Usage
 
 ### Basic Usage
 
 ```html
-<div data-role="remote-table" 
-     data-url="api/data" 
-     data-search-url="api/search"
-     data-rows="10"
-     data-fields="id,name,email,phone"
-     data-captions="ID,Name,Email,Phone"
-     data-sortable-fields="name,email">
+<div data-role="remote-table"
+     data-url="https://api.example.com/data"
+     data-key-data="items"
+     data-key-total="total">
 </div>
 ```
 
-### Additional Configurations
+### Advanced Configuration
 
 ```html
-<div id="userTable" data-role="remote-table" 
-     data-url="api/users" 
-     data-search-url="api/users/search"
-     data-rows="25"
-     data-fields="id,name,email,role,status"
-     data-captions="ID,Name,Email,Role,Status"
-     data-sortable-fields="name,email,role"
-     data-col-size="50px,200px,250px,100px,100px"
-     data-sort="name"
+<div data-role="remote-table"
+     data-caption="Products"
+     data-url="https://dummyjson.com/products"
+     data-url-search="https://dummyjson.com/products/search"
+     data-key-offset="skip"
+     data-key-limit="limit"
+     data-key-data="products"
+     data-key-total="total"
+     data-key-sort="sortBy"
+     data-key-order="order"
+     data-key-search="q"
+     data-fields="id, title, price, discountPercentage"
+     data-sortable-fields="id, title, price, discountPercentage"
+     data-col-size="30,,150,150"
+     data-captions="ID, Title, Price, Discount"
+     data-sort="id"
      data-sort-order="asc"
-     data-cls-table="striped bordered">
+     data-limit="10"
+     data-rows-steps="10,25,50,100"
+     data-on-draw-cell="customCellRenderer"
+     data-cls-table="table-border striped row-hover"
+     data-cls-pagination="mt-4 d-flex flex-justify-center">
 </div>
+```
+
+### JavaScript Initialization
+
+```javascript
+const table = Metro.makePlugin("#my-table", "remote-table", {
+    url: "https://api.example.com/data",
+    keyData: "items",
+    keyTotal: "total",
+    onLoad: function(data) {
+        console.log("Data loaded:", data);
+        return data;
+    }
+});
 ```
 
 ## Plugin Parameters
 
 | Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
-| caption | string | "" | Caption for the table |
-| url | string | "" | URL for fetching data |
-| searchUrl | string | "" | URL for searching data (if different from main URL) |
-| method | string | "GET" | HTTP method for requests (GET, POST, etc.) |
-| limit | number | 10 | Number of items to fetch per page |
-| offset | number | 0 | Starting offset for fetching data |
-| fields | string | "" | Fields to display in the table (comma-separated) |
-| sortableFields | string | "" | Fields that can be sorted (comma-separated) |
-| colSize | string | "" | Column sizes (comma-separated, e.g., "100px,200px,auto") |
-| sort | string | "" | Default sort field |
-| sortOrder | string | "asc" | Default sort order (asc or desc) |
-| captions | string | null | Custom captions for table headers (comma-separated) |
-| limitKey | string | "limit" | Query parameter name for limit |
-| offsetKey | string | "offset" | Query parameter name for offset |
-| searchKey | string | "query" | Query parameter name for search term |
-| totalKey | string | "total" | Response property name for total count |
-| dataKey | string | "data" | Response property name for data array |
-| sortKey | string | "sortBy" | Query parameter name for sort field |
-| orderKey | string | "order" | Query parameter name for sort order |
-| shortPagination | boolean | false | Whether to use short pagination (just prev/next) or full pagination |
-| rows | number | 10 | Default number of rows to display |
-| rowsSteps | string | "10,25,50,100" | Available options for rows per page (comma-separated) |
-| clsTable | string | "" | Additional CSS class for the table |
-| clsPagination | string | "" | Additional CSS class for pagination |
+| --------- | ---- | ------- | ----------- |
+| `caption` | string | "" | Table caption text |
+| `url` | string | "" | Primary URL for data loading |
+| `urlSearch` | string | "" | URL for search requests (if different from main URL) |
+| `method` | string | "GET" | HTTP method for requests |
+| `limit` | number | 10 | Number of records per page |
+| `offset` | number | 0 | Starting offset for pagination |
+| `fields` | string | "" | Comma-separated list of fields to display |
+| `sortableFields` | string | "" | Comma-separated list of sortable fields |
+| `colSize` | string | "" | Comma-separated list of column widths |
+| `sort` | string | "" | Default sort field |
+| `sortOrder` | string | "asc" | Default sort order ("asc" or "desc") |
+| `captions` | array | null | Custom column headers |
+| `keyLimit` | string | "" | URL parameter name for limit |
+| `keyOffset` | string | "" | URL parameter name for offset |
+| `keyTotal` | string | "" | Response key containing total count |
+| `keyData` | string | "" | Response key containing data array |
+| `keySort` | string | "" | URL parameter name for sort field |
+| `keyOrder` | string | "" | URL parameter name for sort order |
+| `keySearch` | string | "q" | URL parameter name for search query |
+| `shortPagination` | boolean | false | Use simple prev/next pagination |
+| `rows` | number | 10 | Default rows per page |
+| `rowsSteps` | string | "10,25,50,100" | Available rows per page options |
+| `showServiceBlock` | boolean | true | Show search and controls block |
+| `quickSearch` | boolean | true | Enable quick search input |
+| `selectOrder` | boolean | true | Show sort order selector |
+| `selectCount` | boolean | true | Show rows count selector |
+| `showPagination` | boolean | true | Show pagination controls |
+| `params` | object | null | Additional URL parameters |
+| `clsTable` | string | "" | Additional CSS classes for table |
+| `clsRow` | string | "" | Additional CSS classes for rows |
+| `clsCell` | string | "" | Additional CSS classes for cells |
+| `clsHead` | string | "" | Additional CSS classes for header |
+| `clsPagination` | string | "" | Additional CSS classes for pagination |
 
 ## API Methods
 
-+ `_loadData()` - Loads data from the remote API based on current settings.
-+ `_createEntries()` - Creates table entries from the loaded data.
-+ `destroy()` - Removes the component from the DOM.
++ `addParam(key, value)` - Adds a single parameter to the request URL.
++ `addParams(params)` - Adds multiple parameters to the request URL.
++ `clearParams()` - Clears all additional parameters.
++ `load(append)` - Manually triggers data loading from the remote source.
++ `destroy()` - Destroys the component and removes it from DOM.
 
 #### Example of Method Usage
+
 ```javascript
-const table = Metro.getPlugin('#myTable', 'remote-table');
-// Note: Most methods are internal and not meant to be called directly
+const table = Metro.getPlugin('#my-table', 'remote-table');
+
+// Add single parameter
+table.addParam('category', 'electronics');
+
+// Add multiple parameters
+table.addParams({
+    category: 'electronics',
+    minPrice: 100,
+    maxPrice: 500
+});
+
+// Clear all parameters
+table.clearParams();
+
+// Reload data
+table.load();
 ```
 
 ## Events
 
 | Event | Description |
-| --- | --- |
-| onLoad | Triggered when data is loaded, allows transforming the response |
-| onDrawRow | Triggered when a row is drawn |
-| onDrawCell | Triggered when a cell is drawn |
-| onDrawHeadCell | Triggered when a header cell is drawn |
-| onTableCreate | Triggered when the table is created |
+| ----- | ----------- |
+| `onBeforeLoad` | Called before making the API request. Receives URL and can modify it. |
+| `onLoad` | Called after receiving data from API. Can transform the response data. |
+| `onDrawRow` | Called when drawing each table row. Receives row element, data, and index. |
+| `onDrawCell` | Called when drawing each table cell. Receives cell element, value, field name, record, and index. |
+| `onDrawHeadCell` | Called when drawing each header cell. Receives cell element and metadata. |
+| `onTableCreate` | Called when the table component is fully created. |
+
+### Event Usage Examples
+
+```javascript
+// Transform data before display
+function onLoad(data) {
+    // Modify or validate data
+    data.products = data.products.map(item => ({
+        ...item,
+        formattedPrice: `$${item.price.toFixed(2)}`
+    }));
+    return data;
+}
+
+// Custom cell rendering
+function drawCell(cell, value, fieldName, record, index) {
+    if (fieldName === 'price') {
+        cell.innerHTML = `<span class="${value > 100 ? 'fg-red' : 'fg-green'}">$${value}</span>`;
+    }
+    if (fieldName === 'status') {
+        cell.innerHTML = `<span class="badge ${value === 'active' ? 'bg-green' : 'bg-gray'}">${value}</span>`;
+    }
+}
+
+// Custom row styling
+function drawRow(row, data, index) {
+    if (data.featured) {
+        row.addClass('bg-light');
+    }
+}
+```
 
 ## Styling with CSS Variables
 
-The Remote Table component doesn't define specific CSS variables. It inherits styles from the Table component.
+The Remote Table component uses minimal custom CSS variables and relies primarily on Metro UI's table styling system.
+
+| Variable | Default (Light) | Dark Mode | Description |
+| -------- | --------------- | --------- | ----------- |
+| N/A | N/A | N/A | Component uses Metro UI table variables |
+
+### Example of Custom Styling
+
+```css
+/* Custom table styling */
+.remote-table .table {
+    --table-border-color: #e0e0e0;
+    --table-header-bg: #f5f5f5;
+}
+
+/* Custom search block styling */
+.remote-table .search-block {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+/* Custom cell styling */
+.remote-table .data-cell-price {
+    text-align: right;
+    font-weight: bold;
+}
+
+.remote-table .data-cell-id {
+    text-align: center;
+    font-family: monospace;
+}
+```
 
 ## Available CSS Classes
 
 ### Base Classes
-- `.remote-table` - The main container class for the component
-- `.table-entry` - Container for the table and search controls
-- `.search-block` - Container for search input and rows count selector
-- `.table-pagination` - Container for pagination controls
+- `.remote-table` - Main component container
+- `.table-component` - Applied to the main element
+- `.table-entry` - Container for table and controls
+- `.search-block` - Container for search and control inputs
+- `.table-pagination` - Pagination container
+- `.short-pagination` - Simple prev/next pagination style
 
-### Structure
-The Remote Table component has the following structure:
+### Data Classes
+- `.data-cell-{fieldname}` - Applied to each data cell based on field name
+- `.head-cell-{fieldname}` - Applied to each header cell based on field name
+- `.sortable-column` - Applied to sortable header cells
+- `.sort-asc` / `.sort-desc` - Applied to currently sorted columns
 
-```html
-<div class="table-component remote-table">
-    <!-- Search and rows count controls -->
-    <div class="table-entry">
-        <div class="search-block row">
-            <div class="cell-sm-10">
-                <!-- Search input -->
-            </div>
-            <div class="cell-sm-2">
-                <!-- Rows count select -->
-            </div>
-        </div>
-        
-        <!-- Table -->
-        <table class="table">
-            <caption>Table Caption</caption>
-            <thead>
-                <tr class="table-header">
-                    <th class="sortable-column">Column 1</th>
-                    <th class="sortable-column">Column 2</th>
-                    ...
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="table-row">
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    ...
-                </tr>
-                ...
-            </tbody>
-        </table>
-    </div>
-    
-    <!-- Pagination -->
-    <div class="table-pagination"></div>
-</div>
-```
+### Service Classes
+- `.table-header` - Header row class
+- `.table-row` - Data row class
 
-## API Response Format
+## Expected API Response Format
 
-The component expects the API response to be in the following format:
+The remote API should return data in the following format:
 
 ```json
 {
-  "total": 100,
-  "data": [
-    { "id": 1, "name": "John Doe", "email": "john@example.com", "phone": "123-456-7890" },
-    { "id": 2, "name": "Jane Smith", "email": "jane@example.com", "phone": "098-765-4321" },
-    ...
-  ]
-}
-```
-
-The property names can be customized using the `totalKey` and `dataKey` parameters.
-
-## Customizing Cell Rendering
-
-You can customize how cells are rendered using the `onDrawCell` event:
-
-```javascript
-Metro.init(function(){
-    var table = Metro.getPlugin('#myTable', 'remote-table');
-    table.options.onDrawCell = function(cell, value, field, item, index) {
-        // Customize cell based on field or value
-        if (field === 'status') {
-            if (value === 'active') {
-                $(cell).addClass('bg-green fg-white');
-            } else {
-                $(cell).addClass('bg-red fg-white');
-            }
+    "total": 100,
+    "products": [
+        {
+            "id": 1,
+            "title": "Product Name",
+            "price": 29.99,
+            "category": "Electronics"
         }
-        
-        // Format currency
-        if (field === 'price') {
-            $(cell).html('$' + parseFloat(value).toFixed(2));
-        }
-    };
-});
-```
-
-## Customizing Header Cell Rendering
-
-You can customize how header cells are rendered using the `onDrawHeadCell` event:
-
-```javascript
-Metro.init(function(){
-    var table = Metro.getPlugin('#myTable', 'remote-table');
-    table.options.onDrawHeadCell = function(cell, caption, field, index, sortable, sorted, order) {
-        // Add icons or custom styling to header cells
-        if (sortable) {
-            var icon = sorted ? (order === 'asc' ? '↑' : '↓') : '↕';
-            $(cell).append(' ' + icon);
-        }
-    };
-});
-```
-
-## Custom Styling Example
-
-```css
-.custom-table.remote-table .table {
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.custom-table.remote-table .table th {
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-}
-
-.custom-table.remote-table .table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.custom-table.remote-table .table tr:hover {
-    background-color: #e0f7fa;
+    ]
 }
 ```
 
-```html
-<div data-role="remote-table" class="custom-table" data-url="api/data">
-</div>
-```
+Where:
+- `total` - Total number of records (for pagination)
+- `products` - Array of data records (key name configurable via `keyData`)
+
+## URL Parameters
+
+The component automatically adds these parameters to API requests:
+
+- `limit` - Number of records requested
+- `skip`/`offset` - Starting position for pagination
+- `sortBy` - Field to sort by
+- `order` - Sort direction ("asc" or "desc")
+- `q` - Search query (when using search)
+
+Parameter names are configurable via the `key*` options.
+
+## Additional Notes
+
+- The component automatically handles debounced search with a 300ms delay
+- Search queries must be at least 3 characters long to trigger a request
+- The component supports both full pagination and simple prev/next navigation
+- Column widths can be set using the `colSize` parameter with comma-separated values
+- Empty values in `colSize` will use automatic width for those columns
+- The component integrates with Metro UI's theme system for light/dark mode support
 
 ## Best Practices
 
-1. Specify the fields you want to display using the `fields` parameter to limit data transfer
-2. Provide custom captions with the `captions` parameter for better readability
-3. Use the `sortableFields` parameter to enable sorting for relevant columns
-4. Use the `onDrawCell` event to format data appropriately (dates, currency, etc.)
-5. Use the `colSize` parameter to control column widths for better layout
-6. Consider using the `clsTable` parameter to apply Metro UI table styles (striped, bordered, etc.)
-7. Set appropriate row counts based on the complexity of your data
+- Always specify `keyData` and `keyTotal` parameters to match your API response structure
+- Use `onLoad` event to transform or validate data before display
+- Implement proper error handling in your API endpoints
+- Use `onDrawCell` for custom formatting rather than modifying data directly
+- Set appropriate `limit` values based on your data size and user experience needs
+- Use `urlSearch` parameter if your search endpoint differs from the main data endpoint
+- Implement server-side pagination, sorting, and searching for better performance with large datasets

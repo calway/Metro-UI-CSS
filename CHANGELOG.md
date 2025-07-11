@@ -16,3 +16,4 @@
 - [x] Updated `table`, added padding classes `small-padding`, `medium-padding`, `large-padding`, `largest-padding`
 - [x] Updated icons, added tags set
 - [x] Improved **custom buttons** in `input`, `dialog`, `panel`, and `window` components
+- [x] Updated `remote-dataset`, `remote-table` components - changed property names, added custom params

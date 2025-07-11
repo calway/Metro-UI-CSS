@@ -56275,6 +56275,7 @@ ul ul .dropdown-caret {
 .input .input-reveal-button,
 .input .input-search-button {
   background-color: transparent;
+  font-family: var(--font-symbol);
 }
 .input .input-clear-button:hover,
 .input .input-reveal-button:hover,
@@ -61289,6 +61290,17 @@ label:has(input) {
       #0000 101%) calc(50% - 60px) 0/120px 100%,
     radial-gradient(
       67.08px at 50% calc(100% + 60px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+.hero6 {
+  --mask:
+    radial-gradient(
+      223.61px at 50% calc(100% - 300px),
+      #000 99%,
+      #0000 101%) calc(50% - 200px) 0/400px 100%,
+    radial-gradient(
+      223.61px at 50% calc(100% + 200px),#0000 99%,#000 101%) 50% calc(100% - 100px)/400px 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
 }
@@ -66489,9 +66501,14 @@ label:has(input) {
 :root {
   --remote-dataset-gap: 10px;
 }
-.remote-dataset .dataset-body {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.remote-dataset .dataset-caption {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 24px;
+  font-weight: 600;
 }
 .remote-dataset .dataset-actions {
   display: flex;
@@ -66531,9 +66548,6 @@ label:has(input) {
   flex-basis: 160px;
   flex-shrink: 0;
   flex-grow: 0;
-}
-.remote-dataset .hide-block {
-  display: none;
 }
 
 /* source/components/table/table.less */
