@@ -31,6 +31,10 @@
 
 		params: null,
 
+		sortLabel: "",
+		rowsLabel: "",
+		searchLabel: "",
+
 		clsBody: "",
 		clsPagination: "",
 		clsSearchBlock: "",
@@ -105,13 +109,13 @@
                 <div class="service-block ${o.showServiceBlock ? "" : "d-none"}">
                     <div class="search-block ${o.clsSearchBlock} ${o.quickSearch ? "" : "d-none"}">
                         <input name="search" type="text" data-role="input" 
-                            data-prepend="${this.strings.label_search}" 
+                            data-prepend="${o.searchLabel || this.strings.label_search}" 
                             data-search-button="true" 
                             />
                     </div>
                    
                     <div class="order-block ${o.clsOrderBlock} ${this.sortRules.length === 0 || o.selectOrder === false ? "d-none" : ""}">
-                        <select name="sort-order" data-role="select" data-filter="false" data-prepend="${this.strings.label_sorting}">
+                        <select name="sort-order" data-role="select" data-filter="false" data-prepend="${o.sortLabel || this.strings.label_sorting}">
                             ${this.sortRules
 															.map(
 																(rule) => `
@@ -128,7 +132,7 @@
                     </div>
                    
                     <div class="count-block ${o.clsRowsCountBlock} ${o.selectCount ? "" : "d-none"}">
-                        <select name="rows-count" data-role="select" data-prepend="${this.strings.label_rows_count}" data-filter="false">
+                        <select name="rows-count" data-role="select" data-prepend="${o.rowsLabel || this.strings.label_rows_count}" data-filter="false">
                             ${this.rowSteps
 															.map(
 																(step) => `
