@@ -17,3 +17,4 @@
 - [x] Updated icons, added tags set
 - [x] Improved **custom buttons** in `input`, `dialog`, `panel`, and `window` components
 - [x] Updated `remote-dataset`, `remote-table` components - changed property names, added custom params
+- [x] Fixed using css var `--dialog-border-color`

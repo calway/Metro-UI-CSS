@@ -103,13 +103,13 @@
 
 			entries.html(`
                 <div class="search-block row ${o.showServiceBlock ? "" : "d-none"}">
-                    <div class="cell-sm-8 ${o.quickSearch ? "" : "d-none"}">
+                    <div class="cell-sm-10 ${o.quickSearch ? "" : "d-none"}">
                         <input name="search" type="text" data-role="input" 
                             data-prepend="${this.strings.label_search}" 
                             data-search-button="true" 
                             />
                     </div>
-                    <div class="cell-sm-4 ${o.selectCount ? "" : "d-none"}">
+                    <div class="cell-sm-2 ${o.selectCount ? "" : "d-none"}">
                         <select name="rows-count" data-role="select" data-prepend="${this.strings.label_rows_count}" data-filter="false">
                             ${this.rowSteps.map((step) => `<option value="${step}" ${+step === this.rowsCount ? "selected" : ""}>${step}</option>`).join("")}
                         </select>

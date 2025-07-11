@@ -48607,7 +48607,7 @@ button:has(.badge.corner),
   --dialog-border-radius: 6px;
   --dialog-background: #f7f8fa;
   --dialog-color: #191919;
-  --dialog-border-color: #aaaaaa;
+  --dialog-border-color: #e6e6e6;
   --dialog-closer-background: inherit;
   --dialog-closer-color: inherit;
   --dialog-closer-background-hover: var(--color-alert);
@@ -48645,7 +48645,7 @@ button:has(.badge.corner),
   font-size: 1rem;
   padding: 10px 24px;
   order: 1;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--dialog-border-color);
   align-items: center;
   justify-content: flex-start !important;
   flex-flow: row nowrap;
@@ -48659,7 +48659,7 @@ button:has(.badge.corner),
   font-size: 14px;
 }
 .dialog-actions {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--dialog-border-color);
   padding: 8px 16px;
   order: 3;
   display: flex;
