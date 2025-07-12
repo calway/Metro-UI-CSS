@@ -50,16 +50,16 @@
 				throw new Error("You must provide a pattern for masked input.");
 			}
 
-			if (
-				typeof o.maskPlaceholder !== "string" ||
-				o.maskPlaceholder.length > 1
-			) {
-				throw new Error(
-					"Mask placeholder should be a single character or an empty string.",
-				);
-			}
+			// if (
+			// 	typeof o.maskPlaceholder !== "string" ||
+			// 	o.maskPlaceholder.length > 1
+			// ) {
+			// 	throw new Error(
+			// 		"Mask placeholder should be a single character or an empty string.",
+			// 	);
+			// }
 
-			this.placeholder = o.maskPlaceholder;
+			this.placeholder = o.maskPlaceholder.split("");
 			this.mask = `${o.mask}`;
 			this.maskArray = this.mask.split("");
 			this.pattern = new RegExp(`^${o.maskPattern}+$`);
@@ -84,14 +84,15 @@
 			};
 
 			const checkEditableChar = (pos) =>
-				pos < that.mask.length && that.mask.charAt(pos) === that.placeholder;
+				pos < that.mask.length &&
+				that.placeholder.includes(that.mask.charAt(pos));
 
 			const findNextEditablePosition = (pos) => {
 				let i;
 				const a = that.maskArray;
 
 				for (i = pos; i <= a.length; i++) {
-					if (a[i] === that.placeholder) {
+					if (that.placeholder.includes(a[i])) {
 						return i;
 					}
 				}
@@ -158,11 +159,11 @@
 						e.preventDefault();
 						if (pos - 1 >= editableStart) {
 							if (checkEditableChar(pos - 1)) {
-								if (this.value.charAt(pos - 1) !== that.placeholder) {
+								if (!that.placeholder.includes(val.charAt(pos - 1))) {
 									// Replace char if it is not a mask placeholder
 									this.value =
 										val.substring(0, pos - 1) +
-										that.placeholder +
+										that.mask[pos - 1] +
 										val.substring(pos);
 								}
 							}
@@ -215,7 +216,7 @@
 				val = elem.value;
 				$.each(this.maskArray, (i, v) => {
 					if (val[i] !== v && !this.pattern.test(val[i])) {
-						a[i] = this.placeholder;
+						a[i] = this.mask[i];
 					} else {
 						a[i] = val[i];
 					}
