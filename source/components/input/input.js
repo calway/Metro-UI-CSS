@@ -320,6 +320,18 @@
 			this.component = container;
 		},
 
+		_hideAutocompleteList: function () {
+			const element = this.element;
+			const container = element.closest(".input");
+			const autocompleteList = container.find(".autocomplete-list");
+
+			if (autocompleteList.length > 0) {
+				autocompleteList.css({
+					display: "none",
+				});
+			}
+		},
+
 		_createEvents: function () {
 			const that = this;
 			const element = this.element;
@@ -335,11 +347,8 @@
 					.fire("change")
 					.fire("keyup")
 					.focus();
-				if (autocompleteList.length > 0) {
-					autocompleteList.css({
-						display: "none",
-					});
-				}
+
+				that._hideAutocompleteList();
 
 				that._fireEvent("clear-click", {
 					prev: curr,
@@ -360,7 +369,6 @@
 
 			container.on(Metro.events.click, ".input-search-button", function () {
 				if (o.searchButtonClick !== "submit") {
-					console.log("Search button clicked");
 					that._fireEvent("search-button-click", {
 						val: that.val(),
 						button: this,
@@ -379,6 +387,16 @@
 			});
 
 			element.on(Metro.events.keyup, (e) => {
+				if (e.keyCode === Metro.keyCode.ESCAPE) {
+					that._hideAutocompleteList();
+					return;
+				}
+
+				if (e.keyCode === Metro.keyCode.TAB) {
+					that._hideAutocompleteList();
+					return;
+				}
+
 				const val = element.val().trim();
 
 				if (o.history && e.keyCode === Metro.keyCode.ENTER && val !== "") {
@@ -456,9 +474,7 @@
 			container.on(Metro.events.click, ".autocomplete-list .item", function () {
 				const val = $(this).attr("data-autocomplete-value");
 				element.val(val);
-				autocompleteList.css({
-					display: "none",
-				});
+				that._hideAutocompleteList();
 				element.trigger("change");
 				that._fireEvent("autocomplete-select", {
 					value: val,
