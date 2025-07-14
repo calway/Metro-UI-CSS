@@ -52737,7 +52737,7 @@ input::placeholder {
   --product-status-color: #dbdfe7;
   --product-price-color: #dbdfe7;
 }
-.product-show-card {
+.product-card {
   display: flex;
   flex-flow: column nowrap;
   position: relative;
@@ -52749,21 +52749,21 @@ input::placeholder {
   color: var(--card-color);
   padding: 1rem;
 }
-.product-show-card .product-image {
+.product-card .product-image {
   width: 100%;
   position: relative;
   display: block;
   padding-bottom: 100%;
   margin-bottom: 1rem;
 }
-.product-show-card .product-image img {
+.product-card .product-image img {
   position: absolute;
   width: 100%;
   height: 100%;
   inset: 0;
   object-fit: scale-down;
 }
-.product-show-card .product-title {
+.product-card .product-title {
   --ratio: calc(19 / 14);
   font-size: 16px;
   font-weight: 400;
@@ -52776,7 +52776,7 @@ input::placeholder {
   word-break: break-word;
   color: var(--product-title-color, inherit);
 }
-.product-show-card .product-status {
+.product-card .product-status {
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
@@ -52788,7 +52788,7 @@ input::placeholder {
   margin: 0.25rem 0;
   gap: 10px;
 }
-.product-show-card .product-status .icon {
+.product-card .product-status .icon {
   font-size: 20px;
   width: 20px;
   height: 20px;
@@ -52798,42 +52798,42 @@ input::placeholder {
   justify-content: center;
   object-fit: cover;
 }
-.product-show-card .product-desc {
+.product-card .product-desc {
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   word-break: break-word;
 }
-.product-show-card .product-rating {
+.product-card .product-rating {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   margin: 0.5rem 0;
 }
-.product-show-card .-old {
+.product-card .-old {
   font-size: 12px;
   font-weight: 400;
   line-height: 12px;
   text-decoration: line-through;
 }
-.product-show-card .product-price {
+.product-card .product-price {
   font-size: 18px;
   font-weight: 700;
   line-height: 20px;
 }
-.product-show-card .product-footer {
+.product-card .product-footer {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   margin-top: 0.5rem;
 }
-.product-show-card > .badge {
+.product-card > .badge {
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 14px;
 }
-.product-show-card > .badge.-left {
+.product-card > .badge.-left {
   left: 10px;
   right: auto;
 }
