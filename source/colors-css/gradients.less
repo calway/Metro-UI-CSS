@@ -2,6 +2,7 @@
 
 :root {
     --gradient-direction: to right;
+    --gradient-position: circle;
     --gradient-from-color: #000;
     --gradient-to-color: #5c5c5c;
 }
@@ -11,39 +12,40 @@
     --gradient-to-color: #cacaca;
 }
 
-.gradient {
-    background: linear-gradient(var(--gradient-direction), var(--gradient-from-color), var(--gradient-to-color))!important;
+.gradient{
+    background: var(--background)!important;
 }
 
-each(@normalColors, .(@v, @k, @i) {
-    @color: "@{v}";
-    @lightColor: "light-@{v}";
-    @darkColor: "dark-@{v}";
-    
-    .gr-@{v} {
-        background: linear-gradient(var(--gradient-direction), @@color, lighten(@@color, 20%))!important;
-    }
-    .gr-light-@{v} {
-        background: linear-gradient(var(--gradient-direction), @@lightColor, #ffffff)!important;
-    }
-    .gr-dark-@{v} {
-        background: linear-gradient(var(--gradient-direction), darken(@@darkColor, 20%), @@darkColor)!important;
+each(@normalColors, {
+    @gradient: "gradient-@{value}";
+    .gradient-@{value} {
+        --background: @@gradient;
     }
 })
 
+each(@normalColors, {
+    @gradient: "gradient-radial-@{value}";
+    .gradient-radial-@{value} {
+        --background: @@gradient;
+    }
+})
 
-.dark-side {
-    each(@normalColors, .(@v, @k, @i) {
-        @color: "@{v}";
+each(@gradient-transitions, {
+    @gradient: "gradient-@{value}";
+    .gradient-@{value} {
+        --background: @@gradient;
+    }
+})
 
-        .gr-@{v}, .gr-light-@{v}l, .gr-dark-@{v} {
-            background: linear-gradient(var(--gradient-direction), rgba(255, 238, 238, 0.15), rgba(255, 252, 252, 0.1))!important;
-        }
-    })
-}
+each(@gradient-themed, {
+    @gradient: "gradient-@{value}";
+    .gradient-@{value} {
+        --background: @@gradient;
+    }
+})
 
 .gradient-text {
-    background: linear-gradient(var(--gradient-direction), var(--gradient-from-color), var(--gradient-to-color))!important;
+    --background: linear-gradient(var(--gradient-direction), var(--gradient-from-color), var(--gradient-to-color))!important;
     -webkit-background-clip: text!important;
     -webkit-text-fill-color: transparent;
 }
@@ -52,27 +54,8 @@ each(@normalColors, .(@v, @k, @i) {
     @color: "sat-@{v}";
 
     .gr-text-@{v} {
-        background: linear-gradient(var(--gradient-direction), darken(@@color, 30%) 10%, @@v, darken(@@color, 30%))!important;
+        --background: linear-gradient(var(--gradient-direction), darken(@@color, 30%) 10%, @@v, darken(@@color, 30%))!important;
         -webkit-background-clip: text!important;
         -webkit-text-fill-color: transparent;
     }
 })
-
-.gradient{
-    background: var(--background);
-}
-
-.gr-blue-coral { --background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59)!important;}
-.gr-sunset-dream { --background: linear-gradient(45deg, #ff7e5f, #feb47b, #ffcda5)!important;}
-.gr-deep-space { --background: linear-gradient(45deg, #0f0c29, #302b63, #24243e)!important;}
-.gr-emerald-green { --background: linear-gradient(45deg, #16a085, #2ecc71, #4cb8c4)!important;}
-.gr-purple-love { --background: linear-gradient(45deg, #cc2b5e, #753a88, #4a235a)!important;}
-.gr-cherry-glow { --background: linear-gradient(45deg, #f05053, #e1eec3, #a7bf5d)!important;}
-.gr-cosmic-fusion { --background: linear-gradient(45deg, #ff00cc, #333399, #0033ff)!important;}
-.gr-sunny-morning { --background: linear-gradient(45deg, #f6d365, #fda085, #fbc2eb)!important;}
-.gr-winter-frost { --background: linear-gradient(45deg, #a1c4fd, #c2e9fb, #e2ebf0)!important;}
-.gr-neon-pulse { --background: linear-gradient( 45deg, #00fffc, #fc00ff, #fffc00)!important;}
-.gr-royal-elegance { --background: linear-gradient(45deg, #141e30, #243b55, #4286f4)!important;}
-.gr-sunset { --background: linear-gradient(to right, #fdc830, #f37335)!important;}
-.gr-emerald-sea { --background: linear-gradient( to right, #00f260, #0575e6 )!important;}
-

@@ -1,265 +1,264 @@
-# Input Component
+# Input
 
-The Input component provides a versatile and customizable text input field with various features including autocomplete, history, custom buttons, and more. It enhances the standard HTML input element with additional functionality and styling options.
+The Input component is a versatile and feature-rich text input field that extends the standard HTML input element with additional functionality including autocomplete, history, custom buttons, prepend/append options, and various styling options.
 
 ## Dependencies
 
-This component requires:
-- Metro UI core
-- Input-common module
+The Input component requires the following dependencies:
+- `input-common` - Common input functionality
+- `button` - Button component for action buttons
+- `select` - Select component for prepend/append options
 
 ## Usage
 
 ### Basic Usage
 
 ```html
-<!-- Basic input -->
-<input type="text" data-role="input">
+<!-- Simple input -->
+<input type="text" data-role="input" data-label="Enter text:">
 
 <!-- Input with placeholder -->
-<input type="text" data-role="input" placeholder="Enter text here...">
-
-<!-- Input with label -->
-<input type="text" data-role="input" data-label="Username">
-
-<!-- Password input with reveal button -->
-<input type="password" data-role="input">
-```
-
-### Input with Prepend/Append
-
-```html
-<!-- Input with prepended text -->
-<input type="text" data-role="input" data-prepend="https://">
-
-<!-- Input with appended text -->
-<input type="text" data-role="input" data-append=".com">
-
-<!-- Input with prepend and append options -->
-<input type="text" data-role="input" 
-       data-prepend-options="http://,https://" 
-       data-append-options=".com,.org,.net">
+<input type="text" data-role="input" data-label="Username:" placeholder="Enter username">
 ```
 
 ### Input with Buttons
 
 ```html
+<!-- Input with clear button -->
+<input type="text" data-role="input" data-clear-button="true" data-label="Search:">
+
+<!-- Password input with reveal button -->
+<input type="password" data-role="input" data-reveal-button="true" data-label="Password:">
+
 <!-- Input with search button -->
-<input type="text" data-role="input" data-search-button="true">
+<input type="text" data-role="input" data-search-button="true" data-label="Search:">
 
-<!-- Input with random button (generates random value) -->
-<input type="text" data-role="input" data-random-button="true">
-
-<!-- Input with custom buttons -->
-<input type="text" data-role="input" data-custom-buttons='[
-    {"text": "✓", "cls": "success", "onclick": "alert(\'Confirmed!\')"},
-    {"text": "✗", "cls": "alert", "onclick": "alert(\'Cancelled!\')"}
-]'>
+<!-- Input with random generator button -->
+<input type="text" data-role="input" data-random-button="true" data-label="Generate:">
 ```
 
 ### Input with Autocomplete
 
 ```html
-<!-- Input with autocomplete -->
+<!-- Static autocomplete list -->
 <input type="text" data-role="input" 
-       data-autocomplete="Apple,Banana,Cherry,Date,Elderberry">
+       data-autocomplete="apple,banana,cherry,date,elderberry"
+       data-label="Fruit:">
 
-<!-- Input with autocomplete from URL -->
+<!-- Autocomplete from URL -->
 <input type="text" data-role="input" 
-       data-autocomplete-url="/api/autocomplete" 
-       data-autocomplete-url-method="GET">
+       data-autocomplete-url="/api/suggestions"
+       data-autocomplete-url-method="GET"
+       data-label="Search:">
 ```
 
 ### Input with History
 
 ```html
-<!-- Input with history (press Enter to add to history, Up/Down arrows to navigate) -->
-<input type="text" data-role="input" data-history="true">
-
-<!-- Input with preset history -->
+<!-- Input with history support -->
 <input type="text" data-role="input" 
-       data-history="true" 
-       data-history-preset="previous search 1|previous search 2|previous search 3">
+       data-history="true"
+       data-history-preset="previous search|another search|third search"
+       data-label="Search with history:">
+```
+
+### Input with Prepend/Append
+
+```html
+<!-- Input with prepend text -->
+<input type="text" data-role="input" 
+       data-prepend="$" 
+       data-label="Price:">
+
+<!-- Input with append text -->
+<input type="text" data-role="input" 
+       data-append=".00" 
+       data-label="Amount:">
+
+<!-- Input with prepend/append options -->
+<input type="text" data-role="input" 
+       data-prepend-options="http://,https://,ftp://"
+       data-append-options=".com,.org,.net"
+       data-label="URL:">
+```
+
+### Custom Buttons
+
+```html
+<input type="text" data-role="input" 
+       data-custom-buttons='[{"text":"📋","onclick":"copyToClipboard","cls":"copy-btn"}]'
+       data-label="Text to copy:">
 ```
 
 ## Plugin Parameters
 
-| Option | Default | Description |
-| ------ | ------- | ----------- |
-| `label` | "" | Label text for the input |
-| `autocomplete` | null | Autocomplete list (string with dividers or array) |
-| `autocompleteUrl` | null | URL to fetch autocomplete data |
-| `autocompleteUrlMethod` | "GET" | HTTP method for autocomplete URL |
-| `autocompleteUrlKey` | null | Key in the response object to extract autocomplete data |
-| `autocompleteDivider` | "," | Divider for autocomplete string |
-| `autocompleteListHeight` | 200 | Height of autocomplete dropdown list |
-| `history` | false | Enable input history |
-| `historyPreset` | "" | Preset history values |
-| `historyDivider` | "\|" | Divider for history preset string |
-| `preventSubmit` | false | Prevent form submission on Enter key |
-| `defaultValue` | "" | Default value for the input |
-| `size` | "default" | Size of the input (can be pixel value) |
-| `prepend` | "" | Text to prepend to the input |
-| `append` | "" | Text to append to the input |
-| `prependOptions` | "" | Options for prepend dropdown |
-| `prependOptionsSep` | "," | Separator for prepend options |
-| `appendOptions` | "" | Options for append dropdown |
-| `appendOptionsSep` | "," | Separator for append options |
-| `searchButton` | false | Show search button |
-| `clearButton` | true | Show clear button |
-| `revealButton` | true | Show reveal button for password inputs |
-| `randomButton` | false | Show random button |
-| `clearButtonIcon` | "❌" | Icon for clear button |
-| `revealButtonIcon` | "👀" | Icon for reveal button |
-| `searchButtonIcon` | "🔍" | Icon for search button |
-| `randomButtonIcon` | "🎲" | Icon for random button |
-| `customButtons` | [] | Array of custom button configurations |
-| `searchButtonClick` | "submit" | Action for search button ("submit" or custom) |
-| `randomSymbols` | "0123..." | Symbols to use for random value generation |
-| `randomLength` | 12 | Length of generated random value |
-| `badge` | null | Badge text to display in the input |
-| `clsComponent` | "" | Additional CSS class for component container |
-| `clsInput` | "" | Additional CSS class for input element |
-| `clsPrepend` | "" | Additional CSS class for prepend element |
-| `clsAppend` | "" | Additional CSS class for append element |
-| `clsClearButton` | "" | Additional CSS class for clear button |
-| `clsRevealButton` | "" | Additional CSS class for reveal button |
-| `clsSearchButton` | "" | Additional CSS class for search button |
-| `clsRandomButton` | "" | Additional CSS class for random button |
-| `clsCustomButton` | "" | Additional CSS class for custom buttons |
-| `clsLabel` | "" | Additional CSS class for label |
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `inputDeferred` | number | 0 | Delay in milliseconds before initializing the component |
+| `label` | string | "" | Label text for the input |
+| `autocomplete` | string/array | null | Static autocomplete data (comma-separated string or array) |
+| `autocompleteUrl` | string | null | URL to fetch autocomplete data |
+| `autocompleteUrlMethod` | string | "GET" | HTTP method for autocomplete URL |
+| `autocompleteUrlKey` | string | null | Key to extract data from JSON response |
+| `autocompleteDivider` | string | "," | Divider for autocomplete string data |
+| `autocompleteListHeight` | number | 200 | Maximum height of autocomplete dropdown |
+| `history` | boolean | false | Enable input history functionality |
+| `historyPreset` | string | "" | Preset history items (pipe-separated) |
+| `historyDivider` | string | "\|" | Divider for history preset string |
+| `preventSubmit` | boolean | false | Prevent form submission on Enter key |
+| `defaultValue` | string | "" | Default value for the input |
+| `size` | string | "default" | Custom width for the input |
+| `prepend` | string | "" | Text to prepend to the input |
+| `append` | string | "" | Text to append to the input |
+| `prependOptions` | string | "" | Dropdown options to prepend (comma-separated) |
+| `prependOptionsSep` | string | "," | Separator for prepend options |
+| `appendOptions` | string | "" | Dropdown options to append (comma-separated) |
+| `appendOptionsSep` | string | "," | Separator for append options |
+| `searchButton` | boolean | false | Show search button |
+| `clearButton` | boolean | true | Show clear button |
+| `revealButton` | boolean | true | Show reveal button for password inputs |
+| `randomButton` | boolean | false | Show random generator button |
+| `clearButtonIcon` | string | "❌" | Icon for clear button |
+| `revealButtonIcon` | string | "👀" | Icon for reveal button |
+| `searchButtonIcon` | string | "🔍" | Icon for search button |
+| `randomButtonIcon` | string | "🎲" | Icon for random button |
+| `customButtons` | array | [] | Array of custom button configurations |
+| `searchButtonClick` | string | "submit" | Action for search button ("submit" or custom) |
+| `randomSymbols` | string | "0123456789;abcdefghijklmnopqrstuvwxyz;ABCDEFGHIJKLMNOPQRSTUVWXYZ;<>!?@#$%^&*()_+" | Symbol groups for random generation |
+| `randomLength` | number | 12 | Length of generated random string |
+| `badge` | string | null | Badge text to display |
+| `clsComponent` | string | "" | Additional CSS class for component container |
+| `clsInput` | string | "" | Additional CSS class for input element |
+| `clsPrepend` | string | "" | Additional CSS class for prepend element |
+| `clsAppend` | string | "" | Additional CSS class for append element |
+| `clsClearButton` | string | "" | Additional CSS class for clear button |
+| `clsRevealButton` | string | "" | Additional CSS class for reveal button |
+| `clsCustomButton` | string | "" | Additional CSS class for custom buttons |
+| `clsSearchButton` | string | "" | Additional CSS class for search button |
+| `clsRandomButton` | string | "" | Additional CSS class for random button |
+| `clsLabel` | string | "" | Additional CSS class for label |
+
+## API Methods
+
++ `getHistory()` - Returns the input history array.
++ `getHistoryIndex()` - Returns the current history index.
++ `setHistoryIndex(val)` - Sets the current history index.
++ `setHistory(history, append)` - Sets the history array. If append is true, adds to existing history.
++ `clear()` - Clears the input value.
++ `toDefault()` - Resets input to default value.
++ `disable()` - Disables the input component.
++ `enable()` - Enables the input component.
++ `toggleState()` - Toggles the enabled/disabled state.
++ `setAutocompleteList(list)` - Sets the autocomplete data list.
++ `val(value, splitter)` - Gets or sets the input value. For inputs with prepend/append options, uses splitter to separate values.
++ `prependOptionsVal(value)` - Gets or sets the prepend options value.
++ `appendOptionsVal(value)` - Gets or sets the append options value.
++ `destroy()` - Destroys the component and removes all event listeners.
+
+#### Example of Method Usage
+
+```javascript
+const input = Metro.getPlugin('#myInput', 'input');
+
+// Get/set value
+const currentValue = input.val();
+input.val('new value');
+
+// Work with history
+input.setHistory(['item1', 'item2', 'item3']);
+const history = input.getHistory();
+
+// Control state
+input.disable();
+input.enable();
+input.clear();
+
+// Set autocomplete data
+input.setAutocompleteList(['option1', 'option2', 'option3']);
+```
 
 ## Events
 
 | Event | Description |
 | ----- | ----------- |
-| `onAutocompleteSelect` | Triggered when an autocomplete item is selected |
-| `onHistoryChange` | Triggered when history changes |
-| `onHistoryUp` | Triggered when navigating up through history |
-| `onHistoryDown` | Triggered when navigating down through history |
-| `onClearClick` | Triggered when clear button is clicked |
-| `onRevealClick` | Triggered when reveal button is clicked |
-| `onSearchButtonClick` | Triggered when search button is clicked |
-| `onEnterClick` | Triggered when Enter key is pressed |
-| `onInputCreate` | Triggered after the input is created |
-
-## API Methods
-
-| Method | Description |
-| ------ | ----------- |
-| `getHistory()` | Returns the history array |
-| `getHistoryIndex()` | Returns the current history index |
-| `setHistoryIndex(val)` | Sets the history index |
-| `setHistory(history, append)` | Sets the history array |
-| `clear()` | Clears the input value |
-| `toDefault()` | Sets the input value to the default value |
-| `disable()` | Disables the input |
-| `enable()` | Enables the input |
-| `toggleState()` | Toggles the disabled state |
-| `setAutocompleteList(list)` | Sets the autocomplete list |
-| `val(value, splitter)` | Gets or sets the input value |
-| `prependOptionsVal(value)` | Gets or sets the prepend options value |
-| `appendOptionsVal(value)` | Gets or sets the append options value |
+| `onInputCreate` | Fired when the input component is created |
+| `onAutocompleteSelect` | Fired when an autocomplete item is selected |
+| `onHistoryChange` | Fired when history changes (new item added) |
+| `onHistoryUp` | Fired when navigating up in history |
+| `onHistoryDown` | Fired when navigating down in history |
+| `onClearClick` | Fired when the clear button is clicked |
+| `onRevealClick` | Fired when the reveal button is clicked |
+| `onSearchButtonClick` | Fired when the search button is clicked |
+| `onEnterClick` | Fired when Enter key is pressed |
 
 ## Styling with CSS Variables
-
-The Input component can be styled using the following CSS variables:
 
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
 | `--input-autocomplete-background` | #ffffff | #2b2d30 | Background color of autocomplete dropdown |
-| `--input-autocomplete-color` | #191919 | #dbdfe7 | Text color of autocomplete dropdown |
+| `--input-autocomplete-color` | #191919 | #dbdfe7 | Text color of autocomplete items |
 | `--input-autocomplete-selected-color` | #468cff | #ffc351 | Color of selected text in autocomplete |
 | `--input-autocomplete-selected-background` | transparent | transparent | Background of selected text in autocomplete |
 | `--input-border-radius` | 4px | 4px | Border radius of the input |
-| `--input-font-size` | 14px | 14px | Font size of the input |
 
 ### Example of Custom Styling
 
 ```css
-/* Custom styling for a specific input */
-#myCustomInput {
+/* Custom input styling */
+#my-input {
     --input-border-radius: 8px;
-    --input-font-size: 16px;
-    --input-autocomplete-background: #f0f8ff;
-    --input-autocomplete-color: #0d47a1;
-    --input-autocomplete-selected-color: #ff5722;
+    --input-autocomplete-background: #f5f5f5;
+    --input-autocomplete-selected-color: #ff6b6b;
+}
+
+/* Pill-shaped input */
+.my-pill-input {
+    --input-border-radius: calc(var(--input-height) * 0.44);
 }
 ```
 
 ## Available CSS Classes
 
 ### Base Classes
-- `.input` - Main component class (automatically added)
-- `.focused` - Applied when input is focused
-- `.disabled` - Applied when input is disabled
-- `.pill-input` - Creates a pill-shaped input
+- `.input` - Main container class for the input component
+- `.input.focused` - Applied when input is focused
+- `.input.disabled` - Applied when input is disabled
 
-### Structure Classes
-- `.prepend` - Container for prepended content
-- `.append` - Container for appended content
-- `.prepend-options` - Container for prepend dropdown options
-- `.append-options` - Container for append dropdown options
-- `.button-group` - Container for input buttons
-- `.autocomplete-list` - Container for autocomplete dropdown
-- `.badge` - Style for badge element
-- `.label-for-input` - Style for input label
+### Modifiers
+- `.pill-input` - Creates a pill-shaped input with rounded borders
+- `.rtl` - Right-to-left text direction support
 
-### Button Classes
+### Element Classes
+- `.button-group` - Container for action buttons
 - `.input-clear-button` - Clear button
-- `.input-reveal-button` - Reveal button for password inputs
+- `.input-reveal-button` - Password reveal button
 - `.input-search-button` - Search button
-- `.input-random-button` - Random button
+- `.input-random-button` - Random generator button
 - `.input-custom-button` - Custom buttons
+- `.prepend` - Prepend text container
+- `.append` - Append text container
+- `.prepend-options` - Prepend dropdown container
+- `.append-options` - Append dropdown container
+- `.autocomplete-list` - Autocomplete dropdown container
+- `.autocomplete-list .item` - Individual autocomplete items
+- `.badge` - Badge element
+- `.label-for-input` - Label styling
 
-## Example Use Cases
+## Additional Notes
 
-### Search Input with Autocomplete
-
-```html
-<input type="text" data-role="input" 
-       data-search-button="true"
-       data-autocomplete="Popular search 1,Popular search 2,Popular search 3"
-       data-history="true"
-       placeholder="Search...">
-```
-
-### Password Input with Strength Indicator
-
-```html
-<div class="input-container">
-    <input type="password" data-role="input" id="password"
-           data-random-button="true"
-           data-random-length="16"
-           data-label="Create Password">
-    <div class="password-strength" id="passwordStrength"></div>
-</div>
-
-<script>
-    $("#password").on("input", function(){
-        // Simple password strength check
-        const val = $(this).val();
-        const strength = val.length > 12 ? "Strong" : (val.length > 8 ? "Medium" : "Weak");
-        $("#passwordStrength").text("Strength: " + strength);
-    });
-</script>
-```
-
-### URL Input with Protocol and Domain Selection
-
-```html
-<input type="text" data-role="input"
-       data-prepend-options="http://,https://"
-       data-append-options=".com,.org,.net,.io"
-       data-label="Website URL">
-```
+- The input component automatically handles keyboard navigation for history (Up/Down arrows)
+- Autocomplete supports both static data and dynamic loading from URLs
+- The component supports RTL (right-to-left) text direction
+- Custom buttons can be configured with their own click handlers and styling
+- The random generator creates passwords using configurable symbol groups
+- History functionality stores previous input values for easy recall
 
 ## Best Practices
 
-1. Use appropriate input types (text, password, email, etc.) for better mobile keyboard support
-2. Provide clear labels for inputs to improve accessibility
-3. Use autocomplete for fields where users might benefit from suggestions
-4. Consider using history for search inputs to improve user experience
-5. Use appropriate validation and feedback for user input
-6. For password fields, consider using the random button to help users generate secure passwords
-7. Use custom buttons sparingly to avoid cluttering the interface
+- Use appropriate input types (text, password, email, etc.) for better accessibility
+- Provide meaningful labels for screen readers
+- Consider using autocomplete for frequently entered data
+- Use the clear button for better user experience on mobile devices
+- Configure appropriate autocomplete list height for your use case
+- Use custom buttons sparingly to avoid cluttering the interface
+- Test with both light and dark themes when customizing colors
