@@ -20,3 +20,4 @@
 - [x] Fixed using css var `--dialog-border-color`
 - [x] Removed **upper-case** from `label-for-input` class
 - [x] Fixed losing focus on `input` with role `input-mask` after clicking `tab`
+- [x] Updated gradients

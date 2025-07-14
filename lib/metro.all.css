@@ -61115,6 +61115,7 @@ label:has(input) {
 :root {
   --hero-background: #ffffff;
   --hero-color: #191919;
+  --hero-deep-size: 80%;
 }
 .dark-side {
   --hero-background: #1e1f22;
@@ -61135,16 +61136,16 @@ label:has(input) {
   object-position: center;
 }
 .hero1 {
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% var(--hero-deep-size), 0 100%);
 }
 .hero2 {
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% var(--hero-deep-size), 50% 100%, 0 var(--hero-deep-size));
 }
 .hero3 {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 var(--hero-deep-size));
 }
 .hero4 {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% var(--hero-deep-size), 0 100%);
 }
 .hero5 {
   --mask:
