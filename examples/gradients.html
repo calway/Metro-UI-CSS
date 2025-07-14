@@ -77,7 +77,7 @@
     }
     $("#box-container").append($("<h3>").html("Radial Gradients"))
     for(let color of [...colors]) {
-        $("#box-container").append($(`<div class="cell-md-3 box gradient gradient-radial-${color}">`).text(color))
+        $("#box-container").append($(`<div class="cell-md-3 box gradient gradient-radial-${color}">`).text(`radial-${color}`))
     }
     $("#box-container").append($("<h3>").html("Transition Gradients"))
     for(let color of [...transitionGradients]) {
