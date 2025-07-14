@@ -22,3 +22,4 @@
 - [x] Fixed losing focus on `input` with role `input-mask` after clicking `tab`
 - [x] Updated gradients
 - [x] Fixed `x` position in `select` filter input
+- [x] Added `product-show-card` component

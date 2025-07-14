@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'metro-ui-core';
   src:
-    url('fonts/metro-ui-core.ttf?sqrm9j') format('truetype'),
-    url('fonts/metro-ui-core.woff?sqrm9j') format('woff'),
-    url('fonts/metro-ui-core.svg?sqrm9j#metro-ui-core') format('svg');
+    url('fonts/metro-ui-core.ttf?io8zfa') format('truetype'),
+    url('fonts/metro-ui-core.woff?io8zfa') format('woff'),
+    url('fonts/metro-ui-core.svg?io8zfa#metro-ui-core') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.mif-truck-delivery:before {
+  content: "\eba5";
+}
+.mif-truck-2:before {
+  content: "\eba6";
+}
+.mif-chat-line-square:before {
+  content: "\eba7";
+}
+.mif-chat-line:before {
+  content: "\eba8";
+}
+.mif-order-details:before {
+  content: "\e9da";
+}
 .mif-ticket-details:before {
   content: "\eb9e";
 }
@@ -72,10 +87,16 @@
 .mif-coin-crown:before {
   content: "\eadc";
 }
+.mif-favorite-outline:before {
+  content: "\eba3";
+}
+.mif-favorite:before {
+  content: "\eba4";
+}
 .mif-error-outline:before {
   content: "\eba2";
 }
-.mif-closed_caption:before {
+.mif-cc:before {
   content: "\e906";
 }
 .mif-forward:before {
@@ -1419,9 +1440,6 @@
 .mif-alarm-on:before {
   content: "\e602";
 }
-.mif-favorite:before {
-  content: "\e603";
-}
 .mif-phone-msg:before {
   content: "\e604";
 }
@@ -2262,9 +2280,6 @@
 .mif-star-full:before {
   content: "\e9d9";
 }
-.mif-heart:before {
-  content: "\e9da";
-}
 .mif-heart-broken:before {
   content: "\e9db";
 }
@@ -2631,7 +2646,7 @@
 .mif-tools:before {
   content: "\e632";
 }
-.mif-discout:before {
+.mif-discount:before {
   content: "\e663";
 }
 .mif-profile:before {
