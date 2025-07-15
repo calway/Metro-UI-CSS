@@ -144,7 +144,7 @@
             const o = this.options;
 
             this.id = Hooks.useId(this.elem);
-            
+
             this.content = o.startContent;
             this.minYear = this.current.year - this.options.yearsBefore;
             this.maxYear = this.current.year + this.options.yearsAfter;
@@ -194,7 +194,9 @@
                 ? (o.inputFormat ? Datetime.from(o.minDate, o.inputFormat) : datetime(o.minDate)).align("day")
                 : null;
             this.max = o.maxDate
-                ? (o.inputFormat ? Datetime.from(o.maxDate, o.inputFormat) : datetime(o.maxDate)).align("day")
+                ? (o.inputFormat ? Datetime.from(o.maxDate, o.inputFormat) : datetime(o.maxDate))
+                      .add(1, "day")
+                      .align("day")
                 : null;
 
             if (o.show) {

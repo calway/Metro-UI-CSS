@@ -7,7 +7,8 @@
 }
 
 .parallelogram {
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    --offset: 25%;
+    clip-path: polygon(var(--offset) 0%, 100% 0%, calc(100% - var(--offset)) 100%, 0% 100%);
 }
 
 .rhomb {
@@ -19,7 +20,8 @@
 }
 
 .hexagon {
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    --offset: 25%;
+    clip-path: polygon(var(--offset) 0%, calc(100% - var(--offset)) 0%, 100% 50%, calc(100% - var(--offset)) 100%, var(--offset) 100%, 0% 50%);
 }
 
 .heptagon {

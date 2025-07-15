@@ -28683,150 +28683,6 @@ hr.fat {
 .bd-transparent {
   border-color: transparent !important;
 }
-.bd-black {
-  border-color: #000000 !important;
-}
-.bd-black-active:active {
-  border-color: #000000 !important;
-}
-.bd-black-hover:hover {
-  border-color: #000000 !important;
-}
-.bd-black-focus:focus {
-  border-color: #000000 !important;
-}
-.bd-before-black::before {
-  border-color: #000000 !important;
-}
-.bd-after-black::after {
-  border-color: #000000 !important;
-}
-.bd-white {
-  border-color: #ffffff !important;
-}
-.bd-white-active:active {
-  border-color: #ffffff !important;
-}
-.bd-white-hover:hover {
-  border-color: #ffffff !important;
-}
-.bd-white-focus:focus {
-  border-color: #ffffff !important;
-}
-.bd-before-white::before {
-  border-color: #ffffff !important;
-}
-.bd-after-white::after {
-  border-color: #ffffff !important;
-}
-.bd-dark {
-  border-color: #1d1d1d !important;
-}
-.bd-dark-active:active {
-  border-color: #1d1d1d !important;
-}
-.bd-dark-hover:hover {
-  border-color: #1d1d1d !important;
-}
-.bd-dark-focus:focus {
-  border-color: #1d1d1d !important;
-}
-.bd-before-dark::before {
-  border-color: #1d1d1d !important;
-}
-.bd-after-dark::after {
-  border-color: #1d1d1d !important;
-}
-.bd-light {
-  border-color: #f8f8f8 !important;
-}
-.bd-light-active:active {
-  border-color: #f8f8f8 !important;
-}
-.bd-light-hover:hover {
-  border-color: #f8f8f8 !important;
-}
-.bd-light-focus:focus {
-  border-color: #f8f8f8 !important;
-}
-.bd-before-light::before {
-  border-color: #f8f8f8 !important;
-}
-.bd-after-light::after {
-  border-color: #f8f8f8 !important;
-}
-.bd-gray {
-  border-color: hsl(0, 0%, 80%) !important;
-}
-.bd-gray-active:active {
-  border-color: hsl(0, 0%, 80%) !important;
-}
-.bd-gray-hover:hover {
-  border-color: hsl(0, 0%, 80%) !important;
-}
-.bd-gray-focus:focus {
-  border-color: hsl(0, 0%, 80%) !important;
-}
-.bd-before-gray::before {
-  border-color: hsl(0, 0%, 80%) !important;
-}
-.bd-after-gray::after {
-  border-color: hsl(0, 0%, 80%) !important;
-}
-.bd-gray-blue {
-  border-color: hsl(210, 26%, 54%) !important;
-}
-.bd-gray-blue-active:active {
-  border-color: hsl(210, 26%, 54%) !important;
-}
-.bd-gray-blue-hover:hover {
-  border-color: hsl(210, 26%, 54%) !important;
-}
-.bd-gray-blue-focus:focus {
-  border-color: hsl(210, 26%, 54%) !important;
-}
-.bd-before-gray-blue::before {
-  border-color: hsl(210, 26%, 54%) !important;
-}
-.bd-after-gray-blue::after {
-  border-color: hsl(210, 26%, 54%) !important;
-}
-.bd-gray-white {
-  border-color: hsl(0, 0%, 96%) !important;
-}
-.bd-gray-white-active:active {
-  border-color: hsl(0, 0%, 96%) !important;
-}
-.bd-gray-white-hover:hover {
-  border-color: hsl(0, 0%, 96%) !important;
-}
-.bd-gray-white-focus:focus {
-  border-color: hsl(0, 0%, 96%) !important;
-}
-.bd-before-gray-white::before {
-  border-color: hsl(0, 0%, 96%) !important;
-}
-.bd-after-gray-white::after {
-  border-color: hsl(0, 0%, 96%) !important;
-}
-.bd-gray-mouse {
-  border-color: hsl(199, 15%, 40%) !important;
-}
-.bd-gray-mouse-active:active {
-  border-color: hsl(199, 15%, 40%) !important;
-}
-.bd-gray-mouse-hover:hover {
-  border-color: hsl(199, 15%, 40%) !important;
-}
-.bd-gray-mouse-focus:focus {
-  border-color: hsl(199, 15%, 40%) !important;
-}
-.bd-before-gray-mouse::before {
-  border-color: hsl(199, 15%, 40%) !important;
-}
-.bd-after-gray-mouse::after {
-  border-color: hsl(199, 15%, 40%) !important;
-}
 .bd-lime {
   border-color: hsl(93, 97%, 71%) !important;
 }
@@ -29078,24 +28934,6 @@ hr.fat {
 }
 .bd-after-red::after {
   border-color: hsl(0, 100%, 50%) !important;
-}
-.bd-clown {
-  border-color: hsl(3, 100%, 70%) !important;
-}
-.bd-clown-active:active {
-  border-color: hsl(3, 100%, 70%) !important;
-}
-.bd-clown-hover:hover {
-  border-color: hsl(3, 100%, 70%) !important;
-}
-.bd-clown-focus:focus {
-  border-color: hsl(3, 100%, 70%) !important;
-}
-.bd-before-clown::before {
-  border-color: hsl(3, 100%, 70%) !important;
-}
-.bd-after-clown::after {
-  border-color: hsl(3, 100%, 70%) !important;
 }
 .bd-orange {
   border-color: hsl(39, 100%, 50%) !important;
@@ -69574,7 +69412,8 @@ label:has(input) {
   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
 .parallelogram {
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  --offset: 25%;
+  clip-path: polygon(var(--offset) 0%, 100% 0%, calc(100% - var(--offset)) 100%, 0% 100%);
 }
 .rhomb {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
@@ -69583,7 +69422,8 @@ label:has(input) {
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
 .hexagon {
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  --offset: 25%;
+  clip-path: polygon(var(--offset) 0%, calc(100% - var(--offset)) 0%, 100% 50%, calc(100% - var(--offset)) 100%, var(--offset) 100%, 0% 50%);
 }
 .heptagon {
   clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);

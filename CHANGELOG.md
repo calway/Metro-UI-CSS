@@ -23,3 +23,4 @@
 - [x] Updated gradients
 - [x] Fixed `x` position in `select` filter input
 - [x] Added `product-show-card` component
+- [x] Fixed `maxDate` for `calendar` component. Max date now is not included in the range.

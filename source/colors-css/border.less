@@ -7,7 +7,12 @@
     border-color: transparent!important;
 }
 
-each(@colors, {
+each(@normalColors, {
+    @lightColor: "light-@{value}";
+    @minorColor: "minor-@{value}";
+    @darkColor: "dark-@{value}";
+    @satColor: "sat-@{value}";
+    
     .bd-@{value} {border-color: @@value !important;}
     .bd-@{value}-active {&:active {border-color: @@value !important;}}
     .bd-@{value}-hover {&:hover {border-color: @@value !important;}}
