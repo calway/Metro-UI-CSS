@@ -41,21 +41,23 @@
 
 <script>
     async function load() {
-        const pathCss = 'https://cdn.metroui.org.ua/v4/css/metro-all.min.css';
-        const pathJs = 'https://cdn.metroui.org.ua/v4/js/metro.min.js';
+        const pathCss = 'https://cdn.metroui.org.ua/dev/metro.css';
+        const pathIcons = 'https://cdn.metroui.org.ua/dev/icons.css';
+        const pathJs = 'https://cdn.metroui.org.ua/dev/metro.js';
 
         const dataCss = await fetch(pathCss).then((r) => r.text())
+        const dataIcons = await fetch(pathIcons).then((r) => r.text())
         const dataJs = await fetch(pathJs).then((r) => r.text())
 
         const style = document.createElement("style")
-        style.textContent = dataCss
+        style.textContent = dataCss + "\n\n" + dataIcons;
         document.querySelector("head").appendChild(style)
 
         new Function(dataJs)();
         Metro.init();
         Metro.toast.create("Metro UI did loaded successful!", {
             showTop: true,
-            clsToast: "alert"
+            clsToast: "success"
         });
         $("#a1").accordion()
     }
