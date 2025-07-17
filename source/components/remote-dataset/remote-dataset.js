@@ -27,6 +27,7 @@
         quickSearch: true,
         selectOrder: true,
         selectCount: true,
+        showMore: true,
         showPagination: true,
 
         params: null,
@@ -155,6 +156,10 @@
                 </button>
             `)
                 .appendTo(element);
+
+            if (o.showMore === false) {
+                this.loadMore.addClass("d-none");
+            }
 
             this.pagination = $("<div>").addClass("dataset-pagination");
             if (o.showPagination === false) {

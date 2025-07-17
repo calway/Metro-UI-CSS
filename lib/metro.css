@@ -69,9 +69,6 @@ img {
   object-fit: cover;
   height: auto;
 }
-img:not([alt]) {
-  filter: blur(2px);
-}
 article > * + * {
   margin-top: 1em;
 }
@@ -52569,15 +52566,15 @@ input::placeholder {
 /* source/components/carousel/carousel.less */
 :root {
   --carousel-background: var(--default-background);
-  --carousel-switch-color: var(--default-color);
-  --carousel-switch-color-hover: var(--default-color-hover);
+  --carousel-switch-background: hsla(0, 0%, 57.3%, 0.8);
+  --carousel-switch-color: #fff;
   --carousel-bullet-color: #f5f8fe;
   --carousel-bullet-color-active: #50a8ff;
 }
 .dark-side {
   --carousel-background: var(--default-background);
-  --carousel-switch-color: var(--default-color);
-  --carousel-switch-color-hover: var(--default-color-hover);
+  --carousel-switch-background: hsla(0, 0%, 57.3%, 0.8);
+  --carousel-switch-color: #fff;
   --carousel-bullet-color: #26282e;
   --carousel-bullet-color-active: #50a8ff;
 }
@@ -52629,13 +52626,18 @@ input::placeholder {
   text-decoration: none;
   margin-top: -2rem;
   top: 50%;
-  font-weight: 300;
-  color: var(--carousel-switch-color);
+  font-weight: 700;
+  font-size: 1.5rem;
   cursor: pointer;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 4px;
+  background-color: var(--carousel-switch-background);
+  color: var(--carousel-switch-color);
+  opacity: 0;
+  transition: all 0.3s;
 }
 .carousel .carousel-switch-next:hover,
 .carousel .carousel-switch-prev:hover {
@@ -52648,12 +52650,14 @@ input::placeholder {
   font-size: 32px;
 }
 .carousel .carousel-switch-next {
-  right: 0;
+  right: 10px;
   left: auto;
+  transform: translateX(64px);
 }
 .carousel .carousel-switch-prev {
-  left: 0;
+  left: 10px;
   right: auto;
+  transform: translateX(-64px);
 }
 .carousel .carousel-bullets {
   left: 0;
@@ -52723,11 +52727,131 @@ input::placeholder {
   width: 64px;
   height: 24px;
 }
+@media (hover: hover) {
+  .carousel:hover .carousel-switch-next,
+  .carousel:hover .carousel-switch-prev {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .carousel.controls-outside {
   padding: 0 4rem 1.375rem 4rem;
 }
 .carousel.controls-outside .carousel-bullets {
   bottom: 0;
+}
+
+/* source/components/catalog-menu/catalog-menu.less */
+:root {
+  --catalog-menu-width: 272px;
+  --catalog-menu-chevron: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 6'%3E%3Cpath d='M5.5 6L11 .7l-.73-.7L5.5 4.6.73 0 0 .7z' fill='%23595959'/%3E%3C/svg%3E");
+  --catalog-menu-background: #ffffff;
+  --catalog-menu-color: #191919;
+  --catalog-menu-border-color: #c5c5c5;
+  --catalog-menu-item-background-hover: #e8e8e8;
+  --catalog-menu-item-color-hover: #000000;
+}
+.dark-side {
+  --catalog-menu-chevron: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 6'%3E%3Cpath d='M5.5 6L11 .7l-.73-.7L5.5 4.6.73 0 0 .7z' fill='%23e0e0e0'/%3E%3C/svg%3E");
+  --catalog-menu-background: #2b2d30;
+  --catalog-menu-color: #f3fcff;
+  --catalog-menu-border-color: #2b2d30;
+  --catalog-menu-item-background-hover: #1e1f22;
+  --catalog-menu-item-color-hover: #ffffff;
+}
+.catalog-menu {
+  --catalog-content-width: 0;
+  position: relative;
+  display: block;
+  width: var(--catalog-menu-width);
+  background: var(--catalog-menu-background);
+  color: var(--catalog-menu-color);
+  border: 1px solid var(--catalog-menu-border-color);
+  padding: 8px 0;
+  isolation: isolate;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.catalog-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--catalog-content-width);
+  height: calc(100% + 2px);
+  display: none;
+  z-index: -1;
+  background: var(--catalog-menu-background);
+  border: 1px solid var(--catalog-menu-border-color);
+}
+.catalog-menu > .catalog-list {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+.catalog-menu > .catalog-list > .catalog-item {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  color: inherit;
+  border-radius: 4px;
+}
+.catalog-menu > .catalog-list > .catalog-item a {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: 0.15px;
+  position: relative;
+  height: 28px;
+  padding: 0 16px;
+  margin: 0 8px;
+  border-radius: 4px;
+}
+.catalog-menu > .catalog-list > .catalog-item a .icon {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  opacity: 1;
+  margin-right: 8px;
+}
+.catalog-menu > .catalog-list > .catalog-item a::after {
+  content: "";
+  position: absolute;
+  background-image: var(--catalog-menu-chevron);
+  top: calc(50% - 3px);
+  transform: rotate(270deg);
+  width: 11px;
+  height: 6px;
+  right: 4px;
+}
+.catalog-menu > .catalog-list > .catalog-item .catalog-item-content {
+  display: none;
+  position: absolute;
+  left: calc(100% - 1px);
+  top: -1px;
+  width: calc(var(--catalog-content-width) - var(--catalog-menu-width) + 2px);
+  background-color: var(--catalog-menu-background);
+  border: 1px solid var(--catalog-menu-border-color);
+  z-index: 2;
+  padding: 8px;
+  height: calc(100% + 2px);
+}
+@media (hover: hover) {
+  .catalog-menu > .catalog-list > .catalog-item:hover a {
+    background-color: var(--catalog-menu-item-background-hover);
+    color: var(--catalog-menu-item-color-hover);
+  }
+  .catalog-menu > .catalog-list > .catalog-item:hover .catalog-item-content {
+    display: block;
+  }
 }
 
 /* source/components/charms/charms.less */
@@ -55800,6 +55924,7 @@ ul ul .dropdown-caret {
   aspect-ratio: 1 / 1;
   transform: rotate(90deg);
   transition: transform 0.2s ease-in-out;
+  fill: var(--select-dropdown-toggle-color);
 }
 .select.active-toggle .dropdown-caret {
   transform: rotate(270deg);
@@ -55842,6 +55967,7 @@ ul ul .dropdown-caret {
   font-size: var(--select-font-size);
   display: flex;
   object-fit: cover;
+  color: var(--select-option-color);
 }
 .select .option-list .icon * {
   object-fit: cover;

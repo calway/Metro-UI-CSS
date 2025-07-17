@@ -184,9 +184,16 @@
                         }
                     });
                 } else {
-                    height = Number.parseInt(o.height);
+                    if (o.height.indexOf("%") > -1) {
+                        const ph = Metro.utils.rect(element.parent()[0]).height;
+                        height = Math.floor((Number.parseInt(o.height) * ph) / 100);
+                    } else {
+                        height = Number.parseInt(o.height);
+                    }
                 }
             }
+
+            console.log(`Carousel: width=${width}, height=${height}`);
 
             element.css({
                 height: height,
@@ -245,23 +252,16 @@
                 return;
             }
 
-            next = $("<span>")
-                .addClass("carousel-switch-next")
-                .addClass(o.clsControls)
-                .addClass(o.clsControlNext)
-                .html("<div></div>");
-            prev = $("<span>")
-                .addClass("carousel-switch-prev")
-                .addClass(o.clsControls)
-                .addClass(o.clsControlPrev)
-                .html("<div></div>");
+            next = $("<span>").addClass("carousel-switch-next").addClass(o.clsControls).addClass(o.clsControlNext);
+
+            prev = $("<span>").addClass("carousel-switch-prev").addClass(o.clsControls).addClass(o.clsControlPrev);
 
             if (o.controlNext) {
-                next.children("div").html(o.controlNext);
+                next.html(o.controlNext);
             }
 
             if (o.controlPrev) {
-                prev.children("div").html(o.controlPrev);
+                prev.html(o.controlPrev);
             }
 
             next.appendTo(element);

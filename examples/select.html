@@ -167,6 +167,21 @@
             </OPTGROUP>
         </SELECT>
     </div>
+    
+    <div class="example mt-4">
+        <div>
+            <button onclick="Metro.getPlugin('#LANGUAGE', 'select').val(['it', 'en'])">Change Val</button> 
+        </div>
+        <SELECT id="LANGUAGE" name="language[]" class="medium"
+                data-role="select" data-clear-button="true"
+                data-label="Language" data-cls-label="text-bold" 
+                multiple>
+            <OPTION value="it">Italian</OPTION>
+            <OPTION value="fr">French</OPTION>
+            <OPTION value="de">German</OPTION>
+            <OPTION value="en">English</OPTION>
+        </SELECT>
+    </div>
 </div>
 
 <script src="../lib/metro.js"></script>
@@ -177,7 +192,7 @@
     function fillSelect() {
         var select = Metro.getPlugin("#select3", "select");
         var options = {
-            "0": "NEW DIPSWITCH",
+            "0": "New DIP Switch",
             "T": "Time",
             "L": "Lives",
             "H": "Health",

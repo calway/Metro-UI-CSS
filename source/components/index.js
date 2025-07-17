@@ -19,6 +19,7 @@ import "./calendar/index.js";
 import "./calendarpicker/index.js";
 import "./cards/index.js";
 import "./carousel/index.js";
+import "./catalog-menu/index.js";
 import "./charms/index.js";
 import "./chart-card/index.js";
 import "./chat/index.js";

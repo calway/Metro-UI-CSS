@@ -709,13 +709,9 @@
                             html += `&nbsp;<span class='selected-item__group-name'>${group}</span>`;
                         }
 
-                        if (multiple) {
+                        if (element[0].multiple) {
                             list_item.addClass("d-none");
                             input.append(that._addTag(html, list_item));
-
-                            // tag = $("<div>").addClass("tag").addClass(o.clsSelectedItem).html("<span class='title'>"+html+"</span>").appendTo(input);
-                            // tag.data("option", list_item);
-                            // $("<span>").addClass("remover").addClass(o.clsSelectedItemRemover).html("&times;").appendTo(tag);
                         } else {
                             list_item.addClass("active").addClass(o.clsOptionActive);
                             input.html(html);

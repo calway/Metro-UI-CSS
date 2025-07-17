@@ -25,3 +25,5 @@
 - [x] Added `product-show-card` component
 - [x] Fixed `maxDate` for `calendar` component. Max date now is not included in the range.
 - [x] Updated `bulls`, added `chat` image
+- [x] Fixed method `val()` for `select` component
+- [x] Added component `catalog-menu`
