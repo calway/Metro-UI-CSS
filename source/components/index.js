@@ -97,6 +97,7 @@ import "./page-control/index.js";
 import "./pagination/index.js";
 import "./panel/index.js";
 import "./popover/index.js";
+import "./product-card/index.js";
 import "./progress/index.js";
 import "./radio/index.js";
 import "./rating/index.js";
