@@ -16,16 +16,12 @@
         init: function (options, elem) {
             this._super(elem, options, CatalogMenuDefaultConfig, {
                 // define instance vars here
-                width: 0,
                 toggle: null,
             });
             return this;
         },
 
         _create: function () {
-            const element = this.element;
-            const o = this.options;
-
             this._calcResize();
 
             this._createStructure();
@@ -41,7 +37,6 @@
             if (o.toggle) {
                 this.toggle = $(o.toggle);
                 if (this.toggle.length === 0) {
-                    console.warn("Catalog Menu: Toggle element not found");
                     this.toggle = null;
                 }
             }
@@ -65,10 +60,9 @@
 
         _calcResize: function () {
             const element = this.element;
-            const o = this.options;
+            const { width } = Metro.utils.getInnerSize(element.parent());
 
-            this.width = element.parent().width();
-            element.cssVar("catalog-content-width", this.width + "px");
+            element.cssVar("catalog-content-width", width + "px");
         },
 
         changeAttribute: (attr, val) => {},

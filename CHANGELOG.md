@@ -27,3 +27,4 @@
 - [x] Updated `bulls`, added `chat` image
 - [x] Fixed method `val()` for `select` component
 - [x] Added component `catalog-menu`
+- [x] Added function `getInnerSize()` to `utils` for getting element inner size
