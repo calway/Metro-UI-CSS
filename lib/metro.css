@@ -71058,6 +71058,7 @@ label:has(input) {
   gap: 10px;
   transform: translateX(-100%);
   transition: transform 0.3s;
+  border: 1px solid var(--stack-menu-border-color);
 }
 .stack-menu.open {
   transform: translateX(0);
