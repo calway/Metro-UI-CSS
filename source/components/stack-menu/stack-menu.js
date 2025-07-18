@@ -64,6 +64,9 @@
             const element = this.element;
 
             element.on(Metro.events.click, "li", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
                 const el = this;
                 const key = $(el).attr("data-menu-id");
                 const title = that._getText($(el).children("a")[0]);
@@ -82,6 +85,9 @@
             });
 
             element.on(Metro.events.click, ".back-menu-button", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
                 if (that.stack.length > 0) {
                     const previousState = that.stack.pop();
 
@@ -111,11 +117,10 @@
                 ${this.stack.length === 0 ? "" : `<button class='back-menu-button cycle small flat mr-2'>${o.backButtonIcon}</button>`}
                 <span>${title || o.rootTitle}</span>
             `;
-            element.children(".title").html(titleContent);
+            element.find(".title").html(titleContent);
         },
 
         _drawMenu: function (key = "root", title) {
-            console.log("Key is:", key);
             const menu = this.menus.get(key);
             const target = this.element.children("ul.--menu");
 
@@ -130,17 +135,21 @@
                     .children("li")
                     .each((_, el) => {
                         const item = $(el);
-                        const id = item.attr("data-menu-id");
+                        const id = item.attr("data-menu-id") || "none";
                         const anchor = item.children("a").clone(true);
 
-                        const newItem = $("<li>").attr("data-menu-id", id).appendTo(target).append(anchor);
+                        const newItem = $("<li>")
+                            .addClass("-initial")
+                            .attr("data-menu-id", id)
+                            .appendTo(target)
+                            .append(anchor);
                         items.push(newItem);
                     });
 
                 setTimeout(() => {
                     items.forEach((item, index) => {
                         setTimeout(() => {
-                            item.addClass("animate");
+                            item.removeClass("-initial");
                         }, index * 30); // Поступова анімація кожного елемента з затримкою 50ms
                     });
                 }, 10);

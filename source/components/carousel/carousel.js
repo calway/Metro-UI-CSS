@@ -171,20 +171,25 @@
             if (["16/9", "21/9", "4/3"].indexOf(o.height) > -1) {
                 height = Metro.utils.aspectRatioH(width, o.height);
             } else {
-                if (String(o.height).indexOf("@") > -1) {
+                if (String(o.height).includes("@")) {
                     medias = o.height.substring(1).toArray("|");
                     $.each(medias, function () {
-                        const media = this.toArray(",");
-                        if (globalThis.matchMedia(media[0]).matches) {
-                            if (["16/9", "21/9", "4/3"].indexOf(media[1]) > -1) {
-                                height = Metro.utils.aspectRatioH(width, media[1]);
+                        const [rule, h] = this.toArray(",");
+                        if (matchMedia(rule).matches) {
+                            if (["16/9", "21/9", "4/3"].includes(h)) {
+                                height = Metro.utils.aspectRatioH(width, h);
                             } else {
-                                height = Number.parseInt(media[1]);
+                                if (h.includes("%")) {
+                                    const ph = Metro.utils.rect(element.parent()[0]).height;
+                                    height = Math.floor((Number.parseInt(h) * ph) / 100);
+                                } else {
+                                    height = Number.parseInt(h);
+                                }
                             }
                         }
                     });
                 } else {
-                    if (o.height.indexOf("%") > -1) {
+                    if (String(o.height).includes("%")) {
                         const ph = Metro.utils.rect(element.parent()[0]).height;
                         height = Math.floor((Number.parseInt(o.height) * ph) / 100);
                     } else {
@@ -192,8 +197,6 @@
                     }
                 }
             }
-
-            console.log(`Carousel: width=${width}, height=${height}`);
 
             element.css({
                 height: height,

@@ -1,6 +1,7 @@
 @import "../../include/vars";
 
 :root {
+    --stack-menu-icon-size: 18px;
     --stack-menu-chevron: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 6'%3E%3Cpath d='M5.5 6L11 .7l-.73-.7L5.5 4.6.73 0 0 .7z' fill='%23595959'/%3E%3C/svg%3E");
     --stack-menu-background: #ffffff;
     --stack-menu-color: #191919;
@@ -35,10 +36,11 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transform: translateX(-100%);
+    transform: translateX(-110%);
     transition: transform .3s;
-    border: 1px solid var(--stack-menu-border-color);
-    
+    border: 1px solid transparent;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+
     &.open {
         transform: translateX(0);
     }
@@ -85,10 +87,10 @@
             white-space: nowrap;
 
             .icon {
-                width: 16px;
-                height: 16px;
-                line-height: 16px;
-                font-size: 16px;
+                width: var(--stack-menu-icon-size);
+                height: var(--stack-menu-icon-size);
+                line-height: var(--stack-menu-icon-size);
+                font-size: var( --stack-menu-icon-size);
                 opacity: 1;
                 margin-right: 8px;
                 object-fit: cover;
@@ -103,14 +105,21 @@
                 width: 11px;
                 height: 6px;
                 right: 14px;
+                display: none;
             }
         }
         
-        transform: translateX(-50%);
+        &:not([data-menu-id=none]) {
+            a::after {
+                display: block;
+            }
+        }
+        
+        transform: translateX(0);
         transition: transform .3s ease-in-out;
         
-        &.animate {
-            transform: translateX(0);
+        &.-initial {
+            transform: translateX(-100%);
         }
     }
 }

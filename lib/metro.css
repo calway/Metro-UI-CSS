@@ -25750,6 +25750,9 @@ hr.fat {
     font-size: 4em !important;
   }
 }
+.no-wrap {
+  white-space: nowrap;
+}
 .wrap-long {
   word-break: break-word;
   word-wrap: break-word;
@@ -44007,6 +44010,11 @@ button.light.outline,
 .gradient {
   background: var(--background) !important;
 }
+.gradient-text {
+  background: var(--background) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
 .gradient-lime {
   --background:
     linear-gradient(
@@ -44984,345 +44992,6 @@ button.light.outline,
       to right,
       #00f260,
       #0575e6);
-}
-.gradient-text {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      var(--gradient-from-color),
-      var(--gradient-to-color)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-lime {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(93, 97%, 31%) 10%,
-      hsl(93, 97%, 71%),
-      hsl(93, 97%, 31%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-green {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(0, 0%, 0%) 10%,
-      hsl(120, 100%, 35%),
-      hsl(0, 0%, 0%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-emerald {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(140, 52%, 15%) 10%,
-      hsl(140, 52%, 55%),
-      hsl(140, 52%, 15%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-blue {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(225, 100%, 28%) 10%,
-      hsl(225, 100%, 68%),
-      hsl(225, 100%, 28%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-teal {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(180, 77%, 4%) 10%,
-      hsl(180, 77%, 44%),
-      hsl(180, 77%, 4%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-cyan {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(221, 100%, 39%) 10%,
-      hsl(221, 100%, 79%),
-      hsl(221, 100%, 39%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-cobalt {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(0, 0%, 0%) 10%,
-      hsl(215, 100%, 34%),
-      hsl(0, 0%, 0%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-indigo {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(0, 0%, 0%) 10%,
-      hsl(276, 100%, 33%),
-      hsl(0, 0%, 0%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-almost {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(259, 84%, 15%) 10%,
-      hsl(259, 84%, 55%),
-      hsl(259, 84%, 15%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-violet {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(300, 76%, 32%) 10%,
-      hsl(300, 76%, 72%),
-      hsl(300, 76%, 32%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-pink {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(350, 100%, 48%) 10%,
-      hsl(350, 100%, 88%),
-      hsl(350, 100%, 48%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-magenta {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(300, 100%, 10%) 10%,
-      hsl(300, 100%, 50%),
-      hsl(300, 100%, 10%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-crimson {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(348, 88%, 6%) 10%,
-      hsl(348, 88%, 46%),
-      hsl(348, 88%, 6%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-red {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(0, 100%, 10%) 10%,
-      hsl(0, 100%, 50%),
-      hsl(0, 100%, 10%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-orange {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(39, 100%, 10%) 10%,
-      hsl(39, 100%, 50%),
-      hsl(39, 100%, 10%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-amber {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(45, 100%, 18%) 10%,
-      hsl(45, 100%, 58%),
-      hsl(45, 100%, 18%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-yellow {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(52, 100%, 28%) 10%,
-      hsl(52, 100%, 68%),
-      hsl(52, 100%, 28%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-brown {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(25, 57%, 11%) 10%,
-      hsl(25, 57%, 51%),
-      hsl(25, 57%, 11%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-olive {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(0, 0%, 0%) 10%,
-      hsl(60, 100%, 32%),
-      hsl(0, 0%, 0%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-steel {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(209, 19%, 17%) 10%,
-      hsl(209, 19%, 57%),
-      hsl(209, 19%, 17%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-mauve {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(277, 100%, 44%) 10%,
-      hsl(277, 100%, 84%),
-      hsl(277, 100%, 44%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-taupe {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(29, 19%, 10%) 10%,
-      hsl(29, 19%, 50%),
-      hsl(29, 19%, 10%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-champagne {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(37, 74%, 48%) 10%,
-      hsl(37, 74%, 88%),
-      hsl(37, 74%, 48%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-khaki {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(47, 47%, 29%) 10%,
-      hsl(47, 47%, 69%),
-      hsl(47, 47%, 29%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-charcoal {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(0, 0%, 20%) 10%,
-      hsl(0, 0%, 60%),
-      hsl(0, 0%, 20%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-bronze {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(29, 75%, 17%) 10%,
-      hsl(29, 75%, 57%),
-      hsl(29, 75%, 17%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-windstorm {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(216, 53%, 26%) 10%,
-      hsl(216, 53%, 66%),
-      hsl(216, 53%, 26%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-nude {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(29, 79%, 45%) 10%,
-      hsl(29, 79%, 85%),
-      hsl(29, 79%, 45%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-terracotta {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(10, 76%, 15%) 10%,
-      hsl(10, 76%, 55%),
-      hsl(10, 76%, 15%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-coral {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(16, 100%, 27%) 10%,
-      hsl(16, 100%, 67%),
-      hsl(16, 100%, 27%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-army {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(0, 0%, 0%) 10%,
-      hsl(69, 34%, 30%),
-      hsl(0, 0%, 0%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-seashell {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(25, 100%, 55%) 10%,
-      hsl(25, 100%, 95%),
-      hsl(25, 100%, 55%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-.gr-text-sand {
-  --background:
-    linear-gradient(
-      var(--gradient-direction),
-      hsl(45, 71%, 41%) 10%,
-      hsl(45, 71%, 81%),
-      hsl(45, 71%, 41%)) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
 }
 
 /* source/colors-css/stroke.less */
@@ -52799,6 +52468,7 @@ input::placeholder {
   padding: 0;
   margin: 0;
   color: inherit;
+  width: 100%;
 }
 .catalog-menu > .catalog-list > .catalog-item,
 .catalog-menu > ul > .catalog-item,
@@ -52823,7 +52493,7 @@ input::placeholder {
   letter-spacing: 0.15px;
   position: relative;
   height: 28px;
-  padding: 0 16px;
+  padding: 0 16px 0 8px;
   margin: 0 8px;
   border-radius: 4px;
 }
@@ -71024,6 +70694,7 @@ label:has(input) {
 
 /* source/components/stack-menu/stack-menu.less */
 :root {
+  --stack-menu-icon-size: 18px;
   --stack-menu-chevron: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 6'%3E%3Cpath d='M5.5 6L11 .7l-.73-.7L5.5 4.6.73 0 0 .7z' fill='%23595959'/%3E%3C/svg%3E");
   --stack-menu-background: #ffffff;
   --stack-menu-color: #191919;
@@ -71056,9 +70727,10 @@ label:has(input) {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transform: translateX(-100%);
+  transform: translateX(-110%);
   transition: transform 0.3s;
-  border: 1px solid var(--stack-menu-border-color);
+  border: 1px solid transparent;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
 }
 .stack-menu.open {
   transform: translateX(0);
@@ -71084,7 +70756,7 @@ label:has(input) {
 }
 .stack-menu li {
   display: block;
-  transform: translateX(-50%);
+  transform: translateX(0);
   transition: transform 0.3s ease-in-out;
 }
 .stack-menu li a {
@@ -71103,10 +70775,10 @@ label:has(input) {
   white-space: nowrap;
 }
 .stack-menu li a .icon {
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
-  font-size: 16px;
+  width: var(--stack-menu-icon-size);
+  height: var(--stack-menu-icon-size);
+  line-height: var(--stack-menu-icon-size);
+  font-size: var(--stack-menu-icon-size);
   opacity: 1;
   margin-right: 8px;
   object-fit: cover;
@@ -71120,9 +70792,13 @@ label:has(input) {
   width: 11px;
   height: 6px;
   right: 14px;
+  display: none;
 }
-.stack-menu li.animate {
-  transform: translateX(0);
+.stack-menu li:not([data-menu-id=none]) a::after {
+  display: block;
+}
+.stack-menu li.-initial {
+  transform: translateX(-100%);
 }
 
 /* source/components/stepper/stepper.less */
