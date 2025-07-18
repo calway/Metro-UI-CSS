@@ -47,7 +47,7 @@
 
 .catalog-menu {
     
-    & > .catalog-list {
+    & > .catalog-list, & > ul {
         display: flex;
         flex-flow: column nowrap;
         align-items: flex-start;
@@ -57,7 +57,7 @@
         margin: 0;
         color: inherit;
 
-        & > .catalog-item {
+        & > .catalog-item, & > li {
             display: block;
             width: 100%;
             cursor: pointer;
@@ -82,8 +82,10 @@
                     width: 16px;
                     height: 16px;
                     line-height: 16px;
+                    font-size: 16px;
                     opacity: 1;
                     margin-right: 8px;
+                    object-fit: cover;
                 }
                 
                 &::after {

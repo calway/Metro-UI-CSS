@@ -52594,7 +52594,12 @@ input::placeholder {
   overflow: hidden;
 }
 .carousel .slide {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -52784,7 +52789,8 @@ input::placeholder {
   background: var(--catalog-menu-background);
   border: 1px solid var(--catalog-menu-border-color);
 }
-.catalog-menu > .catalog-list {
+.catalog-menu > .catalog-list,
+.catalog-menu > ul {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
@@ -52794,14 +52800,20 @@ input::placeholder {
   margin: 0;
   color: inherit;
 }
-.catalog-menu > .catalog-list > .catalog-item {
+.catalog-menu > .catalog-list > .catalog-item,
+.catalog-menu > ul > .catalog-item,
+.catalog-menu > .catalog-list > li,
+.catalog-menu > ul > li {
   display: block;
   width: 100%;
   cursor: pointer;
   color: inherit;
   border-radius: 4px;
 }
-.catalog-menu > .catalog-list > .catalog-item a {
+.catalog-menu > .catalog-list > .catalog-item a,
+.catalog-menu > ul > .catalog-item a,
+.catalog-menu > .catalog-list > li a,
+.catalog-menu > ul > li a {
   display: flex;
   align-items: center;
   font-size: 13px;
@@ -52815,14 +52827,22 @@ input::placeholder {
   margin: 0 8px;
   border-radius: 4px;
 }
-.catalog-menu > .catalog-list > .catalog-item a .icon {
+.catalog-menu > .catalog-list > .catalog-item a .icon,
+.catalog-menu > ul > .catalog-item a .icon,
+.catalog-menu > .catalog-list > li a .icon,
+.catalog-menu > ul > li a .icon {
   width: 16px;
   height: 16px;
   line-height: 16px;
+  font-size: 16px;
   opacity: 1;
   margin-right: 8px;
+  object-fit: cover;
 }
-.catalog-menu > .catalog-list > .catalog-item a::after {
+.catalog-menu > .catalog-list > .catalog-item a::after,
+.catalog-menu > ul > .catalog-item a::after,
+.catalog-menu > .catalog-list > li a::after,
+.catalog-menu > ul > li a::after {
   content: "";
   position: absolute;
   background-image: var(--catalog-menu-chevron);
@@ -52832,7 +52852,10 @@ input::placeholder {
   height: 6px;
   right: 4px;
 }
-.catalog-menu > .catalog-list > .catalog-item .catalog-item-content {
+.catalog-menu > .catalog-list > .catalog-item .catalog-item-content,
+.catalog-menu > ul > .catalog-item .catalog-item-content,
+.catalog-menu > .catalog-list > li .catalog-item-content,
+.catalog-menu > ul > li .catalog-item-content {
   display: none;
   position: absolute;
   left: calc(100% - 1px);
@@ -52845,11 +52868,17 @@ input::placeholder {
   height: calc(100% + 2px);
 }
 @media (hover: hover) {
-  .catalog-menu > .catalog-list > .catalog-item:hover a {
+  .catalog-menu > .catalog-list > .catalog-item:hover a,
+  .catalog-menu > ul > .catalog-item:hover a,
+  .catalog-menu > .catalog-list > li:hover a,
+  .catalog-menu > ul > li:hover a {
     background-color: var(--catalog-menu-item-background-hover);
     color: var(--catalog-menu-item-color-hover);
   }
-  .catalog-menu > .catalog-list > .catalog-item:hover .catalog-item-content {
+  .catalog-menu > .catalog-list > .catalog-item:hover .catalog-item-content,
+  .catalog-menu > ul > .catalog-item:hover .catalog-item-content,
+  .catalog-menu > .catalog-list > li:hover .catalog-item-content,
+  .catalog-menu > ul > li:hover .catalog-item-content {
     display: block;
   }
 }
@@ -70991,6 +71020,108 @@ label:has(input) {
       var(--gutter-dot-color-second) 0);
   background-size: var(--gutter-bg-size) var(--gutter-bg-size);
   background-position: 0 0, var(--gutter-bg-position) var(--gutter-bg-position);
+}
+
+/* source/components/stack-menu/stack-menu.less */
+:root {
+  --stack-menu-chevron: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 6'%3E%3Cpath d='M5.5 6L11 .7l-.73-.7L5.5 4.6.73 0 0 .7z' fill='%23595959'/%3E%3C/svg%3E");
+  --stack-menu-background: #ffffff;
+  --stack-menu-color: #191919;
+  --stack-menu-title-color: #303030;
+  --stack-menu-border-color: #e7e7e7;
+  --stack-menu-item-background-hover: #e8e8e8;
+  --stack-menu-item-color-hover: #000000;
+}
+.dark-side {
+  --stack-menu-chevron: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 6'%3E%3Cpath d='M5.5 6L11 .7l-.73-.7L5.5 4.6.73 0 0 .7z' fill='%23e0e0e0'/%3E%3C/svg%3E");
+  --stack-menu-background: #343637;
+  --stack-menu-color: #dbdfe7;
+  --stack-menu-title-color: #dbdfe7;
+  --stack-menu-border-color: #2b2d30;
+  --stack-menu-item-background-hover: #1e1f22;
+  --stack-menu-item-color-hover: #ffffff;
+}
+.stack-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 320px;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+  background: var(--stack-menu-background);
+  color: var(--stack-menu-color);
+  z-index: 1030;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+.stack-menu.open {
+  transform: translateX(0);
+}
+.stack-menu .title {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--stack-menu-title-color);
+  letter-spacing: 0.15px;
+  margin: 0;
+  padding: 10px 16px 16px;
+  text-decoration: none;
+}
+.stack-menu ul {
+  list-style: none;
+  padding: 0 0 8px;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 48px);
+  overflow-y: auto;
+}
+.stack-menu li {
+  display: block;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+.stack-menu li a {
+  position: relative;
+  display: flex;
+  height: 48px;
+  border-top: 1px solid var(--stack-menu-border-color);
+  cursor: pointer;
+  padding: 0 0.5rem;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: var(--stack-menu-color);
+  font-weight: 400;
+  align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.stack-menu li a .icon {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 16px;
+  opacity: 1;
+  margin-right: 8px;
+  object-fit: cover;
+}
+.stack-menu li a::after {
+  content: "";
+  position: absolute;
+  background-image: var(--stack-menu-chevron);
+  top: calc(50% - 3px);
+  transform: rotate(270deg);
+  width: 11px;
+  height: 6px;
+  right: 14px;
+}
+.stack-menu li.animate {
+  transform: translateX(0);
 }
 
 /* source/components/stepper/stepper.less */

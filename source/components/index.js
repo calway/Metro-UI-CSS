@@ -126,6 +126,7 @@ import "./sorter/index.js";
 import "./spinner/index.js";
 import "./split-button/index.js";
 import "./splitter/index.js";
+import "./stack-menu/index.js";
 import "./stepper/index.js";
 import "./storage/index.js";
 import "./streamer/index.js";
