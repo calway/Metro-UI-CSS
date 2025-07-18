@@ -77,15 +77,15 @@ The Select component provides an enhanced replacement for the standard HTML sele
 ### Different Sizes
 
 ```html
-<select data-role="select" class="input-small">
+<select data-role="select" class="small">
     <!-- options -->
 </select>
 
-<select data-role="select" class="input-medium">
+<select data-role="select" class="medium">
     <!-- options -->
 </select>
 
-<select data-role="select" class="input-large">
+<select data-role="select" class="large">
     <!-- options -->
 </select>
 ```
