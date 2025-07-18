@@ -2,6 +2,7 @@
     let StackMenuDefaultConfig = {
         rootTitle: "Root Menu",
         backButtonIcon: "←",
+        size: "default",
         onStackMenuCreate: Metro.noop,
     };
 
@@ -32,8 +33,14 @@
 
         _createStructure: function () {
             const element = this.element;
+            const o = this.options;
 
             element.addClass("stack-menu");
+            if (o.size !== "default") {
+                element.css({
+                    width: o.size,
+                });
+            }
 
             element.find("ul").each((i, el) => {
                 const parent = $(el).parent("li");
@@ -101,7 +108,7 @@
             const o = this.options;
 
             const titleContent = `
-                ${this.stack.length === 0 ? "" : `<button class='back-menu-button square small flat ml-2'>${o.backButtonIcon}</button>`}
+                ${this.stack.length === 0 ? "" : `<button class='back-menu-button cycle small flat mr-2'>${o.backButtonIcon}</button>`}
                 <span>${title || o.rootTitle}</span>
             `;
             element.children(".title").html(titleContent);
