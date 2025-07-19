@@ -71,6 +71,7 @@ import "./html-container/index.js";
 import "./icon-box/index.js";
 import "./image-box/index.js";
 import "./image-button/index.js";
+import "./image-carousel/index.js";
 import "./image-compare/index.js";
 import "./image-grid/index.js";
 import "./image-magnifier/index.js";
