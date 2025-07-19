@@ -48,48 +48,54 @@
 .text-weight-9 {font-weight: 900 !important;}
 .text-weight-10 {font-weight: 1000 !important;}
 
-.display4 {
-    font-size: 112px;
-    font-weight: 200;
+.display4, .d4 {
+    font-size: clamp(56px, 10vw, 112px);
+    font-weight: 700;
 }
 
-.display3 {
-    font-size: 56px;
-    font-weight: 400;
+.display3, .d3 {
+    font-size: clamp(36px, 8vw, 56px);
+    font-weight: 600;
+    
 }
 
-.display2 {
-    font-size: 48px;
-    font-weight: 400;
+.display2, .d2 {
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: 500;
 }
 
-.display1 {
-    font-size: 36px;
+.display1, .d1 {
+    font-size: clamp(24px, 4vw, 36px);
     font-weight: 400;
 }
 
 h1, .h1 {
-    font-size: var(--h1-size);
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: var(--base-text-weight-semibold);
 }
+
 h2, .h2 {
-    font-size: var(--h2-size);
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
     font-weight: var(--base-text-weight-semibold);
 }
+
 h3, .h3 {
-    font-size: var(--h3-size);
+    font-size: clamp(1.1rem, 3vw, 1.25rem);
     font-weight: var(--base-text-weight-semibold);
 }
+
 h4, .h4 {
-    font-size: var(--h4-size);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     font-weight: var(--base-text-weight-semibold);
 }
+
 h5, .h5 {
-    font-size: var(--h5-size);
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
     font-weight: var(--base-text-weight-semibold);
 }
+
 h6, .h6 {
-    font-size: var(--h6-size);
+    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
     font-weight: var(--base-text-weight-semibold);
 }
 
@@ -101,29 +107,30 @@ h6, .h6 {
 
 .leader {
     font-weight: var(--base-text-weight-light);
-    font-size: 48px;
+    font-size: clamp(32px, 6vw, 48px);
+
 }
 .sub-leader {
     font-weight: var(--base-text-weight-normal);
-    font-size: 38px;
+    font-size: clamp(24px, 5vw, 38px);
 }
 
 .text-small {
     font-weight: 400;
-    font-size: 12px;
+    font-size: clamp(10px, 1vw, 12px);
 }
 .text-secondary {
     font-weight: 400;
-    font-size: 14px;
+    font-size: clamp(12px, 1.2vw, 14px);
 }
 
 .text-leader {
-    font-size: 24px;
+    font-size: clamp(18px, 3vw, 24px);
     font-weight: 300;
     line-height: 1.2;
 }
 .text-leader2 {
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px);
     font-weight: 300;
     line-height: 1.2;
 }

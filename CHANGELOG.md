@@ -30,3 +30,4 @@
 - [x] Added component `stack-menu`
 - [x] Added function `getInnerSize()` to `utils` for getting element inner size
 - [x] Added sizes `small`, `medium`, `large`, `largest` to `checkbox` and `radio` components
+- [x] Added using `clamp()` function for define size for headers `h1...h6`, and `display4...display1` classes
