@@ -1073,6 +1073,18 @@ body {
       transparent 40%,
       var(--animated-border-color) 50%);
 }
+.animated-border-gray,
+.animated-border-hover-gray {
+  --animated-border-color: hsl(0, 0%, 80%);
+}
+.animated-border-gray-blue,
+.animated-border-hover-gray-blue {
+  --animated-border-color: hsl(210, 26%, 54%);
+}
+.animated-border-gray-mouse,
+.animated-border-hover-gray-mouse {
+  --animated-border-color: hsl(199, 15%, 40%);
+}
 .animated-border-lime,
 .animated-border-hover-lime {
   --animated-border-color: hsl(93, 97%, 71%);
@@ -27084,6 +27096,150 @@ hr.fat {
 .bg-sand-focus:focus {
   background-color: hsl(45, 71%, 81%) !important;
 }
+.bg-light-gray {
+  background-color: hsl(0, 0%, 95%) !important;
+}
+.bg-light-gray-active:active {
+  background-color: hsl(0, 0%, 95%) !important;
+}
+.bg-light-gray-hover:hover {
+  background-color: hsl(0, 0%, 95%) !important;
+}
+.bg-light-gray-focus:focus {
+  background-color: hsl(0, 0%, 95%) !important;
+}
+.bg-minor-gray {
+  background-color: hsl(0, 0%, 87%) !important;
+}
+.bg-minor-gray-active:active {
+  background-color: hsl(0, 0%, 87%) !important;
+}
+.bg-minor-gray-hover:hover {
+  background-color: hsl(0, 0%, 87%) !important;
+}
+.bg-minor-gray-focus:focus {
+  background-color: hsl(0, 0%, 87%) !important;
+}
+.bg-sat-gray {
+  background-color: hsl(0, 0%, 70%) !important;
+}
+.bg-sat-gray-active:active {
+  background-color: hsl(0, 0%, 70%) !important;
+}
+.bg-sat-gray-hover:hover {
+  background-color: hsl(0, 0%, 70%) !important;
+}
+.bg-sat-gray-focus:focus {
+  background-color: hsl(0, 0%, 70%) !important;
+}
+.bg-dark-gray {
+  background-color: hsl(0, 0%, 60%) !important;
+}
+.bg-dark-gray-active:active {
+  background-color: hsl(0, 0%, 60%) !important;
+}
+.bg-dark-gray-hover:hover {
+  background-color: hsl(0, 0%, 60%) !important;
+}
+.bg-dark-gray-focus:focus {
+  background-color: hsl(0, 0%, 60%) !important;
+}
+.bg-light-gray-blue {
+  background-color: hsl(210, 26%, 84%) !important;
+}
+.bg-light-gray-blue-active:active {
+  background-color: hsl(210, 26%, 84%) !important;
+}
+.bg-light-gray-blue-hover:hover {
+  background-color: hsl(210, 26%, 84%) !important;
+}
+.bg-light-gray-blue-focus:focus {
+  background-color: hsl(210, 26%, 84%) !important;
+}
+.bg-minor-gray-blue {
+  background-color: hsl(210, 26%, 69%) !important;
+}
+.bg-minor-gray-blue-active:active {
+  background-color: hsl(210, 26%, 69%) !important;
+}
+.bg-minor-gray-blue-hover:hover {
+  background-color: hsl(210, 26%, 69%) !important;
+}
+.bg-minor-gray-blue-focus:focus {
+  background-color: hsl(210, 26%, 69%) !important;
+}
+.bg-sat-gray-blue {
+  background-color: hsl(210, 26%, 44%) !important;
+}
+.bg-sat-gray-blue-active:active {
+  background-color: hsl(210, 26%, 44%) !important;
+}
+.bg-sat-gray-blue-hover:hover {
+  background-color: hsl(210, 26%, 44%) !important;
+}
+.bg-sat-gray-blue-focus:focus {
+  background-color: hsl(210, 26%, 44%) !important;
+}
+.bg-dark-gray-blue {
+  background-color: hsl(210, 26%, 34%) !important;
+}
+.bg-dark-gray-blue-active:active {
+  background-color: hsl(210, 26%, 34%) !important;
+}
+.bg-dark-gray-blue-hover:hover {
+  background-color: hsl(210, 26%, 34%) !important;
+}
+.bg-dark-gray-blue-focus:focus {
+  background-color: hsl(210, 26%, 34%) !important;
+}
+.bg-light-gray-mouse {
+  background-color: hsl(199, 15%, 70%) !important;
+}
+.bg-light-gray-mouse-active:active {
+  background-color: hsl(199, 15%, 70%) !important;
+}
+.bg-light-gray-mouse-hover:hover {
+  background-color: hsl(199, 15%, 70%) !important;
+}
+.bg-light-gray-mouse-focus:focus {
+  background-color: hsl(199, 15%, 70%) !important;
+}
+.bg-minor-gray-mouse {
+  background-color: hsl(199, 15%, 55%) !important;
+}
+.bg-minor-gray-mouse-active:active {
+  background-color: hsl(199, 15%, 55%) !important;
+}
+.bg-minor-gray-mouse-hover:hover {
+  background-color: hsl(199, 15%, 55%) !important;
+}
+.bg-minor-gray-mouse-focus:focus {
+  background-color: hsl(199, 15%, 55%) !important;
+}
+.bg-sat-gray-mouse {
+  background-color: hsl(199, 15%, 30%) !important;
+}
+.bg-sat-gray-mouse-active:active {
+  background-color: hsl(199, 15%, 30%) !important;
+}
+.bg-sat-gray-mouse-hover:hover {
+  background-color: hsl(199, 15%, 30%) !important;
+}
+.bg-sat-gray-mouse-focus:focus {
+  background-color: hsl(199, 15%, 30%) !important;
+}
+.bg-dark-gray-mouse {
+  background-color: hsl(199, 15%, 20%) !important;
+}
+.bg-dark-gray-mouse-active:active {
+  background-color: hsl(199, 15%, 20%) !important;
+}
+.bg-dark-gray-mouse-hover:hover {
+  background-color: hsl(199, 15%, 20%) !important;
+}
+.bg-dark-gray-mouse-focus:focus {
+  background-color: hsl(199, 15%, 20%) !important;
+}
 .bg-light-lime {
   background-color: hsl(93, 97%, 91%) !important;
 }
@@ -28683,6 +28839,60 @@ hr.fat {
 .bd-transparent {
   border-color: transparent !important;
 }
+.bd-gray {
+  border-color: hsl(0, 0%, 80%) !important;
+}
+.bd-gray-active:active {
+  border-color: hsl(0, 0%, 80%) !important;
+}
+.bd-gray-hover:hover {
+  border-color: hsl(0, 0%, 80%) !important;
+}
+.bd-gray-focus:focus {
+  border-color: hsl(0, 0%, 80%) !important;
+}
+.bd-before-gray::before {
+  border-color: hsl(0, 0%, 80%) !important;
+}
+.bd-after-gray::after {
+  border-color: hsl(0, 0%, 80%) !important;
+}
+.bd-gray-blue {
+  border-color: hsl(210, 26%, 54%) !important;
+}
+.bd-gray-blue-active:active {
+  border-color: hsl(210, 26%, 54%) !important;
+}
+.bd-gray-blue-hover:hover {
+  border-color: hsl(210, 26%, 54%) !important;
+}
+.bd-gray-blue-focus:focus {
+  border-color: hsl(210, 26%, 54%) !important;
+}
+.bd-before-gray-blue::before {
+  border-color: hsl(210, 26%, 54%) !important;
+}
+.bd-after-gray-blue::after {
+  border-color: hsl(210, 26%, 54%) !important;
+}
+.bd-gray-mouse {
+  border-color: hsl(199, 15%, 40%) !important;
+}
+.bd-gray-mouse-active:active {
+  border-color: hsl(199, 15%, 40%) !important;
+}
+.bd-gray-mouse-hover:hover {
+  border-color: hsl(199, 15%, 40%) !important;
+}
+.bd-gray-mouse-focus:focus {
+  border-color: hsl(199, 15%, 40%) !important;
+}
+.bd-before-gray-mouse::before {
+  border-color: hsl(199, 15%, 40%) !important;
+}
+.bd-after-gray-mouse::after {
+  border-color: hsl(199, 15%, 40%) !important;
+}
 .bd-lime {
   border-color: hsl(93, 97%, 71%) !important;
 }
@@ -29279,6 +29489,102 @@ hr.fat {
 }
 
 /* source/colors-css/svg.less */
+.fc-black {
+  fill: #000000 !important;
+}
+.fc-black-active:active {
+  fill: #000000 !important;
+}
+.fc-black-hover:hover {
+  fill: #000000 !important;
+}
+.fc-black-focus:focus {
+  fill: #000000 !important;
+}
+.fc-white {
+  fill: #ffffff !important;
+}
+.fc-white-active:active {
+  fill: #ffffff !important;
+}
+.fc-white-hover:hover {
+  fill: #ffffff !important;
+}
+.fc-white-focus:focus {
+  fill: #ffffff !important;
+}
+.fc-dark {
+  fill: #1d1d1d !important;
+}
+.fc-dark-active:active {
+  fill: #1d1d1d !important;
+}
+.fc-dark-hover:hover {
+  fill: #1d1d1d !important;
+}
+.fc-dark-focus:focus {
+  fill: #1d1d1d !important;
+}
+.fc-light {
+  fill: #f8f8f8 !important;
+}
+.fc-light-active:active {
+  fill: #f8f8f8 !important;
+}
+.fc-light-hover:hover {
+  fill: #f8f8f8 !important;
+}
+.fc-light-focus:focus {
+  fill: #f8f8f8 !important;
+}
+.fc-gray {
+  fill: hsl(0, 0%, 80%) !important;
+}
+.fc-gray-active:active {
+  fill: hsl(0, 0%, 80%) !important;
+}
+.fc-gray-hover:hover {
+  fill: hsl(0, 0%, 80%) !important;
+}
+.fc-gray-focus:focus {
+  fill: hsl(0, 0%, 80%) !important;
+}
+.fc-gray-blue {
+  fill: hsl(210, 26%, 54%) !important;
+}
+.fc-gray-blue-active:active {
+  fill: hsl(210, 26%, 54%) !important;
+}
+.fc-gray-blue-hover:hover {
+  fill: hsl(210, 26%, 54%) !important;
+}
+.fc-gray-blue-focus:focus {
+  fill: hsl(210, 26%, 54%) !important;
+}
+.fc-gray-white {
+  fill: hsl(0, 0%, 96%) !important;
+}
+.fc-gray-white-active:active {
+  fill: hsl(0, 0%, 96%) !important;
+}
+.fc-gray-white-hover:hover {
+  fill: hsl(0, 0%, 96%) !important;
+}
+.fc-gray-white-focus:focus {
+  fill: hsl(0, 0%, 96%) !important;
+}
+.fc-gray-mouse {
+  fill: hsl(199, 15%, 40%) !important;
+}
+.fc-gray-mouse-active:active {
+  fill: hsl(199, 15%, 40%) !important;
+}
+.fc-gray-mouse-hover:hover {
+  fill: hsl(199, 15%, 40%) !important;
+}
+.fc-gray-mouse-focus:focus {
+  fill: hsl(199, 15%, 40%) !important;
+}
 .fc-lime {
   fill: hsl(93, 97%, 71%) !important;
 }
@@ -29290,6 +29596,726 @@ hr.fat {
 }
 .fc-lime-focus:focus {
   fill: hsl(93, 97%, 71%) !important;
+}
+.fc-green {
+  fill: hsl(120, 100%, 35%) !important;
+}
+.fc-green-active:active {
+  fill: hsl(120, 100%, 35%) !important;
+}
+.fc-green-hover:hover {
+  fill: hsl(120, 100%, 35%) !important;
+}
+.fc-green-focus:focus {
+  fill: hsl(120, 100%, 35%) !important;
+}
+.fc-emerald {
+  fill: hsl(140, 52%, 55%) !important;
+}
+.fc-emerald-active:active {
+  fill: hsl(140, 52%, 55%) !important;
+}
+.fc-emerald-hover:hover {
+  fill: hsl(140, 52%, 55%) !important;
+}
+.fc-emerald-focus:focus {
+  fill: hsl(140, 52%, 55%) !important;
+}
+.fc-blue {
+  fill: hsl(225, 100%, 68%) !important;
+}
+.fc-blue-active:active {
+  fill: hsl(225, 100%, 68%) !important;
+}
+.fc-blue-hover:hover {
+  fill: hsl(225, 100%, 68%) !important;
+}
+.fc-blue-focus:focus {
+  fill: hsl(225, 100%, 68%) !important;
+}
+.fc-teal {
+  fill: hsl(180, 77%, 44%) !important;
+}
+.fc-teal-active:active {
+  fill: hsl(180, 77%, 44%) !important;
+}
+.fc-teal-hover:hover {
+  fill: hsl(180, 77%, 44%) !important;
+}
+.fc-teal-focus:focus {
+  fill: hsl(180, 77%, 44%) !important;
+}
+.fc-cyan {
+  fill: hsl(221, 100%, 79%) !important;
+}
+.fc-cyan-active:active {
+  fill: hsl(221, 100%, 79%) !important;
+}
+.fc-cyan-hover:hover {
+  fill: hsl(221, 100%, 79%) !important;
+}
+.fc-cyan-focus:focus {
+  fill: hsl(221, 100%, 79%) !important;
+}
+.fc-cobalt {
+  fill: hsl(215, 100%, 34%) !important;
+}
+.fc-cobalt-active:active {
+  fill: hsl(215, 100%, 34%) !important;
+}
+.fc-cobalt-hover:hover {
+  fill: hsl(215, 100%, 34%) !important;
+}
+.fc-cobalt-focus:focus {
+  fill: hsl(215, 100%, 34%) !important;
+}
+.fc-indigo {
+  fill: hsl(276, 100%, 33%) !important;
+}
+.fc-indigo-active:active {
+  fill: hsl(276, 100%, 33%) !important;
+}
+.fc-indigo-hover:hover {
+  fill: hsl(276, 100%, 33%) !important;
+}
+.fc-indigo-focus:focus {
+  fill: hsl(276, 100%, 33%) !important;
+}
+.fc-almost {
+  fill: hsl(259, 84%, 55%) !important;
+}
+.fc-almost-active:active {
+  fill: hsl(259, 84%, 55%) !important;
+}
+.fc-almost-hover:hover {
+  fill: hsl(259, 84%, 55%) !important;
+}
+.fc-almost-focus:focus {
+  fill: hsl(259, 84%, 55%) !important;
+}
+.fc-violet {
+  fill: hsl(300, 76%, 72%) !important;
+}
+.fc-violet-active:active {
+  fill: hsl(300, 76%, 72%) !important;
+}
+.fc-violet-hover:hover {
+  fill: hsl(300, 76%, 72%) !important;
+}
+.fc-violet-focus:focus {
+  fill: hsl(300, 76%, 72%) !important;
+}
+.fc-pink {
+  fill: hsl(350, 100%, 88%) !important;
+}
+.fc-pink-active:active {
+  fill: hsl(350, 100%, 88%) !important;
+}
+.fc-pink-hover:hover {
+  fill: hsl(350, 100%, 88%) !important;
+}
+.fc-pink-focus:focus {
+  fill: hsl(350, 100%, 88%) !important;
+}
+.fc-magenta {
+  fill: hsl(300, 100%, 50%) !important;
+}
+.fc-magenta-active:active {
+  fill: hsl(300, 100%, 50%) !important;
+}
+.fc-magenta-hover:hover {
+  fill: hsl(300, 100%, 50%) !important;
+}
+.fc-magenta-focus:focus {
+  fill: hsl(300, 100%, 50%) !important;
+}
+.fc-crimson {
+  fill: hsl(348, 88%, 46%) !important;
+}
+.fc-crimson-active:active {
+  fill: hsl(348, 88%, 46%) !important;
+}
+.fc-crimson-hover:hover {
+  fill: hsl(348, 88%, 46%) !important;
+}
+.fc-crimson-focus:focus {
+  fill: hsl(348, 88%, 46%) !important;
+}
+.fc-red {
+  fill: hsl(0, 100%, 50%) !important;
+}
+.fc-red-active:active {
+  fill: hsl(0, 100%, 50%) !important;
+}
+.fc-red-hover:hover {
+  fill: hsl(0, 100%, 50%) !important;
+}
+.fc-red-focus:focus {
+  fill: hsl(0, 100%, 50%) !important;
+}
+.fc-clown {
+  fill: hsl(3, 100%, 70%) !important;
+}
+.fc-clown-active:active {
+  fill: hsl(3, 100%, 70%) !important;
+}
+.fc-clown-hover:hover {
+  fill: hsl(3, 100%, 70%) !important;
+}
+.fc-clown-focus:focus {
+  fill: hsl(3, 100%, 70%) !important;
+}
+.fc-orange {
+  fill: hsl(39, 100%, 50%) !important;
+}
+.fc-orange-active:active {
+  fill: hsl(39, 100%, 50%) !important;
+}
+.fc-orange-hover:hover {
+  fill: hsl(39, 100%, 50%) !important;
+}
+.fc-orange-focus:focus {
+  fill: hsl(39, 100%, 50%) !important;
+}
+.fc-amber {
+  fill: hsl(45, 100%, 58%) !important;
+}
+.fc-amber-active:active {
+  fill: hsl(45, 100%, 58%) !important;
+}
+.fc-amber-hover:hover {
+  fill: hsl(45, 100%, 58%) !important;
+}
+.fc-amber-focus:focus {
+  fill: hsl(45, 100%, 58%) !important;
+}
+.fc-yellow {
+  fill: hsl(52, 100%, 68%) !important;
+}
+.fc-yellow-active:active {
+  fill: hsl(52, 100%, 68%) !important;
+}
+.fc-yellow-hover:hover {
+  fill: hsl(52, 100%, 68%) !important;
+}
+.fc-yellow-focus:focus {
+  fill: hsl(52, 100%, 68%) !important;
+}
+.fc-brown {
+  fill: hsl(25, 57%, 51%) !important;
+}
+.fc-brown-active:active {
+  fill: hsl(25, 57%, 51%) !important;
+}
+.fc-brown-hover:hover {
+  fill: hsl(25, 57%, 51%) !important;
+}
+.fc-brown-focus:focus {
+  fill: hsl(25, 57%, 51%) !important;
+}
+.fc-olive {
+  fill: hsl(60, 100%, 32%) !important;
+}
+.fc-olive-active:active {
+  fill: hsl(60, 100%, 32%) !important;
+}
+.fc-olive-hover:hover {
+  fill: hsl(60, 100%, 32%) !important;
+}
+.fc-olive-focus:focus {
+  fill: hsl(60, 100%, 32%) !important;
+}
+.fc-steel {
+  fill: hsl(209, 19%, 57%) !important;
+}
+.fc-steel-active:active {
+  fill: hsl(209, 19%, 57%) !important;
+}
+.fc-steel-hover:hover {
+  fill: hsl(209, 19%, 57%) !important;
+}
+.fc-steel-focus:focus {
+  fill: hsl(209, 19%, 57%) !important;
+}
+.fc-mauve {
+  fill: hsl(277, 100%, 84%) !important;
+}
+.fc-mauve-active:active {
+  fill: hsl(277, 100%, 84%) !important;
+}
+.fc-mauve-hover:hover {
+  fill: hsl(277, 100%, 84%) !important;
+}
+.fc-mauve-focus:focus {
+  fill: hsl(277, 100%, 84%) !important;
+}
+.fc-taupe {
+  fill: hsl(29, 19%, 50%) !important;
+}
+.fc-taupe-active:active {
+  fill: hsl(29, 19%, 50%) !important;
+}
+.fc-taupe-hover:hover {
+  fill: hsl(29, 19%, 50%) !important;
+}
+.fc-taupe-focus:focus {
+  fill: hsl(29, 19%, 50%) !important;
+}
+.fc-champagne {
+  fill: hsl(37, 74%, 88%) !important;
+}
+.fc-champagne-active:active {
+  fill: hsl(37, 74%, 88%) !important;
+}
+.fc-champagne-hover:hover {
+  fill: hsl(37, 74%, 88%) !important;
+}
+.fc-champagne-focus:focus {
+  fill: hsl(37, 74%, 88%) !important;
+}
+.fc-khaki {
+  fill: hsl(47, 47%, 69%) !important;
+}
+.fc-khaki-active:active {
+  fill: hsl(47, 47%, 69%) !important;
+}
+.fc-khaki-hover:hover {
+  fill: hsl(47, 47%, 69%) !important;
+}
+.fc-khaki-focus:focus {
+  fill: hsl(47, 47%, 69%) !important;
+}
+.fc-charcoal {
+  fill: hsl(0, 0%, 60%) !important;
+}
+.fc-charcoal-active:active {
+  fill: hsl(0, 0%, 60%) !important;
+}
+.fc-charcoal-hover:hover {
+  fill: hsl(0, 0%, 60%) !important;
+}
+.fc-charcoal-focus:focus {
+  fill: hsl(0, 0%, 60%) !important;
+}
+.fc-bronze {
+  fill: hsl(29, 75%, 57%) !important;
+}
+.fc-bronze-active:active {
+  fill: hsl(29, 75%, 57%) !important;
+}
+.fc-bronze-hover:hover {
+  fill: hsl(29, 75%, 57%) !important;
+}
+.fc-bronze-focus:focus {
+  fill: hsl(29, 75%, 57%) !important;
+}
+.fc-windstorm {
+  fill: hsl(216, 53%, 66%) !important;
+}
+.fc-windstorm-active:active {
+  fill: hsl(216, 53%, 66%) !important;
+}
+.fc-windstorm-hover:hover {
+  fill: hsl(216, 53%, 66%) !important;
+}
+.fc-windstorm-focus:focus {
+  fill: hsl(216, 53%, 66%) !important;
+}
+.fc-nude {
+  fill: hsl(29, 79%, 85%) !important;
+}
+.fc-nude-active:active {
+  fill: hsl(29, 79%, 85%) !important;
+}
+.fc-nude-hover:hover {
+  fill: hsl(29, 79%, 85%) !important;
+}
+.fc-nude-focus:focus {
+  fill: hsl(29, 79%, 85%) !important;
+}
+.fc-terracotta {
+  fill: hsl(10, 76%, 55%) !important;
+}
+.fc-terracotta-active:active {
+  fill: hsl(10, 76%, 55%) !important;
+}
+.fc-terracotta-hover:hover {
+  fill: hsl(10, 76%, 55%) !important;
+}
+.fc-terracotta-focus:focus {
+  fill: hsl(10, 76%, 55%) !important;
+}
+.fc-coral {
+  fill: hsl(16, 100%, 67%) !important;
+}
+.fc-coral-active:active {
+  fill: hsl(16, 100%, 67%) !important;
+}
+.fc-coral-hover:hover {
+  fill: hsl(16, 100%, 67%) !important;
+}
+.fc-coral-focus:focus {
+  fill: hsl(16, 100%, 67%) !important;
+}
+.fc-army {
+  fill: hsl(69, 34%, 30%) !important;
+}
+.fc-army-active:active {
+  fill: hsl(69, 34%, 30%) !important;
+}
+.fc-army-hover:hover {
+  fill: hsl(69, 34%, 30%) !important;
+}
+.fc-army-focus:focus {
+  fill: hsl(69, 34%, 30%) !important;
+}
+.fc-seashell {
+  fill: hsl(25, 100%, 95%) !important;
+}
+.fc-seashell-active:active {
+  fill: hsl(25, 100%, 95%) !important;
+}
+.fc-seashell-hover:hover {
+  fill: hsl(25, 100%, 95%) !important;
+}
+.fc-seashell-focus:focus {
+  fill: hsl(25, 100%, 95%) !important;
+}
+.fc-sand {
+  fill: hsl(45, 71%, 81%) !important;
+}
+.fc-sand-active:active {
+  fill: hsl(45, 71%, 81%) !important;
+}
+.fc-sand-hover:hover {
+  fill: hsl(45, 71%, 81%) !important;
+}
+.fc-sand-focus:focus {
+  fill: hsl(45, 71%, 81%) !important;
+}
+.fc-light-gray {
+  fill: hsl(0, 0%, 95%) !important;
+}
+.fc-light-gray-active:active {
+  fill: hsl(0, 0%, 95%) !important;
+}
+.fc-light-gray-hover:hover {
+  fill: hsl(0, 0%, 95%) !important;
+}
+.fc-light-gray-focus:focus {
+  fill: hsl(0, 0%, 95%) !important;
+}
+.fc-minor-gray {
+  fill: hsl(0, 0%, 87%) !important;
+}
+.fc-minor-gray-active:active {
+  fill: hsl(0, 0%, 87%) !important;
+}
+.fc-minor-gray-hover:hover {
+  fill: hsl(0, 0%, 87%) !important;
+}
+.fc-minor-gray-focus:focus {
+  fill: hsl(0, 0%, 87%) !important;
+}
+.fc-sat-gray {
+  fill: hsl(0, 0%, 70%) !important;
+}
+.fc-sat-gray-active:active {
+  fill: hsl(0, 0%, 70%) !important;
+}
+.fc-sat-gray-hover:hover {
+  fill: hsl(0, 0%, 70%) !important;
+}
+.fc-sat-gray-focus:focus {
+  fill: hsl(0, 0%, 70%) !important;
+}
+.fc-dark-gray {
+  fill: hsl(0, 0%, 60%) !important;
+}
+.fc-dark-gray-active:active {
+  fill: hsl(0, 0%, 60%) !important;
+}
+.fc-dark-gray-hover:hover {
+  fill: hsl(0, 0%, 60%) !important;
+}
+.fc-dark-gray-focus:focus {
+  fill: hsl(0, 0%, 60%) !important;
+}
+.sc-gray {
+  stroke: hsl(0, 0%, 80%) !important;
+}
+.sc-gray-active:active {
+  stroke: hsl(0, 0%, 80%) !important;
+}
+.sc-gray-hover:hover {
+  stroke: hsl(0, 0%, 80%) !important;
+}
+.sc-gray-focus:focus {
+  stroke: hsl(0, 0%, 80%) !important;
+}
+.sc-light-gray {
+  stroke: hsl(0, 0%, 95%) !important;
+}
+.sc-light-gray-active:active {
+  stroke: hsl(0, 0%, 95%) !important;
+}
+.sc-light-gray-hover:hover {
+  stroke: hsl(0, 0%, 95%) !important;
+}
+.sc-light-gray-focus:focus {
+  stroke: hsl(0, 0%, 95%) !important;
+}
+.sc-minor-gray {
+  stroke: hsl(0, 0%, 87%) !important;
+}
+.sc-minor-gray-active:active {
+  stroke: hsl(0, 0%, 87%) !important;
+}
+.sc-minor-gray-hover:hover {
+  stroke: hsl(0, 0%, 87%) !important;
+}
+.sc-minor-gray-focus:focus {
+  stroke: hsl(0, 0%, 87%) !important;
+}
+.sc-sat-gray {
+  stroke: hsl(0, 0%, 70%) !important;
+}
+.sc-sat-gray-active:active {
+  stroke: hsl(0, 0%, 70%) !important;
+}
+.sc-sat-gray-hover:hover {
+  stroke: hsl(0, 0%, 70%) !important;
+}
+.sc-sat-gray-focus:focus {
+  stroke: hsl(0, 0%, 70%) !important;
+}
+.sc-dark-gray {
+  stroke: hsl(0, 0%, 60%) !important;
+}
+.sc-dark-gray-active:active {
+  stroke: hsl(0, 0%, 60%) !important;
+}
+.sc-dark-gray-hover:hover {
+  stroke: hsl(0, 0%, 60%) !important;
+}
+.sc-dark-gray-focus:focus {
+  stroke: hsl(0, 0%, 60%) !important;
+}
+.fc-light-gray-blue {
+  fill: hsl(210, 26%, 84%) !important;
+}
+.fc-light-gray-blue-active:active {
+  fill: hsl(210, 26%, 84%) !important;
+}
+.fc-light-gray-blue-hover:hover {
+  fill: hsl(210, 26%, 84%) !important;
+}
+.fc-light-gray-blue-focus:focus {
+  fill: hsl(210, 26%, 84%) !important;
+}
+.fc-minor-gray-blue {
+  fill: hsl(210, 26%, 69%) !important;
+}
+.fc-minor-gray-blue-active:active {
+  fill: hsl(210, 26%, 69%) !important;
+}
+.fc-minor-gray-blue-hover:hover {
+  fill: hsl(210, 26%, 69%) !important;
+}
+.fc-minor-gray-blue-focus:focus {
+  fill: hsl(210, 26%, 69%) !important;
+}
+.fc-sat-gray-blue {
+  fill: hsl(210, 26%, 44%) !important;
+}
+.fc-sat-gray-blue-active:active {
+  fill: hsl(210, 26%, 44%) !important;
+}
+.fc-sat-gray-blue-hover:hover {
+  fill: hsl(210, 26%, 44%) !important;
+}
+.fc-sat-gray-blue-focus:focus {
+  fill: hsl(210, 26%, 44%) !important;
+}
+.fc-dark-gray-blue {
+  fill: hsl(210, 26%, 34%) !important;
+}
+.fc-dark-gray-blue-active:active {
+  fill: hsl(210, 26%, 34%) !important;
+}
+.fc-dark-gray-blue-hover:hover {
+  fill: hsl(210, 26%, 34%) !important;
+}
+.fc-dark-gray-blue-focus:focus {
+  fill: hsl(210, 26%, 34%) !important;
+}
+.sc-gray-blue {
+  stroke: hsl(210, 26%, 54%) !important;
+}
+.sc-gray-blue-active:active {
+  stroke: hsl(210, 26%, 54%) !important;
+}
+.sc-gray-blue-hover:hover {
+  stroke: hsl(210, 26%, 54%) !important;
+}
+.sc-gray-blue-focus:focus {
+  stroke: hsl(210, 26%, 54%) !important;
+}
+.sc-light-gray-blue {
+  stroke: hsl(210, 26%, 84%) !important;
+}
+.sc-light-gray-blue-active:active {
+  stroke: hsl(210, 26%, 84%) !important;
+}
+.sc-light-gray-blue-hover:hover {
+  stroke: hsl(210, 26%, 84%) !important;
+}
+.sc-light-gray-blue-focus:focus {
+  stroke: hsl(210, 26%, 84%) !important;
+}
+.sc-minor-gray-blue {
+  stroke: hsl(210, 26%, 69%) !important;
+}
+.sc-minor-gray-blue-active:active {
+  stroke: hsl(210, 26%, 69%) !important;
+}
+.sc-minor-gray-blue-hover:hover {
+  stroke: hsl(210, 26%, 69%) !important;
+}
+.sc-minor-gray-blue-focus:focus {
+  stroke: hsl(210, 26%, 69%) !important;
+}
+.sc-sat-gray-blue {
+  stroke: hsl(210, 26%, 44%) !important;
+}
+.sc-sat-gray-blue-active:active {
+  stroke: hsl(210, 26%, 44%) !important;
+}
+.sc-sat-gray-blue-hover:hover {
+  stroke: hsl(210, 26%, 44%) !important;
+}
+.sc-sat-gray-blue-focus:focus {
+  stroke: hsl(210, 26%, 44%) !important;
+}
+.sc-dark-gray-blue {
+  stroke: hsl(210, 26%, 34%) !important;
+}
+.sc-dark-gray-blue-active:active {
+  stroke: hsl(210, 26%, 34%) !important;
+}
+.sc-dark-gray-blue-hover:hover {
+  stroke: hsl(210, 26%, 34%) !important;
+}
+.sc-dark-gray-blue-focus:focus {
+  stroke: hsl(210, 26%, 34%) !important;
+}
+.fc-light-gray-mouse {
+  fill: hsl(199, 15%, 70%) !important;
+}
+.fc-light-gray-mouse-active:active {
+  fill: hsl(199, 15%, 70%) !important;
+}
+.fc-light-gray-mouse-hover:hover {
+  fill: hsl(199, 15%, 70%) !important;
+}
+.fc-light-gray-mouse-focus:focus {
+  fill: hsl(199, 15%, 70%) !important;
+}
+.fc-minor-gray-mouse {
+  fill: hsl(199, 15%, 55%) !important;
+}
+.fc-minor-gray-mouse-active:active {
+  fill: hsl(199, 15%, 55%) !important;
+}
+.fc-minor-gray-mouse-hover:hover {
+  fill: hsl(199, 15%, 55%) !important;
+}
+.fc-minor-gray-mouse-focus:focus {
+  fill: hsl(199, 15%, 55%) !important;
+}
+.fc-sat-gray-mouse {
+  fill: hsl(199, 15%, 30%) !important;
+}
+.fc-sat-gray-mouse-active:active {
+  fill: hsl(199, 15%, 30%) !important;
+}
+.fc-sat-gray-mouse-hover:hover {
+  fill: hsl(199, 15%, 30%) !important;
+}
+.fc-sat-gray-mouse-focus:focus {
+  fill: hsl(199, 15%, 30%) !important;
+}
+.fc-dark-gray-mouse {
+  fill: hsl(199, 15%, 20%) !important;
+}
+.fc-dark-gray-mouse-active:active {
+  fill: hsl(199, 15%, 20%) !important;
+}
+.fc-dark-gray-mouse-hover:hover {
+  fill: hsl(199, 15%, 20%) !important;
+}
+.fc-dark-gray-mouse-focus:focus {
+  fill: hsl(199, 15%, 20%) !important;
+}
+.sc-gray-mouse {
+  stroke: hsl(199, 15%, 40%) !important;
+}
+.sc-gray-mouse-active:active {
+  stroke: hsl(199, 15%, 40%) !important;
+}
+.sc-gray-mouse-hover:hover {
+  stroke: hsl(199, 15%, 40%) !important;
+}
+.sc-gray-mouse-focus:focus {
+  stroke: hsl(199, 15%, 40%) !important;
+}
+.sc-light-gray-mouse {
+  stroke: hsl(199, 15%, 70%) !important;
+}
+.sc-light-gray-mouse-active:active {
+  stroke: hsl(199, 15%, 70%) !important;
+}
+.sc-light-gray-mouse-hover:hover {
+  stroke: hsl(199, 15%, 70%) !important;
+}
+.sc-light-gray-mouse-focus:focus {
+  stroke: hsl(199, 15%, 70%) !important;
+}
+.sc-minor-gray-mouse {
+  stroke: hsl(199, 15%, 55%) !important;
+}
+.sc-minor-gray-mouse-active:active {
+  stroke: hsl(199, 15%, 55%) !important;
+}
+.sc-minor-gray-mouse-hover:hover {
+  stroke: hsl(199, 15%, 55%) !important;
+}
+.sc-minor-gray-mouse-focus:focus {
+  stroke: hsl(199, 15%, 55%) !important;
+}
+.sc-sat-gray-mouse {
+  stroke: hsl(199, 15%, 30%) !important;
+}
+.sc-sat-gray-mouse-active:active {
+  stroke: hsl(199, 15%, 30%) !important;
+}
+.sc-sat-gray-mouse-hover:hover {
+  stroke: hsl(199, 15%, 30%) !important;
+}
+.sc-sat-gray-mouse-focus:focus {
+  stroke: hsl(199, 15%, 30%) !important;
+}
+.sc-dark-gray-mouse {
+  stroke: hsl(199, 15%, 20%) !important;
+}
+.sc-dark-gray-mouse-active:active {
+  stroke: hsl(199, 15%, 20%) !important;
+}
+.sc-dark-gray-mouse-hover:hover {
+  stroke: hsl(199, 15%, 20%) !important;
+}
+.sc-dark-gray-mouse-focus:focus {
+  stroke: hsl(199, 15%, 20%) !important;
 }
 .fc-light-lime {
   fill: hsl(93, 97%, 91%) !important;
@@ -29399,18 +30425,6 @@ hr.fat {
 .sc-dark-lime-focus:focus {
   stroke: hsl(93, 97%, 51%) !important;
 }
-.fc-green {
-  fill: hsl(120, 100%, 35%) !important;
-}
-.fc-green-active:active {
-  fill: hsl(120, 100%, 35%) !important;
-}
-.fc-green-hover:hover {
-  fill: hsl(120, 100%, 35%) !important;
-}
-.fc-green-focus:focus {
-  fill: hsl(120, 100%, 35%) !important;
-}
 .fc-light-green {
   fill: hsl(120, 100%, 75%) !important;
 }
@@ -29518,18 +30532,6 @@ hr.fat {
 }
 .sc-dark-green-focus:focus {
   stroke: hsl(120, 100%, 15%) !important;
-}
-.fc-emerald {
-  fill: hsl(140, 52%, 55%) !important;
-}
-.fc-emerald-active:active {
-  fill: hsl(140, 52%, 55%) !important;
-}
-.fc-emerald-hover:hover {
-  fill: hsl(140, 52%, 55%) !important;
-}
-.fc-emerald-focus:focus {
-  fill: hsl(140, 52%, 55%) !important;
 }
 .fc-light-emerald {
   fill: hsl(140, 52%, 85%) !important;
@@ -29639,18 +30641,6 @@ hr.fat {
 .sc-dark-emerald-focus:focus {
   stroke: hsl(140, 52%, 35%) !important;
 }
-.fc-blue {
-  fill: hsl(225, 100%, 68%) !important;
-}
-.fc-blue-active:active {
-  fill: hsl(225, 100%, 68%) !important;
-}
-.fc-blue-hover:hover {
-  fill: hsl(225, 100%, 68%) !important;
-}
-.fc-blue-focus:focus {
-  fill: hsl(225, 100%, 68%) !important;
-}
 .fc-light-blue {
   fill: hsl(225, 100%, 93%) !important;
 }
@@ -29758,18 +30748,6 @@ hr.fat {
 }
 .sc-dark-blue-focus:focus {
   stroke: hsl(225, 100%, 48%) !important;
-}
-.fc-teal {
-  fill: hsl(180, 77%, 44%) !important;
-}
-.fc-teal-active:active {
-  fill: hsl(180, 77%, 44%) !important;
-}
-.fc-teal-hover:hover {
-  fill: hsl(180, 77%, 44%) !important;
-}
-.fc-teal-focus:focus {
-  fill: hsl(180, 77%, 44%) !important;
 }
 .fc-light-teal {
   fill: hsl(180, 77%, 74%) !important;
@@ -29879,18 +30857,6 @@ hr.fat {
 .sc-dark-teal-focus:focus {
   stroke: hsl(180, 77%, 24%) !important;
 }
-.fc-cyan {
-  fill: hsl(221, 100%, 79%) !important;
-}
-.fc-cyan-active:active {
-  fill: hsl(221, 100%, 79%) !important;
-}
-.fc-cyan-hover:hover {
-  fill: hsl(221, 100%, 79%) !important;
-}
-.fc-cyan-focus:focus {
-  fill: hsl(221, 100%, 79%) !important;
-}
 .fc-light-cyan {
   fill: hsl(221, 100%, 94%) !important;
 }
@@ -29998,18 +30964,6 @@ hr.fat {
 }
 .sc-dark-cyan-focus:focus {
   stroke: hsl(221, 100%, 59%) !important;
-}
-.fc-cobalt {
-  fill: hsl(215, 100%, 34%) !important;
-}
-.fc-cobalt-active:active {
-  fill: hsl(215, 100%, 34%) !important;
-}
-.fc-cobalt-hover:hover {
-  fill: hsl(215, 100%, 34%) !important;
-}
-.fc-cobalt-focus:focus {
-  fill: hsl(215, 100%, 34%) !important;
 }
 .fc-light-cobalt {
   fill: hsl(215, 100%, 74%) !important;
@@ -30119,18 +31073,6 @@ hr.fat {
 .sc-dark-cobalt-focus:focus {
   stroke: hsl(215, 100%, 14%) !important;
 }
-.fc-indigo {
-  fill: hsl(276, 100%, 33%) !important;
-}
-.fc-indigo-active:active {
-  fill: hsl(276, 100%, 33%) !important;
-}
-.fc-indigo-hover:hover {
-  fill: hsl(276, 100%, 33%) !important;
-}
-.fc-indigo-focus:focus {
-  fill: hsl(276, 100%, 33%) !important;
-}
 .fc-light-indigo {
   fill: hsl(276, 100%, 73%) !important;
 }
@@ -30238,18 +31180,6 @@ hr.fat {
 }
 .sc-dark-indigo-focus:focus {
   stroke: hsl(276, 100%, 13%) !important;
-}
-.fc-almost {
-  fill: hsl(259, 84%, 55%) !important;
-}
-.fc-almost-active:active {
-  fill: hsl(259, 84%, 55%) !important;
-}
-.fc-almost-hover:hover {
-  fill: hsl(259, 84%, 55%) !important;
-}
-.fc-almost-focus:focus {
-  fill: hsl(259, 84%, 55%) !important;
 }
 .fc-light-almost {
   fill: hsl(259, 84%, 85%) !important;
@@ -30359,18 +31289,6 @@ hr.fat {
 .sc-dark-almost-focus:focus {
   stroke: hsl(259, 84%, 35%) !important;
 }
-.fc-violet {
-  fill: hsl(300, 76%, 72%) !important;
-}
-.fc-violet-active:active {
-  fill: hsl(300, 76%, 72%) !important;
-}
-.fc-violet-hover:hover {
-  fill: hsl(300, 76%, 72%) !important;
-}
-.fc-violet-focus:focus {
-  fill: hsl(300, 76%, 72%) !important;
-}
 .fc-light-violet {
   fill: hsl(300, 76%, 92%) !important;
 }
@@ -30478,18 +31396,6 @@ hr.fat {
 }
 .sc-dark-violet-focus:focus {
   stroke: hsl(300, 76%, 52%) !important;
-}
-.fc-pink {
-  fill: hsl(350, 100%, 88%) !important;
-}
-.fc-pink-active:active {
-  fill: hsl(350, 100%, 88%) !important;
-}
-.fc-pink-hover:hover {
-  fill: hsl(350, 100%, 88%) !important;
-}
-.fc-pink-focus:focus {
-  fill: hsl(350, 100%, 88%) !important;
 }
 .fc-light-pink {
   fill: hsl(350, 100%, 98%) !important;
@@ -30599,18 +31505,6 @@ hr.fat {
 .sc-dark-pink-focus:focus {
   stroke: hsl(350, 100%, 68%) !important;
 }
-.fc-magenta {
-  fill: hsl(300, 100%, 50%) !important;
-}
-.fc-magenta-active:active {
-  fill: hsl(300, 100%, 50%) !important;
-}
-.fc-magenta-hover:hover {
-  fill: hsl(300, 100%, 50%) !important;
-}
-.fc-magenta-focus:focus {
-  fill: hsl(300, 100%, 50%) !important;
-}
 .fc-light-magenta {
   fill: hsl(300, 100%, 90%) !important;
 }
@@ -30718,18 +31612,6 @@ hr.fat {
 }
 .sc-dark-magenta-focus:focus {
   stroke: hsl(300, 100%, 30%) !important;
-}
-.fc-crimson {
-  fill: hsl(348, 88%, 46%) !important;
-}
-.fc-crimson-active:active {
-  fill: hsl(348, 88%, 46%) !important;
-}
-.fc-crimson-hover:hover {
-  fill: hsl(348, 88%, 46%) !important;
-}
-.fc-crimson-focus:focus {
-  fill: hsl(348, 88%, 46%) !important;
 }
 .fc-light-crimson {
   fill: hsl(348, 88%, 81%) !important;
@@ -30839,18 +31721,6 @@ hr.fat {
 .sc-dark-crimson-focus:focus {
   stroke: hsl(348, 88%, 26%) !important;
 }
-.fc-red {
-  fill: hsl(0, 100%, 50%) !important;
-}
-.fc-red-active:active {
-  fill: hsl(0, 100%, 50%) !important;
-}
-.fc-red-hover:hover {
-  fill: hsl(0, 100%, 50%) !important;
-}
-.fc-red-focus:focus {
-  fill: hsl(0, 100%, 50%) !important;
-}
 .fc-light-red {
   fill: hsl(0, 100%, 80%) !important;
 }
@@ -30958,18 +31828,6 @@ hr.fat {
 }
 .sc-dark-red-focus:focus {
   stroke: hsl(0, 100%, 30%) !important;
-}
-.fc-orange {
-  fill: hsl(39, 100%, 50%) !important;
-}
-.fc-orange-active:active {
-  fill: hsl(39, 100%, 50%) !important;
-}
-.fc-orange-hover:hover {
-  fill: hsl(39, 100%, 50%) !important;
-}
-.fc-orange-focus:focus {
-  fill: hsl(39, 100%, 50%) !important;
 }
 .fc-light-orange {
   fill: hsl(39, 100%, 90%) !important;
@@ -31079,18 +31937,6 @@ hr.fat {
 .sc-dark-orange-focus:focus {
   stroke: hsl(39, 100%, 30%) !important;
 }
-.fc-amber {
-  fill: hsl(45, 100%, 58%) !important;
-}
-.fc-amber-active:active {
-  fill: hsl(45, 100%, 58%) !important;
-}
-.fc-amber-hover:hover {
-  fill: hsl(45, 100%, 58%) !important;
-}
-.fc-amber-focus:focus {
-  fill: hsl(45, 100%, 58%) !important;
-}
 .fc-light-amber {
   fill: hsl(45, 100%, 78%) !important;
 }
@@ -31198,18 +32044,6 @@ hr.fat {
 }
 .sc-dark-amber-focus:focus {
   stroke: hsl(45, 100%, 38%) !important;
-}
-.fc-yellow {
-  fill: hsl(52, 100%, 68%) !important;
-}
-.fc-yellow-active:active {
-  fill: hsl(52, 100%, 68%) !important;
-}
-.fc-yellow-hover:hover {
-  fill: hsl(52, 100%, 68%) !important;
-}
-.fc-yellow-focus:focus {
-  fill: hsl(52, 100%, 68%) !important;
 }
 .fc-light-yellow {
   fill: hsl(52, 100%, 93%) !important;
@@ -31319,18 +32153,6 @@ hr.fat {
 .sc-dark-yellow-focus:focus {
   stroke: hsl(52, 100%, 48%) !important;
 }
-.fc-brown {
-  fill: hsl(25, 57%, 51%) !important;
-}
-.fc-brown-active:active {
-  fill: hsl(25, 57%, 51%) !important;
-}
-.fc-brown-hover:hover {
-  fill: hsl(25, 57%, 51%) !important;
-}
-.fc-brown-focus:focus {
-  fill: hsl(25, 57%, 51%) !important;
-}
 .fc-light-brown {
   fill: hsl(25, 57%, 81%) !important;
 }
@@ -31438,18 +32260,6 @@ hr.fat {
 }
 .sc-dark-brown-focus:focus {
   stroke: hsl(25, 57%, 31%) !important;
-}
-.fc-olive {
-  fill: hsl(60, 100%, 32%) !important;
-}
-.fc-olive-active:active {
-  fill: hsl(60, 100%, 32%) !important;
-}
-.fc-olive-hover:hover {
-  fill: hsl(60, 100%, 32%) !important;
-}
-.fc-olive-focus:focus {
-  fill: hsl(60, 100%, 32%) !important;
 }
 .fc-light-olive {
   fill: hsl(60, 100%, 72%) !important;
@@ -31559,18 +32369,6 @@ hr.fat {
 .sc-dark-olive-focus:focus {
   stroke: hsl(60, 100%, 12%) !important;
 }
-.fc-steel {
-  fill: hsl(209, 19%, 57%) !important;
-}
-.fc-steel-active:active {
-  fill: hsl(209, 19%, 57%) !important;
-}
-.fc-steel-hover:hover {
-  fill: hsl(209, 19%, 57%) !important;
-}
-.fc-steel-focus:focus {
-  fill: hsl(209, 19%, 57%) !important;
-}
 .fc-light-steel {
   fill: hsl(209, 19%, 87%) !important;
 }
@@ -31678,18 +32476,6 @@ hr.fat {
 }
 .sc-dark-steel-focus:focus {
   stroke: hsl(209, 19%, 37%) !important;
-}
-.fc-mauve {
-  fill: hsl(277, 100%, 84%) !important;
-}
-.fc-mauve-active:active {
-  fill: hsl(277, 100%, 84%) !important;
-}
-.fc-mauve-hover:hover {
-  fill: hsl(277, 100%, 84%) !important;
-}
-.fc-mauve-focus:focus {
-  fill: hsl(277, 100%, 84%) !important;
 }
 .fc-light-mauve {
   fill: hsl(277, 100%, 96%) !important;
@@ -31799,18 +32585,6 @@ hr.fat {
 .sc-dark-mauve-focus:focus {
   stroke: hsl(277, 100%, 64%) !important;
 }
-.fc-taupe {
-  fill: hsl(29, 19%, 50%) !important;
-}
-.fc-taupe-active:active {
-  fill: hsl(29, 19%, 50%) !important;
-}
-.fc-taupe-hover:hover {
-  fill: hsl(29, 19%, 50%) !important;
-}
-.fc-taupe-focus:focus {
-  fill: hsl(29, 19%, 50%) !important;
-}
 .fc-light-taupe {
   fill: hsl(29, 19%, 80%) !important;
 }
@@ -31918,18 +32692,6 @@ hr.fat {
 }
 .sc-dark-taupe-focus:focus {
   stroke: hsl(29, 19%, 30%) !important;
-}
-.fc-champagne {
-  fill: hsl(37, 74%, 88%) !important;
-}
-.fc-champagne-active:active {
-  fill: hsl(37, 74%, 88%) !important;
-}
-.fc-champagne-hover:hover {
-  fill: hsl(37, 74%, 88%) !important;
-}
-.fc-champagne-focus:focus {
-  fill: hsl(37, 74%, 88%) !important;
 }
 .fc-light-champagne {
   fill: hsl(37, 74%, 98%) !important;
@@ -32039,18 +32801,6 @@ hr.fat {
 .sc-dark-champagne-focus:focus {
   stroke: hsl(37, 74%, 68%) !important;
 }
-.fc-khaki {
-  fill: hsl(47, 47%, 69%) !important;
-}
-.fc-khaki-active:active {
-  fill: hsl(47, 47%, 69%) !important;
-}
-.fc-khaki-hover:hover {
-  fill: hsl(47, 47%, 69%) !important;
-}
-.fc-khaki-focus:focus {
-  fill: hsl(47, 47%, 69%) !important;
-}
 .fc-light-khaki {
   fill: hsl(47, 47%, 94%) !important;
 }
@@ -32158,18 +32908,6 @@ hr.fat {
 }
 .sc-dark-khaki-focus:focus {
   stroke: hsl(47, 47%, 49%) !important;
-}
-.fc-charcoal {
-  fill: hsl(0, 0%, 60%) !important;
-}
-.fc-charcoal-active:active {
-  fill: hsl(0, 0%, 60%) !important;
-}
-.fc-charcoal-hover:hover {
-  fill: hsl(0, 0%, 60%) !important;
-}
-.fc-charcoal-focus:focus {
-  fill: hsl(0, 0%, 60%) !important;
 }
 .fc-light-charcoal {
   fill: hsl(0, 0%, 85%) !important;
@@ -32279,18 +33017,6 @@ hr.fat {
 .sc-dark-charcoal-focus:focus {
   stroke: hsl(0, 0%, 40%) !important;
 }
-.fc-bronze {
-  fill: hsl(29, 75%, 57%) !important;
-}
-.fc-bronze-active:active {
-  fill: hsl(29, 75%, 57%) !important;
-}
-.fc-bronze-hover:hover {
-  fill: hsl(29, 75%, 57%) !important;
-}
-.fc-bronze-focus:focus {
-  fill: hsl(29, 75%, 57%) !important;
-}
 .fc-light-bronze {
   fill: hsl(29, 75%, 87%) !important;
 }
@@ -32398,18 +33124,6 @@ hr.fat {
 }
 .sc-dark-bronze-focus:focus {
   stroke: hsl(29, 75%, 37%) !important;
-}
-.fc-windstorm {
-  fill: hsl(216, 53%, 66%) !important;
-}
-.fc-windstorm-active:active {
-  fill: hsl(216, 53%, 66%) !important;
-}
-.fc-windstorm-hover:hover {
-  fill: hsl(216, 53%, 66%) !important;
-}
-.fc-windstorm-focus:focus {
-  fill: hsl(216, 53%, 66%) !important;
 }
 .fc-light-windstorm {
   fill: hsl(216, 53%, 93%) !important;
@@ -32519,18 +33233,6 @@ hr.fat {
 .sc-dark-windstorm-focus:focus {
   stroke: hsl(216, 53%, 46%) !important;
 }
-.fc-nude {
-  fill: hsl(29, 79%, 85%) !important;
-}
-.fc-nude-active:active {
-  fill: hsl(29, 79%, 85%) !important;
-}
-.fc-nude-hover:hover {
-  fill: hsl(29, 79%, 85%) !important;
-}
-.fc-nude-focus:focus {
-  fill: hsl(29, 79%, 85%) !important;
-}
 .fc-light-nude {
   fill: hsl(29, 79%, 97%) !important;
 }
@@ -32638,18 +33340,6 @@ hr.fat {
 }
 .sc-dark-nude-focus:focus {
   stroke: hsl(29, 79%, 65%) !important;
-}
-.fc-terracotta {
-  fill: hsl(10, 76%, 55%) !important;
-}
-.fc-terracotta-active:active {
-  fill: hsl(10, 76%, 55%) !important;
-}
-.fc-terracotta-hover:hover {
-  fill: hsl(10, 76%, 55%) !important;
-}
-.fc-terracotta-focus:focus {
-  fill: hsl(10, 76%, 55%) !important;
 }
 .fc-light-terracotta {
   fill: hsl(10, 76%, 85%) !important;
@@ -32759,18 +33449,6 @@ hr.fat {
 .sc-dark-terracotta-focus:focus {
   stroke: hsl(10, 76%, 35%) !important;
 }
-.fc-coral {
-  fill: hsl(16, 100%, 67%) !important;
-}
-.fc-coral-active:active {
-  fill: hsl(16, 100%, 67%) !important;
-}
-.fc-coral-hover:hover {
-  fill: hsl(16, 100%, 67%) !important;
-}
-.fc-coral-focus:focus {
-  fill: hsl(16, 100%, 67%) !important;
-}
 .fc-light-coral {
   fill: hsl(16, 100%, 92%) !important;
 }
@@ -32878,18 +33556,6 @@ hr.fat {
 }
 .sc-dark-coral-focus:focus {
   stroke: hsl(16, 100%, 47%) !important;
-}
-.fc-army {
-  fill: hsl(69, 34%, 30%) !important;
-}
-.fc-army-active:active {
-  fill: hsl(69, 34%, 30%) !important;
-}
-.fc-army-hover:hover {
-  fill: hsl(69, 34%, 30%) !important;
-}
-.fc-army-focus:focus {
-  fill: hsl(69, 34%, 30%) !important;
 }
 .fc-light-army {
   fill: hsl(69, 34%, 65%) !important;
@@ -32999,18 +33665,6 @@ hr.fat {
 .sc-dark-army-focus:focus {
   stroke: hsl(69, 34%, 10%) !important;
 }
-.fc-seashell {
-  fill: hsl(25, 100%, 95%) !important;
-}
-.fc-seashell-active:active {
-  fill: hsl(25, 100%, 95%) !important;
-}
-.fc-seashell-hover:hover {
-  fill: hsl(25, 100%, 95%) !important;
-}
-.fc-seashell-focus:focus {
-  fill: hsl(25, 100%, 95%) !important;
-}
 .fc-light-seashell {
   fill: hsl(25, 100%, 98%) !important;
 }
@@ -33118,18 +33772,6 @@ hr.fat {
 }
 .sc-dark-seashell-focus:focus {
   stroke: hsl(25, 100%, 75%) !important;
-}
-.fc-sand {
-  fill: hsl(45, 71%, 81%) !important;
-}
-.fc-sand-active:active {
-  fill: hsl(45, 71%, 81%) !important;
-}
-.fc-sand-hover:hover {
-  fill: hsl(45, 71%, 81%) !important;
-}
-.fc-sand-focus:focus {
-  fill: hsl(45, 71%, 81%) !important;
 }
 .fc-light-sand {
   fill: hsl(45, 71%, 96%) !important;
@@ -33747,6 +34389,150 @@ hr.fat {
 }
 .fg-sand-focus:focus {
   color: hsl(45, 71%, 81%) !important;
+}
+.fg-light-gray {
+  color: hsl(0, 0%, 95%) !important;
+}
+.fg-light-gray-active:active {
+  color: hsl(0, 0%, 95%) !important;
+}
+.fg-light-gray-hover:hover {
+  color: hsl(0, 0%, 95%) !important;
+}
+.fg-light-gray-focus:focus {
+  color: hsl(0, 0%, 95%) !important;
+}
+.fg-minor-gray {
+  color: hsl(0, 0%, 87%) !important;
+}
+.fg-minor-gray-active:active {
+  color: hsl(0, 0%, 87%) !important;
+}
+.fg-minor-gray-hover:hover {
+  color: hsl(0, 0%, 87%) !important;
+}
+.fg-minor-gray-focus:focus {
+  color: hsl(0, 0%, 87%) !important;
+}
+.fg-sat-gray {
+  color: hsl(0, 0%, 70%) !important;
+}
+.fg-sat-gray-active:active {
+  color: hsl(0, 0%, 70%) !important;
+}
+.fg-sat-gray-hover:hover {
+  color: hsl(0, 0%, 70%) !important;
+}
+.fg-sat-gray-focus:focus {
+  color: hsl(0, 0%, 70%) !important;
+}
+.fg-dark-gray {
+  color: hsl(0, 0%, 60%) !important;
+}
+.fg-dark-gray-active:active {
+  color: hsl(0, 0%, 60%) !important;
+}
+.fg-dark-gray-hover:hover {
+  color: hsl(0, 0%, 60%) !important;
+}
+.fg-dark-gray-focus:focus {
+  color: hsl(0, 0%, 60%) !important;
+}
+.fg-light-gray-blue {
+  color: hsl(210, 26%, 84%) !important;
+}
+.fg-light-gray-blue-active:active {
+  color: hsl(210, 26%, 84%) !important;
+}
+.fg-light-gray-blue-hover:hover {
+  color: hsl(210, 26%, 84%) !important;
+}
+.fg-light-gray-blue-focus:focus {
+  color: hsl(210, 26%, 84%) !important;
+}
+.fg-minor-gray-blue {
+  color: hsl(210, 26%, 69%) !important;
+}
+.fg-minor-gray-blue-active:active {
+  color: hsl(210, 26%, 69%) !important;
+}
+.fg-minor-gray-blue-hover:hover {
+  color: hsl(210, 26%, 69%) !important;
+}
+.fg-minor-gray-blue-focus:focus {
+  color: hsl(210, 26%, 69%) !important;
+}
+.fg-sat-gray-blue {
+  color: hsl(210, 26%, 44%) !important;
+}
+.fg-sat-gray-blue-active:active {
+  color: hsl(210, 26%, 44%) !important;
+}
+.fg-sat-gray-blue-hover:hover {
+  color: hsl(210, 26%, 44%) !important;
+}
+.fg-sat-gray-blue-focus:focus {
+  color: hsl(210, 26%, 44%) !important;
+}
+.fg-dark-gray-blue {
+  color: hsl(210, 26%, 34%) !important;
+}
+.fg-dark-gray-blue-active:active {
+  color: hsl(210, 26%, 34%) !important;
+}
+.fg-dark-gray-blue-hover:hover {
+  color: hsl(210, 26%, 34%) !important;
+}
+.fg-dark-gray-blue-focus:focus {
+  color: hsl(210, 26%, 34%) !important;
+}
+.fg-light-gray-mouse {
+  color: hsl(199, 15%, 70%) !important;
+}
+.fg-light-gray-mouse-active:active {
+  color: hsl(199, 15%, 70%) !important;
+}
+.fg-light-gray-mouse-hover:hover {
+  color: hsl(199, 15%, 70%) !important;
+}
+.fg-light-gray-mouse-focus:focus {
+  color: hsl(199, 15%, 70%) !important;
+}
+.fg-minor-gray-mouse {
+  color: hsl(199, 15%, 55%) !important;
+}
+.fg-minor-gray-mouse-active:active {
+  color: hsl(199, 15%, 55%) !important;
+}
+.fg-minor-gray-mouse-hover:hover {
+  color: hsl(199, 15%, 55%) !important;
+}
+.fg-minor-gray-mouse-focus:focus {
+  color: hsl(199, 15%, 55%) !important;
+}
+.fg-sat-gray-mouse {
+  color: hsl(199, 15%, 30%) !important;
+}
+.fg-sat-gray-mouse-active:active {
+  color: hsl(199, 15%, 30%) !important;
+}
+.fg-sat-gray-mouse-hover:hover {
+  color: hsl(199, 15%, 30%) !important;
+}
+.fg-sat-gray-mouse-focus:focus {
+  color: hsl(199, 15%, 30%) !important;
+}
+.fg-dark-gray-mouse {
+  color: hsl(199, 15%, 20%) !important;
+}
+.fg-dark-gray-mouse-active:active {
+  color: hsl(199, 15%, 20%) !important;
+}
+.fg-dark-gray-mouse-hover:hover {
+  color: hsl(199, 15%, 20%) !important;
+}
+.fg-dark-gray-mouse-focus:focus {
+  color: hsl(199, 15%, 20%) !important;
 }
 .fg-light-lime {
   color: hsl(93, 97%, 91%) !important;
@@ -35715,6 +36501,114 @@ hr.fat {
 .op-sand-low {
   background-color: hsl(from hsl(45, 71%, 81%) h s l / 0.8) !important;
 }
+.op-light-gray {
+  background-color: hsl(from hsl(0, 0%, 95%) h s l / 0.5) !important;
+}
+.op-light-gray-hi {
+  background-color: hsl(from hsl(0, 0%, 95%) h s l / 0.2) !important;
+}
+.op-light-gray-low {
+  background-color: hsl(from hsl(0, 0%, 95%) h s l / 0.8) !important;
+}
+.op-minor-gray {
+  background-color: hsl(from hsl(0, 0%, 87%) h s l / 0.5) !important;
+}
+.op-minor-gray-hi {
+  background-color: hsl(from hsl(0, 0%, 87%) h s l / 0.2) !important;
+}
+.op-minor-gray-low {
+  background-color: hsl(from hsl(0, 0%, 87%) h s l / 0.8) !important;
+}
+.op-sat-gray {
+  background-color: hsl(from hsl(0, 0%, 70%) h s l / 0.5) !important;
+}
+.op-sat-gray-hi {
+  background-color: hsl(from hsl(0, 0%, 70%) h s l / 0.2) !important;
+}
+.op-sat-gray-low {
+  background-color: hsl(from hsl(0, 0%, 70%) h s l / 0.8) !important;
+}
+.op-dark-gray {
+  background-color: hsl(from hsl(0, 0%, 60%) h s l / 0.5) !important;
+}
+.op-dark-gray-hi {
+  background-color: hsl(from hsl(0, 0%, 60%) h s l / 0.2) !important;
+}
+.op-dark-gray-low {
+  background-color: hsl(from hsl(0, 0%, 60%) h s l / 0.8) !important;
+}
+.op-light-gray-blue {
+  background-color: hsl(from hsl(210, 26%, 84%) h s l / 0.5) !important;
+}
+.op-light-gray-blue-hi {
+  background-color: hsl(from hsl(210, 26%, 84%) h s l / 0.2) !important;
+}
+.op-light-gray-blue-low {
+  background-color: hsl(from hsl(210, 26%, 84%) h s l / 0.8) !important;
+}
+.op-minor-gray-blue {
+  background-color: hsl(from hsl(210, 26%, 69%) h s l / 0.5) !important;
+}
+.op-minor-gray-blue-hi {
+  background-color: hsl(from hsl(210, 26%, 69%) h s l / 0.2) !important;
+}
+.op-minor-gray-blue-low {
+  background-color: hsl(from hsl(210, 26%, 69%) h s l / 0.8) !important;
+}
+.op-sat-gray-blue {
+  background-color: hsl(from hsl(210, 26%, 44%) h s l / 0.5) !important;
+}
+.op-sat-gray-blue-hi {
+  background-color: hsl(from hsl(210, 26%, 44%) h s l / 0.2) !important;
+}
+.op-sat-gray-blue-low {
+  background-color: hsl(from hsl(210, 26%, 44%) h s l / 0.8) !important;
+}
+.op-dark-gray-blue {
+  background-color: hsl(from hsl(210, 26%, 34%) h s l / 0.5) !important;
+}
+.op-dark-gray-blue-hi {
+  background-color: hsl(from hsl(210, 26%, 34%) h s l / 0.2) !important;
+}
+.op-dark-gray-blue-low {
+  background-color: hsl(from hsl(210, 26%, 34%) h s l / 0.8) !important;
+}
+.op-light-gray-mouse {
+  background-color: hsl(from hsl(199, 15%, 70%) h s l / 0.5) !important;
+}
+.op-light-gray-mouse-hi {
+  background-color: hsl(from hsl(199, 15%, 70%) h s l / 0.2) !important;
+}
+.op-light-gray-mouse-low {
+  background-color: hsl(from hsl(199, 15%, 70%) h s l / 0.8) !important;
+}
+.op-minor-gray-mouse {
+  background-color: hsl(from hsl(199, 15%, 55%) h s l / 0.5) !important;
+}
+.op-minor-gray-mouse-hi {
+  background-color: hsl(from hsl(199, 15%, 55%) h s l / 0.2) !important;
+}
+.op-minor-gray-mouse-low {
+  background-color: hsl(from hsl(199, 15%, 55%) h s l / 0.8) !important;
+}
+.op-sat-gray-mouse {
+  background-color: hsl(from hsl(199, 15%, 30%) h s l / 0.5) !important;
+}
+.op-sat-gray-mouse-hi {
+  background-color: hsl(from hsl(199, 15%, 30%) h s l / 0.2) !important;
+}
+.op-sat-gray-mouse-low {
+  background-color: hsl(from hsl(199, 15%, 30%) h s l / 0.8) !important;
+}
+.op-dark-gray-mouse {
+  background-color: hsl(from hsl(199, 15%, 20%) h s l / 0.5) !important;
+}
+.op-dark-gray-mouse-hi {
+  background-color: hsl(from hsl(199, 15%, 20%) h s l / 0.2) !important;
+}
+.op-dark-gray-mouse-low {
+  background-color: hsl(from hsl(199, 15%, 20%) h s l / 0.8) !important;
+}
 .op-light-lime {
   background-color: hsl(from hsl(93, 97%, 91%) h s l / 0.5) !important;
 }
@@ -36905,6 +37799,186 @@ hr.fat {
 }
 
 /* source/colors-css/outline.less */
+.ol-gray {
+  outline-color: hsl(0, 0%, 80%) !important;
+}
+.ol-gray-active:active {
+  outline-color: hsl(0, 0%, 80%) !important;
+}
+.ol-gray-hover:hover {
+  outline-color: hsl(0, 0%, 80%) !important;
+}
+.ol-gray-focus:focus {
+  outline-color: hsl(0, 0%, 80%) !important;
+}
+.ol-light-gray {
+  outline-color: hsl(0, 0%, 95%) !important;
+}
+.ol-light-gray-active:active {
+  outline-color: hsl(0, 0%, 95%) !important;
+}
+.ol-light-gray-hover:hover {
+  outline-color: hsl(0, 0%, 95%) !important;
+}
+.ol-light-gray-focus:focus {
+  outline-color: hsl(0, 0%, 95%) !important;
+}
+.ol-minor-gray {
+  outline-color: hsl(0, 0%, 87%) !important;
+}
+.ol-minor-gray-active:active {
+  outline-color: hsl(0, 0%, 87%) !important;
+}
+.ol-minor-gray-hover:hover {
+  outline-color: hsl(0, 0%, 87%) !important;
+}
+.ol-minor-gray-focus:focus {
+  outline-color: hsl(0, 0%, 87%) !important;
+}
+.ol-sat-gray {
+  outline-color: hsl(0, 0%, 70%) !important;
+}
+.ol-sat-gray-active:active {
+  outline-color: hsl(0, 0%, 70%) !important;
+}
+.ol-sat-gray-hover:hover {
+  outline-color: hsl(0, 0%, 70%) !important;
+}
+.ol-sat-gray-focus:focus {
+  outline-color: hsl(0, 0%, 70%) !important;
+}
+.ol-dark-gray {
+  outline-color: hsl(0, 0%, 60%) !important;
+}
+.ol-dark-gray-active:active {
+  outline-color: hsl(0, 0%, 60%) !important;
+}
+.ol-dark-gray-hover:hover {
+  outline-color: hsl(0, 0%, 60%) !important;
+}
+.ol-dark-gray-focus:focus {
+  outline-color: hsl(0, 0%, 60%) !important;
+}
+.ol-gray-blue {
+  outline-color: hsl(210, 26%, 54%) !important;
+}
+.ol-gray-blue-active:active {
+  outline-color: hsl(210, 26%, 54%) !important;
+}
+.ol-gray-blue-hover:hover {
+  outline-color: hsl(210, 26%, 54%) !important;
+}
+.ol-gray-blue-focus:focus {
+  outline-color: hsl(210, 26%, 54%) !important;
+}
+.ol-light-gray-blue {
+  outline-color: hsl(210, 26%, 84%) !important;
+}
+.ol-light-gray-blue-active:active {
+  outline-color: hsl(210, 26%, 84%) !important;
+}
+.ol-light-gray-blue-hover:hover {
+  outline-color: hsl(210, 26%, 84%) !important;
+}
+.ol-light-gray-blue-focus:focus {
+  outline-color: hsl(210, 26%, 84%) !important;
+}
+.ol-minor-gray-blue {
+  outline-color: hsl(210, 26%, 69%) !important;
+}
+.ol-minor-gray-blue-active:active {
+  outline-color: hsl(210, 26%, 69%) !important;
+}
+.ol-minor-gray-blue-hover:hover {
+  outline-color: hsl(210, 26%, 69%) !important;
+}
+.ol-minor-gray-blue-focus:focus {
+  outline-color: hsl(210, 26%, 69%) !important;
+}
+.ol-sat-gray-blue {
+  outline-color: hsl(210, 26%, 44%) !important;
+}
+.ol-sat-gray-blue-active:active {
+  outline-color: hsl(210, 26%, 44%) !important;
+}
+.ol-sat-gray-blue-hover:hover {
+  outline-color: hsl(210, 26%, 44%) !important;
+}
+.ol-sat-gray-blue-focus:focus {
+  outline-color: hsl(210, 26%, 44%) !important;
+}
+.ol-dark-gray-blue {
+  outline-color: hsl(210, 26%, 34%) !important;
+}
+.ol-dark-gray-blue-active:active {
+  outline-color: hsl(210, 26%, 34%) !important;
+}
+.ol-dark-gray-blue-hover:hover {
+  outline-color: hsl(210, 26%, 34%) !important;
+}
+.ol-dark-gray-blue-focus:focus {
+  outline-color: hsl(210, 26%, 34%) !important;
+}
+.ol-gray-mouse {
+  outline-color: hsl(199, 15%, 40%) !important;
+}
+.ol-gray-mouse-active:active {
+  outline-color: hsl(199, 15%, 40%) !important;
+}
+.ol-gray-mouse-hover:hover {
+  outline-color: hsl(199, 15%, 40%) !important;
+}
+.ol-gray-mouse-focus:focus {
+  outline-color: hsl(199, 15%, 40%) !important;
+}
+.ol-light-gray-mouse {
+  outline-color: hsl(199, 15%, 70%) !important;
+}
+.ol-light-gray-mouse-active:active {
+  outline-color: hsl(199, 15%, 70%) !important;
+}
+.ol-light-gray-mouse-hover:hover {
+  outline-color: hsl(199, 15%, 70%) !important;
+}
+.ol-light-gray-mouse-focus:focus {
+  outline-color: hsl(199, 15%, 70%) !important;
+}
+.ol-minor-gray-mouse {
+  outline-color: hsl(199, 15%, 55%) !important;
+}
+.ol-minor-gray-mouse-active:active {
+  outline-color: hsl(199, 15%, 55%) !important;
+}
+.ol-minor-gray-mouse-hover:hover {
+  outline-color: hsl(199, 15%, 55%) !important;
+}
+.ol-minor-gray-mouse-focus:focus {
+  outline-color: hsl(199, 15%, 55%) !important;
+}
+.ol-sat-gray-mouse {
+  outline-color: hsl(199, 15%, 30%) !important;
+}
+.ol-sat-gray-mouse-active:active {
+  outline-color: hsl(199, 15%, 30%) !important;
+}
+.ol-sat-gray-mouse-hover:hover {
+  outline-color: hsl(199, 15%, 30%) !important;
+}
+.ol-sat-gray-mouse-focus:focus {
+  outline-color: hsl(199, 15%, 30%) !important;
+}
+.ol-dark-gray-mouse {
+  outline-color: hsl(199, 15%, 20%) !important;
+}
+.ol-dark-gray-mouse-active:active {
+  outline-color: hsl(199, 15%, 20%) !important;
+}
+.ol-dark-gray-mouse-hover:hover {
+  outline-color: hsl(199, 15%, 20%) !important;
+}
+.ol-dark-gray-mouse-focus:focus {
+  outline-color: hsl(199, 15%, 20%) !important;
+}
 .ol-lime {
   outline-color: hsl(93, 97%, 71%) !important;
 }
@@ -39643,6 +40717,222 @@ hr.fat {
 .after-bd-sand::after {
   border-color: hsl(45, 71%, 81%) !important;
 }
+.before-bg-light-gray::before {
+  background: hsl(0, 0%, 95%) !important;
+}
+.before-fg-light-gray::before {
+  color: hsl(0, 0%, 95%) !important;
+}
+.before-bd-light-gray::before {
+  border-color: hsl(0, 0%, 95%) !important;
+}
+.after-bg-light-gray::after {
+  background: hsl(0, 0%, 95%) !important;
+}
+.after-fg-light-gray::after {
+  color: hsl(0, 0%, 95%) !important;
+}
+.after-bd-light-gray::after {
+  border-color: hsl(0, 0%, 95%) !important;
+}
+.before-bg-minor-gray::before {
+  background: hsl(0, 0%, 87%) !important;
+}
+.before-fg-minor-gray::before {
+  color: hsl(0, 0%, 87%) !important;
+}
+.before-bd-minor-gray::before {
+  border-color: hsl(0, 0%, 87%) !important;
+}
+.after-bg-minor-gray::after {
+  background: hsl(0, 0%, 87%) !important;
+}
+.after-fg-minor-gray::after {
+  color: hsl(0, 0%, 87%) !important;
+}
+.after-bd-minor-gray::after {
+  border-color: hsl(0, 0%, 87%) !important;
+}
+.before-bg-sat-gray::before {
+  background: hsl(0, 0%, 70%) !important;
+}
+.before-fg-sat-gray::before {
+  color: hsl(0, 0%, 70%) !important;
+}
+.before-bd-sat-gray::before {
+  border-color: hsl(0, 0%, 70%) !important;
+}
+.after-bg-sat-gray::after {
+  background: hsl(0, 0%, 70%) !important;
+}
+.after-fg-sat-gray::after {
+  color: hsl(0, 0%, 70%) !important;
+}
+.after-bd-sat-gray::after {
+  border-color: hsl(0, 0%, 70%) !important;
+}
+.before-bg-dark-gray::before {
+  background: hsl(0, 0%, 60%) !important;
+}
+.before-fg-dark-gray::before {
+  color: hsl(0, 0%, 60%) !important;
+}
+.before-bd-dark-gray::before {
+  border-color: hsl(0, 0%, 60%) !important;
+}
+.after-bg-dark-gray::after {
+  background: hsl(0, 0%, 60%) !important;
+}
+.after-fg-dark-gray::after {
+  color: hsl(0, 0%, 60%) !important;
+}
+.after-bd-dark-gray::after {
+  border-color: hsl(0, 0%, 60%) !important;
+}
+.before-bg-light-gray-blue::before {
+  background: hsl(210, 26%, 84%) !important;
+}
+.before-fg-light-gray-blue::before {
+  color: hsl(210, 26%, 84%) !important;
+}
+.before-bd-light-gray-blue::before {
+  border-color: hsl(210, 26%, 84%) !important;
+}
+.after-bg-light-gray-blue::after {
+  background: hsl(210, 26%, 84%) !important;
+}
+.after-fg-light-gray-blue::after {
+  color: hsl(210, 26%, 84%) !important;
+}
+.after-bd-light-gray-blue::after {
+  border-color: hsl(210, 26%, 84%) !important;
+}
+.before-bg-minor-gray-blue::before {
+  background: hsl(210, 26%, 69%) !important;
+}
+.before-fg-minor-gray-blue::before {
+  color: hsl(210, 26%, 69%) !important;
+}
+.before-bd-minor-gray-blue::before {
+  border-color: hsl(210, 26%, 69%) !important;
+}
+.after-bg-minor-gray-blue::after {
+  background: hsl(210, 26%, 69%) !important;
+}
+.after-fg-minor-gray-blue::after {
+  color: hsl(210, 26%, 69%) !important;
+}
+.after-bd-minor-gray-blue::after {
+  border-color: hsl(210, 26%, 69%) !important;
+}
+.before-bg-sat-gray-blue::before {
+  background: hsl(210, 26%, 44%) !important;
+}
+.before-fg-sat-gray-blue::before {
+  color: hsl(210, 26%, 44%) !important;
+}
+.before-bd-sat-gray-blue::before {
+  border-color: hsl(210, 26%, 44%) !important;
+}
+.after-bg-sat-gray-blue::after {
+  background: hsl(210, 26%, 44%) !important;
+}
+.after-fg-sat-gray-blue::after {
+  color: hsl(210, 26%, 44%) !important;
+}
+.after-bd-sat-gray-blue::after {
+  border-color: hsl(210, 26%, 44%) !important;
+}
+.before-bg-dark-gray-blue::before {
+  background: hsl(210, 26%, 34%) !important;
+}
+.before-fg-dark-gray-blue::before {
+  color: hsl(210, 26%, 34%) !important;
+}
+.before-bd-dark-gray-blue::before {
+  border-color: hsl(210, 26%, 34%) !important;
+}
+.after-bg-dark-gray-blue::after {
+  background: hsl(210, 26%, 34%) !important;
+}
+.after-fg-dark-gray-blue::after {
+  color: hsl(210, 26%, 34%) !important;
+}
+.after-bd-dark-gray-blue::after {
+  border-color: hsl(210, 26%, 34%) !important;
+}
+.before-bg-light-gray-mouse::before {
+  background: hsl(199, 15%, 70%) !important;
+}
+.before-fg-light-gray-mouse::before {
+  color: hsl(199, 15%, 70%) !important;
+}
+.before-bd-light-gray-mouse::before {
+  border-color: hsl(199, 15%, 70%) !important;
+}
+.after-bg-light-gray-mouse::after {
+  background: hsl(199, 15%, 70%) !important;
+}
+.after-fg-light-gray-mouse::after {
+  color: hsl(199, 15%, 70%) !important;
+}
+.after-bd-light-gray-mouse::after {
+  border-color: hsl(199, 15%, 70%) !important;
+}
+.before-bg-minor-gray-mouse::before {
+  background: hsl(199, 15%, 55%) !important;
+}
+.before-fg-minor-gray-mouse::before {
+  color: hsl(199, 15%, 55%) !important;
+}
+.before-bd-minor-gray-mouse::before {
+  border-color: hsl(199, 15%, 55%) !important;
+}
+.after-bg-minor-gray-mouse::after {
+  background: hsl(199, 15%, 55%) !important;
+}
+.after-fg-minor-gray-mouse::after {
+  color: hsl(199, 15%, 55%) !important;
+}
+.after-bd-minor-gray-mouse::after {
+  border-color: hsl(199, 15%, 55%) !important;
+}
+.before-bg-sat-gray-mouse::before {
+  background: hsl(199, 15%, 30%) !important;
+}
+.before-fg-sat-gray-mouse::before {
+  color: hsl(199, 15%, 30%) !important;
+}
+.before-bd-sat-gray-mouse::before {
+  border-color: hsl(199, 15%, 30%) !important;
+}
+.after-bg-sat-gray-mouse::after {
+  background: hsl(199, 15%, 30%) !important;
+}
+.after-fg-sat-gray-mouse::after {
+  color: hsl(199, 15%, 30%) !important;
+}
+.after-bd-sat-gray-mouse::after {
+  border-color: hsl(199, 15%, 30%) !important;
+}
+.before-bg-dark-gray-mouse::before {
+  background: hsl(199, 15%, 20%) !important;
+}
+.before-fg-dark-gray-mouse::before {
+  color: hsl(199, 15%, 20%) !important;
+}
+.before-bd-dark-gray-mouse::before {
+  border-color: hsl(199, 15%, 20%) !important;
+}
+.after-bg-dark-gray-mouse::after {
+  background: hsl(199, 15%, 20%) !important;
+}
+.after-fg-dark-gray-mouse::after {
+  color: hsl(199, 15%, 20%) !important;
+}
+.after-bd-dark-gray-mouse::after {
+  border-color: hsl(199, 15%, 20%) !important;
+}
 .before-bg-light-lime::before {
   background: hsl(93, 97%, 91%) !important;
 }
@@ -42025,6 +43315,201 @@ hr.fat {
   --ribbed-size: 20px;
   --ribbed-alpha: 0.15;
   --ribbed-angle: -45deg;
+}
+.ribbed-gray {
+  background:
+    hsl(0, 0%, 80%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-light-gray {
+  background:
+    hsl(0, 0%, 95%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-minor-gray {
+  background:
+    hsl(0, 0%, 87%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-sat-gray {
+  background:
+    hsl(0, 0%, 70%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-dark-gray {
+  background:
+    hsl(0, 0%, 60%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-gray-blue {
+  background:
+    hsl(210, 26%, 54%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-light-gray-blue {
+  background:
+    hsl(210, 26%, 84%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-minor-gray-blue {
+  background:
+    hsl(210, 26%, 69%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-sat-gray-blue {
+  background:
+    hsl(210, 26%, 44%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-dark-gray-blue {
+  background:
+    hsl(210, 26%, 34%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-gray-mouse {
+  background:
+    hsl(199, 15%, 40%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-light-gray-mouse {
+  background:
+    hsl(199, 15%, 70%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-minor-gray-mouse {
+  background:
+    hsl(199, 15%, 55%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-sat-gray-mouse {
+  background:
+    hsl(199, 15%, 30%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
+}
+.ribbed-dark-gray-mouse {
+  background:
+    hsl(199, 15%, 20%) linear-gradient(
+      var(--ribbed-angle),
+      rgba(255, 255, 255, var(--ribbed-alpha)) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 50%,
+      rgba(255, 255, 255, var(--ribbed-alpha)) 75%,
+      transparent 75%,
+      transparent) !important;
+  background-size: var(--ribbed-size) var(--ribbed-size) !important;
 }
 .ribbed-lime {
   background:
@@ -45491,6 +46976,27 @@ button.light.outline,
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
+.gradient-gray {
+  --background:
+    linear-gradient(
+      var(--gradient-direction),
+      hsl(0, 0%, 90%),
+      hsl(0, 0%, 65%));
+}
+.gradient-gray-blue {
+  --background:
+    linear-gradient(
+      var(--gradient-direction),
+      hsl(210, 26%, 64%),
+      hsl(210, 26%, 39%));
+}
+.gradient-gray-mouse {
+  --background:
+    linear-gradient(
+      var(--gradient-direction),
+      hsl(199, 15%, 50%),
+      hsl(199, 15%, 25%));
+}
 .gradient-lime {
   --background:
     linear-gradient(
@@ -45721,6 +47227,27 @@ button.light.outline,
       var(--gradient-direction),
       hsl(45, 71%, 91%),
       hsl(45, 71%, 66%));
+}
+.gradient-radial-gray {
+  --background:
+    radial-gradient(
+      var(--gradient-position),
+      hsl(0, 0%, 95%),
+      hsl(0, 0%, 60%));
+}
+.gradient-radial-gray-blue {
+  --background:
+    radial-gradient(
+      var(--gradient-position),
+      hsl(210, 26%, 69%),
+      hsl(210, 26%, 34%));
+}
+.gradient-radial-gray-mouse {
+  --background:
+    radial-gradient(
+      var(--gradient-position),
+      hsl(199, 15%, 55%),
+      hsl(199, 15%, 20%));
 }
 .gradient-radial-lime {
   --background:
@@ -46473,6 +48000,81 @@ button.light.outline,
 /* source/colors-css/stroke.less */
 :root {
   --stroke-width: 1px;
+}
+.stroke-light-gray {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(0, 0%, 95%);
+  text-stroke: var(--stroke-width) hsl(0, 0%, 95%);
+}
+.stroke-minor-gray {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(0, 0%, 87%);
+  text-stroke: var(--stroke-width) hsl(0, 0%, 87%);
+}
+.stroke-gray {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(0, 0%, 80%);
+  text-stroke: var(--stroke-width) hsl(0, 0%, 80%);
+}
+.stroke-sat-gray {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(0, 0%, 70%);
+  text-stroke: var(--stroke-width) hsl(0, 0%, 70%);
+}
+.stroke-dark-gray {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(0, 0%, 60%);
+  text-stroke: var(--stroke-width) hsl(0, 0%, 60%);
+}
+.stroke-light-gray-blue {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(210, 26%, 84%);
+  text-stroke: var(--stroke-width) hsl(210, 26%, 84%);
+}
+.stroke-minor-gray-blue {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(210, 26%, 69%);
+  text-stroke: var(--stroke-width) hsl(210, 26%, 69%);
+}
+.stroke-gray-blue {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(210, 26%, 54%);
+  text-stroke: var(--stroke-width) hsl(210, 26%, 54%);
+}
+.stroke-sat-gray-blue {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(210, 26%, 44%);
+  text-stroke: var(--stroke-width) hsl(210, 26%, 44%);
+}
+.stroke-dark-gray-blue {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(210, 26%, 34%);
+  text-stroke: var(--stroke-width) hsl(210, 26%, 34%);
+}
+.stroke-light-gray-mouse {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(199, 15%, 70%);
+  text-stroke: var(--stroke-width) hsl(199, 15%, 70%);
+}
+.stroke-minor-gray-mouse {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(199, 15%, 55%);
+  text-stroke: var(--stroke-width) hsl(199, 15%, 55%);
+}
+.stroke-gray-mouse {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(199, 15%, 40%);
+  text-stroke: var(--stroke-width) hsl(199, 15%, 40%);
+}
+.stroke-sat-gray-mouse {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(199, 15%, 30%);
+  text-stroke: var(--stroke-width) hsl(199, 15%, 30%);
+}
+.stroke-dark-gray-mouse {
+  color: transparent;
+  -webkit-text-stroke: var(--stroke-width) hsl(199, 15%, 20%);
+  text-stroke: var(--stroke-width) hsl(199, 15%, 20%);
 }
 .stroke-light-lime {
   color: transparent;
@@ -48241,6 +49843,108 @@ button.flat,
     --button-pill-radius: 10px;
     --button-size: 20px;
     --button-font-size: 10px;
+  }
+}
+.button-soft-gray {
+  background: hsl(0, 0%, 95%) !important;
+  color: hsl(0, 0%, 60%) !important;
+  border-color: hsl(0, 0%, 80%) !important;
+}
+@media (hover: hover) {
+  .button-soft-gray:hover {
+    background: hsl(0, 0%, 80%) !important;
+    color: #ffffff !important;
+  }
+}
+@media (hover: none) {
+  .button-soft-gray:active {
+    background: hsl(0, 0%, 80%) !important;
+    color: #ffffff !important;
+  }
+}
+.button-gray {
+  background: hsl(0, 0%, 80%) !important;
+  color: #ffffff !important;
+  border-color: hsl(0, 0%, 70%) !important;
+}
+@media (hover: hover) {
+  .button-gray:hover {
+    background: hsl(0, 0%, 70%) !important;
+    color: #ffffff !important;
+  }
+}
+@media (hover: none) {
+  .button-gray:active {
+    background: hsl(0, 0%, 70%) !important;
+    color: #ffffff !important;
+  }
+}
+.button-soft-gray-blue {
+  background: hsl(210, 26%, 84%) !important;
+  color: hsl(210, 26%, 34%) !important;
+  border-color: hsl(210, 26%, 54%) !important;
+}
+@media (hover: hover) {
+  .button-soft-gray-blue:hover {
+    background: hsl(210, 26%, 54%) !important;
+    color: #ffffff !important;
+  }
+}
+@media (hover: none) {
+  .button-soft-gray-blue:active {
+    background: hsl(210, 26%, 54%) !important;
+    color: #ffffff !important;
+  }
+}
+.button-gray-blue {
+  background: hsl(210, 26%, 54%) !important;
+  color: #ffffff !important;
+  border-color: hsl(210, 26%, 44%) !important;
+}
+@media (hover: hover) {
+  .button-gray-blue:hover {
+    background: hsl(210, 26%, 44%) !important;
+    color: #ffffff !important;
+  }
+}
+@media (hover: none) {
+  .button-gray-blue:active {
+    background: hsl(210, 26%, 44%) !important;
+    color: #ffffff !important;
+  }
+}
+.button-soft-gray-mouse {
+  background: hsl(199, 15%, 70%) !important;
+  color: hsl(199, 15%, 20%) !important;
+  border-color: hsl(199, 15%, 40%) !important;
+}
+@media (hover: hover) {
+  .button-soft-gray-mouse:hover {
+    background: hsl(199, 15%, 40%) !important;
+    color: #ffffff !important;
+  }
+}
+@media (hover: none) {
+  .button-soft-gray-mouse:active {
+    background: hsl(199, 15%, 40%) !important;
+    color: #ffffff !important;
+  }
+}
+.button-gray-mouse {
+  background: hsl(199, 15%, 40%) !important;
+  color: #ffffff !important;
+  border-color: hsl(199, 15%, 30%) !important;
+}
+@media (hover: hover) {
+  .button-gray-mouse:hover {
+    background: hsl(199, 15%, 30%) !important;
+    color: #ffffff !important;
+  }
+}
+@media (hover: none) {
+  .button-gray-mouse:active {
+    background: hsl(199, 15%, 30%) !important;
+    color: #ffffff !important;
   }
 }
 .button-soft-lime {
@@ -51300,6 +53004,21 @@ button:has(.badge.corner),
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
+}
+.badge-gray {
+  background: hsl(0, 0%, 80%);
+  color: #ffffff;
+  border-color: hsl(0, 0%, 60%);
+}
+.badge-gray-blue {
+  background: hsl(210, 26%, 54%);
+  color: #ffffff;
+  border-color: hsl(210, 26%, 34%);
+}
+.badge-gray-mouse {
+  background: hsl(199, 15%, 40%);
+  color: #ffffff;
+  border-color: hsl(199, 15%, 20%);
 }
 .badge-lime {
   background: hsl(93, 97%, 71%);
@@ -54661,6 +56380,24 @@ input[type=checkbox].largest {
 .checkbox > input[type=checkbox]:disabled ~ .caption-append {
   color: var(--checkbox-color-disabled);
 }
+input[type=checkbox].checkbox-gray {
+  border-color: hsl(0, 0%, 80%);
+}
+input[type=checkbox].checkbox-gray::before {
+  border-color: hsl(0, 0%, 80%);
+}
+input[type=checkbox].checkbox-gray-blue {
+  border-color: hsl(210, 26%, 54%);
+}
+input[type=checkbox].checkbox-gray-blue::before {
+  border-color: hsl(210, 26%, 54%);
+}
+input[type=checkbox].checkbox-gray-mouse {
+  border-color: hsl(199, 15%, 40%);
+}
+input[type=checkbox].checkbox-gray-mouse::before {
+  border-color: hsl(199, 15%, 40%);
+}
 input[type=checkbox].checkbox-lime {
   border-color: hsl(93, 97%, 71%);
 }
@@ -54981,6 +56718,60 @@ input[type=checkbox].checkbox-sand::before {
 .light .action {
   background: #dfdfdf;
   color: #ffffff;
+}
+.gray {
+  background: hsl(0, 0%, 80%);
+  color: #ffffff;
+}
+.gray .action {
+  background: hsl(0, 0%, 60%);
+  color: #ffffff;
+}
+@media (hover: hover) {
+  .gray:hover {
+    background: hsl(0, 0%, 70%);
+  }
+}
+@media (hover: none) {
+  .gray:active {
+    background: hsl(0, 0%, 70%);
+  }
+}
+.gray-blue {
+  background: hsl(210, 26%, 54%);
+  color: #ffffff;
+}
+.gray-blue .action {
+  background: hsl(210, 26%, 34%);
+  color: #ffffff;
+}
+@media (hover: hover) {
+  .gray-blue:hover {
+    background: hsl(210, 26%, 44%);
+  }
+}
+@media (hover: none) {
+  .gray-blue:active {
+    background: hsl(210, 26%, 44%);
+  }
+}
+.gray-mouse {
+  background: hsl(199, 15%, 40%);
+  color: #ffffff;
+}
+.gray-mouse .action {
+  background: hsl(199, 15%, 20%);
+  color: #ffffff;
+}
+@media (hover: hover) {
+  .gray-mouse:hover {
+    background: hsl(199, 15%, 30%);
+  }
+}
+@media (hover: none) {
+  .gray-mouse:active {
+    background: hsl(199, 15%, 30%);
+  }
 }
 .lime {
   background: hsl(93, 97%, 71%);
@@ -55574,6 +57365,66 @@ input[type=checkbox].checkbox-sand::before {
 @media (hover: none) {
   .sand:active {
     background: hsl(45, 71%, 71%);
+  }
+}
+.soft-gray {
+  background: hsl(0, 0%, 95%);
+  color: hsl(0, 0%, 60%);
+}
+.soft-gray .action {
+  background: hsl(0, 0%, 60%);
+  color: #ffffff;
+}
+@media (hover: hover) {
+  .soft-gray:hover {
+    background: hsl(0, 0%, 70%);
+    color: #ffffff;
+  }
+}
+@media (hover: none) {
+  .soft-gray:active {
+    background: hsl(0, 0%, 70%);
+    color: #ffffff;
+  }
+}
+.soft-gray-blue {
+  background: hsl(210, 26%, 84%);
+  color: hsl(210, 26%, 34%);
+}
+.soft-gray-blue .action {
+  background: hsl(210, 26%, 34%);
+  color: #ffffff;
+}
+@media (hover: hover) {
+  .soft-gray-blue:hover {
+    background: hsl(210, 26%, 44%);
+    color: #ffffff;
+  }
+}
+@media (hover: none) {
+  .soft-gray-blue:active {
+    background: hsl(210, 26%, 44%);
+    color: #ffffff;
+  }
+}
+.soft-gray-mouse {
+  background: hsl(199, 15%, 70%);
+  color: hsl(199, 15%, 20%);
+}
+.soft-gray-mouse .action {
+  background: hsl(199, 15%, 20%);
+  color: #ffffff;
+}
+@media (hover: hover) {
+  .soft-gray-mouse:hover {
+    background: hsl(199, 15%, 30%);
+    color: #ffffff;
+  }
+}
+@media (hover: none) {
+  .soft-gray-mouse:active {
+    background: hsl(199, 15%, 30%);
+    color: #ffffff;
   }
 }
 .soft-lime {
@@ -56484,6 +58335,54 @@ ul ul .dropdown-caret {
 }
 .tag.light:hover {
   background: #f8f8f8 !important;
+}
+.tag.soft-gray .action {
+  background: hsl(0, 0%, 85%);
+  color: #000000;
+}
+.tag.soft-gray:hover {
+  background: hsl(0, 0%, 95%) !important;
+  color: hsl(0, 0%, 60%) !important;
+}
+.tag.normal-gray .action {
+  background: hsl(0, 0%, 70%);
+  color: #ffffff;
+}
+.tag.normal-gray:hover {
+  background: hsl(0, 0%, 80%) !important;
+  color: #ffffff;
+}
+.tag.soft-gray-blue .action {
+  background: hsl(210, 26%, 74%);
+  color: #000000;
+}
+.tag.soft-gray-blue:hover {
+  background: hsl(210, 26%, 84%) !important;
+  color: hsl(210, 26%, 34%) !important;
+}
+.tag.normal-gray-blue .action {
+  background: hsl(210, 26%, 44%);
+  color: #ffffff;
+}
+.tag.normal-gray-blue:hover {
+  background: hsl(210, 26%, 54%) !important;
+  color: #ffffff;
+}
+.tag.soft-gray-mouse .action {
+  background: hsl(199, 15%, 60%);
+  color: #000000;
+}
+.tag.soft-gray-mouse:hover {
+  background: hsl(199, 15%, 70%) !important;
+  color: hsl(199, 15%, 20%) !important;
+}
+.tag.normal-gray-mouse .action {
+  background: hsl(199, 15%, 30%);
+  color: #ffffff;
+}
+.tag.normal-gray-mouse:hover {
+  background: hsl(199, 15%, 40%) !important;
+  color: #ffffff;
 }
 .tag.soft-lime .action {
   background: hsl(93, 97%, 81%);
@@ -57701,6 +59600,27 @@ input[type=radio].largest {
 .radio > input[type=radio]:disabled ~ .caption-prepend,
 .radio > input[type=radio]:disabled ~ .caption-append {
   color: var(--radio-color-disabled);
+}
+input[type=radio].radio-gray {
+  border-color: hsl(0, 0%, 80%);
+}
+input[type=radio].radio-gray::before {
+  background-color: hsl(0, 0%, 80%);
+  border-color: hsl(0, 0%, 80%);
+}
+input[type=radio].radio-gray-blue {
+  border-color: hsl(210, 26%, 54%);
+}
+input[type=radio].radio-gray-blue::before {
+  background-color: hsl(210, 26%, 54%);
+  border-color: hsl(210, 26%, 54%);
+}
+input[type=radio].radio-gray-mouse {
+  border-color: hsl(199, 15%, 40%);
+}
+input[type=radio].radio-gray-mouse::before {
+  background-color: hsl(199, 15%, 40%);
+  border-color: hsl(199, 15%, 40%);
 }
 input[type=radio].radio-lime {
   border-color: hsl(93, 97%, 71%);
@@ -59512,6 +61432,33 @@ aside::after {
 .donut > svg * {
   transition: all 1s;
 }
+.donut-gray svg .donut-back {
+  stroke: hsl(0, 0%, 85%);
+}
+.donut-gray svg .donut-fill {
+  stroke: hsl(0, 0%, 80%);
+}
+.donut-gray svg .donut-title {
+  fill: hsl(0, 0%, 60%);
+}
+.donut-gray-blue svg .donut-back {
+  stroke: hsl(210, 26%, 74%);
+}
+.donut-gray-blue svg .donut-fill {
+  stroke: hsl(210, 26%, 54%);
+}
+.donut-gray-blue svg .donut-title {
+  fill: hsl(210, 26%, 34%);
+}
+.donut-gray-mouse svg .donut-back {
+  stroke: hsl(199, 15%, 60%);
+}
+.donut-gray-mouse svg .donut-fill {
+  stroke: hsl(199, 15%, 40%);
+}
+.donut-gray-mouse svg .donut-title {
+  fill: hsl(199, 15%, 20%);
+}
 .donut-lime svg .donut-back {
   stroke: hsl(93, 97%, 81%);
 }
@@ -60633,6 +62580,36 @@ label:has(input) {
 .github-box.-default .button {
   background: #54aeff;
   color: #fff;
+}
+.box-gray {
+  border-color: hsl(0, 0%, 80%);
+}
+.box-gray .box-header {
+  background: hsl(0, 0%, 95%);
+  color: hsl(0, 0%, 60%);
+}
+.box-gray .prc {
+  border-color: hsl(0, 0%, 80%);
+}
+.box-gray-blue {
+  border-color: hsl(210, 26%, 54%);
+}
+.box-gray-blue .box-header {
+  background: hsl(210, 26%, 84%);
+  color: hsl(210, 26%, 34%);
+}
+.box-gray-blue .prc {
+  border-color: hsl(210, 26%, 54%);
+}
+.box-gray-mouse {
+  border-color: hsl(199, 15%, 40%);
+}
+.box-gray-mouse .box-header {
+  background: hsl(199, 15%, 70%);
+  color: hsl(199, 15%, 20%);
+}
+.box-gray-mouse .prc {
+  border-color: hsl(199, 15%, 40%);
 }
 .box-lime {
   border-color: hsl(93, 97%, 71%);
@@ -65715,6 +67692,78 @@ label:has(input) {
   display: flex;
   gap: 6px;
 }
+.pagination.gray {
+  background: transparent;
+}
+.pagination.gray .page-item {
+  --pagination-page-item-background: hsl(0, 0%, 95%);
+  --pagination-page-item-color: hsl(0, 0%, 70%);
+  --pagination-page-item-border-color: hsl(0, 0%, 70%);
+}
+@media (hover: hover) {
+  .pagination.gray .page-item:hover {
+    --pagination-page-item-background-hover: hsl(0, 0%, 70%);
+    --pagination-page-item-color-hover: #ffffff;
+  }
+}
+@media (hover: none) {
+  .pagination.gray .page-item:active {
+    --pagination-page-item-background-hover: hsl(0, 0%, 70%);
+    --pagination-page-item-color-hover: #ffffff;
+  }
+}
+.pagination.gray .page-item.active {
+  --pagination-page-item-background-active: hsl(0, 0%, 70%);
+  --pagination-page-item-color-active: #ffffff;
+}
+.pagination.gray-blue {
+  background: transparent;
+}
+.pagination.gray-blue .page-item {
+  --pagination-page-item-background: hsl(210, 26%, 84%);
+  --pagination-page-item-color: hsl(210, 26%, 44%);
+  --pagination-page-item-border-color: hsl(210, 26%, 44%);
+}
+@media (hover: hover) {
+  .pagination.gray-blue .page-item:hover {
+    --pagination-page-item-background-hover: hsl(210, 26%, 44%);
+    --pagination-page-item-color-hover: #ffffff;
+  }
+}
+@media (hover: none) {
+  .pagination.gray-blue .page-item:active {
+    --pagination-page-item-background-hover: hsl(210, 26%, 44%);
+    --pagination-page-item-color-hover: #ffffff;
+  }
+}
+.pagination.gray-blue .page-item.active {
+  --pagination-page-item-background-active: hsl(210, 26%, 44%);
+  --pagination-page-item-color-active: #ffffff;
+}
+.pagination.gray-mouse {
+  background: transparent;
+}
+.pagination.gray-mouse .page-item {
+  --pagination-page-item-background: hsl(199, 15%, 70%);
+  --pagination-page-item-color: hsl(199, 15%, 30%);
+  --pagination-page-item-border-color: hsl(199, 15%, 30%);
+}
+@media (hover: hover) {
+  .pagination.gray-mouse .page-item:hover {
+    --pagination-page-item-background-hover: hsl(199, 15%, 30%);
+    --pagination-page-item-color-hover: #ffffff;
+  }
+}
+@media (hover: none) {
+  .pagination.gray-mouse .page-item:active {
+    --pagination-page-item-background-hover: hsl(199, 15%, 30%);
+    --pagination-page-item-color-hover: #ffffff;
+  }
+}
+.pagination.gray-mouse .page-item.active {
+  --pagination-page-item-background-active: hsl(199, 15%, 30%);
+  --pagination-page-item-color-active: #ffffff;
+}
 .pagination.lime {
   background: transparent;
 }
@@ -66963,6 +69012,27 @@ label:has(input) {
     margin-right: 0;
   }
 }
+.bar-gray {
+  --progress-bar-color: hsl(0, 0%, 80%);
+}
+.progress-gray {
+  --progress-bar-color: hsl(0, 0%, 80%);
+  --progress-bar-back-color: hsl(0, 0%, 95%);
+}
+.bar-gray-blue {
+  --progress-bar-color: hsl(210, 26%, 54%);
+}
+.progress-gray-blue {
+  --progress-bar-color: hsl(210, 26%, 54%);
+  --progress-bar-back-color: hsl(210, 26%, 84%);
+}
+.bar-gray-mouse {
+  --progress-bar-color: hsl(199, 15%, 40%);
+}
+.progress-gray-mouse {
+  --progress-bar-color: hsl(199, 15%, 40%);
+  --progress-bar-back-color: hsl(199, 15%, 70%);
+}
 .bar-lime {
   --progress-bar-color: hsl(93, 97%, 71%);
 }
@@ -67405,6 +69475,39 @@ label:has(input) {
   min-height: 40px;
   padding-left: 50px;
   padding-right: 50px;
+}
+.remark.gray {
+  border-color: hsl(0, 0%, 80%);
+  color: #191919;
+  background: hsl(0, 0%, 95%);
+}
+.remark.gray .icon {
+  color: hsl(0, 0%, 80%);
+}
+.remark.gray::before {
+  color: hsl(0, 0%, 80%);
+}
+.remark.gray-blue {
+  border-color: hsl(210, 26%, 54%);
+  color: #191919;
+  background: hsl(210, 26%, 84%);
+}
+.remark.gray-blue .icon {
+  color: hsl(210, 26%, 54%);
+}
+.remark.gray-blue::before {
+  color: hsl(210, 26%, 54%);
+}
+.remark.gray-mouse {
+  border-color: hsl(199, 15%, 40%);
+  color: #191919;
+  background: hsl(199, 15%, 70%);
+}
+.remark.gray-mouse .icon {
+  color: hsl(199, 15%, 40%);
+}
+.remark.gray-mouse::before {
+  color: hsl(199, 15%, 40%);
 }
 .remark.lime {
   border-color: hsl(93, 97%, 71%);
@@ -69128,6 +71231,27 @@ label:has(input) {
   left: auto;
   right: 0;
 }
+.ribbon-gray {
+  background: hsl(0, 0%, 80%);
+  color: #ffffff;
+}
+.ribbon-gray::before {
+  color: hsl(0, 0%, 60%);
+}
+.ribbon-gray-blue {
+  background: hsl(210, 26%, 54%);
+  color: #ffffff;
+}
+.ribbon-gray-blue::before {
+  color: hsl(210, 26%, 34%);
+}
+.ribbon-gray-mouse {
+  background: hsl(199, 15%, 40%);
+  color: #ffffff;
+}
+.ribbon-gray-mouse::before {
+  color: hsl(199, 15%, 20%);
+}
 .ribbon-lime {
   background: hsl(93, 97%, 71%);
   color: #ffffff;
@@ -70235,6 +72359,42 @@ label:has(input) {
 .shadow-solid {
   box-shadow: 0 4px 8px -2px var(--shadow-color-solid-1), 0 0 0 1px var(--shadow-color-solid-2);
 }
+.shadow-3d-gray {
+  box-shadow: 8px 8px 0 hsl(0, 0%, 80%);
+}
+.shadow-3d-border-gray {
+  box-shadow: 0 0 0 2px hsl(0, 0%, 80%), 8px 8px 0 0 hsl(0, 0%, 80%);
+}
+.shadow-glow-gray {
+  box-shadow: 0 0px 30px hsl(0, 0%, 80%);
+}
+.shadow-glow-soft-gray {
+  box-shadow: 0 9px 30px hsl(0, 0%, 95%);
+}
+.shadow-3d-gray-blue {
+  box-shadow: 8px 8px 0 hsl(210, 26%, 54%);
+}
+.shadow-3d-border-gray-blue {
+  box-shadow: 0 0 0 2px hsl(210, 26%, 54%), 8px 8px 0 0 hsl(210, 26%, 54%);
+}
+.shadow-glow-gray-blue {
+  box-shadow: 0 0px 30px hsl(210, 26%, 54%);
+}
+.shadow-glow-soft-gray-blue {
+  box-shadow: 0 9px 30px hsl(210, 26%, 84%);
+}
+.shadow-3d-gray-mouse {
+  box-shadow: 8px 8px 0 hsl(199, 15%, 40%);
+}
+.shadow-3d-border-gray-mouse {
+  box-shadow: 0 0 0 2px hsl(199, 15%, 40%), 8px 8px 0 0 hsl(199, 15%, 40%);
+}
+.shadow-glow-gray-mouse {
+  box-shadow: 0 0px 30px hsl(199, 15%, 40%);
+}
+.shadow-glow-soft-gray-mouse {
+  box-shadow: 0 9px 30px hsl(199, 15%, 70%);
+}
 .shadow-3d-lime {
   box-shadow: 8px 8px 0 hsl(93, 97%, 71%);
 }
@@ -70648,6 +72808,15 @@ label:has(input) {
     0 6px 0 #444,
     0 7px 0 #333,
     0 8px 7px #001135;
+}
+.text-shadow-glow-gray {
+  text-shadow: 0 0 10px hsl(0, 0%, 80%);
+}
+.text-shadow-glow-gray-blue {
+  text-shadow: 0 0 10px hsl(210, 26%, 54%);
+}
+.text-shadow-glow-gray-mouse {
+  text-shadow: 0 0 10px hsl(199, 15%, 40%);
 }
 .text-shadow-glow-lime {
   text-shadow: 0 0 10px hsl(93, 97%, 71%);
@@ -71542,6 +73711,15 @@ label:has(input) {
 }
 .sidenav-m3 .d-menu a {
   border-radius: 0 !important;
+}
+.stick-color-gray::before {
+  background-color: hsl(0, 0%, 80%) !important;
+}
+.stick-color-gray-blue::before {
+  background-color: hsl(210, 26%, 54%) !important;
+}
+.stick-color-gray-mouse::before {
+  background-color: hsl(199, 15%, 40%) !important;
 }
 .stick-color-lime::before {
   background-color: hsl(93, 97%, 71%) !important;
@@ -73260,6 +75438,15 @@ html.metro-touch-device .streamer .stream.focused .stream-icon {
 }
 .switch:has(input:disabled) {
   cursor: default;
+}
+.switch-gray {
+  --switch-background-checked: hsl(0, 0%, 80%) !important;
+}
+.switch-gray-blue {
+  --switch-background-checked: hsl(210, 26%, 54%) !important;
+}
+.switch-gray-mouse {
+  --switch-background-checked: hsl(199, 15%, 40%) !important;
 }
 .switch-lime {
   --switch-background-checked: hsl(93, 97%, 71%) !important;

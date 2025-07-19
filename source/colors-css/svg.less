@@ -1,16 +1,17 @@
 @import (once) "../include/vars";
 
+each(@colors, {
+    .fc-@{value} {fill: @@value !important;}
+    .fc-@{value}-active {&:active {fill: @@value !important;}}
+    .fc-@{value}-hover {&:hover {fill: @@value !important;}}
+    .fc-@{value}-focus {&:focus {fill: @@value !important;}}
+})
+
 each(@normalColors, {
     @lightColor: "light-@{value}";
     @darkColor: "dark-@{value}";
     @minorColor: "minor-@{value}";
     @satColor: "sat-@{value}";
-    
-    
-    .fc-@{value} {fill: @@value !important;}
-    .fc-@{value}-active {&:active {fill: @@value !important;}}
-    .fc-@{value}-hover {&:hover {fill: @@value !important;}}
-    .fc-@{value}-focus {&:focus {fill: @@value !important;}}
 
     .fc-light-@{value} {fill: @@lightColor !important;}
     .fc-light-@{value}-active {&:active {fill: @@lightColor !important;}}
