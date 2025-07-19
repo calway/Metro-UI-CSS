@@ -1,7 +1,7 @@
 @import "../../include/vars";
 
 :root {
-    --radio-height: 36px;
+    --radio-size: 22px;
     --radio-color: #575757;
     --radio-color-disabled: #c3c3c3;
     --radio-background-disabled: #efefef;
@@ -17,9 +17,9 @@
 
 input[type=radio] {
     appearance: none;
-    width: 22px;
-    height: 22px;
-    line-height: var(--radio-height);
+    width: var(--radio-size, 22px);
+    height: var(--radio-size, 22px);
+    line-height: calc(var(--radio-size) * 1.6);
     border-radius: 50%;
     border: 2px solid var(--radio-color);
     position: relative;
@@ -60,6 +60,19 @@ input[type=radio] {
             background-color: var(--radio-color-disabled);
             border: none;
         }
+    }
+
+    &.small {
+        --radio-size: 16px;
+    }
+    &.medium {
+        --radio-size: 19px;
+    }
+    &.large {
+        --radio-size: 25px;
+    }
+    &.largest {
+        --radio-size: 34px;
     }
 }
 

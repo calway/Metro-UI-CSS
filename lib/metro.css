@@ -36905,102 +36905,6 @@ hr.fat {
 }
 
 /* source/colors-css/outline.less */
-.ol-black {
-  outline-color: #000000 !important;
-}
-.ol-black-active:active {
-  outline-color: #000000 !important;
-}
-.ol-black-hover:hover {
-  outline-color: #000000 !important;
-}
-.ol-black-focus:focus {
-  outline-color: #000000 !important;
-}
-.ol-white {
-  outline-color: #ffffff !important;
-}
-.ol-white-active:active {
-  outline-color: #ffffff !important;
-}
-.ol-white-hover:hover {
-  outline-color: #ffffff !important;
-}
-.ol-white-focus:focus {
-  outline-color: #ffffff !important;
-}
-.ol-dark {
-  outline-color: #1d1d1d !important;
-}
-.ol-dark-active:active {
-  outline-color: #1d1d1d !important;
-}
-.ol-dark-hover:hover {
-  outline-color: #1d1d1d !important;
-}
-.ol-dark-focus:focus {
-  outline-color: #1d1d1d !important;
-}
-.ol-light {
-  outline-color: #f8f8f8 !important;
-}
-.ol-light-active:active {
-  outline-color: #f8f8f8 !important;
-}
-.ol-light-hover:hover {
-  outline-color: #f8f8f8 !important;
-}
-.ol-light-focus:focus {
-  outline-color: #f8f8f8 !important;
-}
-.ol-gray {
-  outline-color: hsl(0, 0%, 80%) !important;
-}
-.ol-gray-active:active {
-  outline-color: hsl(0, 0%, 80%) !important;
-}
-.ol-gray-hover:hover {
-  outline-color: hsl(0, 0%, 80%) !important;
-}
-.ol-gray-focus:focus {
-  outline-color: hsl(0, 0%, 80%) !important;
-}
-.ol-gray-blue {
-  outline-color: hsl(210, 26%, 54%) !important;
-}
-.ol-gray-blue-active:active {
-  outline-color: hsl(210, 26%, 54%) !important;
-}
-.ol-gray-blue-hover:hover {
-  outline-color: hsl(210, 26%, 54%) !important;
-}
-.ol-gray-blue-focus:focus {
-  outline-color: hsl(210, 26%, 54%) !important;
-}
-.ol-gray-white {
-  outline-color: hsl(0, 0%, 96%) !important;
-}
-.ol-gray-white-active:active {
-  outline-color: hsl(0, 0%, 96%) !important;
-}
-.ol-gray-white-hover:hover {
-  outline-color: hsl(0, 0%, 96%) !important;
-}
-.ol-gray-white-focus:focus {
-  outline-color: hsl(0, 0%, 96%) !important;
-}
-.ol-gray-mouse {
-  outline-color: hsl(199, 15%, 40%) !important;
-}
-.ol-gray-mouse-active:active {
-  outline-color: hsl(199, 15%, 40%) !important;
-}
-.ol-gray-mouse-hover:hover {
-  outline-color: hsl(199, 15%, 40%) !important;
-}
-.ol-gray-mouse-focus:focus {
-  outline-color: hsl(199, 15%, 40%) !important;
-}
 .ol-lime {
   outline-color: hsl(93, 97%, 71%) !important;
 }
@@ -37012,6 +36916,54 @@ hr.fat {
 }
 .ol-lime-focus:focus {
   outline-color: hsl(93, 97%, 71%) !important;
+}
+.ol-light-lime {
+  outline-color: hsl(93, 97%, 91%) !important;
+}
+.ol-light-lime-active:active {
+  outline-color: hsl(93, 97%, 91%) !important;
+}
+.ol-light-lime-hover:hover {
+  outline-color: hsl(93, 97%, 91%) !important;
+}
+.ol-light-lime-focus:focus {
+  outline-color: hsl(93, 97%, 91%) !important;
+}
+.ol-minor-lime {
+  outline-color: hsl(93, 97%, 81%) !important;
+}
+.ol-minor-lime-active:active {
+  outline-color: hsl(93, 97%, 81%) !important;
+}
+.ol-minor-lime-hover:hover {
+  outline-color: hsl(93, 97%, 81%) !important;
+}
+.ol-minor-lime-focus:focus {
+  outline-color: hsl(93, 97%, 81%) !important;
+}
+.ol-sat-lime {
+  outline-color: hsl(93, 97%, 61%) !important;
+}
+.ol-sat-lime-active:active {
+  outline-color: hsl(93, 97%, 61%) !important;
+}
+.ol-sat-lime-hover:hover {
+  outline-color: hsl(93, 97%, 61%) !important;
+}
+.ol-sat-lime-focus:focus {
+  outline-color: hsl(93, 97%, 61%) !important;
+}
+.ol-dark-lime {
+  outline-color: hsl(93, 97%, 51%) !important;
+}
+.ol-dark-lime-active:active {
+  outline-color: hsl(93, 97%, 51%) !important;
+}
+.ol-dark-lime-hover:hover {
+  outline-color: hsl(93, 97%, 51%) !important;
+}
+.ol-dark-lime-focus:focus {
+  outline-color: hsl(93, 97%, 51%) !important;
 }
 .ol-green {
   outline-color: hsl(120, 100%, 35%) !important;
@@ -37025,6 +36977,54 @@ hr.fat {
 .ol-green-focus:focus {
   outline-color: hsl(120, 100%, 35%) !important;
 }
+.ol-light-green {
+  outline-color: hsl(120, 100%, 75%) !important;
+}
+.ol-light-green-active:active {
+  outline-color: hsl(120, 100%, 75%) !important;
+}
+.ol-light-green-hover:hover {
+  outline-color: hsl(120, 100%, 75%) !important;
+}
+.ol-light-green-focus:focus {
+  outline-color: hsl(120, 100%, 75%) !important;
+}
+.ol-minor-green {
+  outline-color: hsl(120, 100%, 45%) !important;
+}
+.ol-minor-green-active:active {
+  outline-color: hsl(120, 100%, 45%) !important;
+}
+.ol-minor-green-hover:hover {
+  outline-color: hsl(120, 100%, 45%) !important;
+}
+.ol-minor-green-focus:focus {
+  outline-color: hsl(120, 100%, 45%) !important;
+}
+.ol-sat-green {
+  outline-color: hsl(120, 100%, 25%) !important;
+}
+.ol-sat-green-active:active {
+  outline-color: hsl(120, 100%, 25%) !important;
+}
+.ol-sat-green-hover:hover {
+  outline-color: hsl(120, 100%, 25%) !important;
+}
+.ol-sat-green-focus:focus {
+  outline-color: hsl(120, 100%, 25%) !important;
+}
+.ol-dark-green {
+  outline-color: hsl(120, 100%, 15%) !important;
+}
+.ol-dark-green-active:active {
+  outline-color: hsl(120, 100%, 15%) !important;
+}
+.ol-dark-green-hover:hover {
+  outline-color: hsl(120, 100%, 15%) !important;
+}
+.ol-dark-green-focus:focus {
+  outline-color: hsl(120, 100%, 15%) !important;
+}
 .ol-emerald {
   outline-color: hsl(140, 52%, 55%) !important;
 }
@@ -37036,6 +37036,54 @@ hr.fat {
 }
 .ol-emerald-focus:focus {
   outline-color: hsl(140, 52%, 55%) !important;
+}
+.ol-light-emerald {
+  outline-color: hsl(140, 52%, 85%) !important;
+}
+.ol-light-emerald-active:active {
+  outline-color: hsl(140, 52%, 85%) !important;
+}
+.ol-light-emerald-hover:hover {
+  outline-color: hsl(140, 52%, 85%) !important;
+}
+.ol-light-emerald-focus:focus {
+  outline-color: hsl(140, 52%, 85%) !important;
+}
+.ol-minor-emerald {
+  outline-color: hsl(140, 52%, 65%) !important;
+}
+.ol-minor-emerald-active:active {
+  outline-color: hsl(140, 52%, 65%) !important;
+}
+.ol-minor-emerald-hover:hover {
+  outline-color: hsl(140, 52%, 65%) !important;
+}
+.ol-minor-emerald-focus:focus {
+  outline-color: hsl(140, 52%, 65%) !important;
+}
+.ol-sat-emerald {
+  outline-color: hsl(140, 52%, 45%) !important;
+}
+.ol-sat-emerald-active:active {
+  outline-color: hsl(140, 52%, 45%) !important;
+}
+.ol-sat-emerald-hover:hover {
+  outline-color: hsl(140, 52%, 45%) !important;
+}
+.ol-sat-emerald-focus:focus {
+  outline-color: hsl(140, 52%, 45%) !important;
+}
+.ol-dark-emerald {
+  outline-color: hsl(140, 52%, 35%) !important;
+}
+.ol-dark-emerald-active:active {
+  outline-color: hsl(140, 52%, 35%) !important;
+}
+.ol-dark-emerald-hover:hover {
+  outline-color: hsl(140, 52%, 35%) !important;
+}
+.ol-dark-emerald-focus:focus {
+  outline-color: hsl(140, 52%, 35%) !important;
 }
 .ol-blue {
   outline-color: hsl(225, 100%, 68%) !important;
@@ -37049,6 +37097,54 @@ hr.fat {
 .ol-blue-focus:focus {
   outline-color: hsl(225, 100%, 68%) !important;
 }
+.ol-light-blue {
+  outline-color: hsl(225, 100%, 93%) !important;
+}
+.ol-light-blue-active:active {
+  outline-color: hsl(225, 100%, 93%) !important;
+}
+.ol-light-blue-hover:hover {
+  outline-color: hsl(225, 100%, 93%) !important;
+}
+.ol-light-blue-focus:focus {
+  outline-color: hsl(225, 100%, 93%) !important;
+}
+.ol-minor-blue {
+  outline-color: hsl(225, 100%, 78%) !important;
+}
+.ol-minor-blue-active:active {
+  outline-color: hsl(225, 100%, 78%) !important;
+}
+.ol-minor-blue-hover:hover {
+  outline-color: hsl(225, 100%, 78%) !important;
+}
+.ol-minor-blue-focus:focus {
+  outline-color: hsl(225, 100%, 78%) !important;
+}
+.ol-sat-blue {
+  outline-color: hsl(225, 100%, 58%) !important;
+}
+.ol-sat-blue-active:active {
+  outline-color: hsl(225, 100%, 58%) !important;
+}
+.ol-sat-blue-hover:hover {
+  outline-color: hsl(225, 100%, 58%) !important;
+}
+.ol-sat-blue-focus:focus {
+  outline-color: hsl(225, 100%, 58%) !important;
+}
+.ol-dark-blue {
+  outline-color: hsl(225, 100%, 48%) !important;
+}
+.ol-dark-blue-active:active {
+  outline-color: hsl(225, 100%, 48%) !important;
+}
+.ol-dark-blue-hover:hover {
+  outline-color: hsl(225, 100%, 48%) !important;
+}
+.ol-dark-blue-focus:focus {
+  outline-color: hsl(225, 100%, 48%) !important;
+}
 .ol-teal {
   outline-color: hsl(180, 77%, 44%) !important;
 }
@@ -37060,6 +37156,54 @@ hr.fat {
 }
 .ol-teal-focus:focus {
   outline-color: hsl(180, 77%, 44%) !important;
+}
+.ol-light-teal {
+  outline-color: hsl(180, 77%, 74%) !important;
+}
+.ol-light-teal-active:active {
+  outline-color: hsl(180, 77%, 74%) !important;
+}
+.ol-light-teal-hover:hover {
+  outline-color: hsl(180, 77%, 74%) !important;
+}
+.ol-light-teal-focus:focus {
+  outline-color: hsl(180, 77%, 74%) !important;
+}
+.ol-minor-teal {
+  outline-color: hsl(180, 77%, 54%) !important;
+}
+.ol-minor-teal-active:active {
+  outline-color: hsl(180, 77%, 54%) !important;
+}
+.ol-minor-teal-hover:hover {
+  outline-color: hsl(180, 77%, 54%) !important;
+}
+.ol-minor-teal-focus:focus {
+  outline-color: hsl(180, 77%, 54%) !important;
+}
+.ol-sat-teal {
+  outline-color: hsl(180, 77%, 34%) !important;
+}
+.ol-sat-teal-active:active {
+  outline-color: hsl(180, 77%, 34%) !important;
+}
+.ol-sat-teal-hover:hover {
+  outline-color: hsl(180, 77%, 34%) !important;
+}
+.ol-sat-teal-focus:focus {
+  outline-color: hsl(180, 77%, 34%) !important;
+}
+.ol-dark-teal {
+  outline-color: hsl(180, 77%, 24%) !important;
+}
+.ol-dark-teal-active:active {
+  outline-color: hsl(180, 77%, 24%) !important;
+}
+.ol-dark-teal-hover:hover {
+  outline-color: hsl(180, 77%, 24%) !important;
+}
+.ol-dark-teal-focus:focus {
+  outline-color: hsl(180, 77%, 24%) !important;
 }
 .ol-cyan {
   outline-color: hsl(221, 100%, 79%) !important;
@@ -37073,6 +37217,54 @@ hr.fat {
 .ol-cyan-focus:focus {
   outline-color: hsl(221, 100%, 79%) !important;
 }
+.ol-light-cyan {
+  outline-color: hsl(221, 100%, 94%) !important;
+}
+.ol-light-cyan-active:active {
+  outline-color: hsl(221, 100%, 94%) !important;
+}
+.ol-light-cyan-hover:hover {
+  outline-color: hsl(221, 100%, 94%) !important;
+}
+.ol-light-cyan-focus:focus {
+  outline-color: hsl(221, 100%, 94%) !important;
+}
+.ol-minor-cyan {
+  outline-color: hsl(221, 100%, 89%) !important;
+}
+.ol-minor-cyan-active:active {
+  outline-color: hsl(221, 100%, 89%) !important;
+}
+.ol-minor-cyan-hover:hover {
+  outline-color: hsl(221, 100%, 89%) !important;
+}
+.ol-minor-cyan-focus:focus {
+  outline-color: hsl(221, 100%, 89%) !important;
+}
+.ol-sat-cyan {
+  outline-color: hsl(221, 100%, 69%) !important;
+}
+.ol-sat-cyan-active:active {
+  outline-color: hsl(221, 100%, 69%) !important;
+}
+.ol-sat-cyan-hover:hover {
+  outline-color: hsl(221, 100%, 69%) !important;
+}
+.ol-sat-cyan-focus:focus {
+  outline-color: hsl(221, 100%, 69%) !important;
+}
+.ol-dark-cyan {
+  outline-color: hsl(221, 100%, 59%) !important;
+}
+.ol-dark-cyan-active:active {
+  outline-color: hsl(221, 100%, 59%) !important;
+}
+.ol-dark-cyan-hover:hover {
+  outline-color: hsl(221, 100%, 59%) !important;
+}
+.ol-dark-cyan-focus:focus {
+  outline-color: hsl(221, 100%, 59%) !important;
+}
 .ol-cobalt {
   outline-color: hsl(215, 100%, 34%) !important;
 }
@@ -37084,6 +37276,54 @@ hr.fat {
 }
 .ol-cobalt-focus:focus {
   outline-color: hsl(215, 100%, 34%) !important;
+}
+.ol-light-cobalt {
+  outline-color: hsl(215, 100%, 74%) !important;
+}
+.ol-light-cobalt-active:active {
+  outline-color: hsl(215, 100%, 74%) !important;
+}
+.ol-light-cobalt-hover:hover {
+  outline-color: hsl(215, 100%, 74%) !important;
+}
+.ol-light-cobalt-focus:focus {
+  outline-color: hsl(215, 100%, 74%) !important;
+}
+.ol-minor-cobalt {
+  outline-color: hsl(215, 100%, 44%) !important;
+}
+.ol-minor-cobalt-active:active {
+  outline-color: hsl(215, 100%, 44%) !important;
+}
+.ol-minor-cobalt-hover:hover {
+  outline-color: hsl(215, 100%, 44%) !important;
+}
+.ol-minor-cobalt-focus:focus {
+  outline-color: hsl(215, 100%, 44%) !important;
+}
+.ol-sat-cobalt {
+  outline-color: hsl(215, 100%, 24%) !important;
+}
+.ol-sat-cobalt-active:active {
+  outline-color: hsl(215, 100%, 24%) !important;
+}
+.ol-sat-cobalt-hover:hover {
+  outline-color: hsl(215, 100%, 24%) !important;
+}
+.ol-sat-cobalt-focus:focus {
+  outline-color: hsl(215, 100%, 24%) !important;
+}
+.ol-dark-cobalt {
+  outline-color: hsl(215, 100%, 14%) !important;
+}
+.ol-dark-cobalt-active:active {
+  outline-color: hsl(215, 100%, 14%) !important;
+}
+.ol-dark-cobalt-hover:hover {
+  outline-color: hsl(215, 100%, 14%) !important;
+}
+.ol-dark-cobalt-focus:focus {
+  outline-color: hsl(215, 100%, 14%) !important;
 }
 .ol-indigo {
   outline-color: hsl(276, 100%, 33%) !important;
@@ -37097,6 +37337,54 @@ hr.fat {
 .ol-indigo-focus:focus {
   outline-color: hsl(276, 100%, 33%) !important;
 }
+.ol-light-indigo {
+  outline-color: hsl(276, 100%, 73%) !important;
+}
+.ol-light-indigo-active:active {
+  outline-color: hsl(276, 100%, 73%) !important;
+}
+.ol-light-indigo-hover:hover {
+  outline-color: hsl(276, 100%, 73%) !important;
+}
+.ol-light-indigo-focus:focus {
+  outline-color: hsl(276, 100%, 73%) !important;
+}
+.ol-minor-indigo {
+  outline-color: hsl(276, 100%, 43%) !important;
+}
+.ol-minor-indigo-active:active {
+  outline-color: hsl(276, 100%, 43%) !important;
+}
+.ol-minor-indigo-hover:hover {
+  outline-color: hsl(276, 100%, 43%) !important;
+}
+.ol-minor-indigo-focus:focus {
+  outline-color: hsl(276, 100%, 43%) !important;
+}
+.ol-sat-indigo {
+  outline-color: hsl(276, 100%, 23%) !important;
+}
+.ol-sat-indigo-active:active {
+  outline-color: hsl(276, 100%, 23%) !important;
+}
+.ol-sat-indigo-hover:hover {
+  outline-color: hsl(276, 100%, 23%) !important;
+}
+.ol-sat-indigo-focus:focus {
+  outline-color: hsl(276, 100%, 23%) !important;
+}
+.ol-dark-indigo {
+  outline-color: hsl(276, 100%, 13%) !important;
+}
+.ol-dark-indigo-active:active {
+  outline-color: hsl(276, 100%, 13%) !important;
+}
+.ol-dark-indigo-hover:hover {
+  outline-color: hsl(276, 100%, 13%) !important;
+}
+.ol-dark-indigo-focus:focus {
+  outline-color: hsl(276, 100%, 13%) !important;
+}
 .ol-almost {
   outline-color: hsl(259, 84%, 55%) !important;
 }
@@ -37108,6 +37396,54 @@ hr.fat {
 }
 .ol-almost-focus:focus {
   outline-color: hsl(259, 84%, 55%) !important;
+}
+.ol-light-almost {
+  outline-color: hsl(259, 84%, 85%) !important;
+}
+.ol-light-almost-active:active {
+  outline-color: hsl(259, 84%, 85%) !important;
+}
+.ol-light-almost-hover:hover {
+  outline-color: hsl(259, 84%, 85%) !important;
+}
+.ol-light-almost-focus:focus {
+  outline-color: hsl(259, 84%, 85%) !important;
+}
+.ol-minor-almost {
+  outline-color: hsl(259, 84%, 65%) !important;
+}
+.ol-minor-almost-active:active {
+  outline-color: hsl(259, 84%, 65%) !important;
+}
+.ol-minor-almost-hover:hover {
+  outline-color: hsl(259, 84%, 65%) !important;
+}
+.ol-minor-almost-focus:focus {
+  outline-color: hsl(259, 84%, 65%) !important;
+}
+.ol-sat-almost {
+  outline-color: hsl(259, 84%, 45%) !important;
+}
+.ol-sat-almost-active:active {
+  outline-color: hsl(259, 84%, 45%) !important;
+}
+.ol-sat-almost-hover:hover {
+  outline-color: hsl(259, 84%, 45%) !important;
+}
+.ol-sat-almost-focus:focus {
+  outline-color: hsl(259, 84%, 45%) !important;
+}
+.ol-dark-almost {
+  outline-color: hsl(259, 84%, 35%) !important;
+}
+.ol-dark-almost-active:active {
+  outline-color: hsl(259, 84%, 35%) !important;
+}
+.ol-dark-almost-hover:hover {
+  outline-color: hsl(259, 84%, 35%) !important;
+}
+.ol-dark-almost-focus:focus {
+  outline-color: hsl(259, 84%, 35%) !important;
 }
 .ol-violet {
   outline-color: hsl(300, 76%, 72%) !important;
@@ -37121,6 +37457,54 @@ hr.fat {
 .ol-violet-focus:focus {
   outline-color: hsl(300, 76%, 72%) !important;
 }
+.ol-light-violet {
+  outline-color: hsl(300, 76%, 92%) !important;
+}
+.ol-light-violet-active:active {
+  outline-color: hsl(300, 76%, 92%) !important;
+}
+.ol-light-violet-hover:hover {
+  outline-color: hsl(300, 76%, 92%) !important;
+}
+.ol-light-violet-focus:focus {
+  outline-color: hsl(300, 76%, 92%) !important;
+}
+.ol-minor-violet {
+  outline-color: hsl(300, 76%, 82%) !important;
+}
+.ol-minor-violet-active:active {
+  outline-color: hsl(300, 76%, 82%) !important;
+}
+.ol-minor-violet-hover:hover {
+  outline-color: hsl(300, 76%, 82%) !important;
+}
+.ol-minor-violet-focus:focus {
+  outline-color: hsl(300, 76%, 82%) !important;
+}
+.ol-sat-violet {
+  outline-color: hsl(300, 76%, 62%) !important;
+}
+.ol-sat-violet-active:active {
+  outline-color: hsl(300, 76%, 62%) !important;
+}
+.ol-sat-violet-hover:hover {
+  outline-color: hsl(300, 76%, 62%) !important;
+}
+.ol-sat-violet-focus:focus {
+  outline-color: hsl(300, 76%, 62%) !important;
+}
+.ol-dark-violet {
+  outline-color: hsl(300, 76%, 52%) !important;
+}
+.ol-dark-violet-active:active {
+  outline-color: hsl(300, 76%, 52%) !important;
+}
+.ol-dark-violet-hover:hover {
+  outline-color: hsl(300, 76%, 52%) !important;
+}
+.ol-dark-violet-focus:focus {
+  outline-color: hsl(300, 76%, 52%) !important;
+}
 .ol-pink {
   outline-color: hsl(350, 100%, 88%) !important;
 }
@@ -37132,6 +37516,54 @@ hr.fat {
 }
 .ol-pink-focus:focus {
   outline-color: hsl(350, 100%, 88%) !important;
+}
+.ol-light-pink {
+  outline-color: hsl(350, 100%, 98%) !important;
+}
+.ol-light-pink-active:active {
+  outline-color: hsl(350, 100%, 98%) !important;
+}
+.ol-light-pink-hover:hover {
+  outline-color: hsl(350, 100%, 98%) !important;
+}
+.ol-light-pink-focus:focus {
+  outline-color: hsl(350, 100%, 98%) !important;
+}
+.ol-minor-pink {
+  outline-color: hsl(350, 100%, 93%) !important;
+}
+.ol-minor-pink-active:active {
+  outline-color: hsl(350, 100%, 93%) !important;
+}
+.ol-minor-pink-hover:hover {
+  outline-color: hsl(350, 100%, 93%) !important;
+}
+.ol-minor-pink-focus:focus {
+  outline-color: hsl(350, 100%, 93%) !important;
+}
+.ol-sat-pink {
+  outline-color: hsl(350, 100%, 78%) !important;
+}
+.ol-sat-pink-active:active {
+  outline-color: hsl(350, 100%, 78%) !important;
+}
+.ol-sat-pink-hover:hover {
+  outline-color: hsl(350, 100%, 78%) !important;
+}
+.ol-sat-pink-focus:focus {
+  outline-color: hsl(350, 100%, 78%) !important;
+}
+.ol-dark-pink {
+  outline-color: hsl(350, 100%, 68%) !important;
+}
+.ol-dark-pink-active:active {
+  outline-color: hsl(350, 100%, 68%) !important;
+}
+.ol-dark-pink-hover:hover {
+  outline-color: hsl(350, 100%, 68%) !important;
+}
+.ol-dark-pink-focus:focus {
+  outline-color: hsl(350, 100%, 68%) !important;
 }
 .ol-magenta {
   outline-color: hsl(300, 100%, 50%) !important;
@@ -37145,6 +37577,54 @@ hr.fat {
 .ol-magenta-focus:focus {
   outline-color: hsl(300, 100%, 50%) !important;
 }
+.ol-light-magenta {
+  outline-color: hsl(300, 100%, 90%) !important;
+}
+.ol-light-magenta-active:active {
+  outline-color: hsl(300, 100%, 90%) !important;
+}
+.ol-light-magenta-hover:hover {
+  outline-color: hsl(300, 100%, 90%) !important;
+}
+.ol-light-magenta-focus:focus {
+  outline-color: hsl(300, 100%, 90%) !important;
+}
+.ol-minor-magenta {
+  outline-color: hsl(300, 100%, 70%) !important;
+}
+.ol-minor-magenta-active:active {
+  outline-color: hsl(300, 100%, 70%) !important;
+}
+.ol-minor-magenta-hover:hover {
+  outline-color: hsl(300, 100%, 70%) !important;
+}
+.ol-minor-magenta-focus:focus {
+  outline-color: hsl(300, 100%, 70%) !important;
+}
+.ol-sat-magenta {
+  outline-color: hsl(300, 100%, 40%) !important;
+}
+.ol-sat-magenta-active:active {
+  outline-color: hsl(300, 100%, 40%) !important;
+}
+.ol-sat-magenta-hover:hover {
+  outline-color: hsl(300, 100%, 40%) !important;
+}
+.ol-sat-magenta-focus:focus {
+  outline-color: hsl(300, 100%, 40%) !important;
+}
+.ol-dark-magenta {
+  outline-color: hsl(300, 100%, 30%) !important;
+}
+.ol-dark-magenta-active:active {
+  outline-color: hsl(300, 100%, 30%) !important;
+}
+.ol-dark-magenta-hover:hover {
+  outline-color: hsl(300, 100%, 30%) !important;
+}
+.ol-dark-magenta-focus:focus {
+  outline-color: hsl(300, 100%, 30%) !important;
+}
 .ol-crimson {
   outline-color: hsl(348, 88%, 46%) !important;
 }
@@ -37156,6 +37636,54 @@ hr.fat {
 }
 .ol-crimson-focus:focus {
   outline-color: hsl(348, 88%, 46%) !important;
+}
+.ol-light-crimson {
+  outline-color: hsl(348, 88%, 81%) !important;
+}
+.ol-light-crimson-active:active {
+  outline-color: hsl(348, 88%, 81%) !important;
+}
+.ol-light-crimson-hover:hover {
+  outline-color: hsl(348, 88%, 81%) !important;
+}
+.ol-light-crimson-focus:focus {
+  outline-color: hsl(348, 88%, 81%) !important;
+}
+.ol-minor-crimson {
+  outline-color: hsl(348, 88%, 66%) !important;
+}
+.ol-minor-crimson-active:active {
+  outline-color: hsl(348, 88%, 66%) !important;
+}
+.ol-minor-crimson-hover:hover {
+  outline-color: hsl(348, 88%, 66%) !important;
+}
+.ol-minor-crimson-focus:focus {
+  outline-color: hsl(348, 88%, 66%) !important;
+}
+.ol-sat-crimson {
+  outline-color: hsl(348, 88%, 36%) !important;
+}
+.ol-sat-crimson-active:active {
+  outline-color: hsl(348, 88%, 36%) !important;
+}
+.ol-sat-crimson-hover:hover {
+  outline-color: hsl(348, 88%, 36%) !important;
+}
+.ol-sat-crimson-focus:focus {
+  outline-color: hsl(348, 88%, 36%) !important;
+}
+.ol-dark-crimson {
+  outline-color: hsl(348, 88%, 26%) !important;
+}
+.ol-dark-crimson-active:active {
+  outline-color: hsl(348, 88%, 26%) !important;
+}
+.ol-dark-crimson-hover:hover {
+  outline-color: hsl(348, 88%, 26%) !important;
+}
+.ol-dark-crimson-focus:focus {
+  outline-color: hsl(348, 88%, 26%) !important;
 }
 .ol-red {
   outline-color: hsl(0, 100%, 50%) !important;
@@ -37169,17 +37697,53 @@ hr.fat {
 .ol-red-focus:focus {
   outline-color: hsl(0, 100%, 50%) !important;
 }
-.ol-clown {
-  outline-color: hsl(3, 100%, 70%) !important;
+.ol-light-red {
+  outline-color: hsl(0, 100%, 80%) !important;
 }
-.ol-clown-active:active {
-  outline-color: hsl(3, 100%, 70%) !important;
+.ol-light-red-active:active {
+  outline-color: hsl(0, 100%, 80%) !important;
 }
-.ol-clown-hover:hover {
-  outline-color: hsl(3, 100%, 70%) !important;
+.ol-light-red-hover:hover {
+  outline-color: hsl(0, 100%, 80%) !important;
 }
-.ol-clown-focus:focus {
-  outline-color: hsl(3, 100%, 70%) !important;
+.ol-light-red-focus:focus {
+  outline-color: hsl(0, 100%, 80%) !important;
+}
+.ol-minor-red {
+  outline-color: hsl(0, 100%, 70%) !important;
+}
+.ol-minor-red-active:active {
+  outline-color: hsl(0, 100%, 70%) !important;
+}
+.ol-minor-red-hover:hover {
+  outline-color: hsl(0, 100%, 70%) !important;
+}
+.ol-minor-red-focus:focus {
+  outline-color: hsl(0, 100%, 70%) !important;
+}
+.ol-sat-red {
+  outline-color: hsl(0, 100%, 40%) !important;
+}
+.ol-sat-red-active:active {
+  outline-color: hsl(0, 100%, 40%) !important;
+}
+.ol-sat-red-hover:hover {
+  outline-color: hsl(0, 100%, 40%) !important;
+}
+.ol-sat-red-focus:focus {
+  outline-color: hsl(0, 100%, 40%) !important;
+}
+.ol-dark-red {
+  outline-color: hsl(0, 100%, 30%) !important;
+}
+.ol-dark-red-active:active {
+  outline-color: hsl(0, 100%, 30%) !important;
+}
+.ol-dark-red-hover:hover {
+  outline-color: hsl(0, 100%, 30%) !important;
+}
+.ol-dark-red-focus:focus {
+  outline-color: hsl(0, 100%, 30%) !important;
 }
 .ol-orange {
   outline-color: hsl(39, 100%, 50%) !important;
@@ -37193,6 +37757,54 @@ hr.fat {
 .ol-orange-focus:focus {
   outline-color: hsl(39, 100%, 50%) !important;
 }
+.ol-light-orange {
+  outline-color: hsl(39, 100%, 90%) !important;
+}
+.ol-light-orange-active:active {
+  outline-color: hsl(39, 100%, 90%) !important;
+}
+.ol-light-orange-hover:hover {
+  outline-color: hsl(39, 100%, 90%) !important;
+}
+.ol-light-orange-focus:focus {
+  outline-color: hsl(39, 100%, 90%) !important;
+}
+.ol-minor-orange {
+  outline-color: hsl(39, 100%, 70%) !important;
+}
+.ol-minor-orange-active:active {
+  outline-color: hsl(39, 100%, 70%) !important;
+}
+.ol-minor-orange-hover:hover {
+  outline-color: hsl(39, 100%, 70%) !important;
+}
+.ol-minor-orange-focus:focus {
+  outline-color: hsl(39, 100%, 70%) !important;
+}
+.ol-sat-orange {
+  outline-color: hsl(39, 100%, 40%) !important;
+}
+.ol-sat-orange-active:active {
+  outline-color: hsl(39, 100%, 40%) !important;
+}
+.ol-sat-orange-hover:hover {
+  outline-color: hsl(39, 100%, 40%) !important;
+}
+.ol-sat-orange-focus:focus {
+  outline-color: hsl(39, 100%, 40%) !important;
+}
+.ol-dark-orange {
+  outline-color: hsl(39, 100%, 30%) !important;
+}
+.ol-dark-orange-active:active {
+  outline-color: hsl(39, 100%, 30%) !important;
+}
+.ol-dark-orange-hover:hover {
+  outline-color: hsl(39, 100%, 30%) !important;
+}
+.ol-dark-orange-focus:focus {
+  outline-color: hsl(39, 100%, 30%) !important;
+}
 .ol-amber {
   outline-color: hsl(45, 100%, 58%) !important;
 }
@@ -37204,6 +37816,54 @@ hr.fat {
 }
 .ol-amber-focus:focus {
   outline-color: hsl(45, 100%, 58%) !important;
+}
+.ol-light-amber {
+  outline-color: hsl(45, 100%, 78%) !important;
+}
+.ol-light-amber-active:active {
+  outline-color: hsl(45, 100%, 78%) !important;
+}
+.ol-light-amber-hover:hover {
+  outline-color: hsl(45, 100%, 78%) !important;
+}
+.ol-light-amber-focus:focus {
+  outline-color: hsl(45, 100%, 78%) !important;
+}
+.ol-minor-amber {
+  outline-color: hsl(45, 100%, 68%) !important;
+}
+.ol-minor-amber-active:active {
+  outline-color: hsl(45, 100%, 68%) !important;
+}
+.ol-minor-amber-hover:hover {
+  outline-color: hsl(45, 100%, 68%) !important;
+}
+.ol-minor-amber-focus:focus {
+  outline-color: hsl(45, 100%, 68%) !important;
+}
+.ol-sat-amber {
+  outline-color: hsl(45, 100%, 48%) !important;
+}
+.ol-sat-amber-active:active {
+  outline-color: hsl(45, 100%, 48%) !important;
+}
+.ol-sat-amber-hover:hover {
+  outline-color: hsl(45, 100%, 48%) !important;
+}
+.ol-sat-amber-focus:focus {
+  outline-color: hsl(45, 100%, 48%) !important;
+}
+.ol-dark-amber {
+  outline-color: hsl(45, 100%, 38%) !important;
+}
+.ol-dark-amber-active:active {
+  outline-color: hsl(45, 100%, 38%) !important;
+}
+.ol-dark-amber-hover:hover {
+  outline-color: hsl(45, 100%, 38%) !important;
+}
+.ol-dark-amber-focus:focus {
+  outline-color: hsl(45, 100%, 38%) !important;
 }
 .ol-yellow {
   outline-color: hsl(52, 100%, 68%) !important;
@@ -37217,6 +37877,54 @@ hr.fat {
 .ol-yellow-focus:focus {
   outline-color: hsl(52, 100%, 68%) !important;
 }
+.ol-light-yellow {
+  outline-color: hsl(52, 100%, 93%) !important;
+}
+.ol-light-yellow-active:active {
+  outline-color: hsl(52, 100%, 93%) !important;
+}
+.ol-light-yellow-hover:hover {
+  outline-color: hsl(52, 100%, 93%) !important;
+}
+.ol-light-yellow-focus:focus {
+  outline-color: hsl(52, 100%, 93%) !important;
+}
+.ol-minor-yellow {
+  outline-color: hsl(52, 100%, 83%) !important;
+}
+.ol-minor-yellow-active:active {
+  outline-color: hsl(52, 100%, 83%) !important;
+}
+.ol-minor-yellow-hover:hover {
+  outline-color: hsl(52, 100%, 83%) !important;
+}
+.ol-minor-yellow-focus:focus {
+  outline-color: hsl(52, 100%, 83%) !important;
+}
+.ol-sat-yellow {
+  outline-color: hsl(52, 100%, 58%) !important;
+}
+.ol-sat-yellow-active:active {
+  outline-color: hsl(52, 100%, 58%) !important;
+}
+.ol-sat-yellow-hover:hover {
+  outline-color: hsl(52, 100%, 58%) !important;
+}
+.ol-sat-yellow-focus:focus {
+  outline-color: hsl(52, 100%, 58%) !important;
+}
+.ol-dark-yellow {
+  outline-color: hsl(52, 100%, 48%) !important;
+}
+.ol-dark-yellow-active:active {
+  outline-color: hsl(52, 100%, 48%) !important;
+}
+.ol-dark-yellow-hover:hover {
+  outline-color: hsl(52, 100%, 48%) !important;
+}
+.ol-dark-yellow-focus:focus {
+  outline-color: hsl(52, 100%, 48%) !important;
+}
 .ol-brown {
   outline-color: hsl(25, 57%, 51%) !important;
 }
@@ -37228,6 +37936,54 @@ hr.fat {
 }
 .ol-brown-focus:focus {
   outline-color: hsl(25, 57%, 51%) !important;
+}
+.ol-light-brown {
+  outline-color: hsl(25, 57%, 81%) !important;
+}
+.ol-light-brown-active:active {
+  outline-color: hsl(25, 57%, 81%) !important;
+}
+.ol-light-brown-hover:hover {
+  outline-color: hsl(25, 57%, 81%) !important;
+}
+.ol-light-brown-focus:focus {
+  outline-color: hsl(25, 57%, 81%) !important;
+}
+.ol-minor-brown {
+  outline-color: hsl(25, 57%, 66%) !important;
+}
+.ol-minor-brown-active:active {
+  outline-color: hsl(25, 57%, 66%) !important;
+}
+.ol-minor-brown-hover:hover {
+  outline-color: hsl(25, 57%, 66%) !important;
+}
+.ol-minor-brown-focus:focus {
+  outline-color: hsl(25, 57%, 66%) !important;
+}
+.ol-sat-brown {
+  outline-color: hsl(25, 57%, 41%) !important;
+}
+.ol-sat-brown-active:active {
+  outline-color: hsl(25, 57%, 41%) !important;
+}
+.ol-sat-brown-hover:hover {
+  outline-color: hsl(25, 57%, 41%) !important;
+}
+.ol-sat-brown-focus:focus {
+  outline-color: hsl(25, 57%, 41%) !important;
+}
+.ol-dark-brown {
+  outline-color: hsl(25, 57%, 31%) !important;
+}
+.ol-dark-brown-active:active {
+  outline-color: hsl(25, 57%, 31%) !important;
+}
+.ol-dark-brown-hover:hover {
+  outline-color: hsl(25, 57%, 31%) !important;
+}
+.ol-dark-brown-focus:focus {
+  outline-color: hsl(25, 57%, 31%) !important;
 }
 .ol-olive {
   outline-color: hsl(60, 100%, 32%) !important;
@@ -37241,6 +37997,54 @@ hr.fat {
 .ol-olive-focus:focus {
   outline-color: hsl(60, 100%, 32%) !important;
 }
+.ol-light-olive {
+  outline-color: hsl(60, 100%, 72%) !important;
+}
+.ol-light-olive-active:active {
+  outline-color: hsl(60, 100%, 72%) !important;
+}
+.ol-light-olive-hover:hover {
+  outline-color: hsl(60, 100%, 72%) !important;
+}
+.ol-light-olive-focus:focus {
+  outline-color: hsl(60, 100%, 72%) !important;
+}
+.ol-minor-olive {
+  outline-color: hsl(60, 100%, 42%) !important;
+}
+.ol-minor-olive-active:active {
+  outline-color: hsl(60, 100%, 42%) !important;
+}
+.ol-minor-olive-hover:hover {
+  outline-color: hsl(60, 100%, 42%) !important;
+}
+.ol-minor-olive-focus:focus {
+  outline-color: hsl(60, 100%, 42%) !important;
+}
+.ol-sat-olive {
+  outline-color: hsl(60, 100%, 22%) !important;
+}
+.ol-sat-olive-active:active {
+  outline-color: hsl(60, 100%, 22%) !important;
+}
+.ol-sat-olive-hover:hover {
+  outline-color: hsl(60, 100%, 22%) !important;
+}
+.ol-sat-olive-focus:focus {
+  outline-color: hsl(60, 100%, 22%) !important;
+}
+.ol-dark-olive {
+  outline-color: hsl(60, 100%, 12%) !important;
+}
+.ol-dark-olive-active:active {
+  outline-color: hsl(60, 100%, 12%) !important;
+}
+.ol-dark-olive-hover:hover {
+  outline-color: hsl(60, 100%, 12%) !important;
+}
+.ol-dark-olive-focus:focus {
+  outline-color: hsl(60, 100%, 12%) !important;
+}
 .ol-steel {
   outline-color: hsl(209, 19%, 57%) !important;
 }
@@ -37252,6 +38056,54 @@ hr.fat {
 }
 .ol-steel-focus:focus {
   outline-color: hsl(209, 19%, 57%) !important;
+}
+.ol-light-steel {
+  outline-color: hsl(209, 19%, 87%) !important;
+}
+.ol-light-steel-active:active {
+  outline-color: hsl(209, 19%, 87%) !important;
+}
+.ol-light-steel-hover:hover {
+  outline-color: hsl(209, 19%, 87%) !important;
+}
+.ol-light-steel-focus:focus {
+  outline-color: hsl(209, 19%, 87%) !important;
+}
+.ol-minor-steel {
+  outline-color: hsl(209, 19%, 77%) !important;
+}
+.ol-minor-steel-active:active {
+  outline-color: hsl(209, 19%, 77%) !important;
+}
+.ol-minor-steel-hover:hover {
+  outline-color: hsl(209, 19%, 77%) !important;
+}
+.ol-minor-steel-focus:focus {
+  outline-color: hsl(209, 19%, 77%) !important;
+}
+.ol-sat-steel {
+  outline-color: hsl(209, 19%, 47%) !important;
+}
+.ol-sat-steel-active:active {
+  outline-color: hsl(209, 19%, 47%) !important;
+}
+.ol-sat-steel-hover:hover {
+  outline-color: hsl(209, 19%, 47%) !important;
+}
+.ol-sat-steel-focus:focus {
+  outline-color: hsl(209, 19%, 47%) !important;
+}
+.ol-dark-steel {
+  outline-color: hsl(209, 19%, 37%) !important;
+}
+.ol-dark-steel-active:active {
+  outline-color: hsl(209, 19%, 37%) !important;
+}
+.ol-dark-steel-hover:hover {
+  outline-color: hsl(209, 19%, 37%) !important;
+}
+.ol-dark-steel-focus:focus {
+  outline-color: hsl(209, 19%, 37%) !important;
 }
 .ol-mauve {
   outline-color: hsl(277, 100%, 84%) !important;
@@ -37265,6 +38117,54 @@ hr.fat {
 .ol-mauve-focus:focus {
   outline-color: hsl(277, 100%, 84%) !important;
 }
+.ol-light-mauve {
+  outline-color: hsl(277, 100%, 96%) !important;
+}
+.ol-light-mauve-active:active {
+  outline-color: hsl(277, 100%, 96%) !important;
+}
+.ol-light-mauve-hover:hover {
+  outline-color: hsl(277, 100%, 96%) !important;
+}
+.ol-light-mauve-focus:focus {
+  outline-color: hsl(277, 100%, 96%) !important;
+}
+.ol-minor-mauve {
+  outline-color: hsl(277, 100%, 90%) !important;
+}
+.ol-minor-mauve-active:active {
+  outline-color: hsl(277, 100%, 90%) !important;
+}
+.ol-minor-mauve-hover:hover {
+  outline-color: hsl(277, 100%, 90%) !important;
+}
+.ol-minor-mauve-focus:focus {
+  outline-color: hsl(277, 100%, 90%) !important;
+}
+.ol-sat-mauve {
+  outline-color: hsl(277, 100%, 74%) !important;
+}
+.ol-sat-mauve-active:active {
+  outline-color: hsl(277, 100%, 74%) !important;
+}
+.ol-sat-mauve-hover:hover {
+  outline-color: hsl(277, 100%, 74%) !important;
+}
+.ol-sat-mauve-focus:focus {
+  outline-color: hsl(277, 100%, 74%) !important;
+}
+.ol-dark-mauve {
+  outline-color: hsl(277, 100%, 64%) !important;
+}
+.ol-dark-mauve-active:active {
+  outline-color: hsl(277, 100%, 64%) !important;
+}
+.ol-dark-mauve-hover:hover {
+  outline-color: hsl(277, 100%, 64%) !important;
+}
+.ol-dark-mauve-focus:focus {
+  outline-color: hsl(277, 100%, 64%) !important;
+}
 .ol-taupe {
   outline-color: hsl(29, 19%, 50%) !important;
 }
@@ -37276,6 +38176,54 @@ hr.fat {
 }
 .ol-taupe-focus:focus {
   outline-color: hsl(29, 19%, 50%) !important;
+}
+.ol-light-taupe {
+  outline-color: hsl(29, 19%, 80%) !important;
+}
+.ol-light-taupe-active:active {
+  outline-color: hsl(29, 19%, 80%) !important;
+}
+.ol-light-taupe-hover:hover {
+  outline-color: hsl(29, 19%, 80%) !important;
+}
+.ol-light-taupe-focus:focus {
+  outline-color: hsl(29, 19%, 80%) !important;
+}
+.ol-minor-taupe {
+  outline-color: hsl(29, 19%, 67%) !important;
+}
+.ol-minor-taupe-active:active {
+  outline-color: hsl(29, 19%, 67%) !important;
+}
+.ol-minor-taupe-hover:hover {
+  outline-color: hsl(29, 19%, 67%) !important;
+}
+.ol-minor-taupe-focus:focus {
+  outline-color: hsl(29, 19%, 67%) !important;
+}
+.ol-sat-taupe {
+  outline-color: hsl(29, 19%, 40%) !important;
+}
+.ol-sat-taupe-active:active {
+  outline-color: hsl(29, 19%, 40%) !important;
+}
+.ol-sat-taupe-hover:hover {
+  outline-color: hsl(29, 19%, 40%) !important;
+}
+.ol-sat-taupe-focus:focus {
+  outline-color: hsl(29, 19%, 40%) !important;
+}
+.ol-dark-taupe {
+  outline-color: hsl(29, 19%, 30%) !important;
+}
+.ol-dark-taupe-active:active {
+  outline-color: hsl(29, 19%, 30%) !important;
+}
+.ol-dark-taupe-hover:hover {
+  outline-color: hsl(29, 19%, 30%) !important;
+}
+.ol-dark-taupe-focus:focus {
+  outline-color: hsl(29, 19%, 30%) !important;
 }
 .ol-champagne {
   outline-color: hsl(37, 74%, 88%) !important;
@@ -37289,6 +38237,54 @@ hr.fat {
 .ol-champagne-focus:focus {
   outline-color: hsl(37, 74%, 88%) !important;
 }
+.ol-light-champagne {
+  outline-color: hsl(37, 74%, 98%) !important;
+}
+.ol-light-champagne-active:active {
+  outline-color: hsl(37, 74%, 98%) !important;
+}
+.ol-light-champagne-hover:hover {
+  outline-color: hsl(37, 74%, 98%) !important;
+}
+.ol-light-champagne-focus:focus {
+  outline-color: hsl(37, 74%, 98%) !important;
+}
+.ol-minor-champagne {
+  outline-color: hsl(37, 74%, 93%) !important;
+}
+.ol-minor-champagne-active:active {
+  outline-color: hsl(37, 74%, 93%) !important;
+}
+.ol-minor-champagne-hover:hover {
+  outline-color: hsl(37, 74%, 93%) !important;
+}
+.ol-minor-champagne-focus:focus {
+  outline-color: hsl(37, 74%, 93%) !important;
+}
+.ol-sat-champagne {
+  outline-color: hsl(37, 74%, 78%) !important;
+}
+.ol-sat-champagne-active:active {
+  outline-color: hsl(37, 74%, 78%) !important;
+}
+.ol-sat-champagne-hover:hover {
+  outline-color: hsl(37, 74%, 78%) !important;
+}
+.ol-sat-champagne-focus:focus {
+  outline-color: hsl(37, 74%, 78%) !important;
+}
+.ol-dark-champagne {
+  outline-color: hsl(37, 74%, 68%) !important;
+}
+.ol-dark-champagne-active:active {
+  outline-color: hsl(37, 74%, 68%) !important;
+}
+.ol-dark-champagne-hover:hover {
+  outline-color: hsl(37, 74%, 68%) !important;
+}
+.ol-dark-champagne-focus:focus {
+  outline-color: hsl(37, 74%, 68%) !important;
+}
 .ol-khaki {
   outline-color: hsl(47, 47%, 69%) !important;
 }
@@ -37300,6 +38296,54 @@ hr.fat {
 }
 .ol-khaki-focus:focus {
   outline-color: hsl(47, 47%, 69%) !important;
+}
+.ol-light-khaki {
+  outline-color: hsl(47, 47%, 94%) !important;
+}
+.ol-light-khaki-active:active {
+  outline-color: hsl(47, 47%, 94%) !important;
+}
+.ol-light-khaki-hover:hover {
+  outline-color: hsl(47, 47%, 94%) !important;
+}
+.ol-light-khaki-focus:focus {
+  outline-color: hsl(47, 47%, 94%) !important;
+}
+.ol-minor-khaki {
+  outline-color: hsl(47, 47%, 84%) !important;
+}
+.ol-minor-khaki-active:active {
+  outline-color: hsl(47, 47%, 84%) !important;
+}
+.ol-minor-khaki-hover:hover {
+  outline-color: hsl(47, 47%, 84%) !important;
+}
+.ol-minor-khaki-focus:focus {
+  outline-color: hsl(47, 47%, 84%) !important;
+}
+.ol-sat-khaki {
+  outline-color: hsl(47, 47%, 59%) !important;
+}
+.ol-sat-khaki-active:active {
+  outline-color: hsl(47, 47%, 59%) !important;
+}
+.ol-sat-khaki-hover:hover {
+  outline-color: hsl(47, 47%, 59%) !important;
+}
+.ol-sat-khaki-focus:focus {
+  outline-color: hsl(47, 47%, 59%) !important;
+}
+.ol-dark-khaki {
+  outline-color: hsl(47, 47%, 49%) !important;
+}
+.ol-dark-khaki-active:active {
+  outline-color: hsl(47, 47%, 49%) !important;
+}
+.ol-dark-khaki-hover:hover {
+  outline-color: hsl(47, 47%, 49%) !important;
+}
+.ol-dark-khaki-focus:focus {
+  outline-color: hsl(47, 47%, 49%) !important;
 }
 .ol-charcoal {
   outline-color: hsl(0, 0%, 60%) !important;
@@ -37313,6 +38357,54 @@ hr.fat {
 .ol-charcoal-focus:focus {
   outline-color: hsl(0, 0%, 60%) !important;
 }
+.ol-light-charcoal {
+  outline-color: hsl(0, 0%, 85%) !important;
+}
+.ol-light-charcoal-active:active {
+  outline-color: hsl(0, 0%, 85%) !important;
+}
+.ol-light-charcoal-hover:hover {
+  outline-color: hsl(0, 0%, 85%) !important;
+}
+.ol-light-charcoal-focus:focus {
+  outline-color: hsl(0, 0%, 85%) !important;
+}
+.ol-minor-charcoal {
+  outline-color: hsl(0, 0%, 75%) !important;
+}
+.ol-minor-charcoal-active:active {
+  outline-color: hsl(0, 0%, 75%) !important;
+}
+.ol-minor-charcoal-hover:hover {
+  outline-color: hsl(0, 0%, 75%) !important;
+}
+.ol-minor-charcoal-focus:focus {
+  outline-color: hsl(0, 0%, 75%) !important;
+}
+.ol-sat-charcoal {
+  outline-color: hsl(0, 0%, 50%) !important;
+}
+.ol-sat-charcoal-active:active {
+  outline-color: hsl(0, 0%, 50%) !important;
+}
+.ol-sat-charcoal-hover:hover {
+  outline-color: hsl(0, 0%, 50%) !important;
+}
+.ol-sat-charcoal-focus:focus {
+  outline-color: hsl(0, 0%, 50%) !important;
+}
+.ol-dark-charcoal {
+  outline-color: hsl(0, 0%, 40%) !important;
+}
+.ol-dark-charcoal-active:active {
+  outline-color: hsl(0, 0%, 40%) !important;
+}
+.ol-dark-charcoal-hover:hover {
+  outline-color: hsl(0, 0%, 40%) !important;
+}
+.ol-dark-charcoal-focus:focus {
+  outline-color: hsl(0, 0%, 40%) !important;
+}
 .ol-bronze {
   outline-color: hsl(29, 75%, 57%) !important;
 }
@@ -37324,6 +38416,54 @@ hr.fat {
 }
 .ol-bronze-focus:focus {
   outline-color: hsl(29, 75%, 57%) !important;
+}
+.ol-light-bronze {
+  outline-color: hsl(29, 75%, 87%) !important;
+}
+.ol-light-bronze-active:active {
+  outline-color: hsl(29, 75%, 87%) !important;
+}
+.ol-light-bronze-hover:hover {
+  outline-color: hsl(29, 75%, 87%) !important;
+}
+.ol-light-bronze-focus:focus {
+  outline-color: hsl(29, 75%, 87%) !important;
+}
+.ol-minor-bronze {
+  outline-color: hsl(29, 75%, 72%) !important;
+}
+.ol-minor-bronze-active:active {
+  outline-color: hsl(29, 75%, 72%) !important;
+}
+.ol-minor-bronze-hover:hover {
+  outline-color: hsl(29, 75%, 72%) !important;
+}
+.ol-minor-bronze-focus:focus {
+  outline-color: hsl(29, 75%, 72%) !important;
+}
+.ol-sat-bronze {
+  outline-color: hsl(29, 75%, 47%) !important;
+}
+.ol-sat-bronze-active:active {
+  outline-color: hsl(29, 75%, 47%) !important;
+}
+.ol-sat-bronze-hover:hover {
+  outline-color: hsl(29, 75%, 47%) !important;
+}
+.ol-sat-bronze-focus:focus {
+  outline-color: hsl(29, 75%, 47%) !important;
+}
+.ol-dark-bronze {
+  outline-color: hsl(29, 75%, 37%) !important;
+}
+.ol-dark-bronze-active:active {
+  outline-color: hsl(29, 75%, 37%) !important;
+}
+.ol-dark-bronze-hover:hover {
+  outline-color: hsl(29, 75%, 37%) !important;
+}
+.ol-dark-bronze-focus:focus {
+  outline-color: hsl(29, 75%, 37%) !important;
 }
 .ol-windstorm {
   outline-color: hsl(216, 53%, 66%) !important;
@@ -37337,6 +38477,54 @@ hr.fat {
 .ol-windstorm-focus:focus {
   outline-color: hsl(216, 53%, 66%) !important;
 }
+.ol-light-windstorm {
+  outline-color: hsl(216, 53%, 93%) !important;
+}
+.ol-light-windstorm-active:active {
+  outline-color: hsl(216, 53%, 93%) !important;
+}
+.ol-light-windstorm-hover:hover {
+  outline-color: hsl(216, 53%, 93%) !important;
+}
+.ol-light-windstorm-focus:focus {
+  outline-color: hsl(216, 53%, 93%) !important;
+}
+.ol-minor-windstorm {
+  outline-color: hsl(216, 53%, 81%) !important;
+}
+.ol-minor-windstorm-active:active {
+  outline-color: hsl(216, 53%, 81%) !important;
+}
+.ol-minor-windstorm-hover:hover {
+  outline-color: hsl(216, 53%, 81%) !important;
+}
+.ol-minor-windstorm-focus:focus {
+  outline-color: hsl(216, 53%, 81%) !important;
+}
+.ol-sat-windstorm {
+  outline-color: hsl(216, 53%, 56%) !important;
+}
+.ol-sat-windstorm-active:active {
+  outline-color: hsl(216, 53%, 56%) !important;
+}
+.ol-sat-windstorm-hover:hover {
+  outline-color: hsl(216, 53%, 56%) !important;
+}
+.ol-sat-windstorm-focus:focus {
+  outline-color: hsl(216, 53%, 56%) !important;
+}
+.ol-dark-windstorm {
+  outline-color: hsl(216, 53%, 46%) !important;
+}
+.ol-dark-windstorm-active:active {
+  outline-color: hsl(216, 53%, 46%) !important;
+}
+.ol-dark-windstorm-hover:hover {
+  outline-color: hsl(216, 53%, 46%) !important;
+}
+.ol-dark-windstorm-focus:focus {
+  outline-color: hsl(216, 53%, 46%) !important;
+}
 .ol-nude {
   outline-color: hsl(29, 79%, 85%) !important;
 }
@@ -37348,6 +38536,54 @@ hr.fat {
 }
 .ol-nude-focus:focus {
   outline-color: hsl(29, 79%, 85%) !important;
+}
+.ol-light-nude {
+  outline-color: hsl(29, 79%, 97%) !important;
+}
+.ol-light-nude-active:active {
+  outline-color: hsl(29, 79%, 97%) !important;
+}
+.ol-light-nude-hover:hover {
+  outline-color: hsl(29, 79%, 97%) !important;
+}
+.ol-light-nude-focus:focus {
+  outline-color: hsl(29, 79%, 97%) !important;
+}
+.ol-minor-nude {
+  outline-color: hsl(29, 79%, 92%) !important;
+}
+.ol-minor-nude-active:active {
+  outline-color: hsl(29, 79%, 92%) !important;
+}
+.ol-minor-nude-hover:hover {
+  outline-color: hsl(29, 79%, 92%) !important;
+}
+.ol-minor-nude-focus:focus {
+  outline-color: hsl(29, 79%, 92%) !important;
+}
+.ol-sat-nude {
+  outline-color: hsl(29, 79%, 75%) !important;
+}
+.ol-sat-nude-active:active {
+  outline-color: hsl(29, 79%, 75%) !important;
+}
+.ol-sat-nude-hover:hover {
+  outline-color: hsl(29, 79%, 75%) !important;
+}
+.ol-sat-nude-focus:focus {
+  outline-color: hsl(29, 79%, 75%) !important;
+}
+.ol-dark-nude {
+  outline-color: hsl(29, 79%, 65%) !important;
+}
+.ol-dark-nude-active:active {
+  outline-color: hsl(29, 79%, 65%) !important;
+}
+.ol-dark-nude-hover:hover {
+  outline-color: hsl(29, 79%, 65%) !important;
+}
+.ol-dark-nude-focus:focus {
+  outline-color: hsl(29, 79%, 65%) !important;
 }
 .ol-terracotta {
   outline-color: hsl(10, 76%, 55%) !important;
@@ -37361,6 +38597,54 @@ hr.fat {
 .ol-terracotta-focus:focus {
   outline-color: hsl(10, 76%, 55%) !important;
 }
+.ol-light-terracotta {
+  outline-color: hsl(10, 76%, 85%) !important;
+}
+.ol-light-terracotta-active:active {
+  outline-color: hsl(10, 76%, 85%) !important;
+}
+.ol-light-terracotta-hover:hover {
+  outline-color: hsl(10, 76%, 85%) !important;
+}
+.ol-light-terracotta-focus:focus {
+  outline-color: hsl(10, 76%, 85%) !important;
+}
+.ol-minor-terracotta {
+  outline-color: hsl(10, 76%, 70%) !important;
+}
+.ol-minor-terracotta-active:active {
+  outline-color: hsl(10, 76%, 70%) !important;
+}
+.ol-minor-terracotta-hover:hover {
+  outline-color: hsl(10, 76%, 70%) !important;
+}
+.ol-minor-terracotta-focus:focus {
+  outline-color: hsl(10, 76%, 70%) !important;
+}
+.ol-sat-terracotta {
+  outline-color: hsl(10, 76%, 45%) !important;
+}
+.ol-sat-terracotta-active:active {
+  outline-color: hsl(10, 76%, 45%) !important;
+}
+.ol-sat-terracotta-hover:hover {
+  outline-color: hsl(10, 76%, 45%) !important;
+}
+.ol-sat-terracotta-focus:focus {
+  outline-color: hsl(10, 76%, 45%) !important;
+}
+.ol-dark-terracotta {
+  outline-color: hsl(10, 76%, 35%) !important;
+}
+.ol-dark-terracotta-active:active {
+  outline-color: hsl(10, 76%, 35%) !important;
+}
+.ol-dark-terracotta-hover:hover {
+  outline-color: hsl(10, 76%, 35%) !important;
+}
+.ol-dark-terracotta-focus:focus {
+  outline-color: hsl(10, 76%, 35%) !important;
+}
 .ol-coral {
   outline-color: hsl(16, 100%, 67%) !important;
 }
@@ -37372,6 +38656,54 @@ hr.fat {
 }
 .ol-coral-focus:focus {
   outline-color: hsl(16, 100%, 67%) !important;
+}
+.ol-light-coral {
+  outline-color: hsl(16, 100%, 92%) !important;
+}
+.ol-light-coral-active:active {
+  outline-color: hsl(16, 100%, 92%) !important;
+}
+.ol-light-coral-hover:hover {
+  outline-color: hsl(16, 100%, 92%) !important;
+}
+.ol-light-coral-focus:focus {
+  outline-color: hsl(16, 100%, 92%) !important;
+}
+.ol-minor-coral {
+  outline-color: hsl(16, 100%, 82%) !important;
+}
+.ol-minor-coral-active:active {
+  outline-color: hsl(16, 100%, 82%) !important;
+}
+.ol-minor-coral-hover:hover {
+  outline-color: hsl(16, 100%, 82%) !important;
+}
+.ol-minor-coral-focus:focus {
+  outline-color: hsl(16, 100%, 82%) !important;
+}
+.ol-sat-coral {
+  outline-color: hsl(16, 100%, 57%) !important;
+}
+.ol-sat-coral-active:active {
+  outline-color: hsl(16, 100%, 57%) !important;
+}
+.ol-sat-coral-hover:hover {
+  outline-color: hsl(16, 100%, 57%) !important;
+}
+.ol-sat-coral-focus:focus {
+  outline-color: hsl(16, 100%, 57%) !important;
+}
+.ol-dark-coral {
+  outline-color: hsl(16, 100%, 47%) !important;
+}
+.ol-dark-coral-active:active {
+  outline-color: hsl(16, 100%, 47%) !important;
+}
+.ol-dark-coral-hover:hover {
+  outline-color: hsl(16, 100%, 47%) !important;
+}
+.ol-dark-coral-focus:focus {
+  outline-color: hsl(16, 100%, 47%) !important;
 }
 .ol-army {
   outline-color: hsl(69, 34%, 30%) !important;
@@ -37385,6 +38717,54 @@ hr.fat {
 .ol-army-focus:focus {
   outline-color: hsl(69, 34%, 30%) !important;
 }
+.ol-light-army {
+  outline-color: hsl(69, 34%, 65%) !important;
+}
+.ol-light-army-active:active {
+  outline-color: hsl(69, 34%, 65%) !important;
+}
+.ol-light-army-hover:hover {
+  outline-color: hsl(69, 34%, 65%) !important;
+}
+.ol-light-army-focus:focus {
+  outline-color: hsl(69, 34%, 65%) !important;
+}
+.ol-minor-army {
+  outline-color: hsl(69, 34%, 47%) !important;
+}
+.ol-minor-army-active:active {
+  outline-color: hsl(69, 34%, 47%) !important;
+}
+.ol-minor-army-hover:hover {
+  outline-color: hsl(69, 34%, 47%) !important;
+}
+.ol-minor-army-focus:focus {
+  outline-color: hsl(69, 34%, 47%) !important;
+}
+.ol-sat-army {
+  outline-color: hsl(69, 34%, 20%) !important;
+}
+.ol-sat-army-active:active {
+  outline-color: hsl(69, 34%, 20%) !important;
+}
+.ol-sat-army-hover:hover {
+  outline-color: hsl(69, 34%, 20%) !important;
+}
+.ol-sat-army-focus:focus {
+  outline-color: hsl(69, 34%, 20%) !important;
+}
+.ol-dark-army {
+  outline-color: hsl(69, 34%, 10%) !important;
+}
+.ol-dark-army-active:active {
+  outline-color: hsl(69, 34%, 10%) !important;
+}
+.ol-dark-army-hover:hover {
+  outline-color: hsl(69, 34%, 10%) !important;
+}
+.ol-dark-army-focus:focus {
+  outline-color: hsl(69, 34%, 10%) !important;
+}
 .ol-seashell {
   outline-color: hsl(25, 100%, 95%) !important;
 }
@@ -37397,6 +38777,54 @@ hr.fat {
 .ol-seashell-focus:focus {
   outline-color: hsl(25, 100%, 95%) !important;
 }
+.ol-light-seashell {
+  outline-color: hsl(25, 100%, 98%) !important;
+}
+.ol-light-seashell-active:active {
+  outline-color: hsl(25, 100%, 98%) !important;
+}
+.ol-light-seashell-hover:hover {
+  outline-color: hsl(25, 100%, 98%) !important;
+}
+.ol-light-seashell-focus:focus {
+  outline-color: hsl(25, 100%, 98%) !important;
+}
+.ol-minor-seashell {
+  outline-color: hsl(25, 100%, 97%) !important;
+}
+.ol-minor-seashell-active:active {
+  outline-color: hsl(25, 100%, 97%) !important;
+}
+.ol-minor-seashell-hover:hover {
+  outline-color: hsl(25, 100%, 97%) !important;
+}
+.ol-minor-seashell-focus:focus {
+  outline-color: hsl(25, 100%, 97%) !important;
+}
+.ol-sat-seashell {
+  outline-color: hsl(25, 100%, 85%) !important;
+}
+.ol-sat-seashell-active:active {
+  outline-color: hsl(25, 100%, 85%) !important;
+}
+.ol-sat-seashell-hover:hover {
+  outline-color: hsl(25, 100%, 85%) !important;
+}
+.ol-sat-seashell-focus:focus {
+  outline-color: hsl(25, 100%, 85%) !important;
+}
+.ol-dark-seashell {
+  outline-color: hsl(25, 100%, 75%) !important;
+}
+.ol-dark-seashell-active:active {
+  outline-color: hsl(25, 100%, 75%) !important;
+}
+.ol-dark-seashell-hover:hover {
+  outline-color: hsl(25, 100%, 75%) !important;
+}
+.ol-dark-seashell-focus:focus {
+  outline-color: hsl(25, 100%, 75%) !important;
+}
 .ol-sand {
   outline-color: hsl(45, 71%, 81%) !important;
 }
@@ -37408,6 +38836,54 @@ hr.fat {
 }
 .ol-sand-focus:focus {
   outline-color: hsl(45, 71%, 81%) !important;
+}
+.ol-light-sand {
+  outline-color: hsl(45, 71%, 96%) !important;
+}
+.ol-light-sand-active:active {
+  outline-color: hsl(45, 71%, 96%) !important;
+}
+.ol-light-sand-hover:hover {
+  outline-color: hsl(45, 71%, 96%) !important;
+}
+.ol-light-sand-focus:focus {
+  outline-color: hsl(45, 71%, 96%) !important;
+}
+.ol-minor-sand {
+  outline-color: hsl(45, 71%, 88%) !important;
+}
+.ol-minor-sand-active:active {
+  outline-color: hsl(45, 71%, 88%) !important;
+}
+.ol-minor-sand-hover:hover {
+  outline-color: hsl(45, 71%, 88%) !important;
+}
+.ol-minor-sand-focus:focus {
+  outline-color: hsl(45, 71%, 88%) !important;
+}
+.ol-sat-sand {
+  outline-color: hsl(45, 71%, 71%) !important;
+}
+.ol-sat-sand-active:active {
+  outline-color: hsl(45, 71%, 71%) !important;
+}
+.ol-sat-sand-hover:hover {
+  outline-color: hsl(45, 71%, 71%) !important;
+}
+.ol-sat-sand-focus:focus {
+  outline-color: hsl(45, 71%, 71%) !important;
+}
+.ol-dark-sand {
+  outline-color: hsl(45, 71%, 61%) !important;
+}
+.ol-dark-sand-active:active {
+  outline-color: hsl(45, 71%, 61%) !important;
+}
+.ol-dark-sand-hover:hover {
+  outline-color: hsl(45, 71%, 61%) !important;
+}
+.ol-dark-sand-focus:focus {
+  outline-color: hsl(45, 71%, 61%) !important;
 }
 
 /* source/colors-css/pseudo.less */
@@ -53086,7 +54562,7 @@ textarea {
 
 /* source/components/checkbox/checkbox.less */
 :root {
-  --checkbox-height: 36px;
+  --checkbox-size: 22px;
   --checkbox-border-radius: 4px;
   --checkbox-color: #575757;
   --checkbox-color-disabled: #c3c3c3;
@@ -53101,13 +54577,13 @@ textarea {
 }
 input[type=checkbox] {
   appearance: none;
-  line-height: var(--checkbox-height);
+  line-height: calc(var(--checkbox-size) * 1.6);
   border-radius: var(--checkbox-border-radius);
   border: 2px solid var(--checkbox-color);
   position: relative;
   cursor: pointer;
-  width: 22px;
-  height: 22px;
+  width: var(--checkbox-size, 22px);
+  height: var(--checkbox-size, 22px);
   flex-shrink: 0 !important;
   background-color: var(--default-background);
 }
@@ -53147,6 +54623,18 @@ input[type=checkbox]:indeterminate::before {
   border-left: none;
   top: 4px;
   left: 5px;
+}
+input[type=checkbox].small {
+  --checkbox-size: 16px;
+}
+input[type=checkbox].medium {
+  --checkbox-size: 19px;
+}
+input[type=checkbox].large {
+  --checkbox-size: 25px;
+}
+input[type=checkbox].largest {
+  --checkbox-size: 34px;
 }
 .checkbox {
   display: inline-flex;
@@ -56124,7 +57612,7 @@ input.pill-input .button {
 
 /* source/components/radio/radio.less */
 :root {
-  --radio-height: 36px;
+  --radio-size: 22px;
   --radio-color: #575757;
   --radio-color-disabled: #c3c3c3;
   --radio-background-disabled: #efefef;
@@ -56138,9 +57626,9 @@ input.pill-input .button {
 }
 input[type=radio] {
   appearance: none;
-  width: 22px;
-  height: 22px;
-  line-height: var(--radio-height);
+  width: var(--radio-size, 22px);
+  height: var(--radio-size, 22px);
+  line-height: calc(var(--radio-size) * 1.6);
   border-radius: 50%;
   border: 2px solid var(--radio-color);
   position: relative;
@@ -56176,6 +57664,18 @@ input[type=radio]:disabled {
 input[type=radio]:disabled::before {
   background-color: var(--radio-color-disabled);
   border: none;
+}
+input[type=radio].small {
+  --radio-size: 16px;
+}
+input[type=radio].medium {
+  --radio-size: 19px;
+}
+input[type=radio].large {
+  --radio-size: 25px;
+}
+input[type=radio].largest {
+  --radio-size: 34px;
 }
 .radio {
   display: inline-flex;

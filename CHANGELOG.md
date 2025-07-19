@@ -29,3 +29,4 @@
 - [x] Added component `catalog-menu`
 - [x] Added component `stack-menu`
 - [x] Added function `getInnerSize()` to `utils` for getting element inner size
+- [x] Added sizes `small`, `medium`, `large`, `largest` to `checkbox` and `radio` components

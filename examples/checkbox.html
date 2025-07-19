@@ -6,11 +6,6 @@
     <link href="../lib/metro.css" rel="stylesheet">
 
     <title>Test Checkbox - Metro UI :: Popular HTML, CSS and JS library</title>
-    <style>
-        body {
-            padding-top: 50px;
-        }
-    </style>
 </head>
 <body class="m4-cloak">
 <nav data-role="appbar">
@@ -37,7 +32,7 @@
         <input type="checkbox" data-role="checkbox" data-caption="Checkbox" disabled checked>
     </div>
 
-    <div class="mt-4">
+    <div class="mt-4 border-top bd-default pt-4">
         <div>
             <button class="button" onclick="Metro.getPlugin('#chk1', 'checkbox').toggle(-1)">Indeterminate</button>
             <button class="button" onclick="Metro.getPlugin('#chk1', 'checkbox').toggle(1)">Checked</button>
@@ -50,28 +45,23 @@
         </div>
     </div>
 
-    <h3>Three state</h3>
-    <div>
-        <input type="checkbox" data-role="checkbox" data-three-state="true" data-append="Checkbox1">
-        <input type="checkbox" data-role="checkbox" data-three-state="true" data-append="Checkbox2" checked>
-    </div>
-    <div>
-        <input type="checkbox" data-role="checkbox-three-state" data-caption="Checked" data-state="checked">
-        <input type="checkbox" data-role="checkbox-three-state" data-caption="Unchecked" data-state="unchecked">
-        <input type="checkbox" data-role="checkbox-three-state" data-caption="Indeterminate" data-state="indeterminate">
-    </div>
-    <br>
-    <div>
-        <button class="button" onclick="Metro.getPlugin('#chk2', 'checkbox-three-state').uncheck()">Uncheck</button>
-        <button class="button" onclick="Metro.getPlugin('#chk2', 'checkbox-three-state').check()">Check</button>
-        <button class="button" onclick="Metro.getPlugin('#chk2', 'checkbox-three-state').indeterminate()">Indeterminate</button>
-        <button class="button" onclick="Metro.getPlugin('#chk2', 'checkbox-three-state').toggle()">Toggle</button>
-        <button class="button" onclick="alert(Metro.getPlugin('#chk2', 'checkbox-three-state').getCheckState(true))">Get state</button>
-    </div>
-    <div>
-        <input type="checkbox" data-role="checkbox-three-state" data-caption="Checked" id="chk2">
+    <div class="mt-4 border-top bd-default pt-4">
+        <h3>Three state</h3>
+        <div>
+            <input type="checkbox" data-role="checkbox" data-three-state="true" data-append="Checkbox1">
+        </div>
     </div>
 
+    <div class="mt-4 border-top bd-default pt-4">
+        <h3>Sizes</h3>
+        <div>
+            <input type="checkbox" data-role="checkbox" data-append="small" class="small">
+            <input type="checkbox" data-role="checkbox" data-append="medium" class="medium">
+            <input type="checkbox" data-role="checkbox" data-append="default">
+            <input type="checkbox" data-role="checkbox" data-append="large" class="large">
+            <input type="checkbox" data-role="checkbox" data-append="largest" class="largest"> 
+        </div>
+    </div>
 </div>
 
 <script src="../lib/metro.js"></script>

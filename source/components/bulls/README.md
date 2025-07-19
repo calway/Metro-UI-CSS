@@ -54,7 +54,17 @@ Metro.bullSetup({
 });
 ```
 
-## Examples
+## Bull types
+
+- `success`: Indicates a successful operation.
+- `fail`: Indicates a failed operation.
+- `pending`: Indicates an operation that is still in progress.
+- `warning`: Indicates a warning or caution.
+- `bulb`: Represents an informational state.
+- `star`: Represents a star icon, often used for favorites or highlights.
+- `badge`: Represents a badge icon, often used for notifications or counts.
+- `chat`: Represents a chat icon, often used for messaging or communication.
+- `tree`: Represents a tree icon, often used for hierarchical data or navigation.
 
 ### Success Bull
 ```html

@@ -1,7 +1,7 @@
 @import "../../include/vars";
 
 :root {
-    --checkbox-height: 36px;
+    --checkbox-size: 22px;
     --checkbox-border-radius: 4px;
     --checkbox-color: #575757;
     --checkbox-color-disabled: #c3c3c3;
@@ -19,13 +19,13 @@
 
 input[type=checkbox] {
     appearance: none;
-    line-height: var(--checkbox-height);
+    line-height: calc(var(--checkbox-size) * 1.6);
     border-radius: var(--checkbox-border-radius);
     border: 2px solid var(--checkbox-color);
     position: relative;
     cursor: pointer;
-    width: 22px;
-    height: 22px;
+    width: var(--checkbox-size, 22px);
+    height: var(--checkbox-size, 22px);
     flex-shrink: 0!important;
     background-color: var(--default-background);
     
@@ -73,6 +73,19 @@ input[type=checkbox] {
             top: 4px;
             left: 5px;
         }
+    }
+    
+    &.small {
+        --checkbox-size: 16px;
+    }
+    &.medium {
+        --checkbox-size: 19px;
+    }
+    &.large {
+        --checkbox-size: 25px;
+    }
+    &.largest {
+        --checkbox-size: 34px;
     }
 }
 
