@@ -24,7 +24,7 @@
 - [x] Fixed `x` position in `select` filter input
 - [x] Added `product-show-card` component
 - [x] Fixed `maxDate` for `calendar` component. Max date now is not included in the range.
-- [x] Updated `bulls`, added `chat` image
+- [x] Updated `bulls`, added `chat`, `checkmark`, `cancel`, `tree` images
 - [x] Fixed method `val()` for `select` component
 - [x] Added component `catalog-menu`
 - [x] Added component `stack-menu`
