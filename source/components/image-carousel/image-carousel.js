@@ -98,6 +98,12 @@
                     that.goto(index, index > that.index ? "next" : "prev");
                 }
             });
+
+            $("window").on(Metro.events.resize, () => {
+                this.scene.css({
+                    height: Metro.utils.getInnerSize(this.scene).width,
+                });
+            });
         },
 
         _createSlide: function (index) {
