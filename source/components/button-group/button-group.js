@@ -85,7 +85,7 @@
                 }
 
                 if (o.mode === Metro.groupMode.ONE) {
-                    element.find(o.targets).removeClass(o.clsActive).removeClass("js-active");
+                    element.find(o.target).removeClass(o.clsActive).removeClass("js-active");
                     el.addClass("js-active").addClass(o.clsActive);
                 } else {
                     el.toggleClass("js-active").toggleClass(o.clsActive);
