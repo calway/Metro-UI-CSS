@@ -35,27 +35,26 @@
 
     .service-block {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: flex-end;
         align-items: center;
         gap: 6px;
 
         .search-block {
-            flex-basis: 100%;
             flex-shrink: 1;
             flex-grow: 1;
         }
 
         .order-block {
-            flex-basis: 220px;
-            flex-shrink: 0;
-            flex-grow: 0;
+            flex-shrink: 1;
+            flex-grow: 1;
+            flex-basis: 60px;
         }
 
         .count-block {
-            flex-basis: 160px;
-            flex-shrink: 0;
-            flex-grow: 0;
+            flex-basis: 60px;
+            flex-shrink: 1;
+            flex-grow: 1;
         }
     }
 }
