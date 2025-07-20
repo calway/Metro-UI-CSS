@@ -28,3 +28,68 @@ each(@normalColors, {
         }
     }
 })
+
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: true;
+}
+
+@keyframes spin-border {
+    from {
+        --border-angle: 0deg;
+    }
+    to {
+        --border-angle: 360deg;
+    }
+}
+
+:root {
+    --animated-border-speed: 3s;
+    --animated-border-size: 2px;
+    --animated-border-colors: #ff4545, #00ff99, #006aff, #ff0095, #ff4545;
+    --animated-border-transparent-size: 50%;
+}
+
+[class*=animated-border] {
+    isolation: isolate;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        inset: calc(-1 * var(--animated-border-size));
+        border-radius: inherit;
+        background: conic-gradient(from var(--border-angle), var(--animated-border-colors) );
+        z-index: -2;
+        display: none;
+        transition: all .3s linear;
+    }
+
+    &::after {
+        inset: 0;
+        z-index: -1;
+        background: inherit;
+    }
+    
+    &:not(.animated-border-hover) {
+        animation: spin-border var(--animated-border-speed) linear infinite;
+        &::before, &::after {
+            display: block;
+        }
+    }
+}
+
+.animated-border-hover {
+    &:hover {
+        animation: spin-border var(--animated-border-speed) linear infinite;
+        &::before, &::after {
+            display: block;
+        }
+    }
+}
+
+each(@colors, {
+    .animated-border-@{value} {
+        --animated-border-colors: transparent var(--animated-border-transparent-size), @@value;
+    }
+})

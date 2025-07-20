@@ -7,42 +7,17 @@
     <link href="../lib/metro.css" rel="stylesheet">
 
     <title>Animate Border - Metro UI :: Popular HTML, CSS and JS library</title>
-    <style>
-        body {
-            /*padding-top: 50px;*/
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            align-content: center;
-        }
-        .box {
-            width: 400px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .inner {
-            width: 100px;
-            height: 100px;
-            background-color: var(--default-background);
-            position: relative;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
 </head>
-<body>
-<div>
-<div class="box p-4">
-    <button class="button animated-border mr-2">Button</button>
-    <div class="inner rainbow-border">123</div>
-</div>
-</div>
+<body class="cloak h-100-vh">
+    <div class="container h-100 d-flex flex-center">
+        <div class="box" style="width: 300px;">
+            <button class="button animated-border mr-2">Button</button>
+            <div class="box animated-border"></div>
+            <div class="box animated-border" style="--animated-border-colors: transparent 50%, var(--color-primary)"></div>
+            <div class="box animated-border-hover" style="--animated-border-colors: transparent 70%, var(--color-blue), var(--color-cyan)"></div>
+            <div class="box animated-border-green"></div>
+        </div>
+    </div>
 <script src="../lib/metro.js"></script>
 </body>
 </html>

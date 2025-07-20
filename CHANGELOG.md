@@ -33,3 +33,4 @@
 - [x] Added using `clamp()` function for define size for headers `h1...h6`, and `display4...display1` classes
 - [x] Updated `breadcrumbs`
 - [x] Added component `image-carousel`
+- [x] Improved `animated-border` class

@@ -979,253 +979,6 @@ body {
 .border-ridge {
   border-style: ridge !important;
 }
-@property --angle { syntax: "<angle>"; initial-value: 0deg; inherits: true; }
-:root {
-  --animated-border-speed: 3s;
-  --animated-border-size: 2px;
-  --animated-border-color: #50a8ff;
-  --animated-border-color-1: #ff4545;
-  --animated-border-color-2: #00ff99;
-  --animated-border-color-3: #006aff;
-  --animated-border-color-4: #ff0095;
-  --animated-border-color-5: #ff4545;
-}
-.rainbow-border::after,
-[class*=rainbow-border-]::after,
-.rainbow-border::before,
-[class*=rainbow-border-]::before {
-  content: "";
-  position: absolute;
-  background-image:
-    conic-gradient(
-      from var(--angle),
-      var(--animated-border-color-1),
-      var(--animated-border-color-2),
-      var(--animated-border-color-3),
-      var(--animated-border-color-4),
-      var(--animated-border-color-5));
-  top: calc(var(--animated-border-size) * -1);
-  left: calc(var(--animated-border-size) * -1);
-  z-index: -1;
-  padding: 4px;
-  border-radius: inherit;
-  width: calc(100% + var(--animated-border-size) * 2);
-  height: calc(100% + var(--animated-border-size) * 2);
-  animation: var(--animated-border-speed) spin-angle linear infinite;
-}
-.rainbow-border::before,
-[class*=rainbow-border-]::before {
-  filter: blur(0.5rem);
-  opacity: 0.5;
-}
-.rainbow-border-hover::after,
-.rainbow-border-hover::before {
-  background-image: initial;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.rainbow-border-hover:hover::after,
-.rainbow-border-hover:hover::before {
-  opacity: 1;
-  background-image:
-    conic-gradient(
-      from var(--angle),
-      #ff4545,
-      #00ff99,
-      #006aff,
-      #ff0095,
-      #ff4545);
-}
-.animated-border::before,
-[class*=animated-border-]::before {
-  content: "";
-  position: absolute;
-  width: calc(100% + var(--animated-border-size) * 2);
-  height: calc(100% + var(--animated-border-size) * 2);
-  background:
-    repeating-conic-gradient(
-      from var(--angle),
-      var(--animated-border-color) 0%,
-      var(--animated-border-color) 5%,
-      transparent 5%,
-      transparent 40%,
-      var(--animated-border-color) 50%);
-  border-radius: inherit;
-  animation: spin-angle var(--animated-border-speed) linear infinite;
-  inset: calc(-1 * var(--animated-border-size));
-  z-index: -1;
-}
-.animated-border-hover::before,
-[class*=animated-border-hover-]::before {
-  background: initial;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.animated-border-hover:hover::before,
-[class*=animated-border-hover-]:hover::before {
-  opacity: 1;
-  background:
-    repeating-conic-gradient(
-      from var(--angle),
-      var(--animated-border-color) 0%,
-      var(--animated-border-color) 5%,
-      transparent 5%,
-      transparent 40%,
-      var(--animated-border-color) 50%);
-}
-.animated-border-gray,
-.animated-border-hover-gray {
-  --animated-border-color: hsl(0, 0%, 80%);
-}
-.animated-border-gray-blue,
-.animated-border-hover-gray-blue {
-  --animated-border-color: hsl(210, 26%, 54%);
-}
-.animated-border-gray-mouse,
-.animated-border-hover-gray-mouse {
-  --animated-border-color: hsl(199, 15%, 40%);
-}
-.animated-border-lime,
-.animated-border-hover-lime {
-  --animated-border-color: hsl(93, 97%, 71%);
-}
-.animated-border-green,
-.animated-border-hover-green {
-  --animated-border-color: hsl(120, 100%, 35%);
-}
-.animated-border-emerald,
-.animated-border-hover-emerald {
-  --animated-border-color: hsl(140, 52%, 55%);
-}
-.animated-border-blue,
-.animated-border-hover-blue {
-  --animated-border-color: hsl(225, 100%, 68%);
-}
-.animated-border-teal,
-.animated-border-hover-teal {
-  --animated-border-color: hsl(180, 77%, 44%);
-}
-.animated-border-cyan,
-.animated-border-hover-cyan {
-  --animated-border-color: hsl(221, 100%, 79%);
-}
-.animated-border-cobalt,
-.animated-border-hover-cobalt {
-  --animated-border-color: hsl(215, 100%, 34%);
-}
-.animated-border-indigo,
-.animated-border-hover-indigo {
-  --animated-border-color: hsl(276, 100%, 33%);
-}
-.animated-border-almost,
-.animated-border-hover-almost {
-  --animated-border-color: hsl(259, 84%, 55%);
-}
-.animated-border-violet,
-.animated-border-hover-violet {
-  --animated-border-color: hsl(300, 76%, 72%);
-}
-.animated-border-pink,
-.animated-border-hover-pink {
-  --animated-border-color: hsl(350, 100%, 88%);
-}
-.animated-border-magenta,
-.animated-border-hover-magenta {
-  --animated-border-color: hsl(300, 100%, 50%);
-}
-.animated-border-crimson,
-.animated-border-hover-crimson {
-  --animated-border-color: hsl(348, 88%, 46%);
-}
-.animated-border-red,
-.animated-border-hover-red {
-  --animated-border-color: hsl(0, 100%, 50%);
-}
-.animated-border-orange,
-.animated-border-hover-orange {
-  --animated-border-color: hsl(39, 100%, 50%);
-}
-.animated-border-amber,
-.animated-border-hover-amber {
-  --animated-border-color: hsl(45, 100%, 58%);
-}
-.animated-border-yellow,
-.animated-border-hover-yellow {
-  --animated-border-color: hsl(52, 100%, 68%);
-}
-.animated-border-brown,
-.animated-border-hover-brown {
-  --animated-border-color: hsl(25, 57%, 51%);
-}
-.animated-border-olive,
-.animated-border-hover-olive {
-  --animated-border-color: hsl(60, 100%, 32%);
-}
-.animated-border-steel,
-.animated-border-hover-steel {
-  --animated-border-color: hsl(209, 19%, 57%);
-}
-.animated-border-mauve,
-.animated-border-hover-mauve {
-  --animated-border-color: hsl(277, 100%, 84%);
-}
-.animated-border-taupe,
-.animated-border-hover-taupe {
-  --animated-border-color: hsl(29, 19%, 50%);
-}
-.animated-border-champagne,
-.animated-border-hover-champagne {
-  --animated-border-color: hsl(37, 74%, 88%);
-}
-.animated-border-khaki,
-.animated-border-hover-khaki {
-  --animated-border-color: hsl(47, 47%, 69%);
-}
-.animated-border-charcoal,
-.animated-border-hover-charcoal {
-  --animated-border-color: hsl(0, 0%, 60%);
-}
-.animated-border-bronze,
-.animated-border-hover-bronze {
-  --animated-border-color: hsl(29, 75%, 57%);
-}
-.animated-border-windstorm,
-.animated-border-hover-windstorm {
-  --animated-border-color: hsl(216, 53%, 66%);
-}
-.animated-border-nude,
-.animated-border-hover-nude {
-  --animated-border-color: hsl(29, 79%, 85%);
-}
-.animated-border-terracotta,
-.animated-border-hover-terracotta {
-  --animated-border-color: hsl(10, 76%, 55%);
-}
-.animated-border-coral,
-.animated-border-hover-coral {
-  --animated-border-color: hsl(16, 100%, 67%);
-}
-.animated-border-army,
-.animated-border-hover-army {
-  --animated-border-color: hsl(69, 34%, 30%);
-}
-.animated-border-seashell,
-.animated-border-hover-seashell {
-  --animated-border-color: hsl(25, 100%, 95%);
-}
-.animated-border-sand,
-.animated-border-hover-sand {
-  --animated-border-color: hsl(45, 71%, 81%);
-}
-@keyframes spin-angle {
-  to {
-    --angle: 360deg;
-  }
-}
-*:has([class*=animated-border-], [class*=rainbow-border]) {
-  position: relative;
-  z-index: 1;
-}
 
 /* source/common-css/cursors.less */
 .c-auto {
@@ -29490,6 +29243,185 @@ hr.fat {
 }
 .bd-after-sand::after {
   border-color: hsl(45, 71%, 81%) !important;
+}
+@property --border-angle { syntax: "<angle>"; initial-value: 0deg; inherits: true; }
+@keyframes spin-border {
+  from {
+    --border-angle: 0deg;
+  }
+  to {
+    --border-angle: 360deg;
+  }
+}
+:root {
+  --animated-border-speed: 3s;
+  --animated-border-size: 2px;
+  --animated-border-colors:
+    #ff4545,
+    #00ff99,
+    #006aff,
+    #ff0095,
+    #ff4545;
+  --animated-border-transparent-size: 50%;
+}
+[class*=animated-border] {
+  isolation: isolate;
+}
+[class*=animated-border]::before,
+[class*=animated-border]::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--animated-border-size));
+  border-radius: inherit;
+  background: conic-gradient(from var(--border-angle), var(--animated-border-colors));
+  z-index: -2;
+  display: none;
+  transition: all 0.3s linear;
+}
+[class*=animated-border]::after {
+  inset: 0;
+  z-index: -1;
+  background: inherit;
+}
+[class*=animated-border]:not(.animated-border-hover) {
+  animation: spin-border var(--animated-border-speed) linear infinite;
+}
+[class*=animated-border]:not(.animated-border-hover)::before,
+[class*=animated-border]:not(.animated-border-hover)::after {
+  display: block;
+}
+.animated-border-hover:hover {
+  animation: spin-border var(--animated-border-speed) linear infinite;
+}
+.animated-border-hover:hover::before,
+.animated-border-hover:hover::after {
+  display: block;
+}
+.animated-border-black {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), #000000;
+}
+.animated-border-white {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), #ffffff;
+}
+.animated-border-dark {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), #1d1d1d;
+}
+.animated-border-light {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), #f8f8f8;
+}
+.animated-border-gray {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(0, 0%, 80%);
+}
+.animated-border-gray-blue {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(210, 26%, 54%);
+}
+.animated-border-gray-white {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(0, 0%, 96%);
+}
+.animated-border-gray-mouse {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(199, 15%, 40%);
+}
+.animated-border-lime {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(93, 97%, 71%);
+}
+.animated-border-green {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(120, 100%, 35%);
+}
+.animated-border-emerald {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(140, 52%, 55%);
+}
+.animated-border-blue {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(225, 100%, 68%);
+}
+.animated-border-teal {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(180, 77%, 44%);
+}
+.animated-border-cyan {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(221, 100%, 79%);
+}
+.animated-border-cobalt {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(215, 100%, 34%);
+}
+.animated-border-indigo {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(276, 100%, 33%);
+}
+.animated-border-almost {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(259, 84%, 55%);
+}
+.animated-border-violet {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(300, 76%, 72%);
+}
+.animated-border-pink {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(350, 100%, 88%);
+}
+.animated-border-magenta {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(300, 100%, 50%);
+}
+.animated-border-crimson {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(348, 88%, 46%);
+}
+.animated-border-red {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(0, 100%, 50%);
+}
+.animated-border-clown {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(3, 100%, 70%);
+}
+.animated-border-orange {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(39, 100%, 50%);
+}
+.animated-border-amber {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(45, 100%, 58%);
+}
+.animated-border-yellow {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(52, 100%, 68%);
+}
+.animated-border-brown {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(25, 57%, 51%);
+}
+.animated-border-olive {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(60, 100%, 32%);
+}
+.animated-border-steel {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(209, 19%, 57%);
+}
+.animated-border-mauve {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(277, 100%, 84%);
+}
+.animated-border-taupe {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(29, 19%, 50%);
+}
+.animated-border-champagne {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(37, 74%, 88%);
+}
+.animated-border-khaki {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(47, 47%, 69%);
+}
+.animated-border-charcoal {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(0, 0%, 60%);
+}
+.animated-border-bronze {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(29, 75%, 57%);
+}
+.animated-border-windstorm {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(216, 53%, 66%);
+}
+.animated-border-nude {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(29, 79%, 85%);
+}
+.animated-border-terracotta {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(10, 76%, 55%);
+}
+.animated-border-coral {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(16, 100%, 67%);
+}
+.animated-border-army {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(69, 34%, 30%);
+}
+.animated-border-seashell {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(25, 100%, 95%);
+}
+.animated-border-sand {
+  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(45, 71%, 81%);
 }
 
 /* source/colors-css/svg.less */
