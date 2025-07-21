@@ -29254,174 +29254,174 @@ hr.fat {
   }
 }
 :root {
-  --animated-border-speed: 3s;
-  --animated-border-size: 2px;
-  --animated-border-colors:
+  --gradient-border-speed: 3s;
+  --gradient-border-size: 2px;
+  --gradient-border-colors:
     #ff4545,
     #00ff99,
     #006aff,
     #ff0095,
     #ff4545;
-  --animated-border-transparent-size: 50%;
+  --gradient-border-transparent-size: 50%;
 }
-[class*=animated-border] {
+.gradient-border {
   isolation: isolate;
 }
-[class*=animated-border]::before,
-[class*=animated-border]::after {
+.gradient-border::before,
+.gradient-border::after {
   content: "";
   position: absolute;
-  inset: calc(-1 * var(--animated-border-size));
+  inset: calc(-1 * var(--gradient-border-size));
   border-radius: inherit;
-  background: conic-gradient(from var(--border-angle), var(--animated-border-colors));
+  background: conic-gradient(from var(--border-angle), var(--gradient-border-colors));
   z-index: -2;
-  display: none;
+  display: block;
   transition: all 0.3s linear;
 }
-[class*=animated-border]::after {
+.gradient-border::after {
   inset: 0;
   z-index: -1;
   background: inherit;
 }
-[class*=animated-border]:not(.animated-border-hover) {
-  animation: spin-border var(--animated-border-speed) linear infinite;
+.animated-border {
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-[class*=animated-border]:not(.animated-border-hover)::before,
-[class*=animated-border]:not(.animated-border-hover)::after {
+.animated-border::before,
+.animated-border::after {
   display: block;
 }
 .animated-border-hover:hover {
-  animation: spin-border var(--animated-border-speed) linear infinite;
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
 .animated-border-hover:hover::before,
 .animated-border-hover:hover::after {
   display: block;
 }
-.animated-border-black {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), #000000;
+.gradient-border-black {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), #000000;
 }
-.animated-border-white {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), #ffffff;
+.gradient-border-white {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), #ffffff;
 }
-.animated-border-dark {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), #1d1d1d;
+.gradient-border-dark {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), #1d1d1d;
 }
-.animated-border-light {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), #f8f8f8;
+.gradient-border-light {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), #f8f8f8;
 }
-.animated-border-gray {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(0, 0%, 80%);
+.gradient-border-gray {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(0, 0%, 80%);
 }
-.animated-border-gray-blue {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(210, 26%, 54%);
+.gradient-border-gray-blue {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(210, 26%, 54%);
 }
-.animated-border-gray-white {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(0, 0%, 96%);
+.gradient-border-gray-white {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(0, 0%, 96%);
 }
-.animated-border-gray-mouse {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(199, 15%, 40%);
+.gradient-border-gray-mouse {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(199, 15%, 40%);
 }
-.animated-border-lime {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(93, 97%, 71%);
+.gradient-border-lime {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(93, 97%, 71%);
 }
-.animated-border-green {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(120, 100%, 35%);
+.gradient-border-green {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(120, 100%, 35%);
 }
-.animated-border-emerald {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(140, 52%, 55%);
+.gradient-border-emerald {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(140, 52%, 55%);
 }
-.animated-border-blue {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(225, 100%, 68%);
+.gradient-border-blue {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(225, 100%, 68%);
 }
-.animated-border-teal {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(180, 77%, 44%);
+.gradient-border-teal {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(180, 77%, 44%);
 }
-.animated-border-cyan {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(221, 100%, 79%);
+.gradient-border-cyan {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(221, 100%, 79%);
 }
-.animated-border-cobalt {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(215, 100%, 34%);
+.gradient-border-cobalt {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(215, 100%, 34%);
 }
-.animated-border-indigo {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(276, 100%, 33%);
+.gradient-border-indigo {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(276, 100%, 33%);
 }
-.animated-border-almost {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(259, 84%, 55%);
+.gradient-border-almost {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(259, 84%, 55%);
 }
-.animated-border-violet {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(300, 76%, 72%);
+.gradient-border-violet {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(300, 76%, 72%);
 }
-.animated-border-pink {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(350, 100%, 88%);
+.gradient-border-pink {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(350, 100%, 88%);
 }
-.animated-border-magenta {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(300, 100%, 50%);
+.gradient-border-magenta {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(300, 100%, 50%);
 }
-.animated-border-crimson {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(348, 88%, 46%);
+.gradient-border-crimson {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(348, 88%, 46%);
 }
-.animated-border-red {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(0, 100%, 50%);
+.gradient-border-red {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(0, 100%, 50%);
 }
-.animated-border-clown {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(3, 100%, 70%);
+.gradient-border-clown {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(3, 100%, 70%);
 }
-.animated-border-orange {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(39, 100%, 50%);
+.gradient-border-orange {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(39, 100%, 50%);
 }
-.animated-border-amber {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(45, 100%, 58%);
+.gradient-border-amber {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(45, 100%, 58%);
 }
-.animated-border-yellow {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(52, 100%, 68%);
+.gradient-border-yellow {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(52, 100%, 68%);
 }
-.animated-border-brown {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(25, 57%, 51%);
+.gradient-border-brown {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(25, 57%, 51%);
 }
-.animated-border-olive {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(60, 100%, 32%);
+.gradient-border-olive {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(60, 100%, 32%);
 }
-.animated-border-steel {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(209, 19%, 57%);
+.gradient-border-steel {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(209, 19%, 57%);
 }
-.animated-border-mauve {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(277, 100%, 84%);
+.gradient-border-mauve {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(277, 100%, 84%);
 }
-.animated-border-taupe {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(29, 19%, 50%);
+.gradient-border-taupe {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(29, 19%, 50%);
 }
-.animated-border-champagne {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(37, 74%, 88%);
+.gradient-border-champagne {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(37, 74%, 88%);
 }
-.animated-border-khaki {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(47, 47%, 69%);
+.gradient-border-khaki {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(47, 47%, 69%);
 }
-.animated-border-charcoal {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(0, 0%, 60%);
+.gradient-border-charcoal {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(0, 0%, 60%);
 }
-.animated-border-bronze {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(29, 75%, 57%);
+.gradient-border-bronze {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(29, 75%, 57%);
 }
-.animated-border-windstorm {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(216, 53%, 66%);
+.gradient-border-windstorm {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(216, 53%, 66%);
 }
-.animated-border-nude {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(29, 79%, 85%);
+.gradient-border-nude {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(29, 79%, 85%);
 }
-.animated-border-terracotta {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(10, 76%, 55%);
+.gradient-border-terracotta {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(10, 76%, 55%);
 }
-.animated-border-coral {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(16, 100%, 67%);
+.gradient-border-coral {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(16, 100%, 67%);
 }
-.animated-border-army {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(69, 34%, 30%);
+.gradient-border-army {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(69, 34%, 30%);
 }
-.animated-border-seashell {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(25, 100%, 95%);
+.gradient-border-seashell {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(25, 100%, 95%);
 }
-.animated-border-sand {
-  --animated-border-colors: transparent var(--animated-border-transparent-size), hsl(45, 71%, 81%);
+.gradient-border-sand {
+  --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(45, 71%, 81%);
 }
 
 /* source/colors-css/svg.less */

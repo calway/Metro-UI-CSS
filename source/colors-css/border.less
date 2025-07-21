@@ -45,23 +45,23 @@ each(@normalColors, {
 }
 
 :root {
-    --animated-border-speed: 3s;
-    --animated-border-size: 2px;
-    --animated-border-colors: #ff4545, #00ff99, #006aff, #ff0095, #ff4545;
-    --animated-border-transparent-size: 50%;
+    --gradient-border-speed: 3s;
+    --gradient-border-size: 2px;
+    --gradient-border-colors: #ff4545, #00ff99, #006aff, #ff0095, #ff4545;
+    --gradient-border-transparent-size: 50%;
 }
 
-[class*=animated-border] {
+.gradient-border {
     isolation: isolate;
 
     &::before, &::after {
         content: '';
         position: absolute;
-        inset: calc(-1 * var(--animated-border-size));
+        inset: calc(-1 * var(--gradient-border-size));
         border-radius: inherit;
-        background: conic-gradient(from var(--border-angle), var(--animated-border-colors) );
+        background: conic-gradient(from var(--border-angle), var(--gradient-border-colors) );
         z-index: -2;
-        display: none;
+        display: block;
         transition: all .3s linear;
     }
 
@@ -71,17 +71,24 @@ each(@normalColors, {
         background: inherit;
     }
     
-    &:not(.animated-border-hover) {
-        animation: spin-border var(--animated-border-speed) linear infinite;
-        &::before, &::after {
-            display: block;
-        }
+    //&:not(.animated-border-hover) {
+    //    animation: spin-border var(--gradient-border-speed) linear infinite;
+    //    &::before, &::after {
+    //        display: block;
+    //    }
+    //}
+}
+
+.animated-border {
+    animation: spin-border var(--gradient-border-speed) linear infinite;
+    &::before, &::after {
+        display: block;
     }
 }
 
 .animated-border-hover {
     &:hover {
-        animation: spin-border var(--animated-border-speed) linear infinite;
+        animation: spin-border var(--gradient-border-speed) linear infinite;
         &::before, &::after {
             display: block;
         }
@@ -89,7 +96,7 @@ each(@normalColors, {
 }
 
 each(@colors, {
-    .animated-border-@{value} {
-        --animated-border-colors: transparent var(--animated-border-transparent-size), @@value;
+    .gradient-border-@{value} {
+        --gradient-border-colors: transparent var(--gradient-border-transparent-size), @@value;
     }
 })
