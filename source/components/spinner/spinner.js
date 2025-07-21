@@ -163,7 +163,7 @@
                     const plus = $(this).hasClass("spinner-button-plus");
                     repeat_timer = setInterval(() => {
                         spinnerButtonClick(plus);
-                    }, 100);
+                    }, 300);
                 },
                 { passive: true },
             );
@@ -180,7 +180,7 @@
             spinner.on(
                 Metro.events.click,
                 ".spinner-button",
-                function (e) {
+                function () {
                     const plus = $(this).hasClass("spinner-button-plus");
                     spinnerButtonClick(plus);
                 },
@@ -206,15 +206,15 @@
 
             let _val = +val;
 
-            if (_val > Number(o.maxValue)) {
-                _val = Number(o.maxValue);
+            if (o.maxValue !== null && _val > +o.maxValue) {
+                _val = +o.maxValue;
             }
 
-            if (_val < Number(o.minValue)) {
-                _val = Number(o.minValue);
+            if (o.minValue !== null && _val < +o.minValue) {
+                _val = +o.minValue;
             }
 
-            element.val(val);
+            element.val(_val);
 
             this._fireEvent("change", { val: val }, false, true);
 
