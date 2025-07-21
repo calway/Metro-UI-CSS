@@ -70,33 +70,21 @@ each(@normalColors, {
         z-index: -1;
         background: inherit;
     }
-    
-    //&:not(.animated-border-hover) {
-    //    animation: spin-border var(--gradient-border-speed) linear infinite;
-    //    &::before, &::after {
-    //        display: block;
-    //    }
-    //}
 }
 
 .animated-border {
     animation: spin-border var(--gradient-border-speed) linear infinite;
-    &::before, &::after {
-        display: block;
-    }
 }
 
 .animated-border-hover {
     &:hover {
         animation: spin-border var(--gradient-border-speed) linear infinite;
-        &::before, &::after {
-            display: block;
-        }
     }
 }
 
 each(@colors, {
-    .gradient-border-@{value} {
+    .animated-border-@{value} {
         --gradient-border-colors: transparent var(--gradient-border-transparent-size), @@value;
+        animation: spin-border var(--gradient-border-speed) linear infinite;
     }
 })

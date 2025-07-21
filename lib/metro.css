@@ -29286,142 +29286,176 @@ hr.fat {
 .animated-border {
   animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.animated-border::before,
-.animated-border::after {
-  display: block;
-}
 .animated-border-hover:hover {
   animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.animated-border-hover:hover::before,
-.animated-border-hover:hover::after {
-  display: block;
-}
-.gradient-border-black {
+.animated-border-black {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), #000000;
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-white {
+.animated-border-white {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), #ffffff;
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-dark {
+.animated-border-dark {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), #1d1d1d;
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-light {
+.animated-border-light {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), #f8f8f8;
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-gray {
+.animated-border-gray {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(0, 0%, 80%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-gray-blue {
+.animated-border-gray-blue {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(210, 26%, 54%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-gray-white {
+.animated-border-gray-white {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(0, 0%, 96%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-gray-mouse {
+.animated-border-gray-mouse {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(199, 15%, 40%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-lime {
+.animated-border-lime {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(93, 97%, 71%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-green {
+.animated-border-green {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(120, 100%, 35%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-emerald {
+.animated-border-emerald {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(140, 52%, 55%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-blue {
+.animated-border-blue {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(225, 100%, 68%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-teal {
+.animated-border-teal {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(180, 77%, 44%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-cyan {
+.animated-border-cyan {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(221, 100%, 79%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-cobalt {
+.animated-border-cobalt {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(215, 100%, 34%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-indigo {
+.animated-border-indigo {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(276, 100%, 33%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-almost {
+.animated-border-almost {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(259, 84%, 55%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-violet {
+.animated-border-violet {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(300, 76%, 72%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-pink {
+.animated-border-pink {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(350, 100%, 88%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-magenta {
+.animated-border-magenta {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(300, 100%, 50%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-crimson {
+.animated-border-crimson {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(348, 88%, 46%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-red {
+.animated-border-red {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(0, 100%, 50%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-clown {
+.animated-border-clown {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(3, 100%, 70%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-orange {
+.animated-border-orange {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(39, 100%, 50%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-amber {
+.animated-border-amber {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(45, 100%, 58%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-yellow {
+.animated-border-yellow {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(52, 100%, 68%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-brown {
+.animated-border-brown {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(25, 57%, 51%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-olive {
+.animated-border-olive {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(60, 100%, 32%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-steel {
+.animated-border-steel {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(209, 19%, 57%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-mauve {
+.animated-border-mauve {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(277, 100%, 84%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-taupe {
+.animated-border-taupe {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(29, 19%, 50%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-champagne {
+.animated-border-champagne {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(37, 74%, 88%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-khaki {
+.animated-border-khaki {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(47, 47%, 69%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-charcoal {
+.animated-border-charcoal {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(0, 0%, 60%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-bronze {
+.animated-border-bronze {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(29, 75%, 57%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-windstorm {
+.animated-border-windstorm {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(216, 53%, 66%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-nude {
+.animated-border-nude {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(29, 79%, 85%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-terracotta {
+.animated-border-terracotta {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(10, 76%, 55%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-coral {
+.animated-border-coral {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(16, 100%, 67%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-army {
+.animated-border-army {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(69, 34%, 30%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-seashell {
+.animated-border-seashell {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(25, 100%, 95%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
-.gradient-border-sand {
+.animated-border-sand {
   --gradient-border-colors: transparent var(--gradient-border-transparent-size), hsl(45, 71%, 81%);
+  animation: spin-border var(--gradient-border-speed) linear infinite;
 }
 
 /* source/colors-css/svg.less */
@@ -53134,7 +53168,7 @@ button:has(.badge.corner),
   --bar-growing-color: hsl(120, 100%, 35%);
 }
 .bar3d {
-  font-size: 1em;
+  font-size: 1rem;
   position: relative;
   width: var(--bar-width);
   padding: 1em;
@@ -53151,7 +53185,7 @@ button:has(.badge.corner),
   overflow: hidden;
 }
 .bar3d .left-side {
-  transform: rotateY(90deg) translateZ(1em);
+  transform: rotateY(90deg) translateZ(16px);
   background-color: var(--bar-left-color);
 }
 .bar3d .right-side {
