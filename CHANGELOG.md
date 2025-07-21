@@ -35,3 +35,4 @@
 - [x] Added component `image-carousel`
 - [x] Improved `animated-border` class
 - [x] Fixed font-size in `bar3d` component
+- [x] Fixed bug for min, max constraints  in `spinner` component
