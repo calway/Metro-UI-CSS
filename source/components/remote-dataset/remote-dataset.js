@@ -41,6 +41,7 @@
         clsSearchBlock: "",
         clsOrderBlock: "",
         clsRowsCountBlock: "",
+        clsServiceBlock: "",
 
         onBeforeLoad: (f) => f,
         onLoad: (f) => f,
@@ -103,7 +104,7 @@
             element.append(entries);
 
             entries.html(`
-                <div class="service-block ${o.showServiceBlock ? "" : "d-none"}">
+                <div class="service-block ${o.clsServiceBlock} ${o.showServiceBlock ? "" : "d-none"}">
                     <div class="search-block ${o.clsSearchBlock} ${o.quickSearch ? "" : "d-none"}">
                         <input name="search" type="text" data-role="input" 
                             data-prepend="${o.searchLabel || this.strings.label_search}" 
@@ -112,7 +113,7 @@
                     </div>
                    
                     <div class="order-block ${o.clsOrderBlock} ${this.sortRules.length === 0 || o.selectOrder === false ? "d-none" : ""}">
-                        <select name="sort-order" data-role="select" data-filter="false" data-prepend="${o.sortLabel || this.strings.label_sorting}">
+                        <select class="medium" name="sort-order">
                             ${this.sortRules
                                 .map(
                                     (rule) => `
@@ -129,11 +130,11 @@
                     </div>
                    
                     <div class="count-block ${o.clsRowsCountBlock} ${o.selectCount ? "" : "d-none"}">
-                        <select name="rows-count" data-role="select" data-prepend="${o.rowsLabel || this.strings.label_rows_count}" data-filter="false">
+                        <select class="medium" name="rows-count">
                             ${this.rowSteps
                                 .map(
                                     (step) => `
-										<option value="${step}" ${+step === +this.limit ? "selected" : ""}>
+										<option value="${step}" ${+step === +o.rows ? "selected" : ""}>
 											${step}
 										</option>
 									`,
@@ -145,6 +146,30 @@
                 ${o.caption ? `<div class="dataset-caption">${o.caption}</div>` : ""}
                 <div class="dataset-body"></div>
             `);
+
+            Metro.makePlugin(entries.find("select[name=rows-count]"), "select", {
+                prepend: o.rowsLabel || this.strings.label_rows_count,
+                filter: false,
+                onChange: (value) => {
+                    this.limit = +value;
+                    this.offset = 0;
+                    this._loadData().then(() => {});
+                },
+            });
+
+            Metro.makePlugin(entries.find("select[name=sort-order]"), "select", {
+                prepend: o.sortLabel || this.strings.label_sorting,
+                filter: false,
+                onChange: (value) => {
+                    const [field, order] = ("" + value).split(":");
+                    this.url = o.url;
+                    this.sortField = field;
+                    this.sortOrder = order;
+                    this.offset = 0;
+                    this._loadData().then(() => {});
+                },
+            });
+
             this.body = entries.find(".dataset-body").addClass(o.clsBody);
 
             this.loadMore = $("<div>").addClass("dataset-load-more");
@@ -211,20 +236,20 @@
 
             element.on(Metro.events.inputchange, "input[name=search]", searchFn);
 
-            element.on("change", "select[name=rows-count]", function () {
-                that.limit = +$(this).val();
-                that.offset = 0;
-                that._loadData().then(() => {});
-            });
+            // element.on("change", "select[name=rows-count]", function () {
+            //     that.limit = +$(this).val();
+            //     that.offset = 0;
+            //     that._loadData().then(() => {});
+            // });
 
-            element.on("change", "select[name=sort-order]", function () {
-                const [field, order] = $(this).val().split(":");
-                that.url = o.url;
-                that.sortField = field;
-                that.sortOrder = order;
-                that.offset = 0;
-                that._loadData().then(() => {});
-            });
+            // element.on("change", "select[name=sort-order]", function () {
+            //     const [field, order] = $(this).val().split(":");
+            //     that.url = o.url;
+            //     that.sortField = field;
+            //     that.sortOrder = order;
+            //     that.offset = 0;
+            //     that._loadData().then(() => {});
+            // });
 
             element.on("click", ".load-more-button", () => {
                 that.offset += that.limit;
@@ -300,6 +325,7 @@
             }
 
             url = o.onBeforeLoad(url, this);
+            console.log(`Loading data from: ${url}`);
 
             const response = await fetch(url, { method: o.method });
             if (response.ok === false) {

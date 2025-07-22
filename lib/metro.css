@@ -68865,6 +68865,7 @@ label:has(input) {
   background: var(--product-card-background);
   color: var(--product-card-color);
   padding: var(--product-card-padding);
+  height: 100%;
 }
 .product-card .product-image {
   width: 100%;
@@ -68928,21 +68929,22 @@ label:has(input) {
   margin: 0.5rem 0;
 }
 .product-card .-old {
-  font-size: 12px;
+  font-size: 0.6em;
   font-weight: 400;
   line-height: 12px;
   text-decoration: line-through;
 }
 .product-card .product-price {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 20px;
 }
 .product-card .product-footer {
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
-  margin-top: 0.5rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  height: 40px;
 }
 .product-card > .badge {
   position: absolute;
@@ -69004,14 +69006,14 @@ label:has(input) {
 }
 @container (width >= 768px) {
   .product-card {
-    --product-card-font-size: 13px;
+    --product-card-font-size: 11px;
     width: calc(25% - 12px);
   }
 }
 @container (width >= 1200px) {
   .product-card {
     --product-card-font-size: 14px;
-    width: calc(15% - 16px);
+    width: calc(20% - 16px);
   }
 }
 
@@ -70088,6 +70090,8 @@ label:has(input) {
 /* source/components/remote-dataset/remote-dataset.less */
 :root {
   --remote-dataset-gap: 10px;
+  --remote-dataset-order-block-size: 200px;
+  --remote-dataset-count-block-size: 140px;
 }
 .remote-dataset .dataset-caption {
   display: flex;
@@ -70118,7 +70122,7 @@ label:has(input) {
 .remote-dataset .service-block {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 6px;
 }
@@ -70127,14 +70131,11 @@ label:has(input) {
   flex-grow: 1;
 }
 .remote-dataset .service-block .order-block {
-  flex-shrink: 1;
-  flex-grow: 1;
-  flex-basis: 60px;
+  flex: 0 0 var(--remote-dataset-order-block-size);
+  margin-left: auto;
 }
 .remote-dataset .service-block .count-block {
-  flex-basis: 60px;
-  flex-shrink: 1;
-  flex-grow: 1;
+  flex: 0 0 var(--remote-dataset-count-block-size);
 }
 
 /* source/components/table/table.less */

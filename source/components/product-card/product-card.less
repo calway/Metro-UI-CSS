@@ -42,6 +42,7 @@
     background: var(--product-card-background);
     color: var(--product-card-color);
     padding: var(--product-card-padding);
+    height: 100%;
 
     .product-image {
         width: 100%;
@@ -113,14 +114,14 @@
     }
 
     .-old {
-        font-size: 12px;
+        font-size: .6em;
         font-weight: 400;
         line-height: 12px;
         text-decoration: line-through;
     }
 
     .product-price {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 700;
         line-height: 20px;
     }
@@ -128,8 +129,9 @@
     .product-footer {
         display: flex;
         flex-flow: row nowrap;
-        align-items: center;
-        margin-top: .5rem;
+        align-items: flex-start;
+        margin-top: 1rem;
+        height: 40px;
     }
 
     & > .badge {
@@ -204,7 +206,7 @@
 
 @container (width >= 768px) {
     .product-card {
-        --product-card-font-size: 13px;
+        --product-card-font-size: 11px;
         width: calc(25% - 12px);
     }
 }
@@ -212,7 +214,7 @@
 @container (width >= 1200px) {
     .product-card {
         --product-card-font-size: 14px;
-        width: calc(15% - 16px);
+        width: calc(20% - 16px);
     }
 }
 

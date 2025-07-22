@@ -1,5 +1,7 @@
 :root {
     --remote-dataset-gap: 10px;
+    --remote-dataset-order-block-size: 200px;
+    --remote-dataset-count-block-size: 140px;
 }
 
 .remote-dataset {
@@ -36,7 +38,7 @@
     .service-block {
         display: flex;
         flex-flow: row wrap;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         gap: 6px;
 
@@ -46,15 +48,12 @@
         }
 
         .order-block {
-            flex-shrink: 1;
-            flex-grow: 1;
-            flex-basis: 60px;
+            flex: 0 0 var( --remote-dataset-order-block-size);
+            margin-left: auto;
         }
 
         .count-block {
-            flex-basis: 60px;
-            flex-shrink: 1;
-            flex-grow: 1;
+            flex: 0 0 var( --remote-dataset-count-block-size);
         }
     }
 }
