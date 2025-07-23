@@ -36,3 +36,4 @@
 - [x] Improved `animated-border` class
 - [x] Fixed font-size in `bar3d` component
 - [x] Fixed bug for min, max constraints  in `spinner` component
+- [x] Improved `remote-dataset`, `remote-table` components for using remote controls
