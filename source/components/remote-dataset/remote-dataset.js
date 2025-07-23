@@ -292,7 +292,7 @@
             if (append === false) this.body.clear();
 
             this.entries.forEach((entry, index) => {
-                Metro.utils.exec(o.onDrawEntry, [entry, index, this.body[0]], this);
+                this.body.append(Metro.utils.exec(o.onDrawEntry, [entry, index], this));
             });
 
             if (usePagination && !o.shortPagination) {
@@ -345,7 +345,6 @@
             }
 
             url = o.onBeforeLoad(url, this);
-            console.log(`Loading data from: ${url}`);
 
             const response = await fetch(url, { method: o.method });
             if (response.ok === false) {

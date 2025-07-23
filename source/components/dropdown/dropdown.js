@@ -16,6 +16,7 @@
         openFunc: "show",
         closeFunc: "hide",
         height: "auto",
+        stayOnClick: false,
         onDrop: Metro.noop,
         onUp: Metro.noop,
         onDropdownCreate: Metro.noop,
@@ -114,7 +115,7 @@
                 if (element.css("display") !== "none" && !element.hasClass("keep-open")) {
                     this.close(true, element);
                 } else {
-                    $(participants).each((i, el) => {
+                    $(participants).each((_, el) => {
                         if (
                             !element.parents("[data-role-dropdown]").is(el) &&
                             !$(el).hasClass("keep-open") &&
@@ -122,9 +123,11 @@
                         ) {
                             if (!Metro.utils.isValue(o.dropFilter)) {
                                 this.close(true, el);
+                                console.log(1);
                             } else {
                                 if ($(el).closest(o.dropFilter).length > 0) {
                                     this.close(true, el);
+                                    console.log(2);
                                 }
                             }
                         }
@@ -160,10 +163,18 @@
             }
 
             $(element)
-                .find("li.disabled a")
+                .find(".disabled")
                 .on(Metro.events.click, (e) => {
                     e.preventDefault();
+                    e.stopPropagation();
                 });
+
+            if (o.stayOnClick === true) {
+                element.on(Metro.events.click, (e) => {
+                    // e.preventDefault();
+                    e.stopPropagation();
+                });
+            }
         },
 
         _close: function (el, immediate) {

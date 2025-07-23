@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'metro-ui-core';
   src:
-    url('fonts/metro-ui-core.ttf?v5c4sw') format('truetype'),
-    url('fonts/metro-ui-core.woff?v5c4sw') format('woff'),
-    url('fonts/metro-ui-core.svg?v5c4sw#metro-ui-core') format('svg');
+    url('fonts/metro-ui-core.ttf?m0gvny') format('truetype'),
+    url('fonts/metro-ui-core.woff?m0gvny') format('woff'),
+    url('fonts/metro-ui-core.svg?m0gvny#metro-ui-core') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -32,6 +32,54 @@
 }
 .mif-ticket-outline:before {
   content: "\ebab";
+}
+.mif-function:before {
+  content: "\ebbf";
+}
+.mif-terminal2:before {
+  content: "\e92e";
+}
+.mif-pos:before {
+  content: "\ebb1";
+}
+.mif-variable-group:before {
+  content: "\ebb2";
+}
+.mif-termina:before {
+  content: "\ebb3";
+}
+.mif-layers:before {
+  content: "\ebb4";
+}
+.mif-layers-dot:before {
+  content: "\ebb5";
+}
+.mif-layers-active:before {
+  content: "\ebb6";
+}
+.mif-github-alt:before {
+  content: "\ebb7";
+}
+.mif-debug-coverage:before {
+  content: "\ebb8";
+}
+.mif-debug-all:before {
+  content: "\ebb9";
+}
+.mif-debug:before {
+  content: "\ebba";
+}
+.mif-bracket-dot:before {
+  content: "\ebbb";
+}
+.mif-bell-dot:before {
+  content: "\ebbc";
+}
+.mif-milestone2:before {
+  content: "\ebbd";
+}
+.mif-milestone:before {
+  content: "\ebbe";
 }
 .mif-product:before {
   content: "\ebac";
@@ -1551,7 +1599,7 @@
 .mif-palette:before {
   content: "\e619";
 }
-.mif-layers:before {
+.mif-layers2:before {
   content: "\e644";
 }
 .mif-local-airport:before {
@@ -2087,9 +2135,6 @@
 }
 .mif-file-zip:before {
   content: "\e92b";
-}
-.mif-stack:before {
-  content: "\e92e";
 }
 .mif-folder:before {
   content: "\e92f";

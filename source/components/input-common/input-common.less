@@ -3,6 +3,7 @@
 
 :root {
     --input-height: var(--control-height-normal);
+    --input-label-font-size: .875rem;
     --input-font-size: 16px;
     --input-background: #ffffff;
     --input-background-disabled: #f7f8fa;
@@ -314,6 +315,8 @@ input.rtl, input[dir=rtl] {
 .label-for-input {
     display: block;
     position: relative;
+    font-weight: 600;
+    font-size: var(--input-label-font-size, 14px);
 }
 
 .label-for-input.rtl {

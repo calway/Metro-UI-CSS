@@ -5,6 +5,7 @@
     --v-menu-border-color: #e9e9e9;
     --v-menu-divider-color: #e9e9e9;
     --v-menu-background: #ffffff;
+    --v-menu-title-color: #515151;
     --v-menu-color: #191919;
     --v-menu-item-color: #191919;
     --v-menu-item-color-disabled: #ccc;
@@ -19,6 +20,7 @@
     --v-menu-border-color: #404959;
     --v-menu-divider-color: #404959;
     --v-menu-background: #11151d;
+    --v-menu-title-color: #ffffff;
     --v-menu-color: #ffffff;
     --v-menu-item-color: #dbdfe7;
     --v-menu-item-color-disabled: #173e8f;
@@ -100,13 +102,13 @@
     }
 
     .menu-title {
-        background-color: #f6f7f8;
+        background-color: var(--v-menu-background);
+        color: var(--v-menu-title-color);
         font-size: 12px;
         line-height: 22px;
         height: 22px;
         padding: 0 8px;
         border: 0;
-        color: #646464;
         font-weight: bold;
         pointer-events: none;
 
@@ -118,7 +120,7 @@
             }
         }
         &:hover {
-            background-color: #f6f7f8;
+            background-color: var(--v-menu-background);
             cursor: default;
             border: 0;
         }
