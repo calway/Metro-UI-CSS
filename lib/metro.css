@@ -71313,8 +71313,28 @@ label:has(input) {
 }
 
 /* source/components/remote-table/remote-table.less */
-.remote-table .search-block {
-  margin-bottom: 10px;
+:root {
+  --remote-table-order-block-size: 200px;
+  --remote-table-count-block-size: 140px;
+}
+.remote-table .service-block {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+.remote-table .service-block .search-block {
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+.remote-table .service-block .order-block {
+  flex: 0 0 var(--remote-table-order-block-size);
+  margin-left: auto;
+}
+.remote-table .service-block .count-block {
+  flex: 0 0 var(--remote-table-count-block-size);
 }
 
 /* source/components/resizable/resizeable.less */

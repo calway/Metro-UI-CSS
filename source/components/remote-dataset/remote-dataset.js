@@ -32,6 +32,11 @@
 
         params: null,
 
+        searchControl: null,
+        sortingControl: null,
+        rowsCountControl: null,
+        searchThreshold: 3,
+
         sortLabel: "",
         rowsLabel: "",
         searchLabel: "",
@@ -105,70 +110,120 @@
 
             entries.html(`
                 <div class="service-block ${o.clsServiceBlock} ${o.showServiceBlock ? "" : "d-none"}">
-                    <div class="search-block ${o.clsSearchBlock} ${o.quickSearch ? "" : "d-none"}">
-                        <input name="search" type="text" data-role="input" 
-                            data-prepend="${o.searchLabel || this.strings.label_search}" 
-                            data-search-button="true" 
-                            />
-                    </div>
-                   
-                    <div class="order-block ${o.clsOrderBlock} ${this.sortRules.length === 0 || o.selectOrder === false ? "d-none" : ""}">
-                        <select class="medium" name="sort-order">
-                            ${this.sortRules
-                                .map(
-                                    (rule) => `
-										<option value="${rule[0]}:${rule[1]}" 
-												${rule[0] === this.sortField && rule[1] === this.sortOrder ? "selected" : ""}
-												data-icon="${rule[3] ? rule[3] : ""}"
-										>
-											${rule[2]}
-										</option>
-									`,
-                                )
-                                .join("")}
-                        </select>
-                    </div>
-                   
-                    <div class="count-block ${o.clsRowsCountBlock} ${o.selectCount ? "" : "d-none"}">
-                        <select class="medium" name="rows-count">
-                            ${this.rowSteps
-                                .map(
-                                    (step) => `
-										<option value="${step}" ${+step === +o.rows ? "selected" : ""}>
-											${step}
-										</option>
-									`,
-                                )
-                                .join("")}
-                        </select>
-                    </div>
+                    <div class="search-block ${o.clsSearchBlock} ${o.quickSearch ? "" : "d-none"}"></div>                   
+                    <div class="order-block ${o.clsOrderBlock} ${this.sortRules.length === 0 || o.selectOrder === false ? "d-none" : ""}"></div>                   
+                    <div class="count-block ${o.clsRowsCountBlock} ${o.selectCount ? "" : "d-none"}"></div>
                 </div>
                 ${o.caption ? `<div class="dataset-caption">${o.caption}</div>` : ""}
                 <div class="dataset-body"></div>
             `);
 
-            Metro.makePlugin(entries.find("select[name=rows-count]"), "select", {
-                prepend: o.rowsLabel || this.strings.label_rows_count,
-                filter: false,
-                onChange: (value) => {
-                    this.limit = +value;
-                    this.offset = 0;
-                    this._loadData().then(() => {});
-                },
-            });
+            let search_input;
+            if (o.searchControl) {
+                search_input = $(o.searchControl);
+            } else {
+                search_input = $("<input>")
+                    .attr("type", "text")
+                    .addClass("medium")
+                    .appendTo(entries.find(".search-block"));
+            }
+            if (search_input.length) {
+                search_input.attr("name", "search-control");
+                Metro.makePlugin(search_input, "input", {
+                    searchButton: true,
+                });
 
-            Metro.makePlugin(entries.find("select[name=sort-order]"), "select", {
-                prepend: o.sortLabel || this.strings.label_sorting,
-                filter: false,
-                onChange: (value) => {
-                    const [field, order] = ("" + value).split(":");
-                    this.url = o.url;
-                    this.sortField = field;
-                    this.sortOrder = order;
-                    this.offset = 0;
+                const searchFn = Hooks.useDebounce(() => {
+                    const val = search_input.val().trim();
+                    if (!val) {
+                        this.search = "";
+                        this.url = o.url;
+                        this._loadData().then(() => {});
+                        return;
+                    }
+                    if (val.length < o.searchThreshold) {
+                        return;
+                    }
+                    this.addParam(o.keySearch, val);
+                    if (o.urlSearch) {
+                        this.url = o.urlSearch;
+                    }
                     this._loadData().then(() => {});
-                },
-            });
+                }, 300);
+
+                search_input.on(Metro.events.inputchange, searchFn);
+            }
+
+            let select_order;
+            let select_rows_count;
+
+            if (o.sortingControl) {
+                select_order = $(o.sortingControl);
+            } else {
+                select_order = $("<select>")
+                    .addClass("medium")
+                    .attr("name", "sort-order")
+                    .appendTo(entries.find(".order-block"));
+            }
+            if (select_order.length) {
+                select_order.html(
+                    this.sortRules
+                        .map(
+                            (rule) => `
+                                    <option value="${rule[0]}:${rule[1]}" 
+                                            ${rule[0] === this.sortField && rule[1] === this.sortOrder ? "selected" : ""}
+                                            data-icon="${rule[3] ? rule[3] : ""}"
+                                    >
+                                        ${rule[2]}
+                                    </option>
+                                `,
+                        )
+                        .join(""),
+                );
+                Metro.makePlugin(select_order, "select", {
+                    prepend: o.sortLabel || this.strings.label_sorting,
+                    filter: false,
+                    onChange: (value) => {
+                        const [field, order] = ("" + value).split(":");
+                        this.url = o.url;
+                        this.sortField = field;
+                        this.sortOrder = order;
+                        this.offset = 0;
+                        this._loadData().then(() => {});
+                    },
+                });
+            }
+
+            if (o.rowsCountControl) {
+                select_rows_count = $(o.rowsCountControl);
+            } else {
+                select_rows_count = $("<select>")
+                    .addClass("medium")
+                    .attr("name", "rows-count")
+                    .appendTo(entries.find(".count-block"));
+            }
+            if (select_rows_count.length) {
+                select_rows_count.html(
+                    this.rowSteps
+                        .map(
+                            (step) => `
+                                    <option value="${step}" ${+step === +o.rows ? "selected" : ""}>
+                                        ${step}
+                                    </option>
+                                `,
+                        )
+                        .join(""),
+                );
+                Metro.makePlugin(select_rows_count, "select", {
+                    prepend: o.rowsLabel || this.strings.label_rows_count,
+                    filter: false,
+                    onChange: (value) => {
+                        this.limit = +value;
+                        this.offset = 0;
+                        this._loadData().then(() => {});
+                    },
+                });
+            }
 
             this.body = entries.find(".dataset-body").addClass(o.clsBody);
 
@@ -215,41 +270,6 @@
                 that.offset = $(this).data("page") * that.limit - that.limit;
                 that._loadData().then(() => {});
             });
-
-            const searchFn = Hooks.useDebounce(() => {
-                const val = element.find("input[name=search]").val().trim();
-                if (val === "") {
-                    this.search = "";
-                    this.url = o.url;
-                    this._loadData().then(() => {});
-                    return;
-                }
-                if (val.length < 3) {
-                    return;
-                }
-                this.addParam(o.keySearch, val);
-                if (o.urlSearch) {
-                    this.url = o.urlSearch;
-                }
-                this._loadData().then(() => {});
-            }, 300);
-
-            element.on(Metro.events.inputchange, "input[name=search]", searchFn);
-
-            // element.on("change", "select[name=rows-count]", function () {
-            //     that.limit = +$(this).val();
-            //     that.offset = 0;
-            //     that._loadData().then(() => {});
-            // });
-
-            // element.on("change", "select[name=sort-order]", function () {
-            //     const [field, order] = $(this).val().split(":");
-            //     that.url = o.url;
-            //     that.sortField = field;
-            //     that.sortOrder = order;
-            //     that.offset = 0;
-            //     that._loadData().then(() => {});
-            // });
 
             element.on("click", ".load-more-button", () => {
                 that.offset += that.limit;
