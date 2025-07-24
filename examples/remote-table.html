@@ -13,7 +13,7 @@
         .data-cell-price {
             text-align: right;
         }
-        .data-cell-discountPercentage {
+        .data-cell-discountPercentage, .data-cell-discountedPrice {
             text-align: right;
         }
     </style>
@@ -29,6 +29,29 @@
     </div>
 </nav>
 
+<div class="container-fluid pt-10">
+    <div class="container container-query">
+        <div data-role="remote-table"
+             data-page-mode="page"
+             data-offset="1"
+             data-key-offset="page"
+             data-key-data="data"
+             data-key-limit="perPage"
+             data-key-total="totalProducts"
+             data-key-sort="sortBy"
+             data-key-order="order"
+             data-key-search="q"
+             data-fields="_id, title, price, discountedPrice"
+             data-sortable-fields="id, title, price, discountedPrice"
+             data-col-size="30,,150,150"
+             data-captions="ID, Title, Price, Discounted Price"
+             data-sort="_id"
+             data-url='https://fakestoreapiserver.reactbd.org/api/products'
+             data-cls-table="table-border striped row-hover responsive-sm"
+             data-cls-pagination="mt-4 d-flex flex-justify-center"
+        ></div>
+    </div>
+</div>
 
 <div class="container-fluid mt-10">
     <div class="container">
@@ -52,10 +75,8 @@
              data-cls-table="table-border striped row-hover responsive-sm"
              data-cls-pagination="mt-4 d-flex flex-justify-center"
         ></div>
-        
     </div>
 </div>
-
 
 <div class="container-fluid mt-10">
     <div class="container d-flex flex-row gap-2">
@@ -95,7 +116,7 @@
         if (name === 'price') {
             cell.innerHTML = ( `<span class="${value > 100 ? "fg-red" : ""}">$${value}</span>` )
         }
-        if (name === 'discountPercentage') {
+        if (name === 'discountedPercentage') {
             cell.innerHTML = ( `${value}%` )
         }
     }

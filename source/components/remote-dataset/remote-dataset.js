@@ -7,7 +7,7 @@
         urlSearch: "",
         method: "GET",
         limit: 10,
-        offset: 0,
+        offset: null,
         sort: "",
 
         keyLimit: "",
@@ -77,6 +77,10 @@
 
         _create: function () {
             const o = this.options;
+
+            if (o.offset === null) {
+                o.offset = o.pageMode === "offset" ? 0 : 1;
+            }
 
             this.offset = o.offset;
             this.rowSteps = o.rowsSteps.toArray(",", "int");
@@ -150,6 +154,7 @@
                     if (o.urlSearch) {
                         this.url = o.urlSearch;
                     }
+                    this.offset = o.pageMode === "offset" ? 0 : 1;
                     this._loadData().then(() => {});
                 }, 300);
 

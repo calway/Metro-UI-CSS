@@ -8,7 +8,7 @@
         urlSearch: "",
         method: "GET",
         limit: 10,
-        offset: 0,
+        offset: null,
         fields: "",
         sortableFields: "",
         colSize: "",
@@ -42,6 +42,8 @@
 
         rowsLabel: "",
         searchLabel: "",
+
+        pageMode: "offset", // offset or page
 
         clsTable: "",
         clsRow: "",
@@ -79,7 +81,11 @@
         _create: function () {
             const o = this.options;
 
-            this.offset = o.offset;
+            if (o.offset === null) {
+                o.offset = o.pageMode === "offset" ? 0 : 1;
+            }
+
+            this.offset = +o.offset;
             this.fields = o.fields.toArray(",");
             this.captions = o.captions ? o.captions.toArray(",") : null;
             this.rowSteps = o.rowsSteps.toArray(",");
@@ -151,6 +157,7 @@
                     if (o.urlSearch) {
                         this.url = o.urlSearch;
                     }
+                    this.offset = o.pageMode === "offset" ? 0 : 1;
                     this._loadData().then(() => {});
                 }, 300);
 
@@ -183,7 +190,7 @@
                     filter: false,
                     onChange: (value) => {
                         this.limit = +value;
-                        this.offset = 0;
+                        this.offset = o.pageMode === "offset" ? 0 : 1;
                         this._loadData().then(() => {});
                     },
                 });
@@ -207,18 +214,32 @@
             element.on("click", ".page-link", function () {
                 const parent = $(this).parent();
                 if (parent.hasClass("service")) {
+                    console.log();
                     if (parent.hasClass("prev-page")) {
-                        that.offset -= that.limit;
-                        if (that.offset < 0) {
-                            that.offset = 0;
+                        if (o.pageMode === "offset") {
+                            that.offset -= that.limit;
+                            if (that.offset < 0) {
+                                that.offset = 0;
+                            }
+                        } else {
+                            that.offset -= 1;
+                            if (that.offset < 1) {
+                                that.offset = 1;
+                            }
                         }
                     } else {
-                        that.offset += that.limit;
+                        if (o.pageMode === "offset") {
+                            that.offset += that.limit;
+                        } else {
+                            that.offset += 1;
+                        }
+                        console.log(`Offset: ${that.offset}`);
                     }
                     that._loadData().then(() => {});
                     return;
                 }
-                that.offset = $(this).data("page") * that.limit - that.limit;
+                that.offset =
+                    o.pageMode === "offset" ? $(this).data("page") * that.limit - that.limit : $(this).data("page");
                 that._loadData().then(() => {});
             });
 
@@ -304,10 +325,17 @@
             });
 
             if (usePagination && !o.shortPagination) {
+                const current =
+                    o.pageMode === "offset"
+                        ? this.offset === 0
+                            ? 1
+                            : Math.round(this.offset / this.limit) + 1
+                        : this.offset;
+
                 Metro.pagination({
                     length: this.total,
                     rows: this.limit,
-                    current: this.offset === 0 ? 1 : Math.round(this.offset / this.limit) + 1,
+                    current,
                     target: this.pagination,
                     clsPagination: o.clsPagination,
                 });
