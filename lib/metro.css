@@ -62527,6 +62527,7 @@ label:has(input) {
   border-radius: var(--github-box-border-radius);
   border: 1px solid var(--github-box-border-color);
   font-size: 14px;
+  position: relative;
 }
 .github-box .box-header {
   background: var(--github-box-header-background);
@@ -62557,9 +62558,15 @@ label:has(input) {
 .github-box .box-header .actions .more-button .dropdown-caret {
   display: none;
 }
+.github-box .box-header .attributes {
+  margin-left: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2px;
+  align-items: center;
+}
 .github-box .box-header .prc {
   display: flex;
-  margin-left: auto;
   font-size: 10px;
   padding: 3px 6px;
   border-radius: 12px;
