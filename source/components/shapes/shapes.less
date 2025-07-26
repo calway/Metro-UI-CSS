@@ -73,7 +73,7 @@
     isolation: isolate;
     --skew-angle: 5deg;
     --background: var(--color-primary);
-    
+
     &::after {
         content: "";
         position: absolute;
@@ -82,7 +82,7 @@
         z-index: -1;
         background: var(--background);
     }
-    
+
     &.reverse {
         &::after {
             transform: skewY(calc(1 * var(--skew-angle)));
@@ -102,27 +102,29 @@
 }
 
 .wavy {
-    --mask:
-            radial-gradient(67.08px at 50% 90px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 51% repeat-x,
-            radial-gradient(67.08px at 50% -60px,#0000 99%,#000 101%) 50% 30px/120px calc(51% - 30px) repeat-x,
-            radial-gradient(67.08px at 50% calc(100% - 90px),#000 99%,#0000 101%) calc(50% - 60px) 100%/120px 51% repeat-x,
-            radial-gradient(67.08px at 50% calc(100% + 60px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px calc(51% - 30px) repeat-x;
-    -webkit-mask: var(--mask);
+    --mask: radial-gradient(67.08px at 50% 90px, #000 99%, #0000 101%) calc(50% - 60px) 0/120px 51% repeat-x,
+    radial-gradient(67.08px at 50% -60px, #0000 99%, #000 101%) 50% 30px/120px calc(51% - 30px) repeat-x,
+    radial-gradient(67.08px at 50% calc(100% - 90px), #000 99%, #0000 101%) calc(50% - 60px) 100%/120px 51% repeat-x,
+    radial-gradient(67.08px at 50% calc(100% + 60px), #0000 99%, #000 101%) 50% calc(100% - 30px)/120px calc(51% - 30px) repeat-x;
     mask: var(--mask);
 }
 
 .wavy-top {
-    --mask:
-            radial-gradient(67.08px at 50% 90px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
-            radial-gradient(67.08px at 50% -60px,#0000 99%,#000 101%) 50% 30px/120px 100% repeat-x;
-    -webkit-mask: var(--mask);
+    --mask: radial-gradient(67.08px at 50% 90px, #000 99%, #0000 101%) calc(50% - 60px) 0/120px 100%,
+    radial-gradient(67.08px at 50% -60px, #0000 99%, #000 101%) 50% 30px/120px 100% repeat-x;
     mask: var(--mask);
 }
 
 .wavy-bottom {
-    --mask:
-            radial-gradient(67.08px at 50% calc(100% - 90px),#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
-            radial-gradient(67.08px at 50% calc(100% + 60px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
-    -webkit-mask: var(--mask);
+    --mask: radial-gradient(67.08px at 50% calc(100% - 90px), #000 99%, #0000 101%) calc(50% - 60px) 0/120px 100%,
+    radial-gradient(67.08px at 50% calc(100% + 60px), #0000 99%, #000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
     mask: var(--mask);
+}
+
+.wave {
+    clip-path: shape(from 0% 20%,
+    curve to 100% 20% with 25% 0% / 75% 40%,
+    vline to 80%,
+    curve to 0% 80% with 75% 100% / 25% 60%,
+    close);
 }
