@@ -6,12 +6,14 @@
     --t-menu-border-color: #ececec;
     --t-menu-background: #fefefe;
     --t-menu-color: #191919;
+    --t-menu-dropdown-color: #191919;
 }
 
 .dark-side {
     --t-menu-border-color: #484b4c;
     --t-menu-background: #343637;
     --t-menu-color: #dbdfe7;
+    --t-menu-dropdown-color: #dbdfe7;
 }
 
 .t-menu {
@@ -139,13 +141,17 @@
             height: 0;
             border-style: solid;
             border-width: 0 0 8px 8px;
-            border-color: transparent transparent var(--t-menu-border-color) transparent;
+            border-color: transparent transparent var(--t-menu-dropdown-color) transparent;
             .rotate(0);
         }
 
         &:before {
             display: none;
         }
+    }
+    
+    .dropdown-caret {
+        display: none;
     }
 }
 

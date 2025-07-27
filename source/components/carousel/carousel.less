@@ -3,16 +3,16 @@
 
 :root {
     --carousel-background: var(--default-background);
-    --carousel-switch-color: var(--default-color);
-    --carousel-switch-color-hover: var(--default-color-hover);
+    --carousel-switch-background: hsla(0, 0%, 57.3%, .8);
+    --carousel-switch-color: #fff;
     --carousel-bullet-color: #f5f8fe;
     --carousel-bullet-color-active: #50a8ff;
 }
 
 .dark-side {
     --carousel-background: var(--default-background);
-    --carousel-switch-color: var(--default-color);
-    --carousel-switch-color-hover: var(--default-color-hover);
+    --carousel-switch-background: hsla(0, 0%, 57.3%, .8);
+    --carousel-switch-color: #fff;
     --carousel-bullet-color: #26282e;
     --carousel-bullet-color-active: #50a8ff;
 }
@@ -36,7 +36,12 @@
     }
 
     .slide {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        flex-grow: 0;
+        flex-basis: auto;
         position: absolute;
         top: 0;
         left: 0;
@@ -74,13 +79,18 @@
         text-decoration: none;
         margin-top: -2rem;
         top: 50%;
-        font-weight: 300;
-        color: var(--carousel-switch-color);
+        font-weight: 700;
+        font-size: 1.5rem;
         cursor: pointer;
         padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 4px;
+        background-color: var(--carousel-switch-background);
+        color: var(--carousel-switch-color);
+        opacity: 0;
+        transition: all .3s;
 
         &:hover {
             color: var(--carousel-switch-color-hover);
@@ -94,13 +104,15 @@
     }
 
     .carousel-switch-next {
-        right: 0;
+        right: 10px;
         left: auto;
+        transform: translateX(64px);
     }
 
     .carousel-switch-prev {
-        left: 0;
+        left: 10px;
         right: auto;
+        transform: translateX(-64px);
     }
 
     .carousel-bullets {
@@ -188,6 +200,15 @@
                     width: 64px;
                     height: 24px;
                 }
+            }
+        }
+    }
+    
+    @media (hover: hover) {
+        &:hover {
+            .carousel-switch-next, .carousel-switch-prev {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
     }

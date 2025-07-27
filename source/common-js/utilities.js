@@ -126,7 +126,6 @@
                 return false;
             }
 
-            // biome-ignore lint/suspicious/useValidTypeof: <explanation>
             if (typeof o === t) {
                 return o;
             }
@@ -147,7 +146,6 @@
                 return false;
             }
 
-            // biome-ignore lint/suspicious/useValidTypeof: <explanation>
             if (typeof window[o] === t) {
                 return window[o];
             }
@@ -172,7 +170,6 @@
                 context = context[ns[i]];
             }
 
-            // biome-ignore lint/suspicious/useValidTypeof: <explanation>
             return typeof context === t ? context : false;
         },
 
@@ -654,6 +651,15 @@
                 behavior: "smooth",
                 block: "start",
             });
+        },
+
+        getInnerSize: (element) => {
+            const el = $(element)[0];
+            if (!el) return { width: 0, height: 0 };
+            const style = getComputedStyle(el);
+            const width = el.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+            const height = el.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+            return { width, height };
         },
     };
 })(Metro, Dom);

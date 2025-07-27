@@ -43,6 +43,7 @@
         padding: 0 .75rem;
         background: transparent;
         color: inherit;
+        font-family: inherit;
 
         &:focus {
             box-shadow: none;
@@ -74,7 +75,7 @@
 
     .input-clear-button, .input-reveal-button, .input-search-button {
         background-color: transparent;
-        //font-size: var(--input-font-size);
+        font-family: var(--font-symbol);
         &:hover {
             background-color: transparent;
         }
@@ -83,7 +84,7 @@
     &.disabled .button-group {
         button {
             background-color: transparent;
-            color: var(--input-disabled-color);
+            color: var(--input-color-disabled);
         }
     }
 
@@ -204,22 +205,17 @@
     }
 }
 
-.label-for-input {
-    font-size: 12px;
-    text-transform: uppercase;
-    
-    &.rtl {
-        text-align: right;
-    }
-}
-
 .input {
     .prepend-options, .append-options {
         [aria-hidden=true] {
             position: absolute;
             right: 2px;
-            top: 50%;
+            top: calc(var(--input-height) / 2 - 5px);
             margin-top: -.5rem;
+        }
+
+        .dropdown-caret {
+            margin-left: 2rem;
         }
         
         .options-list {
@@ -228,7 +224,7 @@
             height: 100%;
             border-radius: var(--input-border-radius) 0 0 var(--input-border-radius);
             font-size: var(--input-font-size);
-            padding-right: 1rem;
+            padding-right: 30px;
         }
     }
     

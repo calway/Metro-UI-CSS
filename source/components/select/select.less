@@ -86,6 +86,10 @@
     }
     &.large {
         --select-height: var(--control-height-large);
+        --select-font-size: 16px;
+    }
+    &.largest {
+        --select-height: var(--control-height-largest);
         --select-font-size: 20px;
     }
 }
@@ -101,6 +105,7 @@
         aspect-ratio: 1 / 1;
         transform: rotate(90deg);
         transition: transform 0.2s ease-in-out;
+        fill: var(--select-dropdown-toggle-color);
     }
     
     &.active-toggle {
@@ -149,6 +154,7 @@
             font-size: var(--select-font-size);
             display: flex;
             object-fit: cover;
+            color: var(--select-option-color);
             
             * {
                 object-fit: cover;
@@ -184,7 +190,7 @@
     }
     select {display: none;}
 
-    .button-group {
+    & > .button-group {
         display: flex;
         flex-wrap: nowrap;
         margin-right: 1rem;
@@ -197,8 +203,8 @@
     .button {
         background-color: var(--select-button-background);
         color: var(--select-button-color);
-        height: calc(var(--select-heigt, 36px) - 2px);
-        min-width: calc(var(--select-heigt, 36px) - 2px);
+        height: calc(var(--select-height, 36px) - 2px);
+        min-width: calc(var(--select-height, 36px) - 2px);
         &:hover {
             background-color: var(--select-button-background-hover);
             color: var(--select-button-color-hover);

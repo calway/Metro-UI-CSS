@@ -8,7 +8,7 @@ The Breadcrumbs component provides a simple way to show the current page locatio
 
 ```html
 <!-- Default style -->
-<ul class="breadcrumbs default">
+<ul class="breadcrumbs">
     <li><a href="#"><span class="icon mif-home"></span>Home</a></li>
     <li><a href="#">Library</a></li>
     <li><a href="#">Data</a></li>
@@ -28,9 +28,9 @@ The Breadcrumbs component provides a simple way to show the current page locatio
 </ul>
 
 <!-- Custom styled breadcrumbs -->
-<ul class="breadcrumbs default" style="--breadcrumbs-background: #f0f0f0; --breadcrumbs-color: #333333;">
-    <li><a href="#"><span class="icon mif-home"></span>Home</a></li>
-    <li><a href="#">Library</a></li>
+<ul class="breadcrumbs" style="--breadcrumbs-background: #f0f0f0; --breadcrumbs-color: #333333;">
+    <li data-divider="›"><a href="#"><span class="icon mif-home"></span>Home</a></li>
+    <li data-divider="›"><a href="#">Library</a></li>
     <li class="active"><a href="#">Data</a></li>
 </ul>
 ```
@@ -39,7 +39,6 @@ The Breadcrumbs component provides a simple way to show the current page locatio
 
 ### Base Classes
 - `.breadcrumbs` - The main container class for breadcrumbs
-- `.breadcrumbs.default` - Creates breadcrumbs with a simple "›" separator
 - `.breadcrumbs.arrow` - Creates arrow-shaped breadcrumbs with automatic counters
 
 ### Modifier Classes

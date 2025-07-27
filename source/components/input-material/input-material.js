@@ -60,6 +60,7 @@
         },
 
         _createStructure: function () {
+            const that = this;
             const element = this.element;
             const o = this.options;
             let container;
@@ -124,17 +125,14 @@
                         .addClass(this.cls)
                         .attr("tabindex", -1)
                         .attr("type", "button")
-                        .html(this.text);
+                        .html(this.text || this.html || "");
 
-                    if (this.attr && typeof this.attr === "object") {
-                        $.each(this.attr, (k, v) => {
-                            btn.attr(Str.dashedName(k), v);
-                        });
-                    }
-
+                    that._setAttributes(btn, this.attr);
+                    
                     if (this.onclick)
-                        btn.on("click", () => {
-                            this.onclick.apply(btn, [element.valueOf(), element]);
+                        btn.on("click", (e) => {
+                            if (Metro.utils.isRightMouse(e)) return;
+                            Metro.utils.exec(this.onclick, [btn[0], element[0]]);
                         });
 
                     btn.appendTo(buttons);

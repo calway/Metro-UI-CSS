@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>metroui</id>
-    <version>5.1.9</version>
+    <version>5.1.10</version>
     <title>Metro UI Components Library</title>
     <authors>Serhii Pimenov</authors>
     <owners>serhii_pimenov</owners>
@@ -16,7 +16,6 @@
     <tags>Metro UI CSS Framework LESS CSS JS HTML</tags>
     <readme>README.md</readme>
     <releaseNotes>
-        ### 5.1.9
         
         + [x] Added bulls: `star`, `badge`
         + [x] Updated `textarea`, added attribute `data-initial-height` 

@@ -1,7 +1,8 @@
 @import "../../include/vars";
 
 :root {
-    
+    --remote-table-order-block-size: 200px;
+    --remote-table-count-block-size: 140px;
 }
 
 .dark-side {
@@ -9,7 +10,26 @@
 }
 
 .remote-table {
-    .search-block {
-        margin-bottom: 10px;
-    }   
+    .service-block {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 1rem;
+
+        .search-block {
+            flex-shrink: 1;
+            flex-grow: 1;
+        }
+
+        .order-block {
+            flex: 0 0 var( --remote-table-order-block-size);
+            margin-left: auto;
+        }
+
+        .count-block {
+            flex: 0 0 var( --remote-table-count-block-size);
+        }
+    }
 }

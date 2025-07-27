@@ -241,6 +241,7 @@
         },
 
         _window: function (o) {
+            const that = this;
             let win;
             let caption;
             let content;
@@ -315,34 +316,28 @@
                 const customButtons = Metro.utils.isObject(o.customButtons);
                 if (customButtons) {
                     $.each(customButtons, function () {
-                        const customButton = $("<span>");
+                        const btn = $("<span>");
 
-                        customButton
+                        btn
                             .addClass("button btn-custom")
                             .addClass(o.clsCustomButton)
                             .addClass(this.cls)
                             .attr("tabindex", -1)
-                            .html(this.html);
+                            .html(this.text || this.html || "");
 
-                        if (this.attr && typeof this.attr === "object") {
-                            $.each(this.attr, (k, v) => {
-                                customButton.attr(Str.dashedName(k), v);
+                        that._setAttributes(btn, this.attr);
+
+                        if (this.onclick) {
+                            btn.on(Metro.events.click, (e) => {
+                                if (Metro.utils.isRightMouse(e)) return;
+                                Metro.utils.exec(this.onclick, [btn[0], win[0]]);
                             });
                         }
 
-                        customButton.data("action", this.onclick);
-
-                        buttons.prepend(customButton);
+                        btn.appendTo(buttons);
                     });
                 }
             }
-
-            caption.on(Metro.events.click, ".btn-custom", function (e) {
-                if (Metro.utils.isRightMouse(e)) return;
-                const button = $(this);
-                const action = button.data("action");
-                Metro.utils.exec(action, [button], this);
-            });
 
             win.attr("id", o.id === undefined ? Hooks.useId(win[0]) : o.id);
 

@@ -105,6 +105,11 @@
     [data-role-dropdown], [data-role-dropmenu], .drop-object {
         right: 0;
         top: 100%;
+        
+        &.place-left {
+            left: 0;
+            right: auto;
+        }
     }
 
     &.no-gap {
@@ -137,6 +142,10 @@
     }
     &.large {
         --control-height: var(--control-height-large);
+        --split-button-font-size: 18px;
+    }
+    &.largest {
+        --control-height: var(--control-height-largest);
         --split-button-font-size: 24px;
     }
 }

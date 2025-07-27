@@ -10,11 +10,6 @@
 }
 
 .bg-hover:hover {background-color: @hoverBackground !important;}
-.bg-hover2:hover {background-color: @hoverBackground2 !important;}
-.bg-hover-light:hover {background-color: @hoverBackgroundLight !important;}
-.bg-hover-light1:hover {background-color: @hoverBackgroundLight1 !important;}
-.bg-hover-light2:hover {background-color: @hoverBackgroundLight2 !important;}
-.bg-hover-light3:hover {background-color: @hoverBackgroundLight3 !important;}
 
 .bg-facebook {background-color: #4267b2!important; color: #ffffff !important;}
 .bg-twitter {background-color: #1DA1F2!important; color: #ffffff !important;}
@@ -28,6 +23,33 @@ each(@colors, {
     .bg-@{value}-active {&:active {background-color: @@value !important;}}
     .bg-@{value}-hover {&:hover {background-color: @@value !important;}}
     .bg-@{value}-focus {&:focus {background-color: @@value !important;}}
+})
+
+each(@normalColors, {
+    @lightColor: "light-@{value}";
+    @minorColor: "minor-@{value}";
+    @darkColor: "dark-@{value}";
+    @satColor: "sat-@{value}";
+    
+    .bg-light-@{value} {background-color: @@lightColor !important;}
+    .bg-light-@{value}-active {&:active {background-color: @@lightColor !important;}}
+    .bg-light-@{value}-hover {&:hover {background-color: @@lightColor !important;}}
+    .bg-light-@{value}-focus {&:focus {background-color: @@lightColor !important;}}
+
+    .bg-minor-@{value} {background-color: @@minorColor !important;}
+    .bg-minor-@{value}-active {&:active {background-color: @@minorColor !important;}}
+    .bg-minor-@{value}-hover {&:hover {background-color: @@minorColor !important;}}
+    .bg-minor-@{value}-focus {&:focus {background-color: @@minorColor !important;}}
+
+    .bg-sat-@{value} {background-color: @@satColor !important;}
+    .bg-sat-@{value}-active {&:active {background-color: @@satColor !important;}}
+    .bg-sat-@{value}-hover {&:hover {background-color: @@satColor !important;}}
+    .bg-sat-@{value}-focus {&:focus {background-color: @@satColor !important;}}
+
+    .bg-dark-@{value} {background-color: @@darkColor !important;}
+    .bg-dark-@{value}-active {&:active {background-color: @@darkColor !important;}}
+    .bg-dark-@{value}-hover {&:hover {background-color: @@darkColor !important;}}
+    .bg-dark-@{value}-focus {&:focus {background-color: @@darkColor !important;}}
 })
 
 :root {

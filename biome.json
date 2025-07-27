@@ -1,5 +1,5 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "$schema": "https://biomejs.dev/schemas/2.1.1/schema.json",
     "vcs": {
         "enabled": true,
         "clientKind": "git",
@@ -8,16 +8,7 @@
     },
     "files": {
         "ignoreUnknown": false,
-        "ignore": [
-            "__html__/**/*",
-            "__tests__/**/*",
-            "lib/**/*",
-            "build.js",
-            "generate-tests.js",
-            "biome.json",
-            "package-lock.json",
-            "node_modules/**/*"
-        ]
+        "includes": ["source/**/*.js", "!**/*.test.js"]
     },
     "formatter": {
         "enabled": true,
@@ -25,9 +16,6 @@
         "lineWidth": 120,
         "indentWidth": 4,
         "lineEnding": "lf"
-    },
-    "organizeImports": {
-        "enabled": true
     },
     "linter": {
         "enabled": true,

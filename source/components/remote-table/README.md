@@ -1,244 +1,352 @@
-# Remote Table Component
+# Remote Table
 
-The Remote Table component provides a way to fetch and display tabular data from a remote API with built-in pagination, sorting, and searching capabilities. It's designed to handle large datasets efficiently by loading data in chunks and displaying it in a structured table format.
+A powerful component for displaying remote data in a table format with built-in pagination, search, sorting, and customizable rendering. The Remote Table component fetches data from remote APIs and provides a flexible interface for displaying tabular data with full control over pagination modes.
 
 ## Dependencies
 
-- Table component (styles)
+- Table component (for base table styles)
 - Pagination component
+- Input component (for search functionality)
+- Select component (for rows count selection)
 
 ## Usage
 
 ### Basic Usage
 
 ```html
-<div data-role="remote-table" 
-     data-url="api/data" 
-     data-search-url="api/search"
-     data-rows="10"
-     data-fields="id,name,email,phone"
-     data-captions="ID,Name,Email,Phone"
-     data-sortable-fields="name,email">
+<div data-role="remote-table"
+     data-url="https://api.example.com/data"
+     data-key-data="items"
+     data-fields="id, name, email">
 </div>
 ```
 
-### Additional Configurations
+### Page-based Pagination (pageMode="page")
+
+:::caution
+The `pageMode` parameter is crucial for determining how pagination works with your API.
+When using `pageMode="page"`, the component sends page numbers (1, 2, 3...) to your API instead of offset values.
+When using `pageMode="offset"`, it sends offset values (0, 10, 20...) based on the current page and limit.
+:::
 
 ```html
-<div id="userTable" data-role="remote-table" 
-     data-url="api/users" 
-     data-search-url="api/users/search"
-     data-rows="25"
-     data-fields="id,name,email,role,status"
-     data-captions="ID,Name,Email,Role,Status"
-     data-sortable-fields="name,email,role"
-     data-col-size="50px,200px,250px,100px,100px"
-     data-sort="name"
-     data-sort-order="asc"
-     data-cls-table="striped bordered">
+<div data-role="remote-table"
+     data-page-mode="page"
+     data-offset="1"
+     data-key-offset="page"
+     data-key-data="data"
+     data-key-limit="perPage"
+     data-key-total="totalProducts"
+     data-fields="id, title, price"
+     data-url="https://api.example.com/products">
 </div>
+```
+
+### Offset-based Pagination (pageMode="offset" - default)
+
+```html
+<div data-role="remote-table"
+     data-page-mode="offset"
+     data-key-offset="skip"
+     data-key-limit="limit"
+     data-key-data="products"
+     data-key-total="total"
+     data-fields="id, title, price"
+     data-url="https://api.example.com/products">
+</div>
+```
+
+### Advanced Configuration
+
+```html
+<div data-role="remote-table"
+     data-caption="Products"
+     data-url="https://dummyjson.com/products"
+     data-url-search="https://dummyjson.com/products/search"
+     data-key-offset="skip"
+     data-key-limit="limit"
+     data-key-data="products"
+     data-key-total="total"
+     data-key-sort="sortBy"
+     data-key-order="order"
+     data-key-search="q"
+     data-fields="id, title, price, discountPercentage"
+     data-sortable-fields="id, title, price, discountPercentage"
+     data-col-size="30,,150,150"
+     data-captions="ID, Title, Price, Discount"
+     data-sort="id"
+     data-rows="10"
+     data-rows-steps="10,25,50,100"
+     data-page-mode="offset"
+     data-on-draw-cell="drawCell"
+     data-cls-table="table-border striped row-hover responsive-sm"
+     data-cls-pagination="mt-4 d-flex flex-justify-center">
+</div>
+```
+
+### Using External Controls
+
+```html
+<div class="d-flex flex-row gap-2">
+    <input type="text" id="search" placeholder="Search...">
+    <select id="rows"></select>
+</div>
+
+<div data-role="remote-table"
+     data-url="https://api.example.com/data"
+     data-search-control="#search"
+     data-rows-count-control="#rows"
+     data-key-data="items">
+</div>
+```
+
+### JavaScript Initialization
+
+```javascript
+const table = Metro.makePlugin("#myTable", "remote-table", {
+    url: "https://api.example.com/data",
+    pageMode: "page",
+    keyData: "items",
+    fields: "id, name, email"
+});
 ```
 
 ## Plugin Parameters
 
 | Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
-| caption | string | "" | Caption for the table |
-| url | string | "" | URL for fetching data |
-| searchUrl | string | "" | URL for searching data (if different from main URL) |
-| method | string | "GET" | HTTP method for requests (GET, POST, etc.) |
-| limit | number | 10 | Number of items to fetch per page |
-| offset | number | 0 | Starting offset for fetching data |
-| fields | string | "" | Fields to display in the table (comma-separated) |
-| sortableFields | string | "" | Fields that can be sorted (comma-separated) |
-| colSize | string | "" | Column sizes (comma-separated, e.g., "100px,200px,auto") |
-| sort | string | "" | Default sort field |
-| sortOrder | string | "asc" | Default sort order (asc or desc) |
-| captions | string | null | Custom captions for table headers (comma-separated) |
-| limitKey | string | "limit" | Query parameter name for limit |
-| offsetKey | string | "offset" | Query parameter name for offset |
-| searchKey | string | "query" | Query parameter name for search term |
-| totalKey | string | "total" | Response property name for total count |
-| dataKey | string | "data" | Response property name for data array |
-| sortKey | string | "sortBy" | Query parameter name for sort field |
-| orderKey | string | "order" | Query parameter name for sort order |
-| shortPagination | boolean | false | Whether to use short pagination (just prev/next) or full pagination |
-| rows | number | 10 | Default number of rows to display |
-| rowsSteps | string | "10,25,50,100" | Available options for rows per page (comma-separated) |
-| clsTable | string | "" | Additional CSS class for the table |
-| clsPagination | string | "" | Additional CSS class for pagination |
+| --------- | ---- | ------- | ----------- |
+| `caption` | string | "" | Table caption text |
+| `url` | string | "" | Primary URL for data fetching |
+| `urlSearch` | string | "" | Alternative URL for search requests |
+| `method` | string | "GET" | HTTP method for requests |
+| `limit` | number | 10 | Number of records per page |
+| `offset` | number | null | Starting offset/page (auto-calculated based on pageMode) |
+| `fields` | string | "" | Comma-separated list of fields to display |
+| `sortableFields` | string | "" | Comma-separated list of sortable fields |
+| `colSize` | string | "" | Comma-separated list of column widths |
+| `sort` | string | "" | Default sort field |
+| `sortOrder` | string | "asc" | Default sort order (asc/desc) |
+| `captions` | string | null | Comma-separated list of column headers |
+| `keyLimit` | string | "" | API parameter name for limit |
+| `keyOffset` | string | "" | API parameter name for offset/page |
+| `keyTotal` | string | "" | API response key for total count |
+| `keyData` | string | "" | API response key for data array |
+| `keySort` | string | "" | API parameter name for sort field |
+| `keyOrder` | string | "" | API parameter name for sort order |
+| `keySearch` | string | "q" | API parameter name for search query |
+| `shortPagination` | boolean | false | Use simple prev/next pagination |
+| `rows` | number | 10 | Initial rows per page |
+| `rowsSteps` | string | "10,25,50,100" | Available rows per page options |
+| `showServiceBlock` | boolean | true | Show search and controls block |
+| `quickSearch` | boolean | true | Show search input |
+| `selectOrder` | boolean | true | Show sort controls |
+| `selectCount` | boolean | true | Show rows count selector |
+| `showPagination` | boolean | true | Show pagination controls |
+| `params` | object | null | Additional parameters to send with requests |
+| `searchControl` | string | null | Selector for external search control |
+| `rowsCountControl` | string | null | Selector for external rows count control |
+| `searchThreshold` | number | 3 | Minimum characters to trigger search |
+| `rowsLabel` | string | "" | Label for rows count selector |
+| `searchLabel` | string | "" | Label for search input |
+| **`pageMode`** | **string** | **"offset"** | **Pagination mode: "offset" or "page"** |
+| `clsTable` | string | "" | CSS classes for table element |
+| `clsRow` | string | "" | CSS classes for table rows |
+| `clsCell` | string | "" | CSS classes for table cells |
+| `clsHead` | string | "" | CSS classes for table header |
+| `clsPagination` | string | "" | CSS classes for pagination |
+
+### Understanding pageMode Parameter
+
+The `pageMode` parameter is crucial for API compatibility and determines how pagination values are calculated and sent to your server:
+
+#### pageMode="offset" (Default)
+- **Offset Calculation**: Starts from 0, increments by `limit` value
+- **API Requests**: Sends offset values (0, 10, 20, 30...)
+- **Use Case**: APIs that expect offset-based pagination
+- **Example**: `?limit=10&skip=20` (for page 3 with 10 items per page)
+
+#### pageMode="page"
+- **Page Calculation**: Starts from 1, increments by 1
+- **API Requests**: Sends page numbers (1, 2, 3, 4...)
+- **Use Case**: APIs that expect page-based pagination
+- **Example**: `?perPage=10&page=3` (for page 3 with 10 items per page)
+
+**Important**: When using `pageMode="page"`, make sure to:
+1. Set `data-offset="1"` to start from page 1
+2. Use appropriate `keyOffset` parameter name (e.g., "page")
+3. Ensure your API expects page numbers, not offset values
 
 ## API Methods
 
-+ `_loadData()` - Loads data from the remote API based on current settings.
-+ `_createEntries()` - Creates table entries from the loaded data.
-+ `destroy()` - Removes the component from the DOM.
++ `addParam(key, value)` - Add a single parameter to API requests.
++ `addParams(params)` - Add multiple parameters to API requests.
++ `clearParams()` - Clear all additional parameters.
++ `load(append)` - Reload data from the API.
++ `destroy()` - Remove the component and clean up.
 
 #### Example of Method Usage
+
 ```javascript
 const table = Metro.getPlugin('#myTable', 'remote-table');
-// Note: Most methods are internal and not meant to be called directly
+
+// Add search parameter
+table.addParam('category', 'electronics');
+
+// Add multiple parameters
+table.addParams({
+    minPrice: 100,
+    maxPrice: 500
+});
+
+// Reload data
+table.load();
+
+// Clear parameters
+table.clearParams();
 ```
 
 ## Events
 
 | Event | Description |
-| --- | --- |
-| onLoad | Triggered when data is loaded, allows transforming the response |
-| onDrawRow | Triggered when a row is drawn |
-| onDrawCell | Triggered when a cell is drawn |
-| onDrawHeadCell | Triggered when a header cell is drawn |
-| onTableCreate | Triggered when the table is created |
+| ----- | ----------- |
+| `onBeforeLoad` | Fired before data loading, allows URL modification |
+| `onLoad` | Fired after data is loaded, allows data transformation |
+| `onDrawRow` | Fired when drawing each table row |
+| `onDrawCell` | Fired when drawing each table cell |
+| `onDrawHeadCell` | Fired when drawing each header cell |
+| `onTableCreate` | Fired when the table component is created |
+
+### Event Usage Examples
+
+```javascript
+function beforeLoad(url, table) {
+    console.log('Loading from:', url);
+    return url; // Return modified URL if needed
+}
+
+function onLoad(data, table) {
+    console.log('Data loaded:', data);
+    return data; // Return transformed data if needed
+}
+
+function drawCell(cell, value, fieldName, record, index) {
+    if (fieldName === 'price') {
+        cell.innerHTML = `$${value}`;
+    }
+}
+```
+
+```html
+<div data-role="remote-table"
+     data-on-before-load="beforeLoad"
+     data-on-load="onLoad"
+     data-on-draw-cell="drawCell">
+</div>
+```
 
 ## Styling with CSS Variables
 
-The Remote Table component doesn't define specific CSS variables. It inherits styles from the Table component.
+| Variable | Default | Description |
+| -------- | ------- | ----------- |
+| `--remote-table-order-block-size` | 200px | Width of the sort controls block |
+| `--remote-table-count-block-size` | 140px | Width of the rows count selector block |
+
+### Example of Custom Styling
+
+```css
+#my-table {
+    --remote-table-order-block-size: 250px;
+    --remote-table-count-block-size: 160px;
+}
+```
 
 ## Available CSS Classes
 
 ### Base Classes
-- `.remote-table` - The main container class for the component
-- `.table-entry` - Container for the table and search controls
-- `.search-block` - Container for search input and rows count selector
-- `.table-pagination` - Container for pagination controls
+- `.remote-table` - Main component container
+- `.table-component` - Applied to the main element
+- `.service-block` - Container for search and controls
+- `.search-block` - Container for search input
+- `.count-block` - Container for rows count selector
+- `.order-block` - Container for sort controls
+- `.table-pagination` - Pagination container
 
-### Structure
-The Remote Table component has the following structure:
+### Data Cell Classes
+- `.data-cell-{fieldName}` - Applied to each data cell based on field name
+- `.head-cell-{fieldName}` - Applied to each header cell based on field name
+
+### Modifier Classes
+- `.sortable-column` - Applied to sortable column headers
+- `.sort-asc` - Applied to ascending sorted columns
+- `.sort-desc` - Applied to descending sorted columns
+
+## pageMode Usage Examples
+
+### Example 1: Page-based API (like many REST APIs)
 
 ```html
-<div class="table-component remote-table">
-    <!-- Search and rows count controls -->
-    <div class="table-entry">
-        <div class="search-block row">
-            <div class="cell-sm-10">
-                <!-- Search input -->
-            </div>
-            <div class="cell-sm-2">
-                <!-- Rows count select -->
-            </div>
-        </div>
-        
-        <!-- Table -->
-        <table class="table">
-            <caption>Table Caption</caption>
-            <thead>
-                <tr class="table-header">
-                    <th class="sortable-column">Column 1</th>
-                    <th class="sortable-column">Column 2</th>
-                    ...
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="table-row">
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    ...
-                </tr>
-                ...
-            </tbody>
-        </table>
-    </div>
-    
-    <!-- Pagination -->
-    <div class="table-pagination"></div>
+<!-- For APIs that expect: /api/products?page=1&perPage=10 -->
+<div data-role="remote-table"
+     data-page-mode="page"
+     data-offset="1"
+     data-key-offset="page"
+     data-key-limit="perPage"
+     data-url="/api/products">
 </div>
 ```
 
-## API Response Format
-
-The component expects the API response to be in the following format:
-
-```json
-{
-  "total": 100,
-  "data": [
-    { "id": 1, "name": "John Doe", "email": "john@example.com", "phone": "123-456-7890" },
-    { "id": 2, "name": "Jane Smith", "email": "jane@example.com", "phone": "098-765-4321" },
-    ...
-  ]
-}
-```
-
-The property names can be customized using the `totalKey` and `dataKey` parameters.
-
-## Customizing Cell Rendering
-
-You can customize how cells are rendered using the `onDrawCell` event:
-
-```javascript
-Metro.init(function(){
-    var table = Metro.getPlugin('#myTable', 'remote-table');
-    table.options.onDrawCell = function(cell, value, field, item, index) {
-        // Customize cell based on field or value
-        if (field === 'status') {
-            if (value === 'active') {
-                $(cell).addClass('bg-green fg-white');
-            } else {
-                $(cell).addClass('bg-red fg-white');
-            }
-        }
-        
-        // Format currency
-        if (field === 'price') {
-            $(cell).html('$' + parseFloat(value).toFixed(2));
-        }
-    };
-});
-```
-
-## Customizing Header Cell Rendering
-
-You can customize how header cells are rendered using the `onDrawHeadCell` event:
-
-```javascript
-Metro.init(function(){
-    var table = Metro.getPlugin('#myTable', 'remote-table');
-    table.options.onDrawHeadCell = function(cell, caption, field, index, sortable, sorted, order) {
-        // Add icons or custom styling to header cells
-        if (sortable) {
-            var icon = sorted ? (order === 'asc' ? '↑' : '↓') : '↕';
-            $(cell).append(' ' + icon);
-        }
-    };
-});
-```
-
-## Custom Styling Example
-
-```css
-.custom-table.remote-table .table {
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.custom-table.remote-table .table th {
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-}
-
-.custom-table.remote-table .table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.custom-table.remote-table .table tr:hover {
-    background-color: #e0f7fa;
-}
-```
+### Example 2: Offset-based API (like DummyJSON)
 
 ```html
-<div data-role="remote-table" class="custom-table" data-url="api/data">
+<!-- For APIs that expect: /api/products?skip=0&limit=10 -->
+<div data-role="remote-table"
+     data-page-mode="offset"
+     data-key-offset="skip"
+     data-key-limit="limit"
+     data-url="/api/products">
 </div>
+```
+
+### Example 3: Dynamic pageMode switching
+
+```javascript
+const table = Metro.getPlugin('#myTable', 'remote-table');
+
+// Switch to page mode
+table.options.pageMode = 'page';
+table.options.keyOffset = 'page';
+table.offset = 1;
+table.load();
+
+// Switch to offset mode
+table.options.pageMode = 'offset';
+table.options.keyOffset = 'skip';
+table.offset = 0;
+table.load();
 ```
 
 ## Best Practices
 
-1. Specify the fields you want to display using the `fields` parameter to limit data transfer
-2. Provide custom captions with the `captions` parameter for better readability
-3. Use the `sortableFields` parameter to enable sorting for relevant columns
-4. Use the `onDrawCell` event to format data appropriately (dates, currency, etc.)
-5. Use the `colSize` parameter to control column widths for better layout
-6. Consider using the `clsTable` parameter to apply Metro UI table styles (striped, bordered, etc.)
-7. Set appropriate row counts based on the complexity of your data
+### pageMode Selection
+- **Use `pageMode="page"`** when your API expects page numbers (1, 2, 3...)
+- **Use `pageMode="offset"`** when your API expects offset values (0, 10, 20...)
+- Always verify your API documentation to choose the correct mode
+- Test pagination with your API to ensure correct behavior
+
+### General Best Practices
+- Always specify `keyData` to tell the component where to find the data array in the API response
+- Use `keyTotal` for proper pagination when your API provides total count
+- Implement `onDrawCell` for custom cell formatting
+- Use external controls for better UX when integrating with existing forms
+- Set appropriate `searchThreshold` to avoid excessive API calls
+- Use `shortPagination` for mobile-friendly interfaces
+- Always handle loading states and errors in your `onBeforeLoad` and `onLoad` callbacks
+
+## Additional Notes
+
+- The component automatically handles debounced search to prevent excessive API calls
+- Sorting is handled client-side by sending sort parameters to the API
+- The component supports both simple prev/next pagination and full page number pagination
+- All API parameters are URL-encoded automatically
+- The component integrates seamlessly with Metro UI's theming system
+- Custom cell rendering allows for complex data presentation including HTML content

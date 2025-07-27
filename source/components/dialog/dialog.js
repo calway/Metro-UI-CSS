@@ -9,7 +9,7 @@
  * */
 
 ((Metro, $) => {
-    // biome-ignore lint/suspicious/noRedundantUseStrict: <explanation>
+    // biome-ignore lint/suspicious/noRedundantUseStrict: Required
     "use strict";
 
     let DialogDefaultConfig = {
@@ -79,6 +79,7 @@
         },
 
         _build: function () {
+            const that = this;
             const element = this.element;
             const o = this.options;
             const strings = this.strings;
@@ -86,7 +87,7 @@
             let overlay;
 
             this.id = Hooks.useId(this.elem);
-            
+
             element.addClass("dialog");
 
             if (o.title !== "") {
@@ -136,12 +137,21 @@
                 const customButtons = Metro.utils.isObject(o.customButtons);
                 if (Array.isArray(customButtons))
                     $.each(customButtons, function () {
-                        button = $("<button>").addClass("button").addClass(this.cls).html(this.text);
-                        if (this.onclick)
-                            button.on(Metro.events.click, () => {
-                                Metro.utils.exec(this.onclick, [element]);
+                        const btn = $("<button>")
+                            .addClass("button")
+                            .addClass(this.cls)
+                            .html(this.text || this.html || "");
+
+                        that._setAttributes(btn, this.attr);
+
+                        if (this.onclick) {
+                            btn.on(Metro.events.click, (e) => {
+                                if (Metro.utils.isRightMouse(e)) return;
+                                Metro.utils.exec(this.onclick, [btn[0], element[0]]);
                             });
-                        button.appendTo(buttons);
+                        }
+
+                        btn.appendTo(buttons);
                     });
             }
 

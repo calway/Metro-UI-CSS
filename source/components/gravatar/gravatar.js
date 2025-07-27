@@ -28,6 +28,7 @@
         _create: function () {
             const element = this.element;
 
+            this._createStructure();
             this.get();
 
             this._fireEvent("gravatar-create", {
@@ -35,6 +36,21 @@
             });
         },
 
+        _createStructure: function () {
+            const element = this.element;
+            const o = this.options;
+
+            if (element[0].tagName !== "IMG") {
+                element.html("<img alt='' src='' />");
+            }
+
+            element.addClass("gravatar");
+            element.css({
+                height: o.size + "px",
+                width: o.size + "px",
+            })
+        },
+        
         getImage: function (email, size, def, is_object) {
             const image = $("<img>").attr("alt", email);
 

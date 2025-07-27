@@ -37,6 +37,10 @@
     }
     &.large {
         --picker-height: var(--control-height-large);
+        --picker-font-size: 16px;       
+    }
+    &.largest {
+        --picker-height: var(--control-height-largest);
         --picker-font-size: 20px;       
     }
 }
@@ -125,5 +129,9 @@
     &.drop-as-dialog {
         .select-wrapper {
         }
+    }
+    
+    &.pill-input {
+        border-radius: calc(var(--picker-height) * 0.44);;
     }
 }

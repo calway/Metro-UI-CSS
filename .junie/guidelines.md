@@ -165,7 +165,7 @@
 2. API methods (excluding those starting with an underscore)
 3. How to style the component using CSS variables and available CSS classes
 
-Якщо є відповідний приклад компонента в теці `__html__`, то його слід використовувати як приклад використання компонента.
+Якщо є відповідний приклад компонента в теці `examples`, то його слід використовувати як приклад використання компонента.
 
 ## Типи компонентів:
 1. Компоненти, які створюються за допомогою фабричного метода `Metro.Component()`.

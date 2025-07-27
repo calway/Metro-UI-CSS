@@ -1,257 +1,283 @@
 # Remote Dataset
 
-The Remote Dataset component provides a way to fetch and display data from a remote API with built-in pagination, sorting, and searching capabilities. It's designed to handle large datasets efficiently by loading data in chunks.
+A powerful component for displaying remote data with built-in pagination, search, sorting, and customizable entry rendering. The Remote Dataset component fetches data from remote APIs and provides a flexible interface for displaying and interacting with the data.
 
 ## Dependencies
 
+- Hooks (for debounced search)
 - Pagination component
+- Input component
+- Select component
 
 ## Usage
 
 ### Basic Usage
 
 ```html
-<div data-role="remote-dataset" 
-     data-url="api/data" 
-     data-search-url="api/search"
-     data-rows="10"
-     data-template="myTemplateFunction">
+<div data-role="remote-dataset"
+     data-url="https://api.example.com/data"
+     data-key-data="items"
+     data-on-draw-entry="drawEntry">
 </div>
 ```
 
-### Template Function
+### Page-based Pagination (pageMode="page")
 
-The template function is used to render each item in the dataset:
-
-```javascript
-function myTemplateFunction(item) {
-    return `
-        <div class="custom-item">
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-        </div>
-    `;
-}
-```
-
-### Sort Rules
-
-Sort rules define how data can be sorted:
+:::caution
+The `pageMode` parameter is crucial for determining how pagination works with your API. 
+When using `pageMode="page"`, the component sends page numbers (1, 2, 3...) to your API instead of offset values.
+When using `pageMode="offset"`, it sends offset values (0, 10, 20...) based on the current page and limit.
+:::
 
 ```html
-<div data-role="remote-dataset" 
-     data-url="api/data" 
-     data-sort-rules="name:asc:Name:mif-sort-alpha-asc,date:desc:Date:mif-calendar">
+<div data-role="remote-table"
+     data-page-mode="page"
+     data-offset="1"
+     data-key-offset="page"
+     data-key-data="data"
+     data-key-limit="perPage"
+     data-key-total="totalProducts"
+     data-fields="id, title, price"
+     data-url="https://api.example.com/products">
 </div>
 ```
 
-Each sort rule is defined in the format: `field:order:label:icon`
+### Offset-based Pagination (pageMode="offset" - default)
 
-### Real-World Example
+```html
+<div data-role="remote-table"
+     data-page-mode="offset"
+     data-key-offset="skip"
+     data-key-limit="limit"
+     data-key-data="products"
+     data-key-total="total"
+     data-fields="id, title, price"
+     data-url="https://api.example.com/products">
+</div>
+```
+
+### Advanced Configuration
 
 ```html
 <div data-role="remote-dataset"
      data-caption="Products"
-     data-offset-key="skip"
-     data-data-key="products"
-     data-url='https://dummyjson.com/products'
-     data-search-url='https://dummyjson.com/products/search'
-     data-search-key="q"
-     data-template="datasetTemplate"
-     data-cls-body="row"
-     data-cls-item="cell-ld-6 cell-md-4"
-     data-cls-pagination="mt-4 d-flex flex-justify-center"
+     data-url="https://dummyjson.com/products"
+     data-url-search="https://dummyjson.com/products/search"
+     data-key-offset="skip"
+     data-key-limit="limit"
+     data-key-data="products"
+     data-key-total="total"
+     data-key-sort="sortBy"
+     data-key-order="order"
+     data-key-search="q"
      data-sort="rating:desc"
-     data-sort-rules="price:asc:Price:<span class='mif-arrow-up'>,price:desc:Price:<span class='mif-arrow-down'>,rating:desc:By rating:<span class='mif-star-empty'>"
-></div>
+     data-sort-rules="price:asc:Price Asc,price:desc:Price Desc,rating:desc:By rating"
+     data-rows="10"
+     data-rows-steps="10,25,50,100"
+     data-page-mode="offset"
+     data-on-draw-entry="drawEntry"
+     data-cls-body="d-flex flex-row flex-wrap gap-1 mt-4"
+     data-cls-pagination="mt-4 d-flex flex-justify-center">
+</div>
+```
 
-<script>
-    function datasetTemplate(data) {
-        return data ? `
-        <div class="card p-4 h-100">
-            <div class="product-image"><img src="${data.thumbnail}" alt="${data.title}"/></div>
-            <div class="product-title">${data.title}</div>
-            <div>
-                <span class="product-brand bg-sand">${data.brand ? data.brand : 'Noname'}</span>
-            </div>
-            <div><span class="product-desc">${data.description}</span></div>
-            <div class="row mt-auto">
-                <div class="cell-4">
-                    <div class="product-price"><span class="">$${data.price}</span></div>
-                </div>
-                <div class="cell-8">
-                    <div class="product-rating text-right">
-                        <input data-role="rating" data-static="true" data-value="${data.rating}" data-stared-color="#f2c313" data-message="(${data.rating})"/>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-row gap-2 mt-4">
-                <button class="button success">Buy <span class="mif-add-shopping-cart icon"></span></button>
-                <button class="ml-auto button square outline fg-orange"><span class="mif-star-empty"></span></button>
-                <button class="button info">Details</button>
-            </div>
-        </div>   
-        ` : ``;
+### Using External Controls
+
+```html
+<div class="d-flex flex-row gap-2">
+    <input type="text" id="search" placeholder="Search...">
+    <select id="sorting"></select>
+    <select id="rows"></select>
+</div>
+
+<div data-role="remote-dataset"
+     data-url="https://api.example.com/data"
+     data-search-control="#search"
+     data-sorting-control="#sorting"
+     data-rows-count-control="#rows"
+     data-on-draw-entry="drawEntry">
+</div>
+```
+
+### JavaScript Initialization
+
+```javascript
+const dataset = Metro.makePlugin('#myDataset', 'remote-dataset', {
+    url: 'https://api.example.com/data',
+    keyData: 'items',
+    onDrawEntry: function(entry, index) {
+        return `<div class="item">${entry.title}</div>`;
     }
-</script>
+});
 ```
 
 ## Plugin Parameters
 
 | Parameter | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| `caption` | string | "" | Caption for the dataset |
-| `url` | string | "" | URL for fetching data |
-| `searchUrl` | string | "" | URL for searching data (if different from main URL) |
-| `method` | string | "GET" | HTTP method for requests (GET, POST, etc.) |
-| `limit` | number | 10 | Number of items to fetch per page |
-| `offset` | number | 0 | Starting offset for fetching data |
+| `caption` | string | "" | Caption text displayed above the dataset |
+| `url` | string | "" | Primary URL for fetching data |
+| `urlSearch` | string | "" | Alternative URL for search requests |
+| `method` | string | "GET" | HTTP method for requests |
+| `limit` | number | 10 | Number of items per page |
+| `offset` | number | null | Starting offset (auto-calculated based on pageMode) |
 | `sort` | string | "" | Default sort field and order (format: "field:order") |
-| `limitKey` | string | "limit" | Query parameter name for limit |
-| `offsetKey` | string | "offset" | Query parameter name for offset |
-| `searchKey` | string | "query" | Query parameter name for search term |
-| `totalKey` | string | "total" | Response property name for total count |
-| `dataKey` | string | "data" | Response property name for data array |
-| `sortKey` | string | "sortBy" | Query parameter name for sort field |
-| `orderKey` | string | "order" | Query parameter name for sort order |
-| `shortPagination` | boolean | false | Whether to use short pagination (just prev/next) or full pagination |
-| `rows` | number | 10 | Default number of rows to display |
-| `rowsSteps` | string | "10,25,50,100" | Available options for rows per page (comma-separated) |
-| `sortRules` | string | "" | Rules for sorting data (format: "field:order:label:icon,...") |
-| `showSearch` | boolean | true | Whether to show search control |
-| `showOrder` | boolean | true | Whether to show order control |
-| `showRowsCount` | boolean | true | Whether to show rows count control |
-| `template` | function | "" | Template function for rendering items |
-| `clsBody` | string | "" | Additional CSS class for the dataset body |
-| `clsItem` | string | "" | Additional CSS class for dataset items |
-| `clsPagination` | string | "" | Additional CSS class for pagination |
-| `clsSearchBlock` | string | "" | Additional CSS class for search block |
-| `clsOrderBlock` | string | "" | Additional CSS class for order block |
-| `clsRowsCountBlock` | string | "" | Additional CSS class for rows count block |
+| `keyLimit` | string | "" | Query parameter name for limit |
+| `keyOffset` | string | "" | Query parameter name for offset |
+| `keyTotal` | string | "" | Response key containing total items count |
+| `keyData` | string | "" | Response key containing data array |
+| `keySort` | string | "" | Query parameter name for sort field |
+| `keyOrder` | string | "" | Query parameter name for sort order |
+| `keySearch` | string | "q" | Query parameter name for search |
+| `shortPagination` | boolean | false | Use simple prev/next pagination |
+| `rows` | number | 10 | Initial number of rows per page |
+| `rowsSteps` | string | "10,25,50,100" | Available rows per page options |
+| `sortRules` | string | "" | Available sorting options (format: "field:order:label:icon") |
+| `showServiceBlock` | boolean | true | Show the service block with controls |
+| `quickSearch` | boolean | true | Show built-in search input |
+| `selectOrder` | boolean | true | Show sorting dropdown |
+| `selectCount` | boolean | true | Show rows count dropdown |
+| `showMore` | boolean | true | Show "Load More" button |
+| `showPagination` | boolean | true | Show pagination controls |
+| `params` | object | null | Additional query parameters |
+| `searchControl` | string | null | Selector for external search control |
+| `sortingControl` | string | null | Selector for external sorting control |
+| `rowsCountControl` | string | null | Selector for external rows count control |
+| `searchThreshold` | number | 3 | Minimum characters to trigger search |
+| `sortLabel` | string | "" | Label for sorting dropdown |
+| `rowsLabel` | string | "" | Label for rows count dropdown |
+| `searchLabel` | string | "" | Label for search input |
+| `pageMode` | string | "offset" | Pagination mode: "offset" or "page" |
+| `clsBody` | string | "" | CSS classes for dataset body |
+| `clsPagination` | string | "" | CSS classes for pagination |
+| `clsSearchBlock` | string | "" | CSS classes for search block |
+| `clsOrderBlock` | string | "" | CSS classes for order block |
+| `clsRowsCountBlock` | string | "" | CSS classes for rows count block |
+| `clsServiceBlock` | string | "" | CSS classes for service block |
 
 ## API Methods
 
-The Remote Dataset component doesn't expose any public API methods beyond the standard component methods.
++ `addParam(key, value)` - Adds a single query parameter to requests.
++ `addParams(params)` - Adds multiple query parameters to requests.
++ `clearParams()` - Clears all additional query parameters.
++ `load(append)` - Manually triggers data loading. Set append to true to append data instead of replacing.
++ `destroy()` - Destroys the component and removes it from DOM.
+
+#### Example of Method Usage
+
+```javascript
+const dataset = Metro.getPlugin('#myDataset', 'remote-dataset');
+
+// Add custom parameters
+dataset.addParam('category', 'electronics');
+dataset.addParams({
+    minPrice: 100,
+    maxPrice: 500
+});
+
+// Reload data
+dataset.load();
+
+// Load more data (append)
+dataset.load(true);
+
+// Clear parameters and reload
+dataset.clearParams();
+dataset.load();
+```
 
 ## Events
 
 | Event | Description |
 | ----- | ----------- |
-| `onLoad` | Triggered when data is loaded, allows transforming the response |
-| `onDrawRow` | Triggered when a row is drawn |
-| `onDrawCell` | Triggered when a cell is drawn |
-| `onDatasetCreate` | Triggered when the dataset is created |
+| `onBeforeLoad` | Fired before data loading. Receives URL and component instance. Should return modified URL. |
+| `onLoad` | Fired after data is loaded. Receives response data and component instance. Should return processed data. |
+| `onDrawEntry` | Fired for each data entry to render custom HTML. Receives entry data and index. Should return HTML string. |
+| `onDatasetCreate` | Fired when the component is created |
 
-## API Response Format
+### Event Usage Examples
 
-The component expects the API response to be in the following format:
+```javascript
+// Using data attributes
+<div data-role="remote-dataset"
+     data-on-before-load="beforeLoadHandler"
+     data-on-load="loadHandler"
+     data-on-draw-entry="drawEntryHandler">
+</div>
 
-```json
-{
-  "total": 100,
-  "data": [
-    { "id": 1, "name": "Item 1", "description": "Description 1" },
-    { "id": 2, "name": "Item 2", "description": "Description 2" },
-    ...
-  ]
+// JavaScript functions
+function beforeLoadHandler(url, component) {
+    console.log('Loading from:', url);
+    return url + '&timestamp=' + Date.now();
+}
+
+function loadHandler(data, component) {
+    console.log('Data loaded:', data);
+    return data; // Return processed data
+}
+
+function drawEntryHandler(entry, index) {
+    return `
+        <div class="data-entry">
+            <h3>${entry.title}</h3>
+            <p>${entry.description}</p>
+        </div>
+    `;
 }
 ```
 
-The property names can be customized using the `totalKey` and `dataKey` parameters.
-
 ## Styling with CSS Variables
 
-| Variable | Default (Light) | Dark Mode | Description |
-| -------- | --------------- | --------- | ----------- |
-| `--remote-dataset-gap` | 10px | 10px | Gap between elements in the dataset |
+| Variable | Default | Description |
+| -------- | ------- | ----------- |
+| `--remote-dataset-gap` | 10px | Gap between service block elements |
+| `--remote-dataset-order-block-size` | 200px | Width of the sorting dropdown block |
+| `--remote-dataset-count-block-size` | 140px | Width of the rows count dropdown block |
 
 ### Example of Custom Styling
 
 ```css
-.custom-dataset {
+#my-dataset {
     --remote-dataset-gap: 20px;
+    --remote-dataset-order-block-size: 250px;
+    --remote-dataset-count-block-size: 160px;
 }
-
-.custom-dataset .dataset-item {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 16px;
-    transition: box-shadow 0.3s ease;
-}
-
-.custom-dataset .dataset-item:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-```
-
-```html
-<div data-role="remote-dataset" class="custom-dataset" data-url="api/data">
-</div>
 ```
 
 ## Available CSS Classes
 
 ### Base Classes
-- `.remote-dataset` - Main container class
-- `.dataset-body` - Container for dataset items
-- `.dataset-item` - Individual dataset item
-- `.dataset-load-more` - Container for load more button
-- `.dataset-pagination` - Container for pagination controls
+- `.remote-dataset` - Main component container
+- `.dataset-caption` - Caption text styling
+- `.dataset-body` - Container for data entries
+- `.dataset-load-more` - Load more button container
+- `.dataset-pagination` - Pagination container
 
 ### Service Block Classes
-- `.service-block` - Container for service controls (search, order, rows count)
-- `.search-block` - Container for search input
-- `.order-block` - Container for order select
-- `.count-block` - Container for rows count select
-- `.hide-block` - Utility class to hide blocks
+- `.service-block` - Container for search, sorting, and count controls
+- `.search-block` - Search input container
+- `.order-block` - Sorting dropdown container
+- `.count-block` - Rows count dropdown container
 
-## Component Structure
+### Utility Classes
+- `.short-pagination` - Simple prev/next pagination style
+- `.product-card` - Example styling for product entries (from examples)
 
-The Remote Dataset component has the following structure:
+## Additional Notes
 
-```html
-<div class="remote-dataset">
-    <!-- Service controls (search, order, rows count) -->
-    <div class="service-block">
-        <div class="search-block">
-            <!-- Search input -->
-        </div>
-        <div class="order-block">
-            <!-- Order select -->
-        </div>
-        <div class="count-block">
-            <!-- Rows count select -->
-        </div>
-    </div>
-
-    <!-- Dataset content -->
-    <div class="dataset-body">
-        <!-- Dataset items rendered using template -->
-        <div class="dataset-item"></div>
-        <div class="dataset-item"></div>
-        ...
-    </div>
-
-    <!-- Load more button -->
-    <div class="dataset-load-more">
-        <button class="button large cycle link load-more-button">
-            <span class="icon">⟳</span>
-            Load More
-        </button>
-    </div>
-
-    <!-- Pagination -->
-    <div class="dataset-pagination"></div>
-</div>
-```
+- The component automatically handles URL construction with query parameters
+- Search functionality includes debouncing to prevent excessive API calls
+- Supports both offset-based and page-based pagination
+- The `onDrawEntry` callback is required for rendering data entries
+- External controls can be used instead of built-in service block controls
+- The component supports both GET and other HTTP methods for data fetching
 
 ## Best Practices
 
-- Always provide a meaningful template function to render items
-- Use appropriate sort rules that make sense for your data
-- Consider using the `onLoad` event to transform API responses if they don't match the expected format
-- Set appropriate row counts based on the size and complexity of your items
-- Use custom styling to make the dataset match your application's design
-- When working with large datasets, consider using pagination instead of the "load more" approach
-- Test your implementation with different screen sizes to ensure responsive behavior
+- Always provide the `onDrawEntry` callback to render your data entries
+- Use appropriate `keyData`, `keyTotal`, and other key parameters to match your API response structure
+- Consider using `urlSearch` for search-specific endpoints that may have different response formats
+- Use external controls when you need more complex UI layouts
+- Implement proper error handling in your `onLoad` callback
+- Use CSS variables to maintain consistent styling across your application
+- Test pagination with different `pageMode` settings to match your API expectations

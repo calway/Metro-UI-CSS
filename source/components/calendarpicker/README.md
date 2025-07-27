@@ -1,188 +1,237 @@
-# Calendar Picker Component
+# Calendar Picker
 
-The Calendar Picker component provides an interactive date and time selection interface with a popup calendar. It allows users to select dates and optionally times in a user-friendly way.
+A date picker component that combines an input field with a calendar popup for easy date selection. The component supports various date formats, time selection, dialog mode for mobile devices, and extensive customization options.
+
+## Dependencies
+
+- Calendar component (automatically included)
+- DateTime utilities
+- Farbe color utilities
 
 ## Usage
 
 ### Basic Usage
 
 ```html
-<!-- Basic calendar picker -->
+<!-- Simple date picker -->
 <input data-role="calendar-picker">
 
-<!-- Calendar picker with label -->
-<input data-role="calendar-picker" data-label="Select date">
+<!-- With initial value -->
+<input data-role="calendar-picker" value="2024/01/15">
 
-<!-- Calendar picker with initial value -->
-<input data-role="calendar-picker" data-value="2023-05-15">
-
-<!-- Calendar picker with time selection -->
-<input data-role="calendar-picker" data-show-time="true">
+<!-- With label -->
+<input data-role="calendar-picker" data-label="Select date:">
 ```
 
-### Advanced Usage
+### Advanced Configurations
 
 ```html
-<!-- Calendar picker with custom format -->
-<input data-role="calendar-picker" data-format="DD/MM/YYYY">
+<!-- Custom date format -->
+<input data-role="calendar-picker" 
+       data-format="DD, MMM YYYY" 
+       data-input-format="DD/MM/YYYY">
 
-<!-- Calendar picker with min and max date constraints -->
-<input data-role="calendar-picker" data-min-date="2023-01-01" data-max-date="2023-12-31">
+<!-- With time selection -->
+<input data-role="calendar-picker" 
+       data-show-time="true" 
+       data-initial-time="14:30">
 
-<!-- Calendar picker with clear button -->
-<input data-role="calendar-picker" data-clear-button="true">
+<!-- Dialog mode for mobile -->
+<input data-role="calendar-picker" 
+       data-dialog-mode="true" 
+       data-dialog-point="640">
 
-<!-- Calendar picker in dialog mode -->
-<input data-role="calendar-picker" data-dialog-mode="true">
+<!-- With date restrictions -->
+<input data-role="calendar-picker" 
+       data-min-date="2024/01/01" 
+       data-max-date="2024/12/31">
 
-<!-- Calendar picker with dialog point -->
-<input data-role="calendar-picker" data-dialog-point="360">
+<!-- With clear button -->
+<input data-role="calendar-picker" 
+       data-clear-button="true">
+```
+
+### Programmatic Usage
+
+```javascript
+// Initialize programmatically
+const picker = Metro.makePlugin('#myInput', 'calendar-picker', {
+    format: 'DD/MM/YYYY',
+    showTime: true,
+    clearButton: true
+});
+
+// Get component instance
+const picker = Metro.getPlugin('#myInput', 'calendar-picker');
 ```
 
 ## Plugin Parameters
 
-The Calendar Picker component accepts the following parameters:
-
 | Parameter | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| `label` | String | `""` | Label text for the input |
-| `value` | String | `""` | Initial value for the calendar picker |
-| `nullValue` | Boolean | `true` | Allow empty value |
-| `useNow` | Boolean | `false` | Use current date/time as default value |
-| `prepend` | String | `""` | Content to prepend to the input |
-| `dialogMode` | Boolean | `false` | Show calendar in dialog mode |
-| `dialogPoint` | Number | `640` | Screen width breakpoint for switching to dialog mode |
-| `dialogOverlay` | Boolean | `true` | Show overlay in dialog mode |
-| `overlayColor` | String | `"#000000"` | Color of the overlay |
-| `overlayAlpha` | Number | `0.5` | Opacity of the overlay |
-| `size` | String | `"100%"` | Width of the component |
-| `format` | String | `METRO_DATE_FORMAT` | Format for displaying the date |
-| `inputFormat` | String | `null` | Format for parsing input date |
-| `clearButton` | Boolean | `false` | Show clear button |
-| `calendarButtonIcon` | String | `"📅"` | Icon for the calendar button |
-| `clearButtonIcon` | String | `"❌"` | Icon for the clear button |
-| `prevMonthIcon` | String | `"⯇"` | Icon for previous month button |
-| `nextMonthIcon` | String | `"⯈"` | Icon for next month button |
-| `prevYearIcon` | String | `"⯇"` | Icon for previous year button |
-| `nextYearIcon` | String | `"⯈"` | Icon for next year button |
-| `copyInlineStyles` | Boolean | `false` | Copy inline styles from input to container |
-| `openMode` | String | `"auto"` | Mode for opening the calendar (`"auto"`, `"up"`) |
-| `showTime` | Boolean | `false` | Show time picker |
-| `initialTime` | String | `null` | Initial time value |
-| `initialHours` | Number | `null` | Initial hours value |
-| `initialMinutes` | Number | `null` | Initial minutes value |
-| `wide` | Boolean | `false` | Use wide calendar view |
-| `widePoint` | Number | `null` | Breakpoint for wide calendar view |
-| `weekStart` | Number | `0` | First day of week (0 for Sunday) |
-| `outside` | Boolean | `true` | Show days from previous/next months |
-| `ripple` | Boolean | `false` | Enable ripple effect on day selection |
-| `rippleColor` | String | `null` | Color for ripple effect |
-| `exclude` | String | `null` | Dates to exclude from selection |
-| `minDate` | String | `null` | Minimum selectable date |
-| `maxDate` | String | `null` | Maximum selectable date |
-| `yearsBefore` | Number | `100` | Number of years to show before current year |
-| `yearsAfter` | Number | `100` | Number of years to show after current year |
-| `special` | String | `null` | Special dates to highlight |
-| `events` | String | `null` | Event dates to mark |
-| `showWeekNumber` | Boolean | `false` | Show week numbers |
+| `label` | string | "" | Label text displayed above the input |
+| `value` | string | "" | Initial date value |
+| `calendarPickerDeferred` | number | 0 | Deferred initialization delay |
+| `nullValue` | boolean | true | Allow null/empty values |
+| `useNow` | boolean | false | Use current date as default |
+| `prepend` | string | "" | HTML content to prepend to input |
+| `dialogMode` | boolean | false | Force dialog mode |
+| `dialogPoint` | number | 640 | Screen width breakpoint for dialog mode |
+| `dialogOverlay` | boolean | true | Show overlay in dialog mode |
+| `overlayColor` | string | "#000000" | Overlay background color |
+| `overlayAlpha` | number | 0.5 | Overlay transparency |
+| `size` | string | "100%" | Input width |
+| `format` | string | METRO_DATE_FORMAT | Display date format |
+| `inputFormat` | string | null | Input parsing format |
+| `clearButton` | boolean | false | Show clear button |
+| `calendarButtonIcon` | string | "📅" | Calendar button icon |
+| `clearButtonIcon` | string | "❌" | Clear button icon |
+| `prevMonthIcon` | string | "⯇" | Previous month icon |
+| `nextMonthIcon` | string | "⯈" | Next month icon |
+| `prevYearIcon` | string | "⯇" | Previous year icon |
+| `nextYearIcon` | string | "⯈" | Next year icon |
+| `copyInlineStyles` | boolean | false | Copy inline styles to container |
+| `openMode` | string | "auto" | Calendar open direction ("auto", "up", "down") |
+| `wide` | boolean | false | Use wide calendar layout |
+| `widePoint` | number | 640 | Screen width for wide layout |
+| `showTime` | boolean | false | Enable time selection |
+| `outside` | boolean | true | Show dates outside current month |
+| `weekStart` | number | 0 | First day of week (0=Sunday, 1=Monday) |
+| `events` | array | [] | Calendar events |
+| `initialTime` | string | null | Initial time value (HH:MM) |
+| `initialHours` | number | null | Initial hours |
+| `initialMinutes` | number | null | Initial minutes |
+| `headerFormat` | string | "dddd, MMM DD" | Calendar header format |
+| `showWeekNumber` | boolean | false | Show week numbers |
+| `ripple` | boolean | false | Enable ripple effect |
+| `rippleColor` | string | "#000000" | Ripple effect color |
+| `special` | array | [] | Special dates array |
+| `exclude` | array | [] | Excluded dates array |
+| `minDate` | string | null | Minimum selectable date |
+| `maxDate` | string | null | Maximum selectable date |
+| `yearsBefore` | number | 100 | Years before current year |
+| `yearsAfter` | number | 100 | Years after current year |
 
-## API Methods
-
-The Calendar Picker component provides the following API methods:
-
-```javascript
-// Get the component instance
-const picker = Metro.getPlugin("#myCalendarPicker", "calendar-picker");
-```
-
-| Method | Parameters | Description |
-| ------ | ---------- | ----------- |
-| `val(value, format)` | `value`: Date string, `format`: Optional format | Set or get the current value |
-| `clear()` | None | Clear the current value |
-| `disable()` | None | Disable the calendar picker |
-| `enable()` | None | Enable the calendar picker |
-| `toggleState()` | None | Toggle between enabled and disabled states |
-| `getTime(asString)` | `asString`: Boolean | Get the current time as array or string |
-
-## Events
-
-The Calendar Picker component triggers the following events:
-
-| Event | Description |
-| ----- | ----------- |
-| `onDayClick` | Triggered when a day is clicked |
-| `onCalendarPickerCreate` | Triggered when the calendar picker is created |
-| `onCalendarShow` | Triggered when the calendar is shown |
-| `onCalendarHide` | Triggered when the calendar is hidden |
-| `onChange` | Triggered when the value changes |
-| `onPickerChange` | Triggered when the picker value changes |
-| `onMonthChange` | Triggered when the month changes |
-| `onYearChange` | Triggered when the year changes |
-
-## CSS Classes
-
-The following CSS classes can be used to customize the appearance:
+### CSS Class Parameters
 
 | Parameter | Description |
 | --------- | ----------- |
-| `clsPicker` | Class for the picker container |
-| `clsInput` | Class for the input element |
-| `clsPrepend` | Class for the prepend element |
-| `clsLabel` | Class for the label element |
-| `clsCalendar` | Class for the calendar element |
-| `clsCalendarHeader` | Class for the calendar header |
-| `clsCalendarContent` | Class for the calendar content |
-| `clsCalendarMonths` | Class for the months view |
-| `clsCalendarYears` | Class for the years view |
-| `clsToday` | Class for the today button |
-| `clsSelected` | Class for selected dates |
-| `clsExcluded` | Class for excluded dates |
-| `clsCalendarTime` | Class for the time component |
-| `clsTime` | Class for the time element |
-| `clsTimeHours` | Class for the hours element |
-| `clsTimeMinutes` | Class for the minutes element |
-| `clsTimeButton` | Class for time buttons |
-| `clsTimeButtonPlus` | Class for the plus button |
-| `clsTimeButtonMinus` | Class for the minus button |
-| `clsOverlay` | Class for the dialog overlay |
+| `clsCalendar` | Calendar container classes |
+| `clsCalendarHeader` | Calendar header classes |
+| `clsCalendarContent` | Calendar content classes |
+| `clsCalendarMonths` | Month view classes |
+| `clsCalendarYears` | Year view classes |
+| `clsCalendarTime` | Time picker classes |
+| `clsTime` | Time container classes |
+| `clsTimeHours` | Hours input classes |
+| `clsTimeMinutes` | Minutes input classes |
+| `clsTimeButton` | Time button classes |
+| `clsTimeButtonPlus` | Plus button classes |
+| `clsTimeButtonMinus` | Minus button classes |
+| `clsToday` | Today date classes |
+| `clsSelected` | Selected date classes |
+| `clsExcluded` | Excluded date classes |
+| `clsOverlay` | Overlay classes |
+| `clsPicker` | Picker container classes |
+| `clsInput` | Input field classes |
+| `clsPrepend` | Prepend content classes |
+| `clsLabel` | Label classes |
 
-## Styling with CSS Variables
+## API Methods
 
-The Calendar Picker component uses the following CSS variables:
++ `clear()` - Clear the selected date and reset to empty value.
++ `val(value, format)` - Get or set the picker value. Returns object with date and time if no arguments provided.
++ `disable()` - Disable the calendar picker.
++ `enable()` - Enable the calendar picker.
++ `toggleState()` - Toggle between enabled and disabled states.
++ `getTime(asString)` - Get the selected time. Returns array [hours, minutes] or string "HH:MM" if asString is true.
++ `changeAttribute(attributeName, newValue)` - Change component attribute dynamically.
++ `destroy()` - Destroy the component and clean up event listeners.
 
-| Variable | Default (Light) | Dark Mode | Description |
-| -------- | --------------- | --------- | ----------- |
-| `--zindex-absolute` | `1000` | `1000` | Z-index for the calendar popup |
-| `--zindex-modal` | `2000` | `2000` | Z-index for the calendar in dialog mode |
+#### Example of Method Usage
 
-### Example of Custom Styling
+```javascript
+const picker = Metro.getPlugin('#myPicker', 'calendar-picker');
 
-```css
-/* Custom styling for calendar picker */
-.my-calendar-picker {
-  --zindex-absolute: 1000;
-  --zindex-modal: 2000;
-}
+// Set a new date
+picker.val('2024/12/25');
 
-/* Custom styling for the calendar */
-.my-calendar-picker .calendar {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+// Get current value
+const currentValue = picker.val(); // Returns {date: Date, time: [hours, minutes]}
+
+// Clear the picker
+picker.clear();
+
+// Get time as string
+const timeString = picker.getTime(true); // Returns "14:30"
+
+// Disable the picker
+picker.disable();
 ```
 
-## Accessibility
+## Events
 
-The Calendar Picker component includes proper semantics for improved accessibility:
-- Proper labeling of input fields
-- Keyboard navigation support
-- Screen reader friendly structure
+| Event | Description |
+| ----- | ----------- |
+| `onDayClick` | Fired when a day is clicked in the calendar |
+| `onCalendarPickerCreate` | Fired when the calendar picker is created |
+| `onCalendarShow` | Fired when the calendar popup is shown |
+| `onCalendarHide` | Fired when the calendar popup is hidden |
+| `onChange` | Fired when the selected date changes |
+| `onPickerChange` | Fired when the picker value changes |
+| `onMonthChange` | Fired when the calendar month changes |
+| `onYearChange` | Fired when the calendar year changes |
+
+### Event Usage Example
+
+```html
+<input data-role="calendar-picker" 
+       data-on-change="handleDateChange"
+       data-on-calendar-show="handleCalendarShow">
+
+<script>
+function handleDateChange(date) {
+    console.log('Date changed to:', date);
+}
+
+function handleCalendarShow(calendar) {
+    console.log('Calendar shown');
+}
+</script>
+```
+
+## Available CSS Classes
+
+### Base Classes
+- `.calendar-picker` - Main container class
+- `.calendar-for-picker` - Calendar popup container
+- `.input-calendar-button` - Calendar button
+- `.input-clear-button` - Clear button
+
+### State Classes
+- `.open` - Calendar is open
+- `.open-up` - Calendar opens upward
+- `.dialog-mode` - Dialog mode active
+- `.disabled` - Component is disabled
+- `.focused` - Input is focused
+
+### Layout Classes
+- `.calendar-wide` - Wide calendar layout
+- `.compact` - Compact calendar layout
+
+## Additional Notes
+
+- The component automatically switches to dialog mode on mobile devices based on the `dialogPoint` setting
+- Date formats follow the Metro UI date formatting conventions
+- The component integrates with the Metro UI theming system
+- Time selection is optional and can be enabled with the `showTime` parameter
+- The calendar popup automatically positions itself to stay within the viewport
 
 ## Best Practices
 
-1. Always provide a clear label for the calendar picker
-2. Use appropriate date format for your target audience
-3. Consider using dialog mode on mobile devices
-4. Set reasonable min and max date constraints when applicable
-5. Provide clear visual feedback for selected dates
+- Use appropriate date formats for your locale and user expectations
+- Enable dialog mode for better mobile experience
+- Set reasonable min/max date ranges to guide user selection
+- Use clear button for optional date fields
+- Consider time selection only when necessary to avoid interface complexity
+- Test the component across different screen sizes to ensure proper responsive behavior

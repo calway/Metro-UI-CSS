@@ -171,20 +171,30 @@
             if (["16/9", "21/9", "4/3"].indexOf(o.height) > -1) {
                 height = Metro.utils.aspectRatioH(width, o.height);
             } else {
-                if (String(o.height).indexOf("@") > -1) {
+                if (String(o.height).includes("@")) {
                     medias = o.height.substring(1).toArray("|");
                     $.each(medias, function () {
-                        const media = this.toArray(",");
-                        if (globalThis.matchMedia(media[0]).matches) {
-                            if (["16/9", "21/9", "4/3"].indexOf(media[1]) > -1) {
-                                height = Metro.utils.aspectRatioH(width, media[1]);
+                        const [rule, h] = this.toArray(",");
+                        if (matchMedia(rule).matches) {
+                            if (["16/9", "21/9", "4/3"].includes(h)) {
+                                height = Metro.utils.aspectRatioH(width, h);
                             } else {
-                                height = Number.parseInt(media[1]);
+                                if (h.includes("%")) {
+                                    const ph = Metro.utils.rect(element.parent()[0]).height;
+                                    height = Math.floor((Number.parseInt(h) * ph) / 100);
+                                } else {
+                                    height = Number.parseInt(h);
+                                }
                             }
                         }
                     });
                 } else {
-                    height = Number.parseInt(o.height);
+                    if (String(o.height).includes("%")) {
+                        const ph = Metro.utils.rect(element.parent()[0]).height;
+                        height = Math.floor((Number.parseInt(o.height) * ph) / 100);
+                    } else {
+                        height = Number.parseInt(o.height);
+                    }
                 }
             }
 
@@ -245,23 +255,16 @@
                 return;
             }
 
-            next = $("<span>")
-                .addClass("carousel-switch-next")
-                .addClass(o.clsControls)
-                .addClass(o.clsControlNext)
-                .html("<div></div>");
-            prev = $("<span>")
-                .addClass("carousel-switch-prev")
-                .addClass(o.clsControls)
-                .addClass(o.clsControlPrev)
-                .html("<div></div>");
+            next = $("<span>").addClass("carousel-switch-next").addClass(o.clsControls).addClass(o.clsControlNext);
+
+            prev = $("<span>").addClass("carousel-switch-prev").addClass(o.clsControls).addClass(o.clsControlPrev);
 
             if (o.controlNext) {
-                next.children("div").html(o.controlNext);
+                next.html(o.controlNext);
             }
 
             if (o.controlPrev) {
-                prev.children("div").html(o.controlPrev);
+                prev.html(o.controlPrev);
             }
 
             next.appendTo(element);

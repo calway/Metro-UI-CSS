@@ -123,29 +123,29 @@ if (production) {
         drop,
     })
 
-    let ctxAll = await context({
-        entryPoints: ['./source/index.js'],
-        outfile: './lib/metro.all.js',
-        bundle: true,
-        minify: false,
-        sourcemap: true,
-        banner: {
-            js: banner
-        },
-        plugins: [
-            progress({
-                text: 'Building Metro UI...',
-                succeedText: 'Library compiled in %s ms! Watching for changes...'
-            }),
-            lessLoader(),
-            autoprefixer(),
-            replace({
-                '__BUILD_TIME__': new Date().toLocaleString(),
-                '__VERSION__': pkg.version,
-            })
-        ],
-        drop, 
-    })
+    // let ctxAll = await context({
+    //     entryPoints: ['./source/index.js'],
+    //     outfile: './lib/metro.all.js',
+    //     bundle: true,
+    //     minify: false,
+    //     sourcemap: true,
+    //     banner: {
+    //         js: banner
+    //     },
+    //     plugins: [
+    //         progress({
+    //             text: 'Building Metro UI...',
+    //             succeedText: 'Library compiled in %s ms! Watching for changes...'
+    //         }),
+    //         lessLoader(),
+    //         autoprefixer(),
+    //         replace({
+    //             '__BUILD_TIME__': new Date().toLocaleString(),
+    //             '__VERSION__': pkg.version,
+    //         })
+    //     ],
+    //     drop, 
+    // })
 
     let ctxIcons = await context({
         entryPoints: ['./source/icons.js'],
@@ -169,7 +169,7 @@ if (production) {
     await Promise.all([
         await ctxLib.watch(),
         await ctxIcons.watch(),
-        await ctxAll.watch(),
+        // await ctxAll.watch(),
     ])
 }
 

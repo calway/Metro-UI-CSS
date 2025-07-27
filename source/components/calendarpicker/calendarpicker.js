@@ -1,5 +1,5 @@
 ((Metro, $) => {
-    // biome-ignore lint/suspicious/noRedundantUseStrict: <explanation>
+    // biome-ignore lint/suspicious/noRedundantUseStrict: required for Metro.js
     "use strict";
 
     let CalendarPickerDefaultConfig = {
@@ -26,10 +26,54 @@
         nextYearIcon: "⯈",
         copyInlineStyles: false,
         openMode: "auto",
+
+        wide: false,
+        widePoint: 640,
+        showTime: false,
+
+        outside: true,
+        weekStart: 0,
+        events: [],
+
+        initialTime: null,
+        initialHours: null,
+        initialMinutes: null,
+
+        headerFormat: "dddd, MMM DD",
+        showWeekNumber: false,
+
+        ripple: false,
+        rippleColor: "#000000",
+
+        special: [],
+        exclude: [],
+        minDate: null,
+        maxDate: null,
+        yearsBefore: 100,
+        yearsAfter: 100,
+
+        clsCalendar: "",
+        clsCalendarHeader: "",
+        clsCalendarContent: "",
+        clsCalendarMonths: "",
+        clsCalendarYears: "",
+        clsCalendarTime: "",
+        clsTime: "",
+        clsTimeHours: "",
+        clsTimeMinutes: "",
+        clsTimeButton: "",
+        clsTimeButtonPlus: "",
+        clsTimeButtonMinus: "",
+        clsToday: "",
+        clsSelected: "",
+        clsExcluded: "",
+        clsOverlay: "",
+
         clsPicker: "",
         clsInput: "",
         clsPrepend: "",
         clsLabel: "",
+
         onDayClick: Metro.noop,
         onCalendarPickerCreate: Metro.noop,
         onCalendarShow: Metro.noop,
@@ -65,7 +109,7 @@
 
         _create: function () {
             this.id = Hooks.useId(this.element);
-            
+
             this._createStructure();
             this._createEvents();
 
@@ -493,7 +537,6 @@
             const o = this.options;
             let elementValue;
 
-            // biome-ignore lint/style/noArguments: <explanation>
             if (arguments.length === 0 || Metro.utils.isNull(v)) {
                 return {
                     date: this.value.val(),

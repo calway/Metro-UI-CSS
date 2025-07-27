@@ -51,7 +51,7 @@
     }
 
     .icon, .caption {
-        transition: @transition-base;
+        transition: @transition-short;
     }
 
     .icon {
@@ -145,6 +145,10 @@ each(@accentColors, {
     }
     &.large {
         --control-height: var(--control-height-large);
+        --image-button-font-size: 18px;
+    }
+    &.largest {
+        --control-height: var(--control-height-largest);
         --image-button-font-size: 24px;
     }
 }

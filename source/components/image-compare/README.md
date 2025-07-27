@@ -66,7 +66,6 @@ imageCompare.destroy();
 | Variable | Default (Light) | Dark Mode | Description |
 | -------- | --------------- | --------- | ----------- |
 | `@orange` | Orange color | Same | Background color of the slider |
-| `@borderRadius` | Border radius value | Same | Border radius for the slider |
 
 ### Example of Custom Styling
 
