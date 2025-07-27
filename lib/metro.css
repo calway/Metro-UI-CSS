@@ -68924,7 +68924,6 @@ label:has(input) {
   display: -webkit-box;
   -webkit-line-clamp: var(--line-clamp, 2);
   -webkit-box-orient: vertical;
-  height: calc(var(--line-clamp, 2) * var(--ratio) * 1em);
   line-height: var(--ratio);
   overflow: hidden;
   word-break: break-word;
@@ -68957,6 +68956,8 @@ label:has(input) {
   font-weight: 400;
   line-height: 18px;
   word-break: break-word;
+  text-wrap: pretty;
+  display: -webkit-box;
 }
 .product-card .product-rating {
   display: flex;
@@ -68996,14 +68997,15 @@ label:has(input) {
   display: none;
   position: absolute;
   top: calc(100% - 2px);
-  left: calc(-1rem + 1px);
-  right: calc(-1rem + 1px);
-  padding: 1rem;
+  left: -1rem;
+  right: -1rem;
+  padding: 0 1rem 1rem 1rem;
   background-color: var(--product-card-background);
   z-index: -1;
   box-shadow: 0 16px 16px #0000003d;
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 0.25rem 0.25rem;
 }
 .product-card.hovered::before {
   content: "";
@@ -69018,15 +69020,32 @@ label:has(input) {
   box-shadow: 0 16px 16px #0000003d;
   z-index: -1;
   border: 1px solid var(--border-color);
+  border-bottom: none;
 }
-.product-card.hovered:hover {
-  z-index: 2;
+@media (hover: hover) {
+  .product-card.hovered {
+    border: none;
+  }
+  .product-card.hovered:hover {
+    z-index: 2;
+  }
+  .product-card.hovered:hover::before {
+    display: block;
+  }
+  .product-card.hovered:hover .product-props {
+    display: block;
+  }
 }
-.product-card.hovered:hover::before {
-  display: block;
-}
-.product-card.hovered:hover .product-props {
-  display: block;
+@media (hover: none) {
+  .product-card.hovered:active {
+    z-index: 2;
+  }
+  .product-card.hovered:active::before {
+    display: block;
+  }
+  .product-card.hovered:active .product-props {
+    display: block;
+  }
 }
 @container (width > 320px) {
   .product-card {
