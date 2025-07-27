@@ -16,19 +16,49 @@
     <tags>Metro UI CSS Framework LESS CSS JS HTML</tags>
     <readme>README.md</readme>
     <releaseNotes>
-        
-        + [x] Added bulls: `star`, `badge`
-        + [x] Updated `textarea`, added attribute `data-initial-height` 
-        + [x] Updated `chat`, added attribute `data-send-mode` (values: `button`, `enter`, `control+enter`)
-        + [x] Updated `chat`, an input field type changed to `textarea`
-        + [x] Updated `chat`, added support "```...```" code blocks
-        + [x] Updated `chat`, added support for emoji
-        + [x] Fixed `toggle-button` behavior
+        - [x] Fixed `dropdown-caret` position on `d-menu` and `v-menu` components.
+        - [x] Rewritten `h-menu`.
+        - [x] Fixed `t-menu` for items with submenus.
+        - [x] Fixed position property for `context-menu` component.
+        - [x] Improved `sidebar` component.
+        - [x] Improved `sidenav-simple` menu.
+        - [x] Improved `sidenav-counter` menu.
+        - [x] Improved `sidenav-m3` menu.
+        - [x] Fixed bug in `toast` for applying options
+        - [x] Updated button size, reduce `large`, added `largest`
+        - [x] Updated input size, reduce `large`, added `largest`
+        - [x] Fixed `gravatar` for creating when an element is not `img`, added `avatar` class
+        - [x] Improved `split-button` component, added `place-left` class for dropdown menu
+        - [x] Updated `table`, added padding classes `small-padding`, `medium-padding`, `large-padding`, `largest-padding`
+        - [x] Updated icons, added tags set
+        - [x] Improved **custom buttons** in `input`, `dialog`, `panel`, and `window` components
+        - [x] Updated `remote-dataset`, `remote-table` components - changed property names, added custom params
+        - [x] Fixed using css var `--dialog-border-color`
+        - [x] Removed **upper-case** from `label-for-input` class
+        - [x] Fixed losing focus on `input` with role `input-mask` after clicking `tab`
+        - [x] Updated gradients
+        - [x] Fixed `x` position in `select` filter input
+        - [x] Added `product-show-card` component
+        - [x] Fixed `maxDate` for `calendar` component. Max date now is not included in the range.
+        - [x] Updated `bulls`, added `chat`, `checkmark`, `cancel`, `tree` images
+        - [x] Fixed method `val()` for `select` component
+        - [x] Added component `catalog-menu`
+        - [x] Added component `stack-menu`
+        - [x] Added function `getInnerSize()` to `utils` for getting element inner size
+        - [x] Added sizes `small`, `medium`, `large`, `largest` to `checkbox` and `radio` components
+        - [x] Added using `clamp()` function for define size for headers `h1...h6`, and `display4...display1` classes
+        - [x] Updated `breadcrumbs`
+        - [x] Added component `image-carousel`
+        - [x] Improved `animated-border` class
+        - [x] Fixed font-size in `bar3d` component
+        - [x] Fixed bug for min, max constraints  in `spinner` component
+        - [x] Improved `remote-dataset`, `remote-table` components for using remote controls
     </releaseNotes>
     <repository type="git" url="https://github.com/olton/metroui" branch="master"/>
   </metadata>
   <files>
     <file src="CHANGELOG.md" />
+    <file src="CHANGELOG-HISTORY.md" />
     <file src="LICENSE" />
     <file src="README.md" />
     <file src="icon.png" />
