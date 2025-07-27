@@ -64478,18 +64478,6 @@ label:has(input) {
   mask: var(--mask);
 }
 .hero6 {
-  --mask:
-    radial-gradient(
-      223.61px at 50% calc(100% - 300px),
-      #000 99%,
-      #0000 101%) calc(50% - 200px) 0/400px 100%,
-    radial-gradient(
-      223.61px at 50% calc(100% + 200px),
-      #0000 99%,
-      #000 101%) 50% calc(100% - 100px)/400px 100% repeat-x;
-  mask: var(--mask);
-}
-.hero7 {
   clip-path: shape(from 0% 0%, hline to 100%, vline to 80%, curve to 0% 80% with 75% 100% / 25% 60%, close);
 }
 @media all and (min-width: 768px) {
