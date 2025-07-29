@@ -4,8 +4,12 @@ The Select component provides an enhanced replacement for the standard HTML sele
 
 ## Dependencies
 
-- Metro UI Core
-- Metro UI Dropdown component
+- Input Common component
+- Input component
+- Dropdown component
+- Tag component
+- Button component
+- Button Group component
 
 ## Usage
 
@@ -73,6 +77,46 @@ The Select component provides an enhanced replacement for the standard HTML sele
         data-source-type="json">
 </select>
 ```
+
+#### Format of Remote Data
+The remote data should be in JSON format, structured as follows:
+
+```json
+[
+    {"value": "1", "text": "Option 1"},
+    {"value": "2", "text": "Option 2", "icon": "<span class='mif-star'></span>"},
+    {"value": "3", "text": "Option 3", "icon": "<img src='images/icon.svg' alt=''/>"},
+    {"value": "4", "text": "Option 4", "selected": true}
+]
+```
+
+:::caution
+Option groups are not supported in remote data sources!
+:::
+
+#### Transforming Remote Data
+You can transform the remote data using a callback function specified in the `data-on-data` attribute. 
+This function should return an array of options in the format expected by the Select component.
+
+```html
+<select data-role="select" id="select" data-filter="true" data-source="https://dummyjson.com/products" data-filter-source="https://dummyjson.com/products/search?q=" data-on-data="updateData"></select>
+
+<script>
+    function updateData(data){
+        const products = [...data.products]
+        const result = []
+        for (const p of products) {
+            result.push({
+                value: p.id,
+                text: p.title
+            })
+        }
+        return result
+    }
+</script>
+```
+
+```html
 
 ### Different Sizes
 
@@ -165,12 +209,15 @@ The Select component provides an enhanced replacement for the standard HTML sele
 + `reset(toDefault)` - Resets the select to default or empty state. If `toDefault` is true, resets to default selected options
 + `getSelected()` - Returns an array of selected values
 + `val(val)` - Gets or sets the selected value(s). For multiple selects, pass an array of values
++ `options(options, selected, delimiter)` - Sets the options data. `options` can be a string of HTML, an object with key-value pairs, or a complex object with nested groups
 + `data(options, selected, delimiter)` - Sets the options data. `options` can be a string of HTML, an object with key-value pairs, or a complex object with nested groups
 + `addOption(val, title, selected)` - Adds a single option to the select
 + `addOptions(values)` - Adds multiple options to the select. `values` can be an array or object
 + `removeOption(val)` - Removes an option with the specified value
 + `removeOptions(values)` - Removes multiple options with the specified values
 + `fetch(source, options, clearOptions)` - Fetches options from a remote source
++ `changeAttribute(attributeName)` - Updates the component when an attribute changes
++ `destroy()` - Destroys the select component and removes all event listeners
 
 ## Events
 
@@ -252,16 +299,22 @@ The Select component provides an enhanced replacement for the standard HTML sele
 - `.option-list` - Options list class
 - `.drop-container` - Dropdown container class
 - `.tag` - Tag class for multiple selection
+- `.dropdown-caret` - Dropdown toggle arrow
+- `.group-title` - Option group title
+- `.selected-item__group-name` - Group name in selected items
+- `.unselect-option` - Remove button for selected items
 
 ### Size Modifiers
 - `.small` - Small size
 - `.medium` - Medium size
 - `.large` - Large size
+- `.largest` - Largest size
 
 ### State Modifiers
 - `.focused` - Focused state
 - `.disabled` - Disabled state
 - `.active` - Active option
+- `.active-toggle` - Active dropdown toggle state
 - `.multiple` - Multiple selection mode
 
 ### Special Modifiers

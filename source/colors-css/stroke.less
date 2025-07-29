@@ -4,12 +4,19 @@
     --stroke-width: 1px;
 }
 
+each(@simpleColors, {
+    .stroke-@{value} {
+        color: transparent;
+        -webkit-text-stroke: var(--stroke-width) @@value;
+        text-stroke: var(--stroke-width) @@value;
+    }
+})
+
 each(@normalColors, {
     @dark-color: "dark-@{value}";
     @light-color: "light-@{value}";
     @minor-color: "minor-@{value}";
     @sat-color: "sat-@{value}";
-
 
     .stroke-light-@{value} {
         color: transparent;

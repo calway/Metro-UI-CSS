@@ -50,6 +50,7 @@
         onChange: Metro.noop,
         onUp: Metro.noop,
         onDrop: Metro.noop,
+        onOptions: Metro.noop,
         onItemSelect: Metro.noop,
         onItemDeselect: Metro.noop,
         onSelectCreate: Metro.noop,
@@ -226,6 +227,10 @@
                 } else if (this.tagName === "OPTGROUP") {
                     that._addOptionGroup(this, list, input, multiple);
                 }
+            });
+
+            this._fireEvent("options", {
+                selected: this.getSelected(),
             });
         },
 
@@ -902,6 +907,9 @@
                 const option = $("<option>").attr("value", this.value).html(this.text);
                 if (this.icon) {
                     option.attr("data-icon", this.icon);
+                }
+                if (this.selected) {
+                    option.prop("selected", true);
                 }
                 option.appendTo(element);
             });
