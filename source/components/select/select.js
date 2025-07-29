@@ -904,7 +904,9 @@
             data = Metro.utils.exec(o.onData, [data], element[0]);
 
             $.each(data, function () {
-                const option = $("<option>").attr("value", this.value).html(this.text);
+                const text = typeof this.text === "undefined" ? this.value : this.text;
+                const value = typeof this.value === "undefined" ? this.text : this.value;
+                const option = $("<option>").attr("value", value).html(text);
                 if (this.icon) {
                     option.attr("data-icon", this.icon);
                 }

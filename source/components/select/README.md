@@ -221,16 +221,17 @@ This function should return an array of options in the format expected by the Se
 
 ## Events
 
-| Event | Description |
-| ----- | ----------- |
-| `onClear` | Fired when the select is cleared |
-| `onChange` | Fired when the selection changes |
-| `onUp` | Fired when the dropdown is closed |
-| `onDrop` | Fired when the dropdown is opened |
-| `onItemSelect` | Fired when an item is selected |
-| `onItemDeselect` | Fired when an item is deselected |
-| `onSelectCreate` | Fired when the select is created |
-| `onData` | Callback for processing data from remote source |
+| Event            | Description                                     |
+|------------------|-------------------------------------------------|
+| `onClear`        | Fired when the select is cleared                |
+| `onChange`       | Fired when the selection changes                |
+| `onUp`           | Fired when the dropdown is closed               |
+| `onDrop`         | Fired when the dropdown is opened               |
+| `onItemSelect`   | Fired when an item is selected                  |
+| `onItemDeselect` | Fired when an item is deselected                |
+| `onSelectCreate` | Fired when the select is created                |
+| `onData`         | Callback for processing data from remote source |
+| `onOptions`      | Callback for processing select options          |
 
 ## Styling with CSS Variables
 
