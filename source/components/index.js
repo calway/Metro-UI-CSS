@@ -89,7 +89,6 @@ import "./list/index.js";
 import "./listview/index.js";
 import "./marquee/index.js";
 import "./master/index.js";
-import "./md5/index.js";
 import "./media-player/index.js";
 import "./navview/index.js";
 import "./notify/index.js";

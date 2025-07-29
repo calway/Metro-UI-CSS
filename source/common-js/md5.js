@@ -1,5 +1,5 @@
 ((Metro) => {
-    // biome-ignore lint/suspicious/noRedundantUseStrict: <explanation>
+    // biome-ignore lint/suspicious/noRedundantUseStrict: Required
     "use strict";
     Metro.md5 = (string) => {
         function RotateLeft(lValue, iShiftBits) {
@@ -236,4 +236,4 @@
 
         return temp.toLowerCase();
     };
-})(Metro, Dom);
+})(Metro);
