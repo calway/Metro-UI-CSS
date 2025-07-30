@@ -1,6 +1,5 @@
 ## 5.1.11
 
-+ [x] Added event `onOptions` to `select` component.
-+ [x] To remote data in `select` component added `selected` prop.
++ [x] Updated `select` component: added event `onOptions` to `select` component, to remote data added `selected` prop.
 + [x] `md5` moved to `common-js`
 + [x] Fixed function `min`, `max` in `validator` component.
